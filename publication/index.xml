@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications on Ying Wen</title>
+    <link>https://wenying45.github.io/publication/index.xml</link>
+    <description>Recent content in Publications on Ying Wen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Ying Wen</copyright>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Product-based neural networks for user response prediction</title>
+      <link>https://wenying45.github.io/publication/product-nn/</link>
+      <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://wenying45.github.io/publication/product-nn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning text representation using recurrent convolutional neural network with highway layers</title>
+      <link>https://wenying45.github.io/publication/rcnn-hw/</link>
+      <pubDate>Fri, 01 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://wenying45.github.io/publication/rcnn-hw/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
