@@ -2,12 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jekyll on Ying Wen</title>
-    <link>https://wenying45.github.io/tags/jekyll/index.xml</link>
+    <link>https://wenying45.github.io/tags/jekyll/</link>
     <description>Recent content in Jekyll on Ying Wen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Ying Wen</copyright>
-    <atom:link href="/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Mar 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/jekyll/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Migrate from Jekyll to Hugo</title>
