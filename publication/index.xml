@@ -2,29 +2,67 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications on Ying Wen</title>
-    <link>https://wenying45.github.io/publication/</link>
+    <link>https://yingwen.io/publication/</link>
     <description>Recent content in Publications on Ying Wen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016 Ying Wen</copyright>
+    <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/publication/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://yingwen.io/publication/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
-      <title>Product-based neural networks for user response prediction</title>
-      <link>https://wenying45.github.io/publication/product-nn/</link>
-      <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
+      <title>Probabilistic Recursive Reasoning for Multi-Agent Reinforcement Learning</title>
+      <link>https://yingwen.io/publication/pr2k/</link>
+      <pubDate>Fri, 21 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://wenying45.github.io/publication/product-nn/</guid>
+      <guid>https://yingwen.io/publication/pr2k/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Learning text representation using recurrent convolutional neural network with highway layers</title>
-      <link>https://wenying45.github.io/publication/rcnn-hw/</link>
-      <pubDate>Fri, 01 Jul 2016 00:00:00 +0000</pubDate>
+      <title>A Study of AI Population Dynamics with Million-agent Reinforcement Learning</title>
+      <link>https://yingwen.io/publication/1m-agent/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0100</pubDate>
       
-      <guid>https://wenying45.github.io/publication/rcnn-hw/</guid>
+      <guid>https://yingwen.io/publication/1m-agent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning to Design Games: Strategic Environments in Deep Reinforcement Learning</title>
+      <link>https://yingwen.io/publication/env-rl/</link>
+      <pubDate>Wed, 05 Jul 2017 00:00:00 +0100</pubDate>
+      
+      <guid>https://yingwen.io/publication/env-rl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multiagent Bidirectionally-Coordinated Nets: Emergence of Human-level Coordination in Learning to Play StarCraft Combat Games</title>
+      <link>https://yingwen.io/publication/game-ai/</link>
+      <pubDate>Wed, 29 Mar 2017 00:00:00 +0100</pubDate>
+      
+      <guid>https://yingwen.io/publication/game-ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Product-based Neural Networks for User Response Prediction</title>
+      <link>https://yingwen.io/publication/pnn/</link>
+      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yingwen.io/publication/pnn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning Text Tepresentation Using Recurrent Convolutional Neural Network with Highway Layers</title>
+      <link>https://yingwen.io/publication/rcnn-hw/</link>
+      <pubDate>Wed, 22 Jun 2016 00:00:00 +0100</pubDate>
+      
+      <guid>https://yingwen.io/publication/rcnn-hw/</guid>
       <description></description>
     </item>
     

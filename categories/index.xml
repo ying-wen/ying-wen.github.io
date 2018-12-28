@@ -2,12 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Ying Wen</title>
-    <link>https://wenying45.github.io/categories/</link>
+    <link>https://yingwen.io/categories/</link>
     <description>Recent content in Categories on Ying Wen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016 Ying Wen</copyright>
-    <atom:link href="/categories/" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; 2018</copyright>
+    
+	<atom:link href="https://yingwen.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
     
   </channel>
 </rss>

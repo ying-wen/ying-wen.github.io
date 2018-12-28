@@ -2,226 +2,135 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     
+    <url>
+    
+      <loc>https://yingwen.io/publication/pr2k/</loc>
+      <lastmod>2018-12-21T00:00:00+00:00</lastmod>
+    </url>
+    
+  
     
     <url>
     
-      <loc>https://wenying45.github.io/tags/academic/</loc>
+      <loc>https://yingwen.io/publication/1m-agent/</loc>
+      <lastmod>2018-07-09T00:00:00+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/talk/yunqi2018/</loc>
+      <lastmod>2018-05-25T00:00:00+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/publication/env-rl/</loc>
+      <lastmod>2017-07-05T00:00:00+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/publication/game-ai/</loc>
+      <lastmod>2017-03-29T00:00:00+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/publication/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
   
     
-    
     <url>
     
-      <loc>https://wenying45.github.io/talk/example-talk/</loc>
+      <loc>https://yingwen.io/talk/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
   
     
-    
     <url>
     
-      <loc>https://wenying45.github.io/post/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+      <loc>https://yingwen.io/publication/pnn/</loc>
+      <lastmod>2016-12-12T00:00:00+00:00</lastmod>
     </url>
     
   
     
-    
     <url>
     
-      <loc>https://wenying45.github.io/publication/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+      <loc>https://yingwen.io/publication/rcnn-hw/</loc>
+      <lastmod>2016-06-22T00:00:00+01:00</lastmod>
     </url>
     
   
     
-    
     <url>
     
-      <loc>https://wenying45.github.io/talk/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://wenying45.github.io/publication/product-nn/</loc>
-      <lastmod>2016-11-01T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://wenying45.github.io/publication/rcnn-hw/</loc>
-      <lastmod>2016-07-01T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://wenying45.github.io/project/deep-learning/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://wenying45.github.io/project/example-external-project/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://wenying45.github.io/post/getting-started/</loc>
-      <lastmod>2016-04-20T12:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://wenying45.github.io/post/widgets/</loc>
-      <lastmod>2016-04-20T11:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://wenying45.github.io/post/managing-content/</loc>
-      <lastmod>2016-04-20T11:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://wenying45.github.io/post/writing-markdown-latex/</loc>
-      <lastmod>2016-04-20T10:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://wenying45.github.io/post/migrate-from-jekyll/</loc>
-      <lastmod>2014-03-10T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://wenying45.github.io/publication_types/1/</loc>
-      <lastmod>2016-11-01T00:00:00+00:00</lastmod>
+      <loc>https://yingwen.io/publication_types/1/</loc>
+      <lastmod>2018-12-21T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
   
     
-    
     <url>
     
-      <loc>https://wenying45.github.io/categories/</loc>
+      <loc>https://yingwen.io/categories/</loc>
       <priority>0</priority>
     </url>
     
   
     
-    
     <url>
     
-      <loc>https://wenying45.github.io/tags/deep-learning/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <loc>https://yingwen.io/tags/ir/</loc>
+      <lastmod>2016-12-12T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
   
     
-    
     <url>
     
-      <loc>https://wenying45.github.io/tags/demo/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <loc>https://yingwen.io/tags/marl/</loc>
+      <lastmod>2018-12-21T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
   
     
-    
     <url>
     
-      <loc>https://wenying45.github.io/tags/hugo/</loc>
-      <lastmod>2016-04-20T12:00:00+00:00</lastmod>
+      <loc>https://yingwen.io/publication_types/</loc>
+      <lastmod>2018-12-21T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
   
     
-    
     <url>
     
-      <loc>https://wenying45.github.io/tags/jekyll/</loc>
-      <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+      <loc>https://yingwen.io/tags/</loc>
+      <lastmod>2016-12-12T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
   
     
-    
     <url>
     
-      <loc>https://wenying45.github.io/project/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://wenying45.github.io/publication_types/</loc>
-      <lastmod>2016-11-01T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://wenying45.github.io/tags/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://wenying45.github.io/</loc>
-      <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+      <loc>https://yingwen.io/</loc>
+      <lastmod>2017-10-15T00:00:00+01:00</lastmod>
       <priority>0</priority>
     </url>
     

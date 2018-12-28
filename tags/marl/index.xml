@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MARL on Ying Wen</title>
+    <link>https://yingwen.io/tags/marl/</link>
+    <description>Recent content in MARL on Ying Wen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Fri, 21 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://yingwen.io/tags/marl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Probabilistic Recursive Reasoning for Multi-Agent Reinforcement Learning</title>
+      <link>https://yingwen.io/publication/pr2k/</link>
+      <pubDate>Fri, 21 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://yingwen.io/publication/pr2k/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Study of AI Population Dynamics with Million-agent Reinforcement Learning</title>
+      <link>https://yingwen.io/publication/1m-agent/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://yingwen.io/publication/1m-agent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning to Design Games: Strategic Environments in Deep Reinforcement Learning</title>
+      <link>https://yingwen.io/publication/env-rl/</link>
+      <pubDate>Wed, 05 Jul 2017 00:00:00 +0100</pubDate>
+      
+      <guid>https://yingwen.io/publication/env-rl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multiagent Bidirectionally-Coordinated Nets: Emergence of Human-level Coordination in Learning to Play StarCraft Combat Games</title>
+      <link>https://yingwen.io/publication/game-ai/</link>
+      <pubDate>Wed, 29 Mar 2017 00:00:00 +0100</pubDate>
+      
+      <guid>https://yingwen.io/publication/game-ai/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
