@@ -31,6 +31,16 @@
     </item>
     
     <item>
+      <title>Learning to Design Games: Strategic Environments in Deep Reinforcement Learning</title>
+      <link>https://yingwen.io/publication/env-rl/</link>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://yingwen.io/publication/env-rl/</guid>
+      <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Communication in Multi-agent Reinforcement Learning </title>
       <link>https://yingwen.io/talk/yunqi2018/</link>
       <pubDate>Fri, 25 May 2018 00:00:00 +0100</pubDate>
@@ -49,16 +59,6 @@ Slides can be added in a few ways:
 - **Embed** your slides (e.g. Google Slides) or presentation video on this page using [shortcodes](https://sourcethemes.com/academic/docs/writing-markdown-latex/).
 
 Further talk details can easily be added to this page using *Markdown* and $\rm \LaTeX$ math code. --&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Learning to Design Games: Strategic Environments in Deep Reinforcement Learning</title>
-      <link>https://yingwen.io/publication/env-rl/</link>
-      <pubDate>Wed, 05 Jul 2017 00:00:00 +0100</pubDate>
-      
-      <guid>https://yingwen.io/publication/env-rl/</guid>
-      <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
 </description>
     </item>
     
