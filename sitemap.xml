@@ -12,6 +12,22 @@
     
     <url>
     
+      <loc>https://yingwen.io/tutorial/example/</loc>
+      <lastmod>2018-09-09T00:00:00+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/tutorial/</loc>
+      <lastmod>2018-09-09T00:00:00+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://yingwen.io/publication/1m-agent/</loc>
       <lastmod>2018-07-09T00:00:00+01:00</lastmod>
     </url>
@@ -38,6 +54,14 @@
     
       <loc>https://yingwen.io/publication/game-ai/</loc>
       <lastmod>2017-03-29T00:00:00+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/post/</loc>
+      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -76,8 +100,25 @@
     
     <url>
     
+      <loc>https://yingwen.io/post/mapr2/</loc>
+      <lastmod>2018-01-13T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://yingwen.io/publication_types/1/</loc>
       <lastmod>2018-12-21T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/tags/academic/</loc>
+      <lastmod>2018-01-13T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -121,7 +162,7 @@
     <url>
     
       <loc>https://yingwen.io/tags/</loc>
-      <lastmod>2016-12-12T00:00:00+00:00</lastmod>
+      <lastmod>2018-01-13T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
