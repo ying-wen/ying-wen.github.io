@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://yingwen.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Academic</title>
       <link>https://yingwen.io/tags/academic/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
       <guid>https://yingwen.io/tags/academic/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>IR</title>
       <link>https://yingwen.io/tags/ir/</link>
-      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 12 Dec 2016 00:00:00 +0800</pubDate>
       
       <guid>https://yingwen.io/tags/ir/</guid>
       <description></description>
@@ -33,7 +33,7 @@
     <item>
       <title>MARL</title>
       <link>https://yingwen.io/tags/marl/</link>
-      <pubDate>Fri, 21 Dec 2018 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0800</pubDate>
       
       <guid>https://yingwen.io/tags/marl/</guid>
       <description></description>

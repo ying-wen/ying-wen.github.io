@@ -15,10 +15,10 @@
   
     
   
-  <meta name="description" content="Many artificial intelligence (AI) applications often require multiple intelligent agents to work in a collaborative effort. Efficient learning for intra-agent communication and coordination is an indispensable step towards general AI. In this paper, we take StarCraft combat game as a case study, where the task is to coordinate multiple agents as a team to defeat their enemies. To maintain a scalable yet effective communication protocol, we introduce a Multiagent Bidirectionally-Coordinated Network (BiCNet [&#39;bIknet]) with a vectorised extension of actor-critic formulation. We show that BiCNet can handle different types of combats with arbitrary numbers of AI agents for both sides. Our analysis demonstrates that without any supervisions such as human demonstrations or labelled data, BiCNet could learn various types of advanced coordination strategies that have been commonly used by experienced game players. In our experiments, we evaluate our approach against multiple baselines under different scenarios; it shows state-of-the-art performance, and possesses potential values for large-scale real-world applications.">
+  <meta name="description" content="We propose a new reasoning protocol called generalized recursive reasoning (GR2), and embed it into the multi-agent reinforcement learning (MARL) framework. The GR2 model defines reasoning categories: level-0 agent acts randomly, and level-k agent takes the best response to a mixed type of agents that are distributed over level 0 to k−1. The GR2 leaners can take into account the bounded rationality, and it does not need the assumption that the opponent agents play Nash strategy in all stage games, which many MARL algorithms require. We prove that when the level k is large, the GR2 learners will converge to at least one Nash Equilibrium (NE). In addition, if lower-level agents play the NE, high-level agents will surely follow as well. We evaluate the GR2 Soft Actor-Critic algorithms in a series of games and high-dimensional environment; results show that the GR2 methods have faster convergence speed than strong MARL baselines.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://yingwen.io/publication/game-ai/">
+  <link rel="alternate" hreflang="en-us" href="https://yingwen.io/publication/gr2/">
 
   
 
@@ -106,7 +106,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://yingwen.io/publication/game-ai/">
+  <link rel="canonical" href="https://yingwen.io/publication/gr2/">
 
   
   
@@ -117,21 +117,21 @@
   <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="Ying Wen">
-  <meta property="og:url" content="https://yingwen.io/publication/game-ai/">
-  <meta property="og:title" content="Multiagent Bidirectionally-Coordinated Nets: Emergence of Human-level Coordination in Learning to Play StarCraft Combat Games | Ying Wen">
-  <meta property="og:description" content="Many artificial intelligence (AI) applications often require multiple intelligent agents to work in a collaborative effort. Efficient learning for intra-agent communication and coordination is an indispensable step towards general AI. In this paper, we take StarCraft combat game as a case study, where the task is to coordinate multiple agents as a team to defeat their enemies. To maintain a scalable yet effective communication protocol, we introduce a Multiagent Bidirectionally-Coordinated Network (BiCNet [&#39;bIknet]) with a vectorised extension of actor-critic formulation. We show that BiCNet can handle different types of combats with arbitrary numbers of AI agents for both sides. Our analysis demonstrates that without any supervisions such as human demonstrations or labelled data, BiCNet could learn various types of advanced coordination strategies that have been commonly used by experienced game players. In our experiments, we evaluate our approach against multiple baselines under different scenarios; it shows state-of-the-art performance, and possesses potential values for large-scale real-world applications."><meta property="og:image" content="https://yingwen.io/publication/game-ai/featured.jpg">
+  <meta property="og:url" content="https://yingwen.io/publication/gr2/">
+  <meta property="og:title" content="Multi-Agent Generalized Recursive Reasoning | Ying Wen">
+  <meta property="og:description" content="We propose a new reasoning protocol called generalized recursive reasoning (GR2), and embed it into the multi-agent reinforcement learning (MARL) framework. The GR2 model defines reasoning categories: level-0 agent acts randomly, and level-k agent takes the best response to a mixed type of agents that are distributed over level 0 to k−1. The GR2 leaners can take into account the bounded rationality, and it does not need the assumption that the opponent agents play Nash strategy in all stage games, which many MARL algorithms require. We prove that when the level k is large, the GR2 learners will converge to at least one Nash Equilibrium (NE). In addition, if lower-level agents play the NE, high-level agents will surely follow as well. We evaluate the GR2 Soft Actor-Critic algorithms in a series of games and high-dimensional environment; results show that the GR2 methods have faster convergence speed than strong MARL baselines."><meta property="og:image" content="https://yingwen.io/publication/gr2/featured.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2017-03-29T00:00:00&#43;08:00">
+  <meta property="article:published_time" content="2019-01-29T00:00:00&#43;08:00">
   
-  <meta property="article:modified_time" content="2017-03-29T00:00:00&#43;08:00">
-  
-
+  <meta property="article:modified_time" content="2019-01-29T00:00:00&#43;08:00">
   
 
   
 
-  <title>Multiagent Bidirectionally-Coordinated Nets: Emergence of Human-level Coordination in Learning to Play StarCraft Combat Games | Ying Wen</title>
+  
+
+  <title>Multi-Agent Generalized Recursive Reasoning | Ying Wen</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -304,7 +304,7 @@
 
 
 <div class="article-header d-xl-none">
-  <div class="featured-image" style="background-image: url('/publication/game-ai/featured_huc6c85f8bbbca04bba6aae4fdecded93b_111696_800x0_resize_q75_box.jpg');"></div>
+  <div class="featured-image" style="background-image: url('/publication/gr2/featured_hu0f68f4341c0e90dea5aedcbe9402d44b_1112317_800x0_resize_q75_box.jpg');"></div>
   
 </div>
 
@@ -313,7 +313,7 @@
   <div class="row">
     <div class="col-6">
       <div class="split-header-content">
-        <h1 itemprop="name">Multiagent Bidirectionally-Coordinated Nets: Emergence of Human-level Coordination in Learning to Play StarCraft Combat Games</h1>
+        <h1 itemprop="name">Multi-Agent Generalized Recursive Reasoning</h1>
 
         
 
@@ -329,19 +329,10 @@
       <span itemprop="name">Ying Wen</span>
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Peng Peng</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">Yaodong Yang</span>
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Quan Yuan</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Zhenkun Tang</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Haitao Long</span>
+      <span itemprop="name">Rui Luo</span>
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">Jun Wang</span>
@@ -352,9 +343,9 @@
 
   <span class="article-date">
     
-    <meta content="2017-03-29 00:00:00 &#43;0800 CST" itemprop="datePublished">
-    <time datetime="2017-03-29 00:00:00 &#43;0800 CST" itemprop="dateModified">
-      Mar 29, 2017
+    <meta content="2019-01-29 00:00:00 &#43;0800 CST" itemprop="datePublished">
+    <time datetime="2019-01-29 00:00:00 &#43;0800 CST" itemprop="dateModified">
+      Jan 29, 2019
     </time>
   </span>
   <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
@@ -366,7 +357,7 @@
   
   
   <span class="middot-divider"></span>
-  <a href="/publication/game-ai/#disqus_thread"></a>
+  <a href="/publication/gr2/#disqus_thread"></a>
   
 
   
@@ -402,33 +393,27 @@
 
 
 
-
-
-
+  
   
     
   
-
-
-<a class="btn btn-outline-primary my-1 mr-1" href="https://openreview.net/pdf?id=rkl6As0cF7" target="_blank" rel="noopener">
-  PDF
+<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1901.09216" target="_blank" rel="noopener">
+  Preprint
 </a>
+
+
+
+
+  
+
 
 
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
-        data-filename="/publication/game-ai/cite.bib">
+        data-filename="/publication/gr2/cite.bib">
   Cite
 </button>
 
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary my-1 mr-1" href="https://github.com/alibaba/torchcraft-py" target="_blank" rel="noopener">
-  Code
-</a>
 
 
 
@@ -452,35 +437,35 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Multiagent%20Bidirectionally-Coordinated%20Nets%3a%20Emergence%20of%20Human-level%20Coordination%20in%20Learning%20to%20Play%20StarCraft%20Combat%20Games&amp;url=https%3a%2f%2fyingwen.io%2fpublication%2fgame-ai%2f"
+         href="https://twitter.com/intent/tweet?text=Multi-Agent%20Generalized%20Recursive%20Reasoning&amp;url=https%3a%2f%2fyingwen.io%2fpublication%2fgr2%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fyingwen.io%2fpublication%2fgame-ai%2f"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fyingwen.io%2fpublication%2fgr2%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fyingwen.io%2fpublication%2fgame-ai%2f&amp;title=Multiagent%20Bidirectionally-Coordinated%20Nets%3a%20Emergence%20of%20Human-level%20Coordination%20in%20Learning%20to%20Play%20StarCraft%20Combat%20Games"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fyingwen.io%2fpublication%2fgr2%2f&amp;title=Multi-Agent%20Generalized%20Recursive%20Reasoning"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fyingwen.io%2fpublication%2fgame-ai%2f&amp;title=Multiagent%20Bidirectionally-Coordinated%20Nets%3a%20Emergence%20of%20Human-level%20Coordination%20in%20Learning%20to%20Play%20StarCraft%20Combat%20Games"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fyingwen.io%2fpublication%2fgr2%2f&amp;title=Multi-Agent%20Generalized%20Recursive%20Reasoning"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Multiagent%20Bidirectionally-Coordinated%20Nets%3a%20Emergence%20of%20Human-level%20Coordination%20in%20Learning%20to%20Play%20StarCraft%20Combat%20Games&amp;body=https%3a%2f%2fyingwen.io%2fpublication%2fgame-ai%2f">
+         href="mailto:?subject=Multi-Agent%20Generalized%20Recursive%20Reasoning&amp;body=https%3a%2f%2fyingwen.io%2fpublication%2fgr2%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -492,7 +477,7 @@
     </div>
     <div class="col-6">
       <div class="split-header-image">
-        <img src="/publication/game-ai/featured_huc6c85f8bbbca04bba6aae4fdecded93b_111696_680x500_fill_q90_box_smart1.jpg" itemprop="image" alt="">
+        <img src="/publication/gr2/featured_hu0f68f4341c0e90dea5aedcbe9402d44b_1112317_680x500_fill_q90_box_smart1.jpg" itemprop="image" alt="">
         
       </div>
     </div>
@@ -500,7 +485,7 @@
 </div>
 
 <div class="article-container d-xl-none">
-  <h1 itemprop="name">Multiagent Bidirectionally-Coordinated Nets: Emergence of Human-level Coordination in Learning to Play StarCraft Combat Games</h1>
+  <h1 itemprop="name">Multi-Agent Generalized Recursive Reasoning</h1>
 
   
 
@@ -516,19 +501,10 @@
       <span itemprop="name">Ying Wen</span>
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Peng Peng</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">Yaodong Yang</span>
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Quan Yuan</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Zhenkun Tang</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Haitao Long</span>
+      <span itemprop="name">Rui Luo</span>
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">Jun Wang</span>
@@ -539,9 +515,9 @@
 
   <span class="article-date">
     
-    <meta content="2017-03-29 00:00:00 &#43;0800 CST" itemprop="datePublished">
-    <time datetime="2017-03-29 00:00:00 &#43;0800 CST" itemprop="dateModified">
-      Mar 29, 2017
+    <meta content="2019-01-29 00:00:00 &#43;0800 CST" itemprop="datePublished">
+    <time datetime="2019-01-29 00:00:00 &#43;0800 CST" itemprop="dateModified">
+      Jan 29, 2019
     </time>
   </span>
   <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
@@ -553,7 +529,7 @@
   
   
   <span class="middot-divider"></span>
-  <a href="/publication/game-ai/#disqus_thread"></a>
+  <a href="/publication/gr2/#disqus_thread"></a>
   
 
   
@@ -564,35 +540,35 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Multiagent%20Bidirectionally-Coordinated%20Nets%3a%20Emergence%20of%20Human-level%20Coordination%20in%20Learning%20to%20Play%20StarCraft%20Combat%20Games&amp;url=https%3a%2f%2fyingwen.io%2fpublication%2fgame-ai%2f"
+         href="https://twitter.com/intent/tweet?text=Multi-Agent%20Generalized%20Recursive%20Reasoning&amp;url=https%3a%2f%2fyingwen.io%2fpublication%2fgr2%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fyingwen.io%2fpublication%2fgame-ai%2f"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fyingwen.io%2fpublication%2fgr2%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fyingwen.io%2fpublication%2fgame-ai%2f&amp;title=Multiagent%20Bidirectionally-Coordinated%20Nets%3a%20Emergence%20of%20Human-level%20Coordination%20in%20Learning%20to%20Play%20StarCraft%20Combat%20Games"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fyingwen.io%2fpublication%2fgr2%2f&amp;title=Multi-Agent%20Generalized%20Recursive%20Reasoning"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fyingwen.io%2fpublication%2fgame-ai%2f&amp;title=Multiagent%20Bidirectionally-Coordinated%20Nets%3a%20Emergence%20of%20Human-level%20Coordination%20in%20Learning%20to%20Play%20StarCraft%20Combat%20Games"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fyingwen.io%2fpublication%2fgr2%2f&amp;title=Multi-Agent%20Generalized%20Recursive%20Reasoning"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Multiagent%20Bidirectionally-Coordinated%20Nets%3a%20Emergence%20of%20Human-level%20Coordination%20in%20Learning%20to%20Play%20StarCraft%20Combat%20Games&amp;body=https%3a%2f%2fyingwen.io%2fpublication%2fgame-ai%2f">
+         href="mailto:?subject=Multi-Agent%20Generalized%20Recursive%20Reasoning&amp;body=https%3a%2f%2fyingwen.io%2fpublication%2fgr2%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -631,33 +607,27 @@
 
 
 
-
-
-
+  
   
     
   
-
-
-<a class="btn btn-outline-primary my-1 mr-1" href="https://openreview.net/pdf?id=rkl6As0cF7" target="_blank" rel="noopener">
-  PDF
+<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1901.09216" target="_blank" rel="noopener">
+  Preprint
 </a>
+
+
+
+
+  
+
 
 
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
-        data-filename="/publication/game-ai/cite.bib">
+        data-filename="/publication/gr2/cite.bib">
   Cite
 </button>
 
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary my-1 mr-1" href="https://github.com/alibaba/torchcraft-py" target="_blank" rel="noopener">
-  Code
-</a>
 
 
 
@@ -683,7 +653,7 @@
 
     
     <h3>Abstract</h3>
-    <p class="pub-abstract" itemprop="text">Many artificial intelligence (AI) applications often require multiple intelligent agents to work in a collaborative effort. Efficient learning for intra-agent communication and coordination is an indispensable step towards general AI. In this paper, we take StarCraft combat game as a case study, where the task is to coordinate multiple agents as a team to defeat their enemies. To maintain a scalable yet effective communication protocol, we introduce a Multiagent Bidirectionally-Coordinated Network (BiCNet [&lsquo;bIknet]) with a vectorised extension of actor-critic formulation. We show that BiCNet can handle different types of combats with arbitrary numbers of AI agents for both sides. Our analysis demonstrates that without any supervisions such as human demonstrations or labelled data, BiCNet could learn various types of advanced coordination strategies that have been commonly used by experienced game players. In our experiments, we evaluate our approach against multiple baselines under different scenarios; it shows state-of-the-art performance, and possesses potential values for large-scale real-world applications.</p>
+    <p class="pub-abstract" itemprop="text">We propose a new reasoning protocol called generalized recursive reasoning (GR2), and embed it into the multi-agent reinforcement learning (MARL) framework. The GR2 model defines reasoning categories: level-0 agent acts randomly, and level-k agent takes the best response to a mixed type of agents that are distributed over level 0 to k−1. The GR2 leaners can take into account the bounded rationality, and it does not need the assumption that the opponent agents play Nash strategy in all stage games, which many MARL algorithms require. We prove that when the level k is large, the GR2 learners will converge to at least one Nash Equilibrium (NE). In addition, if lower-level agents play the NE, high-level agents will surely follow as well. We evaluate the GR2 Soft Actor-Critic algorithms in a series of games and high-dimensional environment; results show that the GR2 methods have faster convergence speed than strong MARL baselines.</p>
     
 
     
@@ -712,7 +682,7 @@
       <div class="col-md-10">
         <div class="row">
           <div class="col-12 col-md-3 pub-row-heading">Publication</div>
-          <div class="col-12 col-md-9">NIPS17 Emergent Communication Workshop</div>
+          <div class="col-12 col-md-9">Under Review by ICML 2019</div>
         </div>
       </div>
       <div class="col-md-1"></div>
@@ -726,7 +696,7 @@
         <div class="row">
           <div class="col-12 col-md-3 pub-row-heading">Date</div>
           <div class="col-12 col-md-9" itemprop="datePublished">
-            March, 2017
+            January, 2019
           </div>
         </div>
       </div>

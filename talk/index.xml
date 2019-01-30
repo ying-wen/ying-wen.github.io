@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://yingwen.io/talk/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Communication in Multi-agent Reinforcement Learning </title>
       <link>https://yingwen.io/talk/yunqi2018/</link>
-      <pubDate>Fri, 25 May 2018 00:00:00 +0100</pubDate>
+      <pubDate>Fri, 25 May 2018 00:00:00 +0800</pubDate>
       
       <guid>https://yingwen.io/talk/yunqi2018/</guid>
       <description>Click on the Slides button above to view the built-in slides feature.
