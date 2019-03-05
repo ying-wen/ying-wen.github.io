@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Homes on Ying Wen</title>
+    <title>Homes on Ying WEN</title>
     <link>https://yingwen.io/home/</link>
-    <description>Recent content in Homes on Ying Wen</description>
+    <description>Recent content in Homes on Ying WEN</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
+    <copyright>&amp;copy; 2019</copyright>
     <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://yingwen.io/home/index.xml" rel="self" type="application/rss+xml" />
@@ -31,24 +31,6 @@
     </item>
     
     <item>
-      <title></title>
-      <link>https://yingwen.io/home/about/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
-      
-      <guid>https://yingwen.io/home/about/</guid>
-      <description>Biography Ying Wen is a PhD Student in the Department of Computer Science, University College London. His research interests include deep learning and deep reinforcement learning techniques for real-world scenarios, such as computational advertising, recommender systems, multi-agent system. Ying earned his MRes(Master of Research) with Distinction Honor from University College London in 2016 and B.Eng. with First Class Honor from Queen Mary, University of London and Beijing University of Posts and Tel.</description>
-    </item>
-    
-    <item>
-      <title>Recent Publications</title>
-      <link>https://yingwen.io/home/publications/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
-      
-      <guid>https://yingwen.io/home/publications/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Skills</title>
       <link>https://yingwen.io/home/skills/</link>
       <pubDate>Wed, 20 Sep 2017 00:00:00 +0100</pubDate>
@@ -67,11 +49,11 @@
     </item>
     
     <item>
-      <title>Selected Publications</title>
-      <link>https://yingwen.io/home/publications_selected/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
+      <title>Biography</title>
+      <link>https://yingwen.io/home/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yingwen.io/home/publications_selected/</guid>
+      <guid>https://yingwen.io/home/about/</guid>
       <description></description>
     </item>
     
@@ -85,29 +67,30 @@
     </item>
     
     <item>
+      <title>Recent Publications</title>
+      <link>https://yingwen.io/home/publications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yingwen.io/home/publications/</guid>
+      <description> Quickly discover relevant content by filtering publications.
+  </description>
+    </item>
+    
+    <item>
+      <title>Featured Publications</title>
+      <link>https://yingwen.io/home/featured/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yingwen.io/home/featured/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Recent &amp; Upcoming Talks</title>
       <link>https://yingwen.io/home/talks/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yingwen.io/home/talks/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Recent Posts</title>
-      <link>https://yingwen.io/home/posts/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
-      
-      <guid>https://yingwen.io/home/posts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Projects</title>
-      <link>https://yingwen.io/home/projects/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
-      
-      <guid>https://yingwen.io/home/projects/</guid>
       <description></description>
     </item>
     
@@ -122,11 +105,29 @@ To remove this section, either delete content/home/teaching.md or edit the front
     </item>
     
     <item>
+      <title>Recent Posts</title>
+      <link>https://yingwen.io/home/posts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yingwen.io/home/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Tags</title>
       <link>https://yingwen.io/home/tags/</link>
       <pubDate>Wed, 20 Sep 2017 00:00:00 +0100</pubDate>
       
       <guid>https://yingwen.io/home/tags/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://yingwen.io/home/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yingwen.io/home/projects/</guid>
       <description></description>
     </item>
     

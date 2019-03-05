@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ying Wen on Ying Wen</title>
+    <title>Ying WEN on Ying WEN</title>
     <link>https://yingwen.io/</link>
-    <description>Recent content in Ying Wen on Ying Wen</description>
+    <description>Recent content in Ying WEN on Ying WEN</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
+    <copyright>&amp;copy; 2019</copyright>
     <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0100</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
@@ -77,8 +77,10 @@
       
       <guid>https://yingwen.io/talk/yunqi2018/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;p&gt;Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.&lt;/p&gt;
+  &lt;div&gt;
+    &lt;p&gt;Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.&lt;/p&gt;
 
+  &lt;/div&gt;
 &lt;/div&gt;
 
 
@@ -171,12 +173,15 @@ Further talk details can easily be added to this page using *Markdown* and $\rm 
 
 
 
+
+
 &lt;div class=&#34;gallery&#34;&gt;
 
   
   
   
   
+    
     
     
     
@@ -200,9 +205,10 @@ Further talk details can easily be added to this page using *Markdown* and $\rm 
     
     
   &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://yingwen.io/post/mapr2/gallery/theme-1950s.png&#34; data-caption=&#34;1950s&#34;&gt;
-  &lt;img src=&#34;https://yingwen.io/post/mapr2/gallery/theme-1950s.png&#34; alt=&#34;&#34;&gt;
+  &lt;img src=&#34;https://yingwen.io/post/mapr2/gallery/theme-1950s_huaf5482f8cea0c5a703a328640e3b7509_21614_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
+    
     
     
     
@@ -226,9 +232,10 @@ Further talk details can easily be added to this page using *Markdown* and $\rm 
     
     
   &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://yingwen.io/post/mapr2/gallery/theme-apogee.png&#34; data-caption=&#34;Apogee&#34;&gt;
-  &lt;img src=&#34;https://yingwen.io/post/mapr2/gallery/theme-apogee.png&#34; alt=&#34;&#34;&gt;
+  &lt;img src=&#34;https://yingwen.io/post/mapr2/gallery/theme-apogee_hu4b45d99db97150df01464c393bfd17d4_24119_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
+    
     
     
     
@@ -252,9 +259,10 @@ Further talk details can easily be added to this page using *Markdown* and $\rm 
     
     
   &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://yingwen.io/post/mapr2/gallery/theme-coffee-playfair.png&#34; data-caption=&#34;Coffee theme with Playfair font&#34;&gt;
-  &lt;img src=&#34;https://yingwen.io/post/mapr2/gallery/theme-coffee-playfair.png&#34; alt=&#34;&#34;&gt;
+  &lt;img src=&#34;https://yingwen.io/post/mapr2/gallery/theme-coffee-playfair_hu446a8f670cc5622adcc77b97ba95f6c5_22462_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
+    
     
     
     
@@ -278,9 +286,10 @@ Further talk details can easily be added to this page using *Markdown* and $\rm 
     
     
   &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://yingwen.io/post/mapr2/gallery/theme-cupcake.png&#34; data-caption=&#34;Cupcake&#34;&gt;
-  &lt;img src=&#34;https://yingwen.io/post/mapr2/gallery/theme-cupcake.png&#34; alt=&#34;&#34;&gt;
+  &lt;img src=&#34;https://yingwen.io/post/mapr2/gallery/theme-cupcake_hueba8cfa8cfbc7543924fcbf387a99e92_23986_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
+    
     
     
     
@@ -304,9 +313,10 @@ Further talk details can easily be added to this page using *Markdown* and $\rm 
     
     
   &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://yingwen.io/post/mapr2/gallery/theme-dark.png&#34; data-caption=&#34;Dark&#34;&gt;
-  &lt;img src=&#34;https://yingwen.io/post/mapr2/gallery/theme-dark.png&#34; alt=&#34;&#34;&gt;
+  &lt;img src=&#34;https://yingwen.io/post/mapr2/gallery/theme-dark_hu1e8601ecc47f58eada7743fdcd709d3d_21456_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
+    
     
     
     
@@ -330,9 +340,10 @@ Further talk details can easily be added to this page using *Markdown* and $\rm 
     
     
   &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://yingwen.io/post/mapr2/gallery/theme-default.png&#34; data-caption=&#34;Default&#34;&gt;
-  &lt;img src=&#34;https://yingwen.io/post/mapr2/gallery/theme-default.png&#34; alt=&#34;&#34;&gt;
+  &lt;img src=&#34;https://yingwen.io/post/mapr2/gallery/theme-default_huba6228b7bdf30e2f03f12ea91b2cba0d_21751_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
+    
     
     
     
@@ -356,9 +367,10 @@ Further talk details can easily be added to this page using *Markdown* and $\rm 
     
     
   &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://yingwen.io/post/mapr2/gallery/theme-forest.png&#34; data-caption=&#34;Forest&#34;&gt;
-  &lt;img src=&#34;https://yingwen.io/post/mapr2/gallery/theme-forest.png&#34; alt=&#34;&#34;&gt;
+  &lt;img src=&#34;https://yingwen.io/post/mapr2/gallery/theme-forest_hu4f093a1c683134431456584193ea41ee_21797_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
+    
     
     
     
@@ -382,7 +394,7 @@ Further talk details can easily be added to this page using *Markdown* and $\rm 
     
     
   &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://yingwen.io/post/mapr2/gallery/theme-ocean.png&#34; data-caption=&#34;Ocean&#34;&gt;
-  &lt;img src=&#34;https://yingwen.io/post/mapr2/gallery/theme-ocean.png&#34; alt=&#34;&#34;&gt;
+  &lt;img src=&#34;https://yingwen.io/post/mapr2/gallery/theme-ocean_hu14831ccafc2219f30a7a096fa7617e01_21760_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
 

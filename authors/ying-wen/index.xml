@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ying Wen on Ying WEN</title>
+    <link>https://yingwen.io/authors/ying-wen/</link>
+    <description>Recent content in Ying Wen on Ying WEN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019</copyright>
+    <lastBuildDate>Tue, 29 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://yingwen.io/authors/ying-wen/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Multi-Agent Generalized Recursive Reasoning</title>
+      <link>https://yingwen.io/publication/gr2/</link>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://yingwen.io/publication/gr2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Probabilistic Recursive Reasoning for Multi-Agent Reinforcement Learning</title>
+      <link>https://yingwen.io/publication/pr2k/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://yingwen.io/publication/pr2k/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Study of AI Population Dynamics with Million-agent Reinforcement Learning</title>
+      <link>https://yingwen.io/publication/1m-agent/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://yingwen.io/publication/1m-agent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning to Design Games: Strategic Environments in Deep Reinforcement Learning</title>
+      <link>https://yingwen.io/publication/env-rl/</link>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://yingwen.io/publication/env-rl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Communication in Multi-agent Reinforcement Learning </title>
+      <link>https://yingwen.io/talk/yunqi2018/</link>
+      <pubDate>Fri, 25 May 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://yingwen.io/talk/yunqi2018/</guid>
+      <description>Click on the Slides button above to view the built-in slides feature.
+  Slides can be added in a few ways: - **Create** slides using Academic&#39;s *Slides* feature and link using `url_slides` parameter in the front matter of the talk file - **Upload** an existing slide deck to `static/` and link using `url_slides` parameter in the front matter of the talk file - **Embed** your slides (e.g. Google Slides) or presentation video on this page using [shortcodes](https://sourcethemes.</description>
+    </item>
+    
+    <item>
+      <title>Multiagent Bidirectionally-Coordinated Nets: Emergence of Human-level Coordination in Learning to Play StarCraft Combat Games</title>
+      <link>https://yingwen.io/publication/game-ai/</link>
+      <pubDate>Wed, 29 Mar 2017 00:00:00 +0100</pubDate>
+      
+      <guid>https://yingwen.io/publication/game-ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Product-based Neural Networks for User Response Prediction</title>
+      <link>https://yingwen.io/publication/pnn/</link>
+      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yingwen.io/publication/pnn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning Text Representation Using Recurrent Convolutional Neural Network with Highway Layers</title>
+      <link>https://yingwen.io/publication/rcnn-hw/</link>
+      <pubDate>Wed, 22 Jun 2016 00:00:00 +0100</pubDate>
+      
+      <guid>https://yingwen.io/publication/rcnn-hw/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

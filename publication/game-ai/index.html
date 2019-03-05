@@ -5,11 +5,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 3.2.0">
+  <meta name="generator" content="Source Themes Academic 4.1.0">
   <meta name="generator" content="Hugo 0.53" />
-  <meta name="author" content="Ying Wen">
 
   
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Ying Wen">
+
   
   
   
@@ -60,7 +73,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -98,8 +112,8 @@
   
 
   
-  <link rel="alternate" href="https://yingwen.io/index.xml" type="application/rss+xml" title="Ying Wen">
-  <link rel="feed" href="https://yingwen.io/index.xml" type="application/rss+xml" title="Ying Wen">
+  <link rel="alternate" href="https://yingwen.io/index.xml" type="application/rss+xml" title="Ying WEN">
+  <link rel="feed" href="https://yingwen.io/index.xml" type="application/rss+xml" title="Ying WEN">
   
 
   <link rel="manifest" href="/site.webmanifest">
@@ -116,9 +130,9 @@
   
   <meta property="twitter:card" content="summary_large_image">
   
-  <meta property="og:site_name" content="Ying Wen">
+  <meta property="og:site_name" content="Ying WEN">
   <meta property="og:url" content="https://yingwen.io/publication/game-ai/">
-  <meta property="og:title" content="Multiagent Bidirectionally-Coordinated Nets: Emergence of Human-level Coordination in Learning to Play StarCraft Combat Games | Ying Wen">
+  <meta property="og:title" content="Multiagent Bidirectionally-Coordinated Nets: Emergence of Human-level Coordination in Learning to Play StarCraft Combat Games | Ying WEN">
   <meta property="og:description" content="Many artificial intelligence (AI) applications often require multiple intelligent agents to work in a collaborative effort. Efficient learning for intra-agent communication and coordination is an indispensable step towards general AI. In this paper, we take StarCraft combat game as a case study, where the task is to coordinate multiple agents as a team to defeat their enemies. To maintain a scalable yet effective communication protocol, we introduce a Multiagent Bidirectionally-Coordinated Network (BiCNet [&#39;bIknet]) with a vectorised extension of actor-critic formulation. We show that BiCNet can handle different types of combats with arbitrary numbers of AI agents for both sides. Our analysis demonstrates that without any supervisions such as human demonstrations or labelled data, BiCNet could learn various types of advanced coordination strategies that have been commonly used by experienced game players. In our experiments, we evaluate our approach against multiple baselines under different scenarios; it shows state-of-the-art performance, and possesses potential values for large-scale real-world applications."><meta property="og:image" content="https://yingwen.io/publication/game-ai/featured.jpg">
   <meta property="og:locale" content="en-us">
   
@@ -131,7 +145,7 @@
 
   
 
-  <title>Multiagent Bidirectionally-Coordinated Nets: Emergence of Human-level Coordination in Learning to Play StarCraft Combat Games | Ying Wen</title>
+  <title>Multiagent Bidirectionally-Coordinated Nets: Emergence of Human-level Coordination in Learning to Play StarCraft Combat Games | Ying WEN</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -171,7 +185,7 @@
   <div class="container">
 
     
-      <a class="navbar-brand" href="/">Ying Wen</a>
+      <a class="navbar-brand" href="/">Ying WEN</a>
       
       <button type="button" class="navbar-toggler" data-toggle="collapse"
               data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -184,7 +198,7 @@
 
       
       
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav mr-auto">
         
 
         
@@ -264,6 +278,9 @@
         
 
       
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
 
         
 
@@ -304,7 +321,7 @@
 
 
 <div class="article-header d-xl-none">
-  <div class="featured-image" style="background-image: url('/publication/game-ai/featured_huc6c85f8bbbca04bba6aae4fdecded93b_111696_800x0_resize_q75_box.jpg');"></div>
+  <div class="featured-image" style="background-image: url('/publication/game-ai/featured_huc6c85f8bbbca04bba6aae4fdecded93b_111696_800x0_resize_q90_lanczos.jpg');"></div>
   
 </div>
 
@@ -319,47 +336,90 @@
 
         
 
+
+
+<meta content="2017-03-29 00:00:00 &#43;0100 BST" itemprop="datePublished">
+<meta content="2017-03-29 00:00:00 &#43;0100 BST" itemprop="dateModified">
+
 <div class="article-metadata">
 
   
   
   
+  
   <div>
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Ying Wen</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Peng Peng</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Yaodong Yang</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Quan Yuan</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Zhenkun Tang</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Haitao Long</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Jun Wang</span>
-    </span>
     
-  </div>
+
+
+
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        
+
+      
+      
+      <a href="/authors/ying-wen/">Ying Wen</a></span></span>, 
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        
+
+      
+      
+      <a href="/authors/peng-peng/">Peng Peng</a></span></span>, 
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        
+
+      
+      
+      <a href="/authors/yaodong-yang/">Yaodong Yang</a></span></span>, 
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        
+
+      
+      
+      <a href="/authors/quan-yuan/">Quan Yuan</a></span></span>, 
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        
+
+      
+      
+      <a href="/authors/zhenkun-tang/">Zhenkun Tang</a></span></span>, 
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        
+
+      
+      
+      <a href="/authors/haitao-long/">Haitao Long</a></span></span>, 
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        
+
+      
+      
+      <a href="/authors/jun-wang/">Jun Wang</a></span></span>
   
 
+
+
+  </div>
+  
+  
+
+  
   <span class="article-date">
     
-    <meta content="2017-03-29 00:00:00 &#43;0100 BST" itemprop="datePublished">
-    <time datetime="2017-03-29 00:00:00 &#43;0100 BST" itemprop="dateModified">
-      Mar 29, 2017
-    </time>
+    
+      
+    
+    <time>March 2017</time>
   </span>
-  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Ying Wen">
-  </span>
+  
+
+  
 
   
 
@@ -492,7 +552,7 @@
     </div>
     <div class="col-6">
       <div class="split-header-image">
-        <img src="/publication/game-ai/featured_huc6c85f8bbbca04bba6aae4fdecded93b_111696_680x500_fill_q90_box_smart1.jpg" itemprop="image" alt="">
+        <img src="/publication/game-ai/featured_huc6c85f8bbbca04bba6aae4fdecded93b_111696_680x500_fill_q90_lanczos_smart1.jpg" itemprop="image" alt="">
         
       </div>
     </div>
@@ -506,47 +566,90 @@
 
   
 
+
+
+<meta content="2017-03-29 00:00:00 &#43;0100 BST" itemprop="datePublished">
+<meta content="2017-03-29 00:00:00 &#43;0100 BST" itemprop="dateModified">
+
 <div class="article-metadata">
 
   
   
   
+  
   <div>
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Ying Wen</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Peng Peng</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Yaodong Yang</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Quan Yuan</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Zhenkun Tang</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Haitao Long</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Jun Wang</span>
-    </span>
     
-  </div>
+
+
+
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        
+
+      
+      
+      <a href="/authors/ying-wen/">Ying Wen</a></span></span>, 
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        
+
+      
+      
+      <a href="/authors/peng-peng/">Peng Peng</a></span></span>, 
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        
+
+      
+      
+      <a href="/authors/yaodong-yang/">Yaodong Yang</a></span></span>, 
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        
+
+      
+      
+      <a href="/authors/quan-yuan/">Quan Yuan</a></span></span>, 
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        
+
+      
+      
+      <a href="/authors/zhenkun-tang/">Zhenkun Tang</a></span></span>, 
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        
+
+      
+      
+      <a href="/authors/haitao-long/">Haitao Long</a></span></span>, 
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        
+
+      
+      
+      <a href="/authors/jun-wang/">Jun Wang</a></span></span>
   
 
+
+
+  </div>
+  
+  
+
+  
   <span class="article-date">
     
-    <meta content="2017-03-29 00:00:00 &#43;0100 BST" itemprop="datePublished">
-    <time datetime="2017-03-29 00:00:00 &#43;0100 BST" itemprop="dateModified">
-      Mar 29, 2017
-    </time>
+    
+      
+    
+    <time>March 2017</time>
   </span>
-  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Ying Wen">
-  </span>
+  
+
+  
 
   
 
@@ -559,7 +662,7 @@
   
 
   
-  
+    
 <div class="share-box" aria-hidden="true">
   <ul class="share">
     <li>
@@ -603,7 +706,6 @@
   
 
 </div>
-
 
   
 
@@ -694,6 +796,9 @@
           <div class="col-12 col-md-3 pub-row-heading">Type</div>
           <div class="col-12 col-md-9">
             
+
+            
+            
             <a href="/publication/#1">
               Conference paper
             </a>
@@ -720,20 +825,6 @@
     <div class="d-md-none space-below"></div>
     
 
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Date</div>
-          <div class="col-12 col-md-9" itemprop="datePublished">
-            March, 2017
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-sm-none space-below"></div>
-
     <div class="space-below"></div>
 
     <div class="article-style"><!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. -->
@@ -754,103 +845,18 @@
 
 
 
+
+
+
   
-
-
-
-
-<div class="media author-card" itemscope itemtype="http://schema.org/Person">
   
-  <img class="portrait mr-3" src="/img/yingwen.jpg" itemprop="image" alt="Avatar">
-  
-  <div class="media-body">
-    <h5 class="card-title" itemprop="name"><a href="/">Ying Wen</a></h5>
-    <h6 class="card-subtitle">PhD Student</h6>
     
-    <ul class="network-icon" aria-hidden="true">
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-      <li>
-        <a itemprop="sameAs" href="mailto:ying.wen@cs.ucl.ac.uk" >
-          <i class="fas fa-envelope"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="https://www.linkedin.com/in/wenying45/" target="_blank" rel="noopener">
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="https://scholar.google.co.uk/citations?user=_A1CxG8AAAAJ" target="_blank" rel="noopener">
-          <i class="ai ai-google-scholar"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="https://github.com/ying-wen" target="_blank" rel="noopener">
-          <i class="fab fa-github"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="/files/cv.pdf" >
-          <i class="ai ai-cv"></i>
-        </a>
-      </li>
-      
-    </ul>
-  </div>
-</div>
+  
+  
+
+
+
+
 
 
 
@@ -865,7 +871,7 @@
   
 
   <p class="powered-by">
-    &copy; 2018 &middot; 
+    &copy; 2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -923,9 +929,9 @@
     
     
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
 
       
@@ -1006,10 +1012,12 @@
     
     
     
+      
     
-    <script src="/js/academic.min.d037ee5294b166a79dec317c58aea9cc.js"></script>
-
     
+    
+    
+    <script src="/js/academic.min.d7381f2d79e6271d4da28f474f49096c.js"></script>
 
   </body>
 </html>

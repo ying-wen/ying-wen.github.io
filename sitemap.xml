@@ -69,7 +69,7 @@
     <url>
     
       <loc>https://yingwen.io/post/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+      <lastmod>2018-10-14T02:15:45+01:00</lastmod>
     </url>
     
   
@@ -77,7 +77,7 @@
     <url>
     
       <loc>https://yingwen.io/publication/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+      <lastmod>2018-10-14T02:15:45+01:00</lastmod>
     </url>
     
   
@@ -85,7 +85,7 @@
     <url>
     
       <loc>https://yingwen.io/talk/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+      <lastmod>2018-10-14T02:15:45+01:00</lastmod>
     </url>
     
   
@@ -116,6 +116,13 @@
     
     <url>
     
+      <loc>https://yingwen.io/author/admin/</loc>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://yingwen.io/publication_types/1/</loc>
       <lastmod>2019-01-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -134,7 +141,50 @@
     
     <url>
     
+      <loc>https://yingwen.io/author/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/authors/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://yingwen.io/categories/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/authors/haifeng-zhang/</loc>
+      <lastmod>2018-07-05T00:00:00+01:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/authors/haitao-long/</loc>
+      <lastmod>2017-03-29T00:00:00+01:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/authors/han-cai/</loc>
+      <lastmod>2016-12-12T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -151,6 +201,33 @@
     
     <url>
     
+      <loc>https://yingwen.io/authors/jun-wang/</loc>
+      <lastmod>2019-01-29T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/authors/kan-ren/</loc>
+      <lastmod>2016-12-12T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/authors/lantao-yu/</loc>
+      <lastmod>2018-07-09T00:00:00+01:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://yingwen.io/tags/marl/</loc>
       <lastmod>2019-01-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -160,7 +237,34 @@
     
     <url>
     
+      <loc>https://yingwen.io/authors/peng-peng/</loc>
+      <lastmod>2017-03-29T00:00:00+01:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://yingwen.io/publication_types/</loc>
+      <lastmod>2019-01-29T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/authors/quan-yuan/</loc>
+      <lastmod>2017-03-29T00:00:00+01:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/authors/rui-luo/</loc>
       <lastmod>2019-01-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -178,8 +282,106 @@
     
     <url>
     
+      <loc>https://yingwen.io/authors/wei-pan/</loc>
+      <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/authors/weinan-zhang/</loc>
+      <lastmod>2018-07-09T00:00:00+01:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/authors/wenxin-li/</loc>
+      <lastmod>2018-07-05T00:00:00+01:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/authors/yanru-qu/</loc>
+      <lastmod>2016-12-12T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/authors/yaodong-yang/</loc>
+      <lastmod>2019-01-29T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://yingwen.io/</loc>
-      <lastmod>2017-10-15T00:00:00+01:00</lastmod>
+      <lastmod>2018-10-01T00:16:12+01:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/authors/ying-wen/</loc>
+      <lastmod>2019-01-29T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/authors/yiwei-bai/</loc>
+      <lastmod>2018-07-09T00:00:00+01:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/authors/yong-yu/</loc>
+      <lastmod>2018-07-05T00:00:00+01:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/authors/zhenkun-tang/</loc>
+      <lastmod>2017-03-29T00:00:00+01:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/authors/zhiming-zhou/</loc>
+      <lastmod>2018-07-05T00:00:00+01:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://yingwen.io/authors/admin/</loc>
       <priority>0</priority>
     </url>
     
