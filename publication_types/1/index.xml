@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 29 Jan 2019 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 29 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://yingwen.io/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Multi-Agent Generalized Recursive Reasoning</title>
       <link>https://yingwen.io/publication/gr2/</link>
-      <pubDate>Tue, 29 Jan 2019 00:00:00 +0800</pubDate>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://yingwen.io/publication/gr2/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>Probabilistic Recursive Reasoning for Multi-Agent Reinforcement Learning</title>
       <link>https://yingwen.io/publication/pr2k/</link>
-      <pubDate>Tue, 01 Jan 2019 00:00:00 +0800</pubDate>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://yingwen.io/publication/pr2k/</guid>
       <description></description>
@@ -33,7 +33,7 @@
     <item>
       <title>A Study of AI Population Dynamics with Million-agent Reinforcement Learning</title>
       <link>https://yingwen.io/publication/1m-agent/</link>
-      <pubDate>Mon, 09 Jul 2018 00:00:00 +0800</pubDate>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0100</pubDate>
       
       <guid>https://yingwen.io/publication/1m-agent/</guid>
       <description></description>
@@ -42,7 +42,7 @@
     <item>
       <title>Learning to Design Games: Strategic Environments in Deep Reinforcement Learning</title>
       <link>https://yingwen.io/publication/env-rl/</link>
-      <pubDate>Thu, 05 Jul 2018 00:00:00 +0800</pubDate>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0100</pubDate>
       
       <guid>https://yingwen.io/publication/env-rl/</guid>
       <description></description>
@@ -51,7 +51,7 @@
     <item>
       <title>Multiagent Bidirectionally-Coordinated Nets: Emergence of Human-level Coordination in Learning to Play StarCraft Combat Games</title>
       <link>https://yingwen.io/publication/game-ai/</link>
-      <pubDate>Wed, 29 Mar 2017 00:00:00 +0800</pubDate>
+      <pubDate>Wed, 29 Mar 2017 00:00:00 +0100</pubDate>
       
       <guid>https://yingwen.io/publication/game-ai/</guid>
       <description></description>
@@ -60,7 +60,7 @@
     <item>
       <title>Product-based Neural Networks for User Response Prediction</title>
       <link>https://yingwen.io/publication/pnn/</link>
-      <pubDate>Mon, 12 Dec 2016 00:00:00 +0800</pubDate>
+      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yingwen.io/publication/pnn/</guid>
       <description></description>
@@ -69,7 +69,7 @@
     <item>
       <title>Learning Text Representation Using Recurrent Convolutional Neural Network with Highway Layers</title>
       <link>https://yingwen.io/publication/rcnn-hw/</link>
-      <pubDate>Wed, 22 Jun 2016 00:00:00 +0800</pubDate>
+      <pubDate>Wed, 22 Jun 2016 00:00:00 +0100</pubDate>
       
       <guid>https://yingwen.io/publication/rcnn-hw/</guid>
       <description></description>

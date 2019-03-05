@@ -7,13 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0100</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Multi-Agent Generalized Recursive Reasoning</title>
       <link>https://yingwen.io/publication/gr2/</link>
-      <pubDate>Tue, 29 Jan 2019 00:00:00 +0800</pubDate>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://yingwen.io/publication/gr2/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
@@ -23,7 +23,7 @@
     <item>
       <title>Probabilistic Recursive Reasoning for Multi-Agent Reinforcement Learning</title>
       <link>https://yingwen.io/publication/pr2k/</link>
-      <pubDate>Tue, 01 Jan 2019 00:00:00 +0800</pubDate>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://yingwen.io/publication/pr2k/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
@@ -33,7 +33,7 @@
     <item>
       <title>Example Tutorial</title>
       <link>https://yingwen.io/tutorial/example/</link>
-      <pubDate>Sun, 09 Sep 2018 00:00:00 +0800</pubDate>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 +0100</pubDate>
       
       <guid>https://yingwen.io/tutorial/example/</guid>
       <description>
@@ -53,7 +53,7 @@
     <item>
       <title>A Study of AI Population Dynamics with Million-agent Reinforcement Learning</title>
       <link>https://yingwen.io/publication/1m-agent/</link>
-      <pubDate>Mon, 09 Jul 2018 00:00:00 +0800</pubDate>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0100</pubDate>
       
       <guid>https://yingwen.io/publication/1m-agent/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
@@ -63,7 +63,7 @@
     <item>
       <title>Learning to Design Games: Strategic Environments in Deep Reinforcement Learning</title>
       <link>https://yingwen.io/publication/env-rl/</link>
-      <pubDate>Thu, 05 Jul 2018 00:00:00 +0800</pubDate>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0100</pubDate>
       
       <guid>https://yingwen.io/publication/env-rl/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
@@ -73,7 +73,7 @@
     <item>
       <title>Communication in Multi-agent Reinforcement Learning </title>
       <link>https://yingwen.io/talk/yunqi2018/</link>
-      <pubDate>Fri, 25 May 2018 00:00:00 +0800</pubDate>
+      <pubDate>Fri, 25 May 2018 00:00:00 +0100</pubDate>
       
       <guid>https://yingwen.io/talk/yunqi2018/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
@@ -95,7 +95,7 @@ Further talk details can easily be added to this page using *Markdown* and $\rm 
     <item>
       <title>Multiagent Bidirectionally-Coordinated Nets: Emergence of Human-level Coordination in Learning to Play StarCraft Combat Games</title>
       <link>https://yingwen.io/publication/game-ai/</link>
-      <pubDate>Wed, 29 Mar 2017 00:00:00 +0800</pubDate>
+      <pubDate>Wed, 29 Mar 2017 00:00:00 +0100</pubDate>
       
       <guid>https://yingwen.io/publication/game-ai/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
@@ -105,7 +105,7 @@ Further talk details can easily be added to this page using *Markdown* and $\rm 
     <item>
       <title>Product-based Neural Networks for User Response Prediction</title>
       <link>https://yingwen.io/publication/pnn/</link>
-      <pubDate>Mon, 12 Dec 2016 00:00:00 +0800</pubDate>
+      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yingwen.io/publication/pnn/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
@@ -115,7 +115,7 @@ Further talk details can easily be added to this page using *Markdown* and $\rm 
     <item>
       <title>Learning Text Representation Using Recurrent Convolutional Neural Network with Highway Layers</title>
       <link>https://yingwen.io/publication/rcnn-hw/</link>
-      <pubDate>Wed, 22 Jun 2016 00:00:00 +0800</pubDate>
+      <pubDate>Wed, 22 Jun 2016 00:00:00 +0100</pubDate>
       
       <guid>https://yingwen.io/publication/rcnn-hw/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
@@ -125,7 +125,7 @@ Further talk details can easily be added to this page using *Markdown* and $\rm 
     <item>
       <title>Academic: the website designer for Hugo</title>
       <link>https://yingwen.io/post/mapr2/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>https://yingwen.io/post/mapr2/</guid>
       <description>
