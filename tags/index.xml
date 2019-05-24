@@ -7,17 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019</copyright>
-    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 23 May 2019 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://yingwen.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Academic</title>
-      <link>https://yingwen.io/tags/academic/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
+      <title>MARL</title>
+      <link>https://yingwen.io/tags/marl/</link>
+      <pubDate>Thu, 23 May 2019 00:00:00 +0100</pubDate>
       
-      <guid>https://yingwen.io/tags/academic/</guid>
+      <guid>https://yingwen.io/tags/marl/</guid>
       <description></description>
     </item>
     
@@ -31,11 +31,11 @@
     </item>
     
     <item>
-      <title>MARL</title>
-      <link>https://yingwen.io/tags/marl/</link>
-      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
+      <title>Academic</title>
+      <link>https://yingwen.io/tags/academic/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
-      <guid>https://yingwen.io/tags/marl/</guid>
+      <guid>https://yingwen.io/tags/academic/</guid>
       <description></description>
     </item>
     

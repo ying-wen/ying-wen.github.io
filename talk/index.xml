@@ -18,8 +18,7 @@
       <pubDate>Fri, 25 May 2018 00:00:00 +0100</pubDate>
       
       <guid>https://yingwen.io/talk/yunqi2018/</guid>
-      <description>Click on the Slides button above to view the built-in slides feature.
-  Slides can be added in a few ways: - **Create** slides using Academic&#39;s *Slides* feature and link using `url_slides` parameter in the front matter of the talk file - **Upload** an existing slide deck to `static/` and link using `url_slides` parameter in the front matter of the talk file - **Embed** your slides (e.g. Google Slides) or presentation video on this page using [shortcodes](https://sourcethemes.</description>
+      <description>Click on the Slides button above to view the built-in slides feature.   Slides can be added in a few ways: - **Create** slides using Academic&#39;s *Slides* feature and link using `url_slides` parameter in the front matter of the talk file - **Upload** an existing slide deck to `static/` and link using `url_slides` parameter in the front matter of the talk file - **Embed** your slides (e.g. Google Slides) or presentation video on this page using [shortcodes](https://sourcethemes.</description>
     </item>
     
   </channel>

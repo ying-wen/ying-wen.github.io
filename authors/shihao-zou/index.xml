@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shihao Zou on Ying WEN</title>
+    <link>https://yingwen.io/authors/shihao-zou/</link>
+    <description>Recent content in Shihao Zou on Ying WEN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019</copyright>
+    <lastBuildDate>Thu, 23 May 2019 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://yingwen.io/authors/shihao-zou/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Regularized Opponent Model with Maximum Entropy Objective</title>
+      <link>https://yingwen.io/publication/rommeo/</link>
+      <pubDate>Thu, 23 May 2019 00:00:00 +0100</pubDate>
+      
+      <guid>https://yingwen.io/publication/rommeo/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

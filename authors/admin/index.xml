@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>admin on Ying WEN</title>
+    <title>Ying WEN</title>
     <link>https://yingwen.io/authors/admin/</link>
-    <description>Recent content in admin on Ying WEN</description>
+    <description>Recent content on Ying WEN</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019</copyright>
@@ -13,10 +13,10 @@
     
     <item>
       <title></title>
-      <link>https://yingwen.io/author/admin/</link>
+      <link>https://yingwen.io/authors/admin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yingwen.io/author/admin/</guid>
+      <guid>https://yingwen.io/authors/admin/</guid>
       <description>Ying Wen is a PhD Student in the Department of Computer Science, University College London. His research interests include deep learning and deep reinforcement learning techniques for real-world scenarios, such as computational advertising, recommender systems, multi-agent system. Ying earned his MRes(Master of Research) with Distinction Honor from University College London in 2016 and B.Eng. with First Class Honor from Queen Mary, University of London and Beijing University of Posts and Tel.</description>
     </item>
     

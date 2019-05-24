@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ying WEN on Ying WEN</title>
+    <title>Ying WEN</title>
     <link>https://yingwen.io/</link>
-    <description>Recent content in Ying WEN on Ying WEN</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on Ying WEN</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0100</lastBuildDate>
-    <atom:link href="/" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 May 2019 00:00:00 +0100</lastBuildDate>
+    
+	    <atom:link href="https://yingwen.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Regularized Opponent Model with Maximum Entropy Objective</title>
+      <link>https://yingwen.io/publication/rommeo/</link>
+      <pubDate>Thu, 23 May 2019 00:00:00 +0100</pubDate>
+      
+      <guid>https://yingwen.io/publication/rommeo/</guid>
+      <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
+</description>
+    </item>
     
     <item>
       <title>Multi-Agent Generalized Recursive Reasoning</title>
@@ -78,8 +90,7 @@
       <guid>https://yingwen.io/talk/yunqi2018/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
-    &lt;p&gt;Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.&lt;/p&gt;
-
+    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -173,6 +184,14 @@ Further talk details can easily be added to this page using *Markdown* and $\rm 
 
 
 
+
+
+
+
+
+
+  
+  
 
 
 &lt;div class=&#34;gallery&#34;&gt;
