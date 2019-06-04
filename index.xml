@@ -136,16 +136,21 @@ Further talk details can easily be added to this page using *Markdown* and $\rm 
     </item>
     
     <item>
-      <title>Academic: the website designer for Hugo</title>
+      <title>Maximum Entropy Objective in Multi-agent Reinforcement Learning</title>
       <link>https://yingwen.io/post/mapr2/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
       
       <guid>https://yingwen.io/post/mapr2/</guid>
       <description>
 
-&lt;p&gt;$$a^2 + b^2 = c^2$$&lt;/p&gt;
+&lt;p&gt;$$
+\begin{equation}
+a^2 + b^2 = c^2
+\tag{1}\label{eq:one}
+\end{equation}
+$$&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Academic&lt;/strong&gt; makes it easy to create a beautiful website for free using Markdown. Customize anything on your site with widgets, themes, and language packs.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Academic&lt;/strong&gt; Eq. \eqref{eq:one} makes it easy to create a beautiful website for free using Markdown. Customize anything on your site with widgets, themes, and language packs.&lt;/p&gt;
 
 &lt;p&gt;Follow our easy &lt;a href=&#34;https://sourcethemes.com/academic/docs/install/&#34; target=&#34;_blank&#34;&gt;step by step guide&lt;/a&gt; to learn how to build your own free website with Academic. &lt;a href=&#34;https://themes.gohugo.io/theme/academic/&#34; target=&#34;_blank&#34;&gt;Check out the personal demo&lt;/a&gt; or the &lt;a href=&#34;https://sourcethemes.com/academic/&#34; target=&#34;_blank&#34;&gt;business demo&lt;/a&gt; of what you&amp;rsquo;ll get in less than 10 minutes.&lt;/p&gt;
 
