@@ -7,10 +7,20 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019</copyright>
-    <lastBuildDate>Thu, 23 May 2019 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 06 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="https://yingwen.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MALib</title>
+      <link>https://yingwen.io/project/malib/</link>
+      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://yingwen.io/project/malib/</guid>
+      <description>&lt;p&gt;This Framework aims to provide an easy to use toolkit for Multi-agent Reinforcement Learning research based on &lt;a href=&#34;https://github.com/ying-wen/malib/blob/master/LICENSE&#34; target=&#34;_blank&#34;&gt;MIT License&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>A Regularized Opponent Model with Maximum Entropy Objective</title>

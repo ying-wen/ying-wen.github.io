@@ -3,6 +3,29 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yingwen.io/project/malib/</loc>
+    <lastmod>2019-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yingwen.io/tags/marl/</loc>
+    <lastmod>2019-06-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yingwen.io/tags/</loc>
+    <lastmod>2019-06-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yingwen.io/</loc>
+    <lastmod>2019-06-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://yingwen.io/publication_types/1/</loc>
     <lastmod>2019-05-24T17:30:49+01:00</lastmod>
     <priority>0</priority>
@@ -32,12 +55,6 @@
   </url>
   
   <url>
-    <loc>https://yingwen.io/tags/marl/</loc>
-    <lastmod>2019-05-24T17:30:49+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://yingwen.io/publication_types/</loc>
     <lastmod>2019-05-24T17:30:49+01:00</lastmod>
     <priority>0</priority>
@@ -45,18 +62,6 @@
   
   <url>
     <loc>https://yingwen.io/authors/shihao-zou/</loc>
-    <lastmod>2019-05-24T17:30:49+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yingwen.io/tags/</loc>
-    <lastmod>2019-05-24T17:30:49+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yingwen.io/</loc>
     <lastmod>2019-05-24T17:30:49+01:00</lastmod>
     <priority>0</priority>
   </url>
@@ -206,6 +211,11 @@
   <url>
     <loc>https://yingwen.io/post/</loc>
     <lastmod>2019-05-24T17:30:49+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yingwen.io/project/</loc>
+    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
