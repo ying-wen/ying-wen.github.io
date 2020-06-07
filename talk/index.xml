@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Recent &amp; Upcoming Talks | Ying Wen @ UCL</title>
-    <link>yingwen.io/talk/</link>
-      <atom:link href="yingwen.io/talk/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yingwen.io/talk/</link>
+      <atom:link href="https://yingwen.io/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Recent &amp; Upcoming Talks</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ying Wen © 2020</copyright>
     <image>
-      <url>/yingwen.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>https://yingwen.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Recent &amp; Upcoming Talks</title>
-      <link>yingwen.io/talk/</link>
+      <link>https://yingwen.io/talk/</link>
     </image>
     
     <item>
       <title>Communication in Multi-agent Reinforcement Learning </title>
-      <link>yingwen.io/talk/yunqi2018/</link>
+      <link>https://yingwen.io/talk/yunqi2018/</link>
       <pubDate>Fri, 25 May 2018 00:00:00 +0800</pubDate>
-      <guid>yingwen.io/talk/yunqi2018/</guid>
+      <guid>https://yingwen.io/talk/yunqi2018/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.

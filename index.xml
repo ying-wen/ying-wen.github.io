@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ying Wen @ UCL</title>
-    <link>yingwen.io/</link>
-      <atom:link href="yingwen.io/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yingwen.io/</link>
+      <atom:link href="https://yingwen.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Ying Wen @ UCL</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ying Wen © 2020</copyright><lastBuildDate>Mon, 01 Jun 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/yingwen.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>https://yingwen.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Ying Wen @ UCL</title>
-      <link>yingwen.io/</link>
+      <link>https://yingwen.io/</link>
     </image>
     
     <item>
       <title>Example Page 1</title>
-      <link>yingwen.io/courses/example/example1/</link>
+      <link>https://yingwen.io/courses/example/example1/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
-      <guid>yingwen.io/courses/example/example1/</guid>
+      <guid>https://yingwen.io/courses/example/example1/</guid>
       <description>&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
 &lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
@@ -35,9 +35,9 @@
     
     <item>
       <title>Example Page 2</title>
-      <link>yingwen.io/courses/example/example2/</link>
+      <link>https://yingwen.io/courses/example/example2/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
-      <guid>yingwen.io/courses/example/example2/</guid>
+      <guid>https://yingwen.io/courses/example/example2/</guid>
       <description>&lt;p&gt;Here are some more tips for getting started with Academic:&lt;/p&gt;
 &lt;h2 id=&#34;tip-3&#34;&gt;Tip 3&lt;/h2&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
@@ -56,9 +56,9 @@
     
     <item>
       <title>Multi-Agent Determinantal Q-Learning</title>
-      <link>yingwen.io/publication/qdpp/</link>
+      <link>https://yingwen.io/publication/qdpp/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>yingwen.io/publication/qdpp/</guid>
+      <guid>https://yingwen.io/publication/qdpp/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -79,18 +79,18 @@ Supplementary notes can be added here, including [code and math](https://sourcet
     
     <item>
       <title>Modelling Bounded Rationality in Multi-Agent Interactions by Generalized Recursive Reasoning</title>
-      <link>yingwen.io/publication/gr2/</link>
+      <link>https://yingwen.io/publication/gr2/</link>
       <pubDate>Fri, 29 May 2020 00:00:00 +0800</pubDate>
-      <guid>yingwen.io/publication/gr2/</guid>
+      <guid>https://yingwen.io/publication/gr2/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
 </description>
     </item>
     
     <item>
       <title>MALib</title>
-      <link>yingwen.io/project/malib/</link>
+      <link>https://yingwen.io/project/malib/</link>
       <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>yingwen.io/project/malib/</guid>
+      <guid>https://yingwen.io/project/malib/</guid>
       <description>&lt;p&gt;This Framework aims at providing an easy to use toolkit for Multi-agent Reinforcement Learning research based on 
 &lt;a href=&#34;https://github.com/ying-wen/malib/blob/master/LICENSE&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MIT License&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -98,9 +98,9 @@ Supplementary notes can be added here, including [code and math](https://sourcet
     
     <item>
       <title>Writing technical content in Academic</title>
-      <link>yingwen.io/post/writing-technical-content/</link>
+      <link>https://yingwen.io/post/writing-technical-content/</link>
       <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
-      <guid>yingwen.io/post/writing-technical-content/</guid>
+      <guid>https://yingwen.io/post/writing-technical-content/</guid>
       <description>&lt;p&gt;Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;On this page, you&amp;rsquo;ll find some examples of the types of technical content that can be rendered with Academic.&lt;/p&gt;
@@ -332,18 +332,18 @@ A Markdown aside is useful for displaying notices, hints, or definitions to your
     
     <item>
       <title>A Regularized Opponent Model with Maximum Entropy Objective</title>
-      <link>yingwen.io/publication/rommeo/</link>
+      <link>https://yingwen.io/publication/rommeo/</link>
       <pubDate>Thu, 23 May 2019 00:00:00 +0800</pubDate>
-      <guid>yingwen.io/publication/rommeo/</guid>
+      <guid>https://yingwen.io/publication/rommeo/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
 </description>
     </item>
     
     <item>
       <title>Display Jupyter Notebooks with Academic</title>
-      <link>yingwen.io/post/jupyter/</link>
+      <link>https://yingwen.io/post/jupyter/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>yingwen.io/post/jupyter/</guid>
+      <guid>https://yingwen.io/post/jupyter/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from IPython.core.display import Image
 Image(&#39;https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png&#39;)
 &lt;/code&gt;&lt;/pre&gt;
@@ -390,9 +390,9 @@ date: 2019-09-01
     
     <item>
       <title>Slides</title>
-      <link>yingwen.io/slides/example/</link>
+      <link>https://yingwen.io/slides/example/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>yingwen.io/slides/example/</guid>
+      <guid>https://yingwen.io/slides/example/</guid>
       <description>&lt;h1 id=&#34;create-slides-in-markdown-with-academic&#34;&gt;Create slides in Markdown with Academic&lt;/h1&gt;
 &lt;p&gt;
 &lt;a href=&#34;https://sourcethemes.com/academic/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Academic&lt;/a&gt; | 
@@ -524,18 +524,18 @@ Three
     
     <item>
       <title>Probabilistic Recursive Reasoning for Multi-Agent Reinforcement Learning</title>
-      <link>yingwen.io/publication/pr2k/</link>
+      <link>https://yingwen.io/publication/pr2k/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0800</pubDate>
-      <guid>yingwen.io/publication/pr2k/</guid>
+      <guid>https://yingwen.io/publication/pr2k/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
 </description>
     </item>
     
     <item>
       <title>A Study of AI Population Dynamics with Million-agent Reinforcement Learning</title>
-      <link>yingwen.io/publication/1m-agent/</link>
+      <link>https://yingwen.io/publication/1m-agent/</link>
       <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
-      <guid>yingwen.io/publication/1m-agent/</guid>
+      <guid>https://yingwen.io/publication/1m-agent/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -556,9 +556,9 @@ Supplementary notes can be added here, including [code and math](https://sourcet
     
     <item>
       <title>Learning to Design Games: Strategic Environments in Deep Reinforcement Learning</title>
-      <link>yingwen.io/publication/env-rl/</link>
+      <link>https://yingwen.io/publication/env-rl/</link>
       <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
-      <guid>yingwen.io/publication/env-rl/</guid>
+      <guid>https://yingwen.io/publication/env-rl/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -579,9 +579,9 @@ Supplementary notes can be added here, including [code and math](https://sourcet
     
     <item>
       <title>Communication in Multi-agent Reinforcement Learning </title>
-      <link>yingwen.io/talk/yunqi2018/</link>
+      <link>https://yingwen.io/talk/yunqi2018/</link>
       <pubDate>Fri, 25 May 2018 00:00:00 +0800</pubDate>
-      <guid>yingwen.io/talk/yunqi2018/</guid>
+      <guid>https://yingwen.io/talk/yunqi2018/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
@@ -601,36 +601,36 @@ Further talk details can easily be added to this page using *Markdown* and $\rm 
     
     <item>
       <title>Multiagent Bidirectionally-Coordinated Nets: Emergence of Human-level Coordination in Learning to Play StarCraft Combat Games</title>
-      <link>yingwen.io/publication/game-ai/</link>
+      <link>https://yingwen.io/publication/game-ai/</link>
       <pubDate>Wed, 29 Mar 2017 00:00:00 +0800</pubDate>
-      <guid>yingwen.io/publication/game-ai/</guid>
+      <guid>https://yingwen.io/publication/game-ai/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
 </description>
     </item>
     
     <item>
       <title>Product-based Neural Networks for User Response Prediction</title>
-      <link>yingwen.io/publication/pnn/</link>
+      <link>https://yingwen.io/publication/pnn/</link>
       <pubDate>Mon, 12 Dec 2016 00:00:00 +0800</pubDate>
-      <guid>yingwen.io/publication/pnn/</guid>
+      <guid>https://yingwen.io/publication/pnn/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
 </description>
     </item>
     
     <item>
       <title>Learning Text Representation Using Recurrent Convolutional Neural Network with Highway Layers</title>
-      <link>yingwen.io/publication/rcnn-hw/</link>
+      <link>https://yingwen.io/publication/rcnn-hw/</link>
       <pubDate>Wed, 22 Jun 2016 00:00:00 +0800</pubDate>
-      <guid>yingwen.io/publication/rcnn-hw/</guid>
+      <guid>https://yingwen.io/publication/rcnn-hw/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
 </description>
     </item>
     
     <item>
       <title>Academic: the website builder for Hugo</title>
-      <link>yingwen.io/post/getting-started/</link>
+      <link>https://yingwen.io/post/getting-started/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>yingwen.io/post/getting-started/</guid>
+      <guid>https://yingwen.io/post/getting-started/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Create a free website with Academic using Markdown, Jupyter, or RStudio. Choose a beautiful color theme and build anything with the Page Builder - over 40 &lt;em&gt;widgets&lt;/em&gt;, &lt;em&gt;themes&lt;/em&gt;, and &lt;em&gt;language packs&lt;/em&gt; included!&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;
 &lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Check out the latest &lt;strong&gt;demo&lt;/strong&gt;&lt;/a&gt; of what you&amp;rsquo;ll get in less than 10 minutes, or 

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Computational Advertising | Ying Wen @ UCL</title>
-    <link>yingwen.io/tag/computational-advertising/</link>
-      <atom:link href="yingwen.io/tag/computational-advertising/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yingwen.io/tag/computational-advertising/</link>
+      <atom:link href="https://yingwen.io/tag/computational-advertising/index.xml" rel="self" type="application/rss+xml" />
     <description>Computational Advertising</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ying Wen © 2020</copyright><lastBuildDate>Mon, 12 Dec 2016 00:00:00 +0800</lastBuildDate>
     <image>
-      <url>/yingwen.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>https://yingwen.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Computational Advertising</title>
-      <link>yingwen.io/tag/computational-advertising/</link>
+      <link>https://yingwen.io/tag/computational-advertising/</link>
     </image>
     
     <item>
       <title>Product-based Neural Networks for User Response Prediction</title>
-      <link>yingwen.io/publication/pnn/</link>
+      <link>https://yingwen.io/publication/pnn/</link>
       <pubDate>Mon, 12 Dec 2016 00:00:00 +0800</pubDate>
-      <guid>yingwen.io/publication/pnn/</guid>
+      <guid>https://yingwen.io/publication/pnn/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
 </description>
     </item>
