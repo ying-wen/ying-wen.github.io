@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Liheng Chen | Ying Wen @ UCL</title>
-    <link>https://yingwen.io/author/liheng-chen/</link>
-      <atom:link href="https://yingwen.io/author/liheng-chen/index.xml" rel="self" type="application/rss+xml" />
+    <link>yingwen.io/author/liheng-chen/</link>
+      <atom:link href="yingwen.io/author/liheng-chen/index.xml" rel="self" type="application/rss+xml" />
     <description>Liheng Chen</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ying Wen © 2020</copyright><lastBuildDate>Mon, 01 Jun 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://yingwen.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/yingwen.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Liheng Chen</title>
-      <link>https://yingwen.io/author/liheng-chen/</link>
+      <link>yingwen.io/author/liheng-chen/</link>
     </image>
     
     <item>
       <title>Multi-Agent Determinantal Q-Learning</title>
-      <link>https://yingwen.io/publication/qdpp/</link>
+      <link>yingwen.io/publication/qdpp/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://yingwen.io/publication/qdpp/</guid>
+      <guid>yingwen.io/publication/qdpp/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.

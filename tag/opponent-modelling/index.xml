@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Opponent Modelling | Ying Wen @ UCL</title>
-    <link>https://yingwen.io/tag/opponent-modelling/</link>
-      <atom:link href="https://yingwen.io/tag/opponent-modelling/index.xml" rel="self" type="application/rss+xml" />
+    <link>yingwen.io/tag/opponent-modelling/</link>
+      <atom:link href="yingwen.io/tag/opponent-modelling/index.xml" rel="self" type="application/rss+xml" />
     <description>Opponent Modelling</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ying Wen © 2020</copyright><lastBuildDate>Fri, 29 May 2020 00:00:00 +0800</lastBuildDate>
     <image>
-      <url>https://yingwen.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/yingwen.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Opponent Modelling</title>
-      <link>https://yingwen.io/tag/opponent-modelling/</link>
+      <link>yingwen.io/tag/opponent-modelling/</link>
     </image>
     
     <item>
       <title>Modelling Bounded Rationality in Multi-Agent Interactions by Generalized Recursive Reasoning</title>
-      <link>https://yingwen.io/publication/gr2/</link>
+      <link>yingwen.io/publication/gr2/</link>
       <pubDate>Fri, 29 May 2020 00:00:00 +0800</pubDate>
-      <guid>https://yingwen.io/publication/gr2/</guid>
+      <guid>yingwen.io/publication/gr2/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
 </description>
     </item>
     
     <item>
       <title>A Regularized Opponent Model with Maximum Entropy Objective</title>
-      <link>https://yingwen.io/publication/rommeo/</link>
+      <link>yingwen.io/publication/rommeo/</link>
       <pubDate>Thu, 23 May 2019 00:00:00 +0800</pubDate>
-      <guid>https://yingwen.io/publication/rommeo/</guid>
+      <guid>yingwen.io/publication/rommeo/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
 </description>
     </item>
     
     <item>
       <title>Probabilistic Recursive Reasoning for Multi-Agent Reinforcement Learning</title>
-      <link>https://yingwen.io/publication/pr2k/</link>
+      <link>yingwen.io/publication/pr2k/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0800</pubDate>
-      <guid>https://yingwen.io/publication/pr2k/</guid>
+      <guid>yingwen.io/publication/pr2k/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
 </description>
     </item>

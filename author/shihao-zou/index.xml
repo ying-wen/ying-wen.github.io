@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shihao Zou | Ying Wen @ UCL</title>
-    <link>https://yingwen.io/author/shihao-zou/</link>
-      <atom:link href="https://yingwen.io/author/shihao-zou/index.xml" rel="self" type="application/rss+xml" />
+    <link>yingwen.io/author/shihao-zou/</link>
+      <atom:link href="yingwen.io/author/shihao-zou/index.xml" rel="self" type="application/rss+xml" />
     <description>Shihao Zou</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ying Wen © 2020</copyright><lastBuildDate>Thu, 23 May 2019 00:00:00 +0800</lastBuildDate>
     <image>
-      <url>https://yingwen.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/yingwen.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Shihao Zou</title>
-      <link>https://yingwen.io/author/shihao-zou/</link>
+      <link>yingwen.io/author/shihao-zou/</link>
     </image>
     
     <item>
       <title>A Regularized Opponent Model with Maximum Entropy Objective</title>
-      <link>https://yingwen.io/publication/rommeo/</link>
+      <link>yingwen.io/publication/rommeo/</link>
       <pubDate>Thu, 23 May 2019 00:00:00 +0800</pubDate>
-      <guid>https://yingwen.io/publication/rommeo/</guid>
+      <guid>yingwen.io/publication/rommeo/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
 </description>
     </item>

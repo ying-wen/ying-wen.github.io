@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IR | Ying Wen @ UCL</title>
-    <link>https://yingwen.io/tag/ir/</link>
-      <atom:link href="https://yingwen.io/tag/ir/index.xml" rel="self" type="application/rss+xml" />
+    <link>yingwen.io/tag/ir/</link>
+      <atom:link href="yingwen.io/tag/ir/index.xml" rel="self" type="application/rss+xml" />
     <description>IR</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ying Wen © 2020</copyright><lastBuildDate>Wed, 22 Jun 2016 00:00:00 +0800</lastBuildDate>
     <image>
-      <url>https://yingwen.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/yingwen.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>IR</title>
-      <link>https://yingwen.io/tag/ir/</link>
+      <link>yingwen.io/tag/ir/</link>
     </image>
     
     <item>
       <title>Learning Text Representation Using Recurrent Convolutional Neural Network with Highway Layers</title>
-      <link>https://yingwen.io/publication/rcnn-hw/</link>
+      <link>yingwen.io/publication/rcnn-hw/</link>
       <pubDate>Wed, 22 Jun 2016 00:00:00 +0800</pubDate>
-      <guid>https://yingwen.io/publication/rcnn-hw/</guid>
+      <guid>yingwen.io/publication/rcnn-hw/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
 </description>
     </item>
