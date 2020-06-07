@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MAL | Ying Wen @ UCL</title>
+    <link>https://yingwen.io/tag/mal/</link>
+      <atom:link href="https://yingwen.io/tag/mal/index.xml" rel="self" type="application/rss+xml" />
+    <description>MAL</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ying Wen © 2020</copyright><lastBuildDate>Mon, 27 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://yingwen.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>MAL</title>
+      <link>https://yingwen.io/tag/mal/</link>
+    </image>
+    
+    <item>
+      <title>MALib</title>
+      <link>https://yingwen.io/project/malib/</link>
+      <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://yingwen.io/project/malib/</guid>
+      <description>&lt;p&gt;This Framework aims at providing an easy to use toolkit for Multi-agent Reinforcement Learning research based on 
+&lt;a href=&#34;https://github.com/ying-wen/malib/blob/master/LICENSE&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MIT License&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

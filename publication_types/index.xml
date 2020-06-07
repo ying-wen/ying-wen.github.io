@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publication_types on Ying WEN</title>
+    <title>Publication_types | Ying Wen @ UCL</title>
     <link>https://yingwen.io/publication_types/</link>
-    <description>Recent content in Publication_types on Ying WEN</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2019</copyright>
-    <lastBuildDate>Thu, 23 May 2019 00:00:00 +0100</lastBuildDate>
-    
-	<atom:link href="https://yingwen.io/publication_types/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>1</title>
-      <link>https://yingwen.io/publication_types/1/</link>
-      <pubDate>Thu, 23 May 2019 00:00:00 +0100</pubDate>
-      
-      <guid>https://yingwen.io/publication_types/1/</guid>
-      <description></description>
-    </item>
+      <atom:link href="https://yingwen.io/publication_types/index.xml" rel="self" type="application/rss+xml" />
+    <description>Publication_types</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ying Wen © 2020</copyright><lastBuildDate>Mon, 01 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://yingwen.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Publication_types</title>
+      <link>https://yingwen.io/publication_types/</link>
+    </image>
     
   </channel>
 </rss>

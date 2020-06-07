@@ -1,34 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Ying WEN</title>
+    <title>Tags | Ying Wen @ UCL</title>
     <link>https://yingwen.io/tags/</link>
-    <description>Recent content in Tags on Ying WEN</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2019</copyright>
-    <lastBuildDate>Thu, 06 Jun 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://yingwen.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>MARL</title>
-      <link>https://yingwen.io/tags/marl/</link>
-      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://yingwen.io/tags/marl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>IR</title>
-      <link>https://yingwen.io/tags/ir/</link>
-      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://yingwen.io/tags/ir/</guid>
-      <description></description>
-    </item>
+      <atom:link href="https://yingwen.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tags</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ying Wen © 2020</copyright><lastBuildDate>Mon, 01 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://yingwen.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Tags</title>
+      <link>https://yingwen.io/tags/</link>
+    </image>
     
   </channel>
 </rss>
