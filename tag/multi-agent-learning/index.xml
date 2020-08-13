@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Multi-Agent Learning | Ying Wen @ UCL</title>
+    <title>Multi-Agent Learning | Ying Wen</title>
     <link>https://yingwen.io/tag/multi-agent-learning/</link>
       <atom:link href="https://yingwen.io/tag/multi-agent-learning/index.xml" rel="self" type="application/rss+xml" />
     <description>Multi-Agent Learning</description>
