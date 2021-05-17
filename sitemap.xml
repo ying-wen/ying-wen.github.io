@@ -11,6 +11,24 @@
     <loc>https://yingwen.io/courses/example/example2/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url><url>
+    <loc>https://yingwen.io/tag/mal/</loc>
+    <lastmod>2021-05-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yingwen.io/project/malib/</loc>
+    <lastmod>2021-05-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yingwen.io/project/</loc>
+    <lastmod>2021-05-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yingwen.io/tags/</loc>
+    <lastmod>2021-05-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yingwen.io/</loc>
+    <lastmod>2021-05-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yingwen.io/project/smarts/</loc>
+    <lastmod>2020-11-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://yingwen.io/publication-type/1/</loc>
     <lastmod>2020-06-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -41,16 +59,10 @@
     <loc>https://yingwen.io/publication_types/</loc>
     <lastmod>2020-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yingwen.io/tags/</loc>
-    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://yingwen.io/author/weinan-zhang/</loc>
     <lastmod>2020-06-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yingwen.io/author/yaodong-yang/</loc>
-    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yingwen.io/</loc>
     <lastmod>2020-06-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yingwen.io/publication/gr2/</loc>
@@ -64,15 +76,6 @@
   </url><url>
     <loc>https://yingwen.io/author/ying-wen/</loc>
     <lastmod>2020-05-29T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://yingwen.io/tag/mal/</loc>
-    <lastmod>2020-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yingwen.io/project/malib/</loc>
-    <lastmod>2020-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yingwen.io/project/</loc>
-    <lastmod>2020-04-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yingwen.io/post/writing-technical-content/</loc>
     <lastmod>2019-07-12T00:00:00+00:00</lastmod>

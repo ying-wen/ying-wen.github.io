@@ -5,7 +5,7 @@
     <link>https://yingwen.io/</link>
       <atom:link href="https://yingwen.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Ying Wen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ying Wen © 2021</copyright><lastBuildDate>Mon, 01 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ying Wen © 2021</copyright><lastBuildDate>Sat, 08 May 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://yingwen.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Ying Wen</title>
@@ -55,6 +55,26 @@
     </item>
     
     <item>
+      <title>MALib</title>
+      <link>https://yingwen.io/project/malib/</link>
+      <pubDate>Sat, 08 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://yingwen.io/project/malib/</guid>
+      <description>&lt;p&gt;This Framework aims at providing an easy to use toolkit for Multi-agent Reinforcement Learning research based on 
+&lt;a href=&#34;https://github.com/sjtu-marl/malib/blob/master/LICENSE&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MIT License&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SMARTS</title>
+      <link>https://yingwen.io/project/smarts/</link>
+      <pubDate>Mon, 16 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://yingwen.io/project/smarts/</guid>
+      <description>&lt;p&gt;SMARTS (Scalable Multi-Agent RL Training School) is a simulation platform for reinforcement learning and multi-agent research on autonomous driving. 
+&lt;a href=&#34;https://github.com/huawei-noah/SMARTS/blob/master/NOTICE&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;License&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Multi-Agent Determinantal Q-Learning</title>
       <link>https://yingwen.io/publication/qdpp/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
@@ -83,16 +103,6 @@ Supplementary notes can be added here, including [code and math](https://sourcet
       <pubDate>Fri, 29 May 2020 00:00:00 +0800</pubDate>
       <guid>https://yingwen.io/publication/gr2/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>MALib</title>
-      <link>https://yingwen.io/project/malib/</link>
-      <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://yingwen.io/project/malib/</guid>
-      <description>&lt;p&gt;This Framework aims at providing an easy to use toolkit for Multi-agent Reinforcement Learning research based on 
-&lt;a href=&#34;https://github.com/ying-wen/malib/blob/master/LICENSE&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MIT License&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
