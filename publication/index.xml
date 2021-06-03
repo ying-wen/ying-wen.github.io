@@ -13,6 +13,75 @@
     </image>
     
     <item>
+      <title>MALib: A Parallel Framework for Population-based Multi-agent Reinforcement Learning</title>
+      <link>https://yingwen.io/publication/malib/</link>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://yingwen.io/publication/malib/</guid>
+      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+Supplementary notes can be added here, including [code and math](https://sourcethemes.com/academic/docs/writing-markdown-latex/). --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Diverse Auto-Curriculum is Critical for Successful Real-World Multiagent Learning Systems</title>
+      <link>https://yingwen.io/publication/diverse_cl/</link>
+      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://yingwen.io/publication/diverse_cl/</guid>
+      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+Supplementary notes can be added here, including [code and math](https://sourcethemes.com/academic/docs/writing-markdown-latex/). --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Learning in Nonzero-Sum Stochastic Games with Potentials</title>
+      <link>https://yingwen.io/publication/spot-q/</link>
+      <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://yingwen.io/publication/spot-q/</guid>
+      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+Supplementary notes can be added here, including [code and math](https://sourcethemes.com/academic/docs/writing-markdown-latex/). --&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Multi-Agent Determinantal Q-Learning</title>
       <link>https://yingwen.io/publication/qdpp/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
@@ -45,19 +114,42 @@ Supplementary notes can be added here, including [code and math](https://sourcet
     </item>
     
     <item>
-      <title>A Regularized Opponent Model with Maximum Entropy Objective</title>
-      <link>https://yingwen.io/publication/rommeo/</link>
-      <pubDate>Thu, 23 May 2019 00:00:00 +0800</pubDate>
-      <guid>https://yingwen.io/publication/rommeo/</guid>
-      <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
+      <title>SMARTS: Scalable Multi-Agent Reinforcement Learning Training School for Autonomous Driving</title>
+      <link>https://yingwen.io/publication/smarts/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://yingwen.io/publication/smarts/</guid>
+      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+Supplementary notes can be added here, including [code and math](https://sourcethemes.com/academic/docs/writing-markdown-latex/). --&gt;
 </description>
     </item>
     
     <item>
       <title>Probabilistic Recursive Reasoning for Multi-Agent Reinforcement Learning</title>
       <link>https://yingwen.io/publication/pr2k/</link>
-      <pubDate>Tue, 01 Jan 2019 00:00:00 +0800</pubDate>
+      <pubDate>Sun, 01 Dec 2019 00:00:00 +0800</pubDate>
       <guid>https://yingwen.io/publication/pr2k/</guid>
+      <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Regularized Opponent Model with Maximum Entropy Objective</title>
+      <link>https://yingwen.io/publication/rommeo/</link>
+      <pubDate>Thu, 23 May 2019 00:00:00 +0800</pubDate>
+      <guid>https://yingwen.io/publication/rommeo/</guid>
       <description>&lt;!-- More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code. --&gt;
 </description>
     </item>
