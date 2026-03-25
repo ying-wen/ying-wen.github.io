@@ -1,0 +1,13 @@
+<!DOCTYPE html><html> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Ying Wen — Redirecting...</title><script>
+    (function() {
+      var saved = localStorage.getItem('preferred-lang');
+      if (saved === 'zh' || saved === 'en') {
+        window.location.replace('/' + saved + '/');
+        return;
+      }
+      var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      var target = lang.startsWith('zh') ? 'zh' : 'en';
+      localStorage.setItem('preferred-lang', target);
+      window.location.replace('/' + target + '/');
+    })();
+  </script><noscript><meta http-equiv="refresh" content="0;url=/en/"></noscript><link rel="stylesheet" href="/_astro/index.PatDb3Pc.css"></head> <body> <p>Redirecting... <a href="/en/">English</a> | <a href="/zh/">中文</a></p> </body></html>
