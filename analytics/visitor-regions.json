@@ -1,0 +1,2340 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-30T03:27:58.005Z",
+  "source": "cloudflare-graphql-httpRequestsAdaptiveGroups",
+  "sourceLabel": "Cloudflare GraphQL Analytics",
+  "mode": "historical-cumulative",
+  "snapshotWindowDays": 1,
+  "windowDays": 4,
+  "daysTracked": 4,
+  "firstSnapshotDate": "2026-05-26",
+  "lastSnapshotDate": "2026-05-29",
+  "hostname": "yingwen.io",
+  "totalVisits": 1232,
+  "totalRequests": 9216,
+  "countries": [
+    {
+      "code": "US",
+      "name_en": "United States",
+      "name_zh": "美国",
+      "region": "north-america",
+      "visits": 422,
+      "requests": 2986
+    },
+    {
+      "code": "CN",
+      "name_en": "China",
+      "name_zh": "中国",
+      "region": "east-asia",
+      "visits": 131,
+      "requests": 1013
+    },
+    {
+      "code": "SG",
+      "name_en": "Singapore",
+      "name_zh": "新加坡",
+      "region": "africa-middle-east",
+      "visits": 83,
+      "requests": 616
+    },
+    {
+      "code": "NL",
+      "name_en": "Netherlands",
+      "name_zh": "荷兰",
+      "region": "europe",
+      "visits": 53,
+      "requests": 902
+    },
+    {
+      "code": "JP",
+      "name_en": "Japan",
+      "name_zh": "日本",
+      "region": "east-asia",
+      "visits": 50,
+      "requests": 520
+    },
+    {
+      "code": "FR",
+      "name_en": "France",
+      "name_zh": "法国",
+      "region": "europe",
+      "visits": 48,
+      "requests": 144
+    },
+    {
+      "code": "VN",
+      "name_en": "Vietnam",
+      "name_zh": "越南",
+      "region": "africa-middle-east",
+      "visits": 45,
+      "requests": 178
+    },
+    {
+      "code": "NZ",
+      "name_en": "New Zealand",
+      "name_zh": "新西兰",
+      "region": "oceania",
+      "visits": 43,
+      "requests": 47
+    },
+    {
+      "code": "HK",
+      "name_en": "Hong Kong SAR China",
+      "name_zh": "中国香港特别行政区",
+      "region": "east-asia",
+      "visits": 41,
+      "requests": 629
+    },
+    {
+      "code": "KR",
+      "name_en": "South Korea",
+      "name_zh": "韩国",
+      "region": "east-asia",
+      "visits": 41,
+      "requests": 92
+    },
+    {
+      "code": "AU",
+      "name_en": "Australia",
+      "name_zh": "澳大利亚",
+      "region": "oceania",
+      "visits": 28,
+      "requests": 28
+    },
+    {
+      "code": "DE",
+      "name_en": "Germany",
+      "name_zh": "德国",
+      "region": "europe",
+      "visits": 24,
+      "requests": 71
+    },
+    {
+      "code": "CH",
+      "name_en": "Switzerland",
+      "name_zh": "瑞士",
+      "region": "europe",
+      "visits": 23,
+      "requests": 39
+    },
+    {
+      "code": "BR",
+      "name_en": "Brazil",
+      "name_zh": "巴西",
+      "region": "latin-america",
+      "visits": 20,
+      "requests": 535
+    },
+    {
+      "code": "T1",
+      "name_en": "T1",
+      "name_zh": "T1",
+      "region": "africa-middle-east",
+      "visits": 20,
+      "requests": 31
+    },
+    {
+      "code": "IN",
+      "name_en": "India",
+      "name_zh": "印度",
+      "region": "south-asia",
+      "visits": 18,
+      "requests": 51
+    },
+    {
+      "code": "FI",
+      "name_en": "Finland",
+      "name_zh": "芬兰",
+      "region": "europe",
+      "visits": 17,
+      "requests": 22
+    },
+    {
+      "code": "MY",
+      "name_en": "Malaysia",
+      "name_zh": "马来西亚",
+      "region": "africa-middle-east",
+      "visits": 14,
+      "requests": 15
+    },
+    {
+      "code": "PL",
+      "name_en": "Poland",
+      "name_zh": "波兰",
+      "region": "europe",
+      "visits": 12,
+      "requests": 38
+    },
+    {
+      "code": "KH",
+      "name_en": "Cambodia",
+      "name_zh": "柬埔寨",
+      "region": "africa-middle-east",
+      "visits": 11,
+      "requests": 11
+    },
+    {
+      "code": "RU",
+      "name_en": "Russia",
+      "name_zh": "俄罗斯",
+      "region": "europe",
+      "visits": 9,
+      "requests": 21
+    },
+    {
+      "code": "MX",
+      "name_en": "Mexico",
+      "name_zh": "墨西哥",
+      "region": "north-america",
+      "visits": 7,
+      "requests": 12
+    },
+    {
+      "code": "GB",
+      "name_en": "United Kingdom",
+      "name_zh": "英国",
+      "region": "europe",
+      "visits": 6,
+      "requests": 42
+    },
+    {
+      "code": "ID",
+      "name_en": "Indonesia",
+      "name_zh": "印度尼西亚",
+      "region": "africa-middle-east",
+      "visits": 5,
+      "requests": 117
+    },
+    {
+      "code": "BD",
+      "name_en": "Bangladesh",
+      "name_zh": "孟加拉国",
+      "region": "south-asia",
+      "visits": 5,
+      "requests": 20
+    },
+    {
+      "code": "CA",
+      "name_en": "Canada",
+      "name_zh": "加拿大",
+      "region": "north-america",
+      "visits": 4,
+      "requests": 680
+    },
+    {
+      "code": "BG",
+      "name_en": "Bulgaria",
+      "name_zh": "保加利亚",
+      "region": "europe",
+      "visits": 4,
+      "requests": 83
+    },
+    {
+      "code": "AR",
+      "name_en": "Argentina",
+      "name_zh": "阿根廷",
+      "region": "latin-america",
+      "visits": 4,
+      "requests": 5
+    },
+    {
+      "code": "ES",
+      "name_en": "Spain",
+      "name_zh": "西班牙",
+      "region": "europe",
+      "visits": 4,
+      "requests": 5
+    },
+    {
+      "code": "MO",
+      "name_en": "Macao SAR China",
+      "name_zh": "中国澳门特别行政区",
+      "region": "east-asia",
+      "visits": 3,
+      "requests": 29
+    },
+    {
+      "code": "PK",
+      "name_en": "Pakistan",
+      "name_zh": "巴基斯坦",
+      "region": "south-asia",
+      "visits": 3,
+      "requests": 8
+    },
+    {
+      "code": "IT",
+      "name_en": "Italy",
+      "name_zh": "意大利",
+      "region": "europe",
+      "visits": 3,
+      "requests": 4
+    },
+    {
+      "code": "UA",
+      "name_en": "Ukraine",
+      "name_zh": "乌克兰",
+      "region": "europe",
+      "visits": 3,
+      "requests": 3
+    },
+    {
+      "code": "TW",
+      "name_en": "Taiwan",
+      "name_zh": "台湾",
+      "region": "east-asia",
+      "visits": 2,
+      "requests": 85
+    },
+    {
+      "code": "BE",
+      "name_en": "Belgium",
+      "name_zh": "比利时",
+      "region": "europe",
+      "visits": 2,
+      "requests": 16
+    },
+    {
+      "code": "IL",
+      "name_en": "Israel",
+      "name_zh": "以色列",
+      "region": "africa-middle-east",
+      "visits": 2,
+      "requests": 7
+    },
+    {
+      "code": "TR",
+      "name_en": "Türkiye",
+      "name_zh": "土耳其",
+      "region": "europe",
+      "visits": 2,
+      "requests": 5
+    },
+    {
+      "code": "EC",
+      "name_en": "Ecuador",
+      "name_zh": "厄瓜多尔",
+      "region": "latin-america",
+      "visits": 2,
+      "requests": 2
+    },
+    {
+      "code": "ET",
+      "name_en": "Ethiopia",
+      "name_zh": "埃塞俄比亚",
+      "region": "africa-middle-east",
+      "visits": 2,
+      "requests": 2
+    },
+    {
+      "code": "ZA",
+      "name_en": "South Africa",
+      "name_zh": "南非",
+      "region": "africa-middle-east",
+      "visits": 2,
+      "requests": 2
+    },
+    {
+      "code": "HU",
+      "name_en": "Hungary",
+      "name_zh": "匈牙利",
+      "region": "europe",
+      "visits": 1,
+      "requests": 8
+    },
+    {
+      "code": "IQ",
+      "name_en": "Iraq",
+      "name_zh": "伊拉克",
+      "region": "africa-middle-east",
+      "visits": 1,
+      "requests": 6
+    },
+    {
+      "code": "SE",
+      "name_en": "Sweden",
+      "name_zh": "瑞典",
+      "region": "europe",
+      "visits": 1,
+      "requests": 4
+    },
+    {
+      "code": "CZ",
+      "name_en": "Czechia",
+      "name_zh": "捷克",
+      "region": "europe",
+      "visits": 1,
+      "requests": 3
+    },
+    {
+      "code": "KE",
+      "name_en": "Kenya",
+      "name_zh": "肯尼亚",
+      "region": "africa-middle-east",
+      "visits": 1,
+      "requests": 2
+    },
+    {
+      "code": "NP",
+      "name_en": "Nepal",
+      "name_zh": "尼泊尔",
+      "region": "south-asia",
+      "visits": 1,
+      "requests": 2
+    },
+    {
+      "code": "SA",
+      "name_en": "Saudi Arabia",
+      "name_zh": "沙特阿拉伯",
+      "region": "africa-middle-east",
+      "visits": 1,
+      "requests": 2
+    },
+    {
+      "code": "TG",
+      "name_en": "Togo",
+      "name_zh": "多哥",
+      "region": "africa-middle-east",
+      "visits": 1,
+      "requests": 2
+    },
+    {
+      "code": "AZ",
+      "name_en": "Azerbaijan",
+      "name_zh": "阿塞拜疆",
+      "region": "africa-middle-east",
+      "visits": 1,
+      "requests": 1
+    },
+    {
+      "code": "BH",
+      "name_en": "Bahrain",
+      "name_zh": "巴林",
+      "region": "africa-middle-east",
+      "visits": 1,
+      "requests": 1
+    },
+    {
+      "code": "GE",
+      "name_en": "Georgia",
+      "name_zh": "格鲁吉亚",
+      "region": "africa-middle-east",
+      "visits": 1,
+      "requests": 1
+    },
+    {
+      "code": "KZ",
+      "name_en": "Kazakhstan",
+      "name_zh": "哈萨克斯坦",
+      "region": "africa-middle-east",
+      "visits": 1,
+      "requests": 1
+    },
+    {
+      "code": "PH",
+      "name_en": "Philippines",
+      "name_zh": "菲律宾",
+      "region": "africa-middle-east",
+      "visits": 1,
+      "requests": 1
+    },
+    {
+      "code": "PT",
+      "name_en": "Portugal",
+      "name_zh": "葡萄牙",
+      "region": "europe",
+      "visits": 1,
+      "requests": 1
+    },
+    {
+      "code": "LT",
+      "name_en": "Lithuania",
+      "name_zh": "立陶宛",
+      "region": "europe",
+      "visits": 0,
+      "requests": 21
+    },
+    {
+      "code": "JO",
+      "name_en": "Jordan",
+      "name_zh": "约旦",
+      "region": "africa-middle-east",
+      "visits": 0,
+      "requests": 4
+    },
+    {
+      "code": "LU",
+      "name_en": "Luxembourg",
+      "name_zh": "卢森堡",
+      "region": "europe",
+      "visits": 0,
+      "requests": 4
+    },
+    {
+      "code": "CO",
+      "name_en": "Colombia",
+      "name_zh": "哥伦比亚",
+      "region": "latin-america",
+      "visits": 0,
+      "requests": 3
+    },
+    {
+      "code": "IE",
+      "name_en": "Ireland",
+      "name_zh": "爱尔兰",
+      "region": "europe",
+      "visits": 0,
+      "requests": 3
+    },
+    {
+      "code": "SY",
+      "name_en": "Syria",
+      "name_zh": "叙利亚",
+      "region": "africa-middle-east",
+      "visits": 0,
+      "requests": 3
+    },
+    {
+      "code": "TH",
+      "name_en": "Thailand",
+      "name_zh": "泰国",
+      "region": "africa-middle-east",
+      "visits": 0,
+      "requests": 3
+    },
+    {
+      "code": "UZ",
+      "name_en": "Uzbekistan",
+      "name_zh": "乌兹别克斯坦",
+      "region": "africa-middle-east",
+      "visits": 0,
+      "requests": 3
+    },
+    {
+      "code": "AE",
+      "name_en": "United Arab Emirates",
+      "name_zh": "阿拉伯联合酋长国",
+      "region": "africa-middle-east",
+      "visits": 0,
+      "requests": 2
+    },
+    {
+      "code": "BO",
+      "name_en": "Bolivia",
+      "name_zh": "玻利维亚",
+      "region": "latin-america",
+      "visits": 0,
+      "requests": 2
+    },
+    {
+      "code": "CL",
+      "name_en": "Chile",
+      "name_zh": "智利",
+      "region": "latin-america",
+      "visits": 0,
+      "requests": 2
+    },
+    {
+      "code": "PS",
+      "name_en": "Palestinian Territories",
+      "name_zh": "巴勒斯坦领土",
+      "region": "africa-middle-east",
+      "visits": 0,
+      "requests": 2
+    },
+    {
+      "code": "BW",
+      "name_en": "Botswana",
+      "name_zh": "博茨瓦纳",
+      "region": "africa-middle-east",
+      "visits": 0,
+      "requests": 1
+    },
+    {
+      "code": "GR",
+      "name_en": "Greece",
+      "name_zh": "希腊",
+      "region": "europe",
+      "visits": 0,
+      "requests": 1
+    },
+    {
+      "code": "JM",
+      "name_en": "Jamaica",
+      "name_zh": "牙买加",
+      "region": "latin-america",
+      "visits": 0,
+      "requests": 1
+    },
+    {
+      "code": "KG",
+      "name_en": "Kyrgyzstan",
+      "name_zh": "吉尔吉斯斯坦",
+      "region": "africa-middle-east",
+      "visits": 0,
+      "requests": 1
+    },
+    {
+      "code": "MA",
+      "name_en": "Morocco",
+      "name_zh": "摩洛哥",
+      "region": "africa-middle-east",
+      "visits": 0,
+      "requests": 1
+    },
+    {
+      "code": "MN",
+      "name_en": "Mongolia",
+      "name_zh": "蒙古",
+      "region": "east-asia",
+      "visits": 0,
+      "requests": 1
+    },
+    {
+      "code": "NG",
+      "name_en": "Nigeria",
+      "name_zh": "尼日利亚",
+      "region": "africa-middle-east",
+      "visits": 0,
+      "requests": 1
+    },
+    {
+      "code": "RS",
+      "name_en": "Serbia",
+      "name_zh": "塞尔维亚",
+      "region": "europe",
+      "visits": 0,
+      "requests": 1
+    },
+    {
+      "code": "SK",
+      "name_en": "Slovakia",
+      "name_zh": "斯洛伐克",
+      "region": "europe",
+      "visits": 0,
+      "requests": 1
+    },
+    {
+      "code": "TN",
+      "name_en": "Tunisia",
+      "name_zh": "突尼斯",
+      "region": "africa-middle-east",
+      "visits": 0,
+      "requests": 1
+    },
+    {
+      "code": "TT",
+      "name_en": "Trinidad & Tobago",
+      "name_zh": "特立尼达和多巴哥",
+      "region": "latin-america",
+      "visits": 0,
+      "requests": 1
+    },
+    {
+      "code": "UY",
+      "name_en": "Uruguay",
+      "name_zh": "乌拉圭",
+      "region": "latin-america",
+      "visits": 0,
+      "requests": 1
+    },
+    {
+      "code": "VE",
+      "name_en": "Venezuela",
+      "name_zh": "委内瑞拉",
+      "region": "latin-america",
+      "visits": 0,
+      "requests": 1
+    }
+  ],
+  "regions": [
+    {
+      "id": "north-america",
+      "visits": 433,
+      "requests": 3678
+    },
+    {
+      "id": "europe",
+      "visits": 214,
+      "requests": 1442
+    },
+    {
+      "id": "east-asia",
+      "visits": 268,
+      "requests": 2369
+    },
+    {
+      "id": "south-asia",
+      "visits": 27,
+      "requests": 81
+    },
+    {
+      "id": "africa-middle-east",
+      "visits": 193,
+      "requests": 1018
+    },
+    {
+      "id": "oceania",
+      "visits": 71,
+      "requests": 75
+    },
+    {
+      "id": "latin-america",
+      "visits": 26,
+      "requests": 553
+    }
+  ],
+  "dailySnapshots": [
+    {
+      "date": "2026-05-26",
+      "start": "2026-05-26T00:00:00.000Z",
+      "end": "2026-05-27T00:00:00.000Z",
+      "generatedAt": "2026-05-27T03:28:49.457Z",
+      "totalVisits": 122,
+      "totalRequests": 1390,
+      "countries": [
+        {
+          "code": "US",
+          "name_en": "United States",
+          "name_zh": "美国",
+          "region": "north-america",
+          "visits": 60,
+          "requests": 915
+        },
+        {
+          "code": "CH",
+          "name_en": "Switzerland",
+          "name_zh": "瑞士",
+          "region": "europe",
+          "visits": 17,
+          "requests": 33
+        },
+        {
+          "code": "CN",
+          "name_en": "China",
+          "name_zh": "中国",
+          "region": "east-asia",
+          "visits": 8,
+          "requests": 115
+        },
+        {
+          "code": "FR",
+          "name_en": "France",
+          "name_zh": "法国",
+          "region": "europe",
+          "visits": 8,
+          "requests": 14
+        },
+        {
+          "code": "NL",
+          "name_en": "Netherlands",
+          "name_zh": "荷兰",
+          "region": "europe",
+          "visits": 5,
+          "requests": 64
+        },
+        {
+          "code": "BG",
+          "name_en": "Bulgaria",
+          "name_zh": "保加利亚",
+          "region": "europe",
+          "visits": 4,
+          "requests": 83
+        },
+        {
+          "code": "SG",
+          "name_en": "Singapore",
+          "name_zh": "新加坡",
+          "region": "africa-middle-east",
+          "visits": 3,
+          "requests": 21
+        },
+        {
+          "code": "KR",
+          "name_en": "South Korea",
+          "name_zh": "韩国",
+          "region": "east-asia",
+          "visits": 2,
+          "requests": 43
+        },
+        {
+          "code": "VN",
+          "name_en": "Vietnam",
+          "name_zh": "越南",
+          "region": "africa-middle-east",
+          "visits": 2,
+          "requests": 9
+        },
+        {
+          "code": "BR",
+          "name_en": "Brazil",
+          "name_zh": "巴西",
+          "region": "latin-america",
+          "visits": 2,
+          "requests": 3
+        },
+        {
+          "code": "T1",
+          "name_en": "T1",
+          "name_zh": "T1",
+          "region": "africa-middle-east",
+          "visits": 2,
+          "requests": 2
+        },
+        {
+          "code": "UA",
+          "name_en": "Ukraine",
+          "name_zh": "乌克兰",
+          "region": "europe",
+          "visits": 2,
+          "requests": 2
+        },
+        {
+          "code": "CA",
+          "name_en": "Canada",
+          "name_zh": "加拿大",
+          "region": "north-america",
+          "visits": 1,
+          "requests": 56
+        },
+        {
+          "code": "DE",
+          "name_en": "Germany",
+          "name_zh": "德国",
+          "region": "europe",
+          "visits": 1,
+          "requests": 8
+        },
+        {
+          "code": "NZ",
+          "name_en": "New Zealand",
+          "name_zh": "新西兰",
+          "region": "oceania",
+          "visits": 1,
+          "requests": 3
+        },
+        {
+          "code": "GB",
+          "name_en": "United Kingdom",
+          "name_zh": "英国",
+          "region": "europe",
+          "visits": 1,
+          "requests": 2
+        },
+        {
+          "code": "SE",
+          "name_en": "Sweden",
+          "name_zh": "瑞典",
+          "region": "europe",
+          "visits": 1,
+          "requests": 2
+        },
+        {
+          "code": "ES",
+          "name_en": "Spain",
+          "name_zh": "西班牙",
+          "region": "europe",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "NP",
+          "name_en": "Nepal",
+          "name_zh": "尼泊尔",
+          "region": "south-asia",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "CO",
+          "name_en": "Colombia",
+          "name_zh": "哥伦比亚",
+          "region": "latin-america",
+          "visits": 0,
+          "requests": 2
+        },
+        {
+          "code": "IN",
+          "name_en": "India",
+          "name_zh": "印度",
+          "region": "south-asia",
+          "visits": 0,
+          "requests": 2
+        },
+        {
+          "code": "LU",
+          "name_en": "Luxembourg",
+          "name_zh": "卢森堡",
+          "region": "europe",
+          "visits": 0,
+          "requests": 2
+        },
+        {
+          "code": "AE",
+          "name_en": "United Arab Emirates",
+          "name_zh": "阿拉伯联合酋长国",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "GR",
+          "name_en": "Greece",
+          "name_zh": "希腊",
+          "region": "europe",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "MA",
+          "name_en": "Morocco",
+          "name_zh": "摩洛哥",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "MX",
+          "name_en": "Mexico",
+          "name_zh": "墨西哥",
+          "region": "north-america",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "RS",
+          "name_en": "Serbia",
+          "name_zh": "塞尔维亚",
+          "region": "europe",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "TR",
+          "name_en": "Türkiye",
+          "name_zh": "土耳其",
+          "region": "europe",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "UY",
+          "name_en": "Uruguay",
+          "name_zh": "乌拉圭",
+          "region": "latin-america",
+          "visits": 0,
+          "requests": 1
+        }
+      ],
+      "regions": [
+        {
+          "id": "north-america",
+          "visits": 61,
+          "requests": 972
+        },
+        {
+          "id": "europe",
+          "visits": 40,
+          "requests": 214
+        },
+        {
+          "id": "east-asia",
+          "visits": 10,
+          "requests": 158
+        },
+        {
+          "id": "south-asia",
+          "visits": 1,
+          "requests": 3
+        },
+        {
+          "id": "africa-middle-east",
+          "visits": 7,
+          "requests": 34
+        },
+        {
+          "id": "oceania",
+          "visits": 1,
+          "requests": 3
+        },
+        {
+          "id": "latin-america",
+          "visits": 2,
+          "requests": 6
+        }
+      ]
+    },
+    {
+      "date": "2026-05-27",
+      "start": "2026-05-27T00:00:00.000Z",
+      "end": "2026-05-28T00:00:00.000Z",
+      "generatedAt": "2026-05-28T03:28:27.927Z",
+      "totalVisits": 373,
+      "totalRequests": 2812,
+      "countries": [
+        {
+          "code": "US",
+          "name_en": "United States",
+          "name_zh": "美国",
+          "region": "north-america",
+          "visits": 131,
+          "requests": 908
+        },
+        {
+          "code": "CN",
+          "name_en": "China",
+          "name_zh": "中国",
+          "region": "east-asia",
+          "visits": 50,
+          "requests": 399
+        },
+        {
+          "code": "JP",
+          "name_en": "Japan",
+          "name_zh": "日本",
+          "region": "east-asia",
+          "visits": 26,
+          "requests": 446
+        },
+        {
+          "code": "SG",
+          "name_en": "Singapore",
+          "name_zh": "新加坡",
+          "region": "africa-middle-east",
+          "visits": 24,
+          "requests": 232
+        },
+        {
+          "code": "HK",
+          "name_en": "Hong Kong SAR China",
+          "name_zh": "中国香港特别行政区",
+          "region": "east-asia",
+          "visits": 20,
+          "requests": 373
+        },
+        {
+          "code": "VN",
+          "name_en": "Vietnam",
+          "name_zh": "越南",
+          "region": "africa-middle-east",
+          "visits": 15,
+          "requests": 50
+        },
+        {
+          "code": "KR",
+          "name_en": "South Korea",
+          "name_zh": "韩国",
+          "region": "east-asia",
+          "visits": 14,
+          "requests": 15
+        },
+        {
+          "code": "NZ",
+          "name_en": "New Zealand",
+          "name_zh": "新西兰",
+          "region": "oceania",
+          "visits": 12,
+          "requests": 14
+        },
+        {
+          "code": "FI",
+          "name_en": "Finland",
+          "name_zh": "芬兰",
+          "region": "europe",
+          "visits": 10,
+          "requests": 11
+        },
+        {
+          "code": "AU",
+          "name_en": "Australia",
+          "name_zh": "澳大利亚",
+          "region": "oceania",
+          "visits": 10,
+          "requests": 10
+        },
+        {
+          "code": "RU",
+          "name_en": "Russia",
+          "name_zh": "俄罗斯",
+          "region": "europe",
+          "visits": 8,
+          "requests": 17
+        },
+        {
+          "code": "NL",
+          "name_en": "Netherlands",
+          "name_zh": "荷兰",
+          "region": "europe",
+          "visits": 6,
+          "requests": 97
+        },
+        {
+          "code": "BR",
+          "name_en": "Brazil",
+          "name_zh": "巴西",
+          "region": "latin-america",
+          "visits": 6,
+          "requests": 10
+        },
+        {
+          "code": "IN",
+          "name_en": "India",
+          "name_zh": "印度",
+          "region": "south-asia",
+          "visits": 5,
+          "requests": 10
+        },
+        {
+          "code": "KH",
+          "name_en": "Cambodia",
+          "name_zh": "柬埔寨",
+          "region": "africa-middle-east",
+          "visits": 4,
+          "requests": 4
+        },
+        {
+          "code": "BD",
+          "name_en": "Bangladesh",
+          "name_zh": "孟加拉国",
+          "region": "south-asia",
+          "visits": 3,
+          "requests": 17
+        },
+        {
+          "code": "MX",
+          "name_en": "Mexico",
+          "name_zh": "墨西哥",
+          "region": "north-america",
+          "visits": 3,
+          "requests": 3
+        },
+        {
+          "code": "PL",
+          "name_en": "Poland",
+          "name_zh": "波兰",
+          "region": "europe",
+          "visits": 3,
+          "requests": 3
+        },
+        {
+          "code": "DE",
+          "name_en": "Germany",
+          "name_zh": "德国",
+          "region": "europe",
+          "visits": 2,
+          "requests": 17
+        },
+        {
+          "code": "FR",
+          "name_en": "France",
+          "name_zh": "法国",
+          "region": "europe",
+          "visits": 2,
+          "requests": 13
+        },
+        {
+          "code": "ID",
+          "name_en": "Indonesia",
+          "name_zh": "印度尼西亚",
+          "region": "africa-middle-east",
+          "visits": 2,
+          "requests": 3
+        },
+        {
+          "code": "CH",
+          "name_en": "Switzerland",
+          "name_zh": "瑞士",
+          "region": "europe",
+          "visits": 2,
+          "requests": 2
+        },
+        {
+          "code": "ES",
+          "name_en": "Spain",
+          "name_zh": "西班牙",
+          "region": "europe",
+          "visits": 2,
+          "requests": 2
+        },
+        {
+          "code": "PK",
+          "name_en": "Pakistan",
+          "name_zh": "巴基斯坦",
+          "region": "south-asia",
+          "visits": 2,
+          "requests": 2
+        },
+        {
+          "code": "TW",
+          "name_en": "Taiwan",
+          "name_zh": "台湾",
+          "region": "east-asia",
+          "visits": 1,
+          "requests": 70
+        },
+        {
+          "code": "BE",
+          "name_en": "Belgium",
+          "name_zh": "比利时",
+          "region": "europe",
+          "visits": 1,
+          "requests": 8
+        },
+        {
+          "code": "HU",
+          "name_en": "Hungary",
+          "name_zh": "匈牙利",
+          "region": "europe",
+          "visits": 1,
+          "requests": 8
+        },
+        {
+          "code": "CZ",
+          "name_en": "Czechia",
+          "name_zh": "捷克",
+          "region": "europe",
+          "visits": 1,
+          "requests": 2
+        },
+        {
+          "code": "MY",
+          "name_en": "Malaysia",
+          "name_zh": "马来西亚",
+          "region": "africa-middle-east",
+          "visits": 1,
+          "requests": 2
+        },
+        {
+          "code": "TR",
+          "name_en": "Türkiye",
+          "name_zh": "土耳其",
+          "region": "europe",
+          "visits": 1,
+          "requests": 2
+        },
+        {
+          "code": "AZ",
+          "name_en": "Azerbaijan",
+          "name_zh": "阿塞拜疆",
+          "region": "africa-middle-east",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "EC",
+          "name_en": "Ecuador",
+          "name_zh": "厄瓜多尔",
+          "region": "latin-america",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "KZ",
+          "name_en": "Kazakhstan",
+          "name_zh": "哈萨克斯坦",
+          "region": "africa-middle-east",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "PT",
+          "name_en": "Portugal",
+          "name_zh": "葡萄牙",
+          "region": "europe",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "SA",
+          "name_en": "Saudi Arabia",
+          "name_zh": "沙特阿拉伯",
+          "region": "africa-middle-east",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "CA",
+          "name_en": "Canada",
+          "name_zh": "加拿大",
+          "region": "north-america",
+          "visits": 0,
+          "requests": 39
+        },
+        {
+          "code": "GB",
+          "name_en": "United Kingdom",
+          "name_zh": "英国",
+          "region": "europe",
+          "visits": 0,
+          "requests": 4
+        },
+        {
+          "code": "IQ",
+          "name_en": "Iraq",
+          "name_zh": "伊拉克",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 2
+        },
+        {
+          "code": "SE",
+          "name_en": "Sweden",
+          "name_zh": "瑞典",
+          "region": "europe",
+          "visits": 0,
+          "requests": 2
+        },
+        {
+          "code": "AE",
+          "name_en": "United Arab Emirates",
+          "name_zh": "阿拉伯联合酋长国",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "CL",
+          "name_en": "Chile",
+          "name_zh": "智利",
+          "region": "latin-america",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "IL",
+          "name_en": "Israel",
+          "name_zh": "以色列",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "JO",
+          "name_en": "Jordan",
+          "name_zh": "约旦",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "KE",
+          "name_en": "Kenya",
+          "name_zh": "肯尼亚",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "LT",
+          "name_en": "Lithuania",
+          "name_zh": "立陶宛",
+          "region": "europe",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "NP",
+          "name_en": "Nepal",
+          "name_zh": "尼泊尔",
+          "region": "south-asia",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "PS",
+          "name_en": "Palestinian Territories",
+          "name_zh": "巴勒斯坦领土",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "SY",
+          "name_en": "Syria",
+          "name_zh": "叙利亚",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "TN",
+          "name_en": "Tunisia",
+          "name_zh": "突尼斯",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 1
+        }
+      ],
+      "regions": [
+        {
+          "id": "north-america",
+          "visits": 134,
+          "requests": 950
+        },
+        {
+          "id": "europe",
+          "visits": 40,
+          "requests": 190
+        },
+        {
+          "id": "east-asia",
+          "visits": 111,
+          "requests": 1303
+        },
+        {
+          "id": "south-asia",
+          "visits": 10,
+          "requests": 30
+        },
+        {
+          "id": "africa-middle-east",
+          "visits": 49,
+          "requests": 303
+        },
+        {
+          "id": "oceania",
+          "visits": 22,
+          "requests": 24
+        },
+        {
+          "id": "latin-america",
+          "visits": 7,
+          "requests": 12
+        }
+      ]
+    },
+    {
+      "date": "2026-05-28",
+      "start": "2026-05-28T00:00:00.000Z",
+      "end": "2026-05-29T00:00:00.000Z",
+      "generatedAt": "2026-05-29T03:28:15.606Z",
+      "totalVisits": 369,
+      "totalRequests": 3061,
+      "countries": [
+        {
+          "code": "US",
+          "name_en": "United States",
+          "name_zh": "美国",
+          "region": "north-america",
+          "visits": 109,
+          "requests": 769
+        },
+        {
+          "code": "CN",
+          "name_en": "China",
+          "name_zh": "中国",
+          "region": "east-asia",
+          "visits": 40,
+          "requests": 247
+        },
+        {
+          "code": "NL",
+          "name_en": "Netherlands",
+          "name_zh": "荷兰",
+          "region": "europe",
+          "visits": 35,
+          "requests": 677
+        },
+        {
+          "code": "FR",
+          "name_en": "France",
+          "name_zh": "法国",
+          "region": "europe",
+          "visits": 35,
+          "requests": 98
+        },
+        {
+          "code": "SG",
+          "name_en": "Singapore",
+          "name_zh": "新加坡",
+          "region": "africa-middle-east",
+          "visits": 20,
+          "requests": 256
+        },
+        {
+          "code": "VN",
+          "name_en": "Vietnam",
+          "name_zh": "越南",
+          "region": "africa-middle-east",
+          "visits": 15,
+          "requests": 76
+        },
+        {
+          "code": "KR",
+          "name_en": "South Korea",
+          "name_zh": "韩国",
+          "region": "east-asia",
+          "visits": 13,
+          "requests": 19
+        },
+        {
+          "code": "JP",
+          "name_en": "Japan",
+          "name_zh": "日本",
+          "region": "east-asia",
+          "visits": 12,
+          "requests": 35
+        },
+        {
+          "code": "NZ",
+          "name_en": "New Zealand",
+          "name_zh": "新西兰",
+          "region": "oceania",
+          "visits": 11,
+          "requests": 11
+        },
+        {
+          "code": "AU",
+          "name_en": "Australia",
+          "name_zh": "澳大利亚",
+          "region": "oceania",
+          "visits": 10,
+          "requests": 10
+        },
+        {
+          "code": "HK",
+          "name_en": "Hong Kong SAR China",
+          "name_zh": "中国香港特别行政区",
+          "region": "east-asia",
+          "visits": 8,
+          "requests": 99
+        },
+        {
+          "code": "BR",
+          "name_en": "Brazil",
+          "name_zh": "巴西",
+          "region": "latin-america",
+          "visits": 7,
+          "requests": 19
+        },
+        {
+          "code": "IN",
+          "name_en": "India",
+          "name_zh": "印度",
+          "region": "south-asia",
+          "visits": 7,
+          "requests": 9
+        },
+        {
+          "code": "FI",
+          "name_en": "Finland",
+          "name_zh": "芬兰",
+          "region": "europe",
+          "visits": 6,
+          "requests": 10
+        },
+        {
+          "code": "MY",
+          "name_en": "Malaysia",
+          "name_zh": "马来西亚",
+          "region": "africa-middle-east",
+          "visits": 5,
+          "requests": 5
+        },
+        {
+          "code": "GB",
+          "name_en": "United Kingdom",
+          "name_zh": "英国",
+          "region": "europe",
+          "visits": 4,
+          "requests": 34
+        },
+        {
+          "code": "T1",
+          "name_en": "T1",
+          "name_zh": "T1",
+          "region": "africa-middle-east",
+          "visits": 4,
+          "requests": 14
+        },
+        {
+          "code": "KH",
+          "name_en": "Cambodia",
+          "name_zh": "柬埔寨",
+          "region": "africa-middle-east",
+          "visits": 4,
+          "requests": 4
+        },
+        {
+          "code": "MX",
+          "name_en": "Mexico",
+          "name_zh": "墨西哥",
+          "region": "north-america",
+          "visits": 3,
+          "requests": 5
+        },
+        {
+          "code": "AR",
+          "name_en": "Argentina",
+          "name_zh": "阿根廷",
+          "region": "latin-america",
+          "visits": 3,
+          "requests": 4
+        },
+        {
+          "code": "DE",
+          "name_en": "Germany",
+          "name_zh": "德国",
+          "region": "europe",
+          "visits": 2,
+          "requests": 11
+        },
+        {
+          "code": "ID",
+          "name_en": "Indonesia",
+          "name_zh": "印度尼西亚",
+          "region": "africa-middle-east",
+          "visits": 2,
+          "requests": 4
+        },
+        {
+          "code": "IT",
+          "name_en": "Italy",
+          "name_zh": "意大利",
+          "region": "europe",
+          "visits": 2,
+          "requests": 3
+        },
+        {
+          "code": "CH",
+          "name_en": "Switzerland",
+          "name_zh": "瑞士",
+          "region": "europe",
+          "visits": 2,
+          "requests": 2
+        },
+        {
+          "code": "PL",
+          "name_en": "Poland",
+          "name_zh": "波兰",
+          "region": "europe",
+          "visits": 1,
+          "requests": 26
+        },
+        {
+          "code": "MO",
+          "name_en": "Macao SAR China",
+          "name_zh": "中国澳门特别行政区",
+          "region": "east-asia",
+          "visits": 1,
+          "requests": 13
+        },
+        {
+          "code": "RU",
+          "name_en": "Russia",
+          "name_zh": "俄罗斯",
+          "region": "europe",
+          "visits": 1,
+          "requests": 3
+        },
+        {
+          "code": "TR",
+          "name_en": "Türkiye",
+          "name_zh": "土耳其",
+          "region": "europe",
+          "visits": 1,
+          "requests": 2
+        },
+        {
+          "code": "BD",
+          "name_en": "Bangladesh",
+          "name_zh": "孟加拉国",
+          "region": "south-asia",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "EC",
+          "name_en": "Ecuador",
+          "name_zh": "厄瓜多尔",
+          "region": "latin-america",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "ET",
+          "name_en": "Ethiopia",
+          "name_zh": "埃塞俄比亚",
+          "region": "africa-middle-east",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "GE",
+          "name_en": "Georgia",
+          "name_zh": "格鲁吉亚",
+          "region": "africa-middle-east",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "TG",
+          "name_en": "Togo",
+          "name_zh": "多哥",
+          "region": "africa-middle-east",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "UA",
+          "name_en": "Ukraine",
+          "name_zh": "乌克兰",
+          "region": "europe",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "CA",
+          "name_en": "Canada",
+          "name_zh": "加拿大",
+          "region": "north-america",
+          "visits": 0,
+          "requests": 554
+        },
+        {
+          "code": "TW",
+          "name_en": "Taiwan",
+          "name_zh": "台湾",
+          "region": "east-asia",
+          "visits": 0,
+          "requests": 12
+        },
+        {
+          "code": "BE",
+          "name_en": "Belgium",
+          "name_zh": "比利时",
+          "region": "europe",
+          "visits": 0,
+          "requests": 4
+        },
+        {
+          "code": "LT",
+          "name_en": "Lithuania",
+          "name_zh": "立陶宛",
+          "region": "europe",
+          "visits": 0,
+          "requests": 4
+        },
+        {
+          "code": "IE",
+          "name_en": "Ireland",
+          "name_zh": "爱尔兰",
+          "region": "europe",
+          "visits": 0,
+          "requests": 3
+        },
+        {
+          "code": "JO",
+          "name_en": "Jordan",
+          "name_zh": "约旦",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 2
+        },
+        {
+          "code": "SY",
+          "name_en": "Syria",
+          "name_zh": "叙利亚",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 2
+        },
+        {
+          "code": "UZ",
+          "name_en": "Uzbekistan",
+          "name_zh": "乌兹别克斯坦",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 2
+        },
+        {
+          "code": "BO",
+          "name_en": "Bolivia",
+          "name_zh": "玻利维亚",
+          "region": "latin-america",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "BW",
+          "name_en": "Botswana",
+          "name_zh": "博茨瓦纳",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "CZ",
+          "name_en": "Czechia",
+          "name_zh": "捷克",
+          "region": "europe",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "ES",
+          "name_en": "Spain",
+          "name_zh": "西班牙",
+          "region": "europe",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "IQ",
+          "name_en": "Iraq",
+          "name_zh": "伊拉克",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "MN",
+          "name_en": "Mongolia",
+          "name_zh": "蒙古",
+          "region": "east-asia",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "NG",
+          "name_en": "Nigeria",
+          "name_zh": "尼日利亚",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 1
+        }
+      ],
+      "regions": [
+        {
+          "id": "north-america",
+          "visits": 112,
+          "requests": 1328
+        },
+        {
+          "id": "europe",
+          "visits": 90,
+          "requests": 880
+        },
+        {
+          "id": "east-asia",
+          "visits": 74,
+          "requests": 426
+        },
+        {
+          "id": "south-asia",
+          "visits": 8,
+          "requests": 10
+        },
+        {
+          "id": "africa-middle-east",
+          "visits": 53,
+          "requests": 371
+        },
+        {
+          "id": "oceania",
+          "visits": 21,
+          "requests": 21
+        },
+        {
+          "id": "latin-america",
+          "visits": 11,
+          "requests": 25
+        }
+      ]
+    },
+    {
+      "date": "2026-05-29",
+      "start": "2026-05-29T00:00:00.000Z",
+      "end": "2026-05-30T00:00:00.000Z",
+      "generatedAt": "2026-05-30T03:27:58.005Z",
+      "totalVisits": 368,
+      "totalRequests": 1953,
+      "countries": [
+        {
+          "code": "US",
+          "name_en": "United States",
+          "name_zh": "美国",
+          "region": "north-america",
+          "visits": 122,
+          "requests": 394
+        },
+        {
+          "code": "SG",
+          "name_en": "Singapore",
+          "name_zh": "新加坡",
+          "region": "africa-middle-east",
+          "visits": 36,
+          "requests": 107
+        },
+        {
+          "code": "CN",
+          "name_en": "China",
+          "name_zh": "中国",
+          "region": "east-asia",
+          "visits": 33,
+          "requests": 252
+        },
+        {
+          "code": "DE",
+          "name_en": "Germany",
+          "name_zh": "德国",
+          "region": "europe",
+          "visits": 19,
+          "requests": 35
+        },
+        {
+          "code": "NZ",
+          "name_en": "New Zealand",
+          "name_zh": "新西兰",
+          "region": "oceania",
+          "visits": 19,
+          "requests": 19
+        },
+        {
+          "code": "T1",
+          "name_en": "T1",
+          "name_zh": "T1",
+          "region": "africa-middle-east",
+          "visits": 14,
+          "requests": 15
+        },
+        {
+          "code": "HK",
+          "name_en": "Hong Kong SAR China",
+          "name_zh": "中国香港特别行政区",
+          "region": "east-asia",
+          "visits": 13,
+          "requests": 157
+        },
+        {
+          "code": "VN",
+          "name_en": "Vietnam",
+          "name_zh": "越南",
+          "region": "africa-middle-east",
+          "visits": 13,
+          "requests": 43
+        },
+        {
+          "code": "JP",
+          "name_en": "Japan",
+          "name_zh": "日本",
+          "region": "east-asia",
+          "visits": 12,
+          "requests": 39
+        },
+        {
+          "code": "KR",
+          "name_en": "South Korea",
+          "name_zh": "韩国",
+          "region": "east-asia",
+          "visits": 12,
+          "requests": 15
+        },
+        {
+          "code": "PL",
+          "name_en": "Poland",
+          "name_zh": "波兰",
+          "region": "europe",
+          "visits": 8,
+          "requests": 9
+        },
+        {
+          "code": "AU",
+          "name_en": "Australia",
+          "name_zh": "澳大利亚",
+          "region": "oceania",
+          "visits": 8,
+          "requests": 8
+        },
+        {
+          "code": "MY",
+          "name_en": "Malaysia",
+          "name_zh": "马来西亚",
+          "region": "africa-middle-east",
+          "visits": 8,
+          "requests": 8
+        },
+        {
+          "code": "NL",
+          "name_en": "Netherlands",
+          "name_zh": "荷兰",
+          "region": "europe",
+          "visits": 7,
+          "requests": 64
+        },
+        {
+          "code": "IN",
+          "name_en": "India",
+          "name_zh": "印度",
+          "region": "south-asia",
+          "visits": 6,
+          "requests": 30
+        },
+        {
+          "code": "BR",
+          "name_en": "Brazil",
+          "name_zh": "巴西",
+          "region": "latin-america",
+          "visits": 5,
+          "requests": 503
+        },
+        {
+          "code": "CA",
+          "name_en": "Canada",
+          "name_zh": "加拿大",
+          "region": "north-america",
+          "visits": 3,
+          "requests": 31
+        },
+        {
+          "code": "FR",
+          "name_en": "France",
+          "name_zh": "法国",
+          "region": "europe",
+          "visits": 3,
+          "requests": 19
+        },
+        {
+          "code": "KH",
+          "name_en": "Cambodia",
+          "name_zh": "柬埔寨",
+          "region": "africa-middle-east",
+          "visits": 3,
+          "requests": 3
+        },
+        {
+          "code": "MO",
+          "name_en": "Macao SAR China",
+          "name_zh": "中国澳门特别行政区",
+          "region": "east-asia",
+          "visits": 2,
+          "requests": 16
+        },
+        {
+          "code": "IL",
+          "name_en": "Israel",
+          "name_zh": "以色列",
+          "region": "africa-middle-east",
+          "visits": 2,
+          "requests": 6
+        },
+        {
+          "code": "CH",
+          "name_en": "Switzerland",
+          "name_zh": "瑞士",
+          "region": "europe",
+          "visits": 2,
+          "requests": 2
+        },
+        {
+          "code": "ZA",
+          "name_en": "South Africa",
+          "name_zh": "南非",
+          "region": "africa-middle-east",
+          "visits": 2,
+          "requests": 2
+        },
+        {
+          "code": "ID",
+          "name_en": "Indonesia",
+          "name_zh": "印度尼西亚",
+          "region": "africa-middle-east",
+          "visits": 1,
+          "requests": 110
+        },
+        {
+          "code": "PK",
+          "name_en": "Pakistan",
+          "name_zh": "巴基斯坦",
+          "region": "south-asia",
+          "visits": 1,
+          "requests": 6
+        },
+        {
+          "code": "BE",
+          "name_en": "Belgium",
+          "name_zh": "比利时",
+          "region": "europe",
+          "visits": 1,
+          "requests": 4
+        },
+        {
+          "code": "IQ",
+          "name_en": "Iraq",
+          "name_zh": "伊拉克",
+          "region": "africa-middle-east",
+          "visits": 1,
+          "requests": 3
+        },
+        {
+          "code": "MX",
+          "name_en": "Mexico",
+          "name_zh": "墨西哥",
+          "region": "north-america",
+          "visits": 1,
+          "requests": 3
+        },
+        {
+          "code": "TW",
+          "name_en": "Taiwan",
+          "name_zh": "台湾",
+          "region": "east-asia",
+          "visits": 1,
+          "requests": 3
+        },
+        {
+          "code": "BD",
+          "name_en": "Bangladesh",
+          "name_zh": "孟加拉国",
+          "region": "south-asia",
+          "visits": 1,
+          "requests": 2
+        },
+        {
+          "code": "GB",
+          "name_en": "United Kingdom",
+          "name_zh": "英国",
+          "region": "europe",
+          "visits": 1,
+          "requests": 2
+        },
+        {
+          "code": "AR",
+          "name_en": "Argentina",
+          "name_zh": "阿根廷",
+          "region": "latin-america",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "BH",
+          "name_en": "Bahrain",
+          "name_zh": "巴林",
+          "region": "africa-middle-east",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "ES",
+          "name_en": "Spain",
+          "name_zh": "西班牙",
+          "region": "europe",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "ET",
+          "name_en": "Ethiopia",
+          "name_zh": "埃塞俄比亚",
+          "region": "africa-middle-east",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "FI",
+          "name_en": "Finland",
+          "name_zh": "芬兰",
+          "region": "europe",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "IT",
+          "name_en": "Italy",
+          "name_zh": "意大利",
+          "region": "europe",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "KE",
+          "name_en": "Kenya",
+          "name_zh": "肯尼亚",
+          "region": "africa-middle-east",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "PH",
+          "name_en": "Philippines",
+          "name_zh": "菲律宾",
+          "region": "africa-middle-east",
+          "visits": 1,
+          "requests": 1
+        },
+        {
+          "code": "LT",
+          "name_en": "Lithuania",
+          "name_zh": "立陶宛",
+          "region": "europe",
+          "visits": 0,
+          "requests": 16
+        },
+        {
+          "code": "TH",
+          "name_en": "Thailand",
+          "name_zh": "泰国",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 3
+        },
+        {
+          "code": "LU",
+          "name_en": "Luxembourg",
+          "name_zh": "卢森堡",
+          "region": "europe",
+          "visits": 0,
+          "requests": 2
+        },
+        {
+          "code": "BO",
+          "name_en": "Bolivia",
+          "name_zh": "玻利维亚",
+          "region": "latin-america",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "CL",
+          "name_en": "Chile",
+          "name_zh": "智利",
+          "region": "latin-america",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "CO",
+          "name_en": "Colombia",
+          "name_zh": "哥伦比亚",
+          "region": "latin-america",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "JM",
+          "name_en": "Jamaica",
+          "name_zh": "牙买加",
+          "region": "latin-america",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "JO",
+          "name_en": "Jordan",
+          "name_zh": "约旦",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "KG",
+          "name_en": "Kyrgyzstan",
+          "name_zh": "吉尔吉斯斯坦",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "PS",
+          "name_en": "Palestinian Territories",
+          "name_zh": "巴勒斯坦领土",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "RU",
+          "name_en": "Russia",
+          "name_zh": "俄罗斯",
+          "region": "europe",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "SA",
+          "name_en": "Saudi Arabia",
+          "name_zh": "沙特阿拉伯",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "SK",
+          "name_en": "Slovakia",
+          "name_zh": "斯洛伐克",
+          "region": "europe",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "TG",
+          "name_en": "Togo",
+          "name_zh": "多哥",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "TT",
+          "name_en": "Trinidad & Tobago",
+          "name_zh": "特立尼达和多巴哥",
+          "region": "latin-america",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "UZ",
+          "name_en": "Uzbekistan",
+          "name_zh": "乌兹别克斯坦",
+          "region": "africa-middle-east",
+          "visits": 0,
+          "requests": 1
+        },
+        {
+          "code": "VE",
+          "name_en": "Venezuela",
+          "name_zh": "委内瑞拉",
+          "region": "latin-america",
+          "visits": 0,
+          "requests": 1
+        }
+      ],
+      "regions": [
+        {
+          "id": "north-america",
+          "visits": 126,
+          "requests": 428
+        },
+        {
+          "id": "europe",
+          "visits": 44,
+          "requests": 158
+        },
+        {
+          "id": "east-asia",
+          "visits": 73,
+          "requests": 482
+        },
+        {
+          "id": "south-asia",
+          "visits": 8,
+          "requests": 38
+        },
+        {
+          "id": "africa-middle-east",
+          "visits": 84,
+          "requests": 310
+        },
+        {
+          "id": "oceania",
+          "visits": 27,
+          "requests": 27
+        },
+        {
+          "id": "latin-america",
+          "visits": 6,
+          "requests": 510
+        }
+      ]
+    }
+  ]
+}

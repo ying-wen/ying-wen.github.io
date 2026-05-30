@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://yingwen.io/</loc>
+    
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/llms.txt</loc>
+    
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/llms-full.txt</loc>
+    
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/</loc>
+    
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/</loc>
+    
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/</loc>
+    
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/</loc>
+    
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/projects/</loc>
+    
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/projects/</loc>
+    
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/teaching/</loc>
+    
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/teaching/</loc>
+    
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/blog/</loc>
+    
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/blog/</loc>
+    
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/art/</loc>
+    
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/art/</loc>
+    
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications.md</loc>
+    
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications.md</loc>
+    
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/blog/what-environment-do-llm-agents-learn-in/</loc>
+    <lastmod>2026-05-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/blog/what-is-a-world-model-modeling/</loc>
+    <lastmod>2026-05-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/blog/what-environment-do-llm-agents-learn-in/</loc>
+    <lastmod>2026-05-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/blog/what-is-a-world-model-modeling/</loc>
+    <lastmod>2026-05-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/blog/when-agents-learn-from-world/</loc>
+    <lastmod>2026-03-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/blog/when-agents-learn-from-world/</loc>
+    <lastmod>2026-03-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/blog/what-environment-do-llm-agents-learn-in.md</loc>
+    <lastmod>2026-05-06</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/blog/what-is-a-world-model-modeling.md</loc>
+    <lastmod>2026-05-07</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/blog/what-environment-do-llm-agents-learn-in.md</loc>
+    <lastmod>2026-05-06</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/blog/what-is-a-world-model-modeling.md</loc>
+    <lastmod>2026-05-07</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/blog/when-agents-learn-from-world.md</loc>
+    <lastmod>2026-03-15</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/blog/when-agents-learn-from-world.md</loc>
+    <lastmod>2026-03-15</lastmod>
+    <priority>0.5</priority>
+  </url>
+</urlset>
