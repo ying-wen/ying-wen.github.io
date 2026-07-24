@@ -1,0 +1,50 @@
+# Ying Wen
+
+> Ying Wen (温颖) is a Tenure-Track Associate Professor at Shanghai Jiao Tong University, School of Artificial Intelligence, and a mentor at Shanghai Innovation Institute. His research focuses on reinforcement learning, multi-agent systems, foundation models, LLM reasoning, and agentic reinforcement learning.
+
+This file is a concise LLM-readable guide to the website. It highlights canonical pages, research areas, and selected machine-readable resources. The public website is bilingual: English pages use /en/ and Chinese pages use /zh/.
+
+Core research areas:
+- Reinforcement learning: credit assignment, process reward models, test-time scaling, scalable RL systems, and structured in-context RL.
+- Multi-agent systems: recursive reasoning, game-theoretic learning, population-based training, zero-shot coordination, auto-curricula, and multi-agent platforms.
+- Foundation models and LLM agents: tree-search reasoning, action decomposition, RL-based alignment, agentic environments, and open-source reasoning systems.
+
+Academic service:
+- DAI 2026 Program Committee Co-Chair. DAI 2026 theme: "Agentic AI Goes Live — Science, Systems, and Societies."
+
+## Canonical Pages
+- [English homepage](https://yingwen.io/en/): Academic profile, research overview, news, selected publications, and contact links.
+- [Chinese homepage](https://yingwen.io/zh/): 中文学术主页、研究方向、动态、代表性论文与联系方式。
+- [Publications](https://yingwen.io/en/publications/): Full publication list maintained from the local content collection.
+- [Projects](https://yingwen.io/en/projects/): Open-source projects and research platforms.
+- [Blog](https://yingwen.io/en/blog/): Research essays on agents, world models, RL, and interaction with the world.
+- [AI Art](https://yingwen.io/en/art/): AI-generated visual notes connected to research thinking.
+- [Sitemap](https://yingwen.io/sitemap.xml): Machine-readable URL index.
+- [Markdown publications index](https://yingwen.io/en/publications.md): LLM-friendly bibliography.
+
+## Selected Publications
+- [Learning to Reason in Structured In-context Environments with Reinforcement Learning](https://arxiv.org/abs/2509.23330v3): ICLR 2026; tags: reasoning, reinforcement-learning, in-context.
+- [Language Games as the Pathway to Artificial Superhuman Intelligence](https://arxiv.org/abs/2501.18924): arXiv Preprint 2025; tags: language-games, multi-agent, open-ended.
+- [Leveraging Dual Process Theory in Language Agent Framework for Real-time Simultaneous Human-AI Collaboration](https://arxiv.org/abs/2502.11882): ACL 2025; tags: language-agent, dual-process, human-ai.
+- [Rema: Learning to Meta-Think for LLMs with Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2411.16986): NeurIPS 2025; tags: multi-agent, llm, reasoning, meta-learning.
+- [Reinforcing Language Agents via Policy Optimization with Action Decomposition](https://arxiv.org/abs/2410.21727): NeurIPS 2024; tags: llm-reasoning, rl.
+- [AlphaZero-like Tree-Search can Guide Large Language Model Decoding and Training](https://arxiv.org/abs/2309.17179): ICML 2024; tags: llm-reasoning, tree-search, rl.
+
+## Featured Projects
+- [OpenR](https://github.com/openreasoner/openr): Open source framework for advanced reasoning with large language models.
+
+## Recent Research Essays
+- [What Is a World Model Modeling? From Predicting the Future to Reusing Experience](https://yingwen.io/en/blog/what-is-a-world-model-modeling/): Why next-generation agents need world models that select controllable, recoverable, and reusable future information rather than only predicting futures. Markdown: https://yingwen.io/en/blog/what-is-a-world-model-modeling.md
+- [世界模型到底在建模什么：从预测未来到复用经验](https://yingwen.io/zh/blog/what-is-a-world-model-modeling/): 从预测未来到复用经验，解释三重世界模型如何区分交互环境、主观世界模型与外部知识世界。 Markdown: https://yingwen.io/zh/blog/what-is-a-world-model-modeling.md
+- [What Environment Do LLM Agents Actually Learn In?](https://yingwen.io/en/blog/what-environment-do-llm-agents-learn-in/): A working definition of large language environments and how LLM agents turn task logs into verifiable, transferable, and reversible experience. Markdown: https://yingwen.io/en/blog/what-environment-do-llm-agents-learn-in.md
+- [大语言模型智能体到底在什么环境里学习？](https://yingwen.io/zh/blog/what-environment-do-llm-agents-learn-in/): 从环境接口设计出发，定义大语言环境，并讨论智能体如何把任务日志转化为可验证、可迁移、可撤销的经验。 Markdown: https://yingwen.io/zh/blog/what-environment-do-llm-agents-learn-in.md
+- [When Agents Learn from the World, Not from Us](https://yingwen.io/en/blog/when-agents-learn-from-world/): The pretraining paradigm scaled data. The agent paradigm scales environments. Three observations on environment scaling, continuous evolution, and multi-agent collaboration. Markdown: https://yingwen.io/en/blog/when-agents-learn-from-world.md
+- [当智能体开始从世界中学习，而不是人类](https://yingwen.io/zh/blog/when-agents-learn-from-world/): 预训练范式规模化数据，智能体范式规模化环境。关于环境规模化、持续进化与多智能体协作的三个观察。 Markdown: https://yingwen.io/zh/blog/when-agents-learn-from-world.md
+
+## Optional
+- [Full LLM context](https://yingwen.io/llms-full.txt): Longer bibliography and site context for agents with larger context windows.
+- [Chinese markdown publications index](https://yingwen.io/zh/publications.md): 中文 LLM 友好的论文目录。
+- [RSS feed](https://yingwen.io/rss.xml): English blog feed.
+- [Chinese RSS feed](https://yingwen.io/rss-zh.xml): 中文博客订阅。
+- [Google Scholar](https://scholar.google.com/citations?user=_A1CxG8AAAAJ): Citation profile.
+- [GitHub](https://github.com/ying-wen): Code and open-source work.
