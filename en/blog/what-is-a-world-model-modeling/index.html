@@ -1,0 +1,384 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Why next-generation agents need world models that select controllable, recoverable, and reusable future information rather than only predicting futures."><meta name="author" content="Ying Wen"><meta name="robots" content="index, follow"><meta name="keywords" content="Ying Wen, 温颖, reinforcement learning, multi-agent systems, foundation models, large language models, LLM reasoning, agentic reinforcement learning, Shanghai Jiao Tong University"><meta property="og:title" content="What Is a World Model Modeling? From Predicting the Future to Reusing Experience — Ying Wen"><meta property="og:description" content="Why next-generation agents need world models that select controllable, recoverable, and reusable future information rather than only predicting futures."><meta property="og:type" content="article"><meta property="og:url" content="https://yingwen.io/en/blog/what-is-a-world-model-modeling/"><meta property="og:site_name" content="Ying Wen"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://yingwen.io/yingwen.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="What Is a World Model Modeling? From Predicting the Future to Reusing Experience — Ying Wen"><meta name="twitter:description" content="Why next-generation agents need world models that select controllable, recoverable, and reusable future information rather than only predicting futures."><meta name="twitter:image" content="https://yingwen.io/yingwen.jpg"><link rel="canonical" href="https://yingwen.io/en/blog/what-is-a-world-model-modeling/"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="alternate" type="application/rss+xml" title="Ying Wen - Blog" href="/rss.xml"><link rel="alternate" hreflang="en" href="https://yingwen.io/en/blog/what-is-a-world-model-modeling/"><link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/blog/what-is-a-world-model-modeling/"><link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/blog/what-is-a-world-model-modeling/"><link rel="sitemap" type="application/xml" href="/sitemap.xml"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://yingwen.io/#person","name":"Ying Wen","alternateName":"温颖","url":"https://yingwen.io/","image":"https://yingwen.io/yingwen.jpg","jobTitle":"Tenure-Track Associate Professor","email":"mailto:ying.wen@sjtu.edu.cn","affiliation":[{"@type":"CollegeOrUniversity","name":"Shanghai Jiao Tong University, School of Artificial Intelligence","url":"https://soai.sjtu.edu.cn/"},{"@type":"Organization","name":"Shanghai Innovation Institute","url":"https://www.sii.edu.cn/main.htm"}],"alumniOf":[{"@type":"CollegeOrUniversity","name":"University College London"},{"@type":"CollegeOrUniversity","name":"Beijing University of Posts and Telecommunications"}],"knowsAbout":["Reinforcement Learning","Multi-Agent Systems","Foundation Models","Large Language Model Reasoning","Agentic Reinforcement Learning"],"sameAs":["https://scholar.google.com/citations?user=_A1CxG8AAAAJ","https://github.com/ying-wen"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://yingwen.io/#website","name":"Ying Wen","url":"https://yingwen.io/","inLanguage":["en","zh"],"author":{"@id":"https://yingwen.io/#person"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"What Is a World Model Modeling? From Predicting the Future to Reusing Experience","description":"Why next-generation agents need world models that select controllable, recoverable, and reusable future information rather than only predicting futures.","datePublished":"2026-05-07T00:00:00.000Z","dateModified":"2026-05-07T00:00:00.000Z","inLanguage":"en","keywords":"world-models, llm-agents, reinforcement-learning, embodied-ai","author":{"@id":"https://yingwen.io/#person"},"publisher":{"@id":"https://yingwen.io/#person"},"mainEntityOfPage":"https://yingwen.io/en/blog/what-is-a-world-model-modeling/"}</script><title>What Is a World Model Modeling? From Predicting the Future to Reusing Experience — Ying Wen</title><link rel="stylesheet" href="/_astro/index.CHJ7gQhQ.css">
+<link rel="stylesheet" href="/_astro/index.CEn5YxCV.css"></head> <body class="font-sans min-h-screen flex flex-col bg-stone-50 text-gray-800" data-astro-cid-37fxchfa> <!-- Navigation --> <header class="sticky top-0 z-50 backdrop-blur border-b bg-white/90 border-gray-200" data-astro-cid-37fxchfa> <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6" data-astro-cid-37fxchfa> <a href="/en/" class="text-xl font-serif font-bold text-primary-800 hover:text-primary-600 transition-colors" data-astro-cid-37fxchfa>
+Ying Wen
+</a> <div class="hidden md:flex items-center gap-6" data-astro-cid-37fxchfa> <a href="/en/" class="text-sm font-medium transition-colors text-gray-600 hover:text-primary-700" data-astro-cid-37fxchfa> Home </a><a href="/en/publications/" class="text-sm font-medium transition-colors text-gray-600 hover:text-primary-700" data-astro-cid-37fxchfa> Publications </a><a href="/en/projects/" class="text-sm font-medium transition-colors text-gray-600 hover:text-primary-700" data-astro-cid-37fxchfa> Projects </a><a href="/en/teaching/" class="text-sm font-medium transition-colors text-gray-600 hover:text-primary-700" data-astro-cid-37fxchfa> Teaching </a><a href="/en/blog/" class="text-sm font-medium transition-colors text-primary-700 border-b-2 border-primary-500 pb-0.5" data-astro-cid-37fxchfa> Blog </a><a href="/en/art/" class="text-sm font-medium transition-colors text-gray-600 hover:text-primary-700" data-astro-cid-37fxchfa> AI Art </a> <!-- Language switcher --> <a href="/zh/blog/what-is-a-world-model-modeling/" class="text-sm text-gray-500 hover:text-primary-700 transition-colors px-2 py-1 rounded border border-gray-200 hover:border-primary-300" id="lang-switch-desktop" data-target-lang="zh" data-astro-cid-37fxchfa>
+🌐 中文 </a> </div> <!-- Mobile menu button --> <div class="flex items-center gap-2 md:hidden" data-astro-cid-37fxchfa> <a href="/zh/blog/what-is-a-world-model-modeling/" class="text-sm text-gray-500 hover:text-primary-700 px-2 py-1 rounded border border-gray-200" id="lang-switch-mobile" data-target-lang="zh" data-astro-cid-37fxchfa>
+🌐 中文 </a> <button id="mobile-menu-btn" class="p-2 text-gray-600 hover:text-primary-700" aria-label="Menu" data-astro-cid-37fxchfa> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-37fxchfa> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" data-astro-cid-37fxchfa></path> </svg> </button> </div> </nav> <!-- Mobile menu --> <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white" data-astro-cid-37fxchfa> <div class="px-4 py-2 space-y-1" data-astro-cid-37fxchfa> <a href="/en/" class="block py-2 text-sm text-gray-600" data-astro-cid-37fxchfa> Home </a><a href="/en/publications/" class="block py-2 text-sm text-gray-600" data-astro-cid-37fxchfa> Publications </a><a href="/en/projects/" class="block py-2 text-sm text-gray-600" data-astro-cid-37fxchfa> Projects </a><a href="/en/teaching/" class="block py-2 text-sm text-gray-600" data-astro-cid-37fxchfa> Teaching </a><a href="/en/blog/" class="block py-2 text-sm text-primary-700 font-semibold" data-astro-cid-37fxchfa> Blog </a><a href="/en/art/" class="block py-2 text-sm text-gray-600" data-astro-cid-37fxchfa> AI Art </a> </div> </div> </header> <!-- Main content --> <main class="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6" data-astro-cid-37fxchfa>  <article class="mx-auto max-w-3xl"> <header class="mb-12 pb-8 border-b border-gray-100"> <h1 class="text-3xl sm:text-4xl font-serif font-bold text-gray-900 leading-snug mb-4">What Is a World Model Modeling? From Predicting the Future to Reusing Experience</h1> <div class="flex items-center gap-3 text-sm text-gray-400"> <time datetime="2026-05-07T00:00:00.000Z"> May 7, 2026 </time> <span class="text-gray-300">·</span> <span>Ying Wen</span> </div> <div class="flex flex-wrap gap-2 mt-4"> <span class="text-xs bg-primary-50 text-primary-700 px-2.5 py-1 rounded-full font-medium">world-models</span><span class="text-xs bg-primary-50 text-primary-700 px-2.5 py-1 rounded-full font-medium">llm-agents</span><span class="text-xs bg-primary-50 text-primary-700 px-2.5 py-1 rounded-full font-medium">reinforcement-learning</span><span class="text-xs bg-primary-50 text-primary-700 px-2.5 py-1 rounded-full font-medium">embodied-ai</span> </div> </header> <div class="
+      prose prose-lg prose-gray max-w-none
+      prose-headings:font-serif prose-headings:text-gray-900
+      prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 prose-h2:pb-2 prose-h2:border-b prose-h2:border-gray-100
+      prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
+      prose-p:leading-relaxed prose-p:text-gray-700
+      prose-a:text-primary-700 prose-a:underline prose-a:underline-offset-2 prose-a:decoration-primary-200 hover:prose-a:decoration-primary-500
+      prose-blockquote:border-l-4 prose-blockquote:border-primary-300 prose-blockquote:bg-primary-50/40 prose-blockquote:rounded-r-lg prose-blockquote:py-1 prose-blockquote:text-gray-600 prose-blockquote:not-italic
+      prose-strong:text-gray-900 prose-strong:font-semibold
+      prose-li:text-gray-700
+      prose-hr:border-gray-200
+    "> <p>When people hear the term world model, the first intuition is often a model that can simulate the world. It might predict the next frame of a game, generate a short future video, imagine how an object will move before a robot acts, or predict what will happen after an action in reinforcement learning.</p>
+<p>That intuition is not wrong. World models are indeed related to predicting the future. But if we only understand them as bigger simulators, we miss the more important problem: for an agent that must act, prediction is only the first step. The harder question is which future information the agent should keep, which information it should discard, and how one experience can become reusable capability later.</p>
+<p>This essay first clarifies the term world model. Today, different people use the term for different implementations under a broad idea. State prediction in reinforcement learning, future video generation, robot state-action models, and long reasoning, planning, and memory in agent systems all fit into this broad frame. They all process future-related knowledge, but they differ in object, condition, and use. <sup><a href="#user-content-fn-rl-world-models" id="user-content-fnref-rl-world-models" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup><sup><a href="#user-content-fn-video-worlds" id="user-content-fnref-video-worlds" data-footnote-ref="" aria-describedby="footnote-label">2</a></sup><sup><a href="#user-content-fn-llm-agents" id="user-content-fnref-llm-agents" data-footnote-ref="" aria-describedby="footnote-label">3</a></sup></p>
+<p>Another easily underestimated thread is physical signals and scientific world models. Many AI systems learn from worlds that humans have already written down, photographed, compressed, and labeled. But before the real world enters a model, it has often passed through sensors, sampling, calibration, display, compression, and human naming. Spectra, vibration, current, temperature, remote sensing, experimental instrument readings, continuous dynamical systems, and scientific simulations remind us that world models do not only predict futures in text and RGB images. They may also learn regularities from measurement streams with noise, instrument bias, and time scale. <sup><a href="#user-content-fn-physical-signal-reflection" id="user-content-fnref-physical-signal-reflection" data-footnote-ref="" aria-describedby="footnote-label">4</a></sup><sup><a href="#user-content-fn-scientific-world-models" id="user-content-fnref-scientific-world-models" data-footnote-ref="" aria-describedby="footnote-label">5</a></sup></p>
+<p>On that basis, we introduce the Tri-World Model. It separates the problem into three roles: how the environment gives feedback, how the agent forms its current judgment, and how experience becomes external knowledge. To keep the discussion readable, I will name them up front: the Interactive Objective World (W1), the Subjective World Model (W2), and the External Knowledge World (W3).</p>
+<p>The narrower claim is this: what next-generation agents may really lack is not a more complete copy of the world, but an internal world model that selects controllable futures. That is the Subjective World Model (W2). Later we will also use an evaluation concept called the Capability Compounding Coefficient (CCC). CCC asks not only whether a system solved this task, but whether one verified experience reduces the cost of future tasks. The second half of this essay makes the implications more concrete for training methods, trajectory logs, data collection, and system design across domains. In embodied AI and robotics in particular, it leads to a training target that is different from current vision-language-action models and world action models: the system should not only become better at outputting actions or generating futures, but should explicitly learn object state, task stage, affordance, failure recovery, and experience reuse.</p>
+<p><img src="/blog/what-is-a-world-model-modeling/gpt-image-2-blog-fig-01-world-model-gap-en-2026.png" alt="The world-model gap: predicting is not reusing."></p>
+<h2 id="start-with-familiar-world-models">Start With Familiar World Models</h2>
+<p>In today’s technical context, world models usually mean one of four things.</p>
+<p>The first comes from reinforcement learning. An agent acts in an environment, and the model predicts the next state, reward, or value. It answers the question: if I take this action now, what will the environment do next? This kind of model matters for planning because the agent can simulate internally before acting in the real environment. Dyna, World Models, MuZero, and Dreamer all belong to this lineage. <sup><a href="#user-content-fn-rl-world-models" id="user-content-fnref-rl-world-models-2" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup></p>
+<p>The second comes from video and spatial generation. A model generates future frames from text, images, or video. It answers the question: what might this scene look like next? This makes the model feel like a world simulator because the future is visually intuitive. Work such as V-JEPA and Sora makes the relationship between world models, visual futures, spatial consistency, and physical or digital simulation more explicit. <sup><a href="#user-content-fn-video-worlds" id="user-content-fnref-video-worlds-2" data-footnote-ref="" aria-describedby="footnote-label">2</a></sup></p>
+<p>The third comes from robotics and embodied intelligence. One nearby route is the World Action Model (WAM), which tries to put actions and future images or future states into the same model. It answers the question: under this task, how should I move, and what might the world look like after I move? This is important because it pushes world modeling toward bodies, objects, action consequences, and failure recovery. It also makes one distinction clearer: training action outputs or future images is not the same as training an internal judgment layer that keeps object state, task stage, body constraints, and recovery cues. <sup><a href="#user-content-fn-embodied" id="user-content-fnref-embodied" data-footnote-ref="" aria-describedby="footnote-label">6</a></sup></p>
+<p>The fourth comes from large language model agents. Here the world is not necessarily physical space. It may be a browser, codebase, terminal, document, or tool system. The model stores plans, tool calls, execution traces, test results, and repair experience. It answers the question: how can prior execution experience and external knowledge help with future tasks? ReAct, Reflexion, Voyager, and related agent work show how language models can use tools, feedback, reflection, and skill libraries to turn one execution into cues for later action. <sup><a href="#user-content-fn-llm-agents" id="user-content-fnref-llm-agents-2" data-footnote-ref="" aria-describedby="footnote-label">3</a></sup></p>
+<p>All four can be called world models, but they are not the same thing.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Context</th><th>What world model usually means</th><th>Future information it predicts or keeps</th><th>What it does not automatically solve</th></tr></thead><tbody><tr><td>Reinforcement learning</td><td>State, reward, or value after action</td><td>How the environment changes</td><td>Open tasks, long-term experience, external knowledge reuse</td></tr><tr><td>Video generation</td><td>Future frames or spatial structure</td><td>What the scene may look like next</td><td>Which variables are controllable and which details matter for action</td></tr><tr><td>Embodied AI / robotics</td><td>Vision/body state to action or action effect</td><td>How to move next and how objects change</td><td>Failure cause, recovery path, task stage</td></tr><tr><td>LLM agents</td><td>Memory, plans, tool traces, tests, skills</td><td>Which past signals help future tasks</td><td>Whether old memory is stale or current state still matches</td></tr></tbody></table>
+<p>The point of this table is not taxonomy. It is to remove a misunderstanding. Most uses of world model today are different implementations under a broad idea. They share an abstract problem: under some condition, predict or retain information useful for the future. But the implementations can be very different.</p>
+<!-- ![Different world-model traditions process future knowledge, but W2 narrows them by goal, controllability, and reusable evidence.](/blog/what-is-a-world-model-modeling/gpt-image-2-blog-fig-06-world-model-family-en-2026.png) -->
+<p>So when we ask what kind of world model next-generation agents need, we should not only ask whether a model can predict the future. We should also ask whether the predicted future is actionable, goal-relevant, useful for recovery, and capable of becoming reusable experience.</p>
+<blockquote>
+<p><strong>Takeaway</strong>: Do not turn successful examples into input-output pairs only. For action systems, it is more useful to put the goal, action, predicted effect, actual feedback, failure repair, and later reuse into the same trajectory.</p>
+</blockquote>
+<h2 id="prediction-is-not-enough">Prediction Is Not Enough</h2>
+<p>There is an easy distinction to miss: being able to predict the future is not the same as knowing which future information to keep.</p>
+<p>A video model may generate a realistic future kitchen scene, but a robot does not need every reflection and texture in that image. It needs to know where the cup is, whether it can be grasped, whether the arm will hit an obstacle, and how to recover after failure. A browser agent may save a complete operation log, but after the page refreshes, an old button position may no longer be valid. A code agent may save an entire repair trace, but the valuable parts are which test verified which hypothesis, which patch route failed, and which modules have hidden coupling.</p>
+<p>These examples are directly related to familiar world models. They do not say prediction is useless. They say there is too much future information. For an action system, the key is not to predict more and more of the future, but to select the future information that matters most under limited capacity.</p>
+<p>That is the motivation of this essay. The world model we care about is not only a future predictor. It is a mechanism for selecting future knowledge.</p>
+<p><img src="/blog/what-is-a-world-model-modeling/gpt-image-2-blog-fig-05-motivation-bottleneck-en-2026.png" alt="There are too many possible futures; W2 selects action variables, failure risk, effects, and reusable experience under limited capacity."></p>
+<h2 id="our-definition-of-world-model">Our Definition of World Model</h2>
+<p>We can define it plainly:</p>
+<blockquote>
+<p>A world model is an agent’s prediction or compression of useful future information under its current situation, current goal, possible actions, and uncertainty.</p>
+</blockquote>
+<p>The current situation includes what the agent has observed, what it has already done, what tools and permissions it has, and what state the page or physical environment is in. More strictly, the agent usually does not observe the world itself, but some measurement of it: images, logs, API returns, sensor readings, experimental records, or descriptions written by humans. Every measurement has a sampling method, noise, latency, calibration, and bias. The current goal determines what matters. Picking up a cup and cleaning a table require different variables. Fixing a bug and refactoring code require different clues. Possible actions determine what the agent can change. It can click a button, run a test, move a robot arm, or ask a user; it may also be unable to change some background factors. Uncertainty reminds us that many key states are not directly visible and must be inferred through action and feedback.</p>
+<p>The useful future information does not have to be the next frame. It can be next state, reward, value, action effect, failure risk, tool state, test result, reusable rule, skill, repair pattern, or even the fact that an old memory should no longer be trusted.</p>
+<p>So the inputs are current situation, current goal, possible actions, and uncertainty. The output is useful future information. This definition is broad enough to compare reinforcement learning models, video models, robot models, and LLM-agent memory on the same map. But it naturally leads to a stricter question: in a big world, an agent cannot keep everything. What should it keep?</p>
+<h2 id="if-you-cannot-keep-everything-what-should-you-keep">If You Cannot Keep Everything, What Should You Keep?</h2>
+<p>The world is large, and the agent has limited capacity. This sounds abstract, but it is concrete in real systems.</p>
+<p>A codebase can contain thousands of files. A browser page contains text, buttons, pop-ups, state, and background requests. A robot camera sees countless pixels. A conversation history contains a lot of material that may or may not matter. Even a long context window cannot treat everything as equally important.</p>
+<p>Ordinary compression may keep what best reduces prediction error. Ordinary memory may retrieve what looks similar to the current problem. Ordinary vision models may optimize visual coherence: what makes the future video more realistic.</p>
+<p>For an agent that must act, those criteria are insufficient. It should prioritize information that is important for the current goal, that the agent can influence, that helps with recovery after failure, and that can later be verified and reused.</p>
+<p>Call this actionable compression.</p>
+<p>A city map gives a simple example. A complete map can show all roads, shops, and terrain. But if you are trying to catch a train, what you really need is your current location, a route to the station, which roads are closed, and which mode of transport can still get you there on time. The complete map is useful, but the current task needs a map folded around goal and action.</p>
+<p>Agents are the same. They do not need an internal copy of the whole world. They need a map that knows what to look at.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Ordinary world models may care about</th><th>Acting agents need to care about</th></tr></thead><tbody><tr><td>What may happen in the future</td><td>Which futures matter under the current goal</td></tr><tr><td>What the world will look like</td><td>Which states I can change</td></tr><tr><td>How to reconstruct more detail</td><td>Which details can be safely discarded</td></tr><tr><td>Whether the current policy succeeds</td><td>What failure looks like and how to recover</td></tr><tr><td>Whether this task is solved</td><td>Whether this experience reduces future cost</td></tr></tbody></table>
+<p>This selection problem is the core problem for the Tri-World Model.</p>
+<h2 id="poppers-three-worlds-as-a-starting-point">Popper’s Three Worlds as a Starting Point</h2>
+<p>The name Tri-World is not arbitrary. One inspiration is Karl Popper’s theory of three worlds. Popper distinguished the world of physical objects and processes, the world of subjective experience and mental states, and the world of objective knowledge content. The third includes theories, problems, arguments, books, mathematical objects, and cultural artifacts. Once written down, they are no longer just a momentary thought inside one person’s head; they can be inspected, criticized, inherited, and transformed by others. <sup><a href="#user-content-fn-popper-three-worlds" id="user-content-fnref-popper-three-worlds" data-footnote-ref="" aria-describedby="footnote-label">7</a></sup><sup><a href="#user-content-fn-popper-sep" id="user-content-fnref-popper-sep" data-footnote-ref="" aria-describedby="footnote-label">8</a></sup></p>
+<p>This distinction is useful for AI. Today’s agents also face three kinds of things: they must act in an environment changed by their actions; they must form a current internal judgment; and they must rely on external documents, code, tests, tools, skills, and memory. Many system failures happen because these three are mixed together. For example, an agent may treat old memory as current state, treat a document as verified action knowledge, or treat a model that generates future video as if it already knows how to act.</p>
+<p>But this essay does not simply import Popper. Popper’s Three Worlds is primarily a philosophical and epistemological framework. The Tri-World Model here is an operational framework for agent engineering. The Interactive Objective World (W1) includes not only the physical world, but also browsers, codebases, terminals, and social feedback. The Subjective World Model (W2) is not human consciousness; it is the agent’s goal-conditioned, capacity-limited internal compression and judgment. The External Knowledge World (W3) is not only abstract theory; it includes knowledge artifacts that systems can read, write, test, execute, and reuse.</p>
+<h2 id="the-tri-world-model-separate-environment-internal-judgment-and-external-knowledge">The Tri-World Model: Separate Environment, Internal Judgment, and External Knowledge</h2>
+<p>The Tri-World Model is not meant to create new terminology for its own sake. It separates three things that are often mixed together: an interactive environment, the agent’s internal judgment, and reusable external knowledge.</p>
+<p>The first layer is the Interactive Objective World (W1). If the agent’s action can change it, it belongs to W1. A robot kitchen, browser page, codebase, command line, multi-agent collaboration environment, and interactive simulator can all be part of this layer. Its role is to provide feedback: whether an action took effect, whether the state changed, where the failure happened, and which constraints remain. For physical and scientific tasks, W1 also includes the measurement interface itself: sensors, instruments, sampling frequency, calibration state, unit system, and observation delay. Otherwise the model may mistake instrument bias for a law of the world.</p>
+<p>The second layer is the Subjective World Model (W2). Subjective does not mean self-awareness. It means task-relevant, agent-perspective, capacity-limited compression. The same page, room, or codebase should be compressed into different states under different goals. W2 asks: what do I currently believe about the world? Which variables matter for the goal? What can I change? Where is the failure risk? What may happen after the next action?</p>
+<p>The third layer is the External Knowledge World (W3). It includes language, code, tests, documents, rules, tools, skills, logs, source notes, and verifier outputs. It also includes equations, units, conserved quantities, scaling laws, causal graphs, experimental protocols, error models, and instrument calibration notes in scientific tasks. W3 is persistent, shareable, and composable. Once an experience is verified and written as a test, rule, skill, or scientific artifact, it becomes a knowledge artifact rather than a temporary trace.</p>
+<p><img src="/blog/what-is-a-world-model-modeling/gpt-image-2-blog-fig-02-tri-world-roles-en-2026.png" alt="The three roles of the Tri-World Model: Interactive Objective World, Subjective World Model, and External Knowledge World."></p>
+<p>The easiest confusion is between W2 and W3. Long context, retrieval, memory stores, skill files, and test cases are mostly W3 or W3 infrastructure. They are external knowledge, not current judgment. An old test may still be useful, or it may be stale because the code structure changed. A browser automation script may work for an old page but fail on a new page. W2 is responsible for deciding whether a W3 artifact still applies to the current W1 state.</p>
+<p>In other words, the Tri-World Model does not say AI systems must be mechanically split into three modules. It says any agent that acts and learns over time must handle three roles: interact with the world, form a current judgment, and preserve reusable knowledge.</p>
+<p><img src="/blog/what-is-a-world-model-modeling/gpt-image-2-blog-fig-07-tri-world-loop-en-2026.png" alt="Tri-World is not a static taxonomy; it is an experience-reuse loop across W1 feedback, W2 judgment, and W3 distillation and retrieval."></p>
+<h2 id="why-the-subjective-world-model-is-the-key-missing-layer">Why the Subjective World Model Is the Key Missing Layer</h2>
+<p>Many current systems are already strong, but they are strong in different places.</p>
+<p>Video and interactive generation strengthen W1 because they can generate or simulate future worlds. Agent runtimes, memory, tool protocols, and code tests strengthen W3 because they allow systems to store and call external knowledge. Robot policies and tool workflows strengthen direct execution because they can turn language, vision, or documents into actions.</p>
+<p>All of this progress matters. But it can bypass the Subjective World Model.</p>
+<p>The first bypass is a stronger simulator. If we can generate more realistic videos, larger interactive environments, and richer synthetic data, do we already have a world model? Partly. But the agent still has to know which simulation results to trust, which variables are relevant to the current goal, and which interventions can actually change outcomes. Simulating a world is not the same as knowing what to keep.</p>
+<p>The second bypass is longer memory. If we save complete execution logs, tool calls, historical experience, and skill libraries, do we have intelligence? Again, only partly. Memory can be stale, polluted, or detached from current state. Without W2’s scope and evidence checks, the External Knowledge World can become noise.</p>
+<p>The third bypass is a direct action policy. If a model can output actions directly from language or vision, do we still need an internal world model? For many tasks, direct action may be enough. But once it fails, the system needs to know why it failed, which state changed, how to recover, and which parts of the experience remain useful later. Direct action can succeed without producing interpretable recovery or reusable experience.</p>
+<p>Embodied robotics makes this issue larger. The strength of the VLA route is that it connects web-scale vision-language knowledge and robot demonstrations, allowing a model to output actions from images, instructions, and body state. WAM or WorldVLA-style routes go further by jointly modeling actions with future images or future states. These systems should be treated seriously as substrates and strong baselines, not dismissed.</p>
+<p>Using today’s large-model training as an analogy, VLMs, video models, and physical world models are closer to large-scale pretraining: they learn appearance, semantics, space, and dynamic priors. VLA, WAM, and demonstration trajectories are closer to action-oriented instruction tuning: they learn to produce reasonable actions or action-conditioned futures given instructions and observations. The Subjective World Model adds something closer to reinforcement-learning-style post-training: through real or high-quality simulated interaction, verifiers, failure feedback, and cross-task reuse, it teaches the system which variables are controllable, when to trust a model, how to recover after failure, and which experiences deserve to be distilled.</p>
+<p>But there is a fundamental difference: the publicly visible training pressure in current VLA/WAM routes often focuses on whether actions resemble demonstrations or whether futures resemble real trajectories. The Subjective World Model additionally optimizes for which states are controllable, how to recover after failure, and whether experience can be reused later. If a robot only learns a plausible action for the current image but does not know whether the cup has been grasped, whether the drawer is truly open, which task stage it is in, or whether a gripper offset should trigger retry or strategy change, it may look good in familiar distributions but lack inspectable judgment under occlusion, layout shift, long-horizon tasks, and recovery.</p>
+<blockquote>
+<p><strong>Takeaway</strong>: VLA and WAM can be action substrates or training signals, but the Subjective World Model must also learn object state, task stage, affordance, body constraints, failure type, recovery action, and simulation trust.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Route</th><th>What it provides</th><th>Why it is not automatically W2</th></tr></thead><tbody><tr><td>Stronger simulator</td><td>Richer future imagination</td><td>It may not know which futures matter for current goals and actions</td></tr><tr><td>Longer memory</td><td>More history and experience</td><td>It may not know whether memory still applies to current state</td></tr><tr><td>Vision-language-action model</td><td>Faster path from image/language to action</td><td>It may not expose object state, task stage, affordance, or recovery</td></tr><tr><td>World action model</td><td>Connects action with future images or states</td><td>If it only generates futures or actions, it may still lack reusable internal judgment</td></tr><tr><td>Higher benchmark score</td><td>Better final result</td><td>It may not reveal mechanism, transfer, or experience compounding</td></tr></tbody></table>
+<p>This is why W2 may be necessary. It is the middle layer that turns feedback from W1 and knowledge from W3 into actionable judgment.</p>
+<p>The principle is simple:</p>
+<blockquote>
+<p>A finite agent should spend representational capacity on futures that matter for the current goal and that the agent can influence.</p>
+</blockquote>
+<p>That is controllability-aware compression. It does not compress everything and does not predict everything. It spends limited attention on actionable futures. More concretely, W2 repeatedly asks four questions: Is this relevant to the current goal? Can I influence it? Can it help me recover after failure? Can it become a rule, test, or skill later?</p>
+<p>A browser agent should not remember all page text equally. It should remember controls related to the task, login state, error messages, whether the page refreshed, and whether the last click actually took effect. A robot should not only remember salient pixels or imitate the next action chunk. It should keep the target object, graspability, occlusion, arm state, task stage, and recovery action. A code agent should not save only a complete execution log. It should turn tests, failed patch routes, and module coupling into reusable knowledge artifacts. A scientific agent should not only save paper abstracts or experimental screenshots either. It should retain measurement conditions, variable definitions, error sources, intervenable parameters, counterfactual questions, and later-testable model hypotheses.</p>
+<p>Once seen this way, W2 is not decorative. It is the selection mechanism required by a large world.</p>
+<h2 id="how-to-tell-whether-a-system-really-has-a-subjective-world-model">How to Tell Whether a System Really Has a Subjective World Model</h2>
+<p>We cannot judge by names. A system may not contain a module called W2 but may functionally satisfy the role. Conversely, a system may draw a W2 box but fail to improve recovery, transfer, and experience reuse.</p>
+<p>We need behavioral evidence.</p>
+<p>First, can it retain key state under limited capacity? The question is not whether it can remember everything, but whether it keeps the variables that actually affect the goal under task switching, distractors, and partial observation.</p>
+<p>Second, can it predict action effects? After clicking a button, editing code, or moving an object, can it anticipate how the world should change and update when observation disagrees?</p>
+<p>Third, can it recover from failure? Strong systems are not systems that never fail. They are systems that do not repeatedly hit the same failure. They should identify failure type, shorten recovery paths, and distill failure experience.</p>
+<p>Fourth, can it turn experience into reusable external knowledge? A one-off success that does not reduce future task cost is closer to luck than knowledge accumulation. A verified artifact with scope and future cost reduction is a real knowledge asset.</p>
+<p>Fifth, do these gains survive hidden tasks? Otherwise we may only be measuring benchmark memory, prompt tricks, or data leakage. Benchmarks such as ARC-AGI-3, OSWorld, and SWE-bench do not prove W2 by themselves, but they expose hidden rules, real software state, test verifiers, and future-task transfer in ways that make experience reuse measurable. <sup><a href="#user-content-fn-benchmarks" id="user-content-fnref-benchmarks" data-footnote-ref="" aria-describedby="footnote-label">9</a></sup></p>
+<blockquote>
+<p><strong>Takeaway</strong>: Do not measure only one-task success rate. Measure actions on hidden tasks, repeated failure rate, recovery steps, human takeover, verification cost, and later reuse gain.</p>
+</blockquote>
+<h2 id="capability-compounding-coefficient-ccc-does-experience-compound-capability">Capability Compounding Coefficient (CCC): Does Experience Compound Capability?</h2>
+<p>To measure whether experience is truly useful, we propose the Capability Compounding Coefficient (CCC).</p>
+<p>The name sounds abstract, but the question is simple:</p>
+<blockquote>
+<p>How much future cost does one verified experience save?</p>
+</blockquote>
+<p>Ordinary benchmark scores ask whether the current task was solved. CCC asks whether the experience made future tasks cheaper. If a code agent writes a test that prevents ten useless future attempts on a similar bug, that is a gain. If a browser agent learns a workflow but page changes make that workflow misleading, the maintenance and error cost may exceed the gain.</p>
+<p><img src="/blog/what-is-a-world-model-modeling/gpt-image-2-blog-fig-03-ccc-coordinate-en-2026.png" alt="Capability Compounding Coefficient (CCC): high-benefit, low-cost experience should be distilled; high-cost, low-benefit experience can pollute memory."></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>CCC benefit</th><th>Plain meaning</th></tr></thead><tbody><tr><td>Fewer actions</td><td>Fewer steps, retries, or dead ends next time</td></tr><tr><td>Fewer failures</td><td>Fewer repeated errors</td></tr><tr><td>Lower verification cost</td><td>Fewer useless tests, or faster discovery of the key verifier</td></tr><tr><td>Less human takeover</td><td>Fewer human corrections</td></tr><tr><td>Better transfer</td><td>Still useful after task, layout, or environment changes</td></tr><tr><td>Higher success</td><td>Not only faster, but more reliable</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>CCC cost</th><th>Plain meaning</th></tr></thead><tbody><tr><td>Creation cost</td><td>How much interaction was needed to get this experience</td></tr><tr><td>Verification cost</td><td>How many tests, reviews, or verifiers were needed</td></tr><tr><td>Retrieval cost</td><td>How much effort future systems spend finding and using it</td></tr><tr><td>Maintenance cost</td><td>How stale, conflicting, or polluted knowledge is handled</td></tr><tr><td>Misuse cost</td><td>How much damage occurs when the experience is used in the wrong place</td></tr></tbody></table>
+<p>CCC does not say storing more experience is always good. It requires that experience be verified, scoped, and shown to reduce future cost on hidden tasks. A system that simply stuffs all history into context does not necessarily have positive CCC. It may be bringing the trash back too.</p>
+<h2 id="what-should-we-do-algorithmically-next">What Should We Do Algorithmically Next?</h2>
+<p>This view does not require training a huge foundation world model from scratch. A more practical route is a Subjective World Model adapter: wrap existing models, tools, simulators, agent runtimes, or robot policies with a measurable judgment and control structure.</p>
+<p>In training-flow terms, the base model provides pretrained priors, VLA/WAM/tool trajectories provide task-oriented imitation, and the W2 Adapter handles credit assignment and post-training after interaction. It does not merely make the model better at imitating correct actions. It updates controllable-state judgment from feedback such as “the prediction was wrong,” “the action did not take effect,” “the test failed,” “the page is stale,” “the object slipped,” or “the experiment does not support the hypothesis.”</p>
+<p>This adapter does a few simple but important things. It records current judgment, not only raw execution logs. It predicts action effects, not only executes actions. It estimates goal progress and failure risk, not only final success. It checks whether external memory and skills still apply to current state, rather than reusing them blindly. It writes verified experience as knowledge artifacts with source, scope, and expiry conditions, rather than treating all history as knowledge.</p>
+<p>In engineering terms, this adapter may include heads for state judgment, action effect, failure risk, memory trust, and experience distillation. It does not have to replace the base model. It adds a checkable middle judgment layer around the base model’s observation, action, and memory.</p>
+<p>If the task enters physical-signal or scientific-discovery settings, this layer must explicitly handle measurement trust and experimental intervention. It should ask: which instrument produced this reading, whether calibration is reliable, whether timestamps and sampling frequencies match, which variables can be actively changed, which experiment best separates two hypotheses, and which discoveries can be written as equations, causal graphs, verification scripts, or experimental protocols. In other words, action is not only task completion. It can also be an experiment that tests a world model.</p>
+<p>For robots, the point becomes more concrete. The goal is not to train a larger robot foundation model or video model than π0 or WorldVLA from scratch. The point is to use those models as action substrates, training signals, or strong controls, and train a W2 layer above or beside them. It should predict compact action variables rather than complete video: what state the object is in, which stage the task is in, which actions are executable under the current body-object configuration, what an action will change, where failure risk lies, whether recovery should retry, roll back, or switch strategy, and how trustworthy the simulator or world model is in this scene.</p>
+<p>Evaluation cannot stop at success rate. In embodied settings, we should compare same-budget systems such as imitation or diffusion policies, pure VLA, pure WAM, VLA plus task-stage judgment, VLA plus W2 without skill reuse, and VLA plus W2 with skill reuse. Then we should ablate action-effect prediction and W3 distillation. The real question is whether the system has fewer repeated failures, fewer human takeovers, faster recovery, and lower future task cost under layout changes, object changes, occlusion, long-horizon tasks, cross-embodiment transfer, and sim-to-real shift. LIBERO, RoboCasa, and BEHAVIOR are suitable for this validation ladder, but only when they record object state, task stage, failure recovery, and reuse gain. <sup><a href="#user-content-fn-robot-benchmarks" id="user-content-fnref-robot-benchmarks" data-footnote-ref="" aria-describedby="footnote-label">10</a></sup></p>
+<p>The same structure applies to code and browser agents. In code, the trace should record hypotheses, failed commands, test outputs, patch diffs, and later reuse. In browsers, it should record page state, permission changes, whether a button actually worked, pop-ups, and recovery paths. The shared shift is from training for one correct output to training for what an action changed, how errors were repaired, and how experience reduced future cost.</p>
+<p>Validation should also scale gradually. Start with grid worlds and clean trace logging. Move to ARC-like hidden-rule tasks to test whether the system can discover hidden rules through interaction and transfer them. Then move to digital environments such as browsers and software, where page state changes, tool side effects, permission errors, and page staleness matter. Then move to code and terminal tasks, where tests, patches, and verifiers can become external reusable knowledge. Later, add small scientific tasks: continuous-time trajectories, noisy measurements, instrument bias, intervenable variables, and hidden dynamics. Only then move to embodied environments, where objects, stages, affordances, and body state make action costly and partially observed. <sup><a href="#user-content-fn-benchmarks" id="user-content-fnref-benchmarks-2" data-footnote-ref="" aria-describedby="footnote-label">9</a></sup></p>
+<h2 id="scaling-grow-the-verified-experience-loop">Scaling: Grow the Verified Experience Loop</h2>
+<p>Scaling here does not only mean bigger models, longer context, or more realistic simulators. These are useful, but if the system still does not know which states to keep, which experience is stale, and which actions change outcomes, scale may amplify noise.</p>
+<p>One more concrete analogy is to view next-generation acting agents as a three-stage training problem:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Analogy stage</th><th>Embodied/video counterpart</th><th>What it learns</th><th>What is still missing</th></tr></thead><tbody><tr><td>Pretraining</td><td>VLMs, video models, physical world models, scientific foundation models</td><td>Visual semantics, spatial structure, physical or scientific priors, common dynamics</td><td>Which variables are controllable under the current task, and which details are worth retaining</td></tr><tr><td>Instruction tuning</td><td>VLA, WAM, demonstration trajectories, tool-call trajectories</td><td>Instruction-to-action, observation-to-action, and action-to-future mappings</td><td>May learn imitation and correlation without learning failure causes or recovery paths</td></tr><tr><td>Reinforcement-learning-style post-training</td><td>W2Trace, verifiers, failure recovery, ArtifactStore, CCC</td><td>Controllable variables, model trust, recovery policy, and experience reuse from interaction feedback</td><td>Needs closed-loop data that can be recorded, replayed, and compared</td></tr></tbody></table>
+<p>Here “reinforcement-learning-style” does not mean that only one specific RL algorithm can be used. It means the training pressure comes from what happens after interaction: whether the predicted action effect occurred, whether goal progress improved, whether failure was recognized, whether recovery became shorter, and whether experience reduced future task cost. In other words, W2 should not optimize “looks like expert action.” It should optimize “under the same budget, fewer repeated failures, faster recovery, less human takeover, and higher reuse gains on hidden tasks.”</p>
+<p>In embodied AI, scaling should not only mean collecting more successful demonstrations or generating more synthetic video. Those are useful, but they mainly expand W1 experience supply. W2 cares about another layer of scaling: broader failure types, more complete before/after object state, recorded human takeover reasons, calibrated sim-to-real differences, and successful experience compressed into scoped skills. A robot dataset that only becomes larger is closer to a larger imitation corpus. A dataset that records these fields begins to become a trainable, auditable, compounding experience system.</p>
+<p>For example, a video model may know that “a cup pushed to the edge of a table will fall.” That is a useful pretrained prior. A WAM may learn that “after the gripper moves toward the cup, the future frame shows the cup closer to the gripper.” That is already action-conditioned. W2 should also record whether the gripper actually touched the cup, whether the cup slipped, whether the current grasp is reliable, whether failure came from occlusion, pose, friction, or force, and whether next time the system should retry, change the grasp point, or move an obstacle first. If this failure later becomes a checklist item or recovery skill and reduces repeated failure in a new layout, it begins to generate capability compounding.</p>
+<p>Digital tasks follow the same pattern. Browser or code-agent pretraining teaches the system roughly what web pages, code, and tests are. Tool trajectories or demonstrations teach it to click, edit, and run commands. W2 post-training should teach it that old buttons can become invalid after page refresh, which test verified which hypothesis, why a patch route failed, and which experience still applies to the current repository. The key data is not the full chat transcript. It is pre-action and post-action state, predicted outcome, real delta, failure category, recovery action, and later reuse gain.</p>
+<p>Likewise, scaling scientific world models should not only mean “feed more raw signals.” Raw signals are not reality itself; they still pass through sensors, instruments, and sampling chains. What matters is putting calibrated measurements, continuous-time trajectories, intervention records, uncertainty, error models, and testable scientific artifacts into the same closed loop. Otherwise the system may simply move from a JPEG-and-text world to a sensor-reading world without learning which variables are controllable, which laws transfer, and which conclusions can be experimentally falsified.</p>
+<p><img src="/blog/what-is-a-world-model-modeling/gpt-image-2-blog-fig-04-scaling-ladder-en-2026.png" alt="Scaling subjective world models: from grid sandboxes to robots, each level must expand the verified experience loop."></p>
+<p>Therefore, the object of scaling is not a single internal representation. It is the whole post-training loop: more open interactive worlds, more precise current judgment, more reliable external knowledge artifacts, and stricter hidden-task validation. Only when all four scale together can experience become capability compounding. Otherwise the system may become better at imagining, imitating, and executing, but not necessarily better at learning from failure and reuse.</p>
+<h2 id="counterargument-maybe-w2-emerges-implicitly">Counterargument: Maybe W2 Emerges Implicitly</h2>
+<p>This essay does not say every strong system must contain an explicit module named W2. The strongest counterargument is simple: maybe scale, longer context, more interaction data, stronger post-training, or larger WAM systems will learn the same function implicitly.</p>
+<p>That is possible.</p>
+<p>If a system without an explicit W2 adapter can match the explicit adapter under the same model, data, tool, interaction, and validation budgets on recovery, transfer, external knowledge reuse, and hidden-task CCC, then explicit W2 should not be claimed as necessary. In embodied settings, this should be tested seriously: if a larger WAM system can reliably handle occlusion, layout change, failure recovery, cross-embodiment transfer, lower human takeover, and experience reuse under the same budget, then the necessity of a W2 adapter should be weakened. It may be only an analysis framework, or useful only in some domains.</p>
+<p>But if bypass routes succeed locally while repeatedly showing the same failure modes, such as trusting stale memory, confusing correlation with controllability, repeating errors after failure, or failing to reduce future cost, then W2 is not just a label. It becomes a missing interface in current systems.</p>
+<h2 id="conclusion-from-world-simulation-to-experience-compounding">Conclusion: From World Simulation to Experience Compounding</h2>
+<p>The term world model is confusing because it covers many implementations: reinforcement learning models, video generation models, robot state-action policies, agent reasoning, planning, memory, tool traces, tests, and skills. It is useful to place them under one broad frame: they all process future-related knowledge.</p>
+<p>But the next question is narrower: what future knowledge should a finite agent keep? The Tri-World Model answers by separating interaction, internal judgment, and external knowledge. The Interactive Objective World provides environments that respond to action. The External Knowledge World preserves reusable artifacts. The Subjective World Model selects controllable, recoverable, reusable future information under the current goal. Pretraining can provide broad priors, and demonstration learning can provide common action patterns, but long-term capability compounding also needs a post-training loop that keeps updating from interaction, failure, verification, and reuse.</p>
+<p>So the value of W2 is not the name. Its value is a testable standard: if bypass routes can achieve the same recovery, transfer, knowledge reuse, and capability compounding under the same budget, explicit W2 is unnecessary. If they cannot, W2 is the key layer next-generation agents need to add.</p>
+<h2 id="references">References</h2>
+<section data-footnotes="" class="footnotes"><h2 class="sr-only" id="footnote-label">Footnotes</h2>
+<ol>
+<li id="user-content-fn-rl-world-models">
+<p>Richard S. Sutton, <a href="https://link.springer.com/article/10.1007/BF00115009">Integrated architectures for learning, planning, and reacting based on approximating dynamic programming</a>, 1990; David Ha and Jürgen Schmidhuber, <a href="https://arxiv.org/abs/1803.10122">World Models</a>, 2018; Julian Schrittwieser et al., <a href="https://www.nature.com/articles/s41586-020-03051-4">Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model</a>, 2020; Danijar Hafner et al., <a href="https://arxiv.org/abs/2301.04104">Mastering Diverse Domains through World Models</a>, 2023. <a href="#user-content-fnref-rl-world-models" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a> <a href="#user-content-fnref-rl-world-models-2" data-footnote-backref="" aria-label="Back to reference 1-2" class="data-footnote-backref">↩<sup>2</sup></a></p>
+</li>
+<li id="user-content-fn-video-worlds">
+<p>Yann LeCun, <a href="https://openreview.net/forum?id=BZ5a1r-kVsf">A Path Towards Autonomous Machine Intelligence</a>, 2022; Adrien Bardes et al., <a href="https://arxiv.org/abs/2404.08471">Revisiting Feature Prediction for Learning Visual Representations from Video</a>, 2024; OpenAI, <a href="https://openai.com/research/video-generation-models-as-world-simulators">Video generation models as world simulators</a>, 2024. <a href="#user-content-fnref-video-worlds" data-footnote-backref="" aria-label="Back to reference 2" class="data-footnote-backref">↩</a> <a href="#user-content-fnref-video-worlds-2" data-footnote-backref="" aria-label="Back to reference 2-2" class="data-footnote-backref">↩<sup>2</sup></a></p>
+</li>
+<li id="user-content-fn-llm-agents">
+<p>Shunyu Yao et al., <a href="https://arxiv.org/abs/2210.03629">ReAct: Synergizing Reasoning and Acting in Language Models</a>, 2022; Noah Shinn et al., <a href="https://arxiv.org/abs/2303.11366">Reflexion: Language Agents with Verbal Reinforcement Learning</a>, 2023; Guanzhi Wang et al., <a href="https://arxiv.org/abs/2305.16291">Voyager: An Open-Ended Embodied Agent with Large Language Models</a>, 2023. <a href="#user-content-fnref-llm-agents" data-footnote-backref="" aria-label="Back to reference 3" class="data-footnote-backref">↩</a> <a href="#user-content-fnref-llm-agents-2" data-footnote-backref="" aria-label="Back to reference 3-2" class="data-footnote-backref">↩<sup>2</sup></a></p>
+</li>
+<li id="user-content-fn-physical-signal-reflection">
+<p><a href="https://mp.weixin.qq.com/s/bHFtgHJZ30aV0P2_xfsA0A">AGI Should Not Only Read Text: From Physical Signals to Scientific World Models</a>, 2026. <a href="#user-content-fnref-physical-signal-reflection" data-footnote-backref="" aria-label="Back to reference 4" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-scientific-world-models">
+<p>Primary reference threads include Meta AI, <a href="https://ai.meta.com/blog/v-jepa-2-world-model-benchmarks/">Introducing the V-JEPA 2 world model and new benchmarks for physical reasoning</a>, 2025; Archetype AI, <a href="https://www.archetypeai.io/physical-ai">Physical AI / Newton</a>, 2026; Archetype AI, <a href="https://arxiv.org/abs/2410.14724">A Phenomenological AI Foundation Model for Physical Signals</a>, 2024; Polymathic AI, <a href="https://arxiv.org/abs/2510.17960">AION-1: Omnimodal Foundation Model for Astronomical Sciences</a>, 2025; Yiqi Yang et al., <a href="https://arxiv.org/abs/2511.15684">Walrus: A Cross-Domain Foundation Model for Continuum Dynamics</a>, 2025; Steven L. Brunton et al., <a href="https://arxiv.org/abs/1509.03580">Discovering Governing Equations from Data</a>, 2015; Bernhard Schölkopf et al., <a href="https://arxiv.org/abs/2102.11107">Towards Causal Representation Learning</a>, 2021. These materials support the background judgment that physical signals, scientific structure, and causal variables are important sources for world modeling. Whether they become W2 evidence still depends on goal conditioning, action intervention, controllability, and reuse validation. <a href="#user-content-fnref-scientific-world-models" data-footnote-backref="" aria-label="Back to reference 5" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-embodied">
+<p>Michael Ahn et al., <a href="https://arxiv.org/abs/2204.01691">Do As I Can, Not As I Say: Grounding Language in Robotic Affordances</a>, 2022; Anthony Brohan et al., <a href="https://arxiv.org/abs/2307.15818">RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</a>, 2023; Moo Jin Kim et al., <a href="https://arxiv.org/abs/2406.09246">OpenVLA: An Open-Source Vision-Language-Action Model</a>, 2024; Kevin Black et al., <a href="https://arxiv.org/abs/2410.24164">π0: A Vision-Language-Action Flow Model for General Robot Control</a>, 2024; Jun Cen et al., <a href="https://arxiv.org/abs/2506.21539">WorldVLA: Towards Autoregressive Action World Model</a>, 2025. <a href="#user-content-fnref-embodied" data-footnote-backref="" aria-label="Back to reference 6" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-popper-three-worlds">
+<p>Karl Popper, <a href="https://tannerlectures.org/lectures/three-worlds/">Three Worlds</a>, Tanner Lecture, University of Michigan, April 7, 1978. <a href="#user-content-fnref-popper-three-worlds" data-footnote-backref="" aria-label="Back to reference 7" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-popper-sep">
+<p>Stephen Thornton, <a href="https://plato.stanford.edu/entries/popper/">Karl Popper</a>, Stanford Encyclopedia of Philosophy. The section on Objective Knowledge and The Three Worlds Ontology summarizes Popper’s World 1, World 2, and World 3 distinction. <a href="#user-content-fnref-popper-sep" data-footnote-backref="" aria-label="Back to reference 8" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-benchmarks">
+<p>François Chollet et al., <a href="https://arcprize.org/media/ARC_AGI_3_Technical_Report.pdf">ARC-AGI-3 Technical Report</a>, 2026; Tianbao Xie et al., <a href="https://arxiv.org/abs/2404.07972">OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments</a>, 2024; Carlos E. Jimenez et al., <a href="https://arxiv.org/abs/2310.06770">SWE-bench: Can Language Models Resolve Real-World GitHub Issues?</a>, 2023. <a href="#user-content-fnref-benchmarks" data-footnote-backref="" aria-label="Back to reference 9" class="data-footnote-backref">↩</a> <a href="#user-content-fnref-benchmarks-2" data-footnote-backref="" aria-label="Back to reference 9-2" class="data-footnote-backref">↩<sup>2</sup></a></p>
+</li>
+<li id="user-content-fn-robot-benchmarks">
+<p>Bo Liu et al., <a href="https://arxiv.org/abs/2306.03310">LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning</a>, 2023; Soroush Nasiriany et al., <a href="https://arxiv.org/abs/2406.02523">RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots</a>, 2024; Chengshu Li et al., <a href="https://arxiv.org/abs/2403.09227">BEHAVIOR-1K: A Human-Centered, Embodied AI Benchmark with 1,000 Everyday Activities and Realistic Simulation</a>, 2024. <a href="#user-content-fnref-robot-benchmarks" data-footnote-backref="" aria-label="Back to reference 10" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section> </div> <!-- Comments & Reactions (powered by Giscus / GitHub Discussions) --> <section class="mt-16 pt-8 border-t border-gray-200"> <h2 class="text-xl font-serif font-bold text-gray-900 mb-6"> 💬 Comments </h2> <div id="giscus-container"> <script src="https://giscus.app/client.js" data-repo="ying-wen/ying-wen.github.io" data-repo-id="MDEwOlJlcG9zaXRvcnk4NTEzNTA5Mg==" data-category="General" data-category-id="DIC_kwDOBRMO9M4C4fQq" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async></script> </div> <noscript> <p class="text-sm text-gray-400 mt-4"> Comments require JavaScript. Please enable JavaScript or visit GitHub Discussions to join the conversation. </p> </noscript> </section> </article>  </main> <!-- Footer --> <footer class="border-t border-gray-200 bg-white" data-astro-cid-37fxchfa> <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-6 text-sm text-gray-500 sm:flex-row sm:px-6" data-astro-cid-37fxchfa> <p data-astro-cid-37fxchfa>&copy; 2026 Ying Wen. Shanghai Jiao Tong University.</p> <div class="flex gap-4" data-astro-cid-37fxchfa> <a href="https://scholar.google.com/citations?user=_A1CxG8AAAAJ" class="hover:text-primary-700" target="_blank" data-astro-cid-37fxchfa>Scholar</a> <a href="https://github.com/ying-wen" class="hover:text-primary-700" target="_blank" data-astro-cid-37fxchfa>GitHub</a> <a href="mailto:ying.wen@sjtu.edu.cn" class="hover:text-primary-700" data-astro-cid-37fxchfa>Email</a> <a href="/rss.xml" class="hover:text-primary-700" data-astro-cid-37fxchfa>RSS</a> </div> </div> </footer> <script type="module">const n=document.getElementById("mobile-menu-btn"),a=document.getElementById("mobile-menu");n?.addEventListener("click",()=>a?.classList.toggle("hidden"));document.querySelectorAll("[data-target-lang]").forEach(e=>{e.addEventListener("click",()=>{const t=e.dataset.targetLang;t&&localStorage.setItem("preferred-lang",t)})});</script> <script>
+    (function () {
+      var allowedHosts = ['yingwen.io', 'www.yingwen.io'];
+      if (!allowedHosts.includes(window.location.hostname)) return;
+
+      var script = document.createElement('script');
+      script.defer = true;
+      script.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      script.setAttribute('data-cf-beacon', '{"token":"8a256810f17640a2a059322ce5b07248"}');
+      document.head.appendChild(script);
+    })();
+  </script>  </body> </html>
