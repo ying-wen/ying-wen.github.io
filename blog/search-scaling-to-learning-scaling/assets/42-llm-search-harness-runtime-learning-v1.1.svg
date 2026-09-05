@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img" aria-labelledby="title desc">
+  <title id="title">大模型搜索器、Harness 与运行时持续学习</title>
+  <desc id="desc">预训练与强化学习后训练形成环境后果预测、候选与行动策略、价值估计和近似评价能力。大模型在运行时展开隐式前缀树，Harness 通过状态表示、动作接口、工具、评价、计算分配和停止条件实施引导搜索。固定模型搜索受可达支持、候选相关性、评价误差和环境变化限制；运行时持续学习使第一人称经历更新学习状态，并继续影响未来行动。</desc>
+  <rect width="1600" height="1120" fill="#ffffff"/>
+  <style>
+    .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+    .serif{font-family:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",serif}
+    .mono{font-family:"SFMono-Regular",Consolas,monospace}
+    .title{font-size:42px;font-weight:720;fill:#17211c}.lead{font-size:21px;fill:#56615b}
+    .h2{font-size:27px;font-weight:720;fill:#223129}.h3{font-size:19px;font-weight:700;fill:#2f3d35}
+    .body{font-size:18px;fill:#3e4b44}.small{font-size:16px;fill:#65716a}.tiny{font-size:14px;fill:#718078}
+    .orange{fill:#b84e1b}.green{fill:#2f704f}.blue{fill:#365f82}.purple{fill:#6f5683}.red{fill:#9a4a42}
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#637068"/></marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#2f704f"/></marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#6f5683"/></marker>
+  </defs>
+
+  <text x="800" y="58" text-anchor="middle" class="sans title">大模型为何能搜索，Harness 为何仍不可少</text>
+  <text x="800" y="94" text-anchor="middle" class="serif lead">训练形成环境后果、行动与评价先验；Harness 将它们组织为可执行的 guided search</text>
+
+  <g transform="translate(55,142)">
+    <rect width="390" height="370" rx="18" fill="#f7f8fb" stroke="#9aaabc" stroke-width="2"/>
+    <text x="195" y="43" text-anchor="middle" class="sans h2 blue">训练形成多角色先验</text>
+    <rect x="25" y="76" width="340" height="105" rx="12" fill="#ffffff" stroke="#b6c2cf"/>
+    <text x="45" y="108" class="sans h3">预训练</text>
+    <text x="45" y="137" class="serif body">环境后果预测 · proposal / policy</text>
+    <text x="45" y="163" class="serif small">价值估计 · 近似评价</text>
+    <rect x="25" y="199" width="340" height="105" rx="12" fill="#ffffff" stroke="#b6c2cf"/>
+    <text x="45" y="231" class="sans h3">RL 后训练</text>
+    <text x="45" y="260" class="serif body">轨迹控制、工具使用与计算分配</text>
+    <text x="45" y="286" class="serif small">终局奖励 · 过程反馈 · 环境轨迹</text>
+    <text x="195" y="344" text-anchor="middle" class="serif small">同一模型可承担预测、策略与评价角色</text>
+  </g>
+
+  <path d="M455 327 H532" fill="none" stroke="#637068" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g transform="translate(545,142)">
+    <rect width="470" height="370" rx="18" fill="#fff9f5" stroke="#d98a5f" stroke-width="2"/>
+    <text x="235" y="43" text-anchor="middle" class="sans h2 orange">大模型展开隐式搜索树</text>
+    <text x="235" y="73" text-anchor="middle" class="serif small">前缀为节点；token、工具调用与行动为边</text>
+    <g transform="translate(48,107)" stroke="#d08b65" stroke-width="3" fill="none">
+      <path d="M187 0 L83 72 M187 0 L187 72 M187 0 L291 72"/>
+      <path d="M83 72 L32 147 M83 72 L110 147"/>
+      <path d="M187 72 L166 147 M187 72 L223 147"/>
+      <path d="M291 72 L275 147 M291 72 L342 147"/>
+    </g>
+    <g transform="translate(48,107)" fill="#ffffff" stroke="#c9774b" stroke-width="2">
+      <circle cx="187" cy="0" r="18"/><circle cx="83" cy="72" r="17"/><circle cx="187" cy="72" r="17"/><circle cx="291" cy="72" r="17"/>
+      <circle cx="32" cy="147" r="15"/><circle cx="110" cy="147" r="15"/><circle cx="166" cy="147" r="15"/><circle cx="223" cy="147" r="15"/><circle cx="275" cy="147" r="15"/><circle cx="342" cy="147" r="15"/>
+    </g>
+    <path d="M235 107 L235 179 L271 254" fill="none" stroke="#b84e1b" stroke-width="7" opacity="0.48"/>
+    <rect x="32" y="287" width="406" height="55" rx="11" fill="#fff1e7" stroke="#d98a5f"/>
+    <text x="235" y="321" text-anchor="middle" class="serif body">采样 · 顺序修订 · 回溯 · 工具交互</text>
+  </g>
+
+  <path d="M1025 327 H1102" fill="none" stroke="#637068" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g transform="translate(1115,142)">
+    <rect width="430" height="370" rx="18" fill="#f7fbf8" stroke="#6f9f83" stroke-width="2"/>
+    <text x="215" y="43" text-anchor="middle" class="sans h2 green">Harness 实施 guided search</text>
+    <g transform="translate(23,78)">
+      <rect width="182" height="76" rx="10" fill="#ffffff" stroke="#8fb09d"/><text x="91" y="31" text-anchor="middle" class="sans h3">状态表示</text><text x="91" y="57" text-anchor="middle" class="serif small">保留哪些观测与历史</text>
+      <rect x="202" width="182" height="76" rx="10" fill="#ffffff" stroke="#8fb09d"/><text x="293" y="31" text-anchor="middle" class="sans h3">动作与工具</text><text x="293" y="57" text-anchor="middle" class="serif small">允许哪些可执行边</text>
+      <rect y="94" width="182" height="76" rx="10" fill="#ffffff" stroke="#8fb09d"/><text x="91" y="125" text-anchor="middle" class="sans h3">评价与反馈</text><text x="91" y="151" text-anchor="middle" class="serif small">排序、验证与回滚</text>
+      <rect x="202" y="94" width="182" height="76" rx="10" fill="#ffffff" stroke="#8fb09d"/><text x="293" y="125" text-anchor="middle" class="sans h3">分配与停止</text><text x="293" y="151" text-anchor="middle" class="serif small">计算投向何处</text>
+    </g>
+    <rect x="23" y="276" width="384" height="66" rx="11" fill="#eaf4ed" stroke="#6f9f83"/>
+    <text x="215" y="305" text-anchor="middle" class="sans h3 green">可达支持集 𝒰ₕ 与访问分布 ρₕ,𝚌</text>
+    <text x="215" y="329" text-anchor="middle" class="serif small">扩展外部可执行边，同时排除无效分支</text>
+  </g>
+
+  <g transform="translate(55,557)">
+    <rect width="1490" height="120" rx="18" fill="#fff7f6" stroke="#c9958f"/>
+    <text x="28" y="39" class="sans h2 red">固定模型搜索的边界</text>
+    <g class="serif body">
+      <text x="28" y="82">不可达支持</text><text x="210" y="82">候选高度相关</text><text x="432" y="82">评价器系统误差</text><text x="682" y="82">计算分配失配</text><text x="920" y="82">环境持续变化</text><text x="1160" y="82">任务重置后不积累</text>
+    </g>
+    <path d="M177 76 H193 M390 76 H415 M631 76 H665 M868 76 H905 M1110 76 H1145" stroke="#c9958f" stroke-width="2"/>
+  </g>
+
+  <g transform="translate(55,722)">
+    <rect width="705" height="330" rx="18" fill="#fafafa" stroke="#cfd5d2"/>
+    <text x="352" y="43" text-anchor="middle" class="sans h2">仅靠离线模型换代</text>
+    <text x="352" y="73" text-anchor="middle" class="serif small">共享能力在离散发布时刻更新</text>
+    <g transform="translate(40,112)">
+      <rect width="140" height="68" rx="10" fill="#ffffff" stroke="#bfc8c3"/><text x="70" y="28" text-anchor="middle" class="mono body">θₖ</text><text x="70" y="52" text-anchor="middle" class="serif small">当前发布模型</text>
+      <path d="M193 34 H290" stroke="#637068" stroke-width="3" marker-end="url(#arrow)"/>
+      <rect x="310" width="170" height="68" rx="10" fill="#ffffff" stroke="#bfc8c3"/><text x="395" y="28" text-anchor="middle" class="serif body">集中训练</text><text x="395" y="52" text-anchor="middle" class="serif small">筛选后的运行记录</text>
+      <path d="M495 34 H565" stroke="#637068" stroke-width="3" marker-end="url(#arrow)"/>
+      <rect x="580" width="85" height="68" rx="10" fill="#ffffff" stroke="#bfc8c3"/><text x="622" y="41" text-anchor="middle" class="mono body">θₖ₊₁</text>
+    </g>
+    <text x="352" y="229" text-anchor="middle" class="serif body">发布间隔内：环境漂移 · 私有经验 · 路径相关反馈</text>
+    <text x="352" y="262" text-anchor="middle" class="serif body">不能及时更新当前 proposal、评价器与搜索起点</text>
+    <text x="352" y="301" text-anchor="middle" class="serif small">适合群体共享结构，但不能替代运行中的适应</text>
+  </g>
+
+  <g transform="translate(790,722)">
+    <rect width="755" height="330" rx="18" fill="#f7fbf8" stroke="#6f9f83" stroke-width="2"/>
+    <text x="377" y="43" text-anchor="middle" class="sans h2 green">运行时的持续学习</text>
+    <text x="377" y="73" text-anchor="middle" class="serif small">连续交互中的第一人称经历递推学习状态</text>
+    <g transform="translate(39,108)">
+      <rect width="150" height="70" rx="10" fill="#ffffff" stroke="#8fb09d"/><text x="75" y="29" text-anchor="middle" class="serif body">经验 eₜ</text><text x="75" y="54" text-anchor="middle" class="serif small">行动后果与反馈</text>
+      <path d="M166 35 H253" stroke="#2f704f" stroke-width="3" marker-end="url(#arrowGreen)"/>
+      <rect x="270" width="190" height="70" rx="10" fill="#ffffff" stroke="#8fb09d"/><text x="365" y="29" text-anchor="middle" class="mono body">zₜ₊₁ = U(zₜ,eₜ)</text><text x="365" y="54" text-anchor="middle" class="serif small">学习状态递推</text>
+      <path d="M476 35 H563" stroke="#2f704f" stroke-width="3" marker-end="url(#arrowGreen)"/>
+      <rect x="580" width="135" height="70" rx="10" fill="#ffffff" stroke="#8fb09d"/><text x="647" y="29" text-anchor="middle" class="serif body">未来任务</text><text x="647" y="54" text-anchor="middle" class="mono small">固定 c₀</text>
+    </g>
+    <path d="M687 190 C687 218 92 218 92 190" fill="none" stroke="#6f5683" stroke-width="3" marker-end="url(#arrowPurple)"/>
+    <text x="377" y="246" text-anchor="middle" class="serif body">更新未来表示、候选先验、评价与搜索起点</text>
+    <text x="377" y="275" text-anchor="middle" class="serif body">检验迁移 · 保持 · 后期可塑性 · 新任务学习效率</text>
+    <text x="377" y="307" text-anchor="middle" class="serif small">与离线训练互补；不是无约束地提交每次更新</text>
+  </g>
+</svg>
