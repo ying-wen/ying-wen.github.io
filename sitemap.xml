@@ -1,0 +1,1711 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://yingwen.io/en/research/llms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/research/llms/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/research/llms/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/research/llms/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/research/llms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/research/llms/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/research/llms/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/research/llms/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/research/llm-agents/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/research/llm-agents/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/research/llm-agents/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/research/llm-agents/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/research/llm-agents/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/research/llm-agents/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/research/llm-agents/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/research/llm-agents/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/research/reinforcement-learning/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/research/reinforcement-learning/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/research/reinforcement-learning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/research/reinforcement-learning/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/research/reinforcement-learning/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/research/reinforcement-learning/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/research/reinforcement-learning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/research/reinforcement-learning/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/research/multi-agent/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/research/multi-agent/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/research/multi-agent/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/research/multi-agent/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/research/multi-agent/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/research/multi-agent/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/research/multi-agent/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/research/multi-agent/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/research/embodied-ai/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/research/embodied-ai/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/research/embodied-ai/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/research/embodied-ai/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/research/embodied-ai/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/research/embodied-ai/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/research/embodied-ai/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/research/embodied-ai/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/research/machine-learning/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/research/machine-learning/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/research/machine-learning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/research/machine-learning/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/research/machine-learning/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/research/machine-learning/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/research/machine-learning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/research/machine-learning/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/a-game-theoretic-approach-to-multi-agent-trust-region-optimi/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/a-game-theoretic-approach-to-multi-agent-trust-region-optimi/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/a-game-theoretic-approach-to-multi-agent-trust-region-optimi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/a-game-theoretic-approach-to-multi-agent-trust-region-optimi/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/a-game-theoretic-approach-to-multi-agent-trust-region-optimi/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/a-game-theoretic-approach-to-multi-agent-trust-region-optimi/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/a-game-theoretic-approach-to-multi-agent-trust-region-optimi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/a-game-theoretic-approach-to-multi-agent-trust-region-optimi/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/a-regularized-opponent-model-with-maximum-entropy-objective/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/a-regularized-opponent-model-with-maximum-entropy-objective/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/a-regularized-opponent-model-with-maximum-entropy-objective/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/a-regularized-opponent-model-with-maximum-entropy-objective/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/a-regularized-opponent-model-with-maximum-entropy-objective/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/a-regularized-opponent-model-with-maximum-entropy-objective/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/a-regularized-opponent-model-with-maximum-entropy-objective/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/a-regularized-opponent-model-with-maximum-entropy-objective/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/a-study-of-ai-population-dynamics-with-million-agent-reinfor/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/a-study-of-ai-population-dynamics-with-million-agent-reinfor/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/a-study-of-ai-population-dynamics-with-million-agent-reinfor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/a-study-of-ai-population-dynamics-with-million-agent-reinfor/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/a-study-of-ai-population-dynamics-with-million-agent-reinfor/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/a-study-of-ai-population-dynamics-with-million-agent-reinfor/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/a-study-of-ai-population-dynamics-with-million-agent-reinfor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/a-study-of-ai-population-dynamics-with-million-agent-reinfor/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/a-survey-of-ai-agent-protocols/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/a-survey-of-ai-agent-protocols/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/a-survey-of-ai-agent-protocols/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/a-survey-of-ai-agent-protocols/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/a-survey-of-ai-agent-protocols/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/a-survey-of-ai-agent-protocols/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/a-survey-of-ai-agent-protocols/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/a-survey-of-ai-agent-protocols/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/accelerating-multi-turn-llm-agent-workflows-via-context-templating-and-opportunistic-prefill/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/accelerating-multi-turn-llm-agent-workflows-via-context-templating-and-opportunistic-prefill/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/accelerating-multi-turn-llm-agent-workflows-via-context-templating-and-opportunistic-prefill/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/accelerating-multi-turn-llm-agent-workflows-via-context-templating-and-opportunistic-prefill/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/accelerating-multi-turn-llm-agent-workflows-via-context-templating-and-opportunistic-prefill/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/accelerating-multi-turn-llm-agent-workflows-via-context-templating-and-opportunistic-prefill/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/accelerating-multi-turn-llm-agent-workflows-via-context-templating-and-opportunistic-prefill/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/accelerating-multi-turn-llm-agent-workflows-via-context-templating-and-opportunistic-prefill/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/acemap-knowledge-discovery-through-academic-graph/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/acemap-knowledge-discovery-through-academic-graph/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/acemap-knowledge-discovery-through-academic-graph/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/acemap-knowledge-discovery-through-academic-graph/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/acemap-knowledge-discovery-through-academic-graph/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/acemap-knowledge-discovery-through-academic-graph/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/acemap-knowledge-discovery-through-academic-graph/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/acemap-knowledge-discovery-through-academic-graph/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/adaptive-control-strategy-for-quadruped-robots-in-actuator-degradation-scenarios/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/adaptive-control-strategy-for-quadruped-robots-in-actuator-degradation-scenarios/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/adaptive-control-strategy-for-quadruped-robots-in-actuator-degradation-scenarios/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/adaptive-control-strategy-for-quadruped-robots-in-actuator-degradation-scenarios/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/adaptive-control-strategy-for-quadruped-robots-in-actuator-degradation-scenarios/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/adaptive-control-strategy-for-quadruped-robots-in-actuator-degradation-scenarios/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/adaptive-control-strategy-for-quadruped-robots-in-actuator-degradation-scenarios/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/adaptive-control-strategy-for-quadruped-robots-in-actuator-degradation-scenarios/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/agent-exchange-an-auction-platform-for-ai-agent-marketplaces/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/agent-exchange-an-auction-platform-for-ai-agent-marketplaces/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/agent-exchange-an-auction-platform-for-ai-agent-marketplaces/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/agent-exchange-an-auction-platform-for-ai-agent-marketplaces/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/agent-exchange-an-auction-platform-for-ai-agent-marketplaces/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/agent-exchange-an-auction-platform-for-ai-agent-marketplaces/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/agent-exchange-an-auction-platform-for-ai-agent-marketplaces/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/agent-exchange-an-auction-platform-for-ai-agent-marketplaces/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/agent-exchange-shaping-the-future-of-ai-agent-economics/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/agent-exchange-shaping-the-future-of-ai-agent-economics/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/agent-exchange-shaping-the-future-of-ai-agent-economics/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/agent-exchange-shaping-the-future-of-ai-agent-economics/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/agent-exchange-shaping-the-future-of-ai-agent-economics/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/agent-exchange-shaping-the-future-of-ai-agent-economics/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/agent-exchange-shaping-the-future-of-ai-agent-economics/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/agent-exchange-shaping-the-future-of-ai-agent-economics/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/agentic-web-weaving-the-next-web-with-ai-agents/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/agentic-web-weaving-the-next-web-with-ai-agents/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/agentic-web-weaving-the-next-web-with-ai-agents/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/agentic-web-weaving-the-next-web-with-ai-agents/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/agentic-web-weaving-the-next-web-with-ai-agents/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/agentic-web-weaving-the-next-web-with-ai-agents/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/agentic-web-weaving-the-next-web-with-ai-agents/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/agentic-web-weaving-the-next-web-with-ai-agents/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/at-drone-benchmarking-adaptive-teaming-in-multi-drone-pursuit/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/at-drone-benchmarking-adaptive-teaming-in-multi-drone-pursuit/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/at-drone-benchmarking-adaptive-teaming-in-multi-drone-pursuit/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/at-drone-benchmarking-adaptive-teaming-in-multi-drone-pursuit/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/at-drone-benchmarking-adaptive-teaming-in-multi-drone-pursuit/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/at-drone-benchmarking-adaptive-teaming-in-multi-drone-pursuit/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/at-drone-benchmarking-adaptive-teaming-in-multi-drone-pursuit/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/at-drone-benchmarking-adaptive-teaming-in-multi-drone-pursuit/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/cdt-aaai-2024/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/cdt-aaai-2024/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/cdt-aaai-2024/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/cdt-aaai-2024/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/cdt-aaai-2024/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/cdt-aaai-2024/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/cdt-aaai-2024/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/cdt-aaai-2024/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/cole-icml-2024/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/cole-icml-2024/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/cole-icml-2024/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/cole-icml-2024/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/cole-icml-2024/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/cole-icml-2024/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/cole-icml-2024/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/cole-icml-2024/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/computing-ex-ante-equilibrium-in-heterogeneous-zero-sum-team-game/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/computing-ex-ante-equilibrium-in-heterogeneous-zero-sum-team-game/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/computing-ex-ante-equilibrium-in-heterogeneous-zero-sum-team-game/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/computing-ex-ante-equilibrium-in-heterogeneous-zero-sum-team-game/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/computing-ex-ante-equilibrium-in-heterogeneous-zero-sum-team-game/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/computing-ex-ante-equilibrium-in-heterogeneous-zero-sum-team-game/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/computing-ex-ante-equilibrium-in-heterogeneous-zero-sum-team-game/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/computing-ex-ante-equilibrium-in-heterogeneous-zero-sum-team-game/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/aligning-neurips-2024/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/aligning-neurips-2024/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/aligning-neurips-2024/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/aligning-neurips-2024/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/aligning-neurips-2024/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/aligning-neurips-2024/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/aligning-neurips-2024/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/aligning-neurips-2024/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/conflux-psro-effectively-leveraging-collective-advantages-in-policy-space-respon/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/conflux-psro-effectively-leveraging-collective-advantages-in-policy-space-respon/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/conflux-psro-effectively-leveraging-collective-advantages-in-policy-space-respon/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/conflux-psro-effectively-leveraging-collective-advantages-in-policy-space-respon/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/conflux-psro-effectively-leveraging-collective-advantages-in-policy-space-respon/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/conflux-psro-effectively-leveraging-collective-advantages-in-policy-space-respon/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/conflux-psro-effectively-leveraging-collective-advantages-in-policy-space-respon/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/conflux-psro-effectively-leveraging-collective-advantages-in-policy-space-respon/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/controlling-large-language-model-based-agents-for-large-scale-decision-making-an/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/controlling-large-language-model-based-agents-for-large-scale-decision-making-an/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/controlling-large-language-model-based-agents-for-large-scale-decision-making-an/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/controlling-large-language-model-based-agents-for-large-scale-decision-making-an/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/controlling-large-language-model-based-agents-for-large-scale-decision-making-an/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/controlling-large-language-model-based-agents-for-large-scale-decision-making-an/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/controlling-large-language-model-based-agents-for-large-scale-decision-making-an/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/controlling-large-language-model-based-agents-for-large-scale-decision-making-an/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/cross-utterance-conditioned-vae-for-non-autoregressive-text-to-speech/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/cross-utterance-conditioned-vae-for-non-autoregressive-text-to-speech/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/cross-utterance-conditioned-vae-for-non-autoregressive-text-to-speech/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/cross-utterance-conditioned-vae-for-non-autoregressive-text-to-speech/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/cross-utterance-conditioned-vae-for-non-autoregressive-text-to-speech/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/cross-utterance-conditioned-vae-for-non-autoregressive-text-to-speech/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/cross-utterance-conditioned-vae-for-non-autoregressive-text-to-speech/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/cross-utterance-conditioned-vae-for-non-autoregressive-text-to-speech/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/cross-utterance-conditioned-vae-for-speech-generation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/cross-utterance-conditioned-vae-for-speech-generation/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/cross-utterance-conditioned-vae-for-speech-generation/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/cross-utterance-conditioned-vae-for-speech-generation/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/cross-utterance-conditioned-vae-for-speech-generation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/cross-utterance-conditioned-vae-for-speech-generation/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/cross-utterance-conditioned-vae-for-speech-generation/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/cross-utterance-conditioned-vae-for-speech-generation/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/dcac-reducing-unnecessary-conservatism-in-offline-to-online-reinforcement-learning/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/dcac-reducing-unnecessary-conservatism-in-offline-to-online-reinforcement-learning/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/dcac-reducing-unnecessary-conservatism-in-offline-to-online-reinforcement-learning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/dcac-reducing-unnecessary-conservatism-in-offline-to-online-reinforcement-learning/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/dcac-reducing-unnecessary-conservatism-in-offline-to-online-reinforcement-learning/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/dcac-reducing-unnecessary-conservatism-in-offline-to-online-reinforcement-learning/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/dcac-reducing-unnecessary-conservatism-in-offline-to-online-reinforcement-learning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/dcac-reducing-unnecessary-conservatism-in-offline-to-online-reinforcement-learning/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/deepshovel-an-online-collaborative-platform-for-data-extraction-in-geoscience-literature-with-ai-assistance/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/deepshovel-an-online-collaborative-platform-for-data-extraction-in-geoscience-literature-with-ai-assistance/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/deepshovel-an-online-collaborative-platform-for-data-extraction-in-geoscience-literature-with-ai-assistance/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/deepshovel-an-online-collaborative-platform-for-data-extraction-in-geoscience-literature-with-ai-assistance/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/deepshovel-an-online-collaborative-platform-for-data-extraction-in-geoscience-literature-with-ai-assistance/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/deepshovel-an-online-collaborative-platform-for-data-extraction-in-geoscience-literature-with-ai-assistance/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/deepshovel-an-online-collaborative-platform-for-data-extraction-in-geoscience-literature-with-ai-assistance/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/deepshovel-an-online-collaborative-platform-for-data-extraction-in-geoscience-literature-with-ai-assistance/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/diverse-auto-curriculum-is-critical-for-successful-real-worl/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/diverse-auto-curriculum-is-critical-for-successful-real-worl/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/diverse-auto-curriculum-is-critical-for-successful-real-worl/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/diverse-auto-curriculum-is-critical-for-successful-real-worl/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/diverse-auto-curriculum-is-critical-for-successful-real-worl/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/diverse-auto-curriculum-is-critical-for-successful-real-worl/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/diverse-auto-curriculum-is-critical-for-successful-real-worl/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/diverse-auto-curriculum-is-critical-for-successful-real-worl/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/ds-agent-automated-data-science-by-empowering-large-language-models-with-case-ba/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/ds-agent-automated-data-science-by-empowering-large-language-models-with-case-ba/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/ds-agent-automated-data-science-by-empowering-large-language-models-with-case-ba/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/ds-agent-automated-data-science-by-empowering-large-language-models-with-case-ba/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/ds-agent-automated-data-science-by-empowering-large-language-models-with-case-ba/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/ds-agent-automated-data-science-by-empowering-large-language-models-with-case-ba/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/ds-agent-automated-data-science-by-empowering-large-language-models-with-case-ba/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/ds-agent-automated-data-science-by-empowering-large-language-models-with-case-ba/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/dsr-optimization-of-performance-lower-bound-for-hierarchical-policy-with-dynamical-skill-refinement/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/dsr-optimization-of-performance-lower-bound-for-hierarchical-policy-with-dynamical-skill-refinement/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/dsr-optimization-of-performance-lower-bound-for-hierarchical-policy-with-dynamical-skill-refinement/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/dsr-optimization-of-performance-lower-bound-for-hierarchical-policy-with-dynamical-skill-refinement/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/dsr-optimization-of-performance-lower-bound-for-hierarchical-policy-with-dynamical-skill-refinement/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/dsr-optimization-of-performance-lower-bound-for-hierarchical-policy-with-dynamical-skill-refinement/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/dsr-optimization-of-performance-lower-bound-for-hierarchical-policy-with-dynamical-skill-refinement/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/dsr-optimization-of-performance-lower-bound-for-hierarchical-policy-with-dynamical-skill-refinement/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/efficient-model-agnostic-alignment-via-bayesian-persuasion/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/efficient-model-agnostic-alignment-via-bayesian-persuasion/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/efficient-model-agnostic-alignment-via-bayesian-persuasion/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/efficient-model-agnostic-alignment-via-bayesian-persuasion/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/efficient-model-agnostic-alignment-via-bayesian-persuasion/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/efficient-model-agnostic-alignment-via-bayesian-persuasion/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/efficient-model-agnostic-alignment-via-bayesian-persuasion/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/efficient-model-agnostic-alignment-via-bayesian-persuasion/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/efficient-policy-space-response-oracles/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/efficient-policy-space-response-oracles/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/efficient-policy-space-response-oracles/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/efficient-policy-space-response-oracles/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/efficient-policy-space-response-oracles/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/efficient-policy-space-response-oracles/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/efficient-policy-space-response-oracles/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/efficient-policy-space-response-oracles/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/efficient-preference-based-reinforcement-learning-via-aligned-experience-estimat/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/efficient-preference-based-reinforcement-learning-via-aligned-experience-estimat/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/efficient-preference-based-reinforcement-learning-via-aligned-experience-estimat/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/efficient-preference-based-reinforcement-learning-via-aligned-experience-estimat/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/efficient-preference-based-reinforcement-learning-via-aligned-experience-estimat/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/efficient-preference-based-reinforcement-learning-via-aligned-experience-estimat/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/efficient-preference-based-reinforcement-learning-via-aligned-experience-estimat/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/efficient-preference-based-reinforcement-learning-via-aligned-experience-estimat/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/embodied-arena-a-comprehensive-unified-and-evolving-evaluation-platform-for-embo/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/embodied-arena-a-comprehensive-unified-and-evolving-evaluation-platform-for-embo/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/embodied-arena-a-comprehensive-unified-and-evolving-evaluation-platform-for-embo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/embodied-arena-a-comprehensive-unified-and-evolving-evaluation-platform-for-embo/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/embodied-arena-a-comprehensive-unified-and-evolving-evaluation-platform-for-embo/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/embodied-arena-a-comprehensive-unified-and-evolving-evaluation-platform-for-embo/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/embodied-arena-a-comprehensive-unified-and-evolving-evaluation-platform-for-embo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/embodied-arena-a-comprehensive-unified-and-evolving-evaluation-platform-for-embo/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/entropy-regularized-token-level-policy-optimization-for-language-agent-reinforce/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/entropy-regularized-token-level-policy-optimization-for-language-agent-reinforce/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/entropy-regularized-token-level-policy-optimization-for-language-agent-reinforce/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/entropy-regularized-token-level-policy-optimization-for-language-agent-reinforce/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/entropy-regularized-token-level-policy-optimization-for-language-agent-reinforce/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/entropy-regularized-token-level-policy-optimization-for-language-agent-reinforce/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/entropy-regularized-token-level-policy-optimization-for-language-agent-reinforce/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/entropy-regularized-token-level-policy-optimization-for-language-agent-reinforce/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/factorized-q-learning-for-large-scale-multi-agent-systems/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/factorized-q-learning-for-large-scale-multi-agent-systems/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/factorized-q-learning-for-large-scale-multi-agent-systems/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/factorized-q-learning-for-large-scale-multi-agent-systems/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/factorized-q-learning-for-large-scale-multi-agent-systems/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/factorized-q-learning-for-large-scale-multi-agent-systems/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/factorized-q-learning-for-large-scale-multi-agent-systems/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/factorized-q-learning-for-large-scale-multi-agent-systems/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/fusion-psro-nash-policy-fusion-for-policy-space-response-oracles/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/fusion-psro-nash-policy-fusion-for-policy-space-response-oracles/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/fusion-psro-nash-policy-fusion-for-policy-space-response-oracles/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/fusion-psro-nash-policy-fusion-for-policy-space-response-oracles/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/fusion-psro-nash-policy-fusion-for-policy-space-response-oracles/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/fusion-psro-nash-policy-fusion-for-policy-space-response-oracles/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/fusion-psro-nash-policy-fusion-for-policy-space-response-oracles/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/fusion-psro-nash-policy-fusion-for-policy-space-response-oracles/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/gear-a-gpu-centric-experience-replay-system-for-large-reinfo/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/gear-a-gpu-centric-experience-replay-system-for-large-reinfo/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/gear-a-gpu-centric-experience-replay-system-for-large-reinfo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/gear-a-gpu-centric-experience-replay-system-for-large-reinfo/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/gear-a-gpu-centric-experience-replay-system-for-large-reinfo/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/gear-a-gpu-centric-experience-replay-system-for-large-reinfo/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/gear-a-gpu-centric-experience-replay-system-for-large-reinfo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/gear-a-gpu-centric-experience-replay-system-for-large-reinfo/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/geodeepshovel-a-platform-for-building-scientific-database-from-geoscience-literature-with-ai-assistance/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/geodeepshovel-a-platform-for-building-scientific-database-from-geoscience-literature-with-ai-assistance/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/geodeepshovel-a-platform-for-building-scientific-database-from-geoscience-literature-with-ai-assistance/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/geodeepshovel-a-platform-for-building-scientific-database-from-geoscience-literature-with-ai-assistance/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/geodeepshovel-a-platform-for-building-scientific-database-from-geoscience-literature-with-ai-assistance/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/geodeepshovel-a-platform-for-building-scientific-database-from-geoscience-literature-with-ai-assistance/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/geodeepshovel-a-platform-for-building-scientific-database-from-geoscience-literature-with-ai-assistance/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/geodeepshovel-a-platform-for-building-scientific-database-from-geoscience-literature-with-ai-assistance/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/greedy-when-sure-and-conservative-when-uncertain-about-the-opponents/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/greedy-when-sure-and-conservative-when-uncertain-about-the-opponents/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/greedy-when-sure-and-conservative-when-uncertain-about-the-opponents/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/greedy-when-sure-and-conservative-when-uncertain-about-the-opponents/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/greedy-when-sure-and-conservative-when-uncertain-about-the-opponents/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/greedy-when-sure-and-conservative-when-uncertain-about-the-opponents/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/greedy-when-sure-and-conservative-when-uncertain-about-the-opponents/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/greedy-when-sure-and-conservative-when-uncertain-about-the-opponents/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/highly-efficient-epidemic-spreading-model-based-lpa-threshold-community-detection-method/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/highly-efficient-epidemic-spreading-model-based-lpa-threshold-community-detection-method/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/highly-efficient-epidemic-spreading-model-based-lpa-threshold-community-detection-method/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/highly-efficient-epidemic-spreading-model-based-lpa-threshold-community-detection-method/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/highly-efficient-epidemic-spreading-model-based-lpa-threshold-community-detection-method/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/highly-efficient-epidemic-spreading-model-based-lpa-threshold-community-detection-method/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/highly-efficient-epidemic-spreading-model-based-lpa-threshold-community-detection-method/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/highly-efficient-epidemic-spreading-model-based-lpa-threshold-community-detection-method/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/hola-drone-hypergraphic-open-ended-learning-for-zero-shot-multi-drone-cooperativ/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/hola-drone-hypergraphic-open-ended-learning-for-zero-shot-multi-drone-cooperativ/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/hola-drone-hypergraphic-open-ended-learning-for-zero-shot-multi-drone-cooperativ/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/hola-drone-hypergraphic-open-ended-learning-for-zero-shot-multi-drone-cooperativ/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/hola-drone-hypergraphic-open-ended-learning-for-zero-shot-multi-drone-cooperativ/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/hola-drone-hypergraphic-open-ended-learning-for-zero-shot-multi-drone-cooperativ/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/hola-drone-hypergraphic-open-ended-learning-for-zero-shot-multi-drone-cooperativ/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/hola-drone-hypergraphic-open-ended-learning-for-zero-shot-multi-drone-cooperativ/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/investigating-the-geometric-structure-of-neural-activation-spaces-with-convex-hull-approximations/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/investigating-the-geometric-structure-of-neural-activation-spaces-with-convex-hull-approximations/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/investigating-the-geometric-structure-of-neural-activation-spaces-with-convex-hull-approximations/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/investigating-the-geometric-structure-of-neural-activation-spaces-with-convex-hull-approximations/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/investigating-the-geometric-structure-of-neural-activation-spaces-with-convex-hull-approximations/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/investigating-the-geometric-structure-of-neural-activation-spaces-with-convex-hull-approximations/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/investigating-the-geometric-structure-of-neural-activation-spaces-with-convex-hull-approximations/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/investigating-the-geometric-structure-of-neural-activation-spaces-with-convex-hull-approximations/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/jailbreakskill-scaling-automated-red-teaming-with-reusable-and-ever-evolving-skills/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/jailbreakskill-scaling-automated-red-teaming-with-reusable-and-ever-evolving-skills/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/jailbreakskill-scaling-automated-red-teaming-with-reusable-and-ever-evolving-skills/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/jailbreakskill-scaling-automated-red-teaming-with-reusable-and-ever-evolving-skills/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/jailbreakskill-scaling-automated-red-teaming-with-reusable-and-ever-evolving-skills/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/jailbreakskill-scaling-automated-red-teaming-with-reusable-and-ever-evolving-skills/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/jailbreakskill-scaling-automated-red-teaming-with-reusable-and-ever-evolving-skills/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/jailbreakskill-scaling-automated-red-teaming-with-reusable-and-ever-evolving-skills/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/joint-perception-and-control-as-inference-with-an-object-based-implementation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/joint-perception-and-control-as-inference-with-an-object-based-implementation/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/joint-perception-and-control-as-inference-with-an-object-based-implementation/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/joint-perception-and-control-as-inference-with-an-object-based-implementation/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/joint-perception-and-control-as-inference-with-an-object-based-implementation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/joint-perception-and-control-as-inference-with-an-object-based-implementation/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/joint-perception-and-control-as-inference-with-an-object-based-implementation/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/joint-perception-and-control-as-inference-with-an-object-based-implementation/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/kalm-knowledge-aligned-autoregressive-language-modeling-via-dual-view-knowledge/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/kalm-knowledge-aligned-autoregressive-language-modeling-via-dual-view-knowledge/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/kalm-knowledge-aligned-autoregressive-language-modeling-via-dual-view-knowledge/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/kalm-knowledge-aligned-autoregressive-language-modeling-via-dual-view-knowledge/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/kalm-knowledge-aligned-autoregressive-language-modeling-via-dual-view-knowledge/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/kalm-knowledge-aligned-autoregressive-language-modeling-via-dual-view-knowledge/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/kalm-knowledge-aligned-autoregressive-language-modeling-via-dual-view-knowledge/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/kalm-knowledge-aligned-autoregressive-language-modeling-via-dual-view-knowledge/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/know-your-enemies-and-know-yourself-in-the-real-time-bidding-function-optimisation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/know-your-enemies-and-know-yourself-in-the-real-time-bidding-function-optimisation/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/know-your-enemies-and-know-yourself-in-the-real-time-bidding-function-optimisation/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/know-your-enemies-and-know-yourself-in-the-real-time-bidding-function-optimisation/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/know-your-enemies-and-know-yourself-in-the-real-time-bidding-function-optimisation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/know-your-enemies-and-know-yourself-in-the-real-time-bidding-function-optimisation/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/know-your-enemies-and-know-yourself-in-the-real-time-bidding-function-optimisation/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/know-your-enemies-and-know-yourself-in-the-real-time-bidding-function-optimisation/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/knowledgeshovel-an-ai-in-the-loop-document-annotation-system-for-scientific-knowledge-base-construction/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/knowledgeshovel-an-ai-in-the-loop-document-annotation-system-for-scientific-knowledge-base-construction/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/knowledgeshovel-an-ai-in-the-loop-document-annotation-system-for-scientific-knowledge-base-construction/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/knowledgeshovel-an-ai-in-the-loop-document-annotation-system-for-scientific-knowledge-base-construction/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/knowledgeshovel-an-ai-in-the-loop-document-annotation-system-for-scientific-knowledge-base-construction/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/knowledgeshovel-an-ai-in-the-loop-document-annotation-system-for-scientific-knowledge-base-construction/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/knowledgeshovel-an-ai-in-the-loop-document-annotation-system-for-scientific-knowledge-base-construction/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/knowledgeshovel-an-ai-in-the-loop-document-annotation-system-for-scientific-knowledge-base-construction/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/language-games-as-the-pathway-to-artificial-superhuman-intelligence/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/language-games-as-the-pathway-to-artificial-superhuman-intelligence/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/language-games-as-the-pathway-to-artificial-superhuman-intelligence/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/language-games-as-the-pathway-to-artificial-superhuman-intelligence/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/language-games-as-the-pathway-to-artificial-superhuman-intelligence/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/language-games-as-the-pathway-to-artificial-superhuman-intelligence/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/language-games-as-the-pathway-to-artificial-superhuman-intelligence/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/language-games-as-the-pathway-to-artificial-superhuman-intelligence/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/large-sequence-models-for-sequential-decision-making-a-survey/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/large-sequence-models-for-sequential-decision-making-a-survey/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/large-sequence-models-for-sequential-decision-making-a-survey/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/large-sequence-models-for-sequential-decision-making-a-survey/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/large-sequence-models-for-sequential-decision-making-a-survey/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/large-sequence-models-for-sequential-decision-making-a-survey/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/large-sequence-models-for-sequential-decision-making-a-survey/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/large-sequence-models-for-sequential-decision-making-a-survey/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/learning-in-nonzero-sum-stochastic-games-with-potentials/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/learning-in-nonzero-sum-stochastic-games-with-potentials/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/learning-in-nonzero-sum-stochastic-games-with-potentials/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/learning-in-nonzero-sum-stochastic-games-with-potentials/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/learning-in-nonzero-sum-stochastic-games-with-potentials/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/learning-in-nonzero-sum-stochastic-games-with-potentials/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/learning-in-nonzero-sum-stochastic-games-with-potentials/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/learning-in-nonzero-sum-stochastic-games-with-potentials/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/learning-text-representation-using-recurrent-convolutional-neural-network-with-h/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/learning-text-representation-using-recurrent-convolutional-neural-network-with-h/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/learning-text-representation-using-recurrent-convolutional-neural-network-with-h/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/learning-text-representation-using-recurrent-convolutional-neural-network-with-h/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/learning-text-representation-using-recurrent-convolutional-neural-network-with-h/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/learning-text-representation-using-recurrent-convolutional-neural-network-with-h/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/learning-text-representation-using-recurrent-convolutional-neural-network-with-h/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/learning-text-representation-using-recurrent-convolutional-neural-network-with-h/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/learning-to-design-games-strategic-environments-in-deep-rein/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/learning-to-design-games-strategic-environments-in-deep-rein/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/learning-to-design-games-strategic-environments-in-deep-rein/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/learning-to-design-games-strategic-environments-in-deep-rein/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/learning-to-design-games-strategic-environments-in-deep-rein/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/learning-to-design-games-strategic-environments-in-deep-rein/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/learning-to-design-games-strategic-environments-in-deep-rein/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/learning-to-design-games-strategic-environments-in-deep-rein/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/learning-to-reason-in-structured-in-context-environments-with-reinforcement-lear/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/learning-to-reason-in-structured-in-context-environments-with-reinforcement-lear/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/learning-to-reason-in-structured-in-context-environments-with-reinforcement-lear/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/learning-to-reason-in-structured-in-context-environments-with-reinforcement-lear/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/learning-to-reason-in-structured-in-context-environments-with-reinforcement-lear/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/learning-to-reason-in-structured-in-context-environments-with-reinforcement-lear/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/learning-to-reason-in-structured-in-context-environments-with-reinforcement-lear/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/learning-to-reason-in-structured-in-context-environments-with-reinforcement-lear/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/leveraging-dual-process-theory-in-language-agent-framework-for-real-time-simulta/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/leveraging-dual-process-theory-in-language-agent-framework-for-real-time-simulta/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/leveraging-dual-process-theory-in-language-agent-framework-for-real-time-simulta/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/leveraging-dual-process-theory-in-language-agent-framework-for-real-time-simulta/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/leveraging-dual-process-theory-in-language-agent-framework-for-real-time-simulta/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/leveraging-dual-process-theory-in-language-agent-framework-for-real-time-simulta/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/leveraging-dual-process-theory-in-language-agent-framework-for-real-time-simulta/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/leveraging-dual-process-theory-in-language-agent-framework-for-real-time-simulta/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/learning-cli-agents-with-structured-action-credit-under-selective-observation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/learning-cli-agents-with-structured-action-credit-under-selective-observation/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/learning-cli-agents-with-structured-action-credit-under-selective-observation/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/learning-cli-agents-with-structured-action-credit-under-selective-observation/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/learning-cli-agents-with-structured-action-credit-under-selective-observation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/learning-cli-agents-with-structured-action-credit-under-selective-observation/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/learning-cli-agents-with-structured-action-credit-under-selective-observation/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/learning-cli-agents-with-structured-action-credit-under-selective-observation/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/leveraging-team-correlation-for-approximating-equilibrium-in-two-team-zero-sum-g/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/leveraging-team-correlation-for-approximating-equilibrium-in-two-team-zero-sum-g/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/leveraging-team-correlation-for-approximating-equilibrium-in-two-team-zero-sum-g/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/leveraging-team-correlation-for-approximating-equilibrium-in-two-team-zero-sum-g/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/leveraging-team-correlation-for-approximating-equilibrium-in-two-team-zero-sum-g/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/leveraging-team-correlation-for-approximating-equilibrium-in-two-team-zero-sum-g/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/leveraging-team-correlation-for-approximating-equilibrium-in-two-team-zero-sum-g/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/leveraging-team-correlation-for-approximating-equilibrium-in-two-team-zero-sum-g/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/mafenn-multi-agent-feedback-enabled-neural-network-for-wireless-channel-equalization/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/mafenn-multi-agent-feedback-enabled-neural-network-for-wireless-channel-equalization/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/mafenn-multi-agent-feedback-enabled-neural-network-for-wireless-channel-equalization/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/mafenn-multi-agent-feedback-enabled-neural-network-for-wireless-channel-equalization/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/mafenn-multi-agent-feedback-enabled-neural-network-for-wireless-channel-equalization/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/mafenn-multi-agent-feedback-enabled-neural-network-for-wireless-channel-equalization/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/mafenn-multi-agent-feedback-enabled-neural-network-for-wireless-channel-equalization/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/mafenn-multi-agent-feedback-enabled-neural-network-for-wireless-channel-equalization/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/magic-a-co-evolving-attacker-defender-adversarial-game-for-robust-llm-safety/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/magic-a-co-evolving-attacker-defender-adversarial-game-for-robust-llm-safety/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/magic-a-co-evolving-attacker-defender-adversarial-game-for-robust-llm-safety/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/magic-a-co-evolving-attacker-defender-adversarial-game-for-robust-llm-safety/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/magic-a-co-evolving-attacker-defender-adversarial-game-for-robust-llm-safety/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/magic-a-co-evolving-attacker-defender-adversarial-game-for-robust-llm-safety/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/magic-a-co-evolving-attacker-defender-adversarial-game-for-robust-llm-safety/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/magic-a-co-evolving-attacker-defender-adversarial-game-for-robust-llm-safety/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/malib-a-parallel-framework-for-population-based-multi-agent/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/malib-a-parallel-framework-for-population-based-multi-agent/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/malib-a-parallel-framework-for-population-based-multi-agent/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/malib-a-parallel-framework-for-population-based-multi-agent/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/malib-a-parallel-framework-for-population-based-multi-agent/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/malib-a-parallel-framework-for-population-based-multi-agent/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/malib-a-parallel-framework-for-population-based-multi-agent/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/malib-a-parallel-framework-for-population-based-multi-agent/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/maple-guard-memory-aware-link-enforcement-against-memory-link-poisoning-in-multi-agent-systems/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/maple-guard-memory-aware-link-enforcement-against-memory-link-poisoning-in-multi-agent-systems/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/maple-guard-memory-aware-link-enforcement-against-memory-link-poisoning-in-multi-agent-systems/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/maple-guard-memory-aware-link-enforcement-against-memory-link-poisoning-in-multi-agent-systems/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/maple-guard-memory-aware-link-enforcement-against-memory-link-poisoning-in-multi-agent-systems/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/maple-guard-memory-aware-link-enforcement-against-memory-link-poisoning-in-multi-agent-systems/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/maple-guard-memory-aware-link-enforcement-against-memory-link-poisoning-in-multi-agent-systems/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/maple-guard-memory-aware-link-enforcement-against-memory-link-poisoning-in-multi-agent-systems/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/memq-integrating-q-learning-into-self-evolving-memory-agents-over-provenance-dags/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/memq-integrating-q-learning-into-self-evolving-memory-agents-over-provenance-dags/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/memq-integrating-q-learning-into-self-evolving-memory-agents-over-provenance-dags/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/memq-integrating-q-learning-into-self-evolving-memory-agents-over-provenance-dags/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/memq-integrating-q-learning-into-self-evolving-memory-agents-over-provenance-dags/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/memq-integrating-q-learning-into-self-evolving-memory-agents-over-provenance-dags/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/memq-integrating-q-learning-into-self-evolving-memory-agents-over-provenance-dags/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/memq-integrating-q-learning-into-self-evolving-memory-agents-over-provenance-dags/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/memrl-self-evolving-agents-via-runtime-reinforcement-learning-on-episodic-memory/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/memrl-self-evolving-agents-via-runtime-reinforcement-learning-on-episodic-memory/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/memrl-self-evolving-agents-via-runtime-reinforcement-learning-on-episodic-memory/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/memrl-self-evolving-agents-via-runtime-reinforcement-learning-on-episodic-memory/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/memrl-self-evolving-agents-via-runtime-reinforcement-learning-on-episodic-memory/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/memrl-self-evolving-agents-via-runtime-reinforcement-learning-on-episodic-memory/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/memrl-self-evolving-agents-via-runtime-reinforcement-learning-on-episodic-memory/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/memrl-self-evolving-agents-via-runtime-reinforcement-learning-on-episodic-memory/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/ml-master-towards-ai-for-ai-via-integration-of-exploration-and-reasoning/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/ml-master-towards-ai-for-ai-via-integration-of-exploration-and-reasoning/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/ml-master-towards-ai-for-ai-via-integration-of-exploration-and-reasoning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/ml-master-towards-ai-for-ai-via-integration-of-exploration-and-reasoning/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/ml-master-towards-ai-for-ai-via-integration-of-exploration-and-reasoning/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/ml-master-towards-ai-for-ai-via-integration-of-exploration-and-reasoning/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/ml-master-towards-ai-for-ai-via-integration-of-exploration-and-reasoning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/ml-master-towards-ai-for-ai-via-integration-of-exploration-and-reasoning/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/modeling-mutual-influence-in-multi-agent-reinforcement-learning/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/modeling-mutual-influence-in-multi-agent-reinforcement-learning/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/modeling-mutual-influence-in-multi-agent-reinforcement-learning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/modeling-mutual-influence-in-multi-agent-reinforcement-learning/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/modeling-mutual-influence-in-multi-agent-reinforcement-learning/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/modeling-mutual-influence-in-multi-agent-reinforcement-learning/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/modeling-mutual-influence-in-multi-agent-reinforcement-learning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/modeling-mutual-influence-in-multi-agent-reinforcement-learning/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/modelling-behavioural-diversity-for-learning-in-open-ended-games/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/modelling-behavioural-diversity-for-learning-in-open-ended-games/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/modelling-behavioural-diversity-for-learning-in-open-ended-games/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/modelling-behavioural-diversity-for-learning-in-open-ended-games/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/modelling-behavioural-diversity-for-learning-in-open-ended-games/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/modelling-behavioural-diversity-for-learning-in-open-ended-games/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/modelling-behavioural-diversity-for-learning-in-open-ended-games/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/modelling-behavioural-diversity-for-learning-in-open-ended-games/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/modelling-bounded-rationality-in-multi-agent-interactions-by/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/modelling-bounded-rationality-in-multi-agent-interactions-by/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/modelling-bounded-rationality-in-multi-agent-interactions-by/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/modelling-bounded-rationality-in-multi-agent-interactions-by/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/modelling-bounded-rationality-in-multi-agent-interactions-by/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/modelling-bounded-rationality-in-multi-agent-interactions-by/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/modelling-bounded-rationality-in-multi-agent-interactions-by/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/modelling-bounded-rationality-in-multi-agent-interactions-by/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/multi-agent-determinantal-q-learning/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/multi-agent-determinantal-q-learning/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/multi-agent-determinantal-q-learning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/multi-agent-determinantal-q-learning/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/multi-agent-determinantal-q-learning/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/multi-agent-determinantal-q-learning/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/multi-agent-determinantal-q-learning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/multi-agent-determinantal-q-learning/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/multi-agent-feedback-enabled-neural-networks-for-intelligent-communications/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/multi-agent-feedback-enabled-neural-networks-for-intelligent-communications/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/multi-agent-feedback-enabled-neural-networks-for-intelligent-communications/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/multi-agent-feedback-enabled-neural-networks-for-intelligent-communications/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/multi-agent-feedback-enabled-neural-networks-for-intelligent-communications/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/multi-agent-feedback-enabled-neural-networks-for-intelligent-communications/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/multi-agent-feedback-enabled-neural-networks-for-intelligent-communications/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/multi-agent-feedback-enabled-neural-networks-for-intelligent-communications/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/multi-agent-reinforcement-learning-is-a-sequence-modeling-pr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/multi-agent-reinforcement-learning-is-a-sequence-modeling-pr/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/multi-agent-reinforcement-learning-is-a-sequence-modeling-pr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/multi-agent-reinforcement-learning-is-a-sequence-modeling-pr/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/multi-agent-reinforcement-learning-is-a-sequence-modeling-pr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/multi-agent-reinforcement-learning-is-a-sequence-modeling-pr/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/multi-agent-reinforcement-learning-is-a-sequence-modeling-pr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/multi-agent-reinforcement-learning-is-a-sequence-modeling-pr/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/multi-robot-open-adaptive-teaming-across-unseen-environments-partners-and-scales/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/multi-robot-open-adaptive-teaming-across-unseen-environments-partners-and-scales/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/multi-robot-open-adaptive-teaming-across-unseen-environments-partners-and-scales/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/multi-robot-open-adaptive-teaming-across-unseen-environments-partners-and-scales/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/multi-robot-open-adaptive-teaming-across-unseen-environments-partners-and-scales/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/multi-robot-open-adaptive-teaming-across-unseen-environments-partners-and-scales/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/multi-robot-open-adaptive-teaming-across-unseen-environments-partners-and-scales/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/multi-robot-open-adaptive-teaming-across-unseen-environments-partners-and-scales/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/multiagent-bidirectionally-coordinated-nets-for-learning-to/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/multiagent-bidirectionally-coordinated-nets-for-learning-to/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/multiagent-bidirectionally-coordinated-nets-for-learning-to/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/multiagent-bidirectionally-coordinated-nets-for-learning-to/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/multiagent-bidirectionally-coordinated-nets-for-learning-to/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/multiagent-bidirectionally-coordinated-nets-for-learning-to/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/multiagent-bidirectionally-coordinated-nets-for-learning-to/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/multiagent-bidirectionally-coordinated-nets-for-learning-to/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/mutual-theory-of-mind-in-human-ai-collaboration-an-empirical-study-with-llm-driv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/mutual-theory-of-mind-in-human-ai-collaboration-an-empirical-study-with-llm-driv/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/mutual-theory-of-mind-in-human-ai-collaboration-an-empirical-study-with-llm-driv/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/mutual-theory-of-mind-in-human-ai-collaboration-an-empirical-study-with-llm-driv/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/mutual-theory-of-mind-in-human-ai-collaboration-an-empirical-study-with-llm-driv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/mutual-theory-of-mind-in-human-ai-collaboration-an-empirical-study-with-llm-driv/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/mutual-theory-of-mind-in-human-ai-collaboration-an-empirical-study-with-llm-driv/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/mutual-theory-of-mind-in-human-ai-collaboration-an-empirical-study-with-llm-driv/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/natural-language-reinforcement-learning/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/natural-language-reinforcement-learning/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/natural-language-reinforcement-learning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/natural-language-reinforcement-learning/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/natural-language-reinforcement-learning/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/natural-language-reinforcement-learning/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/natural-language-reinforcement-learning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/natural-language-reinforcement-learning/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/neural-auto-curricula-in-two-player-zero-sum-games/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/neural-auto-curricula-in-two-player-zero-sum-games/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/neural-auto-curricula-in-two-player-zero-sum-games/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/neural-auto-curricula-in-two-player-zero-sum-games/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/neural-auto-curricula-in-two-player-zero-sum-games/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/neural-auto-curricula-in-two-player-zero-sum-games/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/neural-auto-curricula-in-two-player-zero-sum-games/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/neural-auto-curricula-in-two-player-zero-sum-games/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/offline-fictitious-self-play-for-competitive-games/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/offline-fictitious-self-play-for-competitive-games/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/offline-fictitious-self-play-for-competitive-games/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/offline-fictitious-self-play-for-competitive-games/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/offline-fictitious-self-play-for-competitive-games/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/offline-fictitious-self-play-for-competitive-games/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/offline-fictitious-self-play-for-competitive-games/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/offline-fictitious-self-play-for-competitive-games/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/offline-pre-trained-multi-agent-decision-transformer/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/offline-pre-trained-multi-agent-decision-transformer/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/offline-pre-trained-multi-agent-decision-transformer/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/offline-pre-trained-multi-agent-decision-transformer/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/offline-pre-trained-multi-agent-decision-transformer/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/offline-pre-trained-multi-agent-decision-transformer/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/offline-pre-trained-multi-agent-decision-transformer/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/offline-pre-trained-multi-agent-decision-transformer/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/on-realization-of-intelligent-decision-making-in-the-real-world-a-foundation-decision-model-perspective/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/on-realization-of-intelligent-decision-making-in-the-real-world-a-foundation-decision-model-perspective/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/on-realization-of-intelligent-decision-making-in-the-real-world-a-foundation-decision-model-perspective/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/on-realization-of-intelligent-decision-making-in-the-real-world-a-foundation-decision-model-perspective/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/on-realization-of-intelligent-decision-making-in-the-real-world-a-foundation-decision-model-perspective/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/on-realization-of-intelligent-decision-making-in-the-real-world-a-foundation-decision-model-perspective/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/on-realization-of-intelligent-decision-making-in-the-real-world-a-foundation-decision-model-perspective/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/on-realization-of-intelligent-decision-making-in-the-real-world-a-foundation-decision-model-perspective/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/openr-2024/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/openr-2024/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/openr-2024/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/openr-2024/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/openr-2024/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/openr-2024/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/openr-2024/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/openr-2024/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/order-matters-agent-by-agent-policy-optimization/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/order-matters-agent-by-agent-policy-optimization/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/order-matters-agent-by-agent-policy-optimization/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/order-matters-agent-by-agent-policy-optimization/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/order-matters-agent-by-agent-policy-optimization/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/order-matters-agent-by-agent-policy-optimization/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/order-matters-agent-by-agent-policy-optimization/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/order-matters-agent-by-agent-policy-optimization/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/pairwise-multi-layer-nets-for-learning-distributed-representation-of-multi-field-categorical-data/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/pairwise-multi-layer-nets-for-learning-distributed-representation-of-multi-field-categorical-data/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/pairwise-multi-layer-nets-for-learning-distributed-representation-of-multi-field-categorical-data/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/pairwise-multi-layer-nets-for-learning-distributed-representation-of-multi-field-categorical-data/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/pairwise-multi-layer-nets-for-learning-distributed-representation-of-multi-field-categorical-data/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/pairwise-multi-layer-nets-for-learning-distributed-representation-of-multi-field-categorical-data/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/pairwise-multi-layer-nets-for-learning-distributed-representation-of-multi-field-categorical-data/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/pairwise-multi-layer-nets-for-learning-distributed-representation-of-multi-field-categorical-data/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/pmat-aamas-2025/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/pmat-aamas-2025/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/pmat-aamas-2025/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/pmat-aamas-2025/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/pmat-aamas-2025/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/pmat-aamas-2025/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/pmat-aamas-2025/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/pmat-aamas-2025/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/poad-neurips-2024/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/poad-neurips-2024/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/poad-neurips-2024/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/poad-neurips-2024/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/poad-neurips-2024/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/poad-neurips-2024/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/poad-neurips-2024/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/poad-neurips-2024/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/probabilistic-recursive-reasoning-for-multi-agent-reinforcem/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/probabilistic-recursive-reasoning-for-multi-agent-reinforcem/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/probabilistic-recursive-reasoning-for-multi-agent-reinforcem/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/probabilistic-recursive-reasoning-for-multi-agent-reinforcem/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/probabilistic-recursive-reasoning-for-multi-agent-reinforcem/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/probabilistic-recursive-reasoning-for-multi-agent-reinforcem/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/probabilistic-recursive-reasoning-for-multi-agent-reinforcem/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/probabilistic-recursive-reasoning-for-multi-agent-reinforcem/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/product-based-neural-networks-for-user-response-prediction/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/product-based-neural-networks-for-user-response-prediction/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/product-based-neural-networks-for-user-response-prediction/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/product-based-neural-networks-for-user-response-prediction/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/product-based-neural-networks-for-user-response-prediction/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/product-based-neural-networks-for-user-response-prediction/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/product-based-neural-networks-for-user-response-prediction/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/product-based-neural-networks-for-user-response-prediction/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/progra-progress-aware-reinforcement-learning-for-multi-turn-function-calling/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/progra-progress-aware-reinforcement-learning-for-multi-turn-function-calling/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/progra-progress-aware-reinforcement-learning-for-multi-turn-function-calling/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/progra-progress-aware-reinforcement-learning-for-multi-turn-function-calling/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/progra-progress-aware-reinforcement-learning-for-multi-turn-function-calling/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/progra-progress-aware-reinforcement-learning-for-multi-turn-function-calling/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/progra-progress-aware-reinforcement-learning-for-multi-turn-function-calling/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/progra-progress-aware-reinforcement-learning-for-multi-turn-function-calling/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/rat-aaai-2025/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/rat-aaai-2025/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/rat-aaai-2025/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/rat-aaai-2025/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/rat-aaai-2025/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/rat-aaai-2025/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/rat-aaai-2025/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/rat-aaai-2025/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/rema-neurips-2025/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/rema-neurips-2025/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/rema-neurips-2025/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/rema-neurips-2025/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/rema-neurips-2025/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/rema-neurips-2025/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/rema-neurips-2025/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/rema-neurips-2025/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/retrdex-efficient-object-retrieval-in-cluttered-scenes-with-a-dexterous-hand/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/retrdex-efficient-object-retrieval-in-cluttered-scenes-with-a-dexterous-hand/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/retrdex-efficient-object-retrieval-in-cluttered-scenes-with-a-dexterous-hand/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/retrdex-efficient-object-retrieval-in-cluttered-scenes-with-a-dexterous-hand/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/retrdex-efficient-object-retrieval-in-cluttered-scenes-with-a-dexterous-hand/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/retrdex-efficient-object-retrieval-in-cluttered-scenes-with-a-dexterous-hand/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/retrdex-efficient-object-retrieval-in-cluttered-scenes-with-a-dexterous-hand/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/retrdex-efficient-object-retrieval-in-cluttered-scenes-with-a-dexterous-hand/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/retrieval-augmented-process-reward-model-for-generalizable-mathematical-reasonin/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/retrieval-augmented-process-reward-model-for-generalizable-mathematical-reasonin/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/retrieval-augmented-process-reward-model-for-generalizable-mathematical-reasonin/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/retrieval-augmented-process-reward-model-for-generalizable-mathematical-reasonin/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/retrieval-augmented-process-reward-model-for-generalizable-mathematical-reasonin/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/retrieval-augmented-process-reward-model-for-generalizable-mathematical-reasonin/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/retrieval-augmented-process-reward-model-for-generalizable-mathematical-reasonin/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/retrieval-augmented-process-reward-model-for-generalizable-mathematical-reasonin/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/retrospective-thinking-based-multi-agent-system-for-wireless-video-transmissions/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/retrospective-thinking-based-multi-agent-system-for-wireless-video-transmissions/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/retrospective-thinking-based-multi-agent-system-for-wireless-video-transmissions/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/retrospective-thinking-based-multi-agent-system-for-wireless-video-transmissions/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/retrospective-thinking-based-multi-agent-system-for-wireless-video-transmissions/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/retrospective-thinking-based-multi-agent-system-for-wireless-video-transmissions/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/retrospective-thinking-based-multi-agent-system-for-wireless-video-transmissions/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/retrospective-thinking-based-multi-agent-system-for-wireless-video-transmissions/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/rhino-learning-real-time-humanoid-human-object-interaction-from-human-demonstrat/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/rhino-learning-real-time-humanoid-human-object-interaction-from-human-demonstrat/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/rhino-learning-real-time-humanoid-human-object-interaction-from-human-demonstrat/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/rhino-learning-real-time-humanoid-human-object-interaction-from-human-demonstrat/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/rhino-learning-real-time-humanoid-human-object-interaction-from-human-demonstrat/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/rhino-learning-real-time-humanoid-human-object-interaction-from-human-demonstrat/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/rhino-learning-real-time-humanoid-human-object-interaction-from-human-demonstrat/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/rhino-learning-real-time-humanoid-human-object-interaction-from-human-demonstrat/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/safelab-an-interactive-high-fidelity-benchmark-for-embodied-safety-in-scientific-robotics/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/safelab-an-interactive-high-fidelity-benchmark-for-embodied-safety-in-scientific-robotics/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/safelab-an-interactive-high-fidelity-benchmark-for-embodied-safety-in-scientific-robotics/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/safelab-an-interactive-high-fidelity-benchmark-for-embodied-safety-in-scientific-robotics/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/safelab-an-interactive-high-fidelity-benchmark-for-embodied-safety-in-scientific-robotics/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/safelab-an-interactive-high-fidelity-benchmark-for-embodied-safety-in-scientific-robotics/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/safelab-an-interactive-high-fidelity-benchmark-for-embodied-safety-in-scientific-robotics/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/safelab-an-interactive-high-fidelity-benchmark-for-embodied-safety-in-scientific-robotics/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/self-supervised-mafenn-for-classifying-low-labeled-distorted-images-over-mobile-fading-channels/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/self-supervised-mafenn-for-classifying-low-labeled-distorted-images-over-mobile-fading-channels/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/self-supervised-mafenn-for-classifying-low-labeled-distorted-images-over-mobile-fading-channels/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/self-supervised-mafenn-for-classifying-low-labeled-distorted-images-over-mobile-fading-channels/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/self-supervised-mafenn-for-classifying-low-labeled-distorted-images-over-mobile-fading-channels/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/self-supervised-mafenn-for-classifying-low-labeled-distorted-images-over-mobile-fading-channels/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/self-supervised-mafenn-for-classifying-low-labeled-distorted-images-over-mobile-fading-channels/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/self-supervised-mafenn-for-classifying-low-labeled-distorted-images-over-mobile-fading-channels/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/sequence-pathfinder-for-multi-agent-pickup-and-delivery-in-the-warehouse/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/sequence-pathfinder-for-multi-agent-pickup-and-delivery-in-the-warehouse/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/sequence-pathfinder-for-multi-agent-pickup-and-delivery-in-the-warehouse/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/sequence-pathfinder-for-multi-agent-pickup-and-delivery-in-the-warehouse/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/sequence-pathfinder-for-multi-agent-pickup-and-delivery-in-the-warehouse/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/sequence-pathfinder-for-multi-agent-pickup-and-delivery-in-the-warehouse/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/sequence-pathfinder-for-multi-agent-pickup-and-delivery-in-the-warehouse/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/sequence-pathfinder-for-multi-agent-pickup-and-delivery-in-the-warehouse/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/smarts-an-open-source-scalable-multi-agent-rl-training-schoo/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/smarts-an-open-source-scalable-multi-agent-rl-training-schoo/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/smarts-an-open-source-scalable-multi-agent-rl-training-schoo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/smarts-an-open-source-scalable-multi-agent-rl-training-schoo/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/smarts-an-open-source-scalable-multi-agent-rl-training-schoo/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/smarts-an-open-source-scalable-multi-agent-rl-training-schoo/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/smarts-an-open-source-scalable-multi-agent-rl-training-schoo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/smarts-an-open-source-scalable-multi-agent-rl-training-schoo/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/solving-repeated-games-with-large-language-model/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/solving-repeated-games-with-large-language-model/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/solving-repeated-games-with-large-language-model/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/solving-repeated-games-with-large-language-model/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/solving-repeated-games-with-large-language-model/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/solving-repeated-games-with-large-language-model/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/solving-repeated-games-with-large-language-model/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/solving-repeated-games-with-large-language-model/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/star-efficient-preference-based-reinforcement-learning-via-dual-regularization/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/star-efficient-preference-based-reinforcement-learning-via-dual-regularization/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/star-efficient-preference-based-reinforcement-learning-via-dual-regularization/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/star-efficient-preference-based-reinforcement-learning-via-dual-regularization/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/star-efficient-preference-based-reinforcement-learning-via-dual-regularization/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/star-efficient-preference-based-reinforcement-learning-via-dual-regularization/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/star-efficient-preference-based-reinforcement-learning-via-dual-regularization/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/star-efficient-preference-based-reinforcement-learning-via-dual-regularization/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/tackling-cooperative-incompatibility-for-zero-shot-human-ai-coordination/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/tackling-cooperative-incompatibility-for-zero-shot-human-ai-coordination/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/tackling-cooperative-incompatibility-for-zero-shot-human-ai-coordination/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/tackling-cooperative-incompatibility-for-zero-shot-human-ai-coordination/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/tackling-cooperative-incompatibility-for-zero-shot-human-ai-coordination/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/tackling-cooperative-incompatibility-for-zero-shot-human-ai-coordination/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/tackling-cooperative-incompatibility-for-zero-shot-human-ai-coordination/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/tackling-cooperative-incompatibility-for-zero-shot-human-ai-coordination/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/thinkbench-dynamic-out-of-distribution-evaluation-for-robust-llm-reasoning/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/thinkbench-dynamic-out-of-distribution-evaluation-for-robust-llm-reasoning/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/thinkbench-dynamic-out-of-distribution-evaluation-for-robust-llm-reasoning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/thinkbench-dynamic-out-of-distribution-evaluation-for-robust-llm-reasoning/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/thinkbench-dynamic-out-of-distribution-evaluation-for-robust-llm-reasoning/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/thinkbench-dynamic-out-of-distribution-evaluation-for-robust-llm-reasoning/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/thinkbench-dynamic-out-of-distribution-evaluation-for-robust-llm-reasoning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/thinkbench-dynamic-out-of-distribution-evaluation-for-robust-llm-reasoning/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/toolprm-fine-grained-inference-scaling-of-structured-outputs-for-function-callin/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/toolprm-fine-grained-inference-scaling-of-structured-outputs-for-function-callin/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/toolprm-fine-grained-inference-scaling-of-structured-outputs-for-function-callin/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/toolprm-fine-grained-inference-scaling-of-structured-outputs-for-function-callin/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/toolprm-fine-grained-inference-scaling-of-structured-outputs-for-function-callin/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/toolprm-fine-grained-inference-scaling-of-structured-outputs-for-function-callin/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/toolprm-fine-grained-inference-scaling-of-structured-outputs-for-function-callin/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/toolprm-fine-grained-inference-scaling-of-structured-outputs-for-function-callin/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/towards-cold-start-drafting-and-continual-refining-a-value-driven-memory-approach-with-application-to-npu-kernel-synthesis/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/towards-cold-start-drafting-and-continual-refining-a-value-driven-memory-approach-with-application-to-npu-kernel-synthesis/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/towards-cold-start-drafting-and-continual-refining-a-value-driven-memory-approach-with-application-to-npu-kernel-synthesis/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/towards-cold-start-drafting-and-continual-refining-a-value-driven-memory-approach-with-application-to-npu-kernel-synthesis/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/towards-cold-start-drafting-and-continual-refining-a-value-driven-memory-approach-with-application-to-npu-kernel-synthesis/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/towards-cold-start-drafting-and-continual-refining-a-value-driven-memory-approach-with-application-to-npu-kernel-synthesis/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/towards-cold-start-drafting-and-continual-refining-a-value-driven-memory-approach-with-application-to-npu-kernel-synthesis/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/towards-cold-start-drafting-and-continual-refining-a-value-driven-memory-approach-with-application-to-npu-kernel-synthesis/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/towards-monotonic-improvement-in-in-context-reinforcement-learning/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/towards-monotonic-improvement-in-in-context-reinforcement-learning/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/towards-monotonic-improvement-in-in-context-reinforcement-learning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/towards-monotonic-improvement-in-in-context-reinforcement-learning/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/towards-monotonic-improvement-in-in-context-reinforcement-learning/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/towards-monotonic-improvement-in-in-context-reinforcement-learning/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/towards-monotonic-improvement-in-in-context-reinforcement-learning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/towards-monotonic-improvement-in-in-context-reinforcement-learning/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/towards-unifying-behavioral-and-response-diversity-for-open/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/towards-unifying-behavioral-and-response-diversity-for-open/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/towards-unifying-behavioral-and-response-diversity-for-open/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/towards-unifying-behavioral-and-response-diversity-for-open/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/towards-unifying-behavioral-and-response-diversity-for-open/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/towards-unifying-behavioral-and-response-diversity-for-open/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/towards-unifying-behavioral-and-response-diversity-for-open/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/towards-unifying-behavioral-and-response-diversity-for-open/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/trad-enhancing-llm-agents-with-step-wise-thought-retrieval-and-aligned-decision/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/trad-enhancing-llm-agents-with-step-wise-thought-retrieval-and-aligned-decision/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/trad-enhancing-llm-agents-with-step-wise-thought-retrieval-and-aligned-decision/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/trad-enhancing-llm-agents-with-step-wise-thought-retrieval-and-aligned-decision/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/trad-enhancing-llm-agents-with-step-wise-thought-retrieval-and-aligned-decision/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/trad-enhancing-llm-agents-with-step-wise-thought-retrieval-and-aligned-decision/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/trad-enhancing-llm-agents-with-step-wise-thought-retrieval-and-aligned-decision/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/trad-enhancing-llm-agents-with-step-wise-thought-retrieval-and-aligned-decision/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/trust-region-policy-optimisation-in-multi-agent-reinforcemen/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/trust-region-policy-optimisation-in-multi-agent-reinforcemen/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/trust-region-policy-optimisation-in-multi-agent-reinforcemen/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/trust-region-policy-optimisation-in-multi-agent-reinforcemen/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/trust-region-policy-optimisation-in-multi-agent-reinforcemen/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/trust-region-policy-optimisation-in-multi-agent-reinforcemen/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/trust-region-policy-optimisation-in-multi-agent-reinforcemen/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/trust-region-policy-optimisation-in-multi-agent-reinforcemen/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/ts-llm-icml-2024/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/ts-llm-icml-2024/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/ts-llm-icml-2024/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/ts-llm-icml-2024/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/ts-llm-icml-2024/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/ts-llm-icml-2024/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/ts-llm-icml-2024/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/ts-llm-icml-2024/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/understanding-agent-scaling-in-llm-based-multi-agent-systems-via-diversity/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/understanding-agent-scaling-in-llm-based-multi-agent-systems-via-diversity/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/understanding-agent-scaling-in-llm-based-multi-agent-systems-via-diversity/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/understanding-agent-scaling-in-llm-based-multi-agent-systems-via-diversity/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/understanding-agent-scaling-in-llm-based-multi-agent-systems-via-diversity/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/understanding-agent-scaling-in-llm-based-multi-agent-systems-via-diversity/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/understanding-agent-scaling-in-llm-based-multi-agent-systems-via-diversity/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/understanding-agent-scaling-in-llm-based-multi-agent-systems-via-diversity/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/unlocking-the-potential-of-decentralized-llm-based-mas-privacy-preservation-and/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/unlocking-the-potential-of-decentralized-llm-based-mas-privacy-preservation-and/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/unlocking-the-potential-of-decentralized-llm-based-mas-privacy-preservation-and/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/unlocking-the-potential-of-decentralized-llm-based-mas-privacy-preservation-and/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/unlocking-the-potential-of-decentralized-llm-based-mas-privacy-preservation-and/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/unlocking-the-potential-of-decentralized-llm-based-mas-privacy-preservation-and/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/unlocking-the-potential-of-decentralized-llm-based-mas-privacy-preservation-and/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/unlocking-the-potential-of-decentralized-llm-based-mas-privacy-preservation-and/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/utilizing-large-language-models-for-geoscience-literature-information-extraction/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/utilizing-large-language-models-for-geoscience-literature-information-extraction/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/utilizing-large-language-models-for-geoscience-literature-information-extraction/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/utilizing-large-language-models-for-geoscience-literature-information-extraction/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/utilizing-large-language-models-for-geoscience-literature-information-extraction/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/utilizing-large-language-models-for-geoscience-literature-information-extraction/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/utilizing-large-language-models-for-geoscience-literature-information-extraction/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/utilizing-large-language-models-for-geoscience-literature-information-extraction/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/zsc-eval-neurips-2024/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/zsc-eval-neurips-2024/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/zsc-eval-neurips-2024/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/zsc-eval-neurips-2024/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/zsc-eval-neurips-2024/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/zsc-eval-neurips-2024/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/zsc-eval-neurips-2024/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/zsc-eval-neurips-2024/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/publications/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/publications/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/publications/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/publications/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/publications/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/projects/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/projects/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/projects/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/projects/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/projects/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/projects/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/projects/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/projects/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/teaching/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/teaching/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/teaching/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/teaching/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/teaching/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/teaching/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/teaching/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/teaching/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/blog/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/blog/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/art/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/art/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/art/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/art/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/art/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/art/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/art/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/art/" />
+
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/blog/from-modern-deep-rl-to-continual-rl/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/blog/from-modern-deep-rl-to-continual-rl/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/blog/from-modern-deep-rl-to-continual-rl/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/blog/from-modern-deep-rl-to-continual-rl/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/blog/from-modern-deep-rl-to-continual-rl/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/blog/from-modern-deep-rl-to-continual-rl/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/blog/from-modern-deep-rl-to-continual-rl/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/blog/from-modern-deep-rl-to-continual-rl/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/blog/search-scaling-to-learning-scaling/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/blog/search-scaling-to-learning-scaling/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/blog/search-scaling-to-learning-scaling/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/blog/search-scaling-to-learning-scaling/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/blog/search-scaling-to-learning-scaling/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/blog/search-scaling-to-learning-scaling/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/blog/search-scaling-to-learning-scaling/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/blog/search-scaling-to-learning-scaling/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/blog/what-environment-do-llm-agents-learn-in/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/blog/what-environment-do-llm-agents-learn-in/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/blog/what-environment-do-llm-agents-learn-in/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/blog/what-environment-do-llm-agents-learn-in/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/blog/what-environment-do-llm-agents-learn-in/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/blog/what-environment-do-llm-agents-learn-in/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/blog/what-environment-do-llm-agents-learn-in/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/blog/what-environment-do-llm-agents-learn-in/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/blog/what-is-a-world-model-modeling/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/blog/what-is-a-world-model-modeling/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/blog/what-is-a-world-model-modeling/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/blog/what-is-a-world-model-modeling/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/blog/what-is-a-world-model-modeling/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/blog/what-is-a-world-model-modeling/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/blog/what-is-a-world-model-modeling/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/blog/what-is-a-world-model-modeling/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/en/blog/when-agents-learn-from-world/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/blog/when-agents-learn-from-world/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/blog/when-agents-learn-from-world/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/blog/when-agents-learn-from-world/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://yingwen.io/zh/blog/when-agents-learn-from-world/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yingwen.io/en/blog/when-agents-learn-from-world/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/blog/when-agents-learn-from-world/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yingwen.io/en/blog/when-agents-learn-from-world/" />
+    <lastmod>2026-09-06</lastmod>
+  </url>
+</urlset>

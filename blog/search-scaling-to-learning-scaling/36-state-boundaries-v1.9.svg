@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900" role="img" aria-labelledby="title desc">
+  <title id="title">任务搜索、设计搜索与运行时持续学习的随机过程</title>
+  <desc id="desc">三行分别表示当前任务搜索、多轮设计搜索和运行时持续学习，比较独立重复的起点、运行内递推变量、重置条件与实验横轴。</desc>
+  <rect width="1500" height="900" fill="#ffffff"/>
+  <style>
+    text { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; fill: #17211c; }
+    .title { font-size: 39px; font-weight: 760; letter-spacing: -0.4px; }
+    .subtitle { font-size: 18px; fill: #66726b; }
+    .rowtitle { font-size: 24px; font-weight: 760; }
+    .label { font-size: 16px; font-weight: 720; }
+    .body { font-size: 17px; fill: #3f4c45; }
+    .small { font-size: 14px; fill: #66726b; }
+    .axis { font-size: 16px; font-weight: 720; }
+  </style>
+
+  <text x="750" y="62" text-anchor="middle" class="title">三类过程具有不同的起点、递推变量与横轴</text>
+  <text x="750" y="98" text-anchor="middle" class="subtitle">任务搜索、多轮设计搜索与运行时持续学习对应不同的随机过程</text>
+
+  <!-- row 1: task search -->
+  <rect x="70" y="145" width="1360" height="185" rx="22" fill="#fff9f5" stroke="#d46935" stroke-width="2"/>
+  <rect x="92" y="168" width="178" height="42" rx="12" fill="#f8dfd0"/>
+  <text x="181" y="196" text-anchor="middle" class="label" fill="#9a431b">当前任务搜索</text>
+  <text x="92" y="246" class="rowtitle">Search Scaling</text>
+  <text x="92" y="278" class="small">初始学习状态固定；任务内搜索状态可以递推</text>
+
+  <rect x="330" y="178" width="210" height="68" rx="15" fill="#ffffff" stroke="#e2b69e"/>
+  <text x="435" y="208" text-anchor="middle" class="label">固定初始状态 z</text>
+  <text x="435" y="231" text-anchor="middle" class="small">参数 · 长期记忆 · harness</text>
+  <path d="M550 212 H610" stroke="#a95a32" stroke-width="3" fill="none"/>
+  <path d="M610 212 l-12 -8 v16 z" fill="#a95a32"/>
+  <rect x="625" y="165" width="270" height="94" rx="15" fill="#fff4ed" stroke="#d46935"/>
+  <text x="760" y="198" text-anchor="middle" class="label">任务内状态</text>
+  <text x="760" y="225" text-anchor="middle" class="body">候选 · 搜索树 · 工具轨迹</text>
+  <text x="760" y="247" text-anchor="middle" class="small">随搜索计算 c 展开</text>
+  <path d="M905 212 H965" stroke="#a95a32" stroke-width="3" fill="none"/>
+  <path d="M965 212 l-12 -8 v16 z" fill="#a95a32"/>
+  <rect x="980" y="178" width="170" height="68" rx="15" fill="#ffffff" stroke="#e2b69e"/>
+  <text x="1065" y="208" text-anchor="middle" class="label">提交项</text>
+  <text x="1065" y="232" text-anchor="middle" class="small">答案 · 补丁 · 行动</text>
+  <line x1="1182" y1="164" x2="1182" y2="280" stroke="#b55f36" stroke-width="2" stroke-dasharray="6 6"/>
+  <text x="1200" y="194" class="label" fill="#9a431b">任务边界</text>
+  <text x="1200" y="222" class="body">清空：context、tree、cache</text>
+  <text x="1200" y="250" class="body">下一次重复：恢复 z</text>
+  <rect x="330" y="278" width="820" height="32" rx="9" fill="#f8e8de"/>
+  <text x="740" y="300" text-anchor="middle" class="axis" fill="#8e3e19">横轴 c：候选数、token、搜索节点、工具调用或运行时间</text>
+
+  <!-- row 2: design search -->
+  <rect x="70" y="355" width="1360" height="205" rx="22" fill="#f5f9fc" stroke="#557f9f" stroke-width="2"/>
+  <rect x="92" y="378" width="178" height="42" rx="12" fill="#dceaf3"/>
+  <text x="181" y="406" text-anchor="middle" class="label" fill="#315d7a">多轮设计搜索</text>
+  <text x="92" y="456" class="rowtitle">Design Search</text>
+  <text x="92" y="488" class="small">档案在设计运行中保留；候选是后继系统</text>
+
+  <rect x="330" y="388" width="210" height="70" rx="15" fill="#ffffff" stroke="#b6cddd"/>
+  <text x="435" y="418" text-anchor="middle" class="label">固定设计机制</text>
+  <text x="435" y="442" text-anchor="middle" class="small">proposal · evaluator · commit</text>
+  <path d="M550 423 H610" stroke="#557f9f" stroke-width="3" fill="none"/>
+  <path d="M610 423 l-12 -8 v16 z" fill="#557f9f"/>
+  <rect x="625" y="375" width="270" height="106" rx="15" fill="#edf5fa" stroke="#557f9f"/>
+  <text x="760" y="407" text-anchor="middle" class="label">设计搜索内部状态</text>
+  <text x="760" y="435" text-anchor="middle" class="body">候选档案 V₀ … Vₖ</text>
+  <text x="760" y="460" text-anchor="middle" class="small">入选系统参与后续候选生成</text>
+  <path d="M905 423 H965" stroke="#557f9f" stroke-width="3" fill="none"/>
+  <path d="M965 423 l-12 -8 v16 z" fill="#557f9f"/>
+  <rect x="980" y="388" width="170" height="70" rx="15" fill="#ffffff" stroke="#b6cddd"/>
+  <text x="1065" y="418" text-anchor="middle" class="label">后继系统</text>
+  <text x="1065" y="442" text-anchor="middle" class="small">代码 · workflow · 算法</text>
+  <line x1="1182" y1="375" x2="1182" y2="492" stroke="#557f9f" stroke-width="2" stroke-dasharray="6 6"/>
+  <text x="1200" y="404" class="label" fill="#315d7a">设计运行边界</text>
+  <text x="1200" y="432" class="body">内部保留：候选档案</text>
+  <text x="1200" y="460" class="body">外部提交：后继系统</text>
+  <text x="1200" y="484" class="small">DGM / AlphaEvolve 位于此层</text>
+  <rect x="330" y="502" width="820" height="36" rx="9" fill="#e4eff6"/>
+  <text x="740" y="526" text-anchor="middle" class="axis" fill="#315d7a">横轴 d：候选设计、评价次数、设计迭代或研发时间</text>
+
+  <!-- row 3: lifetime learning -->
+  <rect x="70" y="585" width="1360" height="205" rx="22" fill="#f5faf7" stroke="#4c8b68" stroke-width="2"/>
+  <rect x="92" y="608" width="178" height="42" rx="12" fill="#dcefe4"/>
+  <text x="181" y="636" text-anchor="middle" class="label" fill="#2d6d4d">运行时持续学习</text>
+  <text x="92" y="686" class="rowtitle">Learning Scaling</text>
+  <text x="92" y="718" class="small">连续智能体—环境交互；未来运行条件固定</text>
+
+  <rect x="330" y="618" width="190" height="70" rx="15" fill="#ffffff" stroke="#b8d5c4"/>
+  <text x="425" y="648" text-anchor="middle" class="label">学习状态 zₜ</text>
+  <text x="425" y="672" text-anchor="middle" class="small">历史依赖的预测、控制与学习变量</text>
+  <path d="M530 653 H585" stroke="#4c8b68" stroke-width="3" fill="none"/>
+  <path d="M585 653 l-12 -8 v16 z" fill="#4c8b68"/>
+  <rect x="600" y="605" width="260" height="98" rx="15" fill="#edf7f1" stroke="#4c8b68"/>
+  <text x="730" y="638" text-anchor="middle" class="label">第一人称经历 e₁ … eₙ</text>
+  <text x="730" y="666" text-anchor="middle" class="body">观测 · 行动 · 反馈 · 后续观测</text>
+  <text x="730" y="690" text-anchor="middle" class="small">行动改变后续观测，学习改变后续行动</text>
+  <path d="M870 653 H925" stroke="#4c8b68" stroke-width="3" fill="none"/>
+  <path d="M925 653 l-12 -8 v16 z" fill="#4c8b68"/>
+  <rect x="940" y="618" width="210" height="70" rx="15" fill="#ffffff" stroke="#b8d5c4"/>
+  <text x="1045" y="648" text-anchor="middle" class="label">后续学习状态 zₜ₊₁</text>
+  <text x="1045" y="672" text-anchor="middle" class="small">在新任务上接受固定条件评估</text>
+  <line x1="1182" y1="605" x2="1182" y2="722" stroke="#4c8b68" stroke-width="2" stroke-dasharray="6 6"/>
+  <text x="1200" y="634" class="label" fill="#2d6d4d">任务重置后</text>
+  <text x="1200" y="662" class="body">清空：任务内搜索状态</text>
+  <text x="1200" y="690" class="body">继续：zₜ₊₁ 参与未来行动</text>
+  <text x="1200" y="714" class="small">评估迁移、保持与后期可塑性</text>
+  <rect x="330" y="732" width="820" height="36" rx="9" fill="#e4f2e9"/>
+  <text x="740" y="756" text-anchor="middle" class="axis" fill="#2d6d4d">横轴 n：连续交互轨迹上的累计经历</text>
+
+  <rect x="290" y="820" width="920" height="48" rx="14" fill="#f3f5f4" stroke="#cbd4cf"/>
+  <text x="750" y="851" text-anchor="middle" class="body">独立重复的起点、运行内递推变量、重置条件与横轴共同确定可支持的推论</text>
+</svg>
