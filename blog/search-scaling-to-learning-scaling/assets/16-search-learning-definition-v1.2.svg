@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="920" viewBox="0 0 1600 920" role="img" aria-labelledby="title desc">
+  <title id="title">任务级 Search Scaling 与 Learning Scaling 的研究对象</title>
+  <desc id="desc">比较固定持久状态下增加单任务计算，与长期目标和未来运行条件明确时，持续控制及持续可学性如何随行动条件经验变化。</desc>
+  <defs>
+    <style>
+      .bg{fill:#fff}.ink{fill:#1f2529}.muted{fill:#667078}.blue{fill:#edf4fb;stroke:#88a9ce}.amber{fill:#fbf2e6;stroke:#d7a25d}.green{fill:#eaf5f1;stroke:#69a08f}.gray{fill:#f4f6f7;stroke:#c8d0d5}.box{stroke-width:2}.line{fill:none;stroke:#626e75;stroke-width:4;marker-end:url(#a)}.dash{fill:none;stroke:#929ca2;stroke-width:3;stroke-dasharray:8 8;marker-end:url(#b)}
+      .t{font:700 42px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.h{font:700 28px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.b{font:400 21px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.s{font:500 18px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.eq{font:500 24px Georgia,"Times New Roman",serif}
+    </style>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#626e75"/></marker>
+    <marker id="b" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#929ca2"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="920"/>
+  <text x="80" y="76" class="t ink">两种响应关系，两个不同的自变量</text>
+  <text x="80" y="118" class="b muted">Search Scaling 改变单任务计算；Learning Scaling 改变行动条件经验，并同时评价控制与可学性。</text>
+
+  <rect x="70" y="175" width="700" height="600" rx="26" class="box amber"/>
+  <text x="110" y="230" class="h ink">任务级 Search Scaling</text>
+  <text x="110" y="270" class="b muted">持久状态 zₜ 固定；任务时计算量 c 变化</text>
+  <rect x="120" y="330" width="170" height="105" rx="18" class="box blue"/>
+  <text x="205" y="372" text-anchor="middle" class="h ink">任务 x</text>
+  <text x="205" y="405" text-anchor="middle" class="s muted">给定 zₜ</text>
+  <path d="M290 383H370" class="line"/>
+  <rect x="380" y="310" width="300" height="145" rx="20" class="box amber"/>
+  <text x="530" y="355" text-anchor="middle" class="h ink">搜索 / 规划 S</text>
+  <text x="530" y="393" text-anchor="middle" class="s muted">候选数、搜索节点、token</text>
+  <text x="530" y="423" text-anchor="middle" class="s muted">或工具调用随 c 增加</text>
+  <path d="M530 455V515" class="line"/>
+  <rect x="365" y="525" width="330" height="105" rx="18" class="box gray"/>
+  <text x="530" y="568" text-anchor="middle" class="h ink">任务评价 J</text>
+  <text x="530" y="602" text-anchor="middle" class="s muted">同一任务或同分布任务</text>
+  <text x="110" y="690" class="eq ink">J<tspan baseline-shift="sub" font-size="17">task</tspan>(c | zₜ)</text>
+  <text x="110" y="730" class="b muted">任务级比较：zₜ₊₁ = zₜ</text>
+
+  <rect x="830" y="175" width="700" height="600" rx="26" class="box green"/>
+  <text x="870" y="230" class="h ink">Learning Scaling</text>
+  <text x="870" y="270" class="b muted">长期目标与未来条件明确；行动条件经验 n 变化</text>
+  <rect x="875" y="315" width="205" height="120" rx="18" class="box blue"/>
+  <text x="977" y="357" text-anchor="middle" class="h ink">经验 e₁:ₜ</text>
+  <text x="977" y="392" text-anchor="middle" class="s muted">策略行动、观测、反馈</text>
+  <path d="M1080 375H1150" class="line"/>
+  <rect x="1160" y="315" width="300" height="120" rx="18" class="box green"/>
+  <text x="1310" y="357" text-anchor="middle" class="h ink">学习过程 U</text>
+  <text x="1310" y="392" text-anchor="middle" class="s muted">zₜ₊₁ = U(zₜ, eₜ)</text>
+  <path d="M1310 435V500H1090" class="line"/>
+  <rect x="875" y="510" width="505" height="120" rx="18" class="box gray"/>
+  <text x="1127" y="552" text-anchor="middle" class="h ink">持续控制与恢复</text>
+  <text x="1127" y="587" text-anchor="middle" class="s muted">诊断：迁移、保持、后期可塑性、学习效率</text>
+  <text x="870" y="690" class="eq ink">ℒ(n) = (J<tspan baseline-shift="sub" font-size="17">run</tspan>, T<tspan baseline-shift="sub" font-size="17">recover</tspan>, P<tspan baseline-shift="sub" font-size="17">late</tspan>, η)<tspan baseline-shift="sub" font-size="17">n</tspan></text>
+  <text x="870" y="730" class="b muted">更新载体是实现选择，不是长期控制目标</text>
+
+  <rect x="230" y="815" width="1140" height="66" rx="18" fill="#f4f6f7"/>
+  <text x="800" y="857" text-anchor="middle" class="h ink">前者扩展当前求解；后者研究长期经验是否改善控制并维持可学性。</text>
+</svg>
