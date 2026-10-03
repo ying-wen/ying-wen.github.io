@@ -1,3 +1,3 @@
 # CPU examples use only PyTorch and the Python standard library.
 # Version used for the companion checks: PyTorch 2.8.0.
-torch==2.8.0
+torch==2.13.0
