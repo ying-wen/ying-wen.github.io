@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="通过两条独立曲线与四条件对照，交互理解 Search Scaling、Learning Scaling 及其交互。">
+  <title>Search × Learning Lab｜两项尺度关系的交互实验</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #ffffff;
+      --ink: #17211c;
+      --body: #2b3731;
+      --muted: #66726b;
+      --line: #dfe4e1;
+      --line-strong: #c7cfca;
+      --soft: #f6f8f7;
+      --search: #b84e1b;
+      --search-soft: #fff7f1;
+      --learn: #2f704f;
+      --learn-soft: #f2f8f4;
+      --link: #245d7a;
+      --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      --serif: ui-serif, "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", STSong, Georgia, serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); color: var(--ink); }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--body);
+      font: 16px/1.72 var(--serif);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--link); text-underline-offset: .18em; }
+    button, input { font: inherit; }
+    button:focus-visible, input:focus-visible, a:focus-visible {
+      outline: 3px solid rgba(36, 93, 122, .25);
+      outline-offset: 3px;
+    }
+    .topbar {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .97);
+    }
+    .topbar-inner {
+      max-width: 1180px;
+      min-height: 46px;
+      margin: 0 auto;
+      padding: 8px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--muted);
+      font: 12px/1.4 var(--sans);
+    }
+    .topbar a { color: inherit; text-decoration: none; }
+    .edition {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .edition::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--search);
+    }
+    .page { max-width: 1180px; margin: 0 auto; padding: 56px 24px 88px; }
+    header { max-width: 960px; margin-bottom: 34px; }
+    .eyebrow {
+      margin: 0 0 13px;
+      color: var(--search);
+      font: 700 12px/1.35 var(--mono);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      color: var(--ink);
+      font: 700 clamp(38px, 6vw, 72px)/1.08 var(--serif);
+      letter-spacing: -.035em;
+    }
+    .lede {
+      max-width: 850px;
+      margin: 20px 0 0;
+      color: #445148;
+      font: 20px/1.7 var(--serif);
+    }
+    .scope {
+      max-width: 850px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font: 14px/1.65 var(--sans);
+    }
+    .thesis {
+      margin: 28px 0 0;
+      padding: 18px 20px;
+      border-left: 4px solid var(--learn);
+      background: var(--learn-soft);
+      color: #20372b;
+      font-size: 18px;
+    }
+    nav { display: flex; flex-wrap: wrap; gap: 9px; margin: 26px 0 0; }
+    nav a {
+      padding: 8px 11px;
+      border: 1px solid var(--line-strong);
+      border-radius: 4px;
+      background: #fff;
+      color: var(--ink);
+      font: 13px/1.3 var(--sans);
+      text-decoration: none;
+    }
+    nav a:hover { border-color: var(--link); color: var(--link); }
+    main { display: grid; grid-template-columns: minmax(0, 1fr); width: 100%; min-width: 0; gap: 24px; }
+    section {
+      width: 100%;
+      min-width: 0;
+      border-top: 1px solid var(--line-strong);
+      padding-top: 28px;
+      scroll-margin-top: 24px;
+    }
+    h2 {
+      margin: 0 0 18px;
+      color: var(--ink);
+      font: 700 30px/1.35 var(--serif);
+      letter-spacing: -.015em;
+    }
+    h3 {
+      margin: 0 0 8px;
+      color: var(--ink);
+      font: 700 17px/1.45 var(--sans);
+    }
+    p { margin: .9em 0; }
+    .lab-grid {
+      display: grid;
+      grid-template-columns: 310px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+    .lab-grid > *, .visuals, .controls, .control, .plot-grid, .effect-grid { min-width: 0; }
+    .controls {
+      position: sticky;
+      top: 18px;
+      display: grid;
+      gap: 16px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+    }
+    .control {
+      display: grid;
+      gap: 7px;
+    }
+    .control-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: baseline;
+      font: 13px/1.4 var(--sans);
+    }
+    .control-head strong { color: var(--ink); }
+    output {
+      color: var(--ink);
+      font: 700 13px/1.2 var(--mono);
+    }
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--learn);
+      cursor: pointer;
+    }
+    .search-control input[type="range"] { accent-color: var(--search); }
+    .hint { color: var(--muted); font: 12px/1.5 var(--sans); }
+    .buttons { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 3px; }
+    button {
+      border: 1px solid var(--line-strong);
+      border-radius: 4px;
+      padding: 8px 11px;
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+      font: 650 13px/1.25 var(--sans);
+    }
+    button:hover { border-color: var(--link); color: var(--link); }
+    .copy-status { min-height: 18px; color: var(--learn); font: 12px/1.4 var(--mono); }
+    .visuals { display: grid; width: 100%; max-width: 100%; gap: 18px; }
+    .plot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .plot-card, .effect-card, .note-card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 16px;
+    }
+    .plot-card.search { border-top: 4px solid var(--search); }
+    .plot-card.learn { border-top: 4px solid var(--learn); }
+    .plot-subtitle { min-height: 43px; margin: 0; color: var(--muted); font: 13px/1.55 var(--sans); }
+    svg { display: block; width: 100%; height: auto; margin-top: 10px; overflow: visible; }
+    .axis { stroke: #9ba59f; stroke-width: 1; }
+    .gridline { stroke: #e7ebe8; stroke-width: 1; }
+    .search-path { fill: none; stroke: var(--search); stroke-width: 3; }
+    .learn-path { fill: none; stroke: var(--learn); stroke-width: 3; }
+    .search-dot { fill: #fff; stroke: var(--search); stroke-width: 4; }
+    .learn-dot { fill: #fff; stroke: var(--learn); stroke-width: 4; }
+    .axis-label, .tick-label { fill: #66726b; font-family: var(--sans); }
+    .axis-label { font-size: 12px; font-weight: 650; }
+    .tick-label { font-size: 10px; }
+    .current-label { fill: var(--ink); font: 700 11px var(--mono); }
+    .effect-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .effect-card { padding: 14px; }
+    .effect-card span { display: block; color: var(--muted); font: 12px/1.45 var(--sans); }
+    .effect-card strong { display: block; margin-top: 5px; color: var(--ink); font: 700 24px/1.1 var(--mono); }
+    .effect-card.search strong { color: var(--search); }
+    .effect-card.learn strong { color: var(--learn); }
+    .factor-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font: 14px/1.55 var(--sans); }
+    th, td { min-width: 150px; padding: 11px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--ink); background: var(--soft); font-weight: 700; }
+    td strong { font-family: var(--mono); }
+    tr:last-child td { border-bottom: 0; }
+    .frozen { color: var(--search); }
+    .updated { color: var(--learn); }
+    .equation {
+      margin: 16px 0 0;
+      padding: 13px 15px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      background: #fcfdfc;
+      color: var(--ink);
+      font: 14px/1.65 var(--mono);
+      white-space: nowrap;
+    }
+    .interpretation {
+      margin: 14px 0 0;
+      padding: 14px 16px;
+      border-left: 3px solid var(--link);
+      background: #f4f8fa;
+      font-size: 15px;
+    }
+    .boundary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .note-card { padding: 18px; }
+    .note-card ul { margin: 8px 0 0; padding-left: 1.25em; }
+    .note-card li { margin: .55em 0; }
+    .note-card.search-note { background: var(--search-soft); border-color: #eed6c8; }
+    .note-card.learn-note { background: var(--learn-soft); border-color: #cfe0d5; }
+    .glossary { overflow-x: auto; }
+    .glossary th:first-child, .glossary td:first-child { min-width: 190px; }
+    footer {
+      margin-top: 34px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font: 13px/1.65 var(--sans);
+    }
+    @media (max-width: 920px) {
+      .page { padding-top: 42px; }
+      .lab-grid { grid-template-columns: 1fr; }
+      .controls { position: static; grid-template-columns: 1fr 1fr; }
+      .buttons, .copy-status { grid-column: 1 / -1; }
+    }
+    @media (max-width: 720px) {
+      .topbar-inner { padding-inline: 18px; }
+      .page { padding: 38px 18px 64px; }
+      .lede { font-size: 18px; }
+      .plot-grid, .boundary-grid { grid-template-columns: 1fr; }
+      .effect-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 500px) {
+      h1 { font-size: 39px; }
+      h2 { font-size: 26px; }
+      .controls { grid-template-columns: 1fr; }
+      .buttons, .copy-status { grid-column: auto; }
+      .effect-grid { grid-template-columns: 1fr; }
+      .topbar-inner { align-items: flex-start; flex-direction: column; gap: 3px; }
+      th, td { min-width: 132px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media print {
+      .topbar, nav, .controls, .buttons, .copy-status { display: none !important; }
+      .page { max-width: none; padding: 0; }
+      .lab-grid { display: block; }
+      .plot-grid, .boundary-grid, .effect-grid { break-inside: avoid; }
+      .plot-card, .effect-card, .note-card { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span class="edition">Interactive Companion · v1.0</span>
+      <a href="/zh/blog/search-scaling-to-learning-scaling/">返回《从 Search Scaling 到 Learning Scaling》</a>
+    </div>
+  </div>
+
+  <div class="page">
+    <header>
+      <p class="eyebrow">Search × Learning Lab</p>
+      <h1>两项尺度关系的交互实验</h1>
+      <p class="lede">同一任务指标可同时受任务时搜索计算、跨任务持久更新及二者交互影响。识别两项主效应，需要分别操控任务时计算与累计经历，并保持对应控制条件不变。</p>
+      <p class="scope">下列曲线由明确的示意函数生成，不对应公开基准，也不主张幂律。它们只用于展示控制变量、状态边界和两因素分解。</p>
+      <div class="thesis">Search Scaling 固定持久状态并调整当前任务计算；Learning Scaling 固定未来运行条件并调整累计经历。二者可以协同，但不能由同一条曲线替代。</div>
+      <nav aria-label="实验目录">
+        <a href="#experiment">交互实验</a>
+        <a href="#factorial">四条件对照</a>
+        <a href="#boundaries">解释边界</a>
+        <a href="#glossary">符号表</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="experiment">
+        <h2>两项横轴的独立操控</h2>
+        <div class="lab-grid">
+          <aside class="controls" aria-label="实验参数">
+            <div class="control search-control">
+              <div class="control-head"><strong>高任务时计算 c₁</strong><output id="compute-output" for="compute">32</output></div>
+              <input id="compute" type="range" min="8" max="64" step="4" value="32">
+              <span class="hint">候选数、工具调用或搜索节点的示意单位；低水平 c₀ 固定为 4。</span>
+            </div>
+            <div class="control">
+              <div class="control-head"><strong>累计经历 n</strong><output id="experience-output" for="experience">40</output></div>
+              <input id="experience" type="range" min="0" max="100" step="5" value="40">
+              <span class="hint">跨任务进入持久状态的经历量；任务内临时状态不计入。</span>
+            </div>
+            <div class="control search-control">
+              <div class="control-head"><strong>评价可靠性 q</strong><output id="evaluator-output" for="evaluator">75%</output></div>
+              <input id="evaluator" type="range" min="40" max="100" step="5" value="75">
+              <span class="hint">可行候选出现后，评价程序识别并提交它的能力。</span>
+            </div>
+            <div class="control">
+              <div class="control-head"><strong>后期可塑性 p</strong><output id="plasticity-output" for="plasticity">85%</output></div>
+              <input id="plasticity" type="range" min="30" max="100" step="5" value="85">
+              <span class="hint">长期运行后，系统继续把新经历转化为持久能力的程度。</span>
+            </div>
+            <div class="buttons">
+              <button type="button" id="reset">恢复默认值</button>
+              <button type="button" id="copy">复制当前参数</button>
+            </div>
+            <div class="copy-status" id="copy-status" role="status" aria-live="polite"></div>
+          </aside>
+
+          <div class="visuals">
+            <div class="plot-grid">
+              <article class="plot-card search">
+                <h3>Search Scaling</h3>
+                <p class="plot-subtitle">持久状态固定；横轴只增加当前任务计算 c。</p>
+                <svg id="search-chart" viewBox="0 0 520 300" role="img" aria-labelledby="search-chart-title search-chart-desc">
+                  <title id="search-chart-title">任务时 Search Scaling 示意曲线</title>
+                  <desc id="search-chart-desc">横轴为当前任务计算，纵轴为当前任务分数。评价可靠性调整曲线的有效高度。</desc>
+                  <line class="gridline" x1="54" y1="62" x2="494" y2="62"></line>
+                  <line class="gridline" x1="54" y1="122" x2="494" y2="122"></line>
+                  <line class="gridline" x1="54" y1="182" x2="494" y2="182"></line>
+                  <line class="axis" x1="54" y1="242" x2="494" y2="242"></line>
+                  <line class="axis" x1="54" y1="28" x2="54" y2="242"></line>
+                  <text class="tick-label" x="46" y="246" text-anchor="end">20</text>
+                  <text class="tick-label" x="46" y="186" text-anchor="end">40</text>
+                  <text class="tick-label" x="46" y="126" text-anchor="end">60</text>
+                  <text class="tick-label" x="46" y="66" text-anchor="end">80</text>
+                  <text class="tick-label" x="54" y="260" text-anchor="middle">0</text>
+                  <text class="tick-label" x="274" y="260" text-anchor="middle">32</text>
+                  <text class="tick-label" x="494" y="260" text-anchor="middle">64</text>
+                  <text class="axis-label" x="274" y="287" text-anchor="middle">当前任务计算 c</text>
+                  <text class="axis-label" x="15" y="136" text-anchor="middle" transform="rotate(-90 15 136)">任务分数</text>
+                  <path id="search-path" class="search-path"></path>
+                  <circle id="search-dot" class="search-dot" r="6"></circle>
+                  <text id="search-label" class="current-label"></text>
+                </svg>
+              </article>
+
+              <article class="plot-card learn">
+                <h3>Learning Scaling</h3>
+                <p class="plot-subtitle">未来运行条件 c₀ 固定；横轴只增加跨任务累计经历 n。</p>
+                <svg id="learning-chart" viewBox="0 0 520 300" role="img" aria-labelledby="learning-chart-title learning-chart-desc">
+                  <title id="learning-chart-title">生命期 Learning Scaling 示意曲线</title>
+                  <desc id="learning-chart-desc">横轴为累计经历，纵轴为固定未来运行条件下的未来任务分数。后期可塑性调整经历的长期作用。</desc>
+                  <line class="gridline" x1="54" y1="62" x2="494" y2="62"></line>
+                  <line class="gridline" x1="54" y1="122" x2="494" y2="122"></line>
+                  <line class="gridline" x1="54" y1="182" x2="494" y2="182"></line>
+                  <line class="axis" x1="54" y1="242" x2="494" y2="242"></line>
+                  <line class="axis" x1="54" y1="28" x2="54" y2="242"></line>
+                  <text class="tick-label" x="46" y="246" text-anchor="end">20</text>
+                  <text class="tick-label" x="46" y="186" text-anchor="end">40</text>
+                  <text class="tick-label" x="46" y="126" text-anchor="end">60</text>
+                  <text class="tick-label" x="46" y="66" text-anchor="end">80</text>
+                  <text class="tick-label" x="54" y="260" text-anchor="middle">0</text>
+                  <text class="tick-label" x="274" y="260" text-anchor="middle">50</text>
+                  <text class="tick-label" x="494" y="260" text-anchor="middle">100</text>
+                  <text class="axis-label" x="274" y="287" text-anchor="middle">累计经历 n</text>
+                  <text class="axis-label" x="15" y="136" text-anchor="middle" transform="rotate(-90 15 136)">未来任务分数</text>
+                  <path id="learning-path" class="learn-path"></path>
+                  <circle id="learning-dot" class="learn-dot" r="6"></circle>
+                  <text id="learning-label" class="current-label"></text>
+                </svg>
+              </article>
+            </div>
+
+            <div class="effect-grid" aria-label="当前参数设置的效应分解">
+              <div class="effect-card search"><span>冻结状态下的搜索效应</span><strong id="search-effect">—</strong></div>
+              <div class="effect-card learn"><span>低计算下的持久更新效应</span><strong id="learning-effect">—</strong></div>
+              <div class="effect-card"><span>Search × Learning 交互</span><strong id="interaction-effect">—</strong></div>
+              <div class="effect-card"><span>联合条件相对基线</span><strong id="joint-effect">—</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="factorial">
+        <h2>四条件对照</h2>
+        <p>冻结分支与更新分支从同一初始状态出发。两行比较持久状态，两列比较任务时计算；任务内 context、scratchpad、搜索树和缓存均在测量前清空。</p>
+        <div class="factor-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>持久状态</th>
+                <th>低任务时计算 c₀ = 4</th>
+                <th>高任务时计算 c₁</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong class="frozen">冻结分支 A⁻</strong><br><span class="hint">任务结束后不提交持久更新</span></td>
+                <td><strong id="frozen-low">—</strong></td>
+                <td><strong id="frozen-high">—</strong></td>
+              </tr>
+              <tr>
+                <td><strong class="updated">更新分支 A⁺</strong><br><span class="hint">规定的更新跨任务进入持久状态</span></td>
+                <td><strong id="updated-low">—</strong></td>
+                <td><strong id="updated-high">—</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="equation" aria-label="两因素交互公式">ΔI = (A⁺<sub>c₁</sub> − A⁺<sub>c₀</sub>) − (A⁻<sub>c₁</sub> − A⁻<sub>c₀</sub>)</div>
+        <div class="interpretation" id="interpretation"></div>
+      </section>
+
+      <section id="boundaries">
+        <h2>这项实验说明什么</h2>
+        <div class="boundary-grid">
+          <article class="note-card search-note">
+            <h3>可以说明</h3>
+            <ul>
+              <li>为什么同一总分差可能混合任务时搜索、持久更新与二者交互。</li>
+              <li>为什么评价可靠性会限制 Search Scaling，即使候选覆盖已经扩大。</li>
+              <li>为什么恢复持久状态是区分生命期更新的必要反事实。</li>
+            </ul>
+          </article>
+          <article class="note-card learn-note">
+            <h3>不能单独说明</h3>
+            <ul>
+              <li>示意曲线不构成已经建立的尺度定律，也不支持具体时间预测。</li>
+              <li>未来任务分数提高不自动代表保持、迁移和后期可塑性同时成立。</li>
+              <li>一次参数变化、记忆写入或版本提高不自动形成 Learning Scaling 或 RSI。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="glossary">
+        <h2>符号与控制条件</h2>
+        <div class="glossary">
+          <table>
+            <thead><tr><th>符号</th><th>含义</th><th>实验中的操控与控制条件</th></tr></thead>
+            <tbody>
+              <tr><td><strong>c₀, c₁</strong></td><td>当前任务或设计轮次中的搜索计算</td><td>测 Search Scaling 时操控；测 Learning Scaling 时固定</td></tr>
+              <tr><td><strong>n</strong></td><td>跨任务进入持久状态的累计经历</td><td>测 Learning Scaling 时操控</td></tr>
+              <tr><td><strong>q</strong></td><td>评价程序识别并提交可行候选的可靠性</td><td>同一条 Search Scaling 曲线中保持固定</td></tr>
+              <tr><td><strong>p</strong></td><td>生命期后段继续形成新能力的可塑性</td><td>正式实验需与保持、迁移和技能获取效率分别报告</td></tr>
+              <tr><td><strong>A⁻ / A⁺</strong></td><td>冻结分支 / 持久更新分支</td><td>两分支共享初始状态、经历序列与未来测量条件</td></tr>
+              <tr><td><strong>ΔI</strong></td><td>任务时计算效应因持久更新而发生的变化</td><td>由四条件差分计算</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p><strong>模型说明：</strong>分数函数采用具有饱和项的示意关系，参数只服务于交互教学。正式研究需要多个尺度水平、重复运行、不确定性区间、未参与拟合的尺度区间，以及迁移、保持、后期可塑性和技能获取效率的联合测量。</p>
+      <p><a href="/zh/blog/search-scaling-to-learning-scaling/">返回完整 Blog</a> · <a href="./position-paper.html">阅读 Position Paper</a></p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+      var defaults = { compute: 32, experience: 40, evaluator: 75, plasticity: 85 };
+      var controls = {
+        compute: document.getElementById("compute"),
+        experience: document.getElementById("experience"),
+        evaluator: document.getElementById("evaluator"),
+        plasticity: document.getElementById("plasticity")
+      };
+      var outputs = {
+        compute: document.getElementById("compute-output"),
+        experience: document.getElementById("experience-output"),
+        evaluator: document.getElementById("evaluator-output"),
+        plasticity: document.getElementById("plasticity-output")
+      };
+      var base = 30;
+      var lowCompute = 4;
+
+      function clamp(value, low, high) { return Math.max(low, Math.min(high, value)); }
+      function searchTerm(c, q) { return 27 * (1 - Math.exp(-(q * c) / 18)); }
+      function learningTerm(n, p) { return 25 * p * (1 - Math.exp(-n / 34)); }
+      function interactionTerm(c, n, q, p) {
+        return 5 * (searchTerm(c, q) / 27) * (learningTerm(n, p) / 25);
+      }
+      function frozenScore(c, q) { return clamp(base + searchTerm(c, q), 0, 100); }
+      function updatedScore(c, n, q, p) {
+        return clamp(base + searchTerm(c, q) + learningTerm(n, p) + interactionTerm(c, n, q, p), 0, 100);
+      }
+      function readState() {
+        return {
+          compute: Number(controls.compute.value),
+          experience: Number(controls.experience.value),
+          evaluator: Number(controls.evaluator.value) / 100,
+          plasticity: Number(controls.plasticity.value) / 100
+        };
+      }
+      function xMap(value, max) { return 54 + (value / max) * 440; }
+      function yMap(value) { return 242 - ((value - 20) / 70) * 210; }
+      function pathFor(maxX, steps, valueFn) {
+        var points = [];
+        for (var i = 0; i <= steps; i += 1) {
+          var xValue = (maxX * i) / steps;
+          points.push((i === 0 ? "M" : "L") + xMap(xValue, maxX).toFixed(2) + "," + yMap(valueFn(xValue)).toFixed(2));
+        }
+        return points.join(" ");
+      }
+      function signed(value) {
+        var rounded = value.toFixed(1);
+        return (value >= 0 ? "+" : "") + rounded;
+      }
+      function setPoint(dotId, labelId, x, y, label) {
+        var dot = document.getElementById(dotId);
+        var text = document.getElementById(labelId);
+        dot.setAttribute("cx", x.toFixed(2));
+        dot.setAttribute("cy", y.toFixed(2));
+        text.setAttribute("x", Math.min(470, x + 10).toFixed(2));
+        text.setAttribute("y", Math.max(35, y - 10).toFixed(2));
+        text.textContent = label;
+      }
+      function render() {
+        var s = readState();
+        var frozenLow = frozenScore(lowCompute, s.evaluator);
+        var frozenHigh = frozenScore(s.compute, s.evaluator);
+        var updatedLow = updatedScore(lowCompute, s.experience, s.evaluator, s.plasticity);
+        var updatedHigh = updatedScore(s.compute, s.experience, s.evaluator, s.plasticity);
+        var searchEffect = frozenHigh - frozenLow;
+        var learningEffect = updatedLow - frozenLow;
+        var interactionEffect = (updatedHigh - updatedLow) - (frozenHigh - frozenLow);
+        var jointEffect = updatedHigh - frozenLow;
+
+        outputs.compute.value = String(s.compute);
+        outputs.experience.value = String(s.experience);
+        outputs.evaluator.value = Math.round(s.evaluator * 100) + "%";
+        outputs.plasticity.value = Math.round(s.plasticity * 100) + "%";
+
+        document.getElementById("search-path").setAttribute("d", pathFor(64, 64, function (c) {
+          return frozenScore(c, s.evaluator);
+        }));
+        document.getElementById("learning-path").setAttribute("d", pathFor(100, 80, function (n) {
+          return updatedScore(lowCompute, n, s.evaluator, s.plasticity);
+        }));
+        setPoint("search-dot", "search-label", xMap(s.compute, 64), yMap(frozenHigh), "c=" + s.compute + " · " + frozenHigh.toFixed(1));
+        setPoint("learning-dot", "learning-label", xMap(s.experience, 100), yMap(updatedLow), "n=" + s.experience + " · " + updatedLow.toFixed(1));
+
+        document.getElementById("frozen-low").textContent = frozenLow.toFixed(1);
+        document.getElementById("frozen-high").textContent = frozenHigh.toFixed(1);
+        document.getElementById("updated-low").textContent = updatedLow.toFixed(1);
+        document.getElementById("updated-high").textContent = updatedHigh.toFixed(1);
+        document.getElementById("search-effect").textContent = signed(searchEffect);
+        document.getElementById("learning-effect").textContent = signed(learningEffect);
+        document.getElementById("interaction-effect").textContent = signed(interactionEffect);
+        document.getElementById("joint-effect").textContent = signed(jointEffect);
+
+        document.getElementById("interpretation").textContent =
+          "在当前参数设置下，冻结持久状态后，把任务时计算从 c₀=4 提高到 c₁=" + s.compute +
+          "，对应 " + signed(searchEffect) + " 分；在低任务时计算下保留 " + s.experience +
+          " 单位经历，对应 " + signed(learningEffect) + " 分；二者交互为 " +
+          signed(interactionEffect) + " 分。直接比较联合条件与基线仅显示 " +
+          signed(jointEffect) + " 分，无法分辨其中三部分。";
+      }
+      function reset() {
+        Object.keys(defaults).forEach(function (key) { controls[key].value = String(defaults[key]); });
+        document.getElementById("copy-status").textContent = "";
+        render();
+      }
+      function scenarioMarkdown() {
+        var s = readState();
+        var frozenLow = frozenScore(lowCompute, s.evaluator);
+        var frozenHigh = frozenScore(s.compute, s.evaluator);
+        var updatedLow = updatedScore(lowCompute, s.experience, s.evaluator, s.plasticity);
+        var updatedHigh = updatedScore(s.compute, s.experience, s.evaluator, s.plasticity);
+        var searchEffect = frozenHigh - frozenLow;
+        var learningEffect = updatedLow - frozenLow;
+        var interactionEffect = (updatedHigh - updatedLow) - (frozenHigh - frozenLow);
+        return [
+          "### Search × Learning Lab 参数设置",
+          "",
+          "- 高任务时计算 c₁: " + s.compute,
+          "- 累计经历 n: " + s.experience,
+          "- 评价可靠性 q: " + Math.round(s.evaluator * 100) + "%",
+          "- 后期可塑性 p: " + Math.round(s.plasticity * 100) + "%",
+          "- 冻结分支: " + frozenLow.toFixed(1) + " → " + frozenHigh.toFixed(1),
+          "- 更新分支: " + updatedLow.toFixed(1) + " → " + updatedHigh.toFixed(1),
+          "- 搜索效应: " + signed(searchEffect),
+          "- 持久更新效应: " + signed(learningEffect),
+          "- 交互项: " + signed(interactionEffect),
+          "",
+          "示意函数，不对应公开基准。"
+        ].join("\n");
+      }
+
+      Object.keys(controls).forEach(function (key) { controls[key].addEventListener("input", render); });
+      document.getElementById("reset").addEventListener("click", reset);
+      document.getElementById("copy").addEventListener("click", function () {
+        var status = document.getElementById("copy-status");
+        if (!navigator.clipboard) {
+          status.textContent = "当前浏览器不支持剪贴板写入。";
+          return;
+        }
+        navigator.clipboard.writeText(scenarioMarkdown()).then(function () {
+          status.textContent = "已复制为 Markdown。";
+        }, function () {
+          status.textContent = "复制失败，请手动记录当前参数。";
+        });
+      });
+      render();
+    }());
+  </script>
+</body>
+</html>

@@ -1,0 +1,1820 @@
+{
+  "researchQuestions": [
+    {
+      "id": "reward-design",
+      "group": "objectives",
+      "title": "奖励表示与奖励学习：目标怎样进入智能体？",
+      "setting": "设计者拥有偏好，智能体只能接收有限观测和奖励。奖励可能手写，也可能由人的比较或示范推断。必须分开目标变化、奖励估计变化与环境变化。",
+      "known": "期望效用与局部加性奖励需要不同条件。势函数塑形在边界条件满足时保持策略排序；偏好模型可以从片段比较中学习。",
+      "gap": "新行为会改变奖励模型的数据分布。有限反馈下，怎样保持奖励语义并防止代理失效仍是开放问题。",
+      "methods": [
+        {
+          "name": "表示条件与奖励状态",
+          "mechanism": "用反例检查原状态是否丢失时间结构；必要时显式增加奖励自动机或记忆。",
+          "assumptions": "更大状态不保证任意偏好都可由有限计算表示。",
+          "sourceIds": [
+            "reward-representation",
+            "reward-expressivity"
+          ]
+        },
+        {
+          "name": "偏好学习与重标记",
+          "mechanism": "比较损失更新奖励模型；控制器使用更新后的信号并产生新经验。",
+          "assumptions": "反馈噪声、片段选择和奖励模型版本都属于协议。",
+          "sourceIds": [
+            "reward-feedback"
+          ]
+        }
+      ],
+      "competingExplanations": [
+        "收益可能来自更接近真实目标，也可能只是更稠密的反馈。",
+        "奖励下降可能来自目标变化、模型外推错误或控制器失去可塑性。"
+      ],
+      "experiment": {
+        "hypothesis": "相同反馈预算下，版本一致的经验重标记可减少奖励模型更新后的控制滞后。",
+        "design": "固定环境与真实评价，仅改变奖励模型；再独立改变真实目标。设置训练分布内与新策略片段两种偏好测试。",
+        "controls": "真奖励诊断、固定模型、不重标记、全部重标记；匹配查询与计算预算。",
+        "measures": "原任务收益、偏好校准、奖励投机行为、适应成本与反馈数。",
+        "falsifier": "若优势只来自更高反馈量，或训练奖励提高但真实评价下降，则不支持目标学习改进。"
+      },
+      "chapterIds": [
+        "reward-design",
+        "objectives",
+        "state",
+        "control",
+        "goals",
+        "experiments"
+      ],
+      "scholarIds": [
+        "S01",
+        "S08",
+        "S17",
+        "S41",
+        "S65"
+      ],
+      "benchmarkIds": [
+        "analytic"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "lifetime-objective",
+      "group": "objectives",
+      "title": "01 · 什么目标能够评价一个始终在学习的智能体？",
+      "setting": "智能体只有有限存储和每步计算时间。学习改变其后续行为，环境可能持续而不终止，也可能存在成本不为零的重置。比较前需规定奖励、时间单位、评价时域和可用干预。平稳环境仍可能对有限资源智能体提出长期学习需求。",
+      "known": "折扣回报、有限生命期累计奖励和长期平均奖励并非同一个目标。平均奖励消除人为终止对目标的部分影响，但忽略有限前缀的长期极限也可能掩盖高昂适应成本。Abel 的持续性定义与 history-process 研究进一步把学习过程本身纳入讨论。",
+      "gap": "仍需要连接渐近算法理论、有限寿命在线效用与真实时间成本。把折扣设为接近一，不能自动得到差分价值算法；平均奖励表现好，也不能单独证明智能体一直在累积有用能力。",
+      "methods": [
+        {
+          "name": "Differential TD/Q → RVI-SAC",
+          "mechanism": "差分 TD 用 $R_{t+1}-\\bar r_t$ 替代未中心化奖励，联合更新奖励率与相对价值。RVI-SAC 进一步把平均奖励目标接到熵正则 actor–critic，并处理 reset cost。",
+          "assumptions": "表格收敛定理不直接覆盖非线性深网或任意漂移。RVI-SAC 的 replay 和目标网络也不属于严格 streaming 协议。",
+          "sourceIds": [
+            "average",
+            "rvi"
+          ]
+        },
+        {
+          "name": "Reward centering 与协议比较",
+          "mechanism": "从折扣 critic 中分离共同奖励偏移，减少无关基准对数值尺度的影响；同时显式比较三种 reset 协议。改变估计方法不必然改变任务目标。",
+          "assumptions": "奖励中心化、平均奖励优化和延长 episode 是不同干预，实验不能将三者同时改变后只归因于平均奖励。",
+          "sourceIds": [
+            "continuing"
+          ]
+        },
+        {
+          "name": "History process / deviation regret",
+          "mechanism": "用交互历史刻画问题，并通过允许的行为偏离比较实际学习过程。评价对象不再只是训练完成后的一个策略。",
+          "assumptions": "必须规定偏离集合、可观测信息和估计条件；这是一条形式化路线，而非已统一整个领域的标准。",
+          "sourceIds": [
+            "foundations",
+            "definition"
+          ]
+        }
+      ],
+      "competingExplanations": [
+        "方法收益可能来自更合适的任务目标，也可能只是奖励中心化改善了数值条件。",
+        "高终局成绩可能伴随更长探索期；高在线平均分也可能来自初始先验，而非更强持续学习。"
+      ],
+      "experiment": {
+        "hypothesis": "算法排序的一部分差异由目标与 reset 权限造成，而不是网络表达能力造成。",
+        "design": "从教材循环奖励例子开始，解析比较折扣与平均奖励的策略排序；随后固定同一控制环境，分别改变折扣、奖励常数偏移和 reset 成本，每次只改一项。",
+        "controls": "同网络、数据预算、种子与调参次数；记录 reset 是否由 agent 决策。设置不学习、固定步长学习和对应平均奖励方法。",
+        "measures": "整段累计奖励、窗口奖励率、冻结策略诊断、恢复时间、真实交互秒数和重置次数。",
+        "falsifier": "在匹配目标、中心化与重置条件后排序差异消失，就不支持“目标形式本身带来普遍收益”的解释。"
+      },
+      "chapterIds": [
+        "objectives",
+        "control",
+        "average",
+        "experiments"
+      ],
+      "scholarIds": [
+        "S01",
+        "S05",
+        "S08",
+        "S17"
+      ],
+      "benchmarkIds": [
+        "analytic",
+        "continuing",
+        "csuite"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "agent-state",
+      "group": "knowledge",
+      "title": "02 · 有限的内部状态应当保留哪些历史信息？",
+      "setting": "当前观测不能唯一决定后续结果。智能体从历史构造内部状态，但内部状态维度、计算和信用传播长度受限。环境的隐藏状态、网络活动、可学习参数以及 replay buffer 是不同对象。",
+      "known": "状态更新 $h_{t+1}=f_\\theta(h_t,A_t,O_{t+1})$ 只规定如何压缩历史，不保证压缩后具有 Markov 性。控制充分性允许丢掉与最优决策无关的信息；完整预测充分性通常更强。递归结构和用于训练它的目标需要分别选择。",
+      "gap": "仍缺少在相同信息、容量和延迟条件下，对“保留什么”与“怎样学会保留”作出明确归因的证据。更长记忆也可能存下无关历史；表示不断改变还会让依赖它的 critic 和模型失效。",
+      "methods": [
+        {
+          "name": "历史堆叠 / GRU / LSTM",
+          "mechanism": "历史堆叠显式保留固定窗口；门控递归通过活动延续信息。BPTT/TBPTT 则决定参数能够接收到多远的训练信用，不能由 hidden state 不清零推断信用也没有截断。",
+          "assumptions": "要匹配观测历史权限和实际训练窗口。完整回放序列、缓存 hidden state 与纯逐步处理具有不同成本。",
+          "sourceIds": [
+            "rtu"
+          ]
+        },
+        {
+          "name": "GVFN：用预测约束状态",
+          "mechanism": "将递归坐标与一组可由经验检验的预测联系起来，以预测误差训练状态。它回答“内部坐标应携带什么”，而不仅增加网络容量。",
+          "assumptions": "选择的问题必须能被数据覆盖，并对下游有用；有限预测集合不会自动成为充分状态。",
+          "sourceIds": [
+            "gvfn"
+          ]
+        },
+        {
+          "name": "RTU → 部分可观测 streaming RTRL",
+          "mechanism": "结构化递归使参数对状态的敏感度可以逐步维护。近期工作把该敏感度与控制资格迹结合，同时研究在线权重变化造成的敏感度陈旧。",
+          "assumptions": "高效精确计算依赖递归结构；不是任意 RNN 都能在线性成本下完成 RTRL。2026 工作仍是预印本。",
+          "sourceIds": [
+            "rtu",
+            "stream-rtrl"
+          ]
+        }
+      ],
+      "competingExplanations": [
+        "提高回报可能来自额外历史信息，而不是更好的表示学习目标。",
+        "RNN 比前馈网络好，可能只是在隐式推断任务标签；也可能真正记住了任务内关键事件。"
+      ],
+      "experiment": {
+        "hypothesis": "预测式内部状态在相同容量下更容易保留决策所需的稀疏历史事件。",
+        "design": "先做延迟线索记忆链，分别改变线索延迟、无关观测和任务切换；再在 Forager 中只改变一个观测模式。对状态做冻结线性探针，但不把探针数据反馈给 agent。",
+        "controls": "同参数量、动作信息与每步延迟预算；前馈、固定窗口、GRU/RTU、加预测损失各自单独比较。",
+        "measures": "在线回报、延迟事件预测、记忆消融后的行为变化、状态漂移、敏感度误差与峰值内存。",
+        "falsifier": "匹配历史窗口后收益消失，或能预测关键事件却不改善决策，就不能归因于更好的控制状态。"
+      },
+      "chapterIds": [
+        "state",
+        "gvf",
+        "credit"
+      ],
+      "scholarIds": [
+        "S03",
+        "S04",
+        "S34",
+        "S35",
+        "S72"
+      ],
+      "benchmarkIds": [
+        "analytic",
+        "popgym",
+        "forager"
+      ],
+      "sourceIds": [
+        "forager"
+      ]
+    },
+    {
+      "id": "predictive-knowledge",
+      "group": "knowledge",
+      "title": "03 · 哪些预测值得学习，谁来使用这些预测？",
+      "setting": "同一数据流可以支持许多不同未来问题。计算和容量有限，行为策略也未必覆盖每个目标策略。核心研究对象不仅是一个预测器的误差，还包括问题的选择、淘汰与下游用途。",
+      "known": "一个 GVF 由累积信号 $c$、延续条件 $\\gamma$ 和目标策略 $\\pi$ 指定。TD、GTD 与 emphatic 方法是回答该问题的算法。GVF 的定义不要求其参与状态，也不要求其信号就是任务奖励。",
+      "gap": "预测学得准，并不表示它能改善主任务。辅助目标可能利用额外数据，也可能与主目标争夺表示容量。发现有用问题还要平衡可学习性、未来复用和当前计算成本。",
+      "methods": [
+        {
+          "name": "Horde / off-policy prediction",
+          "mechanism": "为多个问题维护各自的目标与权重，把一条 transition 共享给多个学习器。重要性比率修正行为与目标策略差异；梯度 TD 或 emphatic weighting 处理特定离策略稳定性问题。",
+          "assumptions": "行为策略必须覆盖目标策略，方差和表示误差仍可能很大。线性稳定性不等于深度预测任意稳定。",
+          "sourceIds": [
+            "horde"
+          ]
+        },
+        {
+          "name": "辅助预测与 GVFN",
+          "mechanism": "用观测重构、潜在自预测或指定未来信号提供训练目标。GVFN 进一步把预测纳入递归状态。两者都需要独立检验预测是否被决策使用。",
+          "assumptions": "RLC 2024 的分析表明目标用途依赖干扰和与 TD 的组合，不能把一个辅助 loss 的下降当作通用知识增益。",
+          "sourceIds": [
+            "auxiliary",
+            "gvfn"
+          ]
+        },
+        {
+          "name": "学习预测语义与更新目标",
+          "mechanism": "DiscoRL 不预先给全部预测指定 GVF 语义，而是让元网络产生学习目标，再通过 agent 回报选择规则。这把“预测什么”与“怎样更新”一并纳入搜索。",
+          "assumptions": "语义自由度增加时，可解释性、元训练成本及未见分布的可检验性也成为研究问题。",
+          "sourceIds": [
+            "disco"
+          ]
+        }
+      ],
+      "competingExplanations": [
+        "收益来自预测所携带的知识，还是来自额外梯度产生的正则化？",
+        "辅助任务有效，是因为其预测目标有因果用途，还是因为它更容易优化且共享了更多参数？"
+      ],
+      "experiment": {
+        "hypothesis": "与未来控制相关的预测，比同规模无关辅助目标带来更低的奖励变化后再学习成本。",
+        "design": "在已知小 MDP 中先给每个 GVF 求解析答案；固定行为数据学习两组问题，再仅改变奖励或下游目标。通过删除、打乱或冻结预测输入检查用途。",
+        "controls": "无辅助目标、随机目标、等计算的额外主任务更新；相同数据覆盖和表示维度。",
+        "measures": "预测校准、目标策略覆盖、主任务在线回报、奖励变化后的再学习样本与下游消融差值。",
+        "falsifier": "随机辅助目标同样有效，或删除预测输入不改变行为，就不能把收益解释为所学预测知识被利用。"
+      },
+      "chapterIds": [
+        "value",
+        "gvf",
+        "state",
+        "meta"
+      ],
+      "scholarIds": [
+        "S01",
+        "S03",
+        "S04",
+        "S18",
+        "S32",
+        "S35"
+      ],
+      "benchmarkIds": [
+        "analytic",
+        "forager"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "continual-control",
+      "group": "learning",
+      "title": "04 · 旧价值什么时候应该复用，什么时候应该快速改写？",
+      "setting": "策略改善不断改变数据分布。奖励或动力学还可能发生外部变化。一个旧价值函数既可能提供知识，也可能阻碍适应；仅靠最终价值误差不能判断控制失败的原因。",
+      "known": "Q-learning、actor–critic 和最大熵控制规定不同的策略改善步骤。CRL 并不取代这些控制骨干，而是要求其在持续变化的数据和有限经验预算下继续有效。环境变化速度与估计速度的关系比算法名称更重要。",
+      "gap": "“快忘记”和“保留长期规律”存在冲突。显式任务边界下的重置或压缩不一定能用于边界未知的情形；环境不变时，由策略改善产生的数据漂移也会触发类似现象。",
+      "methods": [
+        {
+          "name": "Permanent–Transient 价值分解",
+          "mechanism": "用 $V=V^{\\mathrm{permanent}}+V^{\\mathrm{transient}}$ 表示长期知识与短期残差，分别安排更新和知识整合。变化出现时不必把全部价值重新学一遍。",
+          "assumptions": "原文区分有边界和持续实验。两个时间尺度增加超参数，也可能把过时知识长期保留下来。",
+          "sourceIds": [
+            "pt"
+          ]
+        },
+        {
+          "name": "滑窗估计 / 乐观探索 / 变化预算",
+          "mechanism": "滑窗减少过时转移的影响；置信集加宽与乐观规划避免窗口过短导致探索停止。理论将变化量与可达到的动态 regret 联系起来。",
+          "assumptions": "需要明确有限状态、可观察信息和变化预算；不是对任意非平稳深度 actor–critic 的保证。",
+          "sourceIds": [
+            "nonstationary"
+          ]
+        },
+        {
+          "name": "重置在线学习器并蒸馏",
+          "mechanism": "Reset & Distill 将新任务的快速学习与过去行为保存放到不同网络和训练阶段，直接处理旧初始化带来的负迁移。",
+          "assumptions": "依赖任务化协议、重置和额外蒸馏成本；不能直接移植为单一无边界 agent 而保持原结论。",
+          "sourceIds": [
+            "reset-distill"
+          ]
+        }
+      ],
+      "competingExplanations": [
+        "快速适应可能来自减少陈旧价值，也可能来自探索策略重新增加覆盖。",
+        "从头训练优于接着训练，可能是表示塑性下降，也可能是旧策略把 agent 困在错误数据分布中。"
+      ],
+      "experiment": {
+        "hypothesis": "在反复出现的奖励模式中，双时间尺度价值能够兼顾首次适应和回访复用。",
+        "design": "设置 A→B→A 奖励变化与独立的动力学变化两条序列。先固定 replay 数据比较估计，再放开在线行为比较控制；逐渐移除任务边界提示。",
+        "controls": "单价值固定步长、步长网格、边界重置、随机探索重启；参数量和总更新次数匹配。",
+        "measures": "首次适应、回访收益、旧价值误差、状态覆盖、在线累计奖励及负迁移。",
+        "falsifier": "固定数据后差异消失且只在重新探索时有效，就应将解释归于数据获取而非价值记忆机制。"
+      },
+      "chapterIds": [
+        "control",
+        "deep-value",
+        "policy",
+        "soft-control",
+        "retention"
+      ],
+      "scholarIds": [
+        "S07",
+        "S15",
+        "S61",
+        "S98"
+      ],
+      "benchmarkIds": [
+        "analytic",
+        "minatar",
+        "cw"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "temporal-credit",
+      "group": "learning",
+      "title": "05 · 远处的反馈应该怎样更新早先的决策与内部计算？",
+      "setting": "关键线索或动作很早出现，奖励很晚到达。时间信用涉及不同时间步；结构信用涉及同一计算图中的参数与中间量。是否只能在线更新，是另一个资源条件。",
+      "known": "冻结参数时，$\\lambda$-return 的总增量可改写为 TD 误差乘资格迹的后向更新。传统在线 TD($\\lambda$) 在每步改变参数后不再精确保持该恒等式。True-online TD 重新定义在线前向目标并加入荷兰迹与修正。",
+      "gap": "深度控制需要同时处理非线性表示、离策略数据、递归状态和权重变化。把一条 trace 加到 optimizer 中不足以证明它解决了长时域信用，也不能将 RTRL 敏感度直接当作价值资格迹。",
+      "methods": [
+        {
+          "name": "n-step / λ-return / true-online TD",
+          "mechanism": "多步目标在不同 bootstrap 长度之间混合。后向资格迹压缩过去预测的梯度方向；true-online 的额外预测修正使指定线性算法对应逐前缀前向参考。",
+          "assumptions": "精确等价针对定义好的线性、固定特征、步长等条件。更大 λ 会延长信用，也会增加误差与方差传播。",
+          "sourceIds": [
+            "true-online"
+          ]
+        },
+        {
+          "name": "控制中的资格迹",
+          "mechanism": "SARSA 的 bootstrap 使用实际选择的下一动作；Watkins Q(λ) 使用 max target，并在下一行为非贪心时剪断后续迹。剪迹发生在当前反馈完成信用分配之后。",
+          "assumptions": "两种方法目标不同；不能把任意 off-policy actor–critic 都用同一个剪迹规则替换。",
+          "sourceIds": [
+            "book"
+          ]
+        },
+        {
+          "name": "RTRL 敏感度 × 价值/策略时间信用",
+          "mechanism": "RTRL 追踪参数对当前内部状态的影响；外层 TD 或策略更新还需要把延迟反馈与预测/动作联系起来。结构化递归研究使这两个层次可以在有限预算下组合。",
+          "assumptions": "在线参数变化使全历史敏感度产生陈旧误差；截断和低秩近似又带来不同偏差或方差。",
+          "sourceIds": [
+            "rtu",
+            "stream-rtrl"
+          ]
+        }
+      ],
+      "competingExplanations": [
+        "提高 λ 后变好，可能只是有效步幅变大，而不是利用了更久以前的信息。",
+        "更长反传窗口有效，可能来自更多重复训练，而非更准确的历史因果路径。"
+      ],
+      "experiment": {
+        "hypothesis": "在匹配参数更新尺度后，正确的历史信用仍能改善稀疏延迟反馈学习。",
+        "design": "先运行教材独立在线前向 oracle；再控制线索到奖励的延迟和干扰数量。分别改变 λ、BPTT 窗口与状态递归，保持其余部分固定。",
+        "controls": "TD(0)、传统 TD(λ)、true-online 线性参考；递归实验设置 detach 但不清空活动的对照。",
+        "measures": "逐前缀权重误差、有限差分梯度误差、回报随延迟曲线、实际更新范数及每步成本。",
+        "falsifier": "收益在匹配更新范数或训练次数后消失，就不能将其归因于更准确的长时间信用。"
+      },
+      "chapterIds": [
+        "credit",
+        "value",
+        "state",
+        "policy"
+      ],
+      "scholarIds": [
+        "S01",
+        "S05",
+        "S33",
+        "S34",
+        "S66"
+      ],
+      "benchmarkIds": [
+        "analytic",
+        "popgym"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "streaming-stability",
+      "group": "learning",
+      "title": "06 · 不存 replay、每步只处理新经验时，怎样避免更新失稳？",
+      "setting": "数据到达后立即用于学习；过去 transition 不被存储再训练。资格迹、递归活动和 optimizer 状态仍可存在，但须计入内存。数值稳定、样本利用率和动作 deadline 都是评价对象。",
+      "known": "逐步更新时，样本间的相关性和瞬时尺度不会被 batch 平均掉。归一化、网络尺度、资格迹与 actor–critic 时序会共同影响稳定性。“batch size=1”只是数据粒度，不是一套完整算法。",
+      "gap": "稳定参数步幅不等于稳定输出，更不等于稳定长期控制。不同网络、奖励尺度和罕见大误差下的适用条件仍需检验；单步更新便宜也可能因为需要更多真实经验而整体昂贵。",
+      "methods": [
+        {
+          "name": "Stream-X：共同更新配方",
+          "mechanism": "信号归一化与表示稳定化配合受控参数更新。2024 ObGD 以全局尺度限制步幅；2026 实现维护 $v_i=\\max(\\beta v_i,|\\delta e_i|)$，并按坐标缩放更新。两者不是同一个 optimizer。",
+          "assumptions": "逐坐标上界限制参数变化，不保证 TD 误差绝不越过零；版本、网络和归一化都需匹配。",
+          "sourceIds": [
+            "stream"
+          ]
+        },
+        {
+          "name": "Intentional TD / Policy Gradient",
+          "mechanism": "在局部近似下先指定希望减少多少 TD 误差，或允许多大策略 KL 变化，再求更新尺度。eligibility 与对角缩放改变方向，输出约束决定其长度。",
+          "assumptions": "近似依赖局部函数几何，真实输出改变可能偏离目标；须记录实际 TD-error 与 KL，而不能只看参数范数。",
+          "sourceIds": [
+            "intentional"
+          ]
+        }
+      ],
+      "competingExplanations": [
+        "方法提高回报，是归一化减少了数值异常，还是输出尺度控制更有效？",
+        "吞吐量变高，是更新更便宜，还是省略了基线需要完成的学习工作？"
+      ],
+      "experiment": {
+        "hypothesis": "相较固定参数步长，输出变化控制能在奖励缩放后维持更接近的学习行为。",
+        "design": "在同一 Stream-AC 骨干上改变奖励比例、干扰特征和少量异常奖励；一次替换一个尺度机制，再测试组合。",
+        "controls": "匹配架构、trace、初始化、归一化、调参预算和每秒环境步；旧版 ObGD 与新版 StreamingOptimizer 分列。",
+        "measures": "实际输出变化、TD 误差越过零比例、策略 KL、崩溃率、峰值内存、动作 deadline 违约率和在线回报。",
+        "falsifier": "在匹配归一化与有效步幅后不再改善，就不支持输出约束是主要收益来源的解释。"
+      },
+      "chapterIds": [
+        "streaming",
+        "credit",
+        "policy",
+        "soft-control"
+      ],
+      "scholarIds": [
+        "S05",
+        "S107",
+        "S108",
+        "S33"
+      ],
+      "benchmarkIds": [
+        "analytic",
+        "minatar",
+        "continuing"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "learning-rules",
+      "group": "learning",
+      "title": "07 · 哪些学习参数应当适应，怎样评价学出来的更新规则？",
+      "setting": "权重在内层学习，步长、return 参数、初始化或整个更新器在外层适应。在线元学习使用一段持续经验；跨任务元 RL 使用任务分布及重置。两者的元目标和数据权限不同。",
+      "known": "IDBD 用步长敏感度选择特征的学习尺度；TIDBD 把该思路带到 bootstrap 预测。Metatrace 将元敏感度与 actor–critic 的时间信用结合。Meta-gradient RL 更一般地对学习过程求导，学习 return 等参数。",
+      "gap": "短展开元梯度可能优化短期可见效果，而不是长期适应。学出的规则可能依赖元训练时域、任务分布和网络尺度；有限任务上的泛化不能保证无限生命期收益。",
+      "methods": [
+        {
+          "name": "逐特征步长 → Metatrace",
+          "mechanism": "维护 $\\partial w_t/\\partial\\beta$ 等敏感度，用后续误差判断过去步长是否有益。Metatrace 再累积元资格，使延迟反馈能够影响步长参数。",
+          "assumptions": "监督误差、TD semi-gradient 和完整 TD-error 导数不是同一目标。归一化与截断也改变算法。",
+          "sourceIds": [
+            "idbd",
+            "tidbd",
+            "metatrace"
+          ]
+        },
+        {
+          "name": "Meta-gradient RL",
+          "mechanism": "内层更新生成新权重，外层用固定评价问题衡量这些权重，并沿更新过程反传到元参数。内层 discount 可学习，不代表外层评价目标也应随它任意改变。",
+          "assumptions": "完整敏感度含跨步与跨参数耦合；截断、停止梯度和随机轨迹导数均需说明。",
+          "sourceIds": [
+            "meta-gradient"
+          ]
+        },
+        {
+          "name": "规则搜索与 DiscoRL",
+          "mechanism": "将损失、目标或更新规则参数化，通过元训练评价其学习效果。RLC 2025 比较搜索途径与成本；DiscoRL 提供表达更丰富的目标生成规则及公开元训练/元评价入口。",
+          "assumptions": "发现规则的总算力与应用已发布规则的成本分开；发布实验不等于每个研究者都能同预算复现原发现规模。",
+          "sourceIds": [
+            "meta-search",
+            "disco"
+          ]
+        }
+      ],
+      "competingExplanations": [
+        "“学会学习”的收益可能只是更大的超参数搜索预算，或更适合某个评价时域的手工偏置。",
+        "元网络依赖的是任务结构，还是 reward scale、episode 长度等容易泄漏的任务标记？"
+      ],
+      "experiment": {
+        "hypothesis": "学习尺度或更新规则能够在未见变化速度上迁移，而非只记住开发任务的时域。",
+        "design": "先用标量与向量问题做有限差分；随后在信号相关性、噪声和漂移速度的网格中划分元训练/测试区域，测试更长生命期。",
+        "controls": "相同搜索总预算的固定步长、Adam/RMSProp、简单尺度归一化；冻结元更新、重置元状态两项消融。",
+        "measures": "在线误差与回报、元梯度误差、元训练总成本、长时域失稳、未见分布性能和部署更新成本。",
+        "falsifier": "增益仅存在于元训练时域内，或基线获得同等调参预算后差距消失，就不足以支持通用学习规则改进。"
+      },
+      "chapterIds": [
+        "meta",
+        "credit",
+        "streaming",
+        "experiments"
+      ],
+      "scholarIds": [
+        "S01",
+        "S19",
+        "S58",
+        "S59",
+        "S61",
+        "S69"
+      ],
+      "benchmarkIds": [
+        "analytic",
+        "minatar"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "useful-options",
+      "group": "construction",
+      "title": "08 · 什么样的时间抽象值得加入技能库？",
+      "setting": "Option 具有启动条件、内部策略与终止规则。技能发现还要决定哪些 option 值得占用容量。探索覆盖、执行效率、信用压缩和规划价值是不同用途，不能仅凭技能数量或轨迹图判断。",
+      "known": "Machado 的谱发现路线把环境连通结构变成内在奖励，再变成长行为。现代技能方法可从可区分性、后果模型或时间距离组织行为。它们改变的目标不同，产生的技能也未必适合相同任务。",
+      "gap": "技能发现的计算和交互成本往往在下游成功率之外。环境或表示改变后，旧技能的启动、终止与后果模型都可能失效。持续技能库还缺少可靠的保留、合并、替换和重估准则。",
+      "methods": [
+        {
+          "name": "Eigenoptions → ALLO",
+          "mechanism": "谱方向描述由经验转移诱导的连通结构；沿特征坐标变化构造奖励，学习长距离移动。ALLO 更准确地区分谱方向与特征值，给技能和后续规划提供结构化坐标。",
+          "assumptions": "图取决于采样行为与状态表示。慢变化方向不必然是当前奖励最有用的方向。",
+          "sourceIds": [
+            "eigenoptions",
+            "allo"
+          ]
+        },
+        {
+          "name": "METRA 的度量感知技能",
+          "mechanism": "使沿技能方向的表示变化成为内在奖励，并限制相邻状态的表示距离。约束使表示更接近时间可达性结构，而非任意放大尺度获得高奖励。",
+          "assumptions": "原目标和源码中的按维度缩放、slack 与 dual 更新需对应。状态覆盖好仍不是外部任务有效性的充分条件。",
+          "sourceIds": [
+            "metra"
+          ]
+        },
+        {
+          "name": "奖励感知谱结构",
+          "mechanism": "Default Representation 把默认动力学与奖励结构共同纳入后果表示，进一步影响谱特征、塑形和 option 发现。它提供与纯动力学 SR 不同的技能偏置。",
+          "assumptions": "奖励改变会改变表示本身的有效性；奖励感知不等于对所有未来任务更可迁移。",
+          "sourceIds": [
+            "dr"
+          ]
+        }
+      ],
+      "competingExplanations": [
+        "技能收益来自更好的探索覆盖，还是来自更少的高层决策与更有效的规划？",
+        "谱技能看似更好，可能只是执行时长或可到达范围比随机技能更大。"
+      ],
+      "experiment": {
+        "hypothesis": "结构化技能在计入发现成本后，仍能降低跨房间目标变化的适应成本。",
+        "design": "在同一网格世界采样固定经验，比较随机、谱和奖励感知技能。先冻结低层技能只改变高层目标，再改变通道位置检验技能失效。",
+        "controls": "primitive-only、时长与终点覆盖匹配的随机技能；同技能数、总数据、决策预算；有无模型规划分别报告。",
+        "measures": "技能发现总成本、启动成功率、时长分布、主任务累计奖励、模型误差和通道改变后的恢复。",
+        "falsifier": "等时长随机技能或等覆盖原始探索得到相同收益，则不足以证明谱结构本身带来可复用抽象。"
+      },
+      "chapterIds": [
+        "options",
+        "goals",
+        "gvf",
+        "planning"
+      ],
+      "scholarIds": [
+        "S06",
+        "S07",
+        "S09",
+        "S37",
+        "S40",
+        "S53"
+      ],
+      "benchmarkIds": [
+        "analytic",
+        "ogbench"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "goal-construction",
+      "group": "construction",
+      "title": "09 · 子目标从哪里来，为什么学习它能帮助总体任务？",
+      "setting": "总体任务奖励已经给定。智能体还可以选择中间状态、预测目标、技能描述或训练课程。定义目标、学习目标条件策略、选择当前目标是三层计算，不应都称为“目标发现”。",
+      "known": "UVFA 提供目标条件价值接口；HER 从失败轨迹重标记可达目标；HIQL 将长期任务分解为高层目标和低层动作。它们主要解决已给目标下的学习和组合，不能单独回答哪些新目标值得创造。",
+      "gap": "子目标既要可学习，又要对总体任务有用。过易目标浪费经验，过难目标没有信号；语言先验能提供候选目标，却也引入外部知识和设计权限。持续生成目标还需要检测冗余、陈旧和奖励投机。",
+      "methods": [
+        {
+          "name": "HER：增加已达到目标的学习信号",
+          "mechanism": "从同一轨迹选取 achieved goal，重算目标相关奖励，使原本失败的轨迹成为另一个控制问题的训练样本。它修改 replay 样本的目标，不改变真实执行结果。",
+          "assumptions": "需要可重算目标奖励和适合离策略学习的数据；目标相关终止与随机性可能影响重标记语义。",
+          "sourceIds": [
+            "her"
+          ]
+        },
+        {
+          "name": "HIQL：分层提取目标条件策略",
+          "mechanism": "先学习目标价值，再分别利用一步和跨步优势拟合低层动作与高层中间目标。优势作为停止梯度的权重，避免策略更新反向扭曲其评价标尺。",
+          "assumptions": "离线数据必须支持相关状态与目标；更短有效时域不能解决完全没有覆盖的行为。",
+          "sourceIds": [
+            "hiql"
+          ]
+        },
+        {
+          "name": "Reward-respecting 与 AI-feedback 技能设计",
+          "mechanism": "STOMP 将子任务停止条件与原奖励联系起来；MaestroMotif 用语言描述、偏好奖励和规则组织技能。前者强调任务回报接口，后者引入可扩展的外部先验。",
+          "assumptions": "子任务奖励与环境奖励应分开记录；人工或语言模型的目标、反馈、程序生成成本属于方法。",
+          "sourceIds": [
+            "stomp",
+            "maestro"
+          ]
+        }
+      ],
+      "competingExplanations": [
+        "目标生成有效，可能是更准确地选择学习难度，也可能只是引入了额外任务信息。",
+        "层级方法提升，可能源于降低价值估计噪声，而非发现了可迁移语义。"
+      ],
+      "experiment": {
+        "hypothesis": "按下游用途选择的子目标，比只按成功率或可达性选择的目标更节省总经验。",
+        "design": "固定低层目标条件学习器，分别使用均匀目标、适中难度目标和基于主任务改进的目标；在 OGBench 先分析数据支持，再进入在线小迷宫。",
+        "controls": "相同目标数、低层数据和高层更新次数；人工/语言先验单独设有无对照。",
+        "measures": "目标成功率、总体回报、目标覆盖、目标生成成本、失败尝试和未见总体任务表现。",
+        "falsifier": "目标完成得更多却没有改善总体回报，或收益完全来自额外先验，则不支持自主目标构建的解释。"
+      },
+      "chapterIds": [
+        "goals",
+        "objectives",
+        "options"
+      ],
+      "scholarIds": [
+        "S01",
+        "S06",
+        "S10",
+        "S49",
+        "S53",
+        "S63"
+      ],
+      "benchmarkIds": [
+        "analytic",
+        "ogbench",
+        "curriculum"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "reusable-models",
+      "group": "construction",
+      "title": "10 · 模型需要预测什么，才能在变化后继续支持决策？",
+      "setting": "模型用于预测动作或 option 的后果，而不是仅重建观测。状态表示、策略和环境可以分别改变。模型误差必须相对于它将被使用的 backup 或决策定义。",
+      "known": "对于线性下游价值，适当的期望后果有时足以完成 backup；非线性价值、max 运算或风险目标一般不能只保留一个均值。世界模型、successor features 和 option model 的条件行为与输出语义不同。",
+      "gap": "持续学习会产生接口失配：旧模型预测旧表示，规划却读取新表示；option 政策更新后，其终点与时长分布也会改变。高平均预测精度可能掩盖极少发生但决定策略排序的错误。",
+      "methods": [
+        {
+          "name": "Option 的奖励、终点与时长模型",
+          "mechanism": "折扣模型需预测执行期间奖励及 $\\gamma^\\tau$ 加权的终点后果，再将终点价值接入备份。平均奖励模型还需计入持续时间成本，不能直接复用同一个折扣模型公式。",
+          "assumptions": "必须说明模型针对哪个内部策略和终止规则；子任务 stopping bonus 不能混入真实环境奖励模型。",
+          "sourceIds": [
+            "stomp",
+            "average"
+          ]
+        },
+        {
+          "name": "SR / SF 与 Default Representation",
+          "mechanism": "Successor 类表示预测指定策略下的未来占用或特征累积，在奖励线性族中支持快速重估。DR 将奖励纳入默认后果表示，使表示本身更偏向特定奖励结构。",
+          "assumptions": "动力学、默认行为或奖励条件改变时，可复用范围不同。不能把奖励变化、策略变化和转移变化视作同一迁移问题。",
+          "sourceIds": [
+            "sf",
+            "dr"
+          ]
+        },
+        {
+          "name": "Dreamer 的潜在世界模型",
+          "mechanism": "模型在真实序列上学习潜在动力学和预测头，随后在想象序列上训练行为。它直接服务 actor/critic，而不是要求所有像素都同样准确。",
+          "assumptions": "模型训练数据、rollout 长度和想象分布决定偏差；跨域表现并不自动证明长期模型保留。",
+          "sourceIds": [
+            "dreamer",
+            "drago"
+          ]
+        }
+      ],
+      "competingExplanations": [
+        "模型改善回报，可能因预测更准确，也可能因生成了更多训练目标。",
+        "更低 reconstruction loss 可能只来自拟合背景，而非保留了决策相关后果。"
+      ],
+      "experiment": {
+        "hypothesis": "模型版本与当前技能策略一致，比单纯增加模型容量更能减少变化后的规划错误。",
+        "design": "在小 MDP 中分别改变 option 策略、奖励和环境转移。保存旧模型，比较立即更新、延迟更新、版本匹配及模型冻结；再做目标相关与无关视觉变化。",
+        "controls": "真实模型 oracle、无模型控制、相同数据但更大模型；固定规划器与规划次数。",
+        "measures": "奖励/时长/终点误差、backup 误差、动作排序错误、真实回报、模型重学成本。",
+        "falsifier": "模型预测改善但 backup 与动作排序不变，或收益仅由额外更新次数解释，则不能归因于更好的决策模型。"
+      },
+      "chapterIds": [
+        "models",
+        "dyna",
+        "gvf",
+        "state",
+        "average"
+      ],
+      "scholarIds": [
+        "S01",
+        "S06",
+        "S35",
+        "S40",
+        "S104"
+      ],
+      "benchmarkIds": [
+        "analytic",
+        "ogbench",
+        "forager"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "planning-budget",
+      "group": "construction",
+      "title": "11 · 什么时候值得规划，应该把计算花在哪里？",
+      "setting": "规划用已学模型进行额外计算。真实交互、模型更新、搜索和想象训练共享有限预算。问题不是简单地增加规划步数，而是选择何时、何处、以什么时间尺度使用模型。",
+      "known": "Dyna 在模型中产生价值更新；prioritized sweeping 根据前驱与变化传播分配备份；MPC 在行动时优化短序列；Dreamer 在想象中训练策略。它们把计算放在不同阶段。",
+      "gap": "模型偏差可能随规划深度放大；规划太少又无法利用好已有知识。持续情形中，模型和状态同时变，旧搜索结构会失效。离线规划收益也不能直接代表在线发现、建模和规划的总收益。",
+      "methods": [
+        {
+          "name": "Dyna / STOMP：由模型支持价值改善",
+          "mechanism": "Dyna 交替真实学习与模型备份；STOMP 进一步学习子任务、option 及其后果模型，将更长时间的行为作为可规划对象。",
+          "assumptions": "抽象模型需与当前技能一致；计入 option 发现、模型训练及规划全部成本。",
+          "sourceIds": [
+            "stomp",
+            "average"
+          ]
+        },
+        {
+          "name": "TD-MPC2：短模型路径加终点价值",
+          "mechanism": "用短时域潜在预测和终点 critic 避免完全依赖长 rollout，策略先验帮助生成候选动作序列。",
+          "assumptions": "模型误差和终点价值误差可以互相补偿，也可以共同误导；短时域不是无偏性保证。",
+          "sourceIds": [
+            "tdmpc"
+          ]
+        },
+        {
+          "name": "ALPS：谱结构支持决策时分层规划",
+          "mechanism": "先从离线数据学谱表示和模型，以区域图提出中间目标，再通过先验引导的短时域优化行动。它把全局连通结构和局部模型搜索分开。",
+          "assumptions": "ICML 2026 的主要证据来自离线目标条件任务。它没有同时解决完整在线 STOMP 链条，二者不是新旧替代关系。",
+          "sourceIds": [
+            "alps",
+            "allo"
+          ]
+        }
+      ],
+      "competingExplanations": [
+        "更好表现来自时间抽象，还是仅仅多用了测试时计算？",
+        "规划带来的收益来自更好的状态距离，还是更好的候选行为先验？"
+      ],
+      "experiment": {
+        "hypothesis": "在固定总计算下，可靠短时域模型与抽象子目标比一味延长 rollout 更有效。",
+        "design": "先使用真模型比较规划器，再替换为相同数据学出的模型。扫描规划深度、候选数量和抽象层数；改变环境后观察恢复。",
+        "controls": "无规划、同计算的额外策略更新、真模型 oracle；固定离线数据与动作 deadline。",
+        "measures": "真实回报对总计算的曲线、模型误差、决策延迟、搜索失败率和环境变化后的恢复。",
+        "falsifier": "匹配测试时计算后优势消失，或真模型下仍无法获得收益，应分别否定效率解释或规划器设计。"
+      },
+      "chapterIds": [
+        "dyna",
+        "models",
+        "planning",
+        "options"
+      ],
+      "scholarIds": [
+        "S01",
+        "S06",
+        "S09",
+        "S19",
+        "S35",
+        "S62",
+        "S104"
+      ],
+      "benchmarkIds": [
+        "analytic",
+        "ogbench"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "retention-transfer",
+      "group": "adaptation",
+      "title": "12 · 怎样保留旧能力，而不把过时知识强加给新任务？",
+      "setting": "学习分布变化后，旧任务能力可能下降。保存旧轨迹、生成旧经验、保持旧策略或分配独立模块都可以减少遗忘，但也可能减慢适应。任务边界和回访权限决定哪些方法可用。",
+      "known": "Replay 保留数据，蒸馏保留函数输出，参数正则保留局部参数几何，生成模型保留经验分布。它们保存的对象不同。低遗忘不等于高前向迁移，快速新学习也不等于旧知识保存良好。",
+      "gap": "多数任务序列允许明确边界与评估重置，持续无边界条件更难分清“旧知识”与“已失效的规律”。固定容量下应保留哪些知识，仍取决于未来用途和重学代价。",
+      "methods": [
+        {
+          "name": "CLEAR：经验与行为共同保留",
+          "mechanism": "混合当前和历史经验进行学习，同时在旧经验上约束行为与价值输出。单纯增加 reservoir 容量不等于实现完整 CLEAR。",
+          "assumptions": "允许存储和再访问旧 transition；历史行为概率及离策略修正是接口的一部分。",
+          "sourceIds": [
+            "clear"
+          ]
+        },
+        {
+          "name": "DRAGO：模型的生成回放与真实回访",
+          "mechanism": "合成旧经验用于维护动力学模型，内在奖励引导重新访问熟悉区域，使保留机制同时作用于训练数据和行为。",
+          "assumptions": "论文任务共享动力学与状态空间。模型生成误差、当前任务 replay 和任务边界不能从成本中省略。",
+          "sourceIds": [
+            "drago"
+          ]
+        },
+        {
+          "name": "Reset & Distill：分开新任务学习与保留",
+          "mechanism": "新任务在线学习器重新开始，expert 蒸馏保留过去行为。它明确面对旧参数初始化造成的负迁移，而非只压制遗忘。",
+          "assumptions": "网络重置、离线训练和多个信息来源有额外权限与资源。",
+          "sourceIds": [
+            "reset-distill"
+          ]
+        }
+      ],
+      "competingExplanations": [
+        "回访更好来自知识仍在，也可能来自更快重新学习；需要零更新诊断区分。",
+        "保留正则有效可能只是降低总体学习速度，新任务变化慢时恰好受益。"
+      ],
+      "experiment": {
+        "hypothesis": "保存决策相关行为或后果，比同容量随机旧数据更有效地兼顾回访与新任务学习。",
+        "design": "使用 A→B→A 与 A→B→C 两条序列；在回访前先冻结诊断，再恢复更新。分别改变奖励与动力学，不合并解释。",
+        "controls": "从头训练、连续微调、等容量 reservoir、等计算蒸馏；有任务边界与无边界分别比较。",
+        "measures": "零更新保留、再学习速度、前向迁移、在线总效用、存储字节和额外计算。",
+        "falsifier": "只在恢复训练后才出现回访收益，就不能称为零更新知识保留；新任务成本抵消收益时也不支持总效用提升。"
+      },
+      "chapterIds": [
+        "retention",
+        "control",
+        "models",
+        "experiments"
+      ],
+      "scholarIds": [
+        "S07",
+        "S09",
+        "S13",
+        "S14",
+        "S42",
+        "S100",
+        "S103"
+      ],
+      "benchmarkIds": [
+        "analytic",
+        "cw",
+        "minatar"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "plasticity",
+      "group": "adaptation",
+      "title": "13 · 为什么训练越久，学习新东西反而越慢？",
+      "setting": "长期训练后的网络面对新的可学习目标，下降速度比新初始化更慢。需在相同数据和目标上比较 aged 与 fresh 网络，才能把优化能力下降和探索失败区分开。",
+      "known": "休眠单元、参数尺度、有效学习率、损失几何和预测函数剧烈变化都可能参与可塑性损失。单一活动度或参数范数是诊断变量，不是可塑性的完整定义。",
+      "gap": "一个机制在监督漂移或特定控制环境有效，不代表它解决了长期交互。替换单元改善新学习时，可能损坏旧功能；约束函数变化又可能拖慢必要的适应。",
+      "methods": [
+        {
+          "name": "ReDo / Continual Backprop",
+          "mechanism": "ReDo 以低活动度发现可回收单元；CBP 结合效用、成熟期和替换预算引入新特征。替换涉及输入、输出连接与 optimizer 状态。",
+          "assumptions": "单位替换量、初始扰动和实际参数预算必须匹配；激活率提高不证明新任务学得更快。",
+          "sourceIds": [
+            "redo",
+            "cbp"
+          ]
+        },
+        {
+          "name": "Normalize-and-Project",
+          "mechanism": "归一化网络中，权重范数增长会改变有效学习率。NaP 将归一化与权重投影结合，使这一隐含调度可被显式研究。",
+          "assumptions": "保持有效学习率不必在所有任务最好；原文也分析隐含衰减何时有帮助。",
+          "sourceIds": [
+            "nap"
+          ]
+        },
+        {
+          "name": "C-CHAIN：减少函数 churn",
+          "mechanism": "在参考状态上限制近期更新造成的全动作 Q 变化，以减轻一个数据片段对其他预测的干扰。它干预的是函数变化，而不是直接重置单元。",
+          "assumptions": "需要参考数据与近期网络；正则过强可能妨碍合理策略变化，且不满足无 replay 的最严格协议。",
+          "sourceIds": [
+            "churn"
+          ]
+        }
+      ],
+      "competingExplanations": [
+        "新任务学得慢是优化退化，还是新数据没有覆盖需要学习的区域？",
+        "重置有效是因为产生了新特征，还是因为重置了学习率、动量或价值尺度？"
+      ],
+      "experiment": {
+        "hypothesis": "在固定训练数据上控制有效学习率后，特征回收仍能独立改善长期新学习能力。",
+        "design": "保存不同训练年龄的网络，在同一新目标上做短期学习探针；再将同一干预放回在线控制。设置 feature reset 与 optimizer reset 的交叉消融。",
+        "controls": "fresh、aged、随机部分重置、只重置 optimizer、NaP/步长调整；每组相同参数和调参预算。",
+        "measures": "相同初始误差附近的下降速度、旧功能扰动、有效学习率、函数 churn、在线回报与长期失稳。",
+        "falsifier": "调整有效学习率即可消除 aged/fresh 差异，或回收只改善活动指标却不改善学习曲线，就应缩小特征退化解释。"
+      },
+      "chapterIds": [
+        "plasticity",
+        "retention",
+        "deep-value"
+      ],
+      "scholarIds": [
+        "S11",
+        "S12",
+        "S14",
+        "S65",
+        "S105",
+        "S106"
+      ],
+      "benchmarkIds": [
+        "analytic",
+        "minatar",
+        "agar"
+      ],
+      "sourceIds": [
+        "agar"
+      ]
+    },
+    {
+      "id": "experience-selection",
+      "group": "adaptation",
+      "title": "14 · 应当探索什么、练习什么，以及如何保留未来交互与学习的机会？",
+      "setting": "智能体的行为决定未来数据。新奇、可学习性、学习进展和任务收益并不一致。课程 teacher 能否选目标、改环境或重置，也会从根本上改变问题。",
+      "known": "预测误差可以鼓励访问未熟悉状态，学习进展可以优先分配可改善任务，恢复策略可以减少陷入失能状态的风险。但噪声环境可能永远产生大误差，短期安全也不等于长期可恢复。",
+      "gap": "持续经验选择需要区分暂时不会、根本不可预测和对未来没用。没有外部救援时，还要把不可逆风险纳入评价。技能覆盖或新奇奖励不能代替任务回报与恢复能力。",
+      "methods": [
+        {
+          "name": "RND：用预测误差生成新奇奖励",
+          "mechanism": "固定随机 target 网络，训练 predictor；未熟悉输入产生较大误差。归一化和内外在价值估计决定该信号怎样改变行为。",
+          "assumptions": "误差受输入噪声与表示尺度影响，不自动等价于信息增益或真正的学习进步。",
+          "sourceIds": [
+            "rnd"
+          ]
+        },
+        {
+          "name": "ALP-GMM：按学习进展分配课程",
+          "mechanism": "根据环境参数附近表现变化估计绝对学习进展，用混合模型选择下一批训练条件。它调整的是经验分布，而非低层 RL 更新。",
+          "assumptions": "teacher 需要选择训练条件和反复试验的权限；变化的成功率也可能来自噪声。",
+          "sourceIds": [
+            "curriculum"
+          ]
+        },
+        {
+          "name": "Single-Life RL / QWALE",
+          "mechanism": "以先前经验指导一次部署中的恢复与适应。QWALE 用价值加权的分布匹配信号，帮助 agent 从未见状态回到有用经验支持区域。",
+          "assumptions": "允许先验数据与预训练，但部署中不能随意重置；返回旧分布不等于任意环境中的安全保证。",
+          "sourceIds": [
+            "single-life"
+          ]
+        }
+      ],
+      "competingExplanations": [
+        "课程收益来自学习进展估计，还是来自 teacher 排除了太难或危险的任务？",
+        "恢复成功来自在线适应，还是来自预训练已经覆盖了测试变化？"
+      ],
+      "experiment": {
+        "hypothesis": "区分可学习变化与不可约噪声，能够减少无效探索而不损失任务发现。",
+        "design": "在小环境同时设置稀疏有用线索、纯噪声区域和可恢复/不可恢复陷阱。比较新奇和学习进展；若有 teacher，另开同权限实验。",
+        "controls": "随机探索、固定内在权重、oracle 可学区域仅作诊断上界；匹配先验数据和外部救援次数。",
+        "measures": "有用覆盖、噪声区域停留、首次任务发现、恢复成功、失能时间、外在累计奖励和人工干预。",
+        "falsifier": "去掉 teacher 的环境筛选权限后优势消失，或探索仅增加覆盖而未改善后续学习能力，则需更换机制解释。"
+      },
+      "chapterIds": [
+        "exploration",
+        "goals",
+        "objectives"
+      ],
+      "scholarIds": [
+        "S02",
+        "S10",
+        "S49",
+        "S50",
+        "S60",
+        "S64",
+        "S71"
+      ],
+      "benchmarkIds": [
+        "analytic",
+        "curriculum",
+        "forager",
+        "agar"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "integrated-architecture",
+      "group": "systems",
+      "title": "15 · 状态、知识、技能与规划怎样共同构成持续智能体？",
+      "setting": "完整 agent 同时更新状态、预测、控制、技能与模型。每个局部学习器看到的输入和目标都可能被其他模块改变。整体表现还受内存、计算分配和数据获取限制。",
+      "known": "Dyna 给出直接学习、模型学习和规划的基本接口；Alberta Plan 与 OaK 把长期知识构建、时间抽象及规划纳入更广路线。它们提出研究组织方式，但模块相连本身不能保证收益相加。",
+      "gap": "需要可检验的接口契约与端到端预算。状态变化会使预测和模型陈旧；技能变化会使后果模型失效；规划又改变经验。完整系统的增益必须与其组件、额外容量和额外先验分别比较。",
+      "methods": [
+        {
+          "name": "STOMP 的模块链",
+          "mechanism": "子任务定义所学行为，option 实现行为，真实后果模型描述执行结果，规划使用模型改善任务价值。模块关系可以逐项测量，而不只画架构图。",
+          "assumptions": "子任务奖励、真实奖励、停止条件和模型时间尺度须一致；每个接口都可能成为误差源。",
+          "sourceIds": [
+            "stomp"
+          ]
+        },
+        {
+          "name": "Alberta Plan / OaK 的研究路线",
+          "mechanism": "把有限资源下的实时学习与经验构造知识连接起来，强调可由经验检验、可支持规划的时间抽象。研究焦点是模块如何在生命期中产生并改进。",
+          "assumptions": "研究纲领和讲座不等于完整通用 agent 的可复现性能报告；能力与效率需要对应实现和测试。",
+          "sourceIds": [
+            "alberta",
+            "oak"
+          ]
+        },
+        {
+          "name": "Oak 的选择性信用与事件驱动方向",
+          "mechanism": "公开研究文章用稀疏相关信号与大量干扰说明选择性步长的动机，并展示 NetworkIDBD 的预测演示。事件驱动方向涉及计算分配，但对应页面尚无技术正文。",
+          "assumptions": "不能从 NoisyMNIST 图示推出持续控制收益；没有完整更新与运行包时，不能复现或比较其能耗主张。",
+          "sourceIds": [
+            "oak-idbd",
+            "oak-event"
+          ]
+        }
+      ],
+      "competingExplanations": [
+        "整机提高回报可能只是参数和计算更多，或某一个强模块掩盖了其他模块无效。",
+        "模块之间看似协同，可能来自共同访问了额外任务标签或真实环境状态。"
+      ],
+      "experiment": {
+        "hypothesis": "模型与技能的版本一致性，是持续抽象系统在环境变化后保持收益的必要因素之一。",
+        "design": "搭建只含一个技能、一个后果模型与固定预算 planner 的小系统；逐步允许状态、技能和模型更新。通过延迟一个模块制造可控失配，再进行完全组合。",
+        "controls": "相同总容量与预算的平坦控制器；分别冻结状态、预测、技能、模型与元更新。环境真状态只供诊断，不输入 agent。",
+        "measures": "整段效用、接口预测误差、模型版本失配、每模块成本、技能使用率与变化后恢复。",
+        "falsifier": "删除某模块不影响行为，或收益只随总计算增长而不随接口一致性变化，就不支持该模块协同解释。"
+      },
+      "chapterIds": [
+        "architectures",
+        "state",
+        "gvf",
+        "goals",
+        "options",
+        "models",
+        "planning",
+        "streaming"
+      ],
+      "scholarIds": [
+        "S01",
+        "S06",
+        "S17",
+        "S18",
+        "S32",
+        "S33"
+      ],
+      "benchmarkIds": [
+        "analytic",
+        "forager",
+        "agar"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "measurement",
+      "group": "systems",
+      "title": "16 · 什么实验能区分“仍在更新”与“仍在有效学习”？",
+      "setting": "一条长曲线包含适应、探索、保留、环境变化和随机波动。训练中评估可能重置环境或暂停更新，这些操作会改变单生命期。研究需要先确定估计量与独立随机单位。",
+      "known": "在线奖励评价实际学习过程；冻结策略诊断回答某个时间点会做什么；回访与新目标探针分别测试保留与可塑性。一个指标不能代替另外几个。跨种子区间与多任务稳健聚合有助于避免只看最好结果。",
+      "gap": "有限实验不能证明永远持续改善，但可以排除明确失败解释。领域仍需要跨协议可比较的报告：真实时间、内存、全部训练成本、重置权限、变化来源及模型版本，而不仅是最终归一化均分。",
+      "methods": [
+        {
+          "name": "生命期指标与诊断分离",
+          "mechanism": "把实际交互累计效用作为主要结果；冻结、回访和新任务探针在独立拷贝中进行，避免诊断数据改变主生命期。",
+          "assumptions": "拷贝只用于离线诊断且不把结果回流到部署 agent；无法复制真实系统时，需要另行设计安全评估。",
+          "sourceIds": [
+            "definition",
+            "foundations"
+          ]
+        },
+        {
+          "name": "rliable 与分层统计",
+          "mechanism": "以独立训练运行和任务为重采样层级，报告区间、分布和稳健聚合，避免少数异常高分支配平均数。",
+          "assumptions": "相邻窗口不是独立 seed；只挑显著任务或事后选择最优时间点会使区间失去原解释。",
+          "sourceIds": [
+            "rliable"
+          ]
+        },
+        {
+          "name": "机制诊断 → 简化平台 → 复杂世界",
+          "mechanism": "解析任务验证公式，Forager 检查信息与状态，AgarCL 的小游戏及完整环境检查组合难点。不同平台提供互补证据，不按难度大小简单替代。",
+          "assumptions": "某一平台上的失败可限制具体主张，但不能直接宣布一种机制普遍无用。",
+          "sourceIds": [
+            "forager",
+            "agar"
+          ]
+        }
+      ],
+      "competingExplanations": [
+        "后期变好可能因为任务自然变容易，或评价状态更接近训练分布。",
+        "极小均分提升可能来自种子方差、任务权重或选择性报告，而不是算法机制。"
+      ],
+      "experiment": {
+        "hypothesis": "一个被称作“持续学习改进”的方法，应在共同预算下至少改善预先指定的生命期指标，而不是仅改善代理诊断。",
+        "design": "预先固定任务顺序、变化时点、主指标和停止条件。开发集调参；测试集运行完整生命期。使用配对任务种子，保留失败和超时运行。",
+        "controls": "固定策略、不学习、从头训练、持续基础算法与单机制消融；匹配所有环境干预。",
+        "measures": "在线效用及区间、适应/保留/可塑性诊断、峰值内存、时延分位数、崩溃和干预频次；显示每任务结果。",
+        "falsifier": "主指标无可靠改善，或改善仅存在于获得额外 reset/搜索预算的条件，就不支持原定端到端主张；负结果仍可支持更窄机制结论。"
+      },
+      "chapterIds": [
+        "experiments",
+        "objectives",
+        "architectures",
+        "plasticity",
+        "retention"
+      ],
+      "scholarIds": [
+        "S03",
+        "S04",
+        "S08",
+        "S15",
+        "S17",
+        "S109"
+      ],
+      "benchmarkIds": [
+        "analytic",
+        "csuite",
+        "forager",
+        "cw",
+        "agar"
+      ],
+      "sourceIds": []
+    }
+  ],
+  "researchSources": [
+    {
+      "id": "reward-representation",
+      "title": "Bowling et al. · Settling the Reward Hypothesis",
+      "url": "https://proceedings.mlr.press/v202/bowling23a.html",
+      "venue": "ICML 2023",
+      "contribution": "区分期望效用表示与逐步 Markov 奖励表示；时间一致性是额外条件。",
+      "code": null
+    },
+    {
+      "id": "reward-expressivity",
+      "title": "Abel et al. · On the Expressivity of Markov Reward",
+      "url": "https://arxiv.org/abs/2111.00876",
+      "venue": "NeurIPS 2021",
+      "contribution": "给定状态和奖励输入后，并非所有任务偏好都能由固定 Markov 奖励表达。",
+      "code": null
+    },
+    {
+      "id": "reward-feedback",
+      "title": "Lee et al. · PEBBLE",
+      "url": "https://arxiv.org/abs/2106.05091",
+      "venue": "2021",
+      "contribution": "用预训练与奖励重标记提高偏好反馈的利用率。反馈模型与策略的数据分布共同变化。",
+      "code": {
+        "url": "https://github.com/rll-research/BPref",
+        "label": "B-Pref / PEBBLE 作者代码",
+        "scope": "奖励模型、查询策略、回放重标记与训练配置。"
+      }
+    },
+    {
+      "id": "book",
+      "title": "Sutton & Barto · Reinforcement Learning: An Introduction",
+      "url": "http://incompleteideas.net/book/the-book-2nd.html",
+      "venue": "第二版，2018",
+      "contribution": "第 7、11、12 章连接多步目标、离策略学习和资格迹；用于核对预测与控制算法的不同条件。",
+      "code": null,
+      "codeNote": "作者教材和伪代码入口；本网站实验为独立教学实现。"
+    },
+    {
+      "id": "idbd",
+      "title": "Sutton · Adapting Bias by Gradient Descent",
+      "url": "https://cdn.aaai.org/AAAI/1992/AAAI92-027.pdf",
+      "venue": "AAAI 1992",
+      "contribution": "IDBD 对每个特征的对数步长维护敏感度，使学习尺度由后续预测效果调整。",
+      "code": null,
+      "codeNote": "原文包含算法；这里没有 1992 年作者原始代码发布入口。"
+    },
+    {
+      "id": "tidbd",
+      "title": "Kearney et al. · TIDBD: Adapting Step-sizes Through Stochastic Meta-descent for Temporal-Difference Learning",
+      "url": "https://arxiv.org/abs/1804.03334",
+      "venue": "2018 论文",
+      "contribution": "将逐特征步长适应从监督预测扩展到 TD，并处理 bootstrap 误差与资格迹；不同梯度和归一化版本须逐式区分。",
+      "code": null,
+      "codeNote": "原文 Algorithm 1 与教材线性实现可以对应；此处没有可确认的完整作者原始实验仓库。"
+    },
+    {
+      "id": "sf",
+      "title": "Barreto et al. · Successor Features for Transfer in Reinforcement Learning",
+      "url": "https://arxiv.org/abs/1606.05312",
+      "venue": "NeurIPS 2017",
+      "contribution": "在相同动力学与线性奖励族下分离后果特征和奖励权重，通过 generalized policy improvement 复用多个策略。",
+      "code": {
+        "url": "https://github.com/google-deepmind/deepmind-research/tree/f5de0ede8430809180254ee957abf36ed62579ef/option_keyboard",
+        "label": "后续作者 Option Keyboard 工程",
+        "scope": "展示 SF 与策略组合的接口；对应后续 Option Keyboard，不是该 2017 论文的原始实验代码。"
+      }
+    },
+    {
+      "id": "definition",
+      "title": "Abel et al. · A Definition of Continual Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2307.11046",
+      "venue": "NeurIPS 2023",
+      "contribution": "用智能体对行为基础的持续搜索定义持续性。它与“环境显式切换若干任务”的定义不相同。",
+      "code": null,
+      "codeNote": "理论定义论文；没有需要复现的单一控制算法。"
+    },
+    {
+      "id": "average",
+      "title": "Wan, Naik & Sutton · Learning and Planning in Average-Reward MDPs",
+      "url": "https://proceedings.mlr.press/v139/wan21a.html",
+      "venue": "ICML 2021",
+      "contribution": "用 TD 误差更新平均奖励率，建立无参考状态的差分预测、控制与规划更新。收敛条件针对论文规定的表格问题。",
+      "code": {
+        "url": "https://github.com/abhisheknaik96/average-reward-methods",
+        "label": "作者实验代码",
+        "scope": "从 prediction_agents.py、control_agents.py 对照奖励率和价值的联合更新。"
+      }
+    },
+    {
+      "id": "rvi",
+      "title": "Hisaki & Ono · RVI-SAC",
+      "url": "https://proceedings.mlr.press/v235/hisaki24a.html",
+      "venue": "ICML 2024",
+      "contribution": "把相对价值迭代、平均奖励 soft policy improvement 和 reset cost 接到深度连续控制。",
+      "code": {
+        "url": "https://github.com/yhisaki/average-reward-drl",
+        "label": "作者 RVI-SAC 实现",
+        "scope": "检查 rvi_sac.py 的 critic 基准、actor 目标和重置成本，不仅修改 discount。"
+      }
+    },
+    {
+      "id": "continuing",
+      "title": "Wan et al. · An Empirical Study of Deep RL in Continuing Tasks",
+      "url": "https://arxiv.org/abs/2501.06937",
+      "venue": "2025 论文",
+      "contribution": "比较无重置、预设重置和智能体控制重置的任务，分析 reward centering 对深度方法的影响。",
+      "code": {
+        "url": "https://github.com/facebookresearch/DeepRL-continuing-tasks",
+        "label": "作者环境与实验",
+        "scope": "协议、奖励中心化和各基线配置同时构成实验对象。"
+      }
+    },
+    {
+      "id": "foundations",
+      "title": "Elelimy et al. · Rethinking the Foundations for Continual RL",
+      "url": "https://rlj.cs.umass.edu/2025/papers/Paper243.html",
+      "venue": "RLC 2025",
+      "contribution": "以 history process 和 deviation regret 研究学习过程的评价。比较对象与可实现偏离集合仍需明确，不能只把指标名称换掉。",
+      "code": null,
+      "codeNote": "论文给出形式化与实验；此处没有可确认的作者原始代码入口。"
+    },
+    {
+      "id": "gvfn",
+      "title": "Schlegel et al. · General Value Function Networks",
+      "url": "https://arxiv.org/abs/1807.06763",
+      "venue": "GVFN 原论文",
+      "contribution": "让递归状态的坐标对应预测问题，以预测约束帮助状态学习。问题设计和递归求导是两个独立部分。",
+      "code": {
+        "url": "https://github.com/mkschleg/GVFN",
+        "label": "作者 Julia 实验",
+        "scope": "分别阅读预测问题定义、递归状态和训练更新；不是通用任意 GVF 集合的充分性证明。"
+      }
+    },
+    {
+      "id": "rtu",
+      "title": "Elelimy et al. · Real-Time Recurrent Learning using Trace Units",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/1e616bde0438cb10cb6adf076ae7d336-Paper-Conference.pdf",
+      "venue": "NeurIPS 2024",
+      "contribution": "通过结构化递归单元降低前向敏感度维护成本，使逐步递归学习可以直接与控制任务结合。",
+      "code": {
+        "url": "https://github.com/esraaelelimy/rtus",
+        "label": "作者 RTU 实现",
+        "scope": "linear_rtus.py 的状态与敏感度 carry；复杂度优势依赖单元结构。"
+      }
+    },
+    {
+      "id": "stream-rtrl",
+      "title": "Farr et al. · Streaming RL under Partial Observability with RTRL",
+      "url": "https://arxiv.org/abs/2605.24709",
+      "venue": "2026 预印本",
+      "contribution": "将实时递归学习用于部分可观测流式控制。网络记忆、信用传播与流式优化需要共同评价。",
+      "code": null,
+      "codeNote": "此处未提供已确认的该论文作者代码；RTU 仓库对应上面的另一篇论文。"
+    },
+    {
+      "id": "horde",
+      "title": "Sutton et al. · Horde: A Scalable Real-time Architecture for Learning Knowledge from Unsupervised Sensorimotor Interaction",
+      "url": "https://sites.ualberta.ca/~amw8/horde.pdf",
+      "venue": "AAMAS 2011",
+      "contribution": "同一经验服务多个由累积量、延续条件和目标策略定义的预测；学习问题与回答问题的更新器分离。",
+      "code": {
+        "url": "https://github.com/rlpark/rlpark",
+        "label": "原研究系统 RLPark",
+        "scope": "Horde.java 调度多个 demon，GTDLambda.java 实现离策略预测；旧 Java/机器人栈。"
+      }
+    },
+    {
+      "id": "auxiliary",
+      "title": "Voelcker et al. · When does Self-Prediction Help?",
+      "url": "https://rlj.cs.umass.edu/2024/papers/Paper197.html",
+      "venue": "RLC 2024",
+      "contribution": "比较自预测目标及其与价值学习的组合，说明辅助预测的用途依赖表示、数据和主任务。",
+      "code": {
+        "url": "https://github.com/adaptive-agents-lab/understanding_auxiliary_tasks",
+        "label": "作者仓库（仅论文说明）",
+        "scope": "公开 main 分支只有 README 与 .gitignore，没有可运行的实验源码。"
+      }
+    },
+    {
+      "id": "pt",
+      "title": "Anand & Precup · Prediction and Control in Continual RL",
+      "url": "https://arxiv.org/abs/2312.11669",
+      "venue": "NeurIPS 2023",
+      "contribution": "把价值拆为长期 permanent 与快速 transient 分量，研究长期积累和短期适应的兼容性。",
+      "code": {
+        "url": "https://github.com/NishanthVAnand/prediction-and-control-in-continual-reinforcement-learning",
+        "label": "作者预测与控制实验",
+        "scope": "prediction_semi_crl 与 control 分开；有边界和持续协议要分别运行。"
+      }
+    },
+    {
+      "id": "nonstationary",
+      "title": "Cheung et al. · Reinforcement Learning for Non-Stationary MDPs",
+      "url": "https://proceedings.mlr.press/v119/cheung20a.html",
+      "venue": "ICML 2020",
+      "contribution": "用滑动窗口、置信集加宽及变化预算处理探索与历史失效；理论对象是规定条件下的非平稳 MDP。",
+      "code": null,
+      "codeNote": "以论文算法和定理条件为实现依据；此处没有可确认的作者代码入口。"
+    },
+    {
+      "id": "true-online",
+      "title": "van Seijen et al. · True Online Temporal-Difference Learning",
+      "url": "https://www.jmlr.org/papers/v17/15-599.html",
+      "venue": "JMLR 2016",
+      "contribution": "荷兰迹与预测修正实现线性在线前向视图；这不同于冻结参数下的传统前后向总增量恒等式。",
+      "code": {
+        "url": "https://github.com/armahmood/totd-rndmdp-experiments/blob/4b6d459890a0e9da898f6cf8b849ba7870ea044a/pysrc/algorithms/tdprediction/onpolicy/totd.py",
+        "label": "作者原始 true-online 实现",
+        "scope": "此源码将步长包含在 trace 中；与教材未缩放 trace 对照时需换算。"
+      }
+    },
+    {
+      "id": "stream",
+      "title": "Elsayed et al. · Streaming Deep Reinforcement Learning Finally Works",
+      "url": "https://arxiv.org/abs/2410.14606",
+      "venue": "2024 初稿；2026 修订",
+      "contribution": "将信号归一化、表示稳定化和受控参数更新组成 Stream-X。2024 与 2026 的优化器不同。",
+      "code": {
+        "url": "https://github.com/mohmdelsayed/streaming-drl",
+        "label": "作者 Stream-X 实现",
+        "scope": "2024 分支为 ObGD；2026 分支使用逐坐标 StreamingOptimizer，并包含 Stream-RAC。必须与所用论文版本对应。"
+      }
+    },
+    {
+      "id": "intentional",
+      "title": "Sharifnassab et al. · Intentional Updates for Streaming RL",
+      "url": "https://proceedings.mlr.press/v306/sharifnassab26a.html",
+      "venue": "ICML 2026",
+      "contribution": "先规定 TD 误差或策略输出的期望变化，再近似求合适步幅；输出约束不同于参数范数约束。",
+      "code": {
+        "url": "https://github.com/sharifnassab/Intentional_RL",
+        "label": "作者 Intentional RL",
+        "scope": "optimizer.py 中的方向缩放、输出变化近似、迹与截断共同决定更新。"
+      }
+    },
+    {
+      "id": "metatrace",
+      "title": "Young, Wang & Taylor · Metatrace Actor-Critic",
+      "url": "https://www.ijcai.org/proceedings/2019/0581.pdf",
+      "venue": "IJCAI 2019",
+      "contribution": "把步长敏感度和时间信用结合；scalar、vector、mixed 形式具有不同的适应粒度和归一化。",
+      "code": null,
+      "codeNote": "未找到可确认的作者原始代码；元学习教材提供独立线性特例，不含原文全部控制实验。"
+    },
+    {
+      "id": "meta-gradient",
+      "title": "Xu, van Hasselt & Silver · Meta-Gradient Reinforcement Learning",
+      "url": "https://arxiv.org/abs/1805.09801",
+      "venue": "NeurIPS 2018",
+      "contribution": "对内层学习更新求导，以后续评价调整 return 等学习参数；元目标和内层目标必须分开。",
+      "code": null,
+      "codeNote": "以论文伪代码和教材敏感度实验为入口；此处没有可确认的作者原始训练工程。"
+    },
+    {
+      "id": "meta-search",
+      "title": "Goldie et al. · How Should We Meta-Learn RL Algorithms?",
+      "url": "https://rlj.cs.umass.edu/2025/papers/Paper218.html",
+      "venue": "RLC 2025",
+      "contribution": "在不同算法对象上比较元优化途径，并比较泛化、可解释性、样本开销与训练成本。",
+      "code": {
+        "url": "https://github.com/AlexGoldie/learn-rl-algorithms",
+        "label": "作者算法搜索实验",
+        "scope": "按元训练任务与元测试任务恢复配置，不能只计发现后规则的部署成本。"
+      }
+    },
+    {
+      "id": "disco",
+      "title": "Oh et al. · Discovering State-of-the-Art RL Algorithms",
+      "url": "https://www.nature.com/articles/s41586-025-09761-x",
+      "venue": "Nature 2025",
+      "contribution": "通过元网络产生策略与预测的学习目标，从多智能体经验中搜索更新规则；学习出的预测未必具有预先指定的 GVF 语义。",
+      "code": {
+        "url": "https://github.com/google-deepmind/disco_rl",
+        "label": "作者 DiscoRL 工程",
+        "scope": "区分已发布规则的使用、训练 agent 与重新发现规则；三者需要不同预算。"
+      }
+    },
+    {
+      "id": "eigenoptions",
+      "title": "Machado et al. · A Laplacian Framework for Option Discovery in RL",
+      "url": "https://arxiv.org/abs/1703.00956",
+      "venue": "ICML 2017",
+      "contribution": "用状态转移图的谱方向构造内在奖励，并学习沿这些方向移动的时间扩展行为。",
+      "code": {
+        "url": "https://github.com/mcmachado/options",
+        "label": "Machado 作者原始 options 工程",
+        "scope": "main.py、谱表示和 option 学习相连；环境封装和旧依赖属于原实验条件。"
+      }
+    },
+    {
+      "id": "allo",
+      "title": "Gomez, Bowling & Machado · Proper Laplacian Representation Learning",
+      "url": "https://arxiv.org/abs/2310.10833",
+      "venue": "ICLR 2024",
+      "contribution": "ALLO 的约束与对偶动态恢复有序谱方向及相应特征值，减少只学到任意旋转子空间的问题。",
+      "code": {
+        "url": "https://github.com/tarod13/laplacian_dual_dynamics",
+        "label": "作者 ALLO 实现",
+        "scope": "同时读原始变量、对偶变量和正交约束；只保留相邻状态平滑项不是完整算法。"
+      }
+    },
+    {
+      "id": "metra",
+      "title": "Park, Rybkin & Levine · METRA",
+      "url": "https://arxiv.org/abs/2310.08887",
+      "venue": "ICLR 2024",
+      "contribution": "在转移上的表示距离约束下，最大化技能方向与状态变化的对齐，再以该信号学习技能策略。",
+      "code": {
+        "url": "https://github.com/seohongpark/METRA",
+        "label": "作者 METRA 实现",
+        "scope": "iod/metra.py 的内在奖励、距离约束、对偶更新和 SAC 技能训练需一并对照。"
+      }
+    },
+    {
+      "id": "her",
+      "title": "Andrychowicz et al. · Hindsight Experience Replay",
+      "url": "https://arxiv.org/abs/1707.01495",
+      "venue": "NeurIPS 2017",
+      "contribution": "把轨迹实际达到的目标重标记为训练目标，以稀疏反馈学习目标条件控制。",
+      "code": {
+        "url": "https://github.com/openai/baselines/tree/master/baselines/her",
+        "label": "作者团队 HER 实现",
+        "scope": "her_sampler.py 中的目标替换与 reward_fun；结束标志与目标依赖需按任务处理。"
+      }
+    },
+    {
+      "id": "hiql",
+      "title": "Park et al. · HIQL: Offline Goal-Conditioned RL with Latent States as Actions",
+      "url": "https://arxiv.org/abs/2307.11949",
+      "venue": "NeurIPS 2023",
+      "contribution": "用目标价值分别提取高层子目标策略和低层动作策略，缩短每层面对的有效时域。",
+      "code": {
+        "url": "https://github.com/seohongpark/HIQL",
+        "label": "作者 HIQL 实现",
+        "scope": "hiql.py 的 expectile 价值学习、停止梯度优势权重和 high/low actor 更新。"
+      }
+    },
+    {
+      "id": "maestro",
+      "title": "Klissarov et al. · MaestroMotif: Skill Design from AI Feedback",
+      "url": "https://arxiv.org/abs/2412.08542",
+      "venue": "ICLR 2025",
+      "contribution": "结合技能描述、偏好奖励和程序化组合规则，训练并组织 NetHack 技能。语言提供了额外的先验和任务设计信息。",
+      "code": {
+        "url": "https://github.com/mklissa/maestromotif",
+        "label": "作者 MaestroMotif 实现",
+        "scope": "preference、code_generation、rl_baseline 分别对应奖励、组合与技能学习。"
+      }
+    },
+    {
+      "id": "dr",
+      "title": "Tse, Chandrasekar & Machado · Reward-Aware Proto-Representations in RL",
+      "url": "https://arxiv.org/abs/2505.16217",
+      "venue": "NeurIPS 2025",
+      "contribution": "分析 Default Representation 的动态规划、TD 学习与特征形式，把奖励结构引入后果表示。",
+      "code": {
+        "url": "https://github.com/httse9/Reward-Aware-Proto-Representations",
+        "label": "作者 DR 实验",
+        "scope": "rep_utils.py 区分 SR/DR；ROD_DR.py 连接采样学习、谱分解与发现。"
+      }
+    },
+    {
+      "id": "dreamer",
+      "title": "Hafner et al. · Mastering Diverse Domains through World Models",
+      "url": "https://www.nature.com/articles/s41586-025-08744-2",
+      "venue": "Nature 2025",
+      "contribution": "DreamerV3 通过真实序列学习潜在世界模型，再用想象轨迹训练策略与价值；行动时不必执行树搜索。",
+      "code": {
+        "url": "https://github.com/danijar/dreamerv3",
+        "label": "作者维护的公开重实现",
+        "scope": "README 将其称为 reimplementation；不是原内部训练工程。模型、想象学习和真实数据比例均需匹配。"
+      }
+    },
+    {
+      "id": "stomp",
+      "title": "Sutton et al. · Reward-Respecting Subtasks",
+      "url": "https://arxiv.org/abs/2202.03466",
+      "venue": "Artificial Intelligence 2023",
+      "contribution": "STOMP 连接子任务、option、真实后果模型与规划；子任务停止奖励和环境真实回报属于不同接口。",
+      "code": null,
+      "codeNote": "原文提供更新规则和实验；此处没有可确认的完整作者 STOMP 工程。"
+    },
+    {
+      "id": "alps",
+      "title": "Shehmar et al. · Laplacian Representations for Decision-Time Planning",
+      "url": "https://proceedings.mlr.press/v306/shehmar26a.html",
+      "venue": "ICML 2026",
+      "contribution": "ALPS 用谱表示组织区域子目标，并结合已学模型和短时域优化完成离线目标条件规划。",
+      "code": {
+        "url": "https://github.com/machado-research/ALPS",
+        "label": "作者 ALPS 实现",
+        "scope": "hierarchical.py 的区域路径与 optimizer.py 的 CEM 分开；训练数据是离线数据。"
+      }
+    },
+    {
+      "id": "tdmpc",
+      "title": "Hansen, Su & Wang · TD-MPC2",
+      "url": "https://arxiv.org/abs/2310.16828",
+      "venue": "ICLR 2024",
+      "contribution": "结合短时域潜在模型、终点价值与策略先验做决策时优化，降低长模型 rollout 的需求。",
+      "code": {
+        "url": "https://github.com/nicklashansen/tdmpc2",
+        "label": "作者 TD-MPC2 实现",
+        "scope": "模型损失、规划函数和策略先验共同构成方法；预训练迁移不等于持续在线积累。"
+      }
+    },
+    {
+      "id": "clear",
+      "title": "Rolnick et al. · Experience Replay for Continual Learning",
+      "url": "https://papers.nips.cc/paper_files/paper/2019/hash/fa7cdfad1a5aaf8370ebeda47a1ff1c3-Abstract.html",
+      "venue": "NeurIPS 2019",
+      "contribution": "CLEAR 将新经验学习、旧经验离策略学习与行为/价值克隆组合，以维持已有能力。",
+      "code": null,
+      "codeNote": "原始论文为方法依据。AGI-Labs/continual_rl 提供后续比较框架中的复现，不是 CLEAR 原论文作者代码。"
+    },
+    {
+      "id": "drago",
+      "title": "Fu et al. · Knowledge Retention in Continual Model-Based RL",
+      "url": "https://proceedings.mlr.press/v267/fu25f.html",
+      "venue": "ICML 2025",
+      "contribution": "DRAGO 用生成经验保持动力学，再用内在奖励引导回访旧状态；任务共享状态空间与动力学。",
+      "code": {
+        "url": "https://github.com/YixiangSun/drago",
+        "label": "作者 DRAGO 实现",
+        "scope": "合成回放和真实回访各自消融；“不存旧任务数据”不等于没有当前任务 replay。"
+      }
+    },
+    {
+      "id": "reset-distill",
+      "title": "Ahn et al. · Prevalence of Negative Transfer in Continual RL",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/ba9e3d60610f3525717665966d86e0cd-Abstract-Conference.html",
+      "venue": "ICLR 2025",
+      "contribution": "Reset & Distill 在新任务中重置在线学习器，并离线蒸馏在线策略与过去 expert，研究负迁移和知识保留。",
+      "code": {
+        "url": "https://github.com/hongjoon0805/Reset-Distill",
+        "label": "作者 Reset & Distill",
+        "scope": "任务边界、网络重置、离线蒸馏与额外 expert 存储均应纳入实验协议。"
+      }
+    },
+    {
+      "id": "cbp",
+      "title": "Dohare et al. · Loss of Plasticity in Deep Continual Learning",
+      "url": "https://www.nature.com/articles/s41586-024-07711-7",
+      "venue": "Nature 2024",
+      "contribution": "Continual Backprop 以效用、成熟期和替换预算控制特征更新，研究长期新学习能力。",
+      "code": {
+        "url": "https://github.com/shibhansh/loss-of-plasticity",
+        "label": "作者 CBP 实现",
+        "scope": "gnt.py 和 AdamGnT.py 处理单元替换及 optimizer 状态；不同效用变体要分开。"
+      }
+    },
+    {
+      "id": "redo",
+      "title": "Sokar et al. · The Dormant Neuron Phenomenon in Deep RL",
+      "url": "https://proceedings.mlr.press/v202/sokar23a.html",
+      "venue": "ICML 2023",
+      "contribution": "ReDo 根据相对活动度回收休眠单元，重置输入权重并控制输出影响。",
+      "code": {
+        "url": "https://github.com/google/dopamine/tree/master/dopamine/labs/redo",
+        "label": "作者 Dopamine/ReDo",
+        "scope": "weight_recyclers.py 的活动度阈值、替换频率与权重处理。"
+      }
+    },
+    {
+      "id": "nap",
+      "title": "Lyle et al. · Normalization and Effective Learning Rates in RL",
+      "url": "https://papers.nips.cc/paper_files/paper/2024/hash/c04d37be05ba74419d2d5705972a9d64-Abstract-Conference.html",
+      "venue": "NeurIPS 2024",
+      "contribution": "研究归一化、权重尺度和有效学习率之间的关系，为可塑性下降提供区别于死神经元的解释。",
+      "code": null,
+      "codeNote": "本条以原文算法与分析为入口；此处没有可确认的作者原始实现。"
+    },
+    {
+      "id": "churn",
+      "title": "Tang et al. · Mitigating Plasticity Loss in Continual RL by Reducing Churn",
+      "url": "https://arxiv.org/abs/2506.00592",
+      "venue": "ICML 2025",
+      "contribution": "C-CHAIN 对参考状态上的函数变化施加约束，降低当前更新对其他预测的扰动。",
+      "code": {
+        "url": "https://github.com/bluecontra/C-CHAIN",
+        "label": "作者 C-CHAIN 实现",
+        "scope": "crl_minatar/agents/double_dqn_c_chain.py 包含参考 batch、网络队列和全动作 Q 正则。"
+      }
+    },
+    {
+      "id": "rnd",
+      "title": "Burda et al. · Exploration by Random Network Distillation",
+      "url": "https://arxiv.org/abs/1810.12894",
+      "venue": "ICLR 2019",
+      "contribution": "以固定随机网络的预测误差构造新奇奖励，减少显式密度建模需求，但误差不是学习进展本身。",
+      "code": {
+        "url": "https://github.com/openai/random-network-distillation",
+        "label": "作者 RND 实现",
+        "scope": "观察内在奖励归一化、内外价值估计及 PPO 训练，不仅复制预测器损失。"
+      }
+    },
+    {
+      "id": "curriculum",
+      "title": "Portelas et al. · Teacher Algorithms for Curriculum Learning of Deep RL",
+      "url": "https://arxiv.org/abs/1910.07224",
+      "venue": "CoRL 2019 / PMLR 2020",
+      "contribution": "ALP-GMM 用目标/环境参数附近的绝对学习进展分配训练分布。teacher 可以选择环境条件。",
+      "code": {
+        "url": "https://github.com/flowersteam/TeachMyAgent",
+        "label": "作者团队课程实验平台",
+        "scope": "支持 ALP-GMM 等方法的后续比较框架；不是无 teacher 的单生命期协议。"
+      }
+    },
+    {
+      "id": "single-life",
+      "title": "Chen et al. · You Only Live Once: Single-Life Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2210.08863",
+      "venue": "NeurIPS 2022",
+      "contribution": "研究一次部署生命期内利用先前经验完成适应与恢复，突出无法随意外部重置的限制。",
+      "code": {
+        "url": "https://github.com/anniesch/single-life-rl",
+        "label": "作者 Single-Life RL / QWALE",
+        "scope": "envs/、data/ 和 train.py 分别提供环境、先验数据及部署学习；比较时应计算预训练和先验数据。"
+      }
+    },
+    {
+      "id": "alberta",
+      "title": "Sutton, Bowling & Pilarski · The Alberta Plan for AI Research",
+      "url": "https://arxiv.org/abs/2208.11173",
+      "venue": "2022 研究纲领",
+      "contribution": "从实时学习、状态与预测走向子任务、模型和规划的组合研究路线；各步骤仍有独立科学问题。",
+      "code": null,
+      "codeNote": "研究纲领，不是一套完整 agent 发布包。"
+    },
+    {
+      "id": "oak",
+      "title": "Sutton · The OaK Architecture",
+      "url": "https://oaklab.ai/posts/the-oak-architecture",
+      "venue": "RLC 2025 讲座入口",
+      "contribution": "以经验中的时间抽象、可检验知识和规划构造智能体；适合分析模块之间的信息与资源接口。",
+      "code": null,
+      "codeNote": "公开入口为架构讲座；没有在此页面发布完整 OaK agent 代码。"
+    },
+    {
+      "id": "oak-idbd",
+      "title": "Oak Lab · Learning from Experience instead of Curated Datasets",
+      "url": "https://oaklab.ai/posts/learning-from-experience-instead-of-curated-datasets",
+      "venue": "2026 官方研究文章",
+      "contribution": "用信号、干扰特征和噪声目标的受控预测实验讨论选择性信用，展示 IDBD 与 NetworkIDBD。",
+      "code": null,
+      "codeNote": "文章未给出完整 NetworkIDBD 更新规则与公开复现包。NoisyMNIST 演示不等于长期控制实验。"
+    },
+    {
+      "id": "oak-event",
+      "title": "Oak Lab · Event-Driven Neural Networks with Batch-Size One Learning Algorithms",
+      "url": "https://oaklab.ai/posts/event-driven-computation-with-batch-size-one",
+      "venue": "官方主题入口",
+      "contribution": "页面仍为 Coming soon；仅说明研究主题，不能由标题推导算法、能耗或性能。",
+      "code": null,
+      "codeNote": "无公开技术正文或实现入口。"
+    },
+    {
+      "id": "forager",
+      "title": "Forager: a Lightweight Testbed for Continual Learning with Partial Observability in RL",
+      "url": "https://arxiv.org/abs/2605.01131",
+      "venue": "2026 预印本",
+      "contribution": "在长期交互中隔离观测与状态构造问题，研究局部感知下的资源获取。",
+      "code": {
+        "url": "https://github.com/andnp/forager",
+        "label": "作者 Forager 环境",
+        "scope": "配置 observation_mode 和地图；start()/step() 接口不同于 Gymnasium 五元组。"
+      }
+    },
+    {
+      "id": "agar",
+      "title": "Mohamed et al. · The Cell Must Go On: Agar.io for Continual RL",
+      "url": "https://arxiv.org/abs/2505.18347",
+      "venue": "2025 初稿；2026 修订",
+      "contribution": "用完整世界与分解小游戏共同研究探索、记忆、信用与可塑性；一个局部机制难以解释全部困难。",
+      "code": {
+        "url": "https://github.com/machado-research/AgarCL",
+        "label": "作者环境",
+        "scope": "配套训练在 machado-research/AgarCL-benchmark；动作、重生和观察配置须与实验配对。"
+      }
+    },
+    {
+      "id": "rliable",
+      "title": "Agarwal et al. · Deep RL at the Edge of the Statistical Precipice",
+      "url": "https://arxiv.org/abs/2108.13264",
+      "venue": "NeurIPS 2021",
+      "contribution": "用区间估计、分层 bootstrap 和稳健聚合处理多任务、多随机种子的评价不确定性。",
+      "code": {
+        "url": "https://github.com/google-research/rliable",
+        "label": "作者 rliable",
+        "scope": "独立随机单位是 run/任务而非同一曲线的相邻时间点；统计工具不能修复不公平协议。"
+      }
+    }
+  ],
+  "researchBenchmarks": [
+    {
+      "id": "analytic",
+      "title": "解析小 MDP 与短序列",
+      "url": "/zh/continual-rl/labs/",
+      "setting": "已知转移、已知目标、固定种子的低维问题。",
+      "isolates": "精确最优值、有限差分、前后向等价、机制反例。",
+      "limits": "用来验证算法与解释，不估计复杂任务性能。"
+    },
+    {
+      "id": "continuing",
+      "title": "DeepRL-continuing-tasks",
+      "url": "https://github.com/facebookresearch/DeepRL-continuing-tasks",
+      "setting": "无重置、预设重置、智能体控制重置的连续控制。",
+      "isolates": "奖励偏移、回报目标、重置成本对方法排序的影响。",
+      "limits": "continuing 不自动包含任务漂移或无界学习需要。"
+    },
+    {
+      "id": "forager",
+      "title": "Forager",
+      "url": "https://github.com/andnp/forager",
+      "setting": "部分可观测的持续资源获取。",
+      "isolates": "信息历史、状态容量、更新成本与长期行为。",
+      "limits": "感知模式和地图差异会改变问题；不只比较网络名字。"
+    },
+    {
+      "id": "popgym",
+      "title": "POPGym",
+      "url": "https://github.com/proroklab/popgym",
+      "setting": "可控记忆难度的部分可观测任务集合。",
+      "isolates": "记忆长度、噪声与序列信用。",
+      "limits": "通常有 episode；记忆基准成绩不能直接证明单生命期适应。"
+    },
+    {
+      "id": "minatar",
+      "title": "MinAtar",
+      "url": "https://github.com/kenjyoung/MinAtar",
+      "setting": "低成本、简化视觉的 Atari 风格环境。",
+      "isolates": "深度控制、函数变化和多 seed 消融。",
+      "limits": "任务切换须另行规定；切换版本与普通 MinAtar 不是同一协议。"
+    },
+    {
+      "id": "cw",
+      "title": "Continual World",
+      "url": "https://github.com/awarelab/continual_world",
+      "setting": "基于 Meta-World 的机器人任务序列。",
+      "isolates": "遗忘、前向迁移及回访表现。",
+      "limits": "任务边界、重置和任务标识应明确；不是严格无重置协议。"
+    },
+    {
+      "id": "ogbench",
+      "title": "OGBench",
+      "url": "https://github.com/seohongpark/ogbench",
+      "setting": "离线目标条件强化学习的环境、数据与基线。",
+      "isolates": "长时域、轨迹拼接、观测与数据覆盖。",
+      "limits": "离线成功率不能直接说明在线技能发现或持续控制；规划时间另计。"
+    },
+    {
+      "id": "agar",
+      "title": "AgarCL 与作者基线",
+      "url": "https://github.com/machado-research/AgarCL-benchmark",
+      "setting": "完整持续世界与分解小游戏。",
+      "isolates": "探索、记忆、信用及可塑性的共同作用。",
+      "limits": "死亡后局部重生不等于整套学习器清空；混合动作与预算需保持一致。"
+    },
+    {
+      "id": "csuite",
+      "title": "CSuite",
+      "url": "https://rl-csuite.readthedocs.io/en/latest/",
+      "setting": "持续交互的小型诊断环境。",
+      "isolates": "低成本测试适应与学习机制，再接复杂平台。",
+      "limits": "每个任务测量的困难有限；不可用单一分数代表整个 CRL。"
+    },
+    {
+      "id": "curriculum",
+      "title": "TeachMyAgent",
+      "url": "https://github.com/flowersteam/TeachMyAgent",
+      "setting": "teacher 可以选择环境参数的自动课程实验。",
+      "isolates": "学习进展估计和经验分配。",
+      "limits": "必须计算 teacher 权限、失败尝试和环境重置，不能视作完全自主单生命期。"
+    }
+  ],
+  "researchGroups": [
+    {
+      "id": "objectives",
+      "title": "Ⅰ · 目标与设定",
+      "question": "评价的是最终策略，还是整个学习生命期？"
+    },
+    {
+      "id": "knowledge",
+      "title": "Ⅱ · 状态与预测",
+      "question": "历史中的哪些信息应当成为可用知识？"
+    },
+    {
+      "id": "learning",
+      "title": "Ⅲ · 控制与学习机制",
+      "question": "行为、信用与学习规则怎样持续更新？"
+    },
+    {
+      "id": "construction",
+      "title": "Ⅳ · 子任务与规划",
+      "question": "怎样构造可复用行为，并用其后果做决策？"
+    },
+    {
+      "id": "adaptation",
+      "title": "Ⅴ · 长期适应与探索",
+      "question": "怎样保留有用能力，并继续获得可学习的经验？"
+    },
+    {
+      "id": "systems",
+      "title": "Ⅵ · 架构与证据",
+      "question": "模块之间的改进能否变成长生命期收益？"
+    }
+  ]
+}

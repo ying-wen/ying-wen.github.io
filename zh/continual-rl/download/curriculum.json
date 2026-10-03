@@ -1,0 +1,723 @@
+{
+  "stages": [
+    {
+      "id": "objectives",
+      "number": "I",
+      "title": "强化学习问题与目标",
+      "question": "什么结果算更好？",
+      "result": "目标规定要改善什么。奖励机制传递学习信号。状态规定决策时可以使用什么信息。三者需要分别定义。",
+      "topics": [
+        "objectives",
+        "single-life"
+      ]
+    },
+    {
+      "id": "state",
+      "number": "II",
+      "title": "状态构造与表征",
+      "question": "智能体需要从历史中保留什么信息？",
+      "result": "给定状态后，可以定义关于未来的预测。状态是否充分，取决于它需要支持哪些预测与决策。",
+      "topics": [
+        "memory"
+      ]
+    },
+    {
+      "id": "prediction",
+      "number": "III",
+      "title": "预测与预测知识",
+      "question": "在指定行为下，未来会发生什么？",
+      "result": "控制需要使用预测来改变策略。策略改变后，数据分布和需要预测的未来也会改变。",
+      "topics": [
+        "foundations",
+        "prediction"
+      ]
+    },
+    {
+      "id": "control",
+      "number": "IV",
+      "title": "控制与策略改善",
+      "question": "智能体怎样选择动作并改善行为？",
+      "result": "这些控制方法都需要分配信用并选择更新尺度。持续交互要求学习过程也能适应。",
+      "topics": []
+    },
+    {
+      "id": "credit",
+      "number": "V",
+      "title": "时间信用分配",
+      "question": "当前反馈应当更新过去哪些预测与决策？",
+      "result": "信用分配规定反馈如何作用于过去。流式协议进一步限制数据保存与每步计算。",
+      "topics": [
+        "credit"
+      ]
+    },
+    {
+      "id": "streaming",
+      "number": "VI",
+      "title": "流式学习与更新稳定性",
+      "question": "在有限内存和逐步计算预算下，怎样执行学习？",
+      "result": "固定的更新规则可以依据当前数据调整尺度。元学习进一步用经验改善学习规则本身。",
+      "topics": [
+        "streaming"
+      ]
+    },
+    {
+      "id": "meta",
+      "number": "VII",
+      "title": "元学习与学习规则的适应",
+      "question": "怎样根据学习效果调整学习过程？",
+      "result": "有了学习机制，还需要规定可复用行为的目标、启动条件与终止规则。",
+      "topics": [
+        "meta"
+      ]
+    },
+    {
+      "id": "abstraction",
+      "number": "VIII",
+      "title": "子任务与时间抽象",
+      "question": "哪些可复用行为值得学习？",
+      "result": "能够执行一个行为，不等于知道它的后果。规划还需要这个行为的模型。",
+      "topics": [
+        "skills"
+      ]
+    },
+    {
+      "id": "planning",
+      "number": "IX",
+      "title": "模型学习与规划",
+      "question": "怎样用学得的后果模型改善决策？",
+      "result": "模型、状态、技能与策略都会变化。接下来需要研究这些变化怎样影响保留、适应与探索。",
+      "topics": [
+        "models"
+      ]
+    },
+    {
+      "id": "adaptation",
+      "number": "X",
+      "title": "长期适应、保留与探索",
+      "question": "学习能否长期保持有效？",
+      "result": "在完整智能体中，这些机制共享经验与计算资源。它们的相互作用需要单独研究。",
+      "topics": [
+        "plasticity",
+        "curriculum",
+        "multiagent"
+      ]
+    },
+    {
+      "id": "architecture",
+      "number": "XI",
+      "title": "持续学习的智能体架构",
+      "question": "各学习过程怎样共同改善长期行为？",
+      "result": "架构提出机制假设。实验检验实现、机制与长期收益。",
+      "topics": [
+        "architectures"
+      ]
+    },
+    {
+      "id": "experiments",
+      "number": "XII",
+      "title": "强化学习实验方法",
+      "question": "哪些数据能够支持所提出的结论？",
+      "result": "实验设计贯穿全部章节。每学完一个更新规则，就可以运行小问题、提出反例并检验假设。",
+      "topics": [
+        "evaluation",
+        "cross"
+      ]
+    }
+  ],
+  "curriculum": [
+    {
+      "id": "B4",
+      "stage": "objectives",
+      "title": "奖励假设与奖励设计",
+      "path": "foundations/reward-design/",
+      "question": "奖励能表达哪些偏好，怎样让学习信号与设计意图一致？",
+      "output": "推导塑形、偏好梯度和 MaxEnt，并检验时间结构、代理失效与约束。",
+      "requires": [
+        "B0"
+      ],
+      "practice": "奖励语义、边界项与梯度反例",
+      "practicePath": "foundations/reward-design/#lesson-code"
+    },
+    {
+      "id": "D0",
+      "stage": "credit",
+      "title": "时间信用分配与资格迹",
+      "path": "algorithms/credit-assignment/",
+      "question": "当前反馈应怎样更新过去的预测与决策？",
+      "output": "区分前向目标、后向资格迹、递归状态导数和元敏感度。",
+      "requires": [
+        "A1"
+      ],
+      "practice": "前后向等价与在线资格迹实验",
+      "practicePath": "algorithms/credit-assignment/#lesson-code"
+    },
+    {
+      "id": "B0",
+      "stage": "objectives",
+      "title": "交互、奖励与优化目标",
+      "path": "foundations/objectives/",
+      "question": "什么结果算更好？",
+      "output": "区分奖励、回报、价值、策略和在线表现。",
+      "requires": [],
+      "practice": "目标选择与奖励塑形实验",
+      "practicePath": "foundations/objectives/#lesson-code"
+    },
+    {
+      "id": "E3",
+      "stage": "experiments",
+      "title": "实验设计、统计与算法测试",
+      "path": "experiments/",
+      "question": "哪些证据能够检验机制与性能？",
+      "output": "分离开发与测试，按独立运行估计不确定性。",
+      "requires": [
+        "B0"
+      ],
+      "practice": "完整开发、选择与独立测试实验",
+      "practicePath": "experiments/#lesson-code"
+    },
+    {
+      "id": "A1",
+      "stage": "prediction",
+      "title": "价值预测：MC → TD → traces",
+      "path": "algorithms/value/",
+      "question": "没有完整回报时怎样逐步学预测？",
+      "output": "手算 TD target，解释偏差、方差与 λ。",
+      "requires": [],
+      "practice": "固定策略预测实验",
+      "practicePath": "algorithms/#algorithm-code"
+    },
+    {
+      "id": "A2",
+      "stage": "control",
+      "title": "持续控制与学习智能体比较",
+      "path": "algorithms/control/",
+      "question": "从固定策略到持续适应的智能体，评价对象怎样变化？",
+      "output": "定义历史条件价值、生命期指标与可行比较器；区分信息收益和不可逆后果。",
+      "requires": [
+        "A1",
+        "B0"
+      ],
+      "practice": "完整学习器与策略排序反例",
+      "practicePath": "algorithms/control/#lesson-code"
+    },
+    {
+      "id": "A3",
+      "stage": "control",
+      "title": "深度价值：DQN 与扩展",
+      "path": "algorithms/deep-value/",
+      "question": "函数逼近、bootstrap 与复用数据怎样相互影响？",
+      "output": "定位 replay、target network 和 Double DQN。",
+      "requires": [
+        "A2"
+      ],
+      "practice": "从单文件 DQN 追一次更新",
+      "practicePath": "algorithms/deep-value/#algorithm-sources"
+    },
+    {
+      "id": "A4",
+      "stage": "control",
+      "title": "策略梯度 → actor–critic → PPO",
+      "path": "algorithms/policy/",
+      "question": "怎样直接改动作概率，又控制更新幅度？",
+      "output": "对应 log-prob、advantage 和 PPO surrogate。",
+      "requires": [
+        "A1"
+      ],
+      "practice": "REINFORCE 与 actor–critic 小实验",
+      "practicePath": "algorithms/#algorithm-code"
+    },
+    {
+      "id": "A5",
+      "stage": "control",
+      "title": "连续控制：DDPG / TD3 / SAC",
+      "path": "algorithms/soft-control/",
+      "question": "连续动作与熵正则如何改变 actor 和 critic？",
+      "output": "分开 off-policy 数据、双 Q 与熵目标。",
+      "requires": [
+        "A2",
+        "A4"
+      ],
+      "practice": "阅读 SAC 数据与 target 路径",
+      "practicePath": "algorithms/soft-control/#algorithm-sources"
+    },
+    {
+      "id": "A6",
+      "stage": "planning",
+      "title": "Dyna：学习模型，再做规划",
+      "path": "algorithms/dyna/",
+      "question": "真实经验和模型生成的 backup 如何配合？",
+      "output": "分开真实步数、模型误差和规划计算。",
+      "requires": [
+        "A2"
+      ],
+      "practice": "Q-learning 与 Dyna-Q 对照",
+      "practicePath": "algorithms/#algorithm-code"
+    },
+    {
+      "id": "B1",
+      "stage": "objectives",
+      "title": "生命期、变化与交互协议",
+      "path": "start/01-lifetime/",
+      "question": "continuing、continual、streaming、single-life 差在哪？",
+      "output": "明确环境与学习器各在何时重置。",
+      "requires": [
+        "A2"
+      ],
+      "practice": "从变化 bandit 完成第一份实验",
+      "practicePath": "first-project/"
+    },
+    {
+      "id": "B2",
+      "stage": "objectives",
+      "title": "平均奖励与 differential learning",
+      "path": "algorithms/average-reward/",
+      "question": "没有自然终点时，如何学每单位时间的收益？",
+      "output": "区分折扣价值、奖励率、差分价值与时长。",
+      "requires": [
+        "A1",
+        "A2"
+      ],
+      "practice": "Differential TD/Q 原代码与公式检查",
+      "practicePath": "construction/implementations/#impl-differential"
+    },
+    {
+      "id": "B3",
+      "stage": "experiments",
+      "title": "持续学习的评测与基准",
+      "path": "start/07-evaluate/",
+      "question": "高平均回报掩盖了哪些失败？",
+      "output": "设计恢复、保留、新学习和资源指标。",
+      "requires": [
+        "B1"
+      ],
+      "practice": "写一份公平实验协议",
+      "practicePath": "download/protocol.md"
+    },
+    {
+      "id": "C1",
+      "stage": "prediction",
+      "title": "GVF：从一个回报到一组预测",
+      "path": "construction/predictive-knowledge/",
+      "question": "问什么、在哪个策略下问、问多远？",
+      "output": "写出 c、γ、π，并追踪 off-policy 更新。",
+      "requires": [
+        "A1"
+      ],
+      "practice": "两步 GVF → RLPark / Horde",
+      "practicePath": "construction/implementations/#impl-rlpark"
+    },
+    {
+      "id": "C2",
+      "stage": "state",
+      "title": "状态构造：把历史变成决策依据",
+      "path": "construction/state/",
+      "question": "哪些不同历史必须区分？",
+      "output": "区分 hidden state、预测状态与学习参数。",
+      "requires": [
+        "B0"
+      ],
+      "practice": "GVFN 的问题、网络与递归更新",
+      "practicePath": "construction/implementations/#impl-gvfn"
+    },
+    {
+      "id": "C3",
+      "stage": "abstraction",
+      "title": "目标构造：决定值得学什么",
+      "path": "construction/goals/",
+      "question": "目标、内在奖励和子任务怎样定义用途？",
+      "output": "区分 goal conditioning、目标生成与价值保留。",
+      "requires": [
+        "A2",
+        "C1"
+      ],
+      "practice": "最短路与 reward-respecting 子任务",
+      "practicePath": "construction/#construction-code"
+    },
+    {
+      "id": "C4",
+      "stage": "abstraction",
+      "title": "Options：行为的时间抽象",
+      "path": "construction/options/",
+      "question": "怎样发现、执行、终止和复用长行为？",
+      "output": "定义 I、π、β；区分技能发现与 SF/GPI。",
+      "requires": [
+        "A2"
+      ],
+      "practice": "Option-Critic → eigenoptions",
+      "practicePath": "construction/implementations/#impl-option-critic"
+    },
+    {
+      "id": "C5",
+      "stage": "planning",
+      "title": "转移与后果模型",
+      "path": "construction/models/",
+      "question": "一个长行为会带来什么奖励、时长和终点？",
+      "output": "区分 option policy、option value 和 option model。",
+      "requires": [
+        "C4",
+        "A6"
+      ],
+      "practice": "随机时长与期望特征反例",
+      "practicePath": "construction/models/#construction-example"
+    },
+    {
+      "id": "C6",
+      "stage": "planning",
+      "title": "抽象模型与规划",
+      "path": "construction/planning/",
+      "question": "怎样用行为模型改善当前决策？",
+      "output": "写出折扣与平均奖励下不同的 option backup。",
+      "requires": [
+        "C5",
+        "B2"
+      ],
+      "practice": "planning 小实验与时长公式检查",
+      "practicePath": "construction/implementations/#audit-duration"
+    },
+    {
+      "id": "D1",
+      "stage": "adaptation",
+      "title": "知识保留：replay / EWC / 蒸馏",
+      "path": "algorithms/retention/",
+      "question": "新知识会怎样干扰过去能力？",
+      "output": "分开知识保留和重新适应的成本。",
+      "requires": [
+        "B1",
+        "A3"
+      ],
+      "practice": "保留与适应的确定性反例",
+      "practicePath": "algorithms/#algorithm-code"
+    },
+    {
+      "id": "D2",
+      "stage": "adaptation",
+      "title": "可塑性：ReDo / Continual Backprop",
+      "path": "algorithms/plasticity/",
+      "question": "旧任务没忘，为何新任务仍越来越学不动？",
+      "output": "设计 fresh-network 与替换策略对照。",
+      "requires": [
+        "B1",
+        "A3"
+      ],
+      "practice": "定位 CBP 的替换与优化器状态",
+      "practicePath": "algorithms/plasticity/#algorithm-sources"
+    },
+    {
+      "id": "D3",
+      "stage": "streaming",
+      "title": "流式学习：Stream-X 与更新尺度控制",
+      "path": "algorithms/streaming/",
+      "question": "在有限内存和逐步预算下，怎样稳定地更新？",
+      "output": "区分交互协议、资格迹、尺度控制与元梯度学习。",
+      "requires": [
+        "D0",
+        "B1"
+      ],
+      "practice": "逐行追踪流式更新",
+      "practicePath": "algorithms/streaming/#algorithm-sources"
+    },
+    {
+      "id": "D4",
+      "stage": "adaptation",
+      "title": "探索：新奇与学习进展",
+      "path": "algorithms/exploration/",
+      "question": "什么经验值得主动获取？",
+      "output": "区分预测误差、新奇、学习进步与最终用途。",
+      "requires": [
+        "A2",
+        "B1"
+      ],
+      "practice": "给不可约噪声加一个对照",
+      "practicePath": "algorithms/exploration/#algorithm-practice"
+    },
+    {
+      "id": "D5",
+      "stage": "meta",
+      "title": "Meta-learning：步长、初始化与学习规则",
+      "path": "algorithms/meta/",
+      "question": "一次学习怎样影响后续学习，怎样对这种影响求导？",
+      "output": "区分在线元梯度、跨任务适应、上下文推断与学得的更新规则。",
+      "requires": [
+        "A4",
+        "B1"
+      ],
+      "practice": "两步学习的元梯度与数值校验",
+      "practicePath": "algorithms/meta/#lesson-code"
+    },
+    {
+      "id": "E1",
+      "stage": "architecture",
+      "title": "系统架构：Dyna → STOMP / OaK",
+      "path": "construction/architectures/",
+      "question": "哪些部件学习，哪些仍由人提供？",
+      "output": "画出数据、目标、参数和行为之间的接口。",
+      "requires": [
+        "C6",
+        "D3"
+      ],
+      "practice": "比较模块已实现的连接与开放接口",
+      "practicePath": "construction/#architecture-comparison"
+    },
+    {
+      "id": "E2",
+      "stage": "experiments",
+      "title": "从机制假设走到研究实验",
+      "path": "research/",
+      "question": "在同等资源下，哪个改变真正带来长期收益？",
+      "output": "写出最小基线、干预、消融与结论边界。",
+      "requires": [
+        "B3"
+      ],
+      "practice": "选择一个可检验的起步项目",
+      "practicePath": "construction/#construction-projects"
+    }
+  ],
+  "routes": [
+    {
+      "id": "starter",
+      "title": "只有基础 RL：先完成一个小闭环",
+      "intro": "不必先补齐全部深度 RL。按下面五步，先理解持续任务、追踪变化、完成实验，再认识预测与长行为。",
+      "steps": [
+        {
+          "label": "分清持续任务与学习协议",
+          "path": "start/01-lifetime/",
+          "check": "能说明什么变化、什么重置。"
+        },
+        {
+          "label": "常数步长怎样跟踪变化",
+          "path": "start/02-tracking/",
+          "check": "能手算一次更新并解释新旧经验权重。"
+        },
+        {
+          "label": "跑完第一份实验",
+          "path": "first-project/",
+          "check": "保存多种子结果，解释恢复速度与波动。"
+        },
+        {
+          "label": "把 TD 推广成 GVF",
+          "path": "construction/predictive-knowledge/",
+          "check": "能写出一个非奖励预测问题。"
+        },
+        {
+          "label": "把单步动作推广成 option",
+          "path": "construction/options/",
+          "check": "能区分行为、终止与行为后果模型。"
+        }
+      ],
+      "next": "再读平均奖励、模型与规划。根据实验需要补充状态、子任务、保留与可塑性。"
+    },
+    {
+      "id": "researcher",
+      "title": "已有 DQN / PPO 背景：先选问题，再补接口",
+      "intro": "先定义目标和交互协议。再选择一种学习对象或机制。",
+      "steps": [
+        {
+          "label": "确定持续交互的目标",
+          "path": "algorithms/average-reward/",
+          "check": "说明为何使用折扣或平均奖励。"
+        },
+        {
+          "label": "明确评测与预算",
+          "path": "experiments/",
+          "check": "把 reset、replay、task ID 写进协议。"
+        },
+        {
+          "label": "选一个学习对象或失败模式",
+          "path": "algorithms/#textbook-prediction",
+          "check": "只改变一个接口或一种更新机制。"
+        },
+        {
+          "label": "把公式对应到原始实现",
+          "path": "construction/implementations/",
+          "check": "追踪 target、梯度、mask 与更新顺序。"
+        },
+        {
+          "label": "设计研究对照",
+          "path": "research/",
+          "check": "先排除更多数据、计算和调参的解释。"
+        }
+      ],
+      "next": "架构章讨论模块组合。研究可塑性或流式更新时，可先阅读相应章节。"
+    }
+  ],
+  "bridges": {
+    "algorithms/skills/": {
+      "owner": "C4",
+      "note": "这里作为 Q-learning → SMDP → SF/GPI 的紧凑推导。技能发现、代表工作、作者实现与研究问题统一在 C4；行为后果与规划继续读 C5–C6。"
+    },
+    "algorithms/state/": {
+      "owner": "C2",
+      "note": "这里集中解释 RNN 与跨时间信用分配。GVF 的问题定义在 C1，状态构造及研究路线在 C2；每步更新约束在 D3。"
+    }
+  },
+  "textbookParts": [
+    {
+      "id": "objectives",
+      "number": "I",
+      "title": "强化学习问题与目标",
+      "question": "什么结果算更好？",
+      "premise": "从智能体与世界的持续交互出发，区分外部设计者的偏好、实际奖励和评价准则。奖励是假设与设计的对象，不是结果好坏的天然真值。折扣、时域和平均奖励进一步规定跨时间的比较。",
+      "transition": "目标规定要改善什么。奖励机制传递学习信号。状态规定决策时可以使用什么信息。三者需要分别定义。",
+      "chapters": [
+        "objectives",
+        "reward-design",
+        "average"
+      ]
+    },
+    {
+      "id": "state",
+      "number": "II",
+      "title": "状态构造与表征",
+      "question": "智能体需要从历史中保留什么信息？",
+      "premise": "环境状态通常不可直接获得。智能体从观测、动作和奖励历史构造内部状态。状态更新、特征学习和参数学习是不同的计算过程。",
+      "transition": "给定状态后，可以定义关于未来的预测。状态是否充分，取决于它需要支持哪些预测与决策。",
+      "chapters": [
+        "state"
+      ]
+    },
+    {
+      "id": "prediction",
+      "number": "III",
+      "title": "预测与预测知识",
+      "question": "在指定行为下，未来会发生什么？",
+      "premise": "先固定策略，再学习回报预测。MC、TD 和资格迹提供不同的估计方法。GVF 进一步指定累积信号、延续条件和目标策略。预测不自动产生更好的行为。",
+      "transition": "控制需要使用预测来改变策略。策略改变后，数据分布和需要预测的未来也会改变。",
+      "chapters": [
+        "value",
+        "gvf"
+      ]
+    },
+    {
+      "id": "control",
+      "number": "IV",
+      "title": "控制与策略改善",
+      "question": "智能体怎样选择动作并改善行为？",
+      "premise": "先区分固定策略的改善与完整学习器的生命期表现。持续控制中，动作同时改变世界、未来数据和后续学习。经典 GPI、动作价值和策略梯度提供局部工具；历史条件、可行比较器与资源限制决定这些工具能支持什么结论。",
+      "transition": "这些控制方法都需要分配信用并选择更新尺度。持续交互要求学习过程也能适应。",
+      "chapters": [
+        "control",
+        "deep-value",
+        "policy",
+        "soft-control"
+      ]
+    },
+    {
+      "id": "credit",
+      "number": "V",
+      "title": "时间信用分配",
+      "question": "当前反馈应当更新过去哪些预测与决策？",
+      "premise": "多步回报从未来反馈构造学习目标。资格迹在反馈到来时更新过去相关的参数方向。递归网络还需要传播参数对内部状态的影响。信用分配可以用于预测，也可以用于控制。",
+      "transition": "信用分配规定反馈如何作用于过去。流式协议进一步限制数据保存与每步计算。",
+      "chapters": [
+        "credit"
+      ]
+    },
+    {
+      "id": "streaming",
+      "number": "VI",
+      "title": "流式学习与更新稳定性",
+      "question": "在有限内存和逐步计算预算下，怎样执行学习？",
+      "premise": "流式学习规定经验何时使用、能否重放。归一化和更新尺度控制处理数值稳定性。这些约束与机制不等于信用分配，也不要求使用元学习。",
+      "transition": "固定的更新规则可以依据当前数据调整尺度。元学习进一步用经验改善学习规则本身。",
+      "chapters": [
+        "streaming"
+      ]
+    },
+    {
+      "id": "meta",
+      "number": "VII",
+      "title": "元学习与学习规则的适应",
+      "question": "怎样根据学习效果调整学习过程？",
+      "premise": "在线元梯度估计学习参数对后续表现的影响。跨任务元强化学习则利用任务分布，学习初始化、上下文推断或更新规则。两者的训练协议与评价对象需要分别定义。",
+      "transition": "有了学习机制，还需要规定可复用行为的目标、启动条件与终止规则。",
+      "chapters": [
+        "meta"
+      ]
+    },
+    {
+      "id": "abstraction",
+      "number": "VIII",
+      "title": "子任务与时间抽象",
+      "question": "哪些可复用行为值得学习？",
+      "premise": "任务的总体目标与子任务目标需要区分。目标条件化策略描述一族控制问题。Option 则规定行为的启动条件、内部策略和终止规则。技能发现决定哪些行为进入可用集合。",
+      "transition": "能够执行一个行为，不等于知道它的后果。规划还需要这个行为的模型。",
+      "chapters": [
+        "goals",
+        "options"
+      ]
+    },
+    {
+      "id": "planning",
+      "number": "IX",
+      "title": "模型学习与规划",
+      "question": "怎样用学得的后果模型改善决策？",
+      "premise": "Dyna 用真实经验学习模型，再用模型更新价值。Option 模型预测随机时长行为的奖励和终点。规划决定在哪些状态、对哪些行为、使用多少次模型。",
+      "transition": "模型、状态、技能与策略都会变化。接下来需要研究这些变化怎样影响保留、适应与探索。",
+      "chapters": [
+        "dyna",
+        "models",
+        "planning"
+      ]
+    },
+    {
+      "id": "adaptation",
+      "number": "X",
+      "title": "长期适应、保留与探索",
+      "question": "学习能否长期保持有效？",
+      "premise": "遗忘指已有能力下降。可塑性损失指学习新能力的速度下降。探索改变后续经验。这三类问题需要不同的对照实验，不能用同一个训练误差代替。",
+      "transition": "在完整智能体中，这些机制共享经验与计算资源。它们的相互作用需要单独研究。",
+      "chapters": [
+        "retention",
+        "plasticity",
+        "exploration"
+      ]
+    },
+    {
+      "id": "architecture",
+      "number": "XI",
+      "title": "持续学习的智能体架构",
+      "question": "各学习过程怎样共同改善长期行为？",
+      "premise": "状态为预测、策略和模型提供输入。子任务产生可学习的行为。模型支持规划。架构需要定义各模块的更新接口，也需要确定有限资源下的保留与替换规则。",
+      "transition": "架构提出机制假设。实验检验实现、机制与长期收益。",
+      "chapters": [
+        "architectures"
+      ]
+    },
+    {
+      "id": "experiments",
+      "number": "XII",
+      "title": "强化学习实验方法",
+      "question": "哪些数据能够支持所提出的结论？",
+      "premise": "先定义要估计的量，再选择任务、基线与随机单位。开发数据用于选择配置。独立测试用于估计表现。持续学习还要区分在线收益、冻结诊断和恢复过程。",
+      "transition": "实验设计贯穿全部章节。每学完一个更新规则，就可以运行小问题、提出反例并检验假设。",
+      "chapters": [
+        "experiments"
+      ]
+    }
+  ],
+  "chapterPaths": {
+    "objectives": "foundations/objectives/",
+    "average": "algorithms/average-reward/",
+    "state": "construction/state/",
+    "value": "algorithms/value/",
+    "gvf": "construction/predictive-knowledge/",
+    "control": "algorithms/control/",
+    "deep-value": "algorithms/deep-value/",
+    "policy": "algorithms/policy/",
+    "soft-control": "algorithms/soft-control/",
+    "credit": "algorithms/credit-assignment/",
+    "streaming": "algorithms/streaming/",
+    "meta": "algorithms/meta/",
+    "goals": "construction/goals/",
+    "options": "construction/options/",
+    "dyna": "algorithms/dyna/",
+    "models": "construction/models/",
+    "planning": "construction/planning/",
+    "retention": "algorithms/retention/",
+    "plasticity": "algorithms/plasticity/",
+    "exploration": "algorithms/exploration/",
+    "architectures": "construction/architectures/",
+    "experiments": "experiments/",
+    "reward-design": "foundations/reward-design/"
+  }
+}

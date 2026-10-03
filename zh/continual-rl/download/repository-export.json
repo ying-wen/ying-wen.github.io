@@ -1,0 +1,1317 @@
+{
+  "schema_version": 1,
+  "source": "https://yingwen.io/zh/continual-rl/",
+  "code_license": "MIT",
+  "text_license": "CC BY 4.0",
+  "files": [
+    {
+      "file": "advanced.md",
+      "target": "docs/advanced.md",
+      "sha256": "d22f575a56c90fbc7937ec6498df5b21feea38735e04f7e7cf088fcee624921e",
+      "page": null
+    },
+    {
+      "file": "agent-construction.md",
+      "target": "docs/agent-construction.md",
+      "sha256": "9d5302659cf941d22616222b280853444d90fba995599838e0252854eb439f18",
+      "page": null
+    },
+    {
+      "file": "algorithm-map.md",
+      "target": "docs/algorithm-map.md",
+      "sha256": "a5ad941f4082dc3e17f9de62fa71f191847f34316077aaeb6213556b25d00185",
+      "page": null
+    },
+    {
+      "file": "algorithm-tutorials.json",
+      "target": "data/algorithm-tutorials.json",
+      "sha256": "6b3a868b704e542e11028f9f2d037f245745417cfaaca39ef4d6670909b76f3d",
+      "page": null
+    },
+    {
+      "file": "algorithm-tutorials.md",
+      "target": "docs/algorithm-tutorials.md",
+      "sha256": "ff9ec8417e30700d9b6f123657d365f3ef352979910edd34a796f111989326f0",
+      "page": null
+    },
+    {
+      "file": "algorithm_testing_lab.py",
+      "target": "examples/algorithm_testing_lab.py",
+      "sha256": "9dadf01125f9ee3617cc63dec3581281755c0661d864fe1a9197adfc52b50ea9",
+      "page": null
+    },
+    {
+      "file": "algorithms.md",
+      "target": "docs/algorithms.md",
+      "sha256": "0754b7b1896f4c447a902226e1072ec4c93a2b8dea67cc74c9ae1aca670032dd",
+      "page": null
+    },
+    {
+      "file": "analyze_crl.py",
+      "target": "examples/analyze_crl.py",
+      "sha256": "3b55cae37f8d624d8acb0fa918b576787b1de761092b6d0df13014266abfdfab",
+      "page": null
+    },
+    {
+      "file": "approximation_textbook_lab.py",
+      "target": "examples/approximation_textbook_lab.py",
+      "sha256": "1005c440db0241f8ed96cb2fcfdf48894be6076db1b9142887d2bf4604932640",
+      "page": null
+    },
+    {
+      "file": "average-reward.md",
+      "target": "docs/average-reward.md",
+      "sha256": "5b70d84224acafaca6ade8c67e01558aadd9f4f8d82b682ac7c584be1936f822",
+      "page": null
+    },
+    {
+      "file": "chapter-architectures.md",
+      "target": "textbook/architectures.md",
+      "sha256": "f5ffcf3becbe9f921913723eb483effd8a5d680af141c22e78f1285030d5b056",
+      "page": "construction/architectures/"
+    },
+    {
+      "file": "chapter-average.md",
+      "target": "textbook/average.md",
+      "sha256": "b7ee31615522d67a7e0b3e9d1b13aad3902c8529195d9703547376dff0aba1e0",
+      "page": "algorithms/average-reward/"
+    },
+    {
+      "file": "chapter-companions.json",
+      "target": "data/chapter-companions.json",
+      "sha256": "e9583ecd3087b8c3803354cca5e8ee65245d4933acfe5cfcd9ede7a247d81dd1",
+      "page": null
+    },
+    {
+      "file": "chapter-companions.md",
+      "target": "docs/chapter-companions.md",
+      "sha256": "848048ef8e0018d6c63f42c13be0fe54ce23ae808bfb82b194d88eb94f307695",
+      "page": null
+    },
+    {
+      "file": "chapter-control.md",
+      "target": "textbook/control.md",
+      "sha256": "3faa54da7c0578c62120aaac28f876cadeb4b120756c1da82141e4eeeca5731a",
+      "page": "algorithms/control/"
+    },
+    {
+      "file": "chapter-credit.md",
+      "target": "textbook/credit.md",
+      "sha256": "6e8c2b54eb7a5b62dc2f85d8dcf7b38e89a7a870252658c1b7a19aa18c54269b",
+      "page": "algorithms/credit-assignment/"
+    },
+    {
+      "file": "chapter-deep-value.md",
+      "target": "textbook/deep-value.md",
+      "sha256": "9156d90a70c120e7626a9726954f47ef24406e33b1c64e4aec01d762cf17be73",
+      "page": "algorithms/deep-value/"
+    },
+    {
+      "file": "chapter-dyna.md",
+      "target": "textbook/dyna.md",
+      "sha256": "44676d546d1410f451fac691bbda7a2a107eaef04a52b5c81a32f4bd6909ca10",
+      "page": "algorithms/dyna/"
+    },
+    {
+      "file": "chapter-experiments.md",
+      "target": "textbook/experiments.md",
+      "sha256": "6c7519e542cb5efc4863e84be111060e76061c19ef3cd5cd90e20f963f209416",
+      "page": "experiments/"
+    },
+    {
+      "file": "chapter-exploration.md",
+      "target": "textbook/exploration.md",
+      "sha256": "73a9c012d53554c2e1b0965b1c6ffedc4e23a056057bbdac442d956204e16b3c",
+      "page": "algorithms/exploration/"
+    },
+    {
+      "file": "chapter-goals.md",
+      "target": "textbook/goals.md",
+      "sha256": "1aad5cfc5131f19fb1d5634f88bfbc5eac7bde30ea1c7fb7306cf67533be9dfd",
+      "page": "construction/goals/"
+    },
+    {
+      "file": "chapter-gvf.md",
+      "target": "textbook/gvf.md",
+      "sha256": "7d28443033094b540d777a92fb963dd0da245ab1227552e2520f771d88939588",
+      "page": "construction/predictive-knowledge/"
+    },
+    {
+      "file": "chapter-meta.md",
+      "target": "textbook/meta.md",
+      "sha256": "09af9c2b34e8d14c0db6bb4059586ffec02660337ab1773326459adb8976b891",
+      "page": "algorithms/meta/"
+    },
+    {
+      "file": "chapter-models.md",
+      "target": "textbook/models.md",
+      "sha256": "9e04c666342e7663361f402f3d5cf79c0f78a699108bd0e10d2e38e2a214a74f",
+      "page": "construction/models/"
+    },
+    {
+      "file": "chapter-objectives.md",
+      "target": "textbook/objectives.md",
+      "sha256": "c5349379359271da6c77d699ad48f0194e7b9854deeaaffe053f31942d200c24",
+      "page": "foundations/objectives/"
+    },
+    {
+      "file": "chapter-options.md",
+      "target": "textbook/options.md",
+      "sha256": "f710faccd5258d21198ee009aaf176c21cd54f7aaf3588446a3882cfe95de78a",
+      "page": "construction/options/"
+    },
+    {
+      "file": "chapter-planning.md",
+      "target": "textbook/planning.md",
+      "sha256": "a737ac5cbdafe529f2f692901d1eda01328c61949f93af3eab7c988cddbd6d0f",
+      "page": "construction/planning/"
+    },
+    {
+      "file": "chapter-plasticity.md",
+      "target": "textbook/plasticity.md",
+      "sha256": "4ed95694c1ac7873ec30a0c87c49da3d3974c7bc5ff15965db1d7c8ece65fa0e",
+      "page": "algorithms/plasticity/"
+    },
+    {
+      "file": "chapter-policy.md",
+      "target": "textbook/policy.md",
+      "sha256": "978c0aa3532e06291d2dbaa4778daba0f1a7c833ddfd62ac8c0b10bcc17a189f",
+      "page": "algorithms/policy/"
+    },
+    {
+      "file": "chapter-retention.md",
+      "target": "textbook/retention.md",
+      "sha256": "defa9b2d31a42918b084cf5d8ab861317151674f98a5385bb9520a197f0ef1ad",
+      "page": "algorithms/retention/"
+    },
+    {
+      "file": "chapter-reward-design.md",
+      "target": "textbook/reward-design.md",
+      "sha256": "d6d8986f548bfc23c7e3dd3e2a14970c4ac7132a115f4c9d05939205b4005310",
+      "page": "foundations/reward-design/"
+    },
+    {
+      "file": "chapter-soft-control.md",
+      "target": "textbook/soft-control.md",
+      "sha256": "06a24ac6351a3d21dc02c9a7d0663afccdb80a9fef316a563c4ffbf77834cf70",
+      "page": "algorithms/soft-control/"
+    },
+    {
+      "file": "chapter-state.md",
+      "target": "textbook/state.md",
+      "sha256": "e12603468f8d607aa39357ec0fc32fc5b104b4105421d945b50694b7acd60f88",
+      "page": "construction/state/"
+    },
+    {
+      "file": "chapter-streaming.md",
+      "target": "textbook/streaming.md",
+      "sha256": "3e177f3a37930653d332e6ed14fec766df96db091836faa98a89626fd645b5d4",
+      "page": "algorithms/streaming/"
+    },
+    {
+      "file": "chapter-value.md",
+      "target": "textbook/value.md",
+      "sha256": "40e57298b0d1bedb45da9d009b283387fdd00c5d773f47695786bb5433f73009",
+      "page": "algorithms/value/"
+    },
+    {
+      "file": "continual_control_lab.py",
+      "target": "examples/continual_control_lab.py",
+      "sha256": "8acc0b388a20e77c84ea215e6827a21fa34d6fd8fe23180284b93c9e0edbdc31",
+      "page": null
+    },
+    {
+      "file": "control_problem_lab.py",
+      "target": "examples/control_problem_lab.py",
+      "sha256": "257b6960a167d2112cf31f83c19dcffc40e0c966b4c3740bcd45bb7b7f4e83e8",
+      "page": null
+    },
+    {
+      "file": "credit_assignment_lab.py",
+      "target": "examples/credit_assignment_lab.py",
+      "sha256": "34d316feea44f93b6cd210267c477878a96e55996af3f9bc37748ecf2bab72dd",
+      "page": null
+    },
+    {
+      "file": "crl_labs.py",
+      "target": "examples/crl_labs.py",
+      "sha256": "05a73870ff4b9a2e0c8e4ac6aab1eceaa13a8166d5ea1889df4f6e337bb1e6bc",
+      "page": null
+    },
+    {
+      "file": "curriculum.json",
+      "target": "data/curriculum.json",
+      "sha256": "8e319f3720cfa2a1678f46d4aa2820b82c1b29aa529e599544586115ff0759d2",
+      "page": null
+    },
+    {
+      "file": "curriculum.md",
+      "target": "docs/curriculum.md",
+      "sha256": "d50c93b7538a955e4883e8dad3a271f9725c454eebfd9b0f0c5e19cf40982c03",
+      "page": null
+    },
+    {
+      "file": "deep_requirements.txt",
+      "target": "examples/deep_requirements.txt",
+      "sha256": "8c02513c4f0467e3c4a3deedfb8cb03e06b681106e40e34a173c3a61cb08cc64",
+      "page": null
+    },
+    {
+      "file": "deep_textbook_lab.py",
+      "target": "examples/deep_textbook_lab.py",
+      "sha256": "deaf67c4d00fb08a82c5c8b9653bfc23cb273c2625bb01ca9c65642801414dbe",
+      "page": null
+    },
+    {
+      "file": "deep_textbook_train.py",
+      "target": "examples/deep_textbook_train.py",
+      "sha256": "085cbfaa0ceccda4db7604c4c8b3a7b5b8544a9e9b0bba1df256eb1ca3870063",
+      "page": null
+    },
+    {
+      "file": "experiment-handbook.json",
+      "target": "data/experiment-handbook.json",
+      "sha256": "77ab2b308acd7c752d3916e4dd2c69fa65c3af1a11e20944e6805abda4201e53",
+      "page": null
+    },
+    {
+      "file": "experiment-handbook.md",
+      "target": "docs/experiment-handbook.md",
+      "sha256": "9bca380325b2d47e4d68ceccccad4e80fd527e3e09a9cc2d7be2da45cee17306",
+      "page": null
+    },
+    {
+      "file": "experiment_design_lab.py",
+      "target": "examples/experiment_design_lab.py",
+      "sha256": "ac218f33877c029c30788359f42e744385a6607addfd641666c99edd5cebc150",
+      "page": null
+    },
+    {
+      "file": "extended_foundations_lab.py",
+      "target": "examples/extended_foundations_lab.py",
+      "sha256": "e0c35174e6a1d5aae9f0ebaa451d3416a0fd14d2dcd3419815cb24bcff5a367b",
+      "page": null
+    },
+    {
+      "file": "field-framework.json",
+      "target": "data/field-framework.json",
+      "sha256": "43d335b54585355f96828ccb39baebe230fbfade47a859caa46cb6f6eb440570",
+      "page": null
+    },
+    {
+      "file": "field-framework.md",
+      "target": "docs/field-framework.md",
+      "sha256": "184bc23e63cfe0bdec9854562c3786834fbb675c8d04b66c05f07803597e2170",
+      "page": null
+    },
+    {
+      "file": "formula_checks.py",
+      "target": "examples/formula_checks.py",
+      "sha256": "5f0c0551459b133e0218e49efe7d10fcf2449768c8f329ab23aed3ddcf099ae1",
+      "page": null
+    },
+    {
+      "file": "foundations.json",
+      "target": "data/foundations.json",
+      "sha256": "1295a2cc8d78ce93ba64095a85c48801f4d8abf6b1bc7c0a79d03dc9f6f77904",
+      "page": null
+    },
+    {
+      "file": "foundations.md",
+      "target": "docs/foundations.md",
+      "sha256": "4e044af1f46fd3e7325ef0831dbe04cf2b188f28301d4cb29903620edd6682fc",
+      "page": null
+    },
+    {
+      "file": "foundations_detail_lab.py",
+      "target": "examples/foundations_detail_lab.py",
+      "sha256": "583fa30f576aa819914790eb2495a4a194c1051272207814ee8d699279911517",
+      "page": null
+    },
+    {
+      "file": "gvf_lab.py",
+      "target": "examples/gvf_lab.py",
+      "sha256": "57026fb22f7db3023247d4b8892b1d1c55c3539e1c8f22b364aaf56b19714ea0",
+      "page": null
+    },
+    {
+      "file": "implementations.json",
+      "target": "data/implementations.json",
+      "sha256": "e328a1d26492666143091ed3c9cd3fefe8ff898ee4346744a3a6e0e39c9e042d",
+      "page": null
+    },
+    {
+      "file": "implementations.md",
+      "target": "docs/implementations.md",
+      "sha256": "7816009108151f3954426c61176f66777a9d273d6c4968ce26f00a4d01333f61",
+      "page": null
+    },
+    {
+      "file": "intro-01-lifetime.md",
+      "target": "tutorials/01-lifetime.md",
+      "sha256": "91e7d50c4172c6523029b1dd63e1b87a6b707f4dc0b2253d3772e9502eea6930",
+      "page": null
+    },
+    {
+      "file": "intro-02-tracking.md",
+      "target": "tutorials/02-tracking.md",
+      "sha256": "3a58a3f9e57e3b3e92f31211a2e2cafebe355004384c50df3f401d4315eea441",
+      "page": null
+    },
+    {
+      "file": "intro-03-plasticity.md",
+      "target": "tutorials/03-plasticity.md",
+      "sha256": "324afb521ca64717554c8f9b98dee82c4cc081bfb1ba76c264b8286dfafe9241",
+      "page": null
+    },
+    {
+      "file": "intro-04-state.md",
+      "target": "tutorials/04-state.md",
+      "sha256": "0abee617076846c6dfacd6362afa5d525b1abd3295df3b200a0033e4d788bfd8",
+      "page": null
+    },
+    {
+      "file": "intro-05-streaming.md",
+      "target": "tutorials/05-streaming.md",
+      "sha256": "c2e10f8c210f8f7593c1c1c2a560c951aeee4e5a2624e5a3ed028614c5f9a8cd",
+      "page": null
+    },
+    {
+      "file": "intro-06-skills.md",
+      "target": "tutorials/06-skills.md",
+      "sha256": "a045f9e97df8b86b197891f1cc79e49b499263da1853f4b5db94bb37522efb81",
+      "page": null
+    },
+    {
+      "file": "intro-07-evaluate.md",
+      "target": "tutorials/07-evaluate.md",
+      "sha256": "4b401b663f5fc4c7c6eecf1531d1079364df2d4ea6c9ade8031e80826018c94c",
+      "page": null
+    },
+    {
+      "file": "intro-08-project.md",
+      "target": "tutorials/08-research.md",
+      "sha256": "59d55dfbb174817b030fc857aa9fc463f6f33b116880681ee7487a96d609e05b",
+      "page": null
+    },
+    {
+      "file": "knowledge_algorithms_lab.py",
+      "target": "examples/knowledge_algorithms_lab.py",
+      "sha256": "8007faf318b3e168dc352b26ace10995be99b4a84ce3ae27fc1d5f163c8ded57",
+      "page": null
+    },
+    {
+      "file": "knowledge_lab.py",
+      "target": "examples/knowledge_lab.py",
+      "sha256": "39116c54080ea14e35043f5da42898ae4f410b5f5b56234b69a0472282e9a07f",
+      "page": null
+    },
+    {
+      "file": "learning-route-classic-rl.md",
+      "target": "docs/learning-route-classic-rl.md",
+      "sha256": "55627f51ad84f7a2f51e5724e2c0f5b4ec63a1e3d3af6f1839d30c06fe837b3e",
+      "page": null
+    },
+    {
+      "file": "learning-route-continual-rl.md",
+      "target": "docs/learning-route-continual-rl.md",
+      "sha256": "8886118763d60aeb87955638d271224284921c4efcaa154c9ad717d4b73e9db7",
+      "page": null
+    },
+    {
+      "file": "learning-route-deep-rl.md",
+      "target": "docs/learning-route-deep-rl.md",
+      "sha256": "d805615f78bc40b20afb4563df24fa65f445e6f629882b3560124165d0bddbe4",
+      "page": null
+    },
+    {
+      "file": "learning-route.json",
+      "target": "data/learning-route.json",
+      "sha256": "240fd98731a92737c40be5a05c9dc5ab9097d021f93b80b876560b9620c68df4",
+      "page": null
+    },
+    {
+      "file": "learning-route.md",
+      "target": "docs/learning-route.md",
+      "sha256": "15c397478b62f46d643d496638afea72760818fb14584f92c6e06fdb8474d394",
+      "page": null
+    },
+    {
+      "file": "library-index.json",
+      "target": "data/library-index.json",
+      "sha256": "5f3a8ab7969f6fea3018d931a0e80f1e059ee63397a33939a4d94e4541b12e01",
+      "page": null
+    },
+    {
+      "file": "lifelong_algorithms_lab.py",
+      "target": "examples/lifelong_algorithms_lab.py",
+      "sha256": "356019e8fea9c2e2624877abd70a9900d3fdf24ac803f92b92304fcb4a1fd382",
+      "page": null
+    },
+    {
+      "file": "mechanisms.py",
+      "target": "examples/mechanisms.py",
+      "sha256": "63b0dc57c34d792b87254000d49e33566e4b291ef248fb36a79b2ed1252636e2",
+      "page": null
+    },
+    {
+      "file": "meta_frontier_lab.py",
+      "target": "examples/meta_frontier_lab.py",
+      "sha256": "3ce98ddb5404595a0674c0b41081e4741a4373e662d1820d9c98b99b66d3e50c",
+      "page": null
+    },
+    {
+      "file": "objectives_lab.py",
+      "target": "examples/objectives_lab.py",
+      "sha256": "1ff5eab68cc4bd98a9be490d4f4c2733046802f0c5ec219c7c8a61234beb3500",
+      "page": null
+    },
+    {
+      "file": "overview.md",
+      "target": "docs/overview.md",
+      "sha256": "bbe41c5e5bec084152a37697f8f5184bbef79cc8dde68992a7763503e17a2f56",
+      "page": null
+    },
+    {
+      "file": "previous-intro.md",
+      "target": "docs/previous-intro.md",
+      "sha256": "9c0e807a70832e400f3ae62d46b3eb195bcbb738c96a36b71276e16687b0cafe",
+      "page": null
+    },
+    {
+      "file": "protocol.md",
+      "target": "docs/protocol.md",
+      "sha256": "34a6b079dfdcc34b68a2d949ab847822f04c942a26625f01f8d259a516a7b4d1",
+      "page": null
+    },
+    {
+      "file": "recent-research.json",
+      "target": "data/recent-research.json",
+      "sha256": "f54d1346001a5a629d5e77d250d0884042d46f73335fae6b1172cc41547dea30",
+      "page": null
+    },
+    {
+      "file": "recent-research.md",
+      "target": "docs/recent-research.md",
+      "sha256": "3413c22c3ac5b1d61a1509ea6064ce53110e29893fda9fc4349a2a82c7756cb9",
+      "page": null
+    },
+    {
+      "file": "research-atlas.json",
+      "target": "data/research-atlas.json",
+      "sha256": "cf6d48cb4b8075cd737d32d97d5de4d15f7efe6c24d13bd01b5b67295048ef7f",
+      "page": null
+    },
+    {
+      "file": "research-atlas.md",
+      "target": "docs/research-atlas.md",
+      "sha256": "02c339dbab7ab4f25dd75d06d32a08b975cd25251be6599b8a5a0021399bf9fb",
+      "page": null
+    },
+    {
+      "file": "research-problems.md",
+      "target": "docs/research-problems.md",
+      "sha256": "62df23c2ef24e7fa0941ea26bbece21e1aa17d5b07ee33146a61874c08335068",
+      "page": null
+    },
+    {
+      "file": "resources.json",
+      "target": "data/resources.json",
+      "sha256": "8c80547578e6747cf31dc4d48ada3a0926baf8cda055be332f0c636ceb6cd342",
+      "page": null
+    },
+    {
+      "file": "reward_design_lab.py",
+      "target": "examples/reward_design_lab.py",
+      "sha256": "835c73cb886cf83c6cdd8d9e4e75511f299fde66ccf6463a614aab1ce153f991",
+      "page": null
+    },
+    {
+      "file": "rl_foundations.py",
+      "target": "examples/rl_foundations.py",
+      "sha256": "9e4d53421edf2a15c8e73790fd04a6d547bee1e86c79fa5dcb2fa8ed6e48dc83",
+      "page": null
+    },
+    {
+      "file": "state_meta_lab.py",
+      "target": "examples/state_meta_lab.py",
+      "sha256": "1bf6771c4b256792c1521601d713014c787fb162bb2b16c8b93c88169ea17095",
+      "page": null
+    },
+    {
+      "file": "study-approximation-average-control.md",
+      "target": "foundations/approximation/average-control.md",
+      "sha256": "f4a296bacea5ce0577dcb994acd649d4399433a5f4193b685ed79f911b948633",
+      "page": "foundations/approximation/average-control/"
+    },
+    {
+      "file": "study-approximation-features-control.md",
+      "target": "foundations/approximation/features-control.md",
+      "sha256": "40461b5b5f476e0b06aa38d2462ab58893097dead76b1350d3195586e4c7b42b",
+      "page": "foundations/approximation/features-control/"
+    },
+    {
+      "file": "study-approximation-off-policy.md",
+      "target": "foundations/approximation/off-policy.md",
+      "sha256": "068a38c91a254701310ac41d3d5be407000e91ee31991c5e6d601f15ac00c4df",
+      "page": "foundations/approximation/off-policy/"
+    },
+    {
+      "file": "study-approximation-policy-gradient.md",
+      "target": "foundations/approximation/policy-gradient.md",
+      "sha256": "5ca5657c9390371019868e5259165910f103df99bccc616b8636ca1d68cb27ad",
+      "page": "foundations/approximation/policy-gradient/"
+    },
+    {
+      "file": "study-approximation-prediction.md",
+      "target": "foundations/approximation/prediction.md",
+      "sha256": "13d7d5ce2ed90dbdf3dad7b05b8eafdeec8e434873b233c0808de6a5f7f8748d",
+      "page": "foundations/approximation/prediction/"
+    },
+    {
+      "file": "study-approximation-traces.md",
+      "target": "foundations/approximation/traces.md",
+      "sha256": "2268c035b9e0ddc873eea620404d62d3cd58730dd4bc722b2b930315495dc49d",
+      "page": "foundations/approximation/traces/"
+    },
+    {
+      "file": "study-deep-constraints.md",
+      "target": "foundations/deep/constraints.md",
+      "sha256": "6db59f9f4c4b7c499724064713c33a2e0c759bd6b50a22f3652968f8d95a837b",
+      "page": "foundations/deep/constraints/"
+    },
+    {
+      "file": "study-deep-deep-value.md",
+      "target": "foundations/deep/deep-value.md",
+      "sha256": "e89b13ee823e0dd74030a8e3a1606c246341be03b5f4e22b7dcc0ac87eec629e",
+      "page": "foundations/deep/deep-value/"
+    },
+    {
+      "file": "study-deep-deterministic-control.md",
+      "target": "foundations/deep/deterministic-control.md",
+      "sha256": "3782f01b5d563e4d44e35f96c0c7895952f8f7b9b90f0da2e3d6bb012fc2500d",
+      "page": "foundations/deep/deterministic-control/"
+    },
+    {
+      "file": "study-deep-distributional.md",
+      "target": "foundations/deep/distributional.md",
+      "sha256": "2b61180f34dd65215dc8d8be184dd15aabe74dd01d9b7574fcf83145430640c7",
+      "page": "foundations/deep/distributional/"
+    },
+    {
+      "file": "study-deep-entropy-control.md",
+      "target": "foundations/deep/entropy-control.md",
+      "sha256": "2b91e60abf9ed58ad952ab53ae47a260abf4c6725f2acf8119b29a317e2c0109",
+      "page": "foundations/deep/entropy-control/"
+    },
+    {
+      "file": "study-deep-exploration.md",
+      "target": "foundations/deep/exploration.md",
+      "sha256": "3f0cc958bb47b1e530d90d97d480351ceb2881c11e0c3a77e7309574042e4509",
+      "page": "foundations/deep/exploration/"
+    },
+    {
+      "file": "study-deep-model-based.md",
+      "target": "foundations/deep/model-based.md",
+      "sha256": "977c5de85683da199193a9e4b34cb8e6cac92e51c3f1df30a92bd54a121714d8",
+      "page": "foundations/deep/model-based/"
+    },
+    {
+      "file": "study-deep-multi-agent.md",
+      "target": "foundations/deep/multi-agent.md",
+      "sha256": "19af0c0c01726891badd379dee72aa655e51a0750cf9ac6afb720579260e72f6",
+      "page": "foundations/deep/multi-agent/"
+    },
+    {
+      "file": "study-deep-offline.md",
+      "target": "foundations/deep/offline.md",
+      "sha256": "df8133965ace5cbe3556743342af4e24886415c2954ea82d2a4e59de6a75756f",
+      "page": "foundations/deep/offline/"
+    },
+    {
+      "file": "study-deep-partial-observability.md",
+      "target": "foundations/deep/partial-observability.md",
+      "sha256": "c2843455cc8c7a894430009daec2defda85d6b4d1736fe5f000522781f39fa5b",
+      "page": "foundations/deep/partial-observability/"
+    },
+    {
+      "file": "study-deep-policy-gradient.md",
+      "target": "foundations/deep/policy-gradient.md",
+      "sha256": "dac23deed2aec41e0ec7c4eb72aa952b9f678b1e7ee5bddbb959cbd67de3129d",
+      "page": "foundations/deep/policy-gradient/"
+    },
+    {
+      "file": "study-deep-practice.md",
+      "target": "foundations/deep/practice.md",
+      "sha256": "1e97cd4bf2e7bf2e933db1b84737252c2cfd3ba88d95ea11f4fa03ce3f353c29",
+      "page": "foundations/deep/practice/"
+    },
+    {
+      "file": "study-deep-trust-region.md",
+      "target": "foundations/deep/trust-region.md",
+      "sha256": "1c3c71f0b0a469b9712f03e5b0b621af340a58ed97227f73f5f8b3a35e1c21a2",
+      "page": "foundations/deep/trust-region/"
+    },
+    {
+      "file": "study-tabular-bandits.md",
+      "target": "foundations/tabular/bandits.md",
+      "sha256": "4d7fd31dd513cd9f5fe954dc3e58bd85eb249191f1ce2dfb85fbf45d2920f769",
+      "page": "foundations/tabular/bandits/"
+    },
+    {
+      "file": "study-tabular-dynamic-programming.md",
+      "target": "foundations/tabular/dynamic-programming.md",
+      "sha256": "583d1eadcbf6780adf221e0de80f9f14d4cbada650d46ea27315ac6a181ff5bf",
+      "page": "foundations/tabular/dynamic-programming/"
+    },
+    {
+      "file": "study-tabular-mdps.md",
+      "target": "foundations/tabular/mdps.md",
+      "sha256": "3d512ff103c4ba709b30841af4d73ccee1bcf2c0be6395afd7de1f7a57b38ddb",
+      "page": "foundations/tabular/mdps/"
+    },
+    {
+      "file": "study-tabular-monte-carlo.md",
+      "target": "foundations/tabular/monte-carlo.md",
+      "sha256": "6a54cdb83cb444e5bd28b402e2adac08455eefd23493d07d9bb988e94239b9a0",
+      "page": "foundations/tabular/monte-carlo/"
+    },
+    {
+      "file": "study-tabular-multistep.md",
+      "target": "foundations/tabular/multistep.md",
+      "sha256": "32b2ad8bb1af36ee75e06872e162d31dbfa725a04eb434fcec91a8dda9ee31c6",
+      "page": "foundations/tabular/multistep/"
+    },
+    {
+      "file": "study-tabular-planning.md",
+      "target": "foundations/tabular/planning.md",
+      "sha256": "0d83d8fdd1263c53ba04e5e8c6a0f023297206c1b817b5fd5a265f0536b26729",
+      "page": "foundations/tabular/planning/"
+    },
+    {
+      "file": "study-tabular-temporal-difference.md",
+      "target": "foundations/tabular/temporal-difference.md",
+      "sha256": "bdc10858de7c2764219586d142cef4daa275ea14a04ab0c7649ece4a90abd741",
+      "page": "foundations/tabular/temporal-difference/"
+    },
+    {
+      "file": "tabular_textbook_lab.py",
+      "target": "examples/tabular_textbook_lab.py",
+      "sha256": "25daa70a42101b1f04c1d898fc81b8cce8de054cc7e71d04b90c58cd64976861",
+      "page": null
+    },
+    {
+      "file": "textbook-map.json",
+      "target": "data/textbook-map.json",
+      "sha256": "0358cafb37631f6a0b7d0b2de68b003e96c496b784efcd35081802502f351c5c",
+      "page": null
+    },
+    {
+      "file": "tutorial.md",
+      "target": "docs/tutorial.md",
+      "sha256": "cf5ae27b7dca005d4c0bab5dbfd5142d34b92dbeb8749d385319783ba50a6fce",
+      "page": null
+    }
+  ],
+  "chapters": [
+    {
+      "id": "objectives",
+      "title": "强化学习问题的形式化：交互、目标与持续学习",
+      "path": "foundations/objectives/",
+      "file": "objectives_lab.py",
+      "command": "python3 objectives_lab.py all",
+      "scope": "标准库解析实验：周期策略偏好、随机停止、终止与截断、势函数塑形、在线与冻结评价。"
+    },
+    {
+      "id": "reward-design",
+      "title": "奖励假设与奖励设计",
+      "path": "foundations/reward-design/",
+      "file": "reward_design_lab.py",
+      "command": "python3 reward_design_lab.py demo\npython3 reward_design_lab.py test",
+      "scope": "原创建模反例、望远镜求和、偏好与 MaxEnt 梯度、单步约束优化。不是大规模算法复现。"
+    },
+    {
+      "id": "average",
+      "title": "平均奖励：奖励率、差分价值与持续控制",
+      "path": "algorithms/average-reward/",
+      "file": "lifelong_algorithms_lab.py",
+      "command": "python lifelong_algorithms_lab.py average",
+      "scope": "标准库表格机制实验与单步公式测试；不是深度算法或论文 benchmark 复现。"
+    },
+    {
+      "id": "state",
+      "title": "Agent state：部分可观测性、递归记忆与在线信用分配",
+      "path": "construction/state/",
+      "file": "state_meta_lab.py",
+      "command": "python3 state_meta_lab.py state",
+      "scope": "Bayes 过滤、标量 RTRL/BPTT/TBPTT、重置式监督提示实验、单个线性 RTU 风格旋转块；不是原论文 RL 基准复现。"
+    },
+    {
+      "id": "value",
+      "title": "价值预测与时间差分学习",
+      "path": "algorithms/value/",
+      "file": "foundations_detail_lab.py",
+      "command": "python3 foundations_detail_lab.py value\npython3 foundations_detail_lab.py test",
+      "scope": "Python 3.10+，仅标准库。实现表格 MC/TD 完整小实验；资格迹的前后向推导与实现见时间信用分配章。"
+    },
+    {
+      "id": "gvf",
+      "title": "通用价值函数与预测知识",
+      "path": "construction/predictive-knowledge/",
+      "file": "gvf_lab.py",
+      "command": "python3 gvf_lab.py compare\npython3 gvf_lab.py test",
+      "scope": "六个线性学习器、三个共享经验的预测问题、解析 Bellman 参照与一个 off-policy 期望发散反例。"
+    },
+    {
+      "id": "control",
+      "title": "持续控制：比较策略与学习智能体",
+      "path": "algorithms/control/",
+      "file": "continual_control_lab.py",
+      "command": "python3 continual_control_lab.py demo\npython3 continual_control_lab.py test",
+      "scope": "Python 3.10+，仅标准库。五组可解析持续控制反例、轨迹重要性采样、精确枚举与 29 个测试；教学模型不是论文 benchmark 或大规模性能复现。"
+    },
+    {
+      "id": "deep-value",
+      "title": "深度价值学习：DQN 与 Double DQN",
+      "path": "algorithms/deep-value/",
+      "file": "foundations_detail_lab.py",
+      "command": "python3 foundations_detail_lab.py deep-value\npython3 foundations_detail_lab.py test",
+      "scope": "Python 3.10+，仅标准库。包含两层网络及手写反向传播、replay 与目标网络。实验环境为可解析的小型 MDP。"
+    },
+    {
+      "id": "policy",
+      "title": "策略梯度、Actor–Critic 与 PPO",
+      "path": "algorithms/policy/",
+      "file": "foundations_detail_lab.py",
+      "command": "python3 foundations_detail_lab.py policy\npython3 foundations_detail_lab.py test",
+      "scope": "Python 3.10+，仅标准库。执行 PPO bandit 完整采样/优化循环，独立实现多步 GAE；不声称包含网络 PPO 的通用训练工程。"
+    },
+    {
+      "id": "soft-control",
+      "title": "最大熵控制与 Soft Actor–Critic",
+      "path": "algorithms/soft-control/",
+      "file": "foundations_detail_lab.py",
+      "command": "python3 foundations_detail_lab.py soft-control\npython3 foundations_detail_lab.py test",
+      "scope": "Python 3.10+，仅标准库。运行精确离散 actor 优化和公式检查；连续 SAC 的完整训练顺序在正文，作者工程在章末。"
+    },
+    {
+      "id": "credit",
+      "title": "时间信用分配：从资格迹到深度梯度学习",
+      "path": "algorithms/credit-assignment/",
+      "file": "credit_assignment_lab.py",
+      "command": "python3 credit_assignment_lab.py all",
+      "scope": "标准库：31项检查覆盖冻结／在线等价、策略校正、Q(σ)端点、V-trace目标变化、状态λ、期望迹混叠反例、非线性梯度迹有限差分及actor／递归敏感度；不是完整论文复现。"
+    },
+    {
+      "id": "streaming",
+      "title": "流式强化学习：交互协议与更新稳定性",
+      "path": "algorithms/streaming/",
+      "file": "lifelong_algorithms_lab.py",
+      "command": "python lifelong_algorithms_lab.py streaming",
+      "scope": "流式 TD、在线统计与 ObGD 的机制检查；meta_frontier_lab.py 提供 Intentional 输出尺度实验。不包含完整神经网络控制训练。"
+    },
+    {
+      "id": "meta",
+      "title": "学习规则的适应：在线元梯度与跨任务元学习",
+      "path": "algorithms/meta/",
+      "file": "state_meta_lab.py",
+      "command": "python3 state_meta_lab.py meta",
+      "scope": "多步超梯度、IDBD/TIDBD、标量 MAML 与解析 context；meta_frontier_lab.py 提供 Metatrace 线性特例。"
+    },
+    {
+      "id": "goals",
+      "title": "目标与子任务：条件控制、经验重用与技能设计",
+      "path": "construction/goals/",
+      "file": "knowledge_algorithms_lab.py",
+      "command": "python3 knowledge_algorithms_lab.py goals",
+      "scope": "目标重标记、子任务 TD 与有限目标课程的表格实验；深度方法另附原论文和作者工程。"
+    },
+    {
+      "id": "options",
+      "title": "Options：多步决策、技能发现与可复用行为",
+      "path": "construction/options/",
+      "file": "knowledge_algorithms_lab.py",
+      "command": "python3 knowledge_algorithms_lab.py options",
+      "scope": "SMDP、intra-option、动作与终止梯度的表格实验；深度技能训练另附原论文和作者工程。"
+    },
+    {
+      "id": "dyna",
+      "title": "Dyna：模型学习与规划",
+      "path": "algorithms/dyna/",
+      "file": "foundations_detail_lab.py",
+      "command": "python3 foundations_detail_lab.py dyna\npython3 foundations_detail_lab.py test",
+      "scope": "Python 3.10+，仅标准库。完整表格 Dyna-Q 与解析参照；概率模型、优先队列与神经世界模型需按正文接口进一步实现。"
+    },
+    {
+      "id": "models",
+      "title": "模型与后果预测：学什么，才能用于下一次决策？",
+      "path": "construction/models/",
+      "file": "knowledge_algorithms_lab.py",
+      "command": "python3 knowledge_algorithms_lab.py models",
+      "scope": "表格 option model、SF/GPI 与条件反例；不包含完整深度世界模型训练。"
+    },
+    {
+      "id": "planning",
+      "title": "规划：把模型中的经验转成更好的决策",
+      "path": "construction/planning/",
+      "file": "knowledge_algorithms_lab.py",
+      "command": "python3 knowledge_algorithms_lab.py planning",
+      "scope": "表格 Dyna、优先传播、option value iteration 与枚举 MPC；深度规划和想象训练另附原论文及作者工程。"
+    },
+    {
+      "id": "retention",
+      "title": "知识保留：经验重放、参数约束与模型记忆",
+      "path": "algorithms/retention/",
+      "file": "lifelong_algorithms_lab.py",
+      "command": "python lifelong_algorithms_lab.py retention",
+      "scope": "存储策略、目标项和 trace 数值实验；完整 CLEAR 训练还需要神经网络、序列收集与环境配置。"
+    },
+    {
+      "id": "plasticity",
+      "title": "可塑性：梯度通路、有效学习率与预测干扰",
+      "path": "algorithms/plasticity/",
+      "file": "lifelong_algorithms_lab.py",
+      "command": "python lifelong_algorithms_lab.py plasticity",
+      "scope": "替换、optimizer 状态与合成 aged/fresh 机制诊断；不是 ReDo/CBP 全论文复现。"
+    },
+    {
+      "id": "exploration",
+      "title": "持续探索：新奇、不确定性、学习进展与恢复",
+      "path": "algorithms/exploration/",
+      "file": "lifelong_algorithms_lab.py",
+      "command": "python lifelong_algorithms_lab.py exploration",
+      "scope": "内部奖励/进展/恢复接口的确定性检查；非 RND、课程或安全算法完整性能复现。"
+    },
+    {
+      "id": "architectures",
+      "title": "持续智能体架构：模块接口、更新调度与长期评价",
+      "path": "construction/architectures/",
+      "file": "lifelong_algorithms_lab.py",
+      "command": "python lifelong_algorithms_lab.py architectures",
+      "scope": "六状态、双动作、手工记忆的集成教学骨架；不是完整 OaK/STOMP 性能复现。"
+    },
+    {
+      "id": "experiments",
+      "title": "实验设计：从更新正确到持续学习证据",
+      "path": "experiments/",
+      "file": "experiment_design_lab.py",
+      "command": "python experiment_design_lab.py demo --tiny",
+      "scope": "标准库非平稳 bandit 的开发选择、独立测试、配对区间及失败诊断；不包含大型神经网络基准。"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "study-tabular-bandits",
+      "title": "多臂老虎机：估计、探索与直接策略学习",
+      "track": "tabular",
+      "order": 1,
+      "path": "foundations/tabular/bandits/",
+      "file": "tabular_textbook_lab.py",
+      "command": "python3 tabular_textbook_lab.py bandits\npython3 tabular_textbook_lab.py test",
+      "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+      "connectsTo": [
+        "control",
+        "exploration",
+        "streaming"
+      ]
+    },
+    {
+      "id": "study-tabular-mdps",
+      "title": "MDP、回报与价值：序列决策的数学对象",
+      "track": "tabular",
+      "order": 2,
+      "path": "foundations/tabular/mdps/",
+      "file": "tabular_textbook_lab.py",
+      "command": "python3 tabular_textbook_lab.py mdps\npython3 tabular_textbook_lab.py test",
+      "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+      "connectsTo": [
+        "objectives",
+        "value",
+        "state"
+      ]
+    },
+    {
+      "id": "study-tabular-dynamic-programming",
+      "title": "动态规划：评价、改善与最优递推",
+      "track": "tabular",
+      "order": 3,
+      "path": "foundations/tabular/dynamic-programming/",
+      "file": "tabular_textbook_lab.py",
+      "command": "python3 tabular_textbook_lab.py dynamic-programming\npython3 tabular_textbook_lab.py test",
+      "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+      "connectsTo": [
+        "value",
+        "control",
+        "planning"
+      ]
+    },
+    {
+      "id": "study-tabular-monte-carlo",
+      "title": "Monte Carlo：完整经历、重复访问与离策略评价",
+      "track": "tabular",
+      "order": 4,
+      "path": "foundations/tabular/monte-carlo/",
+      "file": "tabular_textbook_lab.py",
+      "command": "python3 tabular_textbook_lab.py monte-carlo\npython3 tabular_textbook_lab.py test",
+      "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+      "connectsTo": [
+        "value",
+        "control",
+        "gvf",
+        "retention"
+      ]
+    },
+    {
+      "id": "study-tabular-temporal-difference",
+      "title": "TD 预测与控制：SARSA、Expected SARSA、Q-learning 和 Double Q",
+      "track": "tabular",
+      "order": 5,
+      "path": "foundations/tabular/temporal-difference/",
+      "file": "tabular_textbook_lab.py",
+      "command": "python3 tabular_textbook_lab.py temporal-difference\npython3 tabular_textbook_lab.py test",
+      "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+      "connectsTo": [
+        "value",
+        "control",
+        "deep-value"
+      ]
+    },
+    {
+      "id": "study-tabular-multistep",
+      "title": "多步学习：n-step、Tree Backup 与 Q(σ)",
+      "track": "tabular",
+      "order": 6,
+      "path": "foundations/tabular/multistep/",
+      "file": "tabular_textbook_lab.py",
+      "command": "python3 tabular_textbook_lab.py multistep\npython3 tabular_textbook_lab.py test",
+      "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+      "connectsTo": [
+        "credit",
+        "value",
+        "control",
+        "gvf"
+      ]
+    },
+    {
+      "id": "study-tabular-planning",
+      "title": "学习与规划：Dyna、优先扫描和执行时搜索",
+      "track": "tabular",
+      "order": 7,
+      "path": "foundations/tabular/planning/",
+      "file": "tabular_textbook_lab.py",
+      "command": "python3 tabular_textbook_lab.py planning\npython3 tabular_textbook_lab.py test",
+      "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+      "connectsTo": [
+        "dyna",
+        "models",
+        "planning",
+        "architectures"
+      ]
+    },
+    {
+      "id": "study-approximation-prediction",
+      "title": "函数逼近预测：从回归到 TD 固定点",
+      "track": "approximation",
+      "order": 1,
+      "path": "foundations/approximation/prediction/",
+      "file": "approximation_textbook_lab.py",
+      "command": "python3 approximation_textbook_lab.py prediction\npython3 approximation_textbook_lab.py test",
+      "scope": "标准库教学实现。命令运行本章的可解析小问题和全文件的公式测试；不依赖深度学习库，不等同于论文中的大规模实验。",
+      "connectsTo": [
+        "value",
+        "gvf",
+        "state"
+      ]
+    },
+    {
+      "id": "study-approximation-features-control",
+      "title": "特征、泛化与半梯度控制",
+      "track": "approximation",
+      "order": 2,
+      "path": "foundations/approximation/features-control/",
+      "file": "approximation_textbook_lab.py",
+      "command": "python3 approximation_textbook_lab.py features-control\npython3 approximation_textbook_lab.py test",
+      "scope": "标准库教学实现。命令运行本章的可解析小问题和全文件的公式测试；不依赖深度学习库，不等同于论文中的大规模实验。",
+      "connectsTo": [
+        "control",
+        "state",
+        "streaming"
+      ]
+    },
+    {
+      "id": "study-approximation-average-control",
+      "title": "持续控制与平均奖励",
+      "track": "approximation",
+      "order": 3,
+      "path": "foundations/approximation/average-control/",
+      "file": "approximation_textbook_lab.py",
+      "command": "python3 approximation_textbook_lab.py average-control\npython3 approximation_textbook_lab.py test",
+      "scope": "标准库教学实现。命令运行本章的可解析小问题和全文件的公式测试；不依赖深度学习库，不等同于论文中的大规模实验。",
+      "connectsTo": [
+        "average",
+        "objectives",
+        "streaming"
+      ]
+    },
+    {
+      "id": "study-approximation-off-policy",
+      "title": "离策略函数逼近：覆盖、发散与稳定更新",
+      "track": "approximation",
+      "order": 4,
+      "path": "foundations/approximation/off-policy/",
+      "file": "approximation_textbook_lab.py",
+      "command": "python3 approximation_textbook_lab.py off-policy\npython3 approximation_textbook_lab.py test",
+      "scope": "标准库教学实现。命令运行本章的可解析小问题和全文件的公式测试；不依赖深度学习库，不等同于论文中的大规模实验。",
+      "connectsTo": [
+        "gvf",
+        "value",
+        "deep-value"
+      ]
+    },
+    {
+      "id": "study-approximation-traces",
+      "title": "多步回报、资格迹与 True-online TD",
+      "track": "approximation",
+      "order": 5,
+      "path": "foundations/approximation/traces/",
+      "file": "approximation_textbook_lab.py",
+      "command": "python3 approximation_textbook_lab.py traces\npython3 approximation_textbook_lab.py test",
+      "scope": "标准库教学实现。命令运行本章的可解析小问题和全文件的公式测试；不依赖深度学习库，不等同于论文中的大规模实验。",
+      "connectsTo": [
+        "credit",
+        "streaming",
+        "gvf",
+        "state"
+      ]
+    },
+    {
+      "id": "study-approximation-policy-gradient",
+      "title": "策略梯度、基线与 Actor–Critic",
+      "track": "approximation",
+      "order": 6,
+      "path": "foundations/approximation/policy-gradient/",
+      "file": "approximation_textbook_lab.py",
+      "command": "python3 approximation_textbook_lab.py policy-gradient\npython3 approximation_textbook_lab.py test",
+      "scope": "标准库教学实现。命令运行本章的可解析小问题和全文件的公式测试；不依赖深度学习库，不等同于论文中的大规模实验。",
+      "connectsTo": [
+        "policy",
+        "soft-control",
+        "average",
+        "meta"
+      ]
+    },
+    {
+      "id": "study-deep-deep-value",
+      "title": "深度价值学习：DQN、Double DQN 与目标的时间顺序",
+      "track": "deep",
+      "order": 1,
+      "path": "foundations/deep/deep-value/",
+      "file": "deep_textbook_train.py",
+      "command": "python3 deep_textbook_train.py dqn --steps 2000 --seed 0",
+      "scope": "CPU DeadlineChain 完整训练；需要同目录 deep_textbook_lab.py 和 PyTorch。",
+      "connectsTo": [
+        "deep-value",
+        "control",
+        "retention",
+        "plasticity"
+      ]
+    },
+    {
+      "id": "study-deep-policy-gradient",
+      "title": "策略梯度：从轨迹概率到 GAE 与 actor–critic",
+      "track": "deep",
+      "order": 2,
+      "path": "foundations/deep/policy-gradient/",
+      "file": "deep_textbook_lab.py",
+      "command": "python3 deep_textbook_lab.py test",
+      "scope": "标准库数值核验；完整小任务训练另需 deep_textbook_train.py 与 PyTorch。",
+      "connectsTo": [
+        "policy",
+        "credit",
+        "state"
+      ]
+    },
+    {
+      "id": "study-deep-trust-region",
+      "title": "策略更新的尺度：TRPO 与 PPO",
+      "track": "deep",
+      "order": 3,
+      "path": "foundations/deep/trust-region/",
+      "file": "deep_textbook_lab.py",
+      "command": "python3 deep_textbook_lab.py test",
+      "scope": "标准库数值核验；完整小任务训练另需 deep_textbook_train.py 与 PyTorch。",
+      "connectsTo": [
+        "policy",
+        "control",
+        "experiments"
+      ]
+    },
+    {
+      "id": "study-deep-deterministic-control",
+      "title": "连续动作的价值优化：DDPG 与 TD3",
+      "track": "deep",
+      "order": 4,
+      "path": "foundations/deep/deterministic-control/",
+      "file": "deep_textbook_lab.py",
+      "command": "python3 deep_textbook_lab.py test",
+      "scope": "标准库数值核验；完整小任务训练另需 deep_textbook_train.py 与 PyTorch。",
+      "connectsTo": [
+        "control",
+        "policy",
+        "soft-control",
+        "experiments"
+      ]
+    },
+    {
+      "id": "study-deep-entropy-control",
+      "title": "最大熵连续控制：SAC 的价值、密度与温度",
+      "track": "deep",
+      "order": 5,
+      "path": "foundations/deep/entropy-control/",
+      "file": "deep_textbook_lab.py",
+      "command": "python3 deep_textbook_lab.py test",
+      "scope": "标准库数值核验；完整小任务训练另需 deep_textbook_train.py 与 PyTorch。",
+      "connectsTo": [
+        "soft-control",
+        "policy",
+        "exploration",
+        "meta"
+      ]
+    },
+    {
+      "id": "study-deep-practice",
+      "title": "深度 RL 的机制接口：模型、记忆、离线数据与实验",
+      "track": "deep",
+      "order": 6,
+      "path": "foundations/deep/practice/",
+      "file": "deep_textbook_lab.py",
+      "command": "python3 deep_textbook_lab.py test",
+      "scope": "标准库数值核验；完整小任务训练另需 deep_textbook_train.py 与 PyTorch。",
+      "connectsTo": [
+        "state",
+        "models",
+        "planning",
+        "credit",
+        "retention",
+        "plasticity",
+        "experiments"
+      ]
+    },
+    {
+      "id": "study-deep-partial-observability",
+      "title": "不完全可观测：信念状态、信息行动与递归记忆",
+      "track": "deep",
+      "order": 7,
+      "path": "foundations/deep/partial-observability/",
+      "file": "extended_foundations_lab.py",
+      "command": "python3 extended_foundations_lab.py test",
+      "scope": "标准库解析机制实验；不包含完整神经网络训练或大型 benchmark。",
+      "connectsTo": [
+        "state",
+        "gvf",
+        "credit",
+        "models"
+      ]
+    },
+    {
+      "id": "study-deep-exploration",
+      "title": "探索与不确定性：后验、乐观估计和时间一致行动",
+      "track": "deep",
+      "order": 8,
+      "path": "foundations/deep/exploration/",
+      "file": "extended_foundations_lab.py",
+      "command": "python3 extended_foundations_lab.py test",
+      "scope": "标准库解析机制实验；不包含完整神经网络训练或大型 benchmark。",
+      "connectsTo": [
+        "exploration",
+        "goals",
+        "options",
+        "gvf",
+        "experiments"
+      ]
+    },
+    {
+      "id": "study-deep-distributional",
+      "title": "分布强化学习：Bellman 分布、分位数与风险目标",
+      "track": "deep",
+      "order": 9,
+      "path": "foundations/deep/distributional/",
+      "file": "extended_foundations_lab.py",
+      "command": "python3 extended_foundations_lab.py test",
+      "scope": "标准库解析机制实验；不包含完整神经网络训练或大型 benchmark。",
+      "connectsTo": [
+        "deep-value",
+        "gvf",
+        "objectives",
+        "experiments"
+      ]
+    },
+    {
+      "id": "study-deep-offline",
+      "title": "离线强化学习：数据支持、策略评估与保守改进",
+      "track": "deep",
+      "order": 10,
+      "path": "foundations/deep/offline/",
+      "file": "extended_foundations_lab.py",
+      "command": "python3 extended_foundations_lab.py test",
+      "scope": "标准库解析机制实验；不包含完整神经网络训练或大型 benchmark。",
+      "connectsTo": [
+        "control",
+        "deep-value",
+        "retention",
+        "experiments"
+      ]
+    },
+    {
+      "id": "study-deep-model-based",
+      "title": "模型学习与规划：MPC、短模型 rollout 和潜在想象",
+      "track": "deep",
+      "order": 11,
+      "path": "foundations/deep/model-based/",
+      "file": "extended_foundations_lab.py",
+      "command": "python3 extended_foundations_lab.py test",
+      "scope": "标准库解析机制实验；不包含完整神经网络训练或大型 benchmark。",
+      "connectsTo": [
+        "models",
+        "planning",
+        "dyna",
+        "state",
+        "architectures"
+      ]
+    },
+    {
+      "id": "study-deep-constraints",
+      "title": "约束强化学习：占据测度、拉格朗日与可行策略",
+      "track": "deep",
+      "order": 12,
+      "path": "foundations/deep/constraints/",
+      "file": "extended_foundations_lab.py",
+      "command": "python3 extended_foundations_lab.py test",
+      "scope": "标准库解析机制实验；不包含完整神经网络训练或大型 benchmark。",
+      "connectsTo": [
+        "objectives",
+        "control",
+        "planning",
+        "experiments"
+      ]
+    },
+    {
+      "id": "study-deep-multi-agent",
+      "title": "多智能体：博弈、局部信息与集中训练",
+      "track": "deep",
+      "order": 13,
+      "path": "foundations/deep/multi-agent/",
+      "file": "extended_foundations_lab.py",
+      "command": "python3 extended_foundations_lab.py test",
+      "scope": "标准库解析机制实验；不包含完整神经网络训练或大型 benchmark。",
+      "connectsTo": [
+        "state",
+        "control",
+        "credit",
+        "meta",
+        "experiments",
+        "architectures"
+      ]
+    }
+  ]
+}

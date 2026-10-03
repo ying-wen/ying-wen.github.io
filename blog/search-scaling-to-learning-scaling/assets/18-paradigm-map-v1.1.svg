@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">主要技术路线在 Search 与 Learning 两种机制中的定位</title>
+  <desc id="desc">横轴为从候选搜索到持久更新，纵轴为训练期、任务期、部署期和多轮设计迭代。</desc>
+  <defs>
+    <style>
+      .bg{fill:#fff}.ink{fill:#20262b}.muted{fill:#68727a}.grid{stroke:#d7dde1;stroke-width:2}.axis{stroke:#515b61;stroke-width:3}.blue{fill:#edf4fb;stroke:#89aace}.amber{fill:#fbf3e8;stroke:#d6a361}.green{fill:#eaf5f1;stroke:#6fa290}.purple{fill:#f5effa;stroke:#aa92c8}.bubble{stroke-width:2}.t{font:700 42px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.h{font:700 25px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.b{font:400 20px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.s{font:500 17px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}
+    </style>
+  </defs>
+  <rect class="bg" width="1600" height="980"/>
+  <text x="80" y="75" class="t ink">主要技术路线的机制定位</text>
+  <text x="80" y="117" class="b muted">同一种方法可以同时包含搜索与更新；定位取决于候选单位、搜索层级、持久载体与时间段。</text>
+
+  <line x1="300" y1="830" x2="1490" y2="830" class="axis"/>
+  <line x1="300" y1="180" x2="300" y2="830" class="axis"/>
+  <line x1="300" y1="340" x2="1490" y2="340" class="grid"/>
+  <line x1="300" y1="500" x2="1490" y2="500" class="grid"/>
+  <line x1="300" y1="660" x2="1490" y2="660" class="grid"/>
+  <line x1="700" y1="180" x2="700" y2="830" class="grid"/>
+  <line x1="1100" y1="180" x2="1100" y2="830" class="grid"/>
+
+  <text x="150" y="270" text-anchor="middle" class="h ink">多轮设计迭代</text>
+  <text x="150" y="430" text-anchor="middle" class="h ink">部署期</text>
+  <text x="150" y="590" text-anchor="middle" class="h ink">任务期</text>
+  <text x="150" y="750" text-anchor="middle" class="h ink">训练期</text>
+  <text x="500" y="890" text-anchor="middle" class="h" fill="#b56a16">候选搜索与选择</text>
+  <text x="900" y="890" text-anchor="middle" class="h muted">混合机制</text>
+  <text x="1300" y="890" text-anchor="middle" class="h" fill="#267763">经历驱动的持久更新</text>
+
+  <rect x="385" y="535" width="270" height="92" rx="46" class="bubble amber"/>
+  <text x="520" y="575" text-anchor="middle" class="h ink">Test-time scaling</text>
+  <text x="520" y="605" text-anchor="middle" class="s muted">reasoning / planning / tools</text>
+
+  <rect x="735" y="675" width="350" height="100" rx="50" class="bubble blue"/>
+  <text x="910" y="716" text-anchor="middle" class="h ink">RL post-training</text>
+  <text x="910" y="748" text-anchor="middle" class="s muted">训练形成 search / control operator</text>
+
+  <rect x="1190" y="675" width="250" height="100" rx="50" class="bubble green"/>
+  <text x="1315" y="716" text-anchor="middle" class="h ink">Pretraining</text>
+  <text x="1315" y="748" text-anchor="middle" class="s muted">训练期参数学习</text>
+
+  <rect x="390" y="215" width="315" height="98" rx="49" class="bubble purple"/>
+  <text x="547" y="255" text-anchor="middle" class="h ink">AlphaEvolve / DGM</text>
+  <text x="547" y="286" text-anchor="middle" class="s muted">设计候选、运行评价、保留系统</text>
+
+  <rect x="790" y="215" width="340" height="98" rx="49" class="bubble purple"/>
+  <text x="960" y="255" text-anchor="middle" class="h ink">Harness + weight update</text>
+  <text x="960" y="286" text-anchor="middle" class="s muted">SIA / SEAL：搜索与训练更新并存</text>
+
+  <rect x="780" y="375" width="330" height="98" rx="49" class="bubble blue"/>
+  <text x="945" y="415" text-anchor="middle" class="h ink">Continual Harness</text>
+  <text x="945" y="446" text-anchor="middle" class="s muted">在线修改 prompt、工具调用程序与 memory</text>
+
+  <rect x="1190" y="375" width="255" height="98" rx="49" class="bubble green"/>
+  <text x="1317" y="415" text-anchor="middle" class="h ink">Continual RL</text>
+  <text x="1317" y="446" text-anchor="middle" class="s muted">连续观测—行动—更新</text>
+
+  <rect x="1120" y="205" width="360" height="118" rx="28" fill="#fff" stroke="#7a59a7" stroke-width="3" stroke-dasharray="9 7"/>
+  <text x="1300" y="248" text-anchor="middle" class="h" fill="#7657a5">跨轮学习反馈</text>
+  <text x="1300" y="282" text-anchor="middle" class="s muted">持久状态与更新规则均可随经历改善</text>
+
+  <rect x="310" y="920" width="1180" height="42" rx="14" fill="#f4f6f7"/>
+  <text x="900" y="947" text-anchor="middle" class="s ink">AI4AI 与 Self-evolving 可分布在多个位置；RSI 取决于多轮反馈，而非图中的单个坐标。</text>
+</svg>
