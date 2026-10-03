@@ -1,0 +1,6 @@
+# Public HTML pages and machine-readable research resources are crawlable.
+User-agent: *
+Allow: /
+Disallow: /analytics/
+
+Sitemap: https://yingwen.io/sitemap.xml
