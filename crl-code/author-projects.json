@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "verified_date": "2026-10-04",
+  "projects": [
+    {
+      "id": "dreamerv3",
+      "name": "DreamerV3 · 作者维护的重新实现",
+      "repository": "https://github.com/danijar/dreamerv3",
+      "commit": "e01491fad6434b2245a3b8ca201dd7faedcc458c",
+      "identity": "作者README明确为基于DreamerV2的DreamerV3 reimplementation，不能称原实验精确工程。",
+      "reading_order": ["README.md", "requirements.txt", "dreamerv3/configs.yaml", "dreamerv3/main.py", "dreamerv3/agent.py", "embodied/run/train.py"],
+      "entrypoint": {"cwd": ".", "argv": ["python", "dreamerv3/main.py", "--logdir", "NEW_RUN_DIRECTORY", "--configs", "crafter", "--run.train_ratio", "32"], "source": "README.md"},
+      "dependencies": "Python 3.11+；先按平台安装JAX，再安装requirements.txt；环境额外依赖参照Dockerfile。",
+      "budget": "默认GPU；CPU需--jax.platform cpu；环境步数、train_ratio、模型大小、评价与logdir须在训练前登记；debug只查错。",
+      "teaching": [{"algorithm": "dyna_q", "relation": "经验→模型→规划入门；不包含潜在世界模型或想象actor-critic，不等同DreamerV3。"}],
+      "chapter_paths": ["construction/planning/", "construction/models/"],
+      "status": "source_and_entrypoint_verified_not_trained",
+      "license": "保留上游LICENSE与依赖许可证；源码不复制进教程主仓库。"
+    },
+    {
+      "id": "tdmpc2",
+      "name": "TD-MPC2 · 官方实现",
+      "repository": "https://github.com/nicklashansen/tdmpc2",
+      "commit": "e9f59321933cbc8e11a002b842adc7d4ffae8ff1",
+      "identity": "官方online single-task与offline multi-task实现；episode支持默认关闭以保持历史兼容。",
+      "reading_order": ["README.md", "docker/environment.yaml", "tdmpc2/config.yaml", "tdmpc2/train.py", "tdmpc2/tdmpc2.py", "tdmpc2/common/world_model.py", "tdmpc2/trainer/online_trainer.py"],
+      "entrypoint": {"cwd": "tdmpc2", "argv": ["python", "train.py", "task=dog-run", "steps=7000000"], "source": "README.md"},
+      "dependencies": "docker/environment.yaml或docker/Dockerfile；DMControl及域专用环境；训练前审阅wandb配置。",
+      "budget": "README单任务要求GPU与至少12GB RAM，建议8GB显存；80任务离线需128GB RAM；示例700万步不是本次执行授权。",
+      "teaching": [{"algorithm": "learned_model_mpc", "relation": "从真实经验学习小型模型，再进行有限时域滚动规划；与one_step_model的一步模型贪心作真实教学对照。没有TD-MPC2潜在模型/价值联合训练，不等同TD-MPC2。"}, {"algorithm": "one_step_model", "relation": "同一经验模型下的一步贪心baseline，用于对照learned_model_mpc；不是TD-MPC2完整方法。"}],
+      "chapter_paths": ["construction/planning/", "foundations/deep/model-based/"],
+      "status": "source_and_entrypoint_verified_not_trained",
+      "license": "MIT；第三方环境分别遵守其许可证。"
+    },
+    {
+      "id": "disco_rl",
+      "name": "DiscoRL · 官方最小JAX harness",
+      "repository": "https://github.com/google-deepmind/disco_rl",
+      "commit": "9059a29f7121d60948f25ef165e08e050e9399c8",
+      "identity": "minimal JAX harness，支持Disco103 meta-evaluation与meta-training；不是全部原始算法发现搜索系统。",
+      "reading_order": ["README.md", "pyproject.toml", "colabs/eval.ipynb", "disco_rl/update_rules/base.py", "disco_rl/update_rules/disco.py", "disco_rl/agent.py", "colabs/meta_train.ipynb"],
+      "entrypoint": {"cwd": ".", "notebooks": ["colabs/eval.ipynb", "colabs/meta_train.ipynb"], "source": "README.md", "note": "上游以notebook为实际运行入口，不虚构命令行trainer。"},
+      "dependencies": "pyproject.toml中JAX、Haiku等依赖；notebook安装与Disco103权重下载须另行审阅。",
+      "budget": "区分使用固定发现规则训练agent的meta-evaluation，与外层发现规则的meta-training；内外步数、任务人口、设备与checkpoint先登记。",
+      "teaching": [{"algorithm": "idbd", "relation": "仅逐特征元步长适应入门；不等同DiscoRL的学习更新规则或发现系统。"}],
+      "chapter_paths": ["algorithms/meta/"],
+      "status": "source_and_notebooks_verified_not_trained",
+      "license": "代码Apache-2.0；其他材料CC-BY 4.0；非官方Google产品，上游声明不持续维护。"
+    }
+  ]
+}

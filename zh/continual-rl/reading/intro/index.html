@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="zh" class="scroll-smooth" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="从基础强化学习出发，逐步理解持续学习、动手实验与前沿研究。"><meta name="author" content="Ying Wen"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta property="og:title" content="阅读路线 — 持续强化学习 · 温颖"><meta property="og:description" content="从基础强化学习出发，逐步理解持续学习、动手实验与前沿研究。"><meta property="og:type" content="website"><meta property="og:url" content="https://yingwen.io/zh/continual-rl/reading/intro/"><meta property="og:site_name" content="Ying Wen"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://yingwen.io/yingwen.jpg"><meta property="og:image:alt" content="阅读路线 — 持续强化学习 · 温颖"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="阅读路线 — 持续强化学习 · 温颖"><meta name="twitter:description" content="从基础强化学习出发，逐步理解持续学习、动手实验与前沿研究。"><meta name="twitter:image" content="https://yingwen.io/yingwen.jpg"><meta name="twitter:image:alt" content="阅读路线 — 持续强化学习 · 温颖"><link rel="canonical" href="https://yingwen.io/zh/continual-rl/reading/intro/"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="alternate" type="application/rss+xml" title="温颖 - 博客" href="/rss-zh.xml"><link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/continual-rl/reading/intro/"><link rel="alternate" hreflang="x-default" href="https://yingwen.io/zh/continual-rl/reading/intro/"><link rel="alternate" type="text/markdown" href="https://yingwen.io/zh/continual-rl/download/research-atlas.md"><link rel="describedby" type="text/plain" href="https://yingwen.io/llms.txt"><link rel="sitemap" type="application/xml" href="/sitemap.xml"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://yingwen.io/zh/continual-rl/reading/intro/#resource","url":"https://yingwen.io/zh/continual-rl/reading/intro/","name":"阅读路线","inLanguage":"zh-CN","description":"从基础强化学习出发，逐步理解持续学习、动手实验与前沿研究。","educationalLevel":"基础强化学习至研究入门","isAccessibleForFree":true},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"教学","item":"https://yingwen.io/zh/teaching/"},{"@type":"ListItem","position":2,"name":"持续强化学习","item":"https://yingwen.io/zh/continual-rl/"},{"@type":"ListItem","position":3,"name":"阅读路线","item":"https://yingwen.io/zh/continual-rl/reading/intro/"}]}]}</script><title>阅读路线 — 持续强化学习 · 温颖</title><link rel="stylesheet" href="/_astro/index.Bc0r1rU8.css">
+<link rel="stylesheet" href="/_astro/_path_.CEn5YxCV.css">
+<link rel="stylesheet" href="/_astro/_path_.DhsgWa2X.css">
+<link rel="stylesheet" href="/_astro/_path_.pEL9TgnJ.css">
+<link rel="stylesheet" href="/_astro/_path_.CeteuK4w.css">
+<style>.math-shell[data-astro-cid-aah3mwre]{min-width:0;max-width:100%}.math-scroll-hint[data-astro-cid-aah3mwre]{display:block;font-size:.75rem;color:#64748b;margin:0 0 8px;line-height:1.5}.math-scroll-hint[data-astro-cid-aah3mwre][hidden]{display:none}.math-inline[data-astro-cid-aah3mwre]{white-space:nowrap}.math-inline-scroll[data-astro-cid-aah3mwre]{display:inline-block;max-width:100%;overflow-x:auto;vertical-align:middle;padding:.4em 0;scrollbar-width:thin}@media print{.math-scroll-hint[data-astro-cid-aah3mwre]{display:none}}
+.source-figure[data-astro-cid-a3tjcuwo]{margin:30px 0 34px;border:1px solid #d6e1e9;border-radius:7px;background:#fff;overflow:hidden;scroll-margin-top:90px}.source-figure-image[data-astro-cid-a3tjcuwo]{display:block;padding:20px 18px 12px;text-decoration:none;color:#3c5c75;text-align:center}.source-figure-image[data-astro-cid-a3tjcuwo] img[data-astro-cid-a3tjcuwo]{display:block;width:100%;max-width:800px;max-height:620px;height:auto;-o-object-fit:contain;object-fit:contain;margin:0 auto;background:#fff}.source-figure-zoom[data-astro-cid-a3tjcuwo]{display:inline-block;margin-top:10px;font-size:.76rem;line-height:1.7;color:#536f84;text-decoration:underline;text-underline-offset:3px}.source-figure-image[data-astro-cid-a3tjcuwo]:focus-visible,.source-figure[data-astro-cid-a3tjcuwo] [data-astro-cid-a3tjcuwo]:is(a,summary):focus-visible{outline:3px solid #93b9d4;outline-offset:-3px}.source-figure[data-astro-cid-a3tjcuwo] figcaption[data-astro-cid-a3tjcuwo]{border-top:1px solid #e0e8ee;padding:19px 21px 17px;background:#f8fafb;overflow-wrap:anywhere}.source-figure[data-astro-cid-a3tjcuwo] .source-figure-title[data-astro-cid-a3tjcuwo]{margin:0 0 16px;font-size:.98rem;line-height:1.75;font-weight:600;color:#23455f}.source-figure-title[data-astro-cid-a3tjcuwo] span[data-astro-cid-a3tjcuwo]{display:block;font-size:.74rem;font-weight:400;color:#647b8d;margin-top:4px}.source-figure-explanation[data-astro-cid-a3tjcuwo]{font-size:.87rem;line-height:1.9;color:#425d72}.source-figure[data-astro-cid-a3tjcuwo] .source-figure-explanation[data-astro-cid-a3tjcuwo] p[data-astro-cid-a3tjcuwo]{margin:10px 0}.source-figure-explanation[data-astro-cid-a3tjcuwo] strong[data-astro-cid-a3tjcuwo]{display:block;font-size:.8rem;color:#2d4e67;font-weight:600;margin-bottom:3px}.source-figure[data-astro-cid-a3tjcuwo] .source-figure-credit[data-astro-cid-a3tjcuwo]{margin:16px 0 12px;padding:12px 14px;background:#fff;border:1px solid #dce5eb;border-radius:5px}.source-figure-credit[data-astro-cid-a3tjcuwo] summary[data-astro-cid-a3tjcuwo]{font-size:.78rem;line-height:1.7;cursor:pointer;color:#47667d;font-weight:500}.source-figure-credit[data-astro-cid-a3tjcuwo] p[data-astro-cid-a3tjcuwo]{font-size:.78rem;line-height:1.85;color:#5a7081;margin:12px 0 0!important}.source-figure-links[data-astro-cid-a3tjcuwo]{display:flex;gap:7px 17px;flex-wrap:wrap}.source-figure[data-astro-cid-a3tjcuwo] .source-figure-attribution[data-astro-cid-a3tjcuwo]{margin:9px 0 0;font-size:.73rem;line-height:1.8;color:#657b8c}@media(max-width:520px){.source-figure-image[data-astro-cid-a3tjcuwo]{padding:12px 10px 9px}.source-figure[data-astro-cid-a3tjcuwo] figcaption[data-astro-cid-a3tjcuwo]{padding:15px 14px}.source-figure-explanation[data-astro-cid-a3tjcuwo]{font-size:.84rem}.source-figure[data-astro-cid-a3tjcuwo] .source-figure-title[data-astro-cid-a3tjcuwo]{font-size:.91rem}}@media print{.source-figure[data-astro-cid-a3tjcuwo]{-moz-column-break-inside:avoid;break-inside:avoid}.source-figure-image[data-astro-cid-a3tjcuwo]{padding:12px}.source-figure-image[data-astro-cid-a3tjcuwo] img[data-astro-cid-a3tjcuwo]{max-height:360px}.source-figure-zoom[data-astro-cid-a3tjcuwo],.source-figure-credit[data-astro-cid-a3tjcuwo]{display:none!important}.source-figure[data-astro-cid-a3tjcuwo] figcaption[data-astro-cid-a3tjcuwo]{padding:10px}.source-figure-explanation[data-astro-cid-a3tjcuwo]{font-size:9pt}.source-figure-attribution[data-astro-cid-a3tjcuwo]{font-size:8pt}}
+.diagnostic-figure[data-astro-cid-z5mfkwci]{margin:28px 0;max-width:100%;min-width:0}.diagnostic-toolbar[data-astro-cid-z5mfkwci]{display:flex;justify-content:flex-end;align-items:center;gap:16px;min-height:34px;margin-bottom:6px;font-size:.84rem}.diagnostic-toolbar[data-astro-cid-z5mfkwci] button[data-astro-cid-z5mfkwci]{border:1px solid #b6c9d8;border-radius:5px;padding:5px 11px;background:#fff;color:#244466;cursor:pointer;font:inherit;min-height:34px}.diagnostic-toolbar[data-astro-cid-z5mfkwci] button[data-astro-cid-z5mfkwci]:hover{background:#edf4f8}.diagnostic-toolbar[data-astro-cid-z5mfkwci] button[data-astro-cid-z5mfkwci]:focus-visible{outline:2px solid #244466;outline-offset:3px}.diagnostic-toolbar[data-astro-cid-z5mfkwci] button[data-astro-cid-z5mfkwci][hidden]{display:none}.diagnostic-scroll[data-astro-cid-z5mfkwci]{overflow-x:auto;border:1px solid var(--line,#dce2e7);background:#fff}.diagnostic-scroll[data-astro-cid-z5mfkwci]:focus-visible{outline:2px solid var(--navy,#203f60);outline-offset:3px}.diagnostic-scroll[data-astro-cid-z5mfkwci] picture[data-astro-cid-z5mfkwci],.diagnostic-scroll[data-astro-cid-z5mfkwci] img[data-astro-cid-z5mfkwci]{display:block;width:100%;height:auto}.diagnostic-scroll[data-astro-cid-z5mfkwci] img[data-astro-cid-z5mfkwci]{min-width:0}[data-astro-cid-z5mfkwci][data-zoomed=true] .diagnostic-scroll[data-astro-cid-z5mfkwci] picture[data-astro-cid-z5mfkwci]{width:150%;min-width:760px}figcaption[data-astro-cid-z5mfkwci]{margin-top:10px;color:var(--muted,#4b5e70);font-size:.94rem;line-height:1.8}.zoom-hint[data-astro-cid-z5mfkwci]{display:none;font-size:.85rem;margin-top:6px}[data-astro-cid-z5mfkwci][data-zoomed=true] .zoom-hint[data-astro-cid-z5mfkwci]{display:block}@media(max-width:600px){[data-astro-cid-z5mfkwci][data-zoomed=true][data-mobile-layout=true] .diagnostic-scroll[data-astro-cid-z5mfkwci] picture[data-astro-cid-z5mfkwci]{min-width:520px}}@media print{.diagnostic-toolbar[data-astro-cid-z5mfkwci],.zoom-hint[data-astro-cid-z5mfkwci]{display:none!important}.diagnostic-scroll[data-astro-cid-z5mfkwci]{overflow:visible}[data-astro-cid-z5mfkwci][data-zoomed=true] .diagnostic-scroll[data-astro-cid-z5mfkwci] picture[data-astro-cid-z5mfkwci]{width:100%;min-width:0}}
+.practice-connections[data-astro-cid-bsqgnqcf]{border-left:3px solid #b4c7d6;padding:10px 18px;margin:24px 0}.practice-connections[data-astro-cid-bsqgnqcf] p[data-astro-cid-bsqgnqcf]{margin:8px 0;font-size:.95rem;line-height:1.8}.measurement[data-astro-cid-mkkyvdjd]{margin:18px 0;border:1px solid #d5e0e8;padding:12px 16px;background:#f7fafc;border-radius:4px;min-width:0}summary[data-astro-cid-mkkyvdjd]{cursor:pointer;font-weight:600;line-height:1.7}dl[data-astro-cid-mkkyvdjd]{margin:16px 0}dl[data-astro-cid-mkkyvdjd]>div[data-astro-cid-mkkyvdjd]{margin:14px 0}dt[data-astro-cid-mkkyvdjd]{font-weight:600}dd[data-astro-cid-mkkyvdjd]{margin:5px 0 0;line-height:1.8}p[data-astro-cid-mkkyvdjd]{font-size:.84rem;line-height:1.8}a[data-astro-cid-mkkyvdjd],code[data-astro-cid-mkkyvdjd],dd[data-astro-cid-mkkyvdjd]{overflow-wrap:anywhere}
+</style></head> <body class="font-sans min-h-screen flex flex-col bg-stone-50 text-gray-800" data-astro-cid-37fxchfa> <!-- Navigation --> <header class="sticky top-0 z-50 backdrop-blur border-b bg-white/90 border-gray-200" data-astro-cid-37fxchfa> <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6" data-astro-cid-37fxchfa> <a href="/zh/" class="text-xl font-serif font-bold text-primary-800 hover:text-primary-600 transition-colors" data-astro-cid-37fxchfa>
+Ying Wen
+</a> <div class="hidden md:flex items-center gap-6" data-astro-cid-37fxchfa> <a href="/zh/" class="text-sm font-medium transition-colors text-gray-600 hover:text-primary-700" data-astro-cid-37fxchfa> 首页 </a><a href="/zh/publications/" class="text-sm font-medium transition-colors text-gray-600 hover:text-primary-700" data-astro-cid-37fxchfa> 学术论文 </a><a href="/zh/projects/" class="text-sm font-medium transition-colors text-gray-600 hover:text-primary-700" data-astro-cid-37fxchfa> 开源项目 </a><a href="/zh/teaching/" class="text-sm font-medium transition-colors text-gray-600 hover:text-primary-700" data-astro-cid-37fxchfa> 教学 </a><a href="/zh/blog/" class="text-sm font-medium transition-colors text-gray-600 hover:text-primary-700" data-astro-cid-37fxchfa> 博客 </a><a href="/zh/art/" class="text-sm font-medium transition-colors text-gray-600 hover:text-primary-700" data-astro-cid-37fxchfa> AI艺术 </a> <!-- Language switcher --> <a href="/en/teaching/" class="text-sm text-gray-500 hover:text-primary-700 transition-colors px-2 py-1 rounded border border-gray-200 hover:border-primary-300" id="lang-switch-desktop" data-target-lang="en" data-astro-cid-37fxchfa>
+🌐 EN </a> </div> <!-- Mobile menu button --> <div class="flex items-center gap-2 md:hidden" data-astro-cid-37fxchfa> <a href="/en/teaching/" class="text-sm text-gray-500 hover:text-primary-700 px-2 py-1 rounded border border-gray-200" id="lang-switch-mobile" data-target-lang="en" data-astro-cid-37fxchfa>
+🌐 EN </a> <button id="mobile-menu-btn" class="p-2 text-gray-600 hover:text-primary-700" aria-label="Menu" data-astro-cid-37fxchfa> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-37fxchfa> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" data-astro-cid-37fxchfa></path> </svg> </button> </div> </nav> <!-- Mobile menu --> <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white" data-astro-cid-37fxchfa> <div class="px-4 py-2 space-y-1" data-astro-cid-37fxchfa> <a href="/zh/" class="block py-2 text-sm text-gray-600" data-astro-cid-37fxchfa> 首页 </a><a href="/zh/publications/" class="block py-2 text-sm text-gray-600" data-astro-cid-37fxchfa> 学术论文 </a><a href="/zh/projects/" class="block py-2 text-sm text-gray-600" data-astro-cid-37fxchfa> 开源项目 </a><a href="/zh/teaching/" class="block py-2 text-sm text-gray-600" data-astro-cid-37fxchfa> 教学 </a><a href="/zh/blog/" class="block py-2 text-sm text-gray-600" data-astro-cid-37fxchfa> 博客 </a><a href="/zh/art/" class="block py-2 text-sm text-gray-600" data-astro-cid-37fxchfa> AI艺术 </a> </div> </div> </header> <!-- Main content --> <main class="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6" data-astro-cid-37fxchfa>  <div class="crl" data-astro-cid-we2hv5p6> <div class="crl-crumb" data-astro-cid-we2hv5p6><a href="/zh/teaching/" data-astro-cid-we2hv5p6>教学</a><span data-astro-cid-we2hv5p6>/</span><a href="/zh/continual-rl/" data-astro-cid-we2hv5p6>持续强化学习</a><a class="crl-repository-link" href="https://github.com/ying-wen/continual-rl-tutorial" target="_blank" rel="noopener noreferrer" data-astro-cid-we2hv5p6>GitHub 教程与代码 ↗</a></div> <nav class="crl-nav crl-primary-nav" aria-label="全站主导航" data-astro-cid-we2hv5p6><a href="/zh/continual-rl/" data-astro-cid-we2hv5p6>问题与框架</a><a href="/zh/continual-rl/start/" data-astro-cid-we2hv5p6>基础与方法</a><a href="/zh/continual-rl/research/" data-astro-cid-we2hv5p6>研究问题</a><a href="/zh/continual-rl/labs/" data-astro-cid-we2hv5p6>实验与实现</a><a href="/zh/continual-rl/library/" aria-current="true" data-astro-cid-we2hv5p6>文献与学者</a></nav> <details class="crl-section-navigation" data-section-navigation open data-astro-cid-we2hv5p6> <summary data-astro-cid-we2hv5p6>文献与学者<span data-astro-cid-we2hv5p6>切换栏目</span></summary> <p class="crl-section-purpose" data-astro-cid-we2hv5p6>按教材章节查找论文、作者实现、课程、讲座与博客；沿学者的研究脉络理解代表性贡献。每项材料提供解释、原始入口和思考问题。</p> <nav class="crl-secondary-nav" aria-label="文献与学者栏目" data-course-links data-astro-cid-we2hv5p6><a href="/zh/continual-rl/library/" data-astro-cid-we2hv5p6>资源检索</a><a href="/zh/continual-rl/people/" data-astro-cid-we2hv5p6>学者与贡献</a><a href="/zh/continual-rl/reading/advanced/" data-astro-cid-we2hv5p6>专题阅读</a><a href="/zh/continual-rl/about/" data-astro-cid-we2hv5p6>使用说明</a></nav>   </details> <div class="crl-reading-tools" data-reading-tools data-reading-enabled="true" data-astro-cid-mw5gzuyi> <aside class="rt-sidebar" data-reading-sidebar hidden data-astro-cid-mw5gzuyi> <strong class="rt-title" data-astro-cid-mw5gzuyi>本页目录</strong> <p class="rt-current" data-reading-current data-astro-cid-mw5gzuyi>阅读位置</p> <nav class="rt-toc" data-reading-nav aria-label="本页目录" data-astro-cid-mw5gzuyi><button type="button" class="rt-depth" data-reading-depth aria-expanded="false" data-astro-cid-mw5gzuyi>展开所有小节</button><ol data-reading-list data-astro-cid-mw5gzuyi></ol></nav> <button class="rt-side-top" type="button" data-reading-top-button data-astro-cid-mw5gzuyi>回到顶部 ↑</button> </aside> <div class="rt-content" data-reading-content data-astro-cid-mw5gzuyi><header class="page-heading"><span class="eyebrow">READING PATHS</span><p>新读者可先完成八课入门教程；已经掌握基本概念的读者，可沿本页路线深入阅读。</p><div class="jump-links"><a href="/zh/continual-rl/start/">循序教程</a><a href="/zh/continual-rl/research/">交互式研究地图</a><a href="/zh/continual-rl/download/previous-intro.md" download>下载 Markdown</a></div></header><article class="reading-body prose-crl" style="max-width:820px"><h1 id="持续强化学习从基础-rl-到研究入门">持续强化学习：从基础 RL 到研究入门</h1>
+<p>更新：2026-09-30。适合已读 Sutton &#x26; Barto 第二版 Part I，并了解 DQN、策略梯度或 actor–critic 的读者。</p>
+<p><strong>最短路线：5 份共同材料 → 1 个小实验 → 选择 1 个研究方向。</strong> 不需要先补完所有高级 RL，也不需要把进阶书单从头读到尾。</p>
+<p>配套：<a href="/zh/continual-rl/reading/advanced/">分方向进阶阅读与学习材料</a>。该文按十类研究问题组织论文、讲座、代码和实验入口。</p>
+<h2 id="1-先用一个例子理解-crl">1. 先用一个例子理解 CRL</h2>
+<p>设想一个送货机器人：每天都在工作，货架位置、地面摩擦和配送目标会变化；它不能每次变化都重新训练，也不能无限保存全部经验。</p>
+<p>它至少面临三个不同问题：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>问题</th><th>直观表现</th><th>需要研究什么</th></tr></thead><tbody><tr><td>遗忘</td><td>学会新路线后，不会走旧路线了</td><td>保留、回放、知识复用</td></tr><tr><td>可塑性损失</td><td>旧路线还记得，但越来越学不会新路线</td><td>长期训练后的学习能力、表示与优化</td></tr><tr><td>长期适应</td><td>不知道什么时候变化，也没有人帮它重置</td><td>在线更新、状态构造、探索、恢复与评估</td></tr></tbody></table>
+<p>因此，CRL 不只是“给 DQN 加一个防遗忘模块”。一个有用的工作性理解是：<strong>研究智能体在持续交互中，如何保留有用经验、学习新知识，并持续改进行为。</strong> 文献存在不同形式化：任务序列、非平稳 MDP，以及强调“最好的智能体也不能停止学习”的定义并不完全相同。<a href="https://arxiv.org/abs/2012.13490">综述</a>与 <a href="https://arxiv.org/abs/2307.11046">Abel 等的定义</a>应对照阅读。</p>
+<p>另外，先分清四个词：</p>
+<ul>
+<li><strong>Continuing</strong>：任务没有自然终点；环境可以完全平稳。</li>
+<li><strong>Online</strong>：边收集经验边学习；并不自动排除经验回放。</li>
+<li><strong>Streaming</strong>：本文主要指随经验到来进行增量更新、不依赖经验回放的路线；具体计算、缓存约束要看论文协议。</li>
+<li><strong>Continual</strong>：关注长期学习与适应；不自动意味着无回放、无重置或任务边界不可见。</li>
+</ul>
+<p>不要把一种研究设定当成整个领域的统一定义。</p>
+<h2 id="2-你的背景够了吗只补这些缺口">2. 你的背景够了吗？只补这些缺口</h2>
+<p>如果你能解释 Bellman 方程、TD 误差、Q-learning、DQN 的 replay/target network，以及一种 actor–critic，就可以直接开始第 3 节。</p>
+<p>Sutton &#x26; Barto 的 <a href="http://incompleteideas.net/book/the-book-2nd.html">《Reinforcement Learning: An Introduction》第二版</a>不是要重读一遍，而是按需查阅：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>遇到什么障碍</th><th>补读位置</th><th>学到什么就先停</th></tr></thead><tbody><tr><td>不理解线性 TD、semi-gradient</td><td>第 9 章函数逼近预测；需要时接第 10 章控制</td><td>能写出带特征的 TD 更新，解释目标为何也依赖参数</td></tr><tr><td>不理解 off-policy 为何不稳定</td><td>第 11 章，先看反例与 deadly triad</td><td>知道“函数逼近＋自举＋离策略”可能导致不稳定，并非必然发散</td></tr><tr><td>不理解在线时间信用分配</td><td>第 12 章 eligibility traces</td><td>能解释 trace 如何把当前 TD 误差分配给过去参与的特征</td></tr><tr><td>只熟悉 DQN、不熟悉 actor–critic</td><td>第 13 章策略梯度与 actor–critic</td><td>分清 actor、critic 的目标与更新；已有基础可跳过</td></tr><tr><td>要读长期平均回报</td><td>第 10.3–10.5 节</td><td>理解 reward rate、differential value，知道它不等于直接令折扣率为 1</td></tr></tbody></table>
+<p>这些是“遇到再补”的工具，不是开始 CRL 前必须完成的五章作业。</p>
+<h2 id="3-共同入口按顺序读这-5-份">3. 共同入口：按顺序读这 5 份</h2>
+<p>第一遍以看懂问题、核心图、方法想法和实验设定为目标。不要在第一篇的所有定义、第五篇的所有统计细节上停下来。</p>
+<h3 id="-先知道领域在研究什么">① 先知道领域在研究什么</h3>
+<p><strong>Khetarpal、Riemer、Rish、Precup — <a href="https://arxiv.org/abs/2012.13490">Towards Continual Reinforcement Learning: A Review and Perspectives</a>，JAIR 2022。</strong></p>
+<ul>
+<li><strong>为什么先读</strong>：它提供领域地图，把“哪里在变、为什么变、如何适应、怎样评估”放在同一个框架中。</li>
+<li><strong>第一遍读什么</strong>：动机、非平稳性的分类、方法分类、评估与开放问题。暂时跳过逐篇文献细节。</li>
+<li><strong>读后检查</strong>：拿一篇声称做 CRL 的论文，能否说清奖励、动力学、观测、任务目标中的什么发生了变化？变化信息是否直接告诉了智能体？</li>
+</ul>
+<p>它是建立词汇和框架的入口，不是覆盖 2026 年最新工作的综述。</p>
+<h3 id="-再看一个真正改变研究视角的现象">② 再看一个真正改变研究视角的现象</h3>
+<p><strong>Dohare 等 — <a href="https://www.nature.com/articles/s41586-024-07711-7">Loss of Plasticity in Deep Continual Learning</a>，Nature 2024。</strong></p>
+<ul>
+<li><strong>为什么读</strong>：失败不一定是“忘了过去”；网络可能在不断训练后，连新任务也越来越难学好。</li>
+<li><strong>第一遍读什么</strong>：区分遗忘与可塑性损失的实验逻辑，以及 Continual Backprop 如何替换少量低效用单元。复杂分析可留到进阶。</li>
+<li><strong>读后检查</strong>：如果要证明“学习能力下降”，你会如何比较长期训练过的网络与重新初始化的网络？如何排除新任务本身更难？</li>
+</ul>
+<p>配套：<a href="https://github.com/shibhansh/loss-of-plasticity">作者代码</a>。先看实验如何定义“新任务”和测量学习能力，不必立即跑完整规模。该结果也不等于“所有深度 RL 都必然失效”。</p>
+<h3 id="-然后问什么才叫持续学习">③ 然后问：什么才叫“持续学习”？</h3>
+<p><strong>Abel、Barreto、Van Roy、Precup、van Hasselt、Singh — <a href="https://arxiv.org/abs/2307.11046">A Definition of Continual Reinforcement Learning</a>，NeurIPS 2023。</strong></p>
+<ul>
+<li><strong>为什么读</strong>：把目标从“最终找到一个好策略”转向“最好的智能体也需要不断学习”，帮助判断论文究竟解决了什么。</li>
+<li><strong>第一遍读什么</strong>：动机、两个例子、主要定义的含义；形式化推导第二遍再读。</li>
+<li><strong>读后检查</strong>：一个一直更新参数、但实际能力不再变化的程序，是否就满足论文对持续学习的要求？固定环境与持续学习是否必然矛盾？</li>
+</ul>
+<p>这是一个有影响力的形式化视角，不应当被当作整个社区唯一认可的定义。</p>
+<h3 id="-看一条从小问题走向完整智能体的研究路线">④ 看一条从小问题走向完整智能体的研究路线</h3>
+<p><strong>Sutton、Bowling、Pilarski — <a href="https://arxiv.org/abs/2208.11173">The Alberta Plan for AI Research</a>，2022，后续修订。</strong></p>
+<ul>
+<li><strong>为什么读</strong>：理解在线预测、特征学习、状态构造、预测知识、时间抽象与规划为什么会出现在同一份 CRL 学习材料中。</li>
+<li><strong>第一遍读什么</strong>：整体研究目标与阶段之间的依赖关系，不要求掌握每个模块。</li>
+<li><strong>读后检查</strong>：选一个你感兴趣的模块，指出它从哪里接收经验、向哪个下游模块提供什么，以及长期交互会怎样改变它。</li>
+</ul>
+<p>这是研究纲领，不是一个已经完成、经全面验证的通用智能体系统，也不代表 CRL 只有这一条路线。</p>
+<h3 id="-开始做研究前先学会看实验">⑤ 开始做研究前，先学会看实验</h3>
+<p><strong>Patterson、Neumann、Martha White、Adam White — <a href="https://www.jmlr.org/papers/v25/23-0183.html">Empirical Design in Reinforcement Learning</a>，JMLR 2024。</strong></p>
+<ul>
+<li><strong>为什么读</strong>：CRL 特别容易出现“曲线更高，却不知道为什么”的结论。随机种子、调参、运行长度、指标与基线都可能改变判断。</li>
+<li><strong>第一遍读什么</strong>：性能度量、变化与不确定性、基线设计、超参数和实验者偏差。把它当研究手册，不必一次读完。</li>
+<li><strong>读后检查</strong>：仅凭最终回报更高，能否证明适应更快、遗忘更少或可塑性更好？通常不能，必须分别测量。</li>
+</ul>
+<p>喜欢视频可先看 <a href="https://deeprlcourse.github.io/guests/adam_white/">Adam White 的课程页：录像与 slides</a>，再回论文查具体方法。</p>
+<h2 id="4-第一个小实验先学会识别适应">4. 第一个小实验：先学会识别“适应”</h2>
+<p><strong>建议从非平稳 bandit 开始，而不是直接跑几十个 Atari 游戏。</strong> 这里简单的是环境，不是要研究的概念。</p>
+<ol>
+<li>设定几个臂，让最优臂在一生中的几个阶段发生切换；切换时刻不告诉算法。</li>
+<li>比较样本均值更新与常数步长更新，保持探索规则一致。</li>
+<li>同时看全程累计回报、各阶段回报，以及切换后的恢复过程。</li>
+<li>再分别改变漂移速度、步长和探索率，检查结论是否稳健。</li>
+</ol>
+<p>配套<a href="/zh/continual-rl/labs/">四个教学实验</a>，可<a href="/zh/continual-rl/download/crl_labs.py">下载脚本</a>。仅需 Python 3 标准库，输出逐 seed、分窗口 CSV。以下在下载目录运行，使用新的结果文件名：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">python3</span><span style="color:#9ECBFF"> crl_labs.py</span><span style="color:#9ECBFF"> bandit</span><span style="color:#79B8FF"> --seeds</span><span style="color:#79B8FF"> 20</span><span style="color:#79B8FF"> --steps</span><span style="color:#79B8FF"> 4000</span><span style="color:#79B8FF"> --out</span><span style="color:#9ECBFF"> bandit-first-run.csv</span></span></code></pre>
+<p>你应该理解的是：旧数据在变化后可能成为负担，学习率同时影响噪声与适应速度。<strong>这个实验不包含神经网络，不能用它证明可塑性损失，也不是完整 CRL benchmark。</strong></p>
+<h2 id="5-下一步选哪条路">5. 下一步选哪条路？</h2>
+<p>下面是选题导航，不是必须完成的课程列表。每个链接进入进阶材料中的对应章节。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>你最想回答的问题</th><th>路线</th><th>建议起点</th></tr></thead><tbody><tr><td>怎么兼顾旧知识和新学习？</td><td><a href="/zh/continual-rl/reading/advanced/#track-1">1. 遗忘与可塑性</a></td><td>有深度学习基础，适合第一个机制实验</td></tr><tr><td>不依靠 replay 和大批量更新，怎么稳定学习？</td><td><a href="/zh/continual-rl/reading/advanced/#track-2">2. 流式学习与在线优化</a></td><td>喜欢算法更新、actor–critic 与实现</td></tr><tr><td>只看到局部观测，智能体应该记住什么？</td><td><a href="/zh/continual-rl/reading/advanced/#track-3">3. 状态构造与预测知识</a></td><td>喜欢 RNN、记忆、POMDP</td></tr><tr><td>如何自己发现并复用技能？</td><td><a href="/zh/continual-rl/reading/advanced/#track-4">4. 时间抽象与技能迁移</a></td><td>喜欢表征、探索、层次 RL</td></tr><tr><td>世界变化后，模型与规划怎样一起适应？</td><td><a href="/zh/continual-rl/reading/advanced/#track-5">5. 世界模型与规划</a></td><td>已接触 model-based RL</td></tr><tr><td>没有人安排任务时，下一步该学什么？</td><td><a href="/zh/continual-rl/reading/advanced/#track-6">6. 探索、课程与开放式学习</a></td><td>喜欢内在动机和任务生成</td></tr><tr><td>不允许随时重置，如何持续自主学习？</td><td><a href="/zh/continual-rl/reading/advanced/#track-7">7. Single-life 与 reset-free</a></td><td>面向机器人或真实系统</td></tr><tr><td>“长期做得好”该怎么形式化？</td><td><a href="/zh/continual-rl/reading/advanced/#track-8">8. 理论与长期目标</a></td><td>数学兴趣较强，愿意补概率与理论</td></tr><tr><td>能否从过去经验中学会更快适应？</td><td><a href="/zh/continual-rl/reading/advanced/#track-9">9. 元学习与快速适应</a></td><td>对双层优化和学习算法感兴趣</td></tr><tr><td>其他智能体也在变化，如何长期协作？</td><td><a href="/zh/continual-rl/reading/advanced/#track-10">10. 持续多智能体学习</a></td><td>已有或愿意补 MARL 基础</td></tr></tbody></table>
+<p>还没有偏好时，建议先选 <strong>1 或 2</strong>，做一个小而可解释的实验；对记忆和认知感兴趣则选 <strong>3</strong>。这是学习路径建议，不是方向重要性排名。</p>
+<h2 id="6-一个可执行的四周安排">6. 一个可执行的四周安排</h2>
+<p>以下按每周约 6–8 小时规划，是参考预算，不是读完即掌握的保证。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>周</th><th>阅读与实践</th><th>本周应产出的东西</th></tr></thead><tbody><tr><td>第 1 周</td><td>材料①②；必要时补函数逼近</td><td>一页“遗忘、可塑性、非平稳”的区别笔记</td></tr><tr><td>第 2 周</td><td>材料③④；做 bandit 诊断</td><td>一个清楚的问题设定和可复查的小实验</td></tr><tr><td>第 3 周</td><td>材料⑤；选一条进阶路线，读其前两项</td><td>两篇工作的机制、假设和评价差异表</td></tr><tr><td>第 4 周</td><td>阅读所选方法的代码，完成最小复现或对照</td><td>一张带不确定性说明的图，以及一页局限与下一步</td></tr></tbody></table>
+<p>时间紧时，先完成前两周即可。做论文级研究则应继续读所选方向的后续工作，而不是横向把所有方向都浅看一遍。</p>
+<h2 id="7-每篇论文只记这六件事">7. 每篇论文只记这六件事</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>1. 问题：智能体的一生中，究竟什么在变化？</span></span>
+<span class="line"><span>2. 权限：知道任务 ID / 边界吗？允许重置、回放、离线预训练吗？</span></span>
+<span class="line"><span>3. 机制：相对基线，哪一个更新、表示或决策环节改变了？</span></span>
+<span class="line"><span>4. 证据：哪一个实验支持核心主张？有没有同预算对照？</span></span>
+<span class="line"><span>5. 边界：结果是否只适用于某些任务、运行长度或信息条件？</span></span>
+<span class="line"><span>6. 下一问：去掉一个理想化假设后，会发生什么？</span></span></code></pre>
+<p>做到这一步，你就不只是知道若干论文名字，而是在建立自己的研究判断。</p>
+<hr>
+<h3 id="延伸阅读">延伸阅读</h3>
+<p>可沿<a href="/zh/continual-rl/research/">研究地图</a>选择一个方向深入。</p></article></div> <div class="rt-floating" data-reading-floating hidden role="group" aria-label="阅读工具" data-astro-cid-mw5gzuyi> <button type="button" data-reading-open hidden aria-haspopup="dialog" aria-expanded="false" data-astro-cid-mw5gzuyi>目录</button> <button type="button" data-reading-top-button aria-label="回到页面顶部" data-astro-cid-mw5gzuyi>顶部 ↑</button> </div> <dialog class="rt-dialog" data-reading-dialog aria-label="本页目录" data-astro-cid-mw5gzuyi> <header data-astro-cid-mw5gzuyi><strong data-astro-cid-mw5gzuyi>本页目录</strong><button type="button" data-reading-close aria-label="关闭本页目录" data-astro-cid-mw5gzuyi>关闭 ×</button></header> <div data-reading-dialog-body data-astro-cid-mw5gzuyi></div> </dialog> </div> <script type="module" src="/_astro/ReadingTools.astro_astro_type_script_index_0_lang.GGjUsQMJ.js"></script>  <footer class="crl-footer" data-astro-cid-we2hv5p6><span data-astro-cid-we2hv5p6>持续强化学习 · 从基础到研究</span><div data-astro-cid-we2hv5p6><a href="https://github.com/ying-wen/continual-rl-tutorial" data-astro-cid-we2hv5p6>GitHub 教程与代码 ↗</a><a href="/zh/continual-rl/download/research-atlas.md" download data-astro-cid-we2hv5p6>下载配套 Markdown</a><a href="/zh/continual-rl/start/" data-astro-cid-we2hv5p6>三册教材</a><a href="/zh/continual-rl/about/" data-astro-cid-we2hv5p6>使用说明</a></div></footer> <script type="module">const s="crl-code-mode";function l(c){const e=c!=="single";document.querySelectorAll(".run-command").forEach(t=>{const o=t.querySelector("pre code"),a=t.querySelector("[data-command-context]");o&&(o.textContent=(e?t.dataset.repoCommand:t.dataset.singleCommand)||""),a&&(a.textContent=e?"在 continual-rl-tutorial 仓库根目录运行。":"在下载的 Python 脚本所在文件夹运行。"),t.querySelectorAll("[data-command-mode]").forEach(r=>r.setAttribute("aria-pressed",String(r.dataset.commandMode===(e?"repo":"single"))));const n=t.querySelector(".copy-status");n&&(n.textContent="")})}function i(){document.querySelectorAll("[data-deep-copy]").forEach(e=>{e.dataset.copyReady||(e.dataset.copyReady="true",e.addEventListener("click",async()=>{const t=e.parentElement?.querySelector("[data-deep-copy-status]");try{await navigator.clipboard.writeText(e.dataset.deepCopy||""),t&&(t.textContent=" 已复制")}catch{t&&(t.textContent=" 请直接选中上方命令复制")}}))});let c="repo";try{c=localStorage.getItem(s)||c}catch{}l(c),document.querySelectorAll(".run-command").forEach(e=>{e.dataset.initialized||(e.dataset.initialized="true",e.querySelectorAll("[data-command-mode]").forEach(t=>{t.addEventListener("click",()=>{const o=t.dataset.commandMode||"repo";l(o);try{localStorage.setItem(s,o)}catch{}})}))}),document.querySelectorAll(".crl pre").forEach(e=>{const t=e.querySelector("code");if(!t||e.dataset.copyReady||e.closest(".complete-download")||e.closest("section")?.querySelector("[data-command]")||!/^(python3 |git clone )/m.test(t.textContent||""))return;e.dataset.copyReady="true";const o=document.createElement("div");o.className="code-tools";const a=document.createElement("span");a.className="copy-status",a.setAttribute("role","status");const n=document.createElement("button");n.type="button",n.className="copy-code",n.textContent="复制命令",n.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(t.textContent||""),a.textContent="已复制"}catch{const r=document.createRange();r.selectNodeContents(t);const d=window.getSelection();d?.removeAllRanges(),d?.addRange(r),a.textContent="已选中，请按 Ctrl+C / ⌘C 复制"}}),o.append(a,n),e.before(o)})}i();document.addEventListener("astro:page-load",i);</script> </div>  </main> <!-- Footer --> <footer class="border-t border-gray-200 bg-white" data-astro-cid-37fxchfa> <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-6 text-sm text-gray-500 sm:flex-row sm:px-6" data-astro-cid-37fxchfa> <p data-astro-cid-37fxchfa>&copy; 2026 温颖 · 上海交通大学</p> <div class="flex gap-4" data-astro-cid-37fxchfa> <a href="https://scholar.google.com/citations?user=_A1CxG8AAAAJ" class="hover:text-primary-700" target="_blank" data-astro-cid-37fxchfa>Scholar</a> <a href="https://github.com/ying-wen" class="hover:text-primary-700" target="_blank" data-astro-cid-37fxchfa>GitHub</a> <a href="mailto:ying.wen@sjtu.edu.cn" class="hover:text-primary-700" data-astro-cid-37fxchfa>Email</a> <a href="/rss.xml" class="hover:text-primary-700" data-astro-cid-37fxchfa>RSS</a> </div> </div> </footer> <script type="module">const n=document.getElementById("mobile-menu-btn"),a=document.getElementById("mobile-menu");n?.addEventListener("click",()=>a?.classList.toggle("hidden"));document.querySelectorAll("[data-target-lang]").forEach(e=>{e.addEventListener("click",()=>{const t=e.dataset.targetLang;t&&localStorage.setItem("preferred-lang",t)})});</script> <script>
+    (function () {
+      var allowedHosts = ['yingwen.io', 'www.yingwen.io'];
+      if (!allowedHosts.includes(window.location.hostname)) return;
+
+      var script = document.createElement('script');
+      script.defer = true;
+      script.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      script.setAttribute('data-cf-beacon', '{"token":"8a256810f17640a2a059322ce5b07248"}');
+      document.head.appendChild(script);
+    })();
+  </script>  </body> </html> <script type="module">const o=()=>{const a=matchMedia("(max-width: 600px)");document.querySelectorAll("[data-section-navigation]").forEach(e=>{if(e.dataset.ready)return;e.dataset.ready="true",e.open=!a.matches;const n=()=>{e.open=!a.matches};a.addEventListener("change",n),document.addEventListener("astro:before-swap",()=>a.removeEventListener("change",n),{once:!0})})};o();document.addEventListener("astro:page-load",o);const r=()=>{document.querySelectorAll("[data-course-links]").forEach(a=>{const e=Array.from(a.querySelectorAll("a")),c=location.hash&&e.find(t=>t.pathname===location.pathname&&t.hash===location.hash)||e.find(t=>t.dataset.routeCurrent==="true");e.forEach(t=>t===c?t.setAttribute("aria-current","page"):t.removeAttribute("aria-current"))})};r();window.addEventListener("hashchange",r);document.addEventListener("astro:page-load",r);</script>  <script type="module">const a=()=>{let e;try{e=decodeURIComponent(location.hash.slice(1))}catch{return}const r=e?document.getElementById(e):null;if(!r)return;let t=r;for(;t;)t instanceof HTMLDetailsElement&&(t.open=!0),t=t.parentElement;requestAnimationFrame(()=>r.scrollIntoView({block:"start"}))};window.addEventListener("hashchange",a);a();const o="yingwen-crl-progress-v1";let n={};try{n=JSON.parse(localStorage.getItem(o)||"{}")}catch{}const c=()=>{const e=document.querySelector("#progress-summary");e&&(e.textContent=`已标记 ${Object.values(n).filter(Boolean).length} / 8 课 · 仅保存在当前浏览器`)};document.querySelectorAll("input[data-unit]").forEach(e=>{e.checked=!!n[e.dataset.unit],e.addEventListener("change",()=>{n[e.dataset.unit]=e.checked;try{localStorage.setItem(o,JSON.stringify(n))}catch{}c()})});c();</script>

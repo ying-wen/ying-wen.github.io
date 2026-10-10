@@ -1,0 +1,209 @@
+{
+  "kind": "schematic",
+  "measured_traces": 0,
+  "computed_pci": false,
+  "sources": {
+    "rivalry": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6827584/",
+    "pci": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5132045/"
+  },
+  "rivalry": {
+    "participants": 20,
+    "eye_video_hz": 60,
+    "trial_seconds": 60.9,
+    "repeats_per_type": 4,
+    "trial_order": [
+      "active-rivalry",
+      "active-replay",
+      "passive-rivalry",
+      "passive-replay"
+    ],
+    "replay_timing_from": "preceding-active-rivalry-buttons",
+    "stimulus_types": [
+      "moving-gratings-OKN",
+      "stationary-luminance-gratings-pupil"
+    ],
+    "okn": {
+      "smooth_ms": 500,
+      "threshold_pixels_per_second": 12,
+      "min_event_interval_ms": 400
+    },
+    "pupil": {
+      "smooth_ms": 167,
+      "trend_ms": 4167,
+      "threshold_sd": 0.3,
+      "min_event_interval_ms": 400
+    },
+    "calibration": {
+      "latency_selected_on_same_data": true,
+      "latency_search_seconds": [
+        0,
+        2
+      ],
+      "agreement_percent": {
+        "okn": 82,
+        "pupil": 59
+      }
+    },
+    "contrast": "(B_active_rivalry-B_active_replay)-(B_passive_rivalry-B_passive_replay)",
+    "preregistration_claim": false,
+    "illustrative_samples": {
+      "rivalry_left": [
+        "red",
+        "red",
+        "red"
+      ],
+      "rivalry_right": [
+        "green",
+        "green",
+        "green"
+      ],
+      "replay_both": [
+        "red",
+        "green",
+        "red"
+      ],
+      "equal_duration": false
+    }
+  },
+  "pci": {
+    "eeg_channels": 60,
+    "eog_sensors": 2,
+    "masking_noise": true,
+    "trials_recorded_per_site_at_least": 200,
+    "exclude_if_good_trials_below": 80,
+    "exclude_if_bad_channels_above": 10,
+    "pipeline": [
+      "reject-bad-trials-and-channels",
+      "ICA",
+      "filter-and-downsample",
+      "cortical-source-estimation",
+      "source-significance",
+      "Lempel-Ziv-normalized-by-source-entropy"
+    ],
+    "zero_if_significant_cell_fraction_below": 0.01,
+    "individual_rule": "maximum-over-available-sites",
+    "benchmark_people": 150,
+    "benchmark_healthy": 102,
+    "benchmark_communicative_injured": 48,
+    "benchmark_includes_repeated_states": true,
+    "cutoff": 0.31,
+    "cutoff_selected_in": "benchmark-ROC",
+    "positive_rule": "PCI_max > 0.31",
+    "target_cohort_independent_of_cutoff_selection": true,
+    "patient_crsr_assessments": 4,
+    "sedation_withdrawn_days_at_least": 3,
+    "reported_counts": {
+      "mcs_total": 38,
+      "mcs_above_cutoff": 36,
+      "vs_total": 43,
+      "vs_zero": 13,
+      "vs_nonzero_at_or_below_cutoff": 21,
+      "vs_above_cutoff": 9
+    },
+    "target_vs_specificity_known": false,
+    "preregistration_claim": false,
+    "illustrative_matrices": {
+      "repeated": [
+        [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "differentiated": [
+        [
+          1,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "axis_unit": "schematic source and time bin; not acquired data"
+    }
+  }
+}

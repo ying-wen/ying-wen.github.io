@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+  <title id="title">替换思想实验固定了什么，又留下什么争议</title>
+  <desc id="desc">思想实验把生物部件逐步替换为硅部件，并保持细粒度因果组织、反事实反应和相应状态。内部判断、记忆及报告因此固定，体验是否改变则是待论证问题，不是测得的结果。</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10" fill="#52647b"/></marker></defs>
+  <rect width="960" height="640" rx="18" fill="#f8fafc"/>
+  <g font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" fill="#172c45">
+    <text x="36" y="47" font-size="27" font-weight="700">逐步替换：固定因果组织，追问体验</text>
+    <text x="36" y="79" font-size="18" fill="#52647b">Chalmers（1995）的思想实验 · 机制示意，非原论文数据</text>
+    <rect x="35" y="112" width="890" height="58" rx="10" fill="#e4edf7"/>
+    <text x="480" y="149" text-anchor="middle" font-size="22">固定：内部因果转换 + 反事实反应 + 对应的当前状态</text>
+    <g text-anchor="middle" font-size="23" font-weight="700">
+      <text x="175" y="220">生物实现</text><text x="480" y="220">混合实现</text><text x="785" y="220">硅实现</text>
+    </g>
+    <g fill="#6d94bd" stroke="#315a83" stroke-width="2">
+      <circle cx="120" cy="265" r="17"/><circle cx="230" cy="265" r="17"/><circle cx="175" cy="333" r="17"/>
+      <circle cx="425" cy="265" r="17"/>
+    </g>
+    <g fill="#e4b574" stroke="#9b612d" stroke-width="2">
+      <rect x="518" y="248" width="34" height="34" rx="4"/><rect x="463" y="316" width="34" height="34" rx="4"/>
+      <rect x="713" y="248" width="34" height="34" rx="4"/><rect x="823" y="248" width="34" height="34" rx="4"/><rect x="768" y="316" width="34" height="34" rx="4"/>
+    </g>
+    <g stroke="#52647b" stroke-width="2" fill="none" marker-end="url(#arrow)">
+      <path d="M139 265H209"/><path d="M221 283L185 313"/><path d="M165 316L129 283"/>
+      <path d="M444 265H514"/><path d="M526 284L490 312"/><path d="M470 312L434 283"/>
+      <path d="M751 265H819"/><path d="M831 286L795 312"/><path d="M774 312L739 286"/>
+      <path d="M265 293H372" stroke-dasharray="5 4"/><path d="M568 293H675" stroke-dasharray="5 4"/>
+    </g>
+    <text x="322" y="274" text-anchor="middle" font-size="18" fill="#52647b">替换</text><text x="622" y="274" text-anchor="middle" font-size="18" fill="#52647b">替换</text>
+    <path d="M70 380H890" stroke="#bcc8d6"/>
+    <text x="38" y="423" font-size="21" font-weight="700">认知与报告</text>
+    <text x="294" y="423" font-size="21">按设定保持相应的判断、记忆和行为倾向</text>
+    <text x="38" y="477" font-size="21" font-weight="700" fill="#945c29">体验是否相同？</text>
+    <text x="294" y="477" font-size="21" fill="#945c29">待论证 · 图中没有可直接测得的体验读数</text>
+    <rect x="35" y="516" width="890" height="89" rx="10" fill="#fff0de"/>
+    <text x="480" y="551" text-anchor="middle" font-size="20">若体验显著变化，但一切功能不变，主体能否注意到变化？</text>
+    <text x="480" y="583" text-anchor="middle" font-size="18" fill="#7b4b24">争议在体验与判断的关系；“输出相同”本身不是结论。</text>
+  </g>
+</svg>

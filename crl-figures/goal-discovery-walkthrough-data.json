@@ -1,0 +1,588 @@
+{
+  "gamma": 0.9,
+  "initial": {
+    "rows": {
+      "S:upper": {
+        "s": "S",
+        "a": "upper",
+        "next": "A",
+        "reward": 0,
+        "terminal": false,
+        "actions": [
+          "upper",
+          "lower"
+        ],
+        "nextActions": [
+          "exit",
+          "probe"
+        ]
+      },
+      "A:exit": {
+        "s": "A",
+        "a": "exit",
+        "next": "X",
+        "reward": 1,
+        "terminal": true,
+        "actions": [
+          "exit",
+          "probe"
+        ],
+        "nextActions": []
+      },
+      "S:lower": {
+        "s": "S",
+        "a": "lower",
+        "next": "B",
+        "reward": 0,
+        "terminal": false,
+        "actions": [
+          "upper",
+          "lower"
+        ],
+        "nextActions": [
+          "forward"
+        ]
+      },
+      "B:forward": {
+        "s": "B",
+        "a": "forward",
+        "next": "C",
+        "reward": 0,
+        "terminal": false,
+        "actions": [
+          "forward"
+        ],
+        "nextActions": [
+          "exit",
+          "probe"
+        ]
+      },
+      "C:exit": {
+        "s": "C",
+        "a": "exit",
+        "next": "X",
+        "reward": 1,
+        "terminal": true,
+        "actions": [
+          "exit",
+          "probe"
+        ],
+        "nextActions": []
+      }
+    },
+    "counts": {
+      "S:upper": 1,
+      "A:exit": 1,
+      "S:lower": 1,
+      "B:forward": 1,
+      "C:exit": 1
+    },
+    "actions": {
+      "S": [
+        "upper",
+        "lower"
+      ],
+      "A": [
+        "exit",
+        "probe"
+      ],
+      "X": [],
+      "B": [
+        "forward"
+      ],
+      "C": [
+        "exit",
+        "probe"
+      ]
+    },
+    "terminal": [
+      "X"
+    ],
+    "observations": 5
+  },
+  "before": {
+    "values": {
+      "S": 0.9,
+      "A": 1,
+      "X": 0,
+      "B": 0.9,
+      "C": 1
+    },
+    "backups": 15
+  },
+  "rounds": [
+    {
+      "candidates": [
+        {
+          "goal": "A",
+          "untried": [
+            "probe"
+          ],
+          "distance": 1,
+          "score": 0.5
+        },
+        {
+          "goal": "C",
+          "untried": [
+            "probe"
+          ],
+          "distance": 2,
+          "score": 0.3333333333333333
+        }
+      ],
+      "selected": "A",
+      "option": {
+        "goal": "A",
+        "q": {
+          "S:upper": 1,
+          "S:lower": 0,
+          "B:forward": 0,
+          "C:exit": 0
+        },
+        "policy": {
+          "S": "upper"
+        },
+        "snapshots": [
+          {
+            "S:upper": 0,
+            "S:lower": 0,
+            "B:forward": 0,
+            "C:exit": 0
+          },
+          {
+            "S:upper": 1,
+            "S:lower": 0,
+            "B:forward": 0,
+            "C:exit": 0
+          },
+          {
+            "S:upper": 1,
+            "S:lower": 0,
+            "B:forward": 0,
+            "C:exit": 0
+          }
+        ],
+        "backups": 8,
+        "stop": [
+          "A",
+          "X"
+        ],
+        "terminationLearned": false
+      },
+      "model": {
+        "goal": "A",
+        "path": [
+          "S",
+          "A"
+        ],
+        "records": [
+          "S:upper"
+        ],
+        "reward": 0,
+        "duration": 1,
+        "endpoint": "A",
+        "discount": 0.9
+      },
+      "execution": {
+        "path": [
+          "S",
+          "A",
+          "Y"
+        ],
+        "rows": [
+          {
+            "s": "S",
+            "a": "upper",
+            "next": "A",
+            "reward": 0,
+            "terminal": false,
+            "actions": [
+              "upper",
+              "lower"
+            ],
+            "nextActions": [
+              "exit",
+              "probe"
+            ]
+          },
+          {
+            "s": "A",
+            "a": "probe",
+            "next": "Y",
+            "reward": 0,
+            "terminal": true,
+            "actions": [
+              "exit",
+              "probe"
+            ],
+            "nextActions": []
+          }
+        ],
+        "externalReturn": 0,
+        "steps": 2
+      },
+      "afterCandidates": [
+        {
+          "goal": "C",
+          "untried": [
+            "probe"
+          ],
+          "distance": 2,
+          "score": 0.3333333333333333
+        }
+      ],
+      "observedRows": 6,
+      "externalValues": {
+        "values": {
+          "S": 0.9,
+          "A": 1,
+          "X": 0,
+          "B": 0.9,
+          "C": 1,
+          "Y": 0
+        },
+        "backups": 18
+      }
+    },
+    {
+      "candidates": [
+        {
+          "goal": "C",
+          "untried": [
+            "probe"
+          ],
+          "distance": 2,
+          "score": 0.3333333333333333
+        }
+      ],
+      "selected": "C",
+      "option": {
+        "goal": "C",
+        "q": {
+          "S:upper": 0,
+          "A:exit": 0,
+          "S:lower": 0.9,
+          "B:forward": 1,
+          "A:probe": 0
+        },
+        "policy": {
+          "S": "lower",
+          "B": "forward"
+        },
+        "snapshots": [
+          {
+            "S:upper": 0,
+            "A:exit": 0,
+            "S:lower": 0,
+            "B:forward": 0,
+            "A:probe": 0
+          },
+          {
+            "S:upper": 0,
+            "A:exit": 0,
+            "S:lower": 0,
+            "B:forward": 1,
+            "A:probe": 0
+          },
+          {
+            "S:upper": 0,
+            "A:exit": 0,
+            "S:lower": 0.9,
+            "B:forward": 1,
+            "A:probe": 0
+          },
+          {
+            "S:upper": 0,
+            "A:exit": 0,
+            "S:lower": 0.9,
+            "B:forward": 1,
+            "A:probe": 0
+          }
+        ],
+        "backups": 15,
+        "stop": [
+          "C",
+          "X",
+          "Y"
+        ],
+        "terminationLearned": false
+      },
+      "model": {
+        "goal": "C",
+        "path": [
+          "S",
+          "B",
+          "C"
+        ],
+        "records": [
+          "S:lower",
+          "B:forward"
+        ],
+        "reward": 0,
+        "duration": 2,
+        "endpoint": "C",
+        "discount": 0.81
+      },
+      "execution": {
+        "path": [
+          "S",
+          "B",
+          "C",
+          "Y"
+        ],
+        "rows": [
+          {
+            "s": "S",
+            "a": "lower",
+            "next": "B",
+            "reward": 0,
+            "terminal": false,
+            "actions": [
+              "upper",
+              "lower"
+            ],
+            "nextActions": [
+              "forward"
+            ]
+          },
+          {
+            "s": "B",
+            "a": "forward",
+            "next": "C",
+            "reward": 0,
+            "terminal": false,
+            "actions": [
+              "forward"
+            ],
+            "nextActions": [
+              "exit",
+              "probe"
+            ]
+          },
+          {
+            "s": "C",
+            "a": "probe",
+            "next": "Y",
+            "reward": 2,
+            "terminal": true,
+            "actions": [
+              "exit",
+              "probe"
+            ],
+            "nextActions": []
+          }
+        ],
+        "externalReturn": 1.62,
+        "steps": 3
+      },
+      "afterCandidates": [],
+      "observedRows": 7,
+      "externalValues": {
+        "values": {
+          "S": 1.62,
+          "A": 1,
+          "X": 0,
+          "B": 1.8,
+          "C": 2,
+          "Y": 0
+        },
+        "backups": 28
+      }
+    }
+  ],
+  "after": {
+    "values": {
+      "S": 1.62,
+      "A": 1,
+      "X": 0,
+      "B": 1.8,
+      "C": 2,
+      "Y": 0
+    },
+    "backups": 28
+  },
+  "consumer": [
+    {
+      "goal": "C",
+      "path": [
+        "S",
+        "B",
+        "C"
+      ],
+      "records": [
+        "S:lower",
+        "B:forward"
+      ],
+      "reward": 0,
+      "duration": 2,
+      "endpoint": "C",
+      "discount": 0.81,
+      "value": 1.62
+    },
+    {
+      "goal": "A",
+      "path": [
+        "S",
+        "A"
+      ],
+      "records": [
+        "S:upper"
+      ],
+      "reward": 0,
+      "duration": 1,
+      "endpoint": "A",
+      "discount": 0.9,
+      "value": 0.9
+    }
+  ],
+  "deployment": {
+    "goal": "C",
+    "path": [
+      "S",
+      "B",
+      "C",
+      "Y"
+    ],
+    "externalReturn": 1.62,
+    "steps": 3
+  },
+  "finalMemory": {
+    "rows": {
+      "S:upper": {
+        "s": "S",
+        "a": "upper",
+        "next": "A",
+        "reward": 0,
+        "terminal": false,
+        "actions": [
+          "upper",
+          "lower"
+        ],
+        "nextActions": [
+          "exit",
+          "probe"
+        ]
+      },
+      "A:exit": {
+        "s": "A",
+        "a": "exit",
+        "next": "X",
+        "reward": 1,
+        "terminal": true,
+        "actions": [
+          "exit",
+          "probe"
+        ],
+        "nextActions": []
+      },
+      "S:lower": {
+        "s": "S",
+        "a": "lower",
+        "next": "B",
+        "reward": 0,
+        "terminal": false,
+        "actions": [
+          "upper",
+          "lower"
+        ],
+        "nextActions": [
+          "forward"
+        ]
+      },
+      "B:forward": {
+        "s": "B",
+        "a": "forward",
+        "next": "C",
+        "reward": 0,
+        "terminal": false,
+        "actions": [
+          "forward"
+        ],
+        "nextActions": [
+          "exit",
+          "probe"
+        ]
+      },
+      "C:exit": {
+        "s": "C",
+        "a": "exit",
+        "next": "X",
+        "reward": 1,
+        "terminal": true,
+        "actions": [
+          "exit",
+          "probe"
+        ],
+        "nextActions": []
+      },
+      "A:probe": {
+        "s": "A",
+        "a": "probe",
+        "next": "Y",
+        "reward": 0,
+        "terminal": true,
+        "actions": [
+          "exit",
+          "probe"
+        ],
+        "nextActions": []
+      },
+      "C:probe": {
+        "s": "C",
+        "a": "probe",
+        "next": "Y",
+        "reward": 2,
+        "terminal": true,
+        "actions": [
+          "exit",
+          "probe"
+        ],
+        "nextActions": []
+      }
+    },
+    "counts": {
+      "S:upper": 2,
+      "A:exit": 1,
+      "S:lower": 3,
+      "B:forward": 3,
+      "C:exit": 1,
+      "A:probe": 1,
+      "C:probe": 2
+    },
+    "actions": {
+      "S": [
+        "upper",
+        "lower"
+      ],
+      "A": [
+        "exit",
+        "probe"
+      ],
+      "X": [],
+      "B": [
+        "forward"
+      ],
+      "C": [
+        "exit",
+        "probe"
+      ],
+      "Y": []
+    },
+    "terminal": [
+      "X",
+      "Y"
+    ],
+    "observations": 13
+  },
+  "budget": {
+    "seedSteps": 5,
+    "explorationSteps": 5,
+    "deploymentSteps": 3,
+    "episodes": 5,
+    "resets": 4,
+    "uniqueRows": 7,
+    "optionCount": 2,
+    "goalBackups": 23
+  },
+  "claim": "Exact deterministic mechanism with given features, action affordances, first-hit family and exploration budget; no general efficacy claim."
+}

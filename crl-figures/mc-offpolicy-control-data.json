@@ -1,0 +1,1864 @@
+{
+  "kind": "exact_finite_offpolicy_control",
+  "task": {
+    "gamma": 0.5,
+    "epsilon": 0.2,
+    "rewards": [
+      [
+        2,
+        0
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    "tie_action": "B"
+  },
+  "assigned_episodes": [
+    {
+      "episode": 1,
+      "path": "BA",
+      "states": [
+        0,
+        1
+      ],
+      "actions": [
+        1,
+        0
+      ],
+      "rewards": [
+        0,
+        4
+      ],
+      "behavior": [
+        [
+          0.1,
+          0.9
+        ],
+        [
+          0.1,
+          0.9
+        ]
+      ],
+      "logged_probabilities": [
+        0.9,
+        0.1
+      ],
+      "probability": 0.09000000000000001,
+      "terminated": true,
+      "cutoff": false,
+      "uniforms": [
+        0.5,
+        0.05
+      ],
+      "q_before": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "c_before": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "target_before": [
+        1,
+        1
+      ],
+      "exact_before": {
+        "target": 0,
+        "behavior": 0.4,
+        "current_target_q": [
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ]
+      },
+      "q": [
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "c": [
+        [
+          0,
+          10
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "target": [
+        1,
+        0
+      ],
+      "trace": [
+        {
+          "t": 1,
+          "state": 1,
+          "action": 0,
+          "reward": 4,
+          "return": 4,
+          "weight": 1,
+          "logged_probability": 0.1,
+          "before": {
+            "q": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "c": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "target": [
+              1,
+              1
+            ]
+          },
+          "q_after": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "c_after": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "target_after": [
+            1,
+            0
+          ],
+          "break": false,
+          "next_weight": 10
+        },
+        {
+          "t": 0,
+          "state": 0,
+          "action": 1,
+          "reward": 0,
+          "return": 2,
+          "weight": 10,
+          "logged_probability": 0.9,
+          "before": {
+            "q": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                0
+              ]
+            ],
+            "c": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "target": [
+              1,
+              0
+            ]
+          },
+          "q_after": [
+            [
+              0,
+              2
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "c_after": [
+            [
+              0,
+              10
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "target_after": [
+            1,
+            0
+          ],
+          "break": false,
+          "next_weight": 11.11111111111111
+        }
+      ],
+      "break_time": null,
+      "skipped_times": [],
+      "behavior_after": [
+        [
+          0.1,
+          0.9
+        ],
+        [
+          0.9,
+          0.1
+        ]
+      ],
+      "exact_after": {
+        "target": 2,
+        "behavior": 2,
+        "current_target_q": [
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "episode": 2,
+      "path": "AB",
+      "states": [
+        0,
+        1
+      ],
+      "actions": [
+        0,
+        1
+      ],
+      "rewards": [
+        2,
+        0
+      ],
+      "behavior": [
+        [
+          0.1,
+          0.9
+        ],
+        [
+          0.9,
+          0.1
+        ]
+      ],
+      "logged_probabilities": [
+        0.1,
+        0.1
+      ],
+      "probability": 0.010000000000000002,
+      "terminated": true,
+      "cutoff": false,
+      "uniforms": [
+        0.05,
+        0.95
+      ],
+      "q_before": [
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "c_before": [
+        [
+          0,
+          10
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "target_before": [
+        1,
+        0
+      ],
+      "exact_before": {
+        "target": 2,
+        "behavior": 2,
+        "current_target_q": [
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            0
+          ]
+        ]
+      },
+      "q": [
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "c": [
+        [
+          0,
+          10
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "target": [
+        1,
+        0
+      ],
+      "trace": [
+        {
+          "t": 1,
+          "state": 1,
+          "action": 1,
+          "reward": 0,
+          "return": 0,
+          "weight": 1,
+          "logged_probability": 0.1,
+          "before": {
+            "q": [
+              [
+                0,
+                2
+              ],
+              [
+                4,
+                0
+              ]
+            ],
+            "c": [
+              [
+                0,
+                10
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "target": [
+              1,
+              0
+            ]
+          },
+          "q_after": [
+            [
+              0,
+              2
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "c_after": [
+            [
+              0,
+              10
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "target_after": [
+            1,
+            0
+          ],
+          "break": true,
+          "next_weight": 0
+        }
+      ],
+      "break_time": 1,
+      "skipped_times": [
+        0
+      ],
+      "behavior_after": [
+        [
+          0.1,
+          0.9
+        ],
+        [
+          0.9,
+          0.1
+        ]
+      ],
+      "exact_after": {
+        "target": 2,
+        "behavior": 2,
+        "current_target_q": [
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "episode": 3,
+      "path": "AA",
+      "states": [
+        0,
+        1
+      ],
+      "actions": [
+        0,
+        0
+      ],
+      "rewards": [
+        2,
+        4
+      ],
+      "behavior": [
+        [
+          0.1,
+          0.9
+        ],
+        [
+          0.9,
+          0.1
+        ]
+      ],
+      "logged_probabilities": [
+        0.1,
+        0.9
+      ],
+      "probability": 0.09000000000000001,
+      "terminated": true,
+      "cutoff": false,
+      "uniforms": [
+        0.05,
+        0.5
+      ],
+      "q_before": [
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "c_before": [
+        [
+          0,
+          10
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "target_before": [
+        1,
+        0
+      ],
+      "exact_before": {
+        "target": 2,
+        "behavior": 2,
+        "current_target_q": [
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            0
+          ]
+        ]
+      },
+      "q": [
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "c": [
+        [
+          1.1111111111111112,
+          10
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "target": [
+        0,
+        0
+      ],
+      "trace": [
+        {
+          "t": 1,
+          "state": 1,
+          "action": 0,
+          "reward": 4,
+          "return": 4,
+          "weight": 1,
+          "logged_probability": 0.9,
+          "before": {
+            "q": [
+              [
+                0,
+                2
+              ],
+              [
+                4,
+                0
+              ]
+            ],
+            "c": [
+              [
+                0,
+                10
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "target": [
+              1,
+              0
+            ]
+          },
+          "q_after": [
+            [
+              0,
+              2
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "c_after": [
+            [
+              0,
+              10
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "target_after": [
+            1,
+            0
+          ],
+          "break": false,
+          "next_weight": 1.1111111111111112
+        },
+        {
+          "t": 0,
+          "state": 0,
+          "action": 0,
+          "reward": 2,
+          "return": 4,
+          "weight": 1.1111111111111112,
+          "logged_probability": 0.1,
+          "before": {
+            "q": [
+              [
+                0,
+                2
+              ],
+              [
+                4,
+                0
+              ]
+            ],
+            "c": [
+              [
+                0,
+                10
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "target": [
+              1,
+              0
+            ]
+          },
+          "q_after": [
+            [
+              4,
+              2
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "c_after": [
+            [
+              1.1111111111111112,
+              10
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "target_after": [
+            0,
+            0
+          ],
+          "break": false,
+          "next_weight": 11.11111111111111
+        }
+      ],
+      "break_time": null,
+      "skipped_times": [],
+      "behavior_after": [
+        [
+          0.9,
+          0.1
+        ],
+        [
+          0.9,
+          0.1
+        ]
+      ],
+      "exact_after": {
+        "target": 4,
+        "behavior": 3.6,
+        "current_target_q": [
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            0
+          ]
+        ]
+      }
+    }
+  ],
+  "adaptive_enumerations": [
+    {
+      "episodes": 1,
+      "branches": [
+        {
+          "paths": [
+            "AA"
+          ],
+          "probability": 0.010000000000000002,
+          "q": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "c": [
+            [
+              10,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "target": [
+            0,
+            0
+          ],
+          "exact": {
+            "target": 4,
+            "behavior": 3.6,
+            "current_target_q": [
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "paths": [
+            "AB"
+          ],
+          "probability": 0.09000000000000001,
+          "q": [
+            [
+              2,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "c": [
+            [
+              1.1111111111111112,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "target": [
+            0,
+            1
+          ],
+          "exact": {
+            "target": 2,
+            "behavior": 2,
+            "current_target_q": [
+              [
+                2,
+                0
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "paths": [
+            "BA"
+          ],
+          "probability": 0.09000000000000001,
+          "q": [
+            [
+              0,
+              2
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "c": [
+            [
+              0,
+              10
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "target": [
+            1,
+            0
+          ],
+          "exact": {
+            "target": 2,
+            "behavior": 2,
+            "current_target_q": [
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "paths": [
+            "BB"
+          ],
+          "probability": 0.81,
+          "q": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "c": [
+            [
+              0,
+              1.1111111111111112
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "target": [
+            1,
+            1
+          ],
+          "exact": {
+            "target": 0,
+            "behavior": 0.4,
+            "current_target_q": [
+              [
+                2,
+                0
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        }
+      ],
+      "probability_sum": 1,
+      "expected_target_value": 0.4,
+      "expected_behavior_value": 0.7200000000000001,
+      "target_value_distribution": [
+        {
+          "value": 0,
+          "probability": 0.81
+        },
+        {
+          "value": 2,
+          "probability": 0.18000000000000002
+        },
+        {
+          "value": 4,
+          "probability": 0.010000000000000002
+        }
+      ]
+    },
+    {
+      "episodes": 2,
+      "branches": [
+        {
+          "paths": [
+            "AA",
+            "AA"
+          ],
+          "probability": 0.008100000000000001,
+          "q": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "c": [
+            [
+              11.11111111111111,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "target": [
+            0,
+            0
+          ],
+          "exact": {
+            "target": 4,
+            "behavior": 3.6,
+            "current_target_q": [
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "paths": [
+            "AA",
+            "AB"
+          ],
+          "probability": 0.0009000000000000003,
+          "q": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "c": [
+            [
+              10,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "target": [
+            0,
+            0
+          ],
+          "exact": {
+            "target": 4,
+            "behavior": 3.6,
+            "current_target_q": [
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "paths": [
+            "AA",
+            "BA"
+          ],
+          "probability": 0.0009000000000000003,
+          "q": [
+            [
+              4,
+              2
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "c": [
+            [
+              10,
+              1.1111111111111112
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "target": [
+            0,
+            0
+          ],
+          "exact": {
+            "target": 4,
+            "behavior": 3.6,
+            "current_target_q": [
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "paths": [
+            "AA",
+            "BB"
+          ],
+          "probability": 0.00010000000000000005,
+          "q": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "c": [
+            [
+              10,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "target": [
+            0,
+            0
+          ],
+          "exact": {
+            "target": 4,
+            "behavior": 3.6,
+            "current_target_q": [
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "paths": [
+            "AB",
+            "AA"
+          ],
+          "probability": 0.008100000000000001,
+          "q": [
+            [
+              3.8,
+              0
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "c": [
+            [
+              11.11111111111111,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "target": [
+            0,
+            0
+          ],
+          "exact": {
+            "target": 4,
+            "behavior": 3.6,
+            "current_target_q": [
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "paths": [
+            "AB",
+            "AB"
+          ],
+          "probability": 0.0729,
+          "q": [
+            [
+              2,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "c": [
+            [
+              2.2222222222222223,
+              0
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "target": [
+            0,
+            1
+          ],
+          "exact": {
+            "target": 2,
+            "behavior": 2,
+            "current_target_q": [
+              [
+                2,
+                0
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "paths": [
+            "AB",
+            "BA"
+          ],
+          "probability": 0.0009000000000000003,
+          "q": [
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "c": [
+            [
+              1.1111111111111112,
+              10
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "target": [
+            1,
+            0
+          ],
+          "exact": {
+            "target": 2,
+            "behavior": 2,
+            "current_target_q": [
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "paths": [
+            "AB",
+            "BB"
+          ],
+          "probability": 0.008100000000000001,
+          "q": [
+            [
+              2,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "c": [
+            [
+              1.1111111111111112,
+              1.1111111111111112
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "target": [
+            0,
+            1
+          ],
+          "exact": {
+            "target": 2,
+            "behavior": 2,
+            "current_target_q": [
+              [
+                2,
+                0
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "paths": [
+            "BA",
+            "AA"
+          ],
+          "probability": 0.008100000000000001,
+          "q": [
+            [
+              4,
+              2
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "c": [
+            [
+              1.1111111111111112,
+              10
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "target": [
+            0,
+            0
+          ],
+          "exact": {
+            "target": 4,
+            "behavior": 3.6,
+            "current_target_q": [
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "paths": [
+            "BA",
+            "AB"
+          ],
+          "probability": 0.0009000000000000003,
+          "q": [
+            [
+              0,
+              2
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "c": [
+            [
+              0,
+              10
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "target": [
+            1,
+            0
+          ],
+          "exact": {
+            "target": 2,
+            "behavior": 2,
+            "current_target_q": [
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "paths": [
+            "BA",
+            "BA"
+          ],
+          "probability": 0.0729,
+          "q": [
+            [
+              0,
+              2
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "c": [
+            [
+              0,
+              11.11111111111111
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "target": [
+            1,
+            0
+          ],
+          "exact": {
+            "target": 2,
+            "behavior": 2,
+            "current_target_q": [
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "paths": [
+            "BA",
+            "BB"
+          ],
+          "probability": 0.008100000000000001,
+          "q": [
+            [
+              0,
+              2
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "c": [
+            [
+              0,
+              10
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "target": [
+            1,
+            0
+          ],
+          "exact": {
+            "target": 2,
+            "behavior": 2,
+            "current_target_q": [
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "paths": [
+            "BB",
+            "AA"
+          ],
+          "probability": 0.008100000000000001,
+          "q": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "c": [
+            [
+              10,
+              1.1111111111111112
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "target": [
+            0,
+            0
+          ],
+          "exact": {
+            "target": 4,
+            "behavior": 3.6,
+            "current_target_q": [
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "paths": [
+            "BB",
+            "AB"
+          ],
+          "probability": 0.0729,
+          "q": [
+            [
+              2,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "c": [
+            [
+              1.1111111111111112,
+              1.1111111111111112
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "target": [
+            0,
+            1
+          ],
+          "exact": {
+            "target": 2,
+            "behavior": 2,
+            "current_target_q": [
+              [
+                2,
+                0
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "paths": [
+            "BB",
+            "BA"
+          ],
+          "probability": 0.0729,
+          "q": [
+            [
+              0,
+              1.8
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "c": [
+            [
+              0,
+              11.11111111111111
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "target": [
+            1,
+            0
+          ],
+          "exact": {
+            "target": 2,
+            "behavior": 2,
+            "current_target_q": [
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "paths": [
+            "BB",
+            "BB"
+          ],
+          "probability": 0.6561000000000001,
+          "q": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "c": [
+            [
+              0,
+              2.2222222222222223
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "target": [
+            1,
+            1
+          ],
+          "exact": {
+            "target": 0,
+            "behavior": 0.4,
+            "current_target_q": [
+              [
+                2,
+                0
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        }
+      ],
+      "probability_sum": 1.0000000000000002,
+      "expected_target_value": 0.7564000000000001,
+      "expected_behavior_value": 1.0051200000000002,
+      "target_value_distribution": [
+        {
+          "value": 0,
+          "probability": 0.6561000000000001
+        },
+        {
+          "value": 2,
+          "probability": 0.30960000000000004
+        },
+        {
+          "value": 4,
+          "probability": 0.034300000000000004
+        }
+      ]
+    }
+  ],
+  "repeated_visit": {
+    "task": {
+      "gamma": 1,
+      "A_reward": 1,
+      "A_terminal_probability": 0.5,
+      "B_reward": 0,
+      "B_terminal_probability": 1,
+      "behavior_A_probability": 0.5,
+      "behavior_value": 0.6666666666666666,
+      "target_A_value": 2
+    },
+    "episode": {
+      "path": "AAA",
+      "states": [
+        0,
+        0,
+        0
+      ],
+      "actions": [
+        0,
+        0,
+        0
+      ],
+      "rewards": [
+        1,
+        1,
+        1
+      ],
+      "logged_probabilities": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "terminated": true,
+      "cutoff": false,
+      "action_uniforms": [
+        0.1,
+        0.2,
+        0.3
+      ],
+      "transition_uniforms": [
+        0.8,
+        0.7,
+        0.2
+      ],
+      "probability": 0.015625
+    },
+    "returns": [
+      3,
+      2,
+      1
+    ],
+    "first_visit_mean": 3,
+    "every_visit_mean": 2,
+    "incorrect_backward_seen_set": 1,
+    "first_visit_weighted_action_value": 3,
+    "first_visit_suffix_weight": 4,
+    "every_visit_weighted_control": {
+      "q": [
+        [
+          2.4285714285714284,
+          0
+        ]
+      ],
+      "c": [
+        [
+          7,
+          0
+        ]
+      ],
+      "target": [
+        0
+      ],
+      "trace": [
+        {
+          "t": 2,
+          "state": 0,
+          "action": 0,
+          "reward": 1,
+          "return": 1,
+          "weight": 1,
+          "logged_probability": 0.5,
+          "before": {
+            "q": [
+              [
+                0,
+                0
+              ]
+            ],
+            "c": [
+              [
+                0,
+                0
+              ]
+            ],
+            "target": [
+              1
+            ]
+          },
+          "q_after": [
+            [
+              1,
+              0
+            ]
+          ],
+          "c_after": [
+            [
+              1,
+              0
+            ]
+          ],
+          "target_after": [
+            0
+          ],
+          "break": false,
+          "next_weight": 2
+        },
+        {
+          "t": 1,
+          "state": 0,
+          "action": 0,
+          "reward": 1,
+          "return": 2,
+          "weight": 2,
+          "logged_probability": 0.5,
+          "before": {
+            "q": [
+              [
+                1,
+                0
+              ]
+            ],
+            "c": [
+              [
+                1,
+                0
+              ]
+            ],
+            "target": [
+              0
+            ]
+          },
+          "q_after": [
+            [
+              1.6666666666666665,
+              0
+            ]
+          ],
+          "c_after": [
+            [
+              3,
+              0
+            ]
+          ],
+          "target_after": [
+            0
+          ],
+          "break": false,
+          "next_weight": 4
+        },
+        {
+          "t": 0,
+          "state": 0,
+          "action": 0,
+          "reward": 1,
+          "return": 3,
+          "weight": 4,
+          "logged_probability": 0.5,
+          "before": {
+            "q": [
+              [
+                1.6666666666666665,
+                0
+              ]
+            ],
+            "c": [
+              [
+                3,
+                0
+              ]
+            ],
+            "target": [
+              0
+            ]
+          },
+          "q_after": [
+            [
+              2.4285714285714284,
+              0
+            ]
+          ],
+          "c_after": [
+            [
+              7,
+              0
+            ]
+          ],
+          "target_after": [
+            0
+          ],
+          "break": false,
+          "next_weight": 8
+        }
+      ],
+      "break_time": null,
+      "skipped_times": []
+    }
+  },
+  "limitations": {
+    "selected_paths_are_not_expected_gain": true,
+    "no_random_training": true,
+    "cutoff_rejected": true,
+    "changing_target_not_fixed_policy_unbiasedness": true
+  }
+}

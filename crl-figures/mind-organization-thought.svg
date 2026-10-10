@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="600" viewBox="0 0 920 600" role="img" aria-labelledby="title desc">
+ <title id="title">自发思维：三种研究设计与不同的解释问题</title>
+ <desc id="desc">体验采样观察走神，规划任务比较网络共同活动，直接刺激检验有限范围的因果作用。内容出现、选择加工和行动承诺不是同一过程。</desc>
+ <rect width="920" height="600" fill="#fbfcfd"/>
+ <g font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" fill="#243f53">
+  <text x="28" y="38" font-size="23">脑很忙，究竟在做什么？</text>
+  <text x="28" y="69" font-size="17">先区分研究操作，再解释默认模式网络（DMN）的作用。</text>
+  <g fill="#eef3f8" stroke="#b6c7d5"><rect x="28" y="93" width="864" height="100" rx="8"/><rect x="28" y="209" width="864" height="100" rx="8"/><rect x="28" y="325" width="864" height="112" rx="8"/></g>
+  <g font-size="20"><text x="48" y="125">体验采样</text><text x="48" y="241">任务对照</text><text x="48" y="357">直接刺激</text></g>
+  <g font-size="17"><text x="48" y="157">Christoff 2009</text><text x="48" y="273">Spreng 2010</text><text x="48" y="389">Bartoli 2024</text>
+   <text x="255" y="125">持续反应任务 → 探针：“刚才在想什么？”</text><text x="255" y="160">分析探针之前的活动；回答本身不是走神证据。</text>
+   <text x="255" y="241">伦敦塔规划 ↔ 个人未来规划</text><text x="255" y="276">都有目标；比较不同网络怎样与控制网络共同活动。</text>
+   <text x="255" y="357">DMN 位点刺激 ↔ 对照；比较两类思维任务</text><text x="255" y="390">替代用途原创性下降；走神未检出同样显著变化。</text><text x="255" y="417" font-size="15">有限位点、时序、临床样本；不等于整个 DMN 的普遍功能。</text>
+  </g>
+  <g fill="#edf6f2" stroke="#a5c6b9"><rect x="28" y="468" width="250" height="54" rx="6"/><rect x="334" y="468" width="250" height="54" rx="6"/><rect x="640" y="468" width="250" height="54" rx="6"/></g>
+  <g font-size="20"><text x="59" y="502">内容出现</text><text x="289" y="502">→</text><text x="365" y="502">选择与继续加工</text><text x="595" y="502">→</text><text x="671" y="502">行动承诺或停止</text></g>
+  <text x="28" y="558" font-size="17">功能区分不是脑区定位；相关、因果干预与人工算法效用，需要分别验证。</text>
+  <text x="28" y="584" font-size="15" fill="#526779">研究设计示意 · 非原始数据 · 箭头只表示可能的处理顺序。</text>
+ </g>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="710" viewBox="0 0 1080 710" role="img" aria-labelledby="title desc">
+  <title id="title">两种变化都能让旧方向重新出现</title>
+  <desc id="desc">左侧是原创快慢过程衰减算例，初始两过程为负0.4和正0.4，误差为零后总输出上升。右侧是固定正1与负1两份记忆，仅改变情境概率，混合预测由0.8变为负0.28。非人体数据。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#637b84"/></marker></defs>
+  <rect width="1080" height="710" rx="24" fill="#f7f5ef"/>
+  <g font-family="PingFang SC,Microsoft YaHei,sans-serif" fill="#193c4b">
+    <text x="44" y="52" font-size="29" font-weight="700">从行为曲线，不能直接读出记忆机制</text>
+    <text x="44" y="83" font-size="18" fill="#677781">原创数值算例 · 所有数值由正文假设计算 · 非被试数据或拟合</text>
+    <rect x="32" y="113" width="496" height="478" rx="18" fill="#fff" stroke="#d9e0df"/>
+    <text x="55" y="151" font-size="23" font-weight="700">A　相反贡献，以不同速度衰减</text>
+    <text x="56" y="189" font-size="19">误差固定为 0；保持率 0.5 与 0.99</text>
+    <g font-size="19" text-anchor="middle">
+      <text x="278" y="238">快过程</text><text x="390" y="238">慢过程</text>
+      <text x="91" y="284">起点</text><text x="279" y="284" fill="#a85c25">−0.4</text><text x="390" y="284" fill="#147d78">+0.4</text>
+      <text x="91" y="329">一步后</text><text x="279" y="329" fill="#a85c25">−0.2</text><text x="390" y="329" fill="#147d78">+0.396</text>
+      <text x="91" y="374">两步后</text><text x="279" y="374" fill="#a85c25">−0.1</text><text x="390" y="374" fill="#147d78">+0.392</text>
+    </g>
+    <path d="M71 403H486" stroke="#d9e0df"/>
+    <text x="56" y="442" font-size="21">总输出：</text>
+    <g font-size="23" font-weight="700" text-anchor="middle"><text x="111" y="491">0</text><text x="268" y="491">0.196</text><text x="434" y="491">0.292</text></g>
+    <g stroke="#637b84" stroke-width="2" marker-end="url(#arrow)"><path d="M144 484H204"/><path d="M320 484H375"/></g>
+    <text x="57" y="547" font-size="19" fill="#677781">输出归零时，内部量仍可能互相抵消。</text>
+    <rect x="548" y="113" width="500" height="478" rx="18" fill="#edf4f4" stroke="#d9e0df"/>
+    <text x="571" y="151" font-size="23" font-weight="700">B　内容不变，使用权重改变</text>
+    <rect x="574" y="181" width="212" height="54" rx="12" fill="#e0f1ec"/><rect x="807" y="181" width="213" height="54" rx="12" fill="#fff0dd"/>
+    <text x="680" y="215" text-anchor="middle" font-size="22">记忆 A：+1</text><text x="913" y="215" text-anchor="middle" font-size="22">记忆 B：−1</text>
+    <text x="573" y="281" font-size="20">动作前概率</text><text x="573" y="395" font-size="20">反馈后概率</text>
+    <rect x="575" y="299" width="396" height="39" rx="5" fill="#138b87"/><rect x="971" y="299" width="44" height="39" rx="5" fill="#c47736"/>
+    <text x="776" y="326" text-anchor="middle" font-size="20" fill="#fff">A：0.90</text><text x="994" y="359" text-anchor="middle" font-size="17">0.10</text>
+    <rect x="575" y="412" width="158.4" height="39" rx="5" fill="#138b87"/><rect x="733.4" y="412" width="281.6" height="39" rx="5" fill="#c47736"/>
+    <text x="654" y="439" text-anchor="middle" font-size="20" fill="#fff">A：0.36</text><text x="874" y="439" text-anchor="middle" font-size="20" fill="#fff">B：0.64</text>
+    <text x="574" y="493" font-size="23" font-weight="700">预测均值：+0.8 → −0.28</text>
+    <text x="574" y="547" font-size="19" fill="#677781">变化可以来自哪份旧知识被更多调用。</text>
+    <text x="44" y="634" font-size="22" font-weight="700">区分机制，要改变提示、反馈或记忆的保持条件。</text>
+    <text x="44" y="669" font-size="19" fill="#677781">左：受快慢运动适应模型启发。右：受潜在情境推断启发，未实现完整 COIN。</text>
+  </g>
+</svg>

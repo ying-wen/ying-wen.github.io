@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="548" viewBox="0 0 900 548" role="img" aria-labelledby="title description">
+<title id="title">极少见的长串可以贡献大部分期望</title><desc id="description">机制诊断与有限步长/采样分布核验；不是原论文性能复现，也不提供一般算法排序。 连续目标动作至少 k 次；占比（对数轴；稳态解析值）。原始数值见同目录 results.json。</desc>
+<rect width="100%" height="100%" fill="#fff"/>
+<g font-family="system-ui, -apple-system, Noto Sans CJK SC, sans-serif" fill="#233748">
+<text x="96" y="36" font-size="23" font-weight="650">极少见的长串可以贡献大部分期望</text>
+<text x="96" y="68" font-size="16">占比（对数轴；稳态解析值）</text>
+<path d="M96 98h32" fill="none" stroke="#4d5660" stroke-width="2.6" stroke-dasharray="7 5"/><text x="139" y="104" font-size="18">该事件的概率</text>
+<path d="M292 98h32" fill="none" stroke="#4d5660" stroke-width="2.6" stroke-dasharray="2 4"/><text x="335" y="104" font-size="18">该事件贡献的均值占比</text>
+<path d="M96 458H864" stroke="#e2e7eb" fill="none"/><text x="84" y="464" text-anchor="end" font-size="17">1.0e-11</text>
+<path d="M96 399.8181818181818H864" stroke="#e2e7eb" fill="none"/><text x="84" y="405.8181818181818" text-anchor="end" font-size="17">1.0e-9</text>
+<path d="M96 341.6363636363636H864" stroke="#e2e7eb" fill="none"/><text x="84" y="347.6363636363636" text-anchor="end" font-size="17">1.0e-7</text>
+<path d="M96 283.4545454545455H864" stroke="#e2e7eb" fill="none"/><text x="84" y="289.4545454545455" text-anchor="end" font-size="17">1.0e-5</text>
+<path d="M96 225.27272727272725H864" stroke="#e2e7eb" fill="none"/><text x="84" y="231.27272727272725" text-anchor="end" font-size="17">0.001</text>
+<path d="M96 167.09090909090912H864" stroke="#e2e7eb" fill="none"/><text x="84" y="173.09090909090912" text-anchor="end" font-size="17">0.1</text>
+<path d="M96 138H864" stroke="#e2e7eb" fill="none"/><text x="84" y="144" text-anchor="end" font-size="17">1</text>
+<path d="M96 458v6" stroke="#677789"/><text x="96" y="488" text-anchor="middle" font-size="17">0</text>
+<path d="M224 458v6" stroke="#677789"/><text x="224" y="488" text-anchor="middle" font-size="17">2</text>
+<path d="M352 458v6" stroke="#677789"/><text x="352" y="488" text-anchor="middle" font-size="17">4</text>
+<path d="M480 458v6" stroke="#677789"/><text x="480" y="488" text-anchor="middle" font-size="17">6</text>
+<path d="M608 458v6" stroke="#677789"/><text x="608" y="488" text-anchor="middle" font-size="17">8</text>
+<path d="M736 458v6" stroke="#677789"/><text x="736" y="488" text-anchor="middle" font-size="17">10</text>
+<path d="M864 458v6" stroke="#677789"/><text x="864" y="488" text-anchor="middle" font-size="17">12</text>
+<path d="M96 138V458H864" fill="none" stroke="#677789" stroke-width="1.2"/>
+<path d="M96.000 138.000 L160.000 162.585 L224.000 187.169 L288.000 211.754 L352.000 236.339 L416.000 260.923 L480.000 285.508 L544.000 310.093 L608.000 334.677 L672.000 359.262 L736.000 383.847 L800.000 408.431 L864.000 433.016" fill="none" stroke="#4d5660" stroke-width="2.6" stroke-linejoin="round" stroke-dasharray="7 5"/>
+<circle cx="96" cy="138" r="3.5" fill="#4d5660"/>
+<circle cx="160" cy="162.5846702549602" r="3.5" fill="#4d5660"/>
+<circle cx="224" cy="187.1693405099204" r="3.5" fill="#4d5660"/>
+<circle cx="288" cy="211.7540107648806" r="3.5" fill="#4d5660"/>
+<circle cx="352" cy="236.3386810198408" r="3.5" fill="#4d5660"/>
+<circle cx="416" cy="260.923351274801" r="3.5" fill="#4d5660"/>
+<circle cx="480" cy="285.5080215297612" r="3.5" fill="#4d5660"/>
+<circle cx="544" cy="310.0926917847214" r="3.5" fill="#4d5660"/>
+<circle cx="608" cy="334.6773620396816" r="3.5" fill="#4d5660"/>
+<circle cx="672" cy="359.2620322946418" r="3.5" fill="#4d5660"/>
+<circle cx="736" cy="383.846702549602" r="3.5" fill="#4d5660"/>
+<circle cx="800" cy="408.4313728045622" r="3.5" fill="#4d5660"/>
+<circle cx="864" cy="433.0160430595224" r="3.5" fill="#4d5660"/>
+<path d="M96.000 138.000 L160.000 138.109 L224.000 138.233 L288.000 138.360 L352.000 138.487 L416.000 138.614 L480.000 138.741 L544.000 138.868 L608.000 138.995 L672.000 139.121 L736.000 139.248 L800.000 139.375 L864.000 139.502" fill="none" stroke="#4d5660" stroke-width="2.6" stroke-linejoin="round" stroke-dasharray="2 4"/>
+<rect x="92.5" y="134.5" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="156.5" y="134.60875838718266" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="220.5" y="134.73310788499555" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="284.5" y="134.85970505991668" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="348.5" y="134.98662653082533" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="412.5" y="135.11359479677276" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="476.5" y="135.24056981523194" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="540.5" y="135.36754580807911" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="604.5" y="135.49452194153065" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="668.5" y="135.62149809527136" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="732.5" y="135.74847425193985" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="796.5" y="135.8754504090308" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="860.5" y="136.0024265661827" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<text x="480" y="523" text-anchor="middle" font-size="18">连续目标动作至少 k 次</text></g></svg>

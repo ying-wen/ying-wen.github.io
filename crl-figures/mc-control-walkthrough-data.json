@@ -1,0 +1,1297 @@
+{
+  "kind": "exact_finite_control",
+  "gamma": 0.5,
+  "epsilon": 0.2,
+  "rewards": [
+    [
+      2,
+      0
+    ],
+    [
+      4,
+      0
+    ]
+  ],
+  "initial_policy": [
+    [
+      0.5,
+      0.5
+    ],
+    [
+      0.5,
+      0.5
+    ]
+  ],
+  "initial_value": 2,
+  "assigned_episodes": [
+    {
+      "path": "AB",
+      "actions": [
+        0,
+        1
+      ],
+      "rewards": [
+        2,
+        0
+      ],
+      "returns": [
+        2,
+        0
+      ],
+      "probability": 0.25,
+      "policy": [
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ]
+      ],
+      "logged_probabilities": [
+        0.5,
+        0.5
+      ],
+      "uniforms": [
+        0.4,
+        0.8
+      ],
+      "episode": 1,
+      "q_before": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "counts_before": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "exact_before": {
+        "values": [
+          2,
+          2
+        ],
+        "q": [
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            0
+          ]
+        ]
+      },
+      "q_after": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "counts_after": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "policy_after": [
+        [
+          0.9,
+          0.1
+        ],
+        [
+          0.1,
+          0.9
+        ]
+      ],
+      "exact_after": {
+        "values": [
+          2,
+          0.4
+        ],
+        "q": [
+          [
+            2.2,
+            0.2
+          ],
+          [
+            4,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "path": "BA",
+      "actions": [
+        1,
+        0
+      ],
+      "rewards": [
+        0,
+        4
+      ],
+      "returns": [
+        2,
+        4
+      ],
+      "probability": 0.010000000000000002,
+      "policy": [
+        [
+          0.9,
+          0.1
+        ],
+        [
+          0.1,
+          0.9
+        ]
+      ],
+      "logged_probabilities": [
+        0.1,
+        0.1
+      ],
+      "uniforms": [
+        0.95,
+        0.05
+      ],
+      "episode": 2,
+      "q_before": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "counts_before": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "exact_before": {
+        "values": [
+          2,
+          0.4
+        ],
+        "q": [
+          [
+            2.2,
+            0.2
+          ],
+          [
+            4,
+            0
+          ]
+        ]
+      },
+      "q_after": [
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "counts_after": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "policy_after": [
+        [
+          0.1,
+          0.9
+        ],
+        [
+          0.9,
+          0.1
+        ]
+      ],
+      "exact_after": {
+        "values": [
+          2,
+          3.6
+        ],
+        "q": [
+          [
+            3.8,
+            1.8
+          ],
+          [
+            4,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "path": "AA",
+      "actions": [
+        0,
+        0
+      ],
+      "rewards": [
+        2,
+        4
+      ],
+      "returns": [
+        4,
+        4
+      ],
+      "probability": 0.09000000000000001,
+      "policy": [
+        [
+          0.1,
+          0.9
+        ],
+        [
+          0.9,
+          0.1
+        ]
+      ],
+      "logged_probabilities": [
+        0.1,
+        0.9
+      ],
+      "uniforms": [
+        0.05,
+        0.5
+      ],
+      "episode": 3,
+      "q_before": [
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "counts_before": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "exact_before": {
+        "values": [
+          2,
+          3.6
+        ],
+        "q": [
+          [
+            3.8,
+            1.8
+          ],
+          [
+            4,
+            0
+          ]
+        ]
+      },
+      "q_after": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "counts_after": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "policy_after": [
+        [
+          0.9,
+          0.1
+        ],
+        [
+          0.9,
+          0.1
+        ]
+      ],
+      "exact_after": {
+        "values": [
+          3.6,
+          3.6
+        ],
+        "q": [
+          [
+            3.8,
+            1.8
+          ],
+          [
+            4,
+            0
+          ]
+        ]
+      }
+    }
+  ],
+  "adaptive_enumerations": [
+    {
+      "episodes": 1,
+      "branches": [
+        {
+          "paths": [
+            "AA"
+          ],
+          "probability": 0.25,
+          "q": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "counts": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "policy": [
+            [
+              0.9,
+              0.1
+            ],
+            [
+              0.9,
+              0.1
+            ]
+          ],
+          "true_current_value": 3.6
+        },
+        {
+          "paths": [
+            "AB"
+          ],
+          "probability": 0.25,
+          "q": [
+            [
+              2,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "counts": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "policy": [
+            [
+              0.9,
+              0.1
+            ],
+            [
+              0.1,
+              0.9
+            ]
+          ],
+          "true_current_value": 2
+        },
+        {
+          "paths": [
+            "BA"
+          ],
+          "probability": 0.25,
+          "q": [
+            [
+              0,
+              2
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "counts": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "policy": [
+            [
+              0.1,
+              0.9
+            ],
+            [
+              0.9,
+              0.1
+            ]
+          ],
+          "true_current_value": 2
+        },
+        {
+          "paths": [
+            "BB"
+          ],
+          "probability": 0.25,
+          "q": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "counts": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "policy": [
+            [
+              0.1,
+              0.9
+            ],
+            [
+              0.1,
+              0.9
+            ]
+          ],
+          "true_current_value": 0.4
+        }
+      ],
+      "probability_sum": 1,
+      "expected_current_value": 2,
+      "below_initial_probability": 0.25
+    },
+    {
+      "episodes": 2,
+      "branches": [
+        {
+          "paths": [
+            "AA",
+            "AA"
+          ],
+          "probability": 0.2025,
+          "q": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "counts": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "policy": [
+            [
+              0.9,
+              0.1
+            ],
+            [
+              0.9,
+              0.1
+            ]
+          ],
+          "true_current_value": 3.6
+        },
+        {
+          "paths": [
+            "AA",
+            "AB"
+          ],
+          "probability": 0.022500000000000003,
+          "q": [
+            [
+              3,
+              0
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "counts": [
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "policy": [
+            [
+              0.9,
+              0.1
+            ],
+            [
+              0.9,
+              0.1
+            ]
+          ],
+          "true_current_value": 3.6
+        },
+        {
+          "paths": [
+            "AA",
+            "BA"
+          ],
+          "probability": 0.022500000000000003,
+          "q": [
+            [
+              4,
+              2
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "counts": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "policy": [
+            [
+              0.9,
+              0.1
+            ],
+            [
+              0.9,
+              0.1
+            ]
+          ],
+          "true_current_value": 3.6
+        },
+        {
+          "paths": [
+            "AA",
+            "BB"
+          ],
+          "probability": 0.0025000000000000005,
+          "q": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "counts": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "policy": [
+            [
+              0.9,
+              0.1
+            ],
+            [
+              0.9,
+              0.1
+            ]
+          ],
+          "true_current_value": 3.6
+        },
+        {
+          "paths": [
+            "AB",
+            "AA"
+          ],
+          "probability": 0.022500000000000003,
+          "q": [
+            [
+              3,
+              0
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "counts": [
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "policy": [
+            [
+              0.9,
+              0.1
+            ],
+            [
+              0.9,
+              0.1
+            ]
+          ],
+          "true_current_value": 3.6
+        },
+        {
+          "paths": [
+            "AB",
+            "AB"
+          ],
+          "probability": 0.2025,
+          "q": [
+            [
+              2,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "counts": [
+            [
+              2,
+              0
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "policy": [
+            [
+              0.9,
+              0.1
+            ],
+            [
+              0.1,
+              0.9
+            ]
+          ],
+          "true_current_value": 2
+        },
+        {
+          "paths": [
+            "AB",
+            "BA"
+          ],
+          "probability": 0.0025000000000000005,
+          "q": [
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "counts": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "policy": [
+            [
+              0.1,
+              0.9
+            ],
+            [
+              0.9,
+              0.1
+            ]
+          ],
+          "true_current_value": 2
+        },
+        {
+          "paths": [
+            "AB",
+            "BB"
+          ],
+          "probability": 0.022500000000000003,
+          "q": [
+            [
+              2,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "counts": [
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "policy": [
+            [
+              0.9,
+              0.1
+            ],
+            [
+              0.1,
+              0.9
+            ]
+          ],
+          "true_current_value": 2
+        },
+        {
+          "paths": [
+            "BA",
+            "AA"
+          ],
+          "probability": 0.022500000000000003,
+          "q": [
+            [
+              4,
+              2
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "counts": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "policy": [
+            [
+              0.9,
+              0.1
+            ],
+            [
+              0.9,
+              0.1
+            ]
+          ],
+          "true_current_value": 3.6
+        },
+        {
+          "paths": [
+            "BA",
+            "AB"
+          ],
+          "probability": 0.0025000000000000005,
+          "q": [
+            [
+              2,
+              2
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "counts": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "policy": [
+            [
+              0.1,
+              0.9
+            ],
+            [
+              0.9,
+              0.1
+            ]
+          ],
+          "true_current_value": 2
+        },
+        {
+          "paths": [
+            "BA",
+            "BA"
+          ],
+          "probability": 0.2025,
+          "q": [
+            [
+              0,
+              2
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "counts": [
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "policy": [
+            [
+              0.1,
+              0.9
+            ],
+            [
+              0.9,
+              0.1
+            ]
+          ],
+          "true_current_value": 2
+        },
+        {
+          "paths": [
+            "BA",
+            "BB"
+          ],
+          "probability": 0.022500000000000003,
+          "q": [
+            [
+              0,
+              1
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "counts": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "policy": [
+            [
+              0.1,
+              0.9
+            ],
+            [
+              0.9,
+              0.1
+            ]
+          ],
+          "true_current_value": 2
+        },
+        {
+          "paths": [
+            "BB",
+            "AA"
+          ],
+          "probability": 0.0025000000000000005,
+          "q": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "counts": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "policy": [
+            [
+              0.9,
+              0.1
+            ],
+            [
+              0.9,
+              0.1
+            ]
+          ],
+          "true_current_value": 3.6
+        },
+        {
+          "paths": [
+            "BB",
+            "AB"
+          ],
+          "probability": 0.022500000000000003,
+          "q": [
+            [
+              2,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "counts": [
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "policy": [
+            [
+              0.9,
+              0.1
+            ],
+            [
+              0.1,
+              0.9
+            ]
+          ],
+          "true_current_value": 2
+        },
+        {
+          "paths": [
+            "BB",
+            "BA"
+          ],
+          "probability": 0.022500000000000003,
+          "q": [
+            [
+              0,
+              1
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "counts": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "policy": [
+            [
+              0.1,
+              0.9
+            ],
+            [
+              0.9,
+              0.1
+            ]
+          ],
+          "true_current_value": 2
+        },
+        {
+          "paths": [
+            "BB",
+            "BB"
+          ],
+          "probability": 0.2025,
+          "q": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "counts": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "policy": [
+            [
+              0.1,
+              0.9
+            ],
+            [
+              0.1,
+              0.9
+            ]
+          ],
+          "true_current_value": 0.4
+        }
+      ],
+      "probability_sum": 0.9999999999999998,
+      "expected_current_value": 2.1519999999999997,
+      "below_initial_probability": 0.2025
+    }
+  ],
+  "frozen_regime_mixture": {
+    "old_A_probability": 0.5,
+    "current_A_probability": 0.9,
+    "old_q": 3,
+    "current_q": 3.8,
+    "batches": [
+      {
+        "actions_at_S1": [
+          0,
+          0
+        ],
+        "probability": 0.45,
+        "returns": [
+          4,
+          4
+        ],
+        "running_average": 4
+      },
+      {
+        "actions_at_S1": [
+          0,
+          1
+        ],
+        "probability": 0.04999999999999999,
+        "returns": [
+          4,
+          2
+        ],
+        "running_average": 3
+      },
+      {
+        "actions_at_S1": [
+          1,
+          0
+        ],
+        "probability": 0.45,
+        "returns": [
+          2,
+          4
+        ],
+        "running_average": 3
+      },
+      {
+        "actions_at_S1": [
+          1,
+          1
+        ],
+        "probability": 0.04999999999999999,
+        "returns": [
+          2,
+          2
+        ],
+        "running_average": 2
+      }
+    ],
+    "expected_running_average": 3.4
+  },
+  "coverage_cost": {
+    "optimal_soft_policy": [
+      [
+        0.9,
+        0.1
+      ],
+      [
+        0.9,
+        0.1
+      ]
+    ],
+    "soft_value": 3.6,
+    "greedy_value": 4,
+    "value_cost": 0.4,
+    "nonpreferred_action_probability": 0.1,
+    "mean_wait_episodes": 10,
+    "no_B_in_10_probability": 0.3486784401000001
+  },
+  "long_suffix": {
+    "behavior_A_probability": 0.9,
+    "budget": 100,
+    "rows": [
+      {
+        "remaining_decisions": 1,
+        "match_probability": 0.9,
+        "nonzero_weight": 1.1111111111111112,
+        "target_mean": 1,
+        "weight_variance": 0.11111111111111116,
+        "expected_matches": 90,
+        "zero_matches_probability": 9.999999999999778e-101
+      },
+      {
+        "remaining_decisions": 2,
+        "match_probability": 0.81,
+        "nonzero_weight": 1.2345679012345678,
+        "target_mean": 1,
+        "weight_variance": 0.23456790123456783,
+        "expected_matches": 81,
+        "zero_matches_probability": 7.505162419824988e-73
+      },
+      {
+        "remaining_decisions": 5,
+        "match_probability": 0.5904900000000001,
+        "nonzero_weight": 1.6935087808430285,
+        "target_mean": 1,
+        "weight_variance": 0.6935087808430285,
+        "expected_matches": 59.04900000000001,
+        "zero_matches_probability": 1.6844229302073215e-39
+      },
+      {
+        "remaining_decisions": 10,
+        "match_probability": 0.3486784401000001,
+        "nonzero_weight": 2.867971990792441,
+        "target_mean": 1,
+        "weight_variance": 1.8679719907924408,
+        "expected_matches": 34.86784401000001,
+        "zero_matches_probability": 2.3963234242863816e-19
+      },
+      {
+        "remaining_decisions": 20,
+        "match_probability": 0.12157665459056935,
+        "nonzero_weight": 8.225263339969954,
+        "target_mean": 1,
+        "weight_variance": 7.225263339969954,
+        "expected_matches": 12.157665459056934,
+        "zero_matches_probability": 0.0000023463183019616358
+      },
+      {
+        "remaining_decisions": 50,
+        "match_probability": 0.00515377520732012,
+        "nonzero_weight": 194.03252174826304,
+        "target_mean": 1,
+        "weight_variance": 193.03252174826304,
+        "expected_matches": 0.5153775207320119,
+        "zero_matches_probability": 0.5964796394211159
+      }
+    ],
+    "uniform_behavior_H20": {
+      "remaining_decisions": 20,
+      "match_probability": 9.5367431640625e-7,
+      "nonzero_weight": 1048576,
+      "target_mean": 1,
+      "weight_variance": 1048575,
+      "expected_matches": 0.000095367431640625,
+      "zero_matches_probability": 0.9999046370702179
+    }
+  }
+}

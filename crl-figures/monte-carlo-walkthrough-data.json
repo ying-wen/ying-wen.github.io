@@ -1,0 +1,271 @@
+{
+  "kind": "exact_finite_enumeration",
+  "gamma": 0.5,
+  "behavior": [
+    [
+      0.5,
+      0.5
+    ],
+    [
+      0.5,
+      0.5
+    ]
+  ],
+  "target": [
+    [
+      0.75,
+      0.25
+    ],
+    [
+      0.75,
+      0.25
+    ]
+  ],
+  "rewards": [
+    [
+      2,
+      0
+    ],
+    [
+      4,
+      0
+    ]
+  ],
+  "true_value": 3,
+  "rows": [
+    {
+      "path": "AA",
+      "actions": [
+        0,
+        0
+      ],
+      "rewards": [
+        2,
+        4
+      ],
+      "logged_behavior": [
+        0.5,
+        0.5
+      ],
+      "ratios": [
+        1.5,
+        1.5
+      ],
+      "weight": 2.25,
+      "return": 4,
+      "ordinary_target": 9,
+      "per_decision_contributions": [
+        3,
+        4.5
+      ],
+      "per_decision_target": 7.5,
+      "behavior_probability": 0.25,
+      "target_probability": 0.5625
+    },
+    {
+      "path": "AB",
+      "actions": [
+        0,
+        1
+      ],
+      "rewards": [
+        2,
+        0
+      ],
+      "logged_behavior": [
+        0.5,
+        0.5
+      ],
+      "ratios": [
+        1.5,
+        0.5
+      ],
+      "weight": 0.75,
+      "return": 2,
+      "ordinary_target": 1.5,
+      "per_decision_contributions": [
+        3,
+        0
+      ],
+      "per_decision_target": 3,
+      "behavior_probability": 0.25,
+      "target_probability": 0.1875
+    },
+    {
+      "path": "BA",
+      "actions": [
+        1,
+        0
+      ],
+      "rewards": [
+        0,
+        4
+      ],
+      "logged_behavior": [
+        0.5,
+        0.5
+      ],
+      "ratios": [
+        0.5,
+        1.5
+      ],
+      "weight": 0.75,
+      "return": 2,
+      "ordinary_target": 1.5,
+      "per_decision_contributions": [
+        0,
+        1.5
+      ],
+      "per_decision_target": 1.5,
+      "behavior_probability": 0.25,
+      "target_probability": 0.1875
+    },
+    {
+      "path": "BB",
+      "actions": [
+        1,
+        1
+      ],
+      "rewards": [
+        0,
+        0
+      ],
+      "logged_behavior": [
+        0.5,
+        0.5
+      ],
+      "ratios": [
+        0.5,
+        0.5
+      ],
+      "weight": 0.25,
+      "return": 0,
+      "ordinary_target": 0,
+      "per_decision_contributions": [
+        0,
+        0
+      ],
+      "per_decision_target": 0,
+      "behavior_probability": 0.25,
+      "target_probability": 0.0625
+    }
+  ],
+  "population": {
+    "ordinary": {
+      "mean": 3,
+      "variance": 12.375
+    },
+    "per_decision": {
+      "mean": 3,
+      "variance": 7.875
+    }
+  },
+  "assigned_batch": {
+    "paths": [
+      "AA",
+      "BB"
+    ],
+    "episodes": 2,
+    "weighted_return_sum": 9,
+    "weight_sum": 2.5,
+    "ordinary": 4.5,
+    "weighted": 3.6,
+    "per_decision": 3.75
+  },
+  "batch_expectations": [
+    {
+      "episodes": 1,
+      "ordered_batches": 4,
+      "means": {
+        "ordinary": 3,
+        "weighted": 2,
+        "per_decision": 3
+      },
+      "weighted_undefined_probability": 0
+    },
+    {
+      "episodes": 2,
+      "ordered_batches": 16,
+      "means": {
+        "ordinary": 3,
+        "weighted": 2.45,
+        "per_decision": 3
+      },
+      "weighted_undefined_probability": 0
+    }
+  ],
+  "two_episode_wis_exact": "49/20",
+  "two_episode_wis_bias": -0.55,
+  "behavior_change": {
+    "new_behavior": [
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.25,
+        0.75
+      ]
+    ],
+    "old_AA": {
+      "path": "AA",
+      "actions": [
+        0,
+        0
+      ],
+      "rewards": [
+        2,
+        4
+      ],
+      "logged_behavior": [
+        0.5,
+        0.5
+      ],
+      "ratios": [
+        1.5,
+        1.5
+      ],
+      "weight": 2.25,
+      "return": 4,
+      "ordinary_target": 9,
+      "per_decision_contributions": [
+        3,
+        4.5
+      ],
+      "per_decision_target": 7.5,
+      "behavior_probability": 0.25,
+      "target_probability": 0.5625
+    },
+    "wrong_AA": {
+      "path": "AA",
+      "actions": [
+        0,
+        0
+      ],
+      "rewards": [
+        2,
+        4
+      ],
+      "logged_behavior": [
+        0.5,
+        0.25
+      ],
+      "ratios": [
+        1.5,
+        3
+      ],
+      "weight": 4.5,
+      "return": 4,
+      "ordinary_target": 18,
+      "per_decision_contributions": [
+        3,
+        9
+      ],
+      "per_decision_target": 12,
+      "behavior_probability": 0.25
+    },
+    "wrong_old_data_ordinary_mean": 5.5,
+    "wrong_old_data_per_decision_mean": 4.5,
+    "new_data_correct_ordinary_mean": 3
+  }
+}

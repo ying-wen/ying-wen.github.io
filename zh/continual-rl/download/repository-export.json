@@ -1,0 +1,4412 @@
+{
+  "schema_version": 1,
+  "source": "https://yingwen.io/zh/continual-rl/",
+  "code_license": "MIT",
+  "text_license": "CC BY 4.0",
+  "third_party_assets": [
+    {
+      "path": "/crl-figures/russek-2017-figure-2.png",
+      "authors": "Evan M. Russek、Ida Momennejad、Matthew M. Botvinick、Samuel J. Gershman、Nathaniel D. Daw",
+      "source": "https://doi.org/10.1371/journal.pcbi.1005768",
+      "license": {
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidenceUrl": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005768",
+        "notice": "© 2017 Russek et al. 原论文按 Creative Commons Attribution 4.0 许可发布。"
+      },
+      "sha256": "e79799572e4f651225b9d8792af11d1d4cc21cc94c4fc6b221c1a07888155d29"
+    },
+    {
+      "path": "/crl-figures/russek-2017-figure-4.png",
+      "authors": "Evan M. Russek、Ida Momennejad、Matthew M. Botvinick、Samuel J. Gershman、Nathaniel D. Daw",
+      "source": "https://doi.org/10.1371/journal.pcbi.1005768",
+      "license": {
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidenceUrl": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005768",
+        "notice": "© 2017 Russek et al. 原论文按 Creative Commons Attribution 4.0 许可发布。"
+      },
+      "sha256": "397663bc7e921cadbf4837d4c4dfc45fdf9099596c2f877b455a4a0cbde32efc"
+    },
+    {
+      "path": "/crl-figures/forager-v1-figure-2.png",
+      "authors": "Steven Tang、Xinze Xiong、Anna Hakhverdyan、Andrew Patterson、Jacob Adkins、Jiamin He、Esraa Elelimy、Parham Mohammad Panahi、Martha White、Adam White",
+      "source": "https://arxiv.org/abs/2605.01131v1",
+      "license": {
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidenceUrl": "https://arxiv.org/abs/2605.01131v1",
+        "notice": "原图版权属于 Tang 等作者，按论文所附 CC BY 4.0 许可使用。"
+      },
+      "sha256": "028a764bc1151daef49004a2d511f5d0035df68393ef9d95e90a1ce4af747ef0"
+    },
+    {
+      "path": "/crl-figures/agarcl-v3-figure-2.png",
+      "authors": "Mohamed A. Mohamed、Kateryna Nekhomiazh、Vedant Vyas、Marcos M. Jose、Andrew Patterson、Marlos C. Machado",
+      "source": "https://arxiv.org/abs/2505.18347v3",
+      "license": {
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidenceUrl": "https://arxiv.org/abs/2505.18347v3",
+        "notice": "原论文图版权属于 Mohamed 等作者，按论文所附 CC BY 4.0 许可使用；不据此重新许可 Agar.io 游戏或其他资产。"
+      },
+      "sha256": "e35a1688fd8c76e1cffdfb41dec963bb6177288e4cfef633ace501f4fc405194"
+    },
+    {
+      "path": "/crl-figures/craftax-v2-figure-2.svg",
+      "authors": "Michael Matthews、Michael Beukman、Benjamin Ellis、Mikayel Samvelyan、Matthew Jackson、Samuel Coward、Jakob Foerster",
+      "source": "https://arxiv.org/abs/2402.16801v2",
+      "license": {
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidenceUrl": "https://arxiv.org/abs/2402.16801v2",
+        "notice": "原图版权属于 Matthews 等作者，按论文所附 CC BY 4.0 许可使用。"
+      },
+      "sha256": "4c4065467b233dbefcdd1a68b75ac045f1cdf4dec4b2c48091760b5d0be562d9"
+    },
+    {
+      "path": "/crl-figures/plasticity-v3-figure-3.svg",
+      "authors": "Shibhansh Dohare、J. Fernando Hernandez-Garcia、Parash Rahman、A. Rupam Mahmood、Richard S. Sutton",
+      "source": "https://arxiv.org/abs/2306.13812v3",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "evidenceUrl": "https://arxiv.org/abs/2306.13812v3",
+        "notice": "原图版权属于 Dohare 等作者；本图单独保留 CC BY-SA 4.0，不适用本站原创教程的 CC BY 4.0 许可。"
+      },
+      "sha256": "cf7065c0ffcfb2e37d4c198199a67d1f7906adfbb505c80a2e427aae404a085a"
+    }
+  ],
+  "files": [
+    {
+      "file": "advanced.md",
+      "target": "docs/advanced.md",
+      "sha256": "a6650eccb7d360cc412bc3407a9577165bae09f54ed08bb629f3b6fdec1de2e9",
+      "page": null
+    },
+    {
+      "file": "agent-construction.md",
+      "target": "docs/agent-construction.md",
+      "sha256": "9d5302659cf941d22616222b280853444d90fba995599838e0252854eb439f18",
+      "page": null
+    },
+    {
+      "file": "agent-perspective.md",
+      "target": "docs/agent-perspective.md",
+      "sha256": "17e16368693294f7b7b272ea3372f6d2b2f9854170a4af4b5cf434e27a240129",
+      "page": null
+    },
+    {
+      "file": "algorithm-map.md",
+      "target": "docs/algorithm-map.md",
+      "sha256": "a5ad941f4082dc3e17f9de62fa71f191847f34316077aaeb6213556b25d00185",
+      "page": null
+    },
+    {
+      "file": "algorithm-tutorials.json",
+      "target": "data/algorithm-tutorials.json",
+      "sha256": "df0119cfe21fa0e49bb9ca95d46876b667574148b1980eeb2cce69a3951d2a93",
+      "page": null
+    },
+    {
+      "file": "algorithm-tutorials.md",
+      "target": "docs/algorithm-tutorials.md",
+      "sha256": "53d546866fa313cf0d2a0205ad78f6933ec5c15dc73de97ea2b60a8c808f864c",
+      "page": null
+    },
+    {
+      "file": "algorithm_testing_lab.py",
+      "target": "examples/algorithm_testing_lab.py",
+      "sha256": "9dadf01125f9ee3617cc63dec3581281755c0661d864fe1a9197adfc52b50ea9",
+      "page": null
+    },
+    {
+      "file": "algorithms.md",
+      "target": "docs/algorithms.md",
+      "sha256": "849603e4b2fb0cc264acdd0e2d8df5b95f4294a14e572243b5f9d165dfbabb9c",
+      "page": null
+    },
+    {
+      "file": "analyze_crl.py",
+      "target": "examples/analyze_crl.py",
+      "sha256": "3b55cae37f8d624d8acb0fa918b576787b1de761092b6d0df13014266abfdfab",
+      "page": null
+    },
+    {
+      "file": "approximation_textbook_lab.py",
+      "target": "examples/approximation_textbook_lab.py",
+      "sha256": "1005c440db0241f8ed96cb2fcfdf48894be6076db1b9142887d2bf4604932640",
+      "page": null
+    },
+    {
+      "file": "average-reward.md",
+      "target": "docs/average-reward.md",
+      "sha256": "1cf27fdc82d1668da2d890a43380a68d8b76c0318b4ba63bee912b6b1758edd0",
+      "page": null
+    },
+    {
+      "file": "bridge-chapters.json",
+      "target": "data/bridge-chapters.json",
+      "sha256": "60b692d768ca29b4e982047f667ef78c4fe6ac0c44198121180f065af8a46ff0",
+      "page": null
+    },
+    {
+      "file": "chapter-architectures.md",
+      "target": "textbook/architectures.md",
+      "sha256": "c824dcae427e3ef3dd9ab0b5f7362426d4b3802b65790286de93d1fd95568890",
+      "page": "construction/architectures/"
+    },
+    {
+      "file": "chapter-average.md",
+      "target": "textbook/average.md",
+      "sha256": "ef81b6cb2558940152518dd67d6894fc98a3aeb41481c882c2ebcca419703f96",
+      "page": "algorithms/average-reward/"
+    },
+    {
+      "file": "chapter-companions.json",
+      "target": "data/chapter-companions.json",
+      "sha256": "6e0cab017c1a16d0e4559a61ab736001a503dd631df879800a78eb6aa9b6846b",
+      "page": null
+    },
+    {
+      "file": "chapter-companions.md",
+      "target": "docs/chapter-companions.md",
+      "sha256": "5125385666b3733a5b658207833d6800effd22251cb3c99c7d529a4d28fcd008",
+      "page": null
+    },
+    {
+      "file": "chapter-control.md",
+      "target": "textbook/control.md",
+      "sha256": "88b0b837aa048d898fcafee67152949e7c30f82a58ffb6b499f604672f98eb7b",
+      "page": "algorithms/control/"
+    },
+    {
+      "file": "chapter-credit.md",
+      "target": "textbook/credit.md",
+      "sha256": "4fb9f07e9bc2c0b03b8ff8725f3ad752c779ac184be9639847c41913a400810f",
+      "page": "algorithms/credit-assignment/"
+    },
+    {
+      "file": "chapter-deep-value.md",
+      "target": "textbook/deep-value.md",
+      "sha256": "6ef48768a96c194c968f45ad61f1bcf4d646a2b069903c3385388c2b27ce97c6",
+      "page": "algorithms/deep-value/"
+    },
+    {
+      "file": "chapter-dyna.md",
+      "target": "textbook/dyna.md",
+      "sha256": "3e0accf6161bce9944c46af9a641b8478c4b166768a802b2327fe1fd8a6793a0",
+      "page": "algorithms/dyna/"
+    },
+    {
+      "file": "chapter-experiments.md",
+      "target": "textbook/experiments.md",
+      "sha256": "a4283038fcea744207c4080e1b717e1553da70feec2b65a07c3b268458ca7ac3",
+      "page": "experiments/"
+    },
+    {
+      "file": "chapter-exploration.md",
+      "target": "textbook/exploration.md",
+      "sha256": "f4ed3a3503cb09b34f48b7b8994064a2d208a46ae91eddc8249b59dc5e72fcdd",
+      "page": "algorithms/exploration/"
+    },
+    {
+      "file": "chapter-goals.md",
+      "target": "textbook/goals.md",
+      "sha256": "b4877a9212c7d3da38d6e723c36eaa1d6518cd352078ab8a8b391a8906326c00",
+      "page": "construction/goals/"
+    },
+    {
+      "file": "chapter-gvf.md",
+      "target": "textbook/gvf.md",
+      "sha256": "5e85e4a31b7988d7d75e60c3a2a1404a85db4171537139faac9f3d13574e04da",
+      "page": "construction/predictive-knowledge/"
+    },
+    {
+      "file": "chapter-meta.md",
+      "target": "textbook/meta.md",
+      "sha256": "9e69dcb20ceb3f43830da9fa8932eceaaf1ce0c62f7ba262ecde4b62f60294b2",
+      "page": "algorithms/meta/"
+    },
+    {
+      "file": "chapter-models.md",
+      "target": "textbook/models.md",
+      "sha256": "5785c391af300d37b87695c4576bc22510fde7d4e6f8b6da9c499193c25be669",
+      "page": "construction/models/"
+    },
+    {
+      "file": "chapter-objectives.md",
+      "target": "textbook/objectives.md",
+      "sha256": "d520954cbcdca4a4458ecce90875c7f468b3b77015ccaf628f4bb8de617db23d",
+      "page": "foundations/objectives/"
+    },
+    {
+      "file": "chapter-options.md",
+      "target": "textbook/options.md",
+      "sha256": "f92a9064fe760c87549fd26be07e6008e12130853c2ce6917fda6fcaa44db5c7",
+      "page": "construction/options/"
+    },
+    {
+      "file": "chapter-planning.md",
+      "target": "textbook/planning.md",
+      "sha256": "ed3c2d089148a469f36015a45687bc2444728f577696c4f0a7b1163811bb7739",
+      "page": "construction/planning/"
+    },
+    {
+      "file": "chapter-plasticity.md",
+      "target": "textbook/plasticity.md",
+      "sha256": "ec757e44752338a324f01e7386965b5c642fc95dbe050f35900121dbd755899a",
+      "page": "algorithms/plasticity/"
+    },
+    {
+      "file": "chapter-policy.md",
+      "target": "textbook/policy.md",
+      "sha256": "c2276125e99ba77d6012555513581d579c0a91f3d04098b3daccac80be5b1c3b",
+      "page": "algorithms/policy/"
+    },
+    {
+      "file": "chapter-relations.json",
+      "target": "data/chapter-relations.json",
+      "sha256": "c61b37c86b37a0d0e4a5ac537fd61ed83057d14cbc43996cbd58921e0559ee5a",
+      "page": null
+    },
+    {
+      "file": "chapter-retention.md",
+      "target": "textbook/retention.md",
+      "sha256": "8883d024df396010c12fbcdafc67afa087663200f503afa725a241aae1ad5730",
+      "page": "algorithms/retention/"
+    },
+    {
+      "file": "chapter-reward-design.md",
+      "target": "textbook/reward-design.md",
+      "sha256": "1b183f20481f28e753dfe57044c82081d2ddd02a3fd95455378e14daf6819f7e",
+      "page": "foundations/reward-design/"
+    },
+    {
+      "file": "chapter-runs.json",
+      "target": "data/chapter-runs.json",
+      "sha256": "1312d95ec6aee6445aa5d98e63e99c1964a99cd0ce9d4f8b29d8533319896818",
+      "page": null
+    },
+    {
+      "file": "chapter-soft-control.md",
+      "target": "textbook/soft-control.md",
+      "sha256": "04fe54c6c5569f56ed163bfdf9e358d4ea1df6a9b759dabbe936ce960b83ec42",
+      "page": "algorithms/soft-control/"
+    },
+    {
+      "file": "chapter-state.md",
+      "target": "textbook/state.md",
+      "sha256": "0b8327095395f32864046f338e7aaede3ff92a917d9ae59d18ded2d16d40d8cd",
+      "page": "construction/state/"
+    },
+    {
+      "file": "chapter-streaming.md",
+      "target": "textbook/streaming.md",
+      "sha256": "ef6ce0519494900380d633f60a0ade577a33a2501588bca541b78372a6e42f52",
+      "page": "algorithms/streaming/"
+    },
+    {
+      "file": "chapter-value.md",
+      "target": "textbook/value.md",
+      "sha256": "2819ac04a89e09d9223ea5e85f6fbd9d001a70d416374801f453eca34724d3a3",
+      "page": "algorithms/value/"
+    },
+    {
+      "file": "continual_control_lab.py",
+      "target": "examples/continual_control_lab.py",
+      "sha256": "8acc0b388a20e77c84ea215e6827a21fa34d6fd8fe23180284b93c9e0edbdc31",
+      "page": null
+    },
+    {
+      "file": "control_problem_lab.py",
+      "target": "examples/control_problem_lab.py",
+      "sha256": "257b6960a167d2112cf31f83c19dcffc40e0c966b4c3740bcd45bb7b7f4e83e8",
+      "page": null
+    },
+    {
+      "file": "credit_assignment_lab.py",
+      "target": "examples/credit_assignment_lab.py",
+      "sha256": "34d316feea44f93b6cd210267c477878a96e55996af3f9bc37748ecf2bab72dd",
+      "page": null
+    },
+    {
+      "file": "crl_labs.py",
+      "target": "examples/crl_labs.py",
+      "sha256": "05a73870ff4b9a2e0c8e4ac6aab1eceaa13a8166d5ea1889df4f6e337bb1e6bc",
+      "page": null
+    },
+    {
+      "file": "curriculum.json",
+      "target": "data/curriculum.json",
+      "sha256": "8e319f3720cfa2a1678f46d4aa2820b82c1b29aa529e599544586115ff0759d2",
+      "page": null
+    },
+    {
+      "file": "curriculum.md",
+      "target": "docs/curriculum.md",
+      "sha256": "d50c93b7538a955e4883e8dad3a271f9725c454eebfd9b0f0c5e19cf40982c03",
+      "page": null
+    },
+    {
+      "file": "deep_requirements.txt",
+      "target": "examples/deep_requirements.txt",
+      "sha256": "8c02513c4f0467e3c4a3deedfb8cb03e06b681106e40e34a173c3a61cb08cc64",
+      "page": null
+    },
+    {
+      "file": "deep_textbook_lab.py",
+      "target": "examples/deep_textbook_lab.py",
+      "sha256": "deaf67c4d00fb08a82c5c8b9653bfc23cb273c2625bb01ca9c65642801414dbe",
+      "page": null
+    },
+    {
+      "file": "deep_textbook_train.py",
+      "target": "examples/deep_textbook_train.py",
+      "sha256": "085cbfaa0ceccda4db7604c4c8b3a7b5b8544a9e9b0bba1df256eb1ca3870063",
+      "page": null
+    },
+    {
+      "file": "distributed_systems_lab.py",
+      "target": "examples/distributed_systems_lab.py",
+      "sha256": "fabc524752349eb38fa3195a37aa01d04b9a73ea4d8d428c6e1f4c97021c5339",
+      "page": null
+    },
+    {
+      "file": "experiment-handbook.json",
+      "target": "data/experiment-handbook.json",
+      "sha256": "2e53f9b194ab8d8e2ba457fe2938419e7002fce522577248ba9951d3d2dfd03d",
+      "page": null
+    },
+    {
+      "file": "experiment-handbook.md",
+      "target": "docs/experiment-handbook.md",
+      "sha256": "9bca380325b2d47e4d68ceccccad4e80fd527e3e09a9cc2d7be2da45cee17306",
+      "page": null
+    },
+    {
+      "file": "experiment_design_lab.py",
+      "target": "examples/experiment_design_lab.py",
+      "sha256": "ac218f33877c029c30788359f42e744385a6607addfd641666c99edd5cebc150",
+      "page": null
+    },
+    {
+      "file": "extended_foundations_lab.py",
+      "target": "examples/extended_foundations_lab.py",
+      "sha256": "e0c35174e6a1d5aae9f0ebaa451d3416a0fd14d2dcd3419815cb24bcff5a367b",
+      "page": null
+    },
+    {
+      "file": "field-framework.json",
+      "target": "data/field-framework.json",
+      "sha256": "1aec1f0cbd9298deb4e6a93fdaaf4bfe6fd50b31f0ed4762b3e2a622c86bf28c",
+      "page": null
+    },
+    {
+      "file": "field-framework.md",
+      "target": "docs/field-framework.md",
+      "sha256": "a2693940a7a2ae0764bcf38492e7ce537943d200f13fc1766655ef72ab5535c5",
+      "page": null
+    },
+    {
+      "file": "figure--action-contingency-expectations.mobile.svg",
+      "target": "assets/crl-figures/action-contingency-expectations.mobile.svg",
+      "sha256": "6b621baa229cebfbde7d1257f96bfee4572c730d84745189390ab38f08996a45",
+      "page": null
+    },
+    {
+      "file": "figure--action-contingency-expectations.svg",
+      "target": "assets/crl-figures/action-contingency-expectations.svg",
+      "sha256": "c5f0bd217fcedc02c9a83fbffcb4b0353c542477b1efb53701602089bb70aaa3",
+      "page": null
+    },
+    {
+      "file": "figure--action-contingency-expression.mobile.svg",
+      "target": "assets/crl-figures/action-contingency-expression.mobile.svg",
+      "sha256": "d33a6a89d81bc839d6e875ea8ee853594d296f6705d640fe003d718d056f4704",
+      "page": null
+    },
+    {
+      "file": "figure--action-contingency-expression.svg",
+      "target": "assets/crl-figures/action-contingency-expression.svg",
+      "sha256": "c9af30e03100f46655f35a68070842fc8019934f512096aa1439c1d937f2e1e5",
+      "page": null
+    },
+    {
+      "file": "figure--action-contingency-hammond.mobile.svg",
+      "target": "assets/crl-figures/action-contingency-hammond.mobile.svg",
+      "sha256": "ca7262070765717fffbc4a6e6516f4b7dcc3b074e01caf057fbcdd5804e836de",
+      "page": null
+    },
+    {
+      "file": "figure--action-contingency-hammond.svg",
+      "target": "assets/crl-figures/action-contingency-hammond.svg",
+      "sha256": "8e0699ee4a41630437c268ff42f04ae5813d8393ba232f4eba00da2db782be62",
+      "page": null
+    },
+    {
+      "file": "figure--agency-experiment-moving-hand.mobile.svg",
+      "target": "assets/crl-figures/agency-experiment-moving-hand.mobile.svg",
+      "sha256": "bccd4a137807e76836257da1d9befecfb408c395b16dd526482f23306d5a1519",
+      "page": null
+    },
+    {
+      "file": "figure--agency-experiment-moving-hand.svg",
+      "target": "assets/crl-figures/agency-experiment-moving-hand.svg",
+      "sha256": "c860c12ab9f015edaef7f197c00a996307ee9b642bb7c2e0795de23c5608eab6",
+      "page": null
+    },
+    {
+      "file": "figure--agency-experiment-touch-location.mobile.svg",
+      "target": "assets/crl-figures/agency-experiment-touch-location.mobile.svg",
+      "sha256": "14f5967423676d9ff7132286e7e18f2a512de1fa6847b3ea0d191fd2891c1201",
+      "page": null
+    },
+    {
+      "file": "figure--agency-experiment-touch-location.svg",
+      "target": "assets/crl-figures/agency-experiment-touch-location.svg",
+      "sha256": "e39c868228ebddede4f9d0f49a848cd39405ae62318f14cf256fbc1b14872e7c",
+      "page": null
+    },
+    {
+      "file": "figure--architecture-walkthrough-closed-loop.mobile.svg",
+      "target": "assets/crl-figures/architecture-walkthrough-closed-loop.mobile.svg",
+      "sha256": "9280f0cfda253be7931d3926018c089b55b653d1e261269fec28995e5541f441",
+      "page": null
+    },
+    {
+      "file": "figure--architecture-walkthrough-closed-loop.svg",
+      "target": "assets/crl-figures/architecture-walkthrough-closed-loop.svg",
+      "sha256": "40a47ff8b200d30deb17181c137568024e98253ae047db17f9bcc832454ac8ac",
+      "page": null
+    },
+    {
+      "file": "figure--architecture-walkthrough-experience.mobile.svg",
+      "target": "assets/crl-figures/architecture-walkthrough-experience.mobile.svg",
+      "sha256": "5867f952d978800635cc90181eda35d8cad041d6d0d279aca269ed805bc190fa",
+      "page": null
+    },
+    {
+      "file": "figure--architecture-walkthrough-experience.svg",
+      "target": "assets/crl-figures/architecture-walkthrough-experience.svg",
+      "sha256": "5787f6704f0d638042df17d578b5667fbbe82fcd366a841a75f8c17e1dc941f5",
+      "page": null
+    },
+    {
+      "file": "figure--average-rate-walkthrough-cycles.mobile.svg",
+      "target": "assets/crl-figures/average-rate-walkthrough-cycles.mobile.svg",
+      "sha256": "11660c6ebf67c2bb2f12cf02b5b0fca51e5c8f95e655478feaac3761a3b07e7b",
+      "page": null
+    },
+    {
+      "file": "figure--average-rate-walkthrough-cycles.svg",
+      "target": "assets/crl-figures/average-rate-walkthrough-cycles.svg",
+      "sha256": "820662e92c5256ce8d38e1039b436124fe903c767f844df7a0cb414a18095dd8",
+      "page": null
+    },
+    {
+      "file": "figure--average-rate-walkthrough-lifetime.mobile.svg",
+      "target": "assets/crl-figures/average-rate-walkthrough-lifetime.mobile.svg",
+      "sha256": "c614dabd7a1a392ac86adb7ea4d04ec8d6fe4fff5e8f7c5d2787e38788921bcf",
+      "page": null
+    },
+    {
+      "file": "figure--average-rate-walkthrough-lifetime.svg",
+      "target": "assets/crl-figures/average-rate-walkthrough-lifetime.svg",
+      "sha256": "bd5bf2ac5bb2b71cf75477f6d74c516b874743fcbb5991a26e6ab5824db072b5",
+      "page": null
+    },
+    {
+      "file": "figure--average-rate-walkthrough-model.mobile.svg",
+      "target": "assets/crl-figures/average-rate-walkthrough-model.mobile.svg",
+      "sha256": "7afa0746acaf365ddaaaabea7d213f83c85cf3e60943b52bb453efc3803bfc4b",
+      "page": null
+    },
+    {
+      "file": "figure--average-rate-walkthrough-model.svg",
+      "target": "assets/crl-figures/average-rate-walkthrough-model.svg",
+      "sha256": "89f30c4ed74bcce1ff80de5fa13c0b132d01cff42afc1eced41ac109543a70b7",
+      "page": null
+    },
+    {
+      "file": "figure--bandit-exploration-cold-start.mobile.svg",
+      "target": "assets/crl-figures/bandit-exploration-cold-start.mobile.svg",
+      "sha256": "cb6c60ccbb2e69d902558182babe39d12266b9f3c551c2ae69aaf4cbf094fb66",
+      "page": null
+    },
+    {
+      "file": "figure--bandit-exploration-cold-start.svg",
+      "target": "assets/crl-figures/bandit-exploration-cold-start.svg",
+      "sha256": "b817dad6cf34ad69e3257a65c35200db46cd04cf180df86069ceea23cc0705d7",
+      "page": null
+    },
+    {
+      "file": "figure--bandit-exploration-preferences.mobile.svg",
+      "target": "assets/crl-figures/bandit-exploration-preferences.mobile.svg",
+      "sha256": "dc7cfc180fc10c01079842386bed3cef49e13b3a2d91eb4e0786bc2705544d47",
+      "page": null
+    },
+    {
+      "file": "figure--bandit-exploration-preferences.svg",
+      "target": "assets/crl-figures/bandit-exploration-preferences.svg",
+      "sha256": "aedaf926e07bde64cb106a9885c491130eaaf251dadc7ef3d292d46949dbac7a",
+      "page": null
+    },
+    {
+      "file": "figure--bandit-exploration-scores.mobile.svg",
+      "target": "assets/crl-figures/bandit-exploration-scores.mobile.svg",
+      "sha256": "b9af51e6e05c7374b9cea5e82cc40dffcb1ea44adf7616e49fa84bcadb6d8611",
+      "page": null
+    },
+    {
+      "file": "figure--bandit-exploration-scores.svg",
+      "target": "assets/crl-figures/bandit-exploration-scores.svg",
+      "sha256": "bf7fef8cf378bd436e47163d678236e2e47628004323a11266de08df1a97f8b3",
+      "page": null
+    },
+    {
+      "file": "figure--belief-planning-walkthrough-model.mobile.svg",
+      "target": "assets/crl-figures/belief-planning-walkthrough-model.mobile.svg",
+      "sha256": "87027e5e033a86609cc16bc117b90be645219d555b0b2e446c8c13d1565cf46b",
+      "page": null
+    },
+    {
+      "file": "figure--belief-planning-walkthrough-model.svg",
+      "target": "assets/crl-figures/belief-planning-walkthrough-model.svg",
+      "sha256": "5c6d54fb73ff93749510cc026f7d806e85efa850a6613706b6529cfd7028fd2d",
+      "page": null
+    },
+    {
+      "file": "figure--belief-planning-walkthrough-plan.mobile.svg",
+      "target": "assets/crl-figures/belief-planning-walkthrough-plan.mobile.svg",
+      "sha256": "f210a01745b74c29916d99ddfe0e0e1c62a31b620a2d1de7b86f0afea2185884",
+      "page": null
+    },
+    {
+      "file": "figure--belief-planning-walkthrough-plan.svg",
+      "target": "assets/crl-figures/belief-planning-walkthrough-plan.svg",
+      "sha256": "ca48745c3169178c4d6f78707f9d45cbb69e240993345207781d966423a96a67",
+      "page": null
+    },
+    {
+      "file": "figure--belief-planning-walkthrough-task.mobile.svg",
+      "target": "assets/crl-figures/belief-planning-walkthrough-task.mobile.svg",
+      "sha256": "bbb1b3897bc0e6f777ac27a3a1275eb323d62702b89ba7725bf6707f7668725a",
+      "page": null
+    },
+    {
+      "file": "figure--belief-planning-walkthrough-task.svg",
+      "target": "assets/crl-figures/belief-planning-walkthrough-task.svg",
+      "sha256": "e83d3eca210462644c72935b83f35b66f0afe3f911625d76b0660300a79637d7",
+      "page": null
+    },
+    {
+      "file": "figure--cognitive-control-walkthrough-efficacy.mobile.svg",
+      "target": "assets/crl-figures/cognitive-control-walkthrough-efficacy.mobile.svg",
+      "sha256": "93887bc353c5d5f5d5fcc2e4bb15b9550dafb88d1027c833273b9934533d06f7",
+      "page": null
+    },
+    {
+      "file": "figure--cognitive-control-walkthrough-efficacy.svg",
+      "target": "assets/crl-figures/cognitive-control-walkthrough-efficacy.svg",
+      "sha256": "abd21305af0614319990607b3ca30693a5821df0cbed7fc36738966d709009e5",
+      "page": null
+    },
+    {
+      "file": "figure--cognitive-control-walkthrough-transfer.mobile.svg",
+      "target": "assets/crl-figures/cognitive-control-walkthrough-transfer.mobile.svg",
+      "sha256": "332824adc81222c10bb21cde7a8390106785402217afce1162351e96ea36e18d",
+      "page": null
+    },
+    {
+      "file": "figure--cognitive-control-walkthrough-transfer.svg",
+      "target": "assets/crl-figures/cognitive-control-walkthrough-transfer.svg",
+      "sha256": "0adb22a7e18b69432be9ad77afbe5a86a8c431922fca37c550fc0dd9684f3c49",
+      "page": null
+    },
+    {
+      "file": "figure--concept-bandit-observation.mobile.svg",
+      "target": "assets/crl-figures/concept-bandit-observation.mobile.svg",
+      "sha256": "0dedbebf6b0cf602eb699dd811201a663e2b7e3c70866bd0263f9d66f66ee239",
+      "page": null
+    },
+    {
+      "file": "figure--concept-bandit-observation.svg",
+      "target": "assets/crl-figures/concept-bandit-observation.svg",
+      "sha256": "e660770d22bb7571dbe65aa05e064777a8452cbaec4c24e86047d0d304cd86b2",
+      "page": null
+    },
+    {
+      "file": "figure--concept-bandit-tracking.mobile.svg",
+      "target": "assets/crl-figures/concept-bandit-tracking.mobile.svg",
+      "sha256": "04a51e39e3e836a606ddc343810b945fb5887d7db9e83e889910eed9551128d4",
+      "page": null
+    },
+    {
+      "file": "figure--concept-bandit-tracking.svg",
+      "target": "assets/crl-figures/concept-bandit-tracking.svg",
+      "sha256": "510357fb01c1ed7f119901226ed0803b39686e9107c70978403dc07d8e41b229",
+      "page": null
+    },
+    {
+      "file": "figure--concept-classic-bandit-exploration.svg",
+      "target": "assets/crl-figures/concept-classic-bandit-exploration.svg",
+      "sha256": "a2c2938d6c21d1f309ac4bc101bec6c8610a106ce9f3b5088a9275e27e1af782",
+      "page": null
+    },
+    {
+      "file": "figure--concept-classic-dqn-dataflow.svg",
+      "target": "assets/crl-figures/concept-classic-dqn-dataflow.svg",
+      "sha256": "6cd64475894797f2a7b2253c960eb54e105f43aa94a46f2621f1b8b5854a2251",
+      "page": null
+    },
+    {
+      "file": "figure--concept-classic-offpolicy-distributions.svg",
+      "target": "assets/crl-figures/concept-classic-offpolicy-distributions.svg",
+      "sha256": "8d5d5cc3f07054aace6a6574ade09c56ddcc5cc92559bfe2cd7019a617ed33f8",
+      "page": null
+    },
+    {
+      "file": "figure--concept-classic-policy-gradient.svg",
+      "target": "assets/crl-figures/concept-classic-policy-gradient.svg",
+      "sha256": "bcc10db54b189da2968cc5a54e95ae43473e965a9441888b1bf89fb6f8b88180",
+      "page": null
+    },
+    {
+      "file": "figure--concept-classic-projected-value.svg",
+      "target": "assets/crl-figures/concept-classic-projected-value.svg",
+      "sha256": "6d4272e65dcfe4e40f962e9593184b110e279b1c245ff2e0b741c74e17fb2f00",
+      "page": null
+    },
+    {
+      "file": "figure--concept-classic-td-stability.svg",
+      "target": "assets/crl-figures/concept-classic-td-stability.svg",
+      "sha256": "4b78fdaad9556934bc1d73c7b6d673c3e490ecc3bf43aa5e5b59cb2d5b7a4432",
+      "page": null
+    },
+    {
+      "file": "figure--concept-core-update-clocks-dqn.mobile.svg",
+      "target": "assets/crl-figures/concept-core-update-clocks-dqn.mobile.svg",
+      "sha256": "7a37533ce3c238344ca08334e80c470003533e0024347179820f6886bb65aeaa",
+      "page": null
+    },
+    {
+      "file": "figure--concept-core-update-clocks-dqn.svg",
+      "target": "assets/crl-figures/concept-core-update-clocks-dqn.svg",
+      "sha256": "7e98cf9622acd1fdcc163c8e4b31a25122ff0b349be63019c3606ddfee69fab0",
+      "page": null
+    },
+    {
+      "file": "figure--concept-core-update-clocks-mc-td.mobile.svg",
+      "target": "assets/crl-figures/concept-core-update-clocks-mc-td.mobile.svg",
+      "sha256": "9ad84ef5ceeb99123b7d13bee2f6153265350954534ed3d0515106ddf8a78e80",
+      "page": null
+    },
+    {
+      "file": "figure--concept-core-update-clocks-mc-td.svg",
+      "target": "assets/crl-figures/concept-core-update-clocks-mc-td.svg",
+      "sha256": "f3d2b9b7c4ed90afe3c31834ddd6698be92bae51b91666510fe1e0ea937b1176",
+      "page": null
+    },
+    {
+      "file": "figure--concept-credit3-dutch-correction.mobile.svg",
+      "target": "assets/crl-figures/concept-credit3-dutch-correction.mobile.svg",
+      "sha256": "73ba3e2bad7db5895f449ba95b97129214704a5e8ea0afae2338e461cbb68ff3",
+      "page": null
+    },
+    {
+      "file": "figure--concept-credit3-dutch-correction.svg",
+      "target": "assets/crl-figures/concept-credit3-dutch-correction.svg",
+      "sha256": "8ff5cfa83f314da24da3d243f7a1bf7023554038ab4899f7f265d387e4299daf",
+      "page": null
+    },
+    {
+      "file": "figure--concept-credit3-emphatic-flow.mobile.svg",
+      "target": "assets/crl-figures/concept-credit3-emphatic-flow.mobile.svg",
+      "sha256": "401801377ea0ae1f8b6e78df66bc3d9de6e92837f02908e6d8209f57a8647aa6",
+      "page": null
+    },
+    {
+      "file": "figure--concept-credit3-emphatic-flow.svg",
+      "target": "assets/crl-figures/concept-credit3-emphatic-flow.svg",
+      "sha256": "40577c3a2afbf34215106b6059903151e8c19d56762d0d1c42e404d27c30dfd9",
+      "page": null
+    },
+    {
+      "file": "figure--concept-credit3-skill-version.mobile.svg",
+      "target": "assets/crl-figures/concept-credit3-skill-version.mobile.svg",
+      "sha256": "043514c5da3b6773de6de5db77f02d96a6fd5dd039f4f6b50b8eae4ec277c44d",
+      "page": null
+    },
+    {
+      "file": "figure--concept-credit3-skill-version.svg",
+      "target": "assets/crl-figures/concept-credit3-skill-version.svg",
+      "sha256": "24d0d1f370e9d9662d9bbb7b6c2a798abea0c5be567e66e5e98a9f3c33d6bde9",
+      "page": null
+    },
+    {
+      "file": "figure--concept-credit3-tree-backup.mobile.svg",
+      "target": "assets/crl-figures/concept-credit3-tree-backup.mobile.svg",
+      "sha256": "c271842c62abcc3fc7271f81c7e97165de7969acc6b238ccf5418af0be8f5dfe",
+      "page": null
+    },
+    {
+      "file": "figure--concept-credit3-tree-backup.svg",
+      "target": "assets/crl-figures/concept-credit3-tree-backup.svg",
+      "sha256": "5eafc13e2669ff55e7cffd221c0365c68ede5cce239de1998a6a167213ce0f0a",
+      "page": null
+    },
+    {
+      "file": "figure--concept-deep3-actor-gradient-noise.mobile.svg",
+      "target": "assets/crl-figures/concept-deep3-actor-gradient-noise.mobile.svg",
+      "sha256": "e0c420ec617b6f82af70ee2ee55b9e2ec0e2b589db9ce63be02f8cbd3ff08b7e",
+      "page": null
+    },
+    {
+      "file": "figure--concept-deep3-actor-gradient-noise.svg",
+      "target": "assets/crl-figures/concept-deep3-actor-gradient-noise.svg",
+      "sha256": "cd4c7ea44033647e77cc9704e8c37d78817dbe2286feec1c6498f97499857035",
+      "page": null
+    },
+    {
+      "file": "figure--concept-deep3-belief-update.mobile.svg",
+      "target": "assets/crl-figures/concept-deep3-belief-update.mobile.svg",
+      "sha256": "717f5c72862e003f5a04a7642b557342727e2636e28f314a1117f4453ae5f694",
+      "page": null
+    },
+    {
+      "file": "figure--concept-deep3-belief-update.svg",
+      "target": "assets/crl-figures/concept-deep3-belief-update.svg",
+      "sha256": "e0aff913402774a1b3d973ed583c8b1e22cb8b78e091408150aea6d8edca4f4c",
+      "page": null
+    },
+    {
+      "file": "figure--concept-deep3-exploration-corridor.mobile.svg",
+      "target": "assets/crl-figures/concept-deep3-exploration-corridor.mobile.svg",
+      "sha256": "af3166495e48b03607a94955c31f579f72503f956c4d6e37372be6c9146ee414",
+      "page": null
+    },
+    {
+      "file": "figure--concept-deep3-exploration-corridor.svg",
+      "target": "assets/crl-figures/concept-deep3-exploration-corridor.svg",
+      "sha256": "ba135795d1f803fed8793d68811aed29c47b2f2084e458007343c97825cab1f0",
+      "page": null
+    },
+    {
+      "file": "figure--concept-deep3-sac-density.mobile.svg",
+      "target": "assets/crl-figures/concept-deep3-sac-density.mobile.svg",
+      "sha256": "71c6832d58932c996a9f2e4f1065fe156249465863120b77597470bb58fa29f0",
+      "page": null
+    },
+    {
+      "file": "figure--concept-deep3-sac-density.svg",
+      "target": "assets/crl-figures/concept-deep3-sac-density.svg",
+      "sha256": "e9e5eac619139bd586d429b2c522ce383c317f2dcb37de2f57a899c6ef683c27",
+      "page": null
+    },
+    {
+      "file": "figure--concept-depth-average-clock.mobile.svg",
+      "target": "assets/crl-figures/concept-depth-average-clock.mobile.svg",
+      "sha256": "18ae811de705cc8b45a06e1d773e73a3d684267a184c49d2ce54ad07ff8220d3",
+      "page": null
+    },
+    {
+      "file": "figure--concept-depth-average-clock.svg",
+      "target": "assets/crl-figures/concept-depth-average-clock.svg",
+      "sha256": "4ca3e8650f51ae7bce8bd3d8e2966635ac826642e5ab4f52d7829b43216b5d2d",
+      "page": null
+    },
+    {
+      "file": "figure--concept-depth-classic-distribution-projection.mobile.svg",
+      "target": "assets/crl-figures/concept-depth-classic-distribution-projection.mobile.svg",
+      "sha256": "c72c0777a71efbff82270eb562381c40740d206f9b2f42ac18feb70202116a0f",
+      "page": null
+    },
+    {
+      "file": "figure--concept-depth-classic-distribution-projection.svg",
+      "target": "assets/crl-figures/concept-depth-classic-distribution-projection.svg",
+      "sha256": "63882d0f33fb96c543f1be21268602e2485e10954c88cdcd325ad92b0825a71b",
+      "page": null
+    },
+    {
+      "file": "figure--concept-depth-classic-gae-masks.mobile.svg",
+      "target": "assets/crl-figures/concept-depth-classic-gae-masks.mobile.svg",
+      "sha256": "902734357cb1837296e4fc235ab872abfb473776fe63511d8de2fab44365b9a5",
+      "page": null
+    },
+    {
+      "file": "figure--concept-depth-classic-gae-masks.svg",
+      "target": "assets/crl-figures/concept-depth-classic-gae-masks.svg",
+      "sha256": "551f2fad4b384724866bc6220525e3c27fb7c161af1575f924a00d19f61252a7",
+      "page": null
+    },
+    {
+      "file": "figure--concept-depth-classic-memory-gradients.mobile.svg",
+      "target": "assets/crl-figures/concept-depth-classic-memory-gradients.mobile.svg",
+      "sha256": "473d98a11bb3f61c9f529afdd0e0ed012e677247b3f19c82a5d54dfbac60e5c3",
+      "page": null
+    },
+    {
+      "file": "figure--concept-depth-classic-memory-gradients.svg",
+      "target": "assets/crl-figures/concept-depth-classic-memory-gradients.svg",
+      "sha256": "40988918b264aa7dc40813e2dcb23d5947a6cfb7623170359283fe1cde311e6b",
+      "page": null
+    },
+    {
+      "file": "figure--concept-depth-classic-tiles.mobile.svg",
+      "target": "assets/crl-figures/concept-depth-classic-tiles.mobile.svg",
+      "sha256": "61f9d164f041d60e8ae140561bb202fb67cc3ebd5715fe83f6210225b7facb9c",
+      "page": null
+    },
+    {
+      "file": "figure--concept-depth-classic-tiles.svg",
+      "target": "assets/crl-figures/concept-depth-classic-tiles.svg",
+      "sha256": "3078fbd3e759238d2e9e8777049258b3e81c41372dfbd6ea0a9e8a3a1b497f60",
+      "page": null
+    },
+    {
+      "file": "figure--concept-depth-gvf-question-answer.mobile.svg",
+      "target": "assets/crl-figures/concept-depth-gvf-question-answer.mobile.svg",
+      "sha256": "ffcb51296f3d34314fdb682362b2c3aa752433cd3b8a5bd0e3e2b37bc10f834c",
+      "page": null
+    },
+    {
+      "file": "figure--concept-depth-gvf-question-answer.svg",
+      "target": "assets/crl-figures/concept-depth-gvf-question-answer.svg",
+      "sha256": "1bbe83216688fb37bfacb68f3abbbf12c1c7fb4a857c58d4426e5a609bfcefed",
+      "page": null
+    },
+    {
+      "file": "figure--concept-depth-option-model-backup.mobile.svg",
+      "target": "assets/crl-figures/concept-depth-option-model-backup.mobile.svg",
+      "sha256": "d7339d0234af5ab576718891cd31d11b73dc0ea3321398e41cc0e01b16ba8e32",
+      "page": null
+    },
+    {
+      "file": "figure--concept-depth-option-model-backup.svg",
+      "target": "assets/crl-figures/concept-depth-option-model-backup.svg",
+      "sha256": "e1c036e2419cd5703e68ef1da6b12c09f89efd350f66bdf66d9c48027cc48302",
+      "page": null
+    },
+    {
+      "file": "figure--concept-depth-shared-feature-drift.mobile.svg",
+      "target": "assets/crl-figures/concept-depth-shared-feature-drift.mobile.svg",
+      "sha256": "3f3853a72efa7c39f48df927c5f12443a7fca3c0ddab4046ba52c1c33a1af148",
+      "page": null
+    },
+    {
+      "file": "figure--concept-depth-shared-feature-drift.svg",
+      "target": "assets/crl-figures/concept-depth-shared-feature-drift.svg",
+      "sha256": "7ec11d7db48885b8c80fb3db01f116a2d232b387aaec7119580d79ef7d547e9e",
+      "page": null
+    },
+    {
+      "file": "figure--concept-dqn-shared-feature.mobile.svg",
+      "target": "assets/crl-figures/concept-dqn-shared-feature.mobile.svg",
+      "sha256": "c8ff66d6fd1f8764e65941902e3a6c92ac5b4ae5876d86d0137ac8454a78caa6",
+      "page": null
+    },
+    {
+      "file": "figure--concept-dqn-shared-feature.svg",
+      "target": "assets/crl-figures/concept-dqn-shared-feature.svg",
+      "sha256": "da4d33b24c442e46640a17290c993f3ed3720b736d21ad6ba04d809785160513",
+      "page": null
+    },
+    {
+      "file": "figure--concept-dqn-target-relabel.mobile.svg",
+      "target": "assets/crl-figures/concept-dqn-target-relabel.mobile.svg",
+      "sha256": "e0b5da03436fda11db40c3d398b127c628c20646ecc1ade371cd5aac3439893d",
+      "page": null
+    },
+    {
+      "file": "figure--concept-dqn-target-relabel.svg",
+      "target": "assets/crl-figures/concept-dqn-target-relabel.svg",
+      "sha256": "8cd5a2afac9f391587de1af3955638ae0b372a4d903db1119b6036b4473e0aae",
+      "page": null
+    },
+    {
+      "file": "figure--concept-gvf-four-question-maps.mobile.svg",
+      "target": "assets/crl-figures/concept-gvf-four-question-maps.mobile.svg",
+      "sha256": "0733264ea33fa4e7aa02db11994a9f2f5d6552922b4c0dc6e472c8a9631b8c75",
+      "page": null
+    },
+    {
+      "file": "figure--concept-gvf-four-question-maps.svg",
+      "target": "assets/crl-figures/concept-gvf-four-question-maps.svg",
+      "sha256": "ae2208e09eeebf637e9f099bf2831a3ccad718896427bca233efafc7390c2a9e",
+      "page": null
+    },
+    {
+      "file": "figure--concept-option-model-learning.mobile.svg",
+      "target": "assets/crl-figures/concept-option-model-learning.mobile.svg",
+      "sha256": "5efe74d45a80368b6d31f843070bc5c11f65b2dfa5829a1ad9caf5d87941f2de",
+      "page": null
+    },
+    {
+      "file": "figure--concept-option-model-learning.svg",
+      "target": "assets/crl-figures/concept-option-model-learning.svg",
+      "sha256": "f181d624b8c47685287ff05d4074548b3618df1fab6a12e4275af87ed420341d",
+      "page": null
+    },
+    {
+      "file": "figure--concept-option-model-version.mobile.svg",
+      "target": "assets/crl-figures/concept-option-model-version.mobile.svg",
+      "sha256": "469daf881b0f6fbfd903e76959872e22349181ed8aa9cfc81212012766f44795",
+      "page": null
+    },
+    {
+      "file": "figure--concept-option-model-version.svg",
+      "target": "assets/crl-figures/concept-option-model-version.svg",
+      "sha256": "d603c776009afce54662e5ff7e8583237e4610ae5fa97a5e7391f1973b864e8e",
+      "page": null
+    },
+    {
+      "file": "figure--concept-research-control-learning.svg",
+      "target": "assets/crl-figures/concept-research-control-learning.svg",
+      "sha256": "6a4dc684db7f78be13c5926955d51e29c0e15a5f05267a57ad7b6495e3e57f37",
+      "page": null
+    },
+    {
+      "file": "figure--concept-research-experiment-pairing.svg",
+      "target": "assets/crl-figures/concept-research-experiment-pairing.svg",
+      "sha256": "83b2067383b4a40d14759eeef616de877d2b6f74b473b7f04a33f2a3a34a8816",
+      "page": null
+    },
+    {
+      "file": "figure--concept-research-model-expectation.svg",
+      "target": "assets/crl-figures/concept-research-model-expectation.svg",
+      "sha256": "af584255f167db67377efc6ea2b8af71752b5aa74761c77e0dee8d366c2bfa83",
+      "page": null
+    },
+    {
+      "file": "figure--concept-research-retention-conflict.svg",
+      "target": "assets/crl-figures/concept-research-retention-conflict.svg",
+      "sha256": "0db5649e3643a8c4ec5ece0e85b922759586d7ec8d509151e4fcb470000f4e4d",
+      "page": null
+    },
+    {
+      "file": "figure--concept-research-reward-memory.svg",
+      "target": "assets/crl-figures/concept-research-reward-memory.svg",
+      "sha256": "4c3d0ef3c7d88ade922b7a7c29b9b1c61adb769497c0cbc9bef95b99624045ed",
+      "page": null
+    },
+    {
+      "file": "figure--concept-research-soft-policy.svg",
+      "target": "assets/crl-figures/concept-research-soft-policy.svg",
+      "sha256": "1a066806747bcb7539ece2fea99c7fc825a677bf508e9fb56cfab9e8e2d1bcf3",
+      "page": null
+    },
+    {
+      "file": "figure--concept-selfplay-search-labels.mobile.svg",
+      "target": "assets/crl-figures/concept-selfplay-search-labels.mobile.svg",
+      "sha256": "c7582035932848742f41210b647678f12904d3004233cf7b3a97ae70752cf751",
+      "page": null
+    },
+    {
+      "file": "figure--concept-selfplay-search-labels.svg",
+      "target": "assets/crl-figures/concept-selfplay-search-labels.svg",
+      "sha256": "f086ee44cba54fdd807a9effb554d3a7f5d8f87bda46efae03fd778d7d4f8b7f",
+      "page": null
+    },
+    {
+      "file": "figure--concept-shared-gradient-geometry.mobile.svg",
+      "target": "assets/crl-figures/concept-shared-gradient-geometry.mobile.svg",
+      "sha256": "cbd8bec9b7e05573dd3a80ebd32899067de664d52a671b3ecbe4aeb3142a09d2",
+      "page": null
+    },
+    {
+      "file": "figure--concept-shared-gradient-geometry.svg",
+      "target": "assets/crl-figures/concept-shared-gradient-geometry.svg",
+      "sha256": "aab61f5a91c60d20ee9b9d4a54ad92d926bec0e34415bb2beedd30b7abaeaa9a",
+      "page": null
+    },
+    {
+      "file": "figure--concept-shared-gradient-memory.mobile.svg",
+      "target": "assets/crl-figures/concept-shared-gradient-memory.mobile.svg",
+      "sha256": "27b62da868fe062b5abd980d1bae333eee8bc7315f6f96b98b90e60010b8d620",
+      "page": null
+    },
+    {
+      "file": "figure--concept-shared-gradient-memory.svg",
+      "target": "assets/crl-figures/concept-shared-gradient-memory.svg",
+      "sha256": "2bba52852270e1a505f793bc2321c30abb80e379f96375c400ee9405fce4582f",
+      "page": null
+    },
+    {
+      "file": "figure--concept-shared-gradient-online.mobile.svg",
+      "target": "assets/crl-figures/concept-shared-gradient-online.mobile.svg",
+      "sha256": "a1ff6003d78f9d555fee2c825663ee1ee6b5535c072f395f2b7925d25d062b37",
+      "page": null
+    },
+    {
+      "file": "figure--concept-shared-gradient-online.svg",
+      "target": "assets/crl-figures/concept-shared-gradient-online.svg",
+      "sha256": "bafa5538a37ed400d54c55f93df85e532f79dbf5340a3797010a54542a226855",
+      "page": null
+    },
+    {
+      "file": "figure--consciousness-measurement-pci-protocol.mobile.svg",
+      "target": "assets/crl-figures/consciousness-measurement-pci-protocol.mobile.svg",
+      "sha256": "beec04bd67d90aa228f1408e543457f6fb26d13b2f9e9e9a967b1156f75504c8",
+      "page": null
+    },
+    {
+      "file": "figure--consciousness-measurement-pci-protocol.svg",
+      "target": "assets/crl-figures/consciousness-measurement-pci-protocol.svg",
+      "sha256": "f10d687220aa10408258a2a63826e7fec26b1bb1d610a3939b92fd1010c89f7c",
+      "page": null
+    },
+    {
+      "file": "figure--consciousness-measurement-report-contrast.mobile.svg",
+      "target": "assets/crl-figures/consciousness-measurement-report-contrast.mobile.svg",
+      "sha256": "e05e36550392e0bcebd98ca810eb003289d3dd89c60084b97e84195bfc2b0bd8",
+      "page": null
+    },
+    {
+      "file": "figure--consciousness-measurement-report-contrast.svg",
+      "target": "assets/crl-figures/consciousness-measurement-report-contrast.svg",
+      "sha256": "14444f28fc9fc0e755c17ea57da4be1cf9f6c8fd295ac6c44a81c654e1d10baf",
+      "page": null
+    },
+    {
+      "file": "figure--consciousness-measurement-rivalry-apparatus.mobile.svg",
+      "target": "assets/crl-figures/consciousness-measurement-rivalry-apparatus.mobile.svg",
+      "sha256": "992b3fcb0928d06895c239f19c9f6e8a7d1668d2d8160da9cb77cce01ca02b52",
+      "page": null
+    },
+    {
+      "file": "figure--consciousness-measurement-rivalry-apparatus.svg",
+      "target": "assets/crl-figures/consciousness-measurement-rivalry-apparatus.svg",
+      "sha256": "02cf32999f7453cd46fbc9d59b383467ddf13ed27f9d4343419df8424f197630",
+      "page": null
+    },
+    {
+      "file": "figure--constraint-control-walkthrough-routes.mobile.svg",
+      "target": "assets/crl-figures/constraint-control-walkthrough-routes.mobile.svg",
+      "sha256": "8ef6e51a59a2537a2a14d46bdc7e8678390a378190ee8ff29c6cb276e914e382",
+      "page": null
+    },
+    {
+      "file": "figure--constraint-control-walkthrough-routes.svg",
+      "target": "assets/crl-figures/constraint-control-walkthrough-routes.svg",
+      "sha256": "8f8798f3e8ef24ac7872a6ebc8752e5791586f707445b559731559f0d6c647e2",
+      "page": null
+    },
+    {
+      "file": "figure--constraint-control-walkthrough-updates.mobile.svg",
+      "target": "assets/crl-figures/constraint-control-walkthrough-updates.mobile.svg",
+      "sha256": "6fa7807fbade2497b92ccc05f7f1ec95b59ef89b3136b86df19e0bac23bbc598",
+      "page": null
+    },
+    {
+      "file": "figure--constraint-control-walkthrough-updates.svg",
+      "target": "assets/crl-figures/constraint-control-walkthrough-updates.svg",
+      "sha256": "756c45c89221bcd35a39b5a29baf0644a1d7f325921ddbfd2d6d3dbac26490a5",
+      "page": null
+    },
+    {
+      "file": "figure--continuing-state-walkthrough-boundaries.mobile.svg",
+      "target": "assets/crl-figures/continuing-state-walkthrough-boundaries.mobile.svg",
+      "sha256": "a617060fba02e26529a01dd4ac69116d7e38aa221947fe4e524b9650b68c898c",
+      "page": null
+    },
+    {
+      "file": "figure--continuing-state-walkthrough-boundaries.svg",
+      "target": "assets/crl-figures/continuing-state-walkthrough-boundaries.svg",
+      "sha256": "56cf506f0fdf22aab40dc451f511692e82889a50fd2d717f5e78de4ef26edb2d",
+      "page": null
+    },
+    {
+      "file": "figure--continuing-state-walkthrough-loop.mobile.svg",
+      "target": "assets/crl-figures/continuing-state-walkthrough-loop.mobile.svg",
+      "sha256": "6462d6108eadc6194abfb7d58c7716c4e1614acf53819657eccdb546621b1eef",
+      "page": null
+    },
+    {
+      "file": "figure--continuing-state-walkthrough-loop.svg",
+      "target": "assets/crl-figures/continuing-state-walkthrough-loop.svg",
+      "sha256": "16f506841c538c179651ecbf3b1c377149feee389ee1c97b344f85def10a82fa",
+      "page": null
+    },
+    {
+      "file": "figure--continuing-state-walkthrough-outcomes.mobile.svg",
+      "target": "assets/crl-figures/continuing-state-walkthrough-outcomes.mobile.svg",
+      "sha256": "a8efa915081ba447710c098cf58d735a601b07ba8162f10e434fec1613740b2b",
+      "page": null
+    },
+    {
+      "file": "figure--continuing-state-walkthrough-outcomes.svg",
+      "target": "assets/crl-figures/continuing-state-walkthrough-outcomes.svg",
+      "sha256": "91a9d7237428329517c8459ecdb64020c49670b489305eb916785e96187f729a",
+      "page": null
+    },
+    {
+      "file": "figure--continuous-control-critic-error.mobile.svg",
+      "target": "assets/crl-figures/continuous-control-critic-error.mobile.svg",
+      "sha256": "fbf7ec4328456d6b167c0e4f5fcf175a0c236c3eb3b5514179656554e3fca006",
+      "page": null
+    },
+    {
+      "file": "figure--continuous-control-critic-error.svg",
+      "target": "assets/crl-figures/continuous-control-critic-error.svg",
+      "sha256": "da4165ebff06f961e76327206dd7c9496fd720933614c2c3e58ad797e9f33a8f",
+      "page": null
+    },
+    {
+      "file": "figure--continuous-control-sac-pathwise.mobile.svg",
+      "target": "assets/crl-figures/continuous-control-sac-pathwise.mobile.svg",
+      "sha256": "5e6db5eec8ddb2d699eb1f926cff7d36d5c031322dd6c8d6dfcafe7daa2bf181",
+      "page": null
+    },
+    {
+      "file": "figure--continuous-control-sac-pathwise.svg",
+      "target": "assets/crl-figures/continuous-control-sac-pathwise.svg",
+      "sha256": "6115ebe38ddb9de3deb3cedffc6adf6abdad94c7332af6872527538a086d01d2",
+      "page": null
+    },
+    {
+      "file": "figure--continuous-control-target-smoothing.mobile.svg",
+      "target": "assets/crl-figures/continuous-control-target-smoothing.mobile.svg",
+      "sha256": "90ace7e7e1f7d03f5b78e401d63ae481fc8f55c95ecf4f08826c7e5012fb5d8f",
+      "page": null
+    },
+    {
+      "file": "figure--continuous-control-target-smoothing.svg",
+      "target": "assets/crl-figures/continuous-control-target-smoothing.svg",
+      "sha256": "5aa948d279fec58ef12b714be6c31abb308b9c82531277258cf0b25c20392e91",
+      "page": null
+    },
+    {
+      "file": "figure--control-targets-multistep.mobile.svg",
+      "target": "assets/crl-figures/control-targets-multistep.mobile.svg",
+      "sha256": "3abefe86809e78bcb6c7937c87c5a37d9559b7311022fe8f3ec8834d420f0df6",
+      "page": null
+    },
+    {
+      "file": "figure--control-targets-multistep.svg",
+      "target": "assets/crl-figures/control-targets-multistep.svg",
+      "sha256": "a71874fe1f7623377879224278f44af2dc98058197e2d3a06614eded89a5a54a",
+      "page": null
+    },
+    {
+      "file": "figure--control-targets-one-step.mobile.svg",
+      "target": "assets/crl-figures/control-targets-one-step.mobile.svg",
+      "sha256": "dc68b807e56b23af8bc822e96f4537e4f25030c789ba8f3b4e99a61ec6df4d5f",
+      "page": null
+    },
+    {
+      "file": "figure--control-targets-one-step.svg",
+      "target": "assets/crl-figures/control-targets-one-step.svg",
+      "sha256": "fd360bd7262204f93129f61418f149eb07da1255878bee764867f38d40688670",
+      "page": null
+    },
+    {
+      "file": "figure--control-targets-timing.mobile.svg",
+      "target": "assets/crl-figures/control-targets-timing.mobile.svg",
+      "sha256": "24567c455a335ec285ed9379dc2256df30cff2e52a7f04d37c2358fa352a11c6",
+      "page": null
+    },
+    {
+      "file": "figure--control-targets-timing.svg",
+      "target": "assets/crl-figures/control-targets-timing.svg",
+      "sha256": "0aabbdd407a791b5b1f46b7869f33b4098b3d6ecd403d99c2444b9b885127b08",
+      "page": null
+    },
+    {
+      "file": "figure--credit-meta-prefixes.mobile.svg",
+      "target": "assets/crl-figures/credit-meta-prefixes.mobile.svg",
+      "sha256": "319123caa5a76b9e84b90b4ca559f42c509eead63826df1e7768310d522811b1",
+      "page": null
+    },
+    {
+      "file": "figure--credit-meta-prefixes.svg",
+      "target": "assets/crl-figures/credit-meta-prefixes.svg",
+      "sha256": "7555e7718eb320f70f79fe2205d403f64e604ea544b6d6b8e9aaf30eb0336cd6",
+      "page": null
+    },
+    {
+      "file": "figure--credit-meta-sensitivity.mobile.svg",
+      "target": "assets/crl-figures/credit-meta-sensitivity.mobile.svg",
+      "sha256": "58c27b18e561bf7b4c354920d94fd66462125d5c5ef899e4f690383572ff19a3",
+      "page": null
+    },
+    {
+      "file": "figure--credit-meta-sensitivity.svg",
+      "target": "assets/crl-figures/credit-meta-sensitivity.svg",
+      "sha256": "af6ca611c74a36f25030f636ca97d941d399d4549dc177e28e8b612f2e94d28b",
+      "page": null
+    },
+    {
+      "file": "figure--cue-integration-apparatus.mobile.svg",
+      "target": "assets/crl-figures/cue-integration-apparatus.mobile.svg",
+      "sha256": "243cc1fa66899573ab7d6b66a5e4dc28956a440cdf3f49205642dbf67d501311",
+      "page": null
+    },
+    {
+      "file": "figure--cue-integration-apparatus.svg",
+      "target": "assets/crl-figures/cue-integration-apparatus.svg",
+      "sha256": "ad5e1280134495560763f86e1b6708a4fc59930dd9eb111bf8a7ce85874cf4b2",
+      "page": null
+    },
+    {
+      "file": "figure--cue-integration-fusion.mobile.svg",
+      "target": "assets/crl-figures/cue-integration-fusion.mobile.svg",
+      "sha256": "513bb66a73fc557eea5ae12428651bcdd076b5313ae2dc787911ea5a15def8c7",
+      "page": null
+    },
+    {
+      "file": "figure--cue-integration-fusion.svg",
+      "target": "assets/crl-figures/cue-integration-fusion.svg",
+      "sha256": "27d7b234db29e9572e85ef5f47c70a57ceac388b2813bee4f0e87ae1214f2dfe",
+      "page": null
+    },
+    {
+      "file": "figure--cue-integration-psychometric.mobile.svg",
+      "target": "assets/crl-figures/cue-integration-psychometric.mobile.svg",
+      "sha256": "904a11123522807b034a648ebafed41d6ec6d6af0e16bd4f68ced394a9886bac",
+      "page": null
+    },
+    {
+      "file": "figure--cue-integration-psychometric.svg",
+      "target": "assets/crl-figures/cue-integration-psychometric.svg",
+      "sha256": "5fa026b70dcdc11d21544e1041cbf2e61ccf924484673e922bb94f7515b22651",
+      "page": null
+    },
+    {
+      "file": "figure--deep-exploration-walkthrough-heads.mobile.svg",
+      "target": "assets/crl-figures/deep-exploration-walkthrough-heads.mobile.svg",
+      "sha256": "81df060084653d1cb762c460a732ccc460e2eb3539756ca27e30613591df24a0",
+      "page": null
+    },
+    {
+      "file": "figure--deep-exploration-walkthrough-heads.svg",
+      "target": "assets/crl-figures/deep-exploration-walkthrough-heads.svg",
+      "sha256": "c8dcf3b4d1097ab9d18476cbd8fd1aa04c2da5ac00fe808f604dc6b0d7c50031",
+      "page": null
+    },
+    {
+      "file": "figure--deep-exploration-walkthrough-loop.mobile.svg",
+      "target": "assets/crl-figures/deep-exploration-walkthrough-loop.mobile.svg",
+      "sha256": "8b306ab2c6dc5013cb9a75be788737c2fc0054c7d29ff6feeae722d94acafc5c",
+      "page": null
+    },
+    {
+      "file": "figure--deep-exploration-walkthrough-loop.svg",
+      "target": "assets/crl-figures/deep-exploration-walkthrough-loop.svg",
+      "sha256": "38cb3a5fdd4dfb9f21edfa6e75305a1c102e879171453aaa79ac67c943e20330",
+      "page": null
+    },
+    {
+      "file": "figure--deep-exploration-walkthrough-reach.mobile.svg",
+      "target": "assets/crl-figures/deep-exploration-walkthrough-reach.mobile.svg",
+      "sha256": "e04248c78ff145092f284648f962c713d65b127d713639e30ed3898890a39ca6",
+      "page": null
+    },
+    {
+      "file": "figure--deep-exploration-walkthrough-reach.svg",
+      "target": "assets/crl-figures/deep-exploration-walkthrough-reach.svg",
+      "sha256": "61dbe0797be2b1052f33b80492aa7c5f082168ef748ddf4a8aabe59a6ed8c363",
+      "page": null
+    },
+    {
+      "file": "figure--delayed-state-walkthrough-boundary.mobile.svg",
+      "target": "assets/crl-figures/delayed-state-walkthrough-boundary.mobile.svg",
+      "sha256": "bd16cac844b5b8adf2634c3e21b6e5ee047eb8ec5493cd6da067ad90b4ad1d78",
+      "page": null
+    },
+    {
+      "file": "figure--delayed-state-walkthrough-boundary.svg",
+      "target": "assets/crl-figures/delayed-state-walkthrough-boundary.svg",
+      "sha256": "8456aae5e73aaba2f9b7291f1c98e06278b4d1c78f480f5ef1786eafd3ee9f56",
+      "page": null
+    },
+    {
+      "file": "figure--delayed-state-walkthrough-delay.mobile.svg",
+      "target": "assets/crl-figures/delayed-state-walkthrough-delay.mobile.svg",
+      "sha256": "668f6a2e3e7280c06b7d713e798b89f63740aea8ea2d97d5458e36813219531d",
+      "page": null
+    },
+    {
+      "file": "figure--delayed-state-walkthrough-delay.svg",
+      "target": "assets/crl-figures/delayed-state-walkthrough-delay.svg",
+      "sha256": "fe46cd650034daeb4487b717f1fa68f7dd636b36176b9b7be4d9b4c1de632929",
+      "page": null
+    },
+    {
+      "file": "figure--delayed-state-walkthrough-task.mobile.svg",
+      "target": "assets/crl-figures/delayed-state-walkthrough-task.mobile.svg",
+      "sha256": "d2d4c5f83594ef768cca4e32835280be404a7e8be8bd0bd2619d719440c459c0",
+      "page": null
+    },
+    {
+      "file": "figure--delayed-state-walkthrough-task.svg",
+      "target": "assets/crl-figures/delayed-state-walkthrough-task.svg",
+      "sha256": "7ce722eebf94d27663a5597bc0d6a1a90a3e6ac73ad61609fd3c761cb5baeee6",
+      "page": null
+    },
+    {
+      "file": "figure--distributional-walkthrough-projection.mobile.svg",
+      "target": "assets/crl-figures/distributional-walkthrough-projection.mobile.svg",
+      "sha256": "c938b54ebd7dbfe662c94fad7fcf1110934b1d9a1d399f17d2c77a83e83db65f",
+      "page": null
+    },
+    {
+      "file": "figure--distributional-walkthrough-projection.svg",
+      "target": "assets/crl-figures/distributional-walkthrough-projection.svg",
+      "sha256": "8a284f0a4a16cf0f76b2446e4b90e7dc068ea35d3790388d0db0164f76159cdc",
+      "page": null
+    },
+    {
+      "file": "figure--distributional-walkthrough-task.mobile.svg",
+      "target": "assets/crl-figures/distributional-walkthrough-task.mobile.svg",
+      "sha256": "09410fc054ba3c41262881bef83cbabb864808307d9c7e5541506c34512b67c7",
+      "page": null
+    },
+    {
+      "file": "figure--distributional-walkthrough-task.svg",
+      "target": "assets/crl-figures/distributional-walkthrough-task.svg",
+      "sha256": "e5df5a566e5cc6aef3473eda1de539abb83b8dea2883f789a9f80fe3b56a7128",
+      "page": null
+    },
+    {
+      "file": "figure--distributional-walkthrough-update-risk.mobile.svg",
+      "target": "assets/crl-figures/distributional-walkthrough-update-risk.mobile.svg",
+      "sha256": "153d45efb60222a0ad7e822d811b370b68a224615193b11d1fd046d03c633ddc",
+      "page": null
+    },
+    {
+      "file": "figure--distributional-walkthrough-update-risk.svg",
+      "target": "assets/crl-figures/distributional-walkthrough-update-risk.svg",
+      "sha256": "6f9977bc8b77e02819770eb87f8f3955f44d00980fb02de1f831dbad8871d77f",
+      "page": null
+    },
+    {
+      "file": "figure--dyna-planning-walkthrough-loop.mobile.svg",
+      "target": "assets/crl-figures/dyna-planning-walkthrough-loop.mobile.svg",
+      "sha256": "7f387ffb0f7b1ad473edf43171cd2300b7a8f16a19a42059503b325949c5bba1",
+      "page": null
+    },
+    {
+      "file": "figure--dyna-planning-walkthrough-loop.svg",
+      "target": "assets/crl-figures/dyna-planning-walkthrough-loop.svg",
+      "sha256": "4653d96b9181129c0bac3f98431ffae2ce4b5e201cbb99b99f5029968b326de6",
+      "page": null
+    },
+    {
+      "file": "figure--dyna-planning-walkthrough-queue.mobile.svg",
+      "target": "assets/crl-figures/dyna-planning-walkthrough-queue.mobile.svg",
+      "sha256": "e223a2fee4d20e5bbdf16ea449438a80da023555555698a9e6e9f4b0fcd01c2f",
+      "page": null
+    },
+    {
+      "file": "figure--dyna-planning-walkthrough-queue.svg",
+      "target": "assets/crl-figures/dyna-planning-walkthrough-queue.svg",
+      "sha256": "35c371bb3ade6deee292e276c81cd49104ef353fe3f753065f18cdfd307f5b13",
+      "page": null
+    },
+    {
+      "file": "figure--dyna-planning-walkthrough-sample.mobile.svg",
+      "target": "assets/crl-figures/dyna-planning-walkthrough-sample.mobile.svg",
+      "sha256": "7250adbf0258a95c233c87ff708d784ceafa9b25c31e07f8460e4d19404798b0",
+      "page": null
+    },
+    {
+      "file": "figure--dyna-planning-walkthrough-sample.svg",
+      "target": "assets/crl-figures/dyna-planning-walkthrough-sample.svg",
+      "sha256": "aa99edb00e562c95f5b9ba87feccf85a7320f50c486b3d221186846010ce45ec",
+      "page": null
+    },
+    {
+      "file": "figure--economic-choice-walkthrough-common-consequence.mobile.svg",
+      "target": "assets/crl-figures/economic-choice-walkthrough-common-consequence.mobile.svg",
+      "sha256": "c2453a6e802ee0bf20e5fdf58d11faec897cdb868fa35caa1eee877111092068",
+      "page": null
+    },
+    {
+      "file": "figure--economic-choice-walkthrough-common-consequence.svg",
+      "target": "assets/crl-figures/economic-choice-walkthrough-common-consequence.svg",
+      "sha256": "cde661a5d80f5c5807af9269a216f1ad76c5251b292cd74587f74e245068546a",
+      "page": null
+    },
+    {
+      "file": "figure--economic-choice-walkthrough-common-ratio.mobile.svg",
+      "target": "assets/crl-figures/economic-choice-walkthrough-common-ratio.mobile.svg",
+      "sha256": "587f19c644ae4033673ad95374fd76a285334353bb09c1260d71d8ce9d5e4ea6",
+      "page": null
+    },
+    {
+      "file": "figure--economic-choice-walkthrough-common-ratio.svg",
+      "target": "assets/crl-figures/economic-choice-walkthrough-common-ratio.svg",
+      "sha256": "d9d98d1f4bdaf0587fe477b3e20aed6dc1c27e55e65ddb28120f530a8110a346",
+      "page": null
+    },
+    {
+      "file": "figure--economic-choice-walkthrough-reference.mobile.svg",
+      "target": "assets/crl-figures/economic-choice-walkthrough-reference.mobile.svg",
+      "sha256": "3c84c3cb1f7886772133a75fa094dfd061bf90f74e944f58d806fc8ea4fdb63c",
+      "page": null
+    },
+    {
+      "file": "figure--economic-choice-walkthrough-reference.svg",
+      "target": "assets/crl-figures/economic-choice-walkthrough-reference.svg",
+      "sha256": "5b9de9da12d03047775affcf1ff9441ddb79b005d4e0f953d17a70cb5e8876be",
+      "page": null
+    },
+    {
+      "file": "figure--exploration-information-walkthrough-control.mobile.svg",
+      "target": "assets/crl-figures/exploration-information-walkthrough-control.mobile.svg",
+      "sha256": "ea28929d2d242abc2c39d584831fabba9cc78d7a78e815a617bb17fd1a8fc883",
+      "page": null
+    },
+    {
+      "file": "figure--exploration-information-walkthrough-control.svg",
+      "target": "assets/crl-figures/exploration-information-walkthrough-control.svg",
+      "sha256": "57818d01968ea52bcbd0f989c381863719c0141712852dbd9c0ac7b1194ce32a",
+      "page": null
+    },
+    {
+      "file": "figure--exploration-information-walkthrough-posterior.mobile.svg",
+      "target": "assets/crl-figures/exploration-information-walkthrough-posterior.mobile.svg",
+      "sha256": "3f34b4553b2d9a1f8b51a7f1a433bd70dac92b14450cd11e7456f5725f9d45a4",
+      "page": null
+    },
+    {
+      "file": "figure--exploration-information-walkthrough-posterior.svg",
+      "target": "assets/crl-figures/exploration-information-walkthrough-posterior.svg",
+      "sha256": "96e9dca97d93ba5363750c43def2acfb89adf862f3f8dbfed880702d9b0ecf46",
+      "page": null
+    },
+    {
+      "file": "figure--exploration-information-walkthrough-task.mobile.svg",
+      "target": "assets/crl-figures/exploration-information-walkthrough-task.mobile.svg",
+      "sha256": "04c6f2f9d3e7786fcb844bd9660b3ae1b005dc14ba3420ca4653d7f412344dee",
+      "page": null
+    },
+    {
+      "file": "figure--exploration-information-walkthrough-task.svg",
+      "target": "assets/crl-figures/exploration-information-walkthrough-task.svg",
+      "sha256": "6e2653b852ddb05f3e5bdbea8bb8df8ef5774e7a900c7b3b9aeb5c15373f172a",
+      "page": null
+    },
+    {
+      "file": "figure--feature-control-walkthrough-control.mobile.svg",
+      "target": "assets/crl-figures/feature-control-walkthrough-control.mobile.svg",
+      "sha256": "53cba1e1c222b1da908fe37937bbbc4a24b8b051ab1ddcf2883c4b34a04efb5c",
+      "page": null
+    },
+    {
+      "file": "figure--feature-control-walkthrough-control.svg",
+      "target": "assets/crl-figures/feature-control-walkthrough-control.svg",
+      "sha256": "b52358064f845dac4805154509b82d781f3b3dd5d98660d46eb06b6cd42e082d",
+      "page": null
+    },
+    {
+      "file": "figure--feature-control-walkthrough-features.mobile.svg",
+      "target": "assets/crl-figures/feature-control-walkthrough-features.mobile.svg",
+      "sha256": "4eebc754f54d0917c6b82be48ea62a17c0a41d52b2b5b2d5266a7e1e9032c275",
+      "page": null
+    },
+    {
+      "file": "figure--feature-control-walkthrough-features.svg",
+      "target": "assets/crl-figures/feature-control-walkthrough-features.svg",
+      "sha256": "23ebd7a318430256f644e44141ecbba78dd7d76c917d9165a60ea8f0968cdc53",
+      "page": null
+    },
+    {
+      "file": "figure--feature-control-walkthrough-scale.mobile.svg",
+      "target": "assets/crl-figures/feature-control-walkthrough-scale.mobile.svg",
+      "sha256": "99b8365bf44fdd683d06bce0507c91e80ffdf0ef929d9570882bc9c80b386a5d",
+      "page": null
+    },
+    {
+      "file": "figure--feature-control-walkthrough-scale.svg",
+      "target": "assets/crl-figures/feature-control-walkthrough-scale.svg",
+      "sha256": "4399bf14c4cbdc3c64e9618326a2d6dc296e493802704c2d5b4308a0bd160ddf",
+      "page": null
+    },
+    {
+      "file": "figure--feedback-control-response.mobile.svg",
+      "target": "assets/crl-figures/feedback-control-response.mobile.svg",
+      "sha256": "06b84b7600d460e261880279ee101f2eb4d65a2483df422005407a5c4161a483",
+      "page": null
+    },
+    {
+      "file": "figure--feedback-control-response.svg",
+      "target": "assets/crl-figures/feedback-control-response.svg",
+      "sha256": "d2b59916d2e648225fb125d51b58aa4d93a025eb8d3d3fb567b2ba19aa437676",
+      "page": null
+    },
+    {
+      "file": "figure--feedback-control-task-perturbations.mobile.svg",
+      "target": "assets/crl-figures/feedback-control-task-perturbations.mobile.svg",
+      "sha256": "c4dc11e19a8b82b8bf6fe3bfa29d845135bc091d4018ad3eecf5d2d79aa5013b",
+      "page": null
+    },
+    {
+      "file": "figure--feedback-control-task-perturbations.svg",
+      "target": "assets/crl-figures/feedback-control-task-perturbations.svg",
+      "sha256": "95d5737408c327c88bcc9ba3e4fec380444b6dc09a976916efb73d08bbf56318",
+      "page": null
+    },
+    {
+      "file": "figure--gae-ppo-walkthrough.mobile.svg",
+      "target": "assets/crl-figures/gae-ppo-walkthrough.mobile.svg",
+      "sha256": "9c866e996c77e40c88a3a0aa0233cecdc80bdacb2767730070893faabeb487a7",
+      "page": null
+    },
+    {
+      "file": "figure--gae-ppo-walkthrough.svg",
+      "target": "assets/crl-figures/gae-ppo-walkthrough.svg",
+      "sha256": "2b6feb1f28b2366fdda6bdbcb55e23669951d2808585ef28eb022e339097dca4",
+      "page": null
+    },
+    {
+      "file": "figure--goal-discovery-walkthrough-candidates.mobile.svg",
+      "target": "assets/crl-figures/goal-discovery-walkthrough-candidates.mobile.svg",
+      "sha256": "e011b54c89c50ea7410322e02fffa9311d961d441dc130bea3b03e7cc8eb2791",
+      "page": null
+    },
+    {
+      "file": "figure--goal-discovery-walkthrough-candidates.svg",
+      "target": "assets/crl-figures/goal-discovery-walkthrough-candidates.svg",
+      "sha256": "93180605c0734466685df1e136d3e8b449d4221e387db45d220777168a4d60e6",
+      "page": null
+    },
+    {
+      "file": "figure--goal-discovery-walkthrough-learning.mobile.svg",
+      "target": "assets/crl-figures/goal-discovery-walkthrough-learning.mobile.svg",
+      "sha256": "21d996b115d0e81b92dcc1c181250bf5a032614560786a68675019428834f9a1",
+      "page": null
+    },
+    {
+      "file": "figure--goal-discovery-walkthrough-learning.svg",
+      "target": "assets/crl-figures/goal-discovery-walkthrough-learning.svg",
+      "sha256": "8a6cdde7f4f9a06fd97772a94cdcdca7970fa8b116d633ba60007c0fe2673508",
+      "page": null
+    },
+    {
+      "file": "figure--goal-discovery-walkthrough-loop.mobile.svg",
+      "target": "assets/crl-figures/goal-discovery-walkthrough-loop.mobile.svg",
+      "sha256": "f365fa628114dbe39d882df7fcdb2d52b2dcc5fd7388d0cf8b7f8dc99e5262fe",
+      "page": null
+    },
+    {
+      "file": "figure--goal-discovery-walkthrough-loop.svg",
+      "target": "assets/crl-figures/goal-discovery-walkthrough-loop.svg",
+      "sha256": "aef3dab97fcb6a3ff44e3668a1f0d290babc272dc15374540e4cc79594822030",
+      "page": null
+    },
+    {
+      "file": "figure--goal-model-planning-walkthrough-backups.mobile.svg",
+      "target": "assets/crl-figures/goal-model-planning-walkthrough-backups.mobile.svg",
+      "sha256": "a4906eaded1f33fa336f5e80203ffdb360b195ccd89bf9c133251044404c0538",
+      "page": null
+    },
+    {
+      "file": "figure--goal-model-planning-walkthrough-backups.svg",
+      "target": "assets/crl-figures/goal-model-planning-walkthrough-backups.svg",
+      "sha256": "fbd949552b67a07a7039d603781449f4da03b7821b2a5012ffd5baeb97af195f",
+      "page": null
+    },
+    {
+      "file": "figure--goal-model-planning-walkthrough-goals.mobile.svg",
+      "target": "assets/crl-figures/goal-model-planning-walkthrough-goals.mobile.svg",
+      "sha256": "caba1f3a517b319146ae2fefb6697c26c364571ccd6575e676d25fec02acd0e0",
+      "page": null
+    },
+    {
+      "file": "figure--goal-model-planning-walkthrough-goals.svg",
+      "target": "assets/crl-figures/goal-model-planning-walkthrough-goals.svg",
+      "sha256": "857d94fc3902fb8cdaa53e1c3977bd2cbd9a16d529fb0172af6d7d6075a8e172",
+      "page": null
+    },
+    {
+      "file": "figure--goal-model-planning-walkthrough-repair.mobile.svg",
+      "target": "assets/crl-figures/goal-model-planning-walkthrough-repair.mobile.svg",
+      "sha256": "8b0c49d442f763a46d81c4da793c99dcba46c92c17d408548af099b844a075d3",
+      "page": null
+    },
+    {
+      "file": "figure--goal-model-planning-walkthrough-repair.svg",
+      "target": "assets/crl-figures/goal-model-planning-walkthrough-repair.svg",
+      "sha256": "07a752b7f39d3e5eeb4c25c8b81c5fc08b3ad8cc78a7ddd80426d1de37cf4dbd",
+      "page": null
+    },
+    {
+      "file": "figure--learned-memory-walkthrough-mixing.mobile.svg",
+      "target": "assets/crl-figures/learned-memory-walkthrough-mixing.mobile.svg",
+      "sha256": "842ec6b77c88bf368df777ea162d8bfcb0aafcf78483e567e658e5aee0f73700",
+      "page": null
+    },
+    {
+      "file": "figure--learned-memory-walkthrough-mixing.svg",
+      "target": "assets/crl-figures/learned-memory-walkthrough-mixing.svg",
+      "sha256": "c818a2f3194bd4be4bb5c01cbae3322c10c4df265f63a9363b2c1a1fbbd60201",
+      "page": null
+    },
+    {
+      "file": "figure--learned-memory-walkthrough-saturation.mobile.svg",
+      "target": "assets/crl-figures/learned-memory-walkthrough-saturation.mobile.svg",
+      "sha256": "3784ea7694ddc5cb6ab610fec04b17c8dcf3ad62c2822edfbb39495e7d9a6940",
+      "page": null
+    },
+    {
+      "file": "figure--learned-memory-walkthrough-saturation.svg",
+      "target": "assets/crl-figures/learned-memory-walkthrough-saturation.svg",
+      "sha256": "e4ae9d93ca45f8b704c6ea833a0084de70ed66caaf7f1f4dd0440acb2ff3e9e9",
+      "page": null
+    },
+    {
+      "file": "figure--learned-memory-walkthrough-trajectory.mobile.svg",
+      "target": "assets/crl-figures/learned-memory-walkthrough-trajectory.mobile.svg",
+      "sha256": "6acf0b2ea78b135cc9306d7c7980ad4e437a426292d06fb0d3ac5c047d400ee5",
+      "page": null
+    },
+    {
+      "file": "figure--learned-memory-walkthrough-trajectory.svg",
+      "target": "assets/crl-figures/learned-memory-walkthrough-trajectory.svg",
+      "sha256": "acacf80dea5b6a0ae131d2dcced137d2729ab6b38a58ee605fa895f31d8ed863",
+      "page": null
+    },
+    {
+      "file": "figure--learning-experiments-blocking.mobile.svg",
+      "target": "assets/crl-figures/learning-experiments-blocking.mobile.svg",
+      "sha256": "368b670f1acb872d90776067a4142cdd581d656e33c1b255200ae64b8c97a8cf",
+      "page": null
+    },
+    {
+      "file": "figure--learning-experiments-blocking.svg",
+      "target": "assets/crl-figures/learning-experiments-blocking.svg",
+      "sha256": "f44d885aa810fda4e33fcca52488d42221974a0f8027fde3860c3f3cdecc87ac",
+      "page": null
+    },
+    {
+      "file": "figure--learning-experiments-meta-rl.mobile.svg",
+      "target": "assets/crl-figures/learning-experiments-meta-rl.mobile.svg",
+      "sha256": "06a0bcbbe2da985b2e7162c365e2c99ce8f51d14b7a04d7a998ba11cf0494332",
+      "page": null
+    },
+    {
+      "file": "figure--learning-experiments-meta-rl.svg",
+      "target": "assets/crl-figures/learning-experiments-meta-rl.svg",
+      "sha256": "a7872946952c1150353a2f711f4041c03eb907a869476b33578bcc455f9f22c8",
+      "page": null
+    },
+    {
+      "file": "figure--lifetime-evaluation-ranking.mobile.svg",
+      "target": "assets/crl-figures/lifetime-evaluation-ranking.mobile.svg",
+      "sha256": "ca49d198e32aa0f6d453b310905f0ee9182eaf5c47c8893ceb70e7ac232e9b5a",
+      "page": null
+    },
+    {
+      "file": "figure--lifetime-evaluation-ranking.svg",
+      "target": "assets/crl-figures/lifetime-evaluation-ranking.svg",
+      "sha256": "cad1ae6cfc7c5eb94c12994d813c77635fe064e671e24b86df32e8ce7c624294",
+      "page": null
+    },
+    {
+      "file": "figure--marl-population-gamescape.mobile.svg",
+      "target": "assets/crl-figures/marl-population-gamescape.mobile.svg",
+      "sha256": "aa84cebfe6a7c1fc12b9abd32f59cfca61dc2f38b0bb3ca9fad4d27968685245",
+      "page": null
+    },
+    {
+      "file": "figure--marl-population-gamescape.svg",
+      "target": "assets/crl-figures/marl-population-gamescape.svg",
+      "sha256": "3700dbfbbfefe9f857aae27edd5fb7cf50741d2c0f47472d3a119459a4e48412",
+      "page": null
+    },
+    {
+      "file": "figure--marl-population-rectified.mobile.svg",
+      "target": "assets/crl-figures/marl-population-rectified.mobile.svg",
+      "sha256": "fd487d19db73f472726b86bebe3f70e484d15f200b0706a6e5ce663d3be1bb17",
+      "page": null
+    },
+    {
+      "file": "figure--marl-population-rectified.svg",
+      "target": "assets/crl-figures/marl-population-rectified.svg",
+      "sha256": "c2fce2df222d479ecd315f6a6693ad71ed784a055be1aac115dc85fa9ec5b43e",
+      "page": null
+    },
+    {
+      "file": "figure--mc-control-walkthrough-closed-loop.mobile.svg",
+      "target": "assets/crl-figures/mc-control-walkthrough-closed-loop.mobile.svg",
+      "sha256": "9bd7a9cdc3311363cc8b4816032e247ae79ffc356c3a057f3ab939fd65a280c5",
+      "page": null
+    },
+    {
+      "file": "figure--mc-control-walkthrough-closed-loop.svg",
+      "target": "assets/crl-figures/mc-control-walkthrough-closed-loop.svg",
+      "sha256": "3c1f67207370998ac9a7e7395c5dc03ec0dfe37835970f1fd7f62be54097dc2a",
+      "page": null
+    },
+    {
+      "file": "figure--mc-control-walkthrough-mixture.mobile.svg",
+      "target": "assets/crl-figures/mc-control-walkthrough-mixture.mobile.svg",
+      "sha256": "c5ceae3560e22cd4090e5621227ca3dd604f436102ecffa57994c7fc21a6a918",
+      "page": null
+    },
+    {
+      "file": "figure--mc-control-walkthrough-mixture.svg",
+      "target": "assets/crl-figures/mc-control-walkthrough-mixture.svg",
+      "sha256": "2ad442deb77019f5865510080f0311cd604aad6ca511d294058a235107e4ef50",
+      "page": null
+    },
+    {
+      "file": "figure--mc-control-walkthrough-suffix.mobile.svg",
+      "target": "assets/crl-figures/mc-control-walkthrough-suffix.mobile.svg",
+      "sha256": "010ddcf71839f8a51027e907b8041c5c0e120fa0f3052e229a488100cc800e91",
+      "page": null
+    },
+    {
+      "file": "figure--mc-control-walkthrough-suffix.svg",
+      "target": "assets/crl-figures/mc-control-walkthrough-suffix.svg",
+      "sha256": "9e5aa67191357e9337c49c602d6279a949f3465e38b4595c9d2872bb3fb1f4f2",
+      "page": null
+    },
+    {
+      "file": "figure--mc-offpolicy-control-backward-loop.mobile.svg",
+      "target": "assets/crl-figures/mc-offpolicy-control-backward-loop.mobile.svg",
+      "sha256": "00b7b64bc4a164363d1968e3568f5a4d074c5e134b92d8a02d5024e457fb9ab0",
+      "page": null
+    },
+    {
+      "file": "figure--mc-offpolicy-control-backward-loop.svg",
+      "target": "assets/crl-figures/mc-offpolicy-control-backward-loop.svg",
+      "sha256": "b559d71451343d1690456a3d9266b9a628e92282078fdd0dd869138740601375",
+      "page": null
+    },
+    {
+      "file": "figure--mc-offpolicy-control-finite-evidence.mobile.svg",
+      "target": "assets/crl-figures/mc-offpolicy-control-finite-evidence.mobile.svg",
+      "sha256": "10768bd1d4cb4537c77b28774cec8c3f185e9b5e2d1581d879003cee21f195e7",
+      "page": null
+    },
+    {
+      "file": "figure--mc-offpolicy-control-finite-evidence.svg",
+      "target": "assets/crl-figures/mc-offpolicy-control-finite-evidence.svg",
+      "sha256": "47bcd2aab14e68598a0a889e4d80026a8c1984b3aca67c0b23260d3ee47c88af",
+      "page": null
+    },
+    {
+      "file": "figure--mc-offpolicy-control-repeated.mobile.svg",
+      "target": "assets/crl-figures/mc-offpolicy-control-repeated.mobile.svg",
+      "sha256": "39c81d74760553aa1f9bcf3b43e5c5ea891f26bd6302d2cff1efc4a5aecb82fe",
+      "page": null
+    },
+    {
+      "file": "figure--mc-offpolicy-control-repeated.svg",
+      "target": "assets/crl-figures/mc-offpolicy-control-repeated.svg",
+      "sha256": "319efab844baf7193a29948309091ce7756414ef7ae32ab69f7581bff454974a",
+      "page": null
+    },
+    {
+      "file": "figure--mdp-dp-policy.mobile.svg",
+      "target": "assets/crl-figures/mdp-dp-policy.mobile.svg",
+      "sha256": "5d2f528c1dcfc7f3b904e35998b80260702b0cc9164f30f100fd9f43792f7304",
+      "page": null
+    },
+    {
+      "file": "figure--mdp-dp-policy.svg",
+      "target": "assets/crl-figures/mdp-dp-policy.svg",
+      "sha256": "fb5a4d741460d19d328c70bd30a2588ae994a9942ffd4cf151c48974a95a48b7",
+      "page": null
+    },
+    {
+      "file": "figure--mdp-dp-propagation.mobile.svg",
+      "target": "assets/crl-figures/mdp-dp-propagation.mobile.svg",
+      "sha256": "161810256052f54f25aec5b38c53ee79c3ba99a3da3c773f59b0e1ac37489eb9",
+      "page": null
+    },
+    {
+      "file": "figure--mdp-dp-propagation.svg",
+      "target": "assets/crl-figures/mdp-dp-propagation.svg",
+      "sha256": "7166980e085f51f7a068b20121f36b4a07a45f87927fbef750880b1e03e2993b",
+      "page": null
+    },
+    {
+      "file": "figure--mdp-dp-task.mobile.svg",
+      "target": "assets/crl-figures/mdp-dp-task.mobile.svg",
+      "sha256": "939f98f7a766f1e91b57daaac8d6571123afbeb20ed933fe08fd7d81769ff623",
+      "page": null
+    },
+    {
+      "file": "figure--mdp-dp-task.svg",
+      "target": "assets/crl-figures/mdp-dp-task.svg",
+      "sha256": "f2f07191e11f7fdbb8e5ce70e2e392666135ed1428f70895b126ba024834c198",
+      "page": null
+    },
+    {
+      "file": "figure--memory-ripple-experiment.mobile.svg",
+      "target": "assets/crl-figures/memory-ripple-experiment.mobile.svg",
+      "sha256": "88587c316532aeb395c3c262314ed19248bd9229fe3259a2c855f61127cbe07d",
+      "page": null
+    },
+    {
+      "file": "figure--memory-ripple-experiment.svg",
+      "target": "assets/crl-figures/memory-ripple-experiment.svg",
+      "sha256": "fc448f01e026dadae353cfeb1d5540c87b6f3a5089189c5f279e74e6ef86feaf",
+      "page": null
+    },
+    {
+      "file": "figure--mind-explanation-identifiability-walkthrough-likelihood.mobile.svg",
+      "target": "assets/crl-figures/mind-explanation-identifiability-walkthrough-likelihood.mobile.svg",
+      "sha256": "6baca807543ab18b5c43a2edbd690c94fd438abfe5f91a38c8210a791003d54c",
+      "page": null
+    },
+    {
+      "file": "figure--mind-explanation-identifiability-walkthrough-likelihood.svg",
+      "target": "assets/crl-figures/mind-explanation-identifiability-walkthrough-likelihood.svg",
+      "sha256": "8772d293cdbea17bbbba150417730ec7841ff029e762dc26182ca7099bc59f2b",
+      "page": null
+    },
+    {
+      "file": "figure--mind-explanation-identifiability-walkthrough-probabilities.mobile.svg",
+      "target": "assets/crl-figures/mind-explanation-identifiability-walkthrough-probabilities.mobile.svg",
+      "sha256": "dde66cbeaf319d0e39f5f3d0568c8ea7f469179eecb9a93e5663884f3955dfa7",
+      "page": null
+    },
+    {
+      "file": "figure--mind-explanation-identifiability-walkthrough-probabilities.svg",
+      "target": "assets/crl-figures/mind-explanation-identifiability-walkthrough-probabilities.svg",
+      "sha256": "b3ec5382c8d5af669d9facb84fea8e22175523c365fac47aa9ccab64f2037b0a",
+      "page": null
+    },
+    {
+      "file": "figure--mind-explanation-identifiability-walkthrough-protocol.mobile.svg",
+      "target": "assets/crl-figures/mind-explanation-identifiability-walkthrough-protocol.mobile.svg",
+      "sha256": "ad7ad77919e63895c250458bda13b0165fc5bdc1aefaf1b722e8e1ef4ef50eee",
+      "page": null
+    },
+    {
+      "file": "figure--mind-explanation-identifiability-walkthrough-protocol.svg",
+      "target": "assets/crl-figures/mind-explanation-identifiability-walkthrough-protocol.svg",
+      "sha256": "2445f562d02b0b2a9dc5dd650033e5fe1a088b8803854dd9f125f6bf152ce761",
+      "page": null
+    },
+    {
+      "file": "figure--mind-inference3-causality.mobile.svg",
+      "target": "assets/crl-figures/mind-inference3-causality.mobile.svg",
+      "sha256": "b490e602607c8ba8b6989c2ba4f9c48a286bfdad38ed6b2422d3f995a0888c79",
+      "page": null
+    },
+    {
+      "file": "figure--mind-inference3-causality.svg",
+      "target": "assets/crl-figures/mind-inference3-causality.svg",
+      "sha256": "30001e635619fdab50c46697b56c13eac96351963af59ab3eb0104837c8a6ea8",
+      "page": null
+    },
+    {
+      "file": "figure--mind-inference3-perturbation.mobile.svg",
+      "target": "assets/crl-figures/mind-inference3-perturbation.mobile.svg",
+      "sha256": "a9be9f97fbe12d50bdb15df1b53f6875fe70315f4928bbc64a816866b0f1a911",
+      "page": null
+    },
+    {
+      "file": "figure--mind-inference3-perturbation.svg",
+      "target": "assets/crl-figures/mind-inference3-perturbation.svg",
+      "sha256": "1b302eeedccc12acf41b53588e20620c02967add32113e0a94a5bc64302efcae",
+      "page": null
+    },
+    {
+      "file": "figure--mind-inference3-workspace.mobile.svg",
+      "target": "assets/crl-figures/mind-inference3-workspace.mobile.svg",
+      "sha256": "60b0648acad50876c88489093e963fb7e254c2979ad6604adf477fa16541234a",
+      "page": null
+    },
+    {
+      "file": "figure--mind-inference3-workspace.svg",
+      "target": "assets/crl-figures/mind-inference3-workspace.svg",
+      "sha256": "c73f2b352eb53004df51521df8cc942bf5e9714a5967e0ccf50132d824ee5e4e",
+      "page": null
+    },
+    {
+      "file": "figure--mind-philosophy-scenes-mary.mobile.svg",
+      "target": "assets/crl-figures/mind-philosophy-scenes-mary.mobile.svg",
+      "sha256": "bf2a2d92b384a697eb098231a29b2227da57b6377287afb99c620baedea89ba7",
+      "page": null
+    },
+    {
+      "file": "figure--mind-philosophy-scenes-mary.svg",
+      "target": "assets/crl-figures/mind-philosophy-scenes-mary.svg",
+      "sha256": "9e9e23f15c9e2796ef8ca30f8327bd90c8d86e0560f968fb1dc2502ca6902d85",
+      "page": null
+    },
+    {
+      "file": "figure--mind-philosophy-scenes-otto.mobile.svg",
+      "target": "assets/crl-figures/mind-philosophy-scenes-otto.mobile.svg",
+      "sha256": "c536283f3a173a7740326bd6513039385cd8c44cb3153751b136d0d8017155de",
+      "page": null
+    },
+    {
+      "file": "figure--mind-philosophy-scenes-otto.svg",
+      "target": "assets/crl-figures/mind-philosophy-scenes-otto.svg",
+      "sha256": "5269c69dd253959ae672d7e536c4e607a2454421a4d4defcc98f9ae58fc3cb91",
+      "page": null
+    },
+    {
+      "file": "figure--mind-philosophy-scenes-room.mobile.svg",
+      "target": "assets/crl-figures/mind-philosophy-scenes-room.mobile.svg",
+      "sha256": "68a600db82cfedf55f78b919aab3f64b4bacf9773d833083f082cb5e0cd64a97",
+      "page": null
+    },
+    {
+      "file": "figure--mind-philosophy-scenes-room.svg",
+      "target": "assets/crl-figures/mind-philosophy-scenes-room.svg",
+      "sha256": "7b065e5a2e4802c4b1b3d60f1c62a7a8c786746af3ace497002597f464d81b3b",
+      "page": null
+    },
+    {
+      "file": "figure--mind-psych3-extinction-renewal.mobile.svg",
+      "target": "assets/crl-figures/mind-psych3-extinction-renewal.mobile.svg",
+      "sha256": "053a6a5c125670ff923ac0b9b43c2e70c4f331b7d2089f7a7fdfecb4da0e975c",
+      "page": null
+    },
+    {
+      "file": "figure--mind-psych3-extinction-renewal.svg",
+      "target": "assets/crl-figures/mind-psych3-extinction-renewal.svg",
+      "sha256": "31142a33e0a7027bb8d300db341f7bc03de0ae19b94dd2ff632992d7c1f88361",
+      "page": null
+    },
+    {
+      "file": "figure--mind-psych3-identity-error.mobile.svg",
+      "target": "assets/crl-figures/mind-psych3-identity-error.mobile.svg",
+      "sha256": "4b0e4e9f1f59848beda103cd6741e84cf53c4bc4c2a44f9b6f9cba10339b918c",
+      "page": null
+    },
+    {
+      "file": "figure--mind-psych3-identity-error.svg",
+      "target": "assets/crl-figures/mind-psych3-identity-error.svg",
+      "sha256": "69afb9a846cd185c61e1bd722d7b227034c8e5b2c79eb4119e617048057f9e2e",
+      "page": null
+    },
+    {
+      "file": "figure--mind-psych3-structural-replay.mobile.svg",
+      "target": "assets/crl-figures/mind-psych3-structural-replay.mobile.svg",
+      "sha256": "4d1d4de57fa017c2ec9d5a01b57728b1f06516e6d18f90e0164083b8e6e6b96c",
+      "page": null
+    },
+    {
+      "file": "figure--mind-psych3-structural-replay.svg",
+      "target": "assets/crl-figures/mind-psych3-structural-replay.svg",
+      "sha256": "738213c1822d170d08793ad0fe5bab711601d6bc54893ad1cf3f6217758a468a",
+      "page": null
+    },
+    {
+      "file": "figure--model-change-walkthrough-estimates.mobile.svg",
+      "target": "assets/crl-figures/model-change-walkthrough-estimates.mobile.svg",
+      "sha256": "b16be34cfebccf97951822caf25d80046208b007fa7c97c362e5fc0b82ff2712",
+      "page": null
+    },
+    {
+      "file": "figure--model-change-walkthrough-estimates.svg",
+      "target": "assets/crl-figures/model-change-walkthrough-estimates.svg",
+      "sha256": "e80829d42e29e881bda1a9c4ade25928252f9f6e046823695c4269fc250e787e",
+      "page": null
+    },
+    {
+      "file": "figure--model-change-walkthrough-return.mobile.svg",
+      "target": "assets/crl-figures/model-change-walkthrough-return.mobile.svg",
+      "sha256": "38bba2af91ee0f1a785b7ce8b01fe6c7200e3ab17fc7802f834c23aaa3373ef4",
+      "page": null
+    },
+    {
+      "file": "figure--model-change-walkthrough-return.svg",
+      "target": "assets/crl-figures/model-change-walkthrough-return.svg",
+      "sha256": "b8eb28aac1b534633d58c3af810f73ed9c58edb54c13dac53222d2b51103f6a0",
+      "page": null
+    },
+    {
+      "file": "figure--model-change-walkthrough-task.mobile.svg",
+      "target": "assets/crl-figures/model-change-walkthrough-task.mobile.svg",
+      "sha256": "2484d035d5c95239f3b78ddbaa90bbd8db8522432efe8750c8ef6b0550061a73",
+      "page": null
+    },
+    {
+      "file": "figure--model-change-walkthrough-task.svg",
+      "target": "assets/crl-figures/model-change-walkthrough-task.svg",
+      "sha256": "4dd288ffd2a8f582d9f50c7eabcdc67070c7d82ede69f72adfce7b85df744fa8",
+      "page": null
+    },
+    {
+      "file": "figure--monte-carlo-walkthrough-probabilities.mobile.svg",
+      "target": "assets/crl-figures/monte-carlo-walkthrough-probabilities.mobile.svg",
+      "sha256": "b83040be4a4259e3d12ce0f69dced30ee8cc85e3f5d1fca0c7d1565d07c4a6ca",
+      "page": null
+    },
+    {
+      "file": "figure--monte-carlo-walkthrough-probabilities.svg",
+      "target": "assets/crl-figures/monte-carlo-walkthrough-probabilities.svg",
+      "sha256": "9c1a2cb00e0cb8c3ce6938c6799193a003afde2c6b29d0077b3d25ed3a490c47",
+      "page": null
+    },
+    {
+      "file": "figure--monte-carlo-walkthrough-targets.mobile.svg",
+      "target": "assets/crl-figures/monte-carlo-walkthrough-targets.mobile.svg",
+      "sha256": "d5427adc0fd4aac90d857ecbb20f0904d8013df8b1546a690114c5e8d0ebffbf",
+      "page": null
+    },
+    {
+      "file": "figure--monte-carlo-walkthrough-targets.svg",
+      "target": "assets/crl-figures/monte-carlo-walkthrough-targets.svg",
+      "sha256": "945da64947e2668157d91abe3064b007a9425572bcaad6f057e1f63928ec6db4",
+      "page": null
+    },
+    {
+      "file": "figure--monte-carlo-walkthrough-task.mobile.svg",
+      "target": "assets/crl-figures/monte-carlo-walkthrough-task.mobile.svg",
+      "sha256": "08068e033dd1d0954d95e7862f97f10124984fc68f70cfa4762d1409f3ad7c37",
+      "page": null
+    },
+    {
+      "file": "figure--monte-carlo-walkthrough-task.svg",
+      "target": "assets/crl-figures/monte-carlo-walkthrough-task.svg",
+      "sha256": "bb1ef30ad12b34b3e007497ac41f96a274c2b18087f47e90e76016471ef5c79a",
+      "page": null
+    },
+    {
+      "file": "figure--motivation-devaluation-protocol.mobile.svg",
+      "target": "assets/crl-figures/motivation-devaluation-protocol.mobile.svg",
+      "sha256": "3d127268ff2961a6735e5f50fa8a32c6dcc78c82439891355ad1beebe3581d0d",
+      "page": null
+    },
+    {
+      "file": "figure--motivation-devaluation-protocol.svg",
+      "target": "assets/crl-figures/motivation-devaluation-protocol.svg",
+      "sha256": "6f7ccd7b8141a8aaffafb9fcc9e24b197206d576b77201f9a6eccf08f15c3877",
+      "page": null
+    },
+    {
+      "file": "figure--motivation-revaluation-knowledge.mobile.svg",
+      "target": "assets/crl-figures/motivation-revaluation-knowledge.mobile.svg",
+      "sha256": "f973d0f73ca848c79fe86301ee73758c4d90c4380e4cfa88d293196b8ce24b2f",
+      "page": null
+    },
+    {
+      "file": "figure--motivation-revaluation-knowledge.svg",
+      "target": "assets/crl-figures/motivation-revaluation-knowledge.svg",
+      "sha256": "b390dfb4c7c4c0ca4292ca250a31761f32f60ade93e1845751ae4356c87f50d2",
+      "page": null
+    },
+    {
+      "file": "figure--motor-adaptation-apparatus.mobile.svg",
+      "target": "assets/crl-figures/motor-adaptation-apparatus.mobile.svg",
+      "sha256": "90677db796b0a112eee599fb331dad245bcda40d820853b57e03473d01dd9bfa",
+      "page": null
+    },
+    {
+      "file": "figure--motor-adaptation-apparatus.svg",
+      "target": "assets/crl-figures/motor-adaptation-apparatus.svg",
+      "sha256": "bebc5b9d6bbe37b744ab622499a0ac83bf30bc1d72ab9315a0d0cab73bb2d8b4",
+      "page": null
+    },
+    {
+      "file": "figure--motor-adaptation-cues.mobile.svg",
+      "target": "assets/crl-figures/motor-adaptation-cues.mobile.svg",
+      "sha256": "162ccd74aad43a99a6cae8cad71129645336863318afa185138af44f4211e0fb",
+      "page": null
+    },
+    {
+      "file": "figure--motor-adaptation-cues.svg",
+      "target": "assets/crl-figures/motor-adaptation-cues.svg",
+      "sha256": "20241c8bbb40a60d0a5e24aa60b8faf122446b7b21e48ee4b19f14089f0e210d",
+      "page": null
+    },
+    {
+      "file": "figure--motor-adaptation-rebound.mobile.svg",
+      "target": "assets/crl-figures/motor-adaptation-rebound.mobile.svg",
+      "sha256": "bbb34dc8a302ba3c8f9374d765c211ed204330cfe2d0940e0c596a61e6dfb87d",
+      "page": null
+    },
+    {
+      "file": "figure--motor-adaptation-rebound.svg",
+      "target": "assets/crl-figures/motor-adaptation-rebound.svg",
+      "sha256": "97a4840f03c8792bd68670b69d66108afe4ae1fd4b06c1a9ec9aabc083cad70f",
+      "page": null
+    },
+    {
+      "file": "figure--neural-distribution-walkthrough-bootstrap.mobile.svg",
+      "target": "assets/crl-figures/neural-distribution-walkthrough-bootstrap.mobile.svg",
+      "sha256": "8912930de0c9eee8c782cbeee35cb1fc186d374f739e79caafce491a3637200c",
+      "page": null
+    },
+    {
+      "file": "figure--neural-distribution-walkthrough-bootstrap.svg",
+      "target": "assets/crl-figures/neural-distribution-walkthrough-bootstrap.svg",
+      "sha256": "481e32d778792046b9f74522b39f2a049477691c2b6969d56f416664103c754c",
+      "page": null
+    },
+    {
+      "file": "figure--neural-distribution-walkthrough-network.mobile.svg",
+      "target": "assets/crl-figures/neural-distribution-walkthrough-network.mobile.svg",
+      "sha256": "33c108ed4c0b8cb813f20224c5ccb2625ed7adcf522eb873558c13928e9ea5f2",
+      "page": null
+    },
+    {
+      "file": "figure--neural-distribution-walkthrough-network.svg",
+      "target": "assets/crl-figures/neural-distribution-walkthrough-network.svg",
+      "sha256": "acdd13a958d1907ba7d79c31c13eba5f2943301f870af6dc8df46b2aec531c9e",
+      "page": null
+    },
+    {
+      "file": "figure--neural-distribution-walkthrough-updates.mobile.svg",
+      "target": "assets/crl-figures/neural-distribution-walkthrough-updates.mobile.svg",
+      "sha256": "fc53a416aca56eca615a717a6362f5f591911624ffc3d2442dd1a1f5084903df",
+      "page": null
+    },
+    {
+      "file": "figure--neural-distribution-walkthrough-updates.svg",
+      "target": "assets/crl-figures/neural-distribution-walkthrough-updates.svg",
+      "sha256": "0b2f76bdc0d8a939ffb878fb77c02af153b2033a6047c97c16623ae1107ea98d",
+      "page": null
+    },
+    {
+      "file": "figure--offline-support-coverage.mobile.svg",
+      "target": "assets/crl-figures/offline-support-coverage.mobile.svg",
+      "sha256": "c15235b967350db7dd704852ac7b730cc64d3d75b1ec10b3c0249e43fa154286",
+      "page": null
+    },
+    {
+      "file": "figure--offline-support-coverage.svg",
+      "target": "assets/crl-figures/offline-support-coverage.svg",
+      "sha256": "211a000ca259f722a71fb89ddf3f3fa0fc530f95ef43961c4c071290671f5a90",
+      "page": null
+    },
+    {
+      "file": "figure--offline-support-objectives.mobile.svg",
+      "target": "assets/crl-figures/offline-support-objectives.mobile.svg",
+      "sha256": "c750eec63e6331563dc6a9e1770a36681c652371f3d760d557612a6625e527cc",
+      "page": null
+    },
+    {
+      "file": "figure--offline-support-objectives.svg",
+      "target": "assets/crl-figures/offline-support-objectives.svg",
+      "sha256": "a11d6643c01735951e20c16f5e7600855490bb553ccb63e4d1535d5549975a09",
+      "page": null
+    },
+    {
+      "file": "figure--offpolicy-geometry-walkthrough-dynamics.mobile.svg",
+      "target": "assets/crl-figures/offpolicy-geometry-walkthrough-dynamics.mobile.svg",
+      "sha256": "f83bd5178f4368f4115a09e2b7ce5607b8d9eb32b86c2e073b081ec8ad1f4b72",
+      "page": null
+    },
+    {
+      "file": "figure--offpolicy-geometry-walkthrough-dynamics.svg",
+      "target": "assets/crl-figures/offpolicy-geometry-walkthrough-dynamics.svg",
+      "sha256": "594361fb945d12e2024b61e537fa46a3cc33d03980a27649b8830766a86ceab5",
+      "page": null
+    },
+    {
+      "file": "figure--offpolicy-geometry-walkthrough-projection.mobile.svg",
+      "target": "assets/crl-figures/offpolicy-geometry-walkthrough-projection.mobile.svg",
+      "sha256": "69e8bc2c3ed191dd356e71ebe87e9cbdf7025ec7d4eebc0a3adcb0dec9b835c6",
+      "page": null
+    },
+    {
+      "file": "figure--offpolicy-geometry-walkthrough-projection.svg",
+      "target": "assets/crl-figures/offpolicy-geometry-walkthrough-projection.svg",
+      "sha256": "5a583bbd68e9c87b512243cb389c77d2a5cc09eb6cc028ab39cae2ff6c259e4b",
+      "page": null
+    },
+    {
+      "file": "figure--planning-budget-walkthrough-decision.mobile.svg",
+      "target": "assets/crl-figures/planning-budget-walkthrough-decision.mobile.svg",
+      "sha256": "cb7d1601a7cff07ce36d4f34285057578c10365de68f64b37443d04368e07fcc",
+      "page": null
+    },
+    {
+      "file": "figure--planning-budget-walkthrough-decision.svg",
+      "target": "assets/crl-figures/planning-budget-walkthrough-decision.svg",
+      "sha256": "f5e558c813f4655089fb95c2cdb704f73cbc29ad758c860b750937109963ac13",
+      "page": null
+    },
+    {
+      "file": "figure--planning-budget-walkthrough-propagation.mobile.svg",
+      "target": "assets/crl-figures/planning-budget-walkthrough-propagation.mobile.svg",
+      "sha256": "8f0db5a8cbc88b8cdc382f8091b8325e44a949abdf5f3c7c9bd9ed793d976010",
+      "page": null
+    },
+    {
+      "file": "figure--planning-budget-walkthrough-propagation.svg",
+      "target": "assets/crl-figures/planning-budget-walkthrough-propagation.svg",
+      "sha256": "55173b2324280213983307eb09ff5283e0edbefb860763b505e1524b60cd8c01",
+      "page": null
+    },
+    {
+      "file": "figure--planning-budget-walkthrough-task.mobile.svg",
+      "target": "assets/crl-figures/planning-budget-walkthrough-task.mobile.svg",
+      "sha256": "05d9d592c53249b2d852c41c44905a5178b048b893161898b38751c2715efb51",
+      "page": null
+    },
+    {
+      "file": "figure--planning-budget-walkthrough-task.svg",
+      "target": "assets/crl-figures/planning-budget-walkthrough-task.svg",
+      "sha256": "70ebcc7ff7c5938190812532197060c4f9625d51d9e3136a3c9269be6d030be4",
+      "page": null
+    },
+    {
+      "file": "figure--policy-gradient-walkthrough-occupancy.mobile.svg",
+      "target": "assets/crl-figures/policy-gradient-walkthrough-occupancy.mobile.svg",
+      "sha256": "7fb789a32606d711611eb1683e090689ae09a2d13d460336c3e6511102c22b15",
+      "page": null
+    },
+    {
+      "file": "figure--policy-gradient-walkthrough-occupancy.svg",
+      "target": "assets/crl-figures/policy-gradient-walkthrough-occupancy.svg",
+      "sha256": "d90ea688a9c8b4c7ac67a2779a32f23aa1d5f326b2ad35f4c98e4efb54c8053f",
+      "page": null
+    },
+    {
+      "file": "figure--policy-gradient-walkthrough-variance-bias.mobile.svg",
+      "target": "assets/crl-figures/policy-gradient-walkthrough-variance-bias.mobile.svg",
+      "sha256": "3ec4f8b80d910ecb8e94461f89221289ea7f52d9a6af5adea402d3d6f51943bd",
+      "page": null
+    },
+    {
+      "file": "figure--policy-gradient-walkthrough-variance-bias.svg",
+      "target": "assets/crl-figures/policy-gradient-walkthrough-variance-bias.svg",
+      "sha256": "384e621b3bb01a21d1774ee630e9e2ea85524ebc74170a6124467ab8b512c840",
+      "page": null
+    },
+    {
+      "file": "figure--quantile-walkthrough-cdf.mobile.svg",
+      "target": "assets/crl-figures/quantile-walkthrough-cdf.mobile.svg",
+      "sha256": "025625cadb0919e369384d59c81b7c6f596088b9aabd5c12c1e96c17211da7cf",
+      "page": null
+    },
+    {
+      "file": "figure--quantile-walkthrough-cdf.svg",
+      "target": "assets/crl-figures/quantile-walkthrough-cdf.svg",
+      "sha256": "4547650bc36c375df2bac478008447dbabdf0de544da160c800a9e01858f630f",
+      "page": null
+    },
+    {
+      "file": "figure--quantile-walkthrough-readout.mobile.svg",
+      "target": "assets/crl-figures/quantile-walkthrough-readout.mobile.svg",
+      "sha256": "10268e3325d14b0de0875fb8ed153a0fe6f6d2ee9da1d3a1190a3c2ae43c2a23",
+      "page": null
+    },
+    {
+      "file": "figure--quantile-walkthrough-readout.svg",
+      "target": "assets/crl-figures/quantile-walkthrough-readout.svg",
+      "sha256": "2159eff6b74f2f84fe3bc80ce66b81f7bd4f09db386a01f16a9b631f58702a6e",
+      "page": null
+    },
+    {
+      "file": "figure--quantile-walkthrough-update.mobile.svg",
+      "target": "assets/crl-figures/quantile-walkthrough-update.mobile.svg",
+      "sha256": "ed448158e3f5242bd6b59bfb2dc9798f8754a5454b5bc65c0224d67b6d218eb1",
+      "page": null
+    },
+    {
+      "file": "figure--quantile-walkthrough-update.svg",
+      "target": "assets/crl-figures/quantile-walkthrough-update.svg",
+      "sha256": "0d7d0e629d152832f10e3901f2f849d1da0e23d62cb44bb3bca1c7f7c3a0e0bc",
+      "page": null
+    },
+    {
+      "file": "figure--recurrent-control-walkthrough-distribution.mobile.svg",
+      "target": "assets/crl-figures/recurrent-control-walkthrough-distribution.mobile.svg",
+      "sha256": "7e266c9d2c5283957a55e8fe34f372cc9b4b95df5a032878edf2bc4391adcda7",
+      "page": null
+    },
+    {
+      "file": "figure--recurrent-control-walkthrough-distribution.svg",
+      "target": "assets/crl-figures/recurrent-control-walkthrough-distribution.svg",
+      "sha256": "1153f7e382463a0554dc325931d0b480b68cf92f2304a0b82ea6434236b1b2c3",
+      "page": null
+    },
+    {
+      "file": "figure--recurrent-control-walkthrough-loop.mobile.svg",
+      "target": "assets/crl-figures/recurrent-control-walkthrough-loop.mobile.svg",
+      "sha256": "23c204e6597f57f02652d62f19d3e0eb5ab05c5cf944cbb91dce1a6f5218f46c",
+      "page": null
+    },
+    {
+      "file": "figure--recurrent-control-walkthrough-loop.svg",
+      "target": "assets/crl-figures/recurrent-control-walkthrough-loop.svg",
+      "sha256": "74db7928cd6b619181dfe688241b73a25f21a2ce285cb0f35c648e2a403a5e6d",
+      "page": null
+    },
+    {
+      "file": "figure--recurrent-control-walkthrough-records.mobile.svg",
+      "target": "assets/crl-figures/recurrent-control-walkthrough-records.mobile.svg",
+      "sha256": "9f8b6ad71c6f4f9c112c7b475037dee3ea74862e523e9159ee1561578dea7e8b",
+      "page": null
+    },
+    {
+      "file": "figure--recurrent-control-walkthrough-records.svg",
+      "target": "assets/crl-figures/recurrent-control-walkthrough-records.svg",
+      "sha256": "6160b799502c3a85bb2db4e08c624eb089b295197f5947b4e2e1d90b3597b31e",
+      "page": null
+    },
+    {
+      "file": "figure--recurrent-replay-walkthrough-boundaries.mobile.svg",
+      "target": "assets/crl-figures/recurrent-replay-walkthrough-boundaries.mobile.svg",
+      "sha256": "547c8f1dab86d4d23f574f0a76e182878642a043cba758068224efaa2380c2d8",
+      "page": null
+    },
+    {
+      "file": "figure--recurrent-replay-walkthrough-boundaries.svg",
+      "target": "assets/crl-figures/recurrent-replay-walkthrough-boundaries.svg",
+      "sha256": "917e6a03a392f23bb0c0a30c3ec08978bb79ffecdd8a41838e4d442509df8994",
+      "page": null
+    },
+    {
+      "file": "figure--recurrent-replay-walkthrough-gradient.mobile.svg",
+      "target": "assets/crl-figures/recurrent-replay-walkthrough-gradient.mobile.svg",
+      "sha256": "07c87a9caa8736f6a6d33b375c152bb3a5dc467c7e3b74ea2d755e867a9d18e8",
+      "page": null
+    },
+    {
+      "file": "figure--recurrent-replay-walkthrough-gradient.svg",
+      "target": "assets/crl-figures/recurrent-replay-walkthrough-gradient.svg",
+      "sha256": "96a70cac9a9e35d25ad7f9eba9f10356ca26985b0d0fbc6ee2d5f1d55d4ca7b8",
+      "page": null
+    },
+    {
+      "file": "figure--recurrent-replay-walkthrough-task.mobile.svg",
+      "target": "assets/crl-figures/recurrent-replay-walkthrough-task.mobile.svg",
+      "sha256": "666a8e19d8b232118744921c206f113493b47d6490c3372ebfc7d9d3083aeb10",
+      "page": null
+    },
+    {
+      "file": "figure--recurrent-replay-walkthrough-task.svg",
+      "target": "assets/crl-figures/recurrent-replay-walkthrough-task.svg",
+      "sha256": "878f6dd00d671cf69142a2a8a8e7a2ed2d7e776481a4b5fdabf744b8afe880a5",
+      "page": null
+    },
+    {
+      "file": "figure--recurrent-state-gradients.mobile.svg",
+      "target": "assets/crl-figures/recurrent-state-gradients.mobile.svg",
+      "sha256": "52208f32b211365c43c2f7e7aa36d993578e82111290b54cdb652cd9163e3c53",
+      "page": null
+    },
+    {
+      "file": "figure--recurrent-state-gradients.svg",
+      "target": "assets/crl-figures/recurrent-state-gradients.svg",
+      "sha256": "9e6e584b788bd5772311f7df2e0855de757de5cf76a9c7db46c4715329c56e08",
+      "page": null
+    },
+    {
+      "file": "figure--recurrent-state-information.mobile.svg",
+      "target": "assets/crl-figures/recurrent-state-information.mobile.svg",
+      "sha256": "4f0d1baec0ea7e8e12b5ba543b38286de5135d531e4ceda0a550bf6a80b806da",
+      "page": null
+    },
+    {
+      "file": "figure--recurrent-state-information.svg",
+      "target": "assets/crl-figures/recurrent-state-information.svg",
+      "sha256": "c0805368c0bed1248c101f9b1e9682322fb7d7e4b6cccc658a6647650ad73c47",
+      "page": null
+    },
+    {
+      "file": "figure--result-bandit_constant_step.mobile.svg",
+      "target": "assets/crl-figures/result-bandit_constant_step.mobile.svg",
+      "sha256": "9526e60022de8f73f3cc646c7ab47d19b7a298448ef38363b3c5a04c13ce602f",
+      "page": null
+    },
+    {
+      "file": "figure--result-bandit_constant_step.svg",
+      "target": "assets/crl-figures/result-bandit_constant_step.svg",
+      "sha256": "c150b38978442dcc5252b9547901981e00d1258678e11fc5474d0174c1a0698e",
+      "page": null
+    },
+    {
+      "file": "figure--result-deep-c51.mobile.svg",
+      "target": "assets/crl-figures/result-deep-c51.mobile.svg",
+      "sha256": "7169cc9a4a5204a8da0629c334599f555900003390201df826b5d61b3471aee5",
+      "page": null
+    },
+    {
+      "file": "figure--result-deep-c51.svg",
+      "target": "assets/crl-figures/result-deep-c51.svg",
+      "sha256": "3f8ee68242e4ce012bb5865f16e1f99d1ddbe103220a8c012738fbd9a01d8ad2",
+      "page": null
+    },
+    {
+      "file": "figure--result-deep-double_dqn.mobile.svg",
+      "target": "assets/crl-figures/result-deep-double_dqn.mobile.svg",
+      "sha256": "83ab67caac493d7b81e56fb8bdcf47f8c2500aeef2944e37e07a505c20c8c73a",
+      "page": null
+    },
+    {
+      "file": "figure--result-deep-double_dqn.svg",
+      "target": "assets/crl-figures/result-deep-double_dqn.svg",
+      "sha256": "dea94c53b45612cf59b6fef8c9763473d25aa116daecefd415e52238ab945707",
+      "page": null
+    },
+    {
+      "file": "figure--result-deep-sac.mobile.svg",
+      "target": "assets/crl-figures/result-deep-sac.mobile.svg",
+      "sha256": "dd4ed04c723056082d3936970078d45d724fed594ffb892c026c1b26e23b62d1",
+      "page": null
+    },
+    {
+      "file": "figure--result-deep-sac.svg",
+      "target": "assets/crl-figures/result-deep-sac.svg",
+      "sha256": "88c9be17f0d505e2fca7e12aee171b8fd728f319670ce8d101b5d154e5ae2136",
+      "page": null
+    },
+    {
+      "file": "figure--result-deep-td3.mobile.svg",
+      "target": "assets/crl-figures/result-deep-td3.mobile.svg",
+      "sha256": "d3e51be76b487227b21e8899c82a0ee4e8c2a077a2a70b8bb350576dd25f2d0d",
+      "page": null
+    },
+    {
+      "file": "figure--result-deep-td3.svg",
+      "target": "assets/crl-figures/result-deep-td3.svg",
+      "sha256": "5f451c8f91b16246f7c36760ca0439935a86ce9ee031f546cc333d7b1c6c8579",
+      "page": null
+    },
+    {
+      "file": "figure--result-differential_dyna.mobile.svg",
+      "target": "assets/crl-figures/result-differential_dyna.mobile.svg",
+      "sha256": "a96fee43ba3bd4f863cb5c6f28674475c58cd7d609eaa37b110b2727be980633",
+      "page": null
+    },
+    {
+      "file": "figure--result-differential_dyna.svg",
+      "target": "assets/crl-figures/result-differential_dyna.svg",
+      "sha256": "cbaddd4fc2b57fbdcebc4f3acbd45852268fe61657a8f20de877435919cd9c4f",
+      "page": null
+    },
+    {
+      "file": "figure--result-differential_td_offpolicy.mobile.svg",
+      "target": "assets/crl-figures/result-differential_td_offpolicy.mobile.svg",
+      "sha256": "6e39f2845f3e0b6a92978c095ab10eaac71ecf1f642d7b01ba3ba005aed5318c",
+      "page": null
+    },
+    {
+      "file": "figure--result-differential_td_offpolicy.svg",
+      "target": "assets/crl-figures/result-differential_td_offpolicy.svg",
+      "sha256": "e43405ff5b78c668dbfa0881e863583b815f269d003cb921eb96b273da6b4893",
+      "page": null
+    },
+    {
+      "file": "figure--result-dyna_q.mobile.svg",
+      "target": "assets/crl-figures/result-dyna_q.mobile.svg",
+      "sha256": "757021b185880dac952a897fc4b25ec328efa62011a405b2d28ca929715a0ddd",
+      "page": null
+    },
+    {
+      "file": "figure--result-dyna_q.svg",
+      "target": "assets/crl-figures/result-dyna_q.svg",
+      "sha256": "e96a71fd2592dfd5af6cf3ec62cb0cf2eb5d9b96af21f1ce48d63a5de2926980",
+      "page": null
+    },
+    {
+      "file": "figure--result-gvf_td.mobile.svg",
+      "target": "assets/crl-figures/result-gvf_td.mobile.svg",
+      "sha256": "27f840683a59f085d8df1ba65a6de890d778589e32fdb94a0b09244afdefdd80",
+      "page": null
+    },
+    {
+      "file": "figure--result-gvf_td.svg",
+      "target": "assets/crl-figures/result-gvf_td.svg",
+      "sha256": "a75900f5f37731c63eee30feb4ad09da5e67e813733ae783ee20f635425025a1",
+      "page": null
+    },
+    {
+      "file": "figure--result-integrated_cumulative_model.mobile.svg",
+      "target": "assets/crl-figures/result-integrated_cumulative_model.mobile.svg",
+      "sha256": "1fef8b6e1859b3b7b3b1df0381587047dcc0857eb07b40df995d4d78cf1b4d85",
+      "page": null
+    },
+    {
+      "file": "figure--result-integrated_cumulative_model.svg",
+      "target": "assets/crl-figures/result-integrated_cumulative_model.svg",
+      "sha256": "05bc58628454870284bc30e38136b68ed5742283bc0ce2680f1a8e1c4ccb1f67",
+      "page": null
+    },
+    {
+      "file": "figure--result-integrated_recent_model.mobile.svg",
+      "target": "assets/crl-figures/result-integrated_recent_model.mobile.svg",
+      "sha256": "15b56fef6eaf951a3a187ecd4babef49c97626f9c0fa251d7372985c45e6ebe0",
+      "page": null
+    },
+    {
+      "file": "figure--result-integrated_recent_model.svg",
+      "target": "assets/crl-figures/result-integrated_recent_model.svg",
+      "sha256": "5f07ddbef9a46d12368f14ecdc67a9134ed678ca29909c9dead6b202e4cb61cb",
+      "page": null
+    },
+    {
+      "file": "figure--result-lagged_nonlinear_td.mobile.svg",
+      "target": "assets/crl-figures/result-lagged_nonlinear_td.mobile.svg",
+      "sha256": "8b3e515763142a45c688fa53f3856f97e00a8ae4b16531cc358fa4e5121e4f34",
+      "page": null
+    },
+    {
+      "file": "figure--result-lagged_nonlinear_td.svg",
+      "target": "assets/crl-figures/result-lagged_nonlinear_td.svg",
+      "sha256": "8d56e48d83dd6b14f6a110cd362ccbd28c53a3c0bee05d53f7ef693bc6ade550",
+      "page": null
+    },
+    {
+      "file": "figure--result-neural_td_trace.mobile.svg",
+      "target": "assets/crl-figures/result-neural_td_trace.mobile.svg",
+      "sha256": "b74b43edbaafb5af435b146b3b10b487609c9c32cae49c6efb937de3651d976b",
+      "page": null
+    },
+    {
+      "file": "figure--result-neural_td_trace.svg",
+      "target": "assets/crl-figures/result-neural_td_trace.svg",
+      "sha256": "b2c317088ac81773b00125698e3fa3cff2525926e858916e6e621ed6f63d807c",
+      "page": null
+    },
+    {
+      "file": "figure--result-option_model.mobile.svg",
+      "target": "assets/crl-figures/result-option_model.mobile.svg",
+      "sha256": "1fd72f54ab15bbee05b045805a5f32550294f5b46685617757d08bc1b3139b6d",
+      "page": null
+    },
+    {
+      "file": "figure--result-option_model.svg",
+      "target": "assets/crl-figures/result-option_model.svg",
+      "sha256": "8ebb92a5fbbb6136b14436caef90d87e698f67952e8290b7de866eb608bf7296",
+      "page": null
+    },
+    {
+      "file": "figure--result-option_value_iteration.mobile.svg",
+      "target": "assets/crl-figures/result-option_value_iteration.mobile.svg",
+      "sha256": "4dd2269643b06fcba82d0fe8ce20d29e9de58faad0625b675ded500697e61872",
+      "page": null
+    },
+    {
+      "file": "figure--result-option_value_iteration.svg",
+      "target": "assets/crl-figures/result-option_value_iteration.svg",
+      "sha256": "09000a5c7f168a4a14b6aec8a73a9012fc716056fe4767f6c19e297ba404b83f",
+      "page": null
+    },
+    {
+      "file": "figure--result-prioritized_sweeping.mobile.svg",
+      "target": "assets/crl-figures/result-prioritized_sweeping.mobile.svg",
+      "sha256": "37153c194c75f8b65465689493774da05ea19601e5ebe9c7ab744e37ef8abbc5",
+      "page": null
+    },
+    {
+      "file": "figure--result-prioritized_sweeping.svg",
+      "target": "assets/crl-figures/result-prioritized_sweeping.svg",
+      "sha256": "8279d7faef018777f0a9dfc2f68f9eac36066445d49a25b77317f512520e4953",
+      "page": null
+    },
+    {
+      "file": "figure--result-rvi_multistate.mobile.svg",
+      "target": "assets/crl-figures/result-rvi_multistate.mobile.svg",
+      "sha256": "9faeb2dd0b062d8f6e660eeb1a7f66884174c844c109cc39ab173a87b0fc40b6",
+      "page": null
+    },
+    {
+      "file": "figure--result-rvi_multistate.svg",
+      "target": "assets/crl-figures/result-rvi_multistate.svg",
+      "sha256": "85cecaf90bb3ef666a39da2a1a98b1298b448eac1c204760ae37c245bba42228",
+      "page": null
+    },
+    {
+      "file": "figure--result-td0.mobile.svg",
+      "target": "assets/crl-figures/result-td0.mobile.svg",
+      "sha256": "4b08189a572b48d4c1e101e57ced983f64751d1bed9818b2278c04cd30e541fd",
+      "page": null
+    },
+    {
+      "file": "figure--result-td0.svg",
+      "target": "assets/crl-figures/result-td0.svg",
+      "sha256": "7270d35ae997658ace3408da100f36a355029417e1e87808f59d6e130dd5ee9d",
+      "page": null
+    },
+    {
+      "file": "figure--result-true_online_td.mobile.svg",
+      "target": "assets/crl-figures/result-true_online_td.mobile.svg",
+      "sha256": "65b081969a8eeca69905dbd46a5721afcd2d9c7e02cbac4a098b8ce96fef3158",
+      "page": null
+    },
+    {
+      "file": "figure--result-true_online_td.svg",
+      "target": "assets/crl-figures/result-true_online_td.svg",
+      "sha256": "5205484713e6639ea330f6d429cffb4a1050e648de7cee3e9fd11b94c0dd13e3",
+      "page": null
+    },
+    {
+      "file": "figure--retention-plasticity-walkthrough-geometry.mobile.svg",
+      "target": "assets/crl-figures/retention-plasticity-walkthrough-geometry.mobile.svg",
+      "sha256": "de7154f8abb2ca2caa6b30fb97081fdcb6c20f3e17865e6836c0828a735fdd42",
+      "page": null
+    },
+    {
+      "file": "figure--retention-plasticity-walkthrough-geometry.svg",
+      "target": "assets/crl-figures/retention-plasticity-walkthrough-geometry.svg",
+      "sha256": "d492c901c5138659c0711d8efe3708a0e236351a9629e2628042f6cefd25555d",
+      "page": null
+    },
+    {
+      "file": "figure--retention-plasticity-walkthrough-losses.mobile.svg",
+      "target": "assets/crl-figures/retention-plasticity-walkthrough-losses.mobile.svg",
+      "sha256": "39b3850e333fbe77d0af6366e82cf9c920f23385af46662a75a581eb01991e64",
+      "page": null
+    },
+    {
+      "file": "figure--retention-plasticity-walkthrough-losses.svg",
+      "target": "assets/crl-figures/retention-plasticity-walkthrough-losses.svg",
+      "sha256": "8c4331bb132ec44a4961799f030f0cd021743c359cf03118b83846c13ced999e",
+      "page": null
+    },
+    {
+      "file": "figure--reward-design-walkthrough-boundary.mobile.svg",
+      "target": "assets/crl-figures/reward-design-walkthrough-boundary.mobile.svg",
+      "sha256": "1e4d028cd1aa39b83020bcfbdf58a3139a2739bf74e285f1d69b8a7e0c068996",
+      "page": null
+    },
+    {
+      "file": "figure--reward-design-walkthrough-boundary.svg",
+      "target": "assets/crl-figures/reward-design-walkthrough-boundary.svg",
+      "sha256": "8e55066a3b8f478d18881c89b1430e90bb1845c412741066372f6e822de50902",
+      "page": null
+    },
+    {
+      "file": "figure--reward-design-walkthrough-decisions.mobile.svg",
+      "target": "assets/crl-figures/reward-design-walkthrough-decisions.mobile.svg",
+      "sha256": "e4c958b887f17634dd3b22469e5d6b8fae9a2f1e02a7c06487cbe28fada2c0ed",
+      "page": null
+    },
+    {
+      "file": "figure--reward-design-walkthrough-decisions.svg",
+      "target": "assets/crl-figures/reward-design-walkthrough-decisions.svg",
+      "sha256": "68dc18a6e4e6ac36c4fde4f887a5fdca2f60dc3fe46cc8f0a9d660004bd29ede",
+      "page": null
+    },
+    {
+      "file": "figure--reward-design-walkthrough-task.mobile.svg",
+      "target": "assets/crl-figures/reward-design-walkthrough-task.mobile.svg",
+      "sha256": "f4771058e36b9c8438718068021481116abd1a83bba43f57df09bb767534ddd7",
+      "page": null
+    },
+    {
+      "file": "figure--reward-design-walkthrough-task.svg",
+      "target": "assets/crl-figures/reward-design-walkthrough-task.svg",
+      "sha256": "6b3e30d4d29f7e6d1eb8a72ddac198e23f219e7ad80f6671d7d634d8ed5e1518",
+      "page": null
+    },
+    {
+      "file": "figure--state-online-walkthrough-history.mobile.svg",
+      "target": "assets/crl-figures/state-online-walkthrough-history.mobile.svg",
+      "sha256": "e19a578a94c631fcc23603c93ec15b163f41c7d618efcec56320ce87a4c3fbe4",
+      "page": null
+    },
+    {
+      "file": "figure--state-online-walkthrough-history.svg",
+      "target": "assets/crl-figures/state-online-walkthrough-history.svg",
+      "sha256": "5d0c0ef141d08b8371dbd772b5dc8ac71787ffe099025cd7b594f2f4bfa14fa2",
+      "page": null
+    },
+    {
+      "file": "figure--state-online-walkthrough-interventions.mobile.svg",
+      "target": "assets/crl-figures/state-online-walkthrough-interventions.mobile.svg",
+      "sha256": "3723bd9ff564ffb6effbbd3d645f28ba1e4ee8fcd4ee31acc6b8c1cff010bc9e",
+      "page": null
+    },
+    {
+      "file": "figure--state-online-walkthrough-interventions.svg",
+      "target": "assets/crl-figures/state-online-walkthrough-interventions.svg",
+      "sha256": "299d2975a4cea904ba792e4132c3499742887bb0d14f7d274b0b421e5b7f16dc",
+      "page": null
+    },
+    {
+      "file": "figure--stochastic-model-walkthrough-backups.mobile.svg",
+      "target": "assets/crl-figures/stochastic-model-walkthrough-backups.mobile.svg",
+      "sha256": "45861bc01d4dafce24858e31db5f3bc90f5c62006ed07ba8f68c3e6f15e95cc2",
+      "page": null
+    },
+    {
+      "file": "figure--stochastic-model-walkthrough-backups.svg",
+      "target": "assets/crl-figures/stochastic-model-walkthrough-backups.svg",
+      "sha256": "3deb1b30977ae1c339eb376d74b6ce2aadcfd889afba99826a64a85042ed2c5a",
+      "page": null
+    },
+    {
+      "file": "figure--stochastic-model-walkthrough-feedback.mobile.svg",
+      "target": "assets/crl-figures/stochastic-model-walkthrough-feedback.mobile.svg",
+      "sha256": "23811b8cc63f896c9581686d521cf3dfcfb570c40ebb8307af07c3d3e60d7b78",
+      "page": null
+    },
+    {
+      "file": "figure--stochastic-model-walkthrough-feedback.svg",
+      "target": "assets/crl-figures/stochastic-model-walkthrough-feedback.svg",
+      "sha256": "79de9bd513bbbe605a2a7d53d8f92b9d532a57a61203f401274f9df4937fcf52",
+      "page": null
+    },
+    {
+      "file": "figure--stochastic-model-walkthrough-observations.mobile.svg",
+      "target": "assets/crl-figures/stochastic-model-walkthrough-observations.mobile.svg",
+      "sha256": "8c2ccfba9c8e45740d73a78c248d410eb156df0f97672ce6a164d1829de2b57a",
+      "page": null
+    },
+    {
+      "file": "figure--stochastic-model-walkthrough-observations.svg",
+      "target": "assets/crl-figures/stochastic-model-walkthrough-observations.svg",
+      "sha256": "eea6cac82e783dee6bec26ec241b4420e642edbf9648b201d0e05e5ebe0213d5",
+      "page": null
+    },
+    {
+      "file": "figure--streaming-state-checkpoint.mobile.svg",
+      "target": "assets/crl-figures/streaming-state-checkpoint.mobile.svg",
+      "sha256": "1fb3de7cde1b28fac241df7096890c54726bdf72c728fadb5bb803dc4dcd322d",
+      "page": null
+    },
+    {
+      "file": "figure--streaming-state-checkpoint.svg",
+      "target": "assets/crl-figures/streaming-state-checkpoint.svg",
+      "sha256": "e0fbc06e937bcc0dcc078f0eb1782238094a2ecdd11025672f6acaca6525c096",
+      "page": null
+    },
+    {
+      "file": "figure--systems-pipeline.mobile.svg",
+      "target": "assets/crl-figures/systems-pipeline.mobile.svg",
+      "sha256": "4a0ddf86dac0a995f6461d9ec86ba1f3013fbfe33549301b71a6085ac9f02cc0",
+      "page": null
+    },
+    {
+      "file": "figure--systems-pipeline.svg",
+      "target": "assets/crl-figures/systems-pipeline.svg",
+      "sha256": "28e91efb30855645b8d9829de2c4e1fbcc363fed68f61d7f038aad7eee9cbccb",
+      "page": null
+    },
+    {
+      "file": "figure--systems-queue.mobile.svg",
+      "target": "assets/crl-figures/systems-queue.mobile.svg",
+      "sha256": "34775b374bfab1ec7c6acfd3a178d5eb4f1e02142987a541b3c0efb4871be0c8",
+      "page": null
+    },
+    {
+      "file": "figure--systems-queue.svg",
+      "target": "assets/crl-figures/systems-queue.svg",
+      "sha256": "4655068d392cfb4f2c255e645cc412d460591608c549cb1e42504e92d7f09ec5",
+      "page": null
+    },
+    {
+      "file": "figure--systems-vtrace.mobile.svg",
+      "target": "assets/crl-figures/systems-vtrace.mobile.svg",
+      "sha256": "a8dcd5b58dcb800342e223ad1b08ecb6c15a810fe7ee8b0a2a2784c8d89ddd92",
+      "page": null
+    },
+    {
+      "file": "figure--systems-vtrace.svg",
+      "target": "assets/crl-figures/systems-vtrace.svg",
+      "sha256": "4d0db6838dd5f7cdec5a3dad017c01ed6f480f3c875c45c3fc2d412ada6d84e2",
+      "page": null
+    },
+    {
+      "file": "formula_checks.py",
+      "target": "examples/formula_checks.py",
+      "sha256": "5f0c0551459b133e0218e49efe7d10fcf2449768c8f329ab23aed3ddcf099ae1",
+      "page": null
+    },
+    {
+      "file": "foundations.json",
+      "target": "data/foundations.json",
+      "sha256": "2b9c8db556ba3af30955bacbcb368cd67ee83aa018f545e928432c88733cdcc9",
+      "page": null
+    },
+    {
+      "file": "foundations.md",
+      "target": "docs/foundations.md",
+      "sha256": "28cc898a4e26e50a1fb1076afd8e5289d9cd25e1337c04b52e1c6ed8e2e93209",
+      "page": null
+    },
+    {
+      "file": "foundations_detail_lab.py",
+      "target": "examples/foundations_detail_lab.py",
+      "sha256": "583fa30f576aa819914790eb2495a4a194c1051272207814ee8d699279911517",
+      "page": null
+    },
+    {
+      "file": "gvf_lab.py",
+      "target": "examples/gvf_lab.py",
+      "sha256": "57026fb22f7db3023247d4b8892b1d1c55c3539e1c8f22b364aaf56b19714ea0",
+      "page": null
+    },
+    {
+      "file": "implementations.json",
+      "target": "data/implementations.json",
+      "sha256": "e328a1d26492666143091ed3c9cd3fefe8ff898ee4346744a3a6e0e39c9e042d",
+      "page": null
+    },
+    {
+      "file": "implementations.md",
+      "target": "docs/implementations.md",
+      "sha256": "7816009108151f3954426c61176f66777a9d273d6c4968ce26f00a4d01333f61",
+      "page": null
+    },
+    {
+      "file": "intro-01-lifetime.md",
+      "target": "tutorials/01-lifetime.md",
+      "sha256": "a6b46c4619ac4ecd64ac28d081a432d5f8349bf0f27cf5c0b4db0c311e384dae",
+      "page": null
+    },
+    {
+      "file": "intro-02-tracking.md",
+      "target": "tutorials/02-tracking.md",
+      "sha256": "b76ed1f7be33a8b4d4cb2083b578845ac37a39e1443aff725be99ebee758a05b",
+      "page": null
+    },
+    {
+      "file": "intro-03-plasticity.md",
+      "target": "tutorials/03-plasticity.md",
+      "sha256": "acd84513c8ccf917784fbff61fec8876e57bea95e941133a89d645cd1cf98529",
+      "page": null
+    },
+    {
+      "file": "intro-04-state.md",
+      "target": "tutorials/04-state.md",
+      "sha256": "1932806cef8503295f3be7a8addba6ac4a0f6f72c8ddeedefacf416e0187201a",
+      "page": null
+    },
+    {
+      "file": "intro-05-streaming.md",
+      "target": "tutorials/05-streaming.md",
+      "sha256": "dcc078433925d5ad737fc05980ed672295e3e3e09cbb5f3d3c3f3dac44d8f062",
+      "page": null
+    },
+    {
+      "file": "intro-06-skills.md",
+      "target": "tutorials/06-skills.md",
+      "sha256": "a045f9e97df8b86b197891f1cc79e49b499263da1853f4b5db94bb37522efb81",
+      "page": null
+    },
+    {
+      "file": "intro-07-evaluate.md",
+      "target": "tutorials/07-evaluate.md",
+      "sha256": "53a94720c8ceb1f8decf03151d7d4e65abfd726ec3e36675c62c694b085a2a5d",
+      "page": null
+    },
+    {
+      "file": "intro-08-project.md",
+      "target": "tutorials/08-research.md",
+      "sha256": "0ada406cc104ac4addcca222ab0d08156db98978eba5d4600a1d213592e75fa8",
+      "page": null
+    },
+    {
+      "file": "knowledge_algorithms_lab.py",
+      "target": "examples/knowledge_algorithms_lab.py",
+      "sha256": "fdd9fdc68c940251ae07f41434bc4a364d72691489f8bb02c381757022d97b76",
+      "page": null
+    },
+    {
+      "file": "knowledge_lab.py",
+      "target": "examples/knowledge_lab.py",
+      "sha256": "39116c54080ea14e35043f5da42898ae4f410b5f5b56234b69a0472282e9a07f",
+      "page": null
+    },
+    {
+      "file": "learning-dynamics.md",
+      "target": "docs/learning-dynamics.md",
+      "sha256": "bf9de66fe943321f84c4a7166a64e6923881002d543a31239746c5fbd47afa15",
+      "page": "foundations/learning-dynamics/"
+    },
+    {
+      "file": "learning-route-classic-rl.md",
+      "target": "docs/learning-route-classic-rl.md",
+      "sha256": "39e0c890c16f87830da520f3e1825acf19b9695afa5deb0c8e94a3f54e0aa181",
+      "page": null
+    },
+    {
+      "file": "learning-route-continual-rl.md",
+      "target": "docs/learning-route-continual-rl.md",
+      "sha256": "9ed6e4173d7011927314b88d31c2c12080d9faf729ba01e1163bbd867f514d5c",
+      "page": null
+    },
+    {
+      "file": "learning-route-deep-rl.md",
+      "target": "docs/learning-route-deep-rl.md",
+      "sha256": "02cb4727ef633c434dfc0bf16e7c3441a992c62b3a28902ee8ebef15ff9ac7d9",
+      "page": null
+    },
+    {
+      "file": "learning-route.json",
+      "target": "data/learning-route.json",
+      "sha256": "bd8a017f63771076b42075050c997e4ad40c836aba9000f0602f1cd212e10fab",
+      "page": null
+    },
+    {
+      "file": "learning-route.md",
+      "target": "docs/learning-route.md",
+      "sha256": "ef78b39b4273744f2cb5e2319fe74f529ea01ebbcc1c4dac9e2656276c876bb6",
+      "page": null
+    },
+    {
+      "file": "library-index.json",
+      "target": "data/library-index.json",
+      "sha256": "2f09c90126960fe3d4b3ac983b9fbacbd99437c165cdad4072bb685386d5be1a",
+      "page": null
+    },
+    {
+      "file": "lifelong_algorithms_lab.py",
+      "target": "examples/lifelong_algorithms_lab.py",
+      "sha256": "356019e8fea9c2e2624877abd70a9900d3fdf24ac803f92b92304fcb4a1fd382",
+      "page": null
+    },
+    {
+      "file": "marl_objectives_lab.py",
+      "target": "examples/marl_objectives_lab.py",
+      "sha256": "8ddbc8835cab99ec09bca0f6add8393700a36fcf8e7e72878d220e3930df1107",
+      "page": null
+    },
+    {
+      "file": "measurement-contracts.json",
+      "target": "data/measurement-contracts.json",
+      "sha256": "c756f318b93977ffd4ab0361fe4f9d06ce8292aa3fc6e175e188b9a95d118775",
+      "page": null
+    },
+    {
+      "file": "mechanisms.py",
+      "target": "examples/mechanisms.py",
+      "sha256": "63b0dc57c34d792b87254000d49e33566e4b291ef248fb36a79b2ed1252636e2",
+      "page": null
+    },
+    {
+      "file": "meta_frontier_lab.py",
+      "target": "examples/meta_frontier_lab.py",
+      "sha256": "3ce98ddb5404595a0674c0b41081e4741a4373e662d1820d9c98b99b66d3e50c",
+      "page": null
+    },
+    {
+      "file": "objectives_lab.py",
+      "target": "examples/objectives_lab.py",
+      "sha256": "1ff5eab68cc4bd98a9be490d4f4c2733046802f0c5ec219c7c8a61234beb3500",
+      "page": null
+    },
+    {
+      "file": "overview.md",
+      "target": "docs/overview.md",
+      "sha256": "f0929dd07705507a99cc836604e7977b927b06dc226253478688815e842b6f5c",
+      "page": null
+    },
+    {
+      "file": "practice-model-memory-planning.md",
+      "target": "docs/practice-model-memory-planning.md",
+      "sha256": "8b042b9df659221618c50dae448bb2246bc11b8ef5b1248f6c4a6e7016a1177d",
+      "page": null
+    },
+    {
+      "file": "practice-model-memory-planning.protocol.json",
+      "target": "data/practice-model-memory-planning.protocol.json",
+      "sha256": "9396a5b1964ea7a8924cea8cb9b097ed9eb893a54ae5736a3e02c7ff886e2989",
+      "page": null
+    },
+    {
+      "file": "practice-routes.md",
+      "target": "docs/practice-routes.md",
+      "sha256": "8978f3956d7d818cd35048513d89342b5f9ed9898dbe0606ac1e98e6ca5e6c77",
+      "page": null
+    },
+    {
+      "file": "previous-intro.md",
+      "target": "docs/previous-intro.md",
+      "sha256": "36df120a391e5eb9b16aefb40ea972d5a5ddb70659b2e9f01df2c3fc08061331",
+      "page": null
+    },
+    {
+      "file": "protocol.md",
+      "target": "docs/protocol.md",
+      "sha256": "34a6b079dfdcc34b68a2d949ab847822f04c942a26625f01f8d259a516a7b4d1",
+      "page": null
+    },
+    {
+      "file": "recent-research.json",
+      "target": "data/recent-research.json",
+      "sha256": "b4342e0e22a198b016554462158f6cdfa924b591fc1f5a81a3a0b25f87f3b2b4",
+      "page": null
+    },
+    {
+      "file": "recent-research.md",
+      "target": "docs/recent-research.md",
+      "sha256": "965a97d4336e9fb699823b5fe8a75b5448986ea1f3e0977efec7b5cace9e8850",
+      "page": null
+    },
+    {
+      "file": "research-atlas.json",
+      "target": "data/research-atlas.json",
+      "sha256": "0db779f783d77abb2e7a062ecdfec6edc9124e61f13b4affeb16f3fe4d02f3a3",
+      "page": null
+    },
+    {
+      "file": "research-atlas.md",
+      "target": "docs/research-atlas.md",
+      "sha256": "a63e2da6ba10515c44548aa65f79300a6b9b43feb9707fd967ae096d5e0de56f",
+      "page": null
+    },
+    {
+      "file": "research-problems.md",
+      "target": "docs/research-problems.md",
+      "sha256": "62df23c2ef24e7fa0941ea26bbece21e1aa17d5b07ee33146a61874c08335068",
+      "page": null
+    },
+    {
+      "file": "resources.json",
+      "target": "data/resources.json",
+      "sha256": "c19b96a395efe46435963fc2c4f0307eb84114c05fc6916e7a8a6d08d32f2e66",
+      "page": null
+    },
+    {
+      "file": "reward_design_lab.py",
+      "target": "examples/reward_design_lab.py",
+      "sha256": "835c73cb886cf83c6cdd8d9e4e75511f299fde66ccf6463a614aab1ce153f991",
+      "page": null
+    },
+    {
+      "file": "rl_foundations.py",
+      "target": "examples/rl_foundations.py",
+      "sha256": "9e4d53421edf2a15c8e73790fd04a6d547bee1e86c79fa5dcb2fa8ed6e48dc83",
+      "page": null
+    },
+    {
+      "file": "rlss_oak_diagnostics.py",
+      "target": "examples/rlss_oak_diagnostics.py",
+      "sha256": "7b44693468d7dadbe5585aad042009d9bc27e6a5d26decf248085ffd5cb553ba",
+      "page": null
+    },
+    {
+      "file": "rlss_prediction_diagnostics.py",
+      "target": "examples/rlss_prediction_diagnostics.py",
+      "sha256": "b6d7d586bfa8e7eca55a35244d0b407d5c182d983f5c3a84a560806aecce4178",
+      "page": null
+    },
+    {
+      "file": "rlss_trace_diagnostics.py",
+      "target": "examples/rlss_trace_diagnostics.py",
+      "sha256": "7db3514a6c010c51341cac130e9258f6c36c1354144551d021e76ba982f35e78",
+      "page": null
+    },
+    {
+      "file": "scholar-materials.json",
+      "target": "data/scholar-materials.json",
+      "sha256": "a5d61b618ef60a6fb79153e7bd75347dd9e6e5a34d83e4fbbba510cd97fbea69",
+      "page": null
+    },
+    {
+      "file": "scholar-materials.md",
+      "target": "docs/scholar-materials.md",
+      "sha256": "3f235c80535f2b9bd8b11829f391558d70cbcd6464dbbde9fc2ae70bd344d658",
+      "page": null
+    },
+    {
+      "file": "source-figures.json",
+      "target": "data/source-figures.json",
+      "sha256": "1e15c54e39c775b62277e7bc168c0f0a6d189f115d63437baec246bbccaa156d",
+      "page": null
+    },
+    {
+      "file": "state_meta_lab.py",
+      "target": "examples/state_meta_lab.py",
+      "sha256": "1bf6771c4b256792c1521601d713014c787fb162bb2b16c8b93c88169ea17095",
+      "page": null
+    },
+    {
+      "file": "study-approximation-average-control.md",
+      "target": "foundations/approximation/average-control.md",
+      "sha256": "2870a1fb49cf35746a9964fe44ca07aff2b5f17a4501e9d21a7ae1b9731eb2ad",
+      "page": "foundations/approximation/average-control/"
+    },
+    {
+      "file": "study-approximation-features-control.md",
+      "target": "foundations/approximation/features-control.md",
+      "sha256": "5fea96d4427d382acf86ad15903f58a23d264b7076513737a00f821a72909607",
+      "page": "foundations/approximation/features-control/"
+    },
+    {
+      "file": "study-approximation-off-policy.md",
+      "target": "foundations/approximation/off-policy.md",
+      "sha256": "83862c7c2011de204c94fe00a481dd810ee96e467fa5f8aec73bc5cf813cc86c",
+      "page": "foundations/approximation/off-policy/"
+    },
+    {
+      "file": "study-approximation-policy-gradient.md",
+      "target": "foundations/approximation/policy-gradient.md",
+      "sha256": "cbd573ab49f808355e54b8a22753540fccf0b258e06c406100af8aad8730e95a",
+      "page": "foundations/approximation/policy-gradient/"
+    },
+    {
+      "file": "study-approximation-prediction.md",
+      "target": "foundations/approximation/prediction.md",
+      "sha256": "0bfa7f78b8269a862be3cc4a0167df4c399d948740bbee34df48eacf22cd7cf8",
+      "page": "foundations/approximation/prediction/"
+    },
+    {
+      "file": "study-approximation-traces.md",
+      "target": "foundations/approximation/traces.md",
+      "sha256": "31654a04aea05ddc91813718ef6bf91275c1f828c0b202441f5cd52b90f01473",
+      "page": "foundations/approximation/traces/"
+    },
+    {
+      "file": "study-deep-constraints.md",
+      "target": "foundations/deep/constraints.md",
+      "sha256": "f4c72d69cf9ba1f9c526aeece03db05351fdc9a5049eb9bc3aa3d7675752a136",
+      "page": "foundations/deep/constraints/"
+    },
+    {
+      "file": "study-deep-deep-value.md",
+      "target": "foundations/deep/deep-value.md",
+      "sha256": "abec14695fa80315e50aefecde37a1a6269eee776c609ec196c9ff3c8d860141",
+      "page": "foundations/deep/deep-value/"
+    },
+    {
+      "file": "study-deep-deterministic-control.md",
+      "target": "foundations/deep/deterministic-control.md",
+      "sha256": "496961d79418d2f23ad074bd36a74c79f46eaed9df9eb6c95a8e74def3cdc425",
+      "page": "foundations/deep/deterministic-control/"
+    },
+    {
+      "file": "study-deep-distributional.md",
+      "target": "foundations/deep/distributional.md",
+      "sha256": "cf7b3f8df2a891a9b4d1d6328469eb58d0e81295d5650c9924810e3e006bac64",
+      "page": "foundations/deep/distributional/"
+    },
+    {
+      "file": "study-deep-entropy-control.md",
+      "target": "foundations/deep/entropy-control.md",
+      "sha256": "e4f4ba889ed8b284f52f5b58867aa85596f18bc6d62aac53e179a762f0a261ce",
+      "page": "foundations/deep/entropy-control/"
+    },
+    {
+      "file": "study-deep-exploration.md",
+      "target": "foundations/deep/exploration.md",
+      "sha256": "629a1ea2662e5755bd313379e90500bbd7dde876fbc6efe1fef8af88d27cbee8",
+      "page": "foundations/deep/exploration/"
+    },
+    {
+      "file": "study-deep-marl-populations.md",
+      "target": "foundations/deep/multi-agent-populations.md",
+      "sha256": "12300dd6a969d58d41666a49b9bc542d4bfd80f5d3829a263b2c9e721c0dabee",
+      "page": "foundations/deep/multi-agent-populations/"
+    },
+    {
+      "file": "study-deep-marl-reasoning.md",
+      "target": "foundations/deep/multi-agent-reasoning.md",
+      "sha256": "1672be9264901ef6983a172c53c08f7bb97d91ee3b4089e7b6420941fdd6e410",
+      "page": "foundations/deep/multi-agent-reasoning/"
+    },
+    {
+      "file": "study-deep-model-based.md",
+      "target": "foundations/deep/model-based.md",
+      "sha256": "f5736971e2a4c22a572d004c96b1015b2600e5e6b14847dfe70091f963ad2916",
+      "page": "foundations/deep/model-based/"
+    },
+    {
+      "file": "study-deep-multi-agent.md",
+      "target": "foundations/deep/multi-agent.md",
+      "sha256": "d2b437a3dbe6a90df38b81d7bd5a262595c967b9f18ed87d7b33ab5821e0e5c2",
+      "page": "foundations/deep/multi-agent/"
+    },
+    {
+      "file": "study-deep-offline.md",
+      "target": "foundations/deep/offline.md",
+      "sha256": "1fb6bcdb18bac637861abf44ba72781824a65aaa80d6c960ce9e9077ae61b599",
+      "page": "foundations/deep/offline/"
+    },
+    {
+      "file": "study-deep-partial-observability.md",
+      "target": "foundations/deep/partial-observability.md",
+      "sha256": "de007f3e16b8c3d299e091d74c321cd7866c8691216122531dddeeedb2c5d739",
+      "page": "foundations/deep/partial-observability/"
+    },
+    {
+      "file": "study-deep-policy-gradient.md",
+      "target": "foundations/deep/policy-gradient.md",
+      "sha256": "d2c8e8949067dcae9c0c925c4e0823e59d06501dd08ca01c995833fb43eaf3d5",
+      "page": "foundations/deep/policy-gradient/"
+    },
+    {
+      "file": "study-deep-practice.md",
+      "target": "foundations/deep/practice.md",
+      "sha256": "7a86ea534974f43f989ab49c6edd6350378013dbb4c5ab0f1ef5fc8cc350a8d9",
+      "page": "foundations/deep/practice/"
+    },
+    {
+      "file": "study-deep-systems.md",
+      "target": "foundations/deep/systems.md",
+      "sha256": "a21a7d17fb2e49173af5abecca57aa58dd8c42bad8a4cf779e8df550109be213",
+      "page": "foundations/deep/systems/"
+    },
+    {
+      "file": "study-deep-trust-region.md",
+      "target": "foundations/deep/trust-region.md",
+      "sha256": "a35e216033c351f8ae8e8765e85496fb4b6c9ed209d748e1b08e1203bd0ebfda",
+      "page": "foundations/deep/trust-region/"
+    },
+    {
+      "file": "study-tabular-bandits.md",
+      "target": "foundations/tabular/bandits.md",
+      "sha256": "30f2fdf44a5907db57968d2af431153967298b463a69b3c889ad056d66363c75",
+      "page": "foundations/tabular/bandits/"
+    },
+    {
+      "file": "study-tabular-dynamic-programming.md",
+      "target": "foundations/tabular/dynamic-programming.md",
+      "sha256": "bfd8817b14ea4d09d0929f11b3bfe1838729d0aa002079f51820113da40f87f7",
+      "page": "foundations/tabular/dynamic-programming/"
+    },
+    {
+      "file": "study-tabular-mdps.md",
+      "target": "foundations/tabular/mdps.md",
+      "sha256": "6c6c58898eba19bfd271f28fcc517194ee0e8139b23c24a0c27535ca650b0841",
+      "page": "foundations/tabular/mdps/"
+    },
+    {
+      "file": "study-tabular-monte-carlo.md",
+      "target": "foundations/tabular/monte-carlo.md",
+      "sha256": "e85f662f11f0356d11e65d5bfc0d1d014b6597445ad0f4663827ce7749e05b82",
+      "page": "foundations/tabular/monte-carlo/"
+    },
+    {
+      "file": "study-tabular-multistep.md",
+      "target": "foundations/tabular/multistep.md",
+      "sha256": "96fbdf44708b2478806ef62efdd3310330388d98068c9f5cfac9dcbb7e953e45",
+      "page": "foundations/tabular/multistep/"
+    },
+    {
+      "file": "study-tabular-planning.md",
+      "target": "foundations/tabular/planning.md",
+      "sha256": "f3365ec75b5c538551a44e7d31ab15e44cd573ad14c533f372c8c095e897dff2",
+      "page": "foundations/tabular/planning/"
+    },
+    {
+      "file": "study-tabular-temporal-difference.md",
+      "target": "foundations/tabular/temporal-difference.md",
+      "sha256": "f4b6a3cb9c08044f4ddf3caba90ec98d1c1c82b4535090541c3921905e556bc7",
+      "page": "foundations/tabular/temporal-difference/"
+    },
+    {
+      "file": "supplement-agency.md",
+      "target": "textbook/supplements/agency.md",
+      "sha256": "5df94c077bbfe88fb6329a342112266e1456310f7602ec1373368cbf3879ffa6",
+      "page": "supplements/agency/"
+    },
+    {
+      "file": "supplement-consciousness.md",
+      "target": "textbook/supplements/consciousness.md",
+      "sha256": "4c80967ecf66b4dcd992a6413e55d0e01b4f4e39e588c93c9c4193d30b49d5e5",
+      "page": "supplements/consciousness/"
+    },
+    {
+      "file": "supplement-context.md",
+      "target": "textbook/supplements/context.md",
+      "sha256": "69ef72fa071b5e5375ec7f8a340792cde10de1b1e3f35eea1c8ba0bd2c923099",
+      "page": "supplements/context/"
+    },
+    {
+      "file": "supplement-control.md",
+      "target": "textbook/supplements/control.md",
+      "sha256": "59b004c18c835b205d274b3545b803df845fff663faecf7ad5cf4e695c1339cc",
+      "page": "supplements/control/"
+    },
+    {
+      "file": "supplement-economics.md",
+      "target": "textbook/supplements/economics.md",
+      "sha256": "70144bf7d7e51c9c0f4af754a00a436a7fc48852981bf03685e7e7e346e9955b",
+      "page": "supplements/economics/"
+    },
+    {
+      "file": "supplement-explanation.md",
+      "target": "textbook/supplements/explanation.md",
+      "sha256": "0c0a84e29bdc1c96245e33f13d55f1cd68088b162a3066e2ea38367ef4a8c44f",
+      "page": "supplements/explanation/"
+    },
+    {
+      "file": "supplement-memory.md",
+      "target": "textbook/supplements/memory.md",
+      "sha256": "cbdf174cca54ed456f7a3c17a802bfdc00484e270929570980316499fcbf1046",
+      "page": "supplements/memory/"
+    },
+    {
+      "file": "supplement-mind-philosophy.md",
+      "target": "textbook/supplements/mind-philosophy.md",
+      "sha256": "d6058dce4d1259ce6321c9a16d6e2b407216da758706c3cb157bfdafd3fb20f3",
+      "page": "supplements/mind-philosophy/"
+    },
+    {
+      "file": "supplement-motivation.md",
+      "target": "textbook/supplements/motivation.md",
+      "sha256": "3a4c2d763d48a8252525bb9caa7b4551d0a42bfea5bf9a4cc5dc08f806c523e1",
+      "page": "supplements/motivation/"
+    },
+    {
+      "file": "supplement-organization.md",
+      "target": "textbook/supplements/organization.md",
+      "sha256": "9fff866bd3f0aaf774fb23a5f6b93a6dfdd8265922995c2dab6bb95b457c36e9",
+      "page": "supplements/organization/"
+    },
+    {
+      "file": "supplement-prediction.md",
+      "target": "textbook/supplements/prediction.md",
+      "sha256": "e3391e4ac8ccdf7e1e6b477cc47c0e168828ecc61a337b564e2f981b14a95984",
+      "page": "supplements/prediction/"
+    },
+    {
+      "file": "supplement-signals.md",
+      "target": "textbook/supplements/signals.md",
+      "sha256": "6e5744d0508ab10517803a979e4c5db3cca7a2f62c7d19ce19c505faf4202622",
+      "page": "supplements/signals/"
+    },
+    {
+      "file": "supplements-full.md",
+      "target": "docs/supplements-full.md",
+      "sha256": "a54d0da3e31a6ef3aeae2380b42fb65109a996f27e35961f542c91c3e903b00c",
+      "page": null
+    },
+    {
+      "file": "supplements.json",
+      "target": "data/supplements.json",
+      "sha256": "cf9edc66380c45d70785cdcb405af9055adf150764023a117328693cc2aadc6b",
+      "page": null
+    },
+    {
+      "file": "supplements.md",
+      "target": "docs/supplements.md",
+      "sha256": "07a4849bfd13c56f483bfce38f02436d7006530b1492f609e9023f7c80aba423",
+      "page": "supplements/"
+    },
+    {
+      "file": "tabular_textbook_lab.py",
+      "target": "examples/tabular_textbook_lab.py",
+      "sha256": "25daa70a42101b1f04c1d898fc81b8cce8de054cc7e71d04b90c58cd64976861",
+      "page": null
+    },
+    {
+      "file": "textbook-map.json",
+      "target": "data/textbook-map.json",
+      "sha256": "0358cafb37631f6a0b7d0b2de68b003e96c496b784efcd35081802502f351c5c",
+      "page": null
+    },
+    {
+      "file": "tutorial.md",
+      "target": "docs/tutorial.md",
+      "sha256": "c3a6cd75f6d4fa3e9e5042661d32ecc591fa370a2f5f1870ddb202570c8b6aba",
+      "page": null
+    },
+    {
+      "file": "walkthrough--architecture-walkthrough.py",
+      "target": "tutorials/architecture-walkthrough.py",
+      "sha256": "25d40f2b4aba66133e7e2031d0af6c6a613d762ecc04a886e467fadf354b5c3b",
+      "page": null
+    },
+    {
+      "file": "walkthrough--average_rate_walkthrough.py",
+      "target": "tutorials/average_rate_walkthrough.py",
+      "sha256": "88f677a53a0469f62e88b3c4157775320b1be63bdb063b9ae133ac667c09f3e9",
+      "page": null
+    },
+    {
+      "file": "walkthrough--bandit_exploration_walkthrough.py",
+      "target": "tutorials/bandit_exploration_walkthrough.py",
+      "sha256": "11d0f403ecf82390ccb40ffa2d57fe975bd52446e03ffb626a59e6ea7c084b10",
+      "page": null
+    },
+    {
+      "file": "walkthrough--bandit_tracking_walkthrough.py",
+      "target": "tutorials/bandit_tracking_walkthrough.py",
+      "sha256": "c64483133a1d513414f7510e8c49692efd0b6f92d90b820946197c5d242a2df0",
+      "page": null
+    },
+    {
+      "file": "walkthrough--belief-planning-walkthrough.py",
+      "target": "tutorials/belief-planning-walkthrough.py",
+      "sha256": "9c78a79e93d035576a1e40b07e2f02e6ea32ae414c9025ade0677eec5c4769e9",
+      "page": null
+    },
+    {
+      "file": "walkthrough--compare_continual_runs.py",
+      "target": "tutorials/compare_continual_runs.py",
+      "sha256": "98ce5799e7b644dd4d69ab1b08c385ad531ec5d765f22dfe996f225588abcc22",
+      "page": null
+    },
+    {
+      "file": "walkthrough--constraint-control-walkthrough.py",
+      "target": "tutorials/constraint-control-walkthrough.py",
+      "sha256": "3c41e1113a36d113ce282a47b92f263499c6d6a0ef07be9ebac7f384cfe8c297",
+      "page": null
+    },
+    {
+      "file": "walkthrough--continual_protocol.py",
+      "target": "tutorials/continual_protocol.py",
+      "sha256": "8ab47e70e220d75fd79363e96b18b58cb211d11e06f0b777045ae0370a67e4ca",
+      "page": null
+    },
+    {
+      "file": "walkthrough--continuing-state-walkthrough.py",
+      "target": "tutorials/continuing-state-walkthrough.py",
+      "sha256": "b2d08fade0aee27dde2d8022bc42e960bc8d8385f030dee4b27fc6cfdceec1c6",
+      "page": null
+    },
+    {
+      "file": "walkthrough--continuous_control_walkthrough.py",
+      "target": "tutorials/continuous_control_walkthrough.py",
+      "sha256": "d6aacee0f7c91c09bfa087e8766215cff0e3eae9aa8929292388d710397d922e",
+      "page": null
+    },
+    {
+      "file": "walkthrough--control_targets_walkthrough.py",
+      "target": "tutorials/control_targets_walkthrough.py",
+      "sha256": "e9b9829516ef0e8231ba4092716df6b2c98bbef24c0381e7b10d522662d7dd13",
+      "page": null
+    },
+    {
+      "file": "walkthrough--credit_meta_walkthrough.py",
+      "target": "tutorials/credit_meta_walkthrough.py",
+      "sha256": "c9a6973aaeb48f025546bd17cd6d942584e08620230c084823bb3dae191a796a",
+      "page": null
+    },
+    {
+      "file": "walkthrough--deep-exploration-walkthrough.py",
+      "target": "tutorials/deep-exploration-walkthrough.py",
+      "sha256": "06e29250ca7b6759a6acae7b6611d0bebc6958a4309a27a209c2197e2357114b",
+      "page": null
+    },
+    {
+      "file": "walkthrough--delayed-state-walkthrough.py",
+      "target": "tutorials/delayed-state-walkthrough.py",
+      "sha256": "e6c9fb23ef20bbba5c108030eb84ea04ebd4da5977fc34aab25d8f2080eb0e03",
+      "page": null
+    },
+    {
+      "file": "walkthrough--distributional-walkthrough.py",
+      "target": "tutorials/distributional-walkthrough.py",
+      "sha256": "88c9487ad1cc321948aaa2ee756c1557d07d872f6ac2455378ceadd21d5603b0",
+      "page": null
+    },
+    {
+      "file": "walkthrough--dqn_shared_feature_walkthrough.py",
+      "target": "tutorials/dqn_shared_feature_walkthrough.py",
+      "sha256": "a9b7752395993a89c86d3f6bae9f33723c5536e7656066d90af44b38766fa670",
+      "page": null
+    },
+    {
+      "file": "walkthrough--dyna-planning-walkthrough.py",
+      "target": "tutorials/dyna-planning-walkthrough.py",
+      "sha256": "72ed0e935343f4285145763ed9e1907e377bd101dbb684021ac63f533e99eee5",
+      "page": null
+    },
+    {
+      "file": "walkthrough--economic-choice-walkthrough.py",
+      "target": "tutorials/economic-choice-walkthrough.py",
+      "sha256": "5ebff53c6759fa92e727659ae574eb7461331802dd27f4713ebfc48c2c662a82",
+      "page": null
+    },
+    {
+      "file": "walkthrough--explanation-identifiability-walkthrough.py",
+      "target": "tutorials/explanation-identifiability-walkthrough.py",
+      "sha256": "542e051d0412ee1b1c9fc1859c48ccad0ec4d463b4819d165c6a4b521dffd005",
+      "page": null
+    },
+    {
+      "file": "walkthrough--exploration-information-walkthrough.py",
+      "target": "tutorials/exploration-information-walkthrough.py",
+      "sha256": "37b18a65c65f8385439e482e54c5b53dc4e97e19e5e204ca271c5e6efc683b0a",
+      "page": null
+    },
+    {
+      "file": "walkthrough--feature-control-walkthrough.py",
+      "target": "tutorials/feature-control-walkthrough.py",
+      "sha256": "278a1f0594208a35a7e2bb0f9d83625c82d70744fe8ce46320e4b7eb8449a5be",
+      "page": null
+    },
+    {
+      "file": "walkthrough--gae_ppo_walkthrough.py",
+      "target": "tutorials/gae_ppo_walkthrough.py",
+      "sha256": "fc21c303b1340a512fba52e07eb55e94a3a7c20dfc2aa6fe251078442f2d52d9",
+      "page": null
+    },
+    {
+      "file": "walkthrough--goal_discovery_walkthrough.py",
+      "target": "tutorials/goal_discovery_walkthrough.py",
+      "sha256": "f5526d550bb1a7ad5fc199722b78608303a550ee976a17d9fdbf0bd01b662626",
+      "page": null
+    },
+    {
+      "file": "walkthrough--goal_model_planning_walkthrough.py",
+      "target": "tutorials/goal_model_planning_walkthrough.py",
+      "sha256": "6e2b0ac90f7436dc0afc3967336beeab6132204040a1ddce6800306e07ffcd5c",
+      "page": null
+    },
+    {
+      "file": "walkthrough--learned-memory-walkthrough.py",
+      "target": "tutorials/learned-memory-walkthrough.py",
+      "sha256": "5ae14f0d8d372de4f180b56c42b145bdb7775bc7a3ff4bdb7aa327f22025fa6e",
+      "page": null
+    },
+    {
+      "file": "walkthrough--lifetime_evaluation_walkthrough.py",
+      "target": "tutorials/lifetime_evaluation_walkthrough.py",
+      "sha256": "bfaa59292403869fe06845ff4036ced09aa08bbabbd64969fb65bd44555be54c",
+      "page": null
+    },
+    {
+      "file": "walkthrough--mc-control-walkthrough.py",
+      "target": "tutorials/mc-control-walkthrough.py",
+      "sha256": "f5f77fc18a1ce1d7f94b972859dc1da3696468489bbf0959dddb11f575d65c02",
+      "page": null
+    },
+    {
+      "file": "walkthrough--mc-offpolicy-control-walkthrough.py",
+      "target": "tutorials/mc-offpolicy-control-walkthrough.py",
+      "sha256": "2cf7a945d79884a25f05674c8c818d5c6df31737b9e1f8702d033cd4fe5a976a",
+      "page": null
+    },
+    {
+      "file": "walkthrough--mdp_dp_walkthrough.py",
+      "target": "tutorials/mdp_dp_walkthrough.py",
+      "sha256": "dbf82ba3c109c3f8f8b6f5954124c8095db4b7cf94f06f069c77fd84b75b3102",
+      "page": null
+    },
+    {
+      "file": "walkthrough--model-change-walkthrough.py",
+      "target": "tutorials/model-change-walkthrough.py",
+      "sha256": "14022ee86551fd2798771cf537a4215e9fd4a3b1ffb85f0858eb7ab192bc3300",
+      "page": null
+    },
+    {
+      "file": "walkthrough--monte-carlo-walkthrough.py",
+      "target": "tutorials/monte-carlo-walkthrough.py",
+      "sha256": "90276e31947538f824aea34f1434227a3048bf91975e94e4e0377f1e69a1265a",
+      "page": null
+    },
+    {
+      "file": "walkthrough--neural-distribution-walkthrough.py",
+      "target": "tutorials/neural-distribution-walkthrough.py",
+      "sha256": "24df76eac48a4639c779c30ee464923e353c346045deb519322f9777534264c6",
+      "page": null
+    },
+    {
+      "file": "walkthrough--offline_support_walkthrough.py",
+      "target": "tutorials/offline_support_walkthrough.py",
+      "sha256": "59fd3d13b90ba09c35cc86194f943846744f6ceffb999d06af15a1c6cf7343b5",
+      "page": null
+    },
+    {
+      "file": "walkthrough--offpolicy-geometry-walkthrough.py",
+      "target": "tutorials/offpolicy-geometry-walkthrough.py",
+      "sha256": "447799461d36ac37cb961885c66d725b40fe46f87d1c4140f5a7117e1c6f7b1e",
+      "page": null
+    },
+    {
+      "file": "walkthrough--option_model_walkthrough.py",
+      "target": "tutorials/option_model_walkthrough.py",
+      "sha256": "62cde795c8175c35c1c6ef9f1a9d817e291709e3b2c266e83f8fc6f485ab71a3",
+      "page": null
+    },
+    {
+      "file": "walkthrough--planning-budget-walkthrough.py",
+      "target": "tutorials/planning-budget-walkthrough.py",
+      "sha256": "2a779c0c1fa5088cd2cb156d4e2d993c79a29500e2f07ecedbbc551d4e78e1b5",
+      "page": null
+    },
+    {
+      "file": "walkthrough--policy-gradient-walkthrough.py",
+      "target": "tutorials/policy-gradient-walkthrough.py",
+      "sha256": "af60e90768f14ff3e1506a8e6230f9ed06845fb802037cc3071b2532c870c703",
+      "page": null
+    },
+    {
+      "file": "walkthrough--quantile-walkthrough.py",
+      "target": "tutorials/quantile-walkthrough.py",
+      "sha256": "4baa0d1e7e761f3c8dd2ac9b5ef150994d8bcb97f3ac35388f94db20ad531294",
+      "page": null
+    },
+    {
+      "file": "walkthrough--recurrent-control-walkthrough.py",
+      "target": "tutorials/recurrent-control-walkthrough.py",
+      "sha256": "44595a2c5fd1162097e3d58cd61f61227b3ebf5ac39c4104f01f7c734e86709f",
+      "page": null
+    },
+    {
+      "file": "walkthrough--recurrent-replay-walkthrough.py",
+      "target": "tutorials/recurrent-replay-walkthrough.py",
+      "sha256": "22b84fcef18a16d877b5df8309576f8911001b67df97e3fe22eb6c1ddf3ef134",
+      "page": null
+    },
+    {
+      "file": "walkthrough--recurrent_state_walkthrough.py",
+      "target": "tutorials/recurrent_state_walkthrough.py",
+      "sha256": "f97ab5c23ba23afa7de89b9dca4576370efff5498169238a7c277e005366c918",
+      "page": null
+    },
+    {
+      "file": "walkthrough--retention_plasticity_walkthrough.py",
+      "target": "tutorials/retention_plasticity_walkthrough.py",
+      "sha256": "07d45a44773076c5d977fd4b7224a2df24df86f2d8338c4b591a573ed8f44e05",
+      "page": null
+    },
+    {
+      "file": "walkthrough--reward-design-walkthrough.py",
+      "target": "tutorials/reward-design-walkthrough.py",
+      "sha256": "1077511763f2a9d10f32be967484331b06b68350bb6a4547d29113615a583c84",
+      "page": null
+    },
+    {
+      "file": "walkthrough--selfplay_search_labels.py",
+      "target": "tutorials/selfplay_search_labels.py",
+      "sha256": "703ada2e7c9e4b87ad5390439774db2b243cfb33a48a88b35edcb918d1b23384",
+      "page": null
+    },
+    {
+      "file": "walkthrough--shared_gradient_walkthrough.py",
+      "target": "tutorials/shared_gradient_walkthrough.py",
+      "sha256": "f1205f5f915352fdfbc7350b4b3280d763f10236eeda17c5a5f60a7d7d889eac",
+      "page": null
+    },
+    {
+      "file": "walkthrough--state-online-walkthrough.py",
+      "target": "tutorials/state-online-walkthrough.py",
+      "sha256": "33409a8c4757bc4e7363bda86579c1dc749809d4aa1fabc28fbe64cf50b9f74c",
+      "page": null
+    },
+    {
+      "file": "walkthrough--stochastic-model-walkthrough.py",
+      "target": "tutorials/stochastic-model-walkthrough.py",
+      "sha256": "b7067a8b59fff028fcba1b37ef78f393c93f6fb71086415511fea99b088424e6",
+      "page": null
+    },
+    {
+      "file": "walkthrough--streaming_state_walkthrough.py",
+      "target": "tutorials/streaming_state_walkthrough.py",
+      "sha256": "9619a06fa928128abaf99e6068f3dc7a388c0cc14071addb66bafad46d9b2bab",
+      "page": null
+    },
+    {
+      "file": "walkthroughs.json",
+      "target": "data/walkthroughs.json",
+      "sha256": "116ec4d0afebe0699a6218799401724ea41558cca9e2fbf082df1dd6c0715a5a",
+      "page": null
+    },
+    {
+      "file": "walkthroughs.md",
+      "target": "docs/walkthroughs.md",
+      "sha256": "61803bfd024d7e29e992946bcea6f5c99097ae2e66b1035c39787f3b8591fc00",
+      "page": null
+    },
+    {
+      "file": "worlds.json",
+      "target": "data/worlds.json",
+      "sha256": "d4063af5f0c0a6e721fa5bd3cdc2696b1b9232985d951b2cca5a6bfbca694874",
+      "page": null
+    },
+    {
+      "file": "worlds.md",
+      "target": "docs/worlds.md",
+      "sha256": "8366b4c2e469dea4a68dad382e732213c67d55a4db4075b85d4471812b189ff8",
+      "page": "worlds/"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "objectives",
+      "title": "强化学习问题的形式化：交互、目标与持续学习",
+      "path": "foundations/objectives/",
+      "file": "objectives_lab.py",
+      "command": "python3 objectives_lab.py all",
+      "scope": "标准库解析实验：周期策略偏好、随机停止、终止与截断、势函数塑形、在线与冻结评价。"
+    },
+    {
+      "id": "reward-design",
+      "title": "奖励假设与奖励设计",
+      "path": "foundations/reward-design/",
+      "file": "reward_design_lab.py",
+      "command": "python3 reward_design_lab.py demo\npython3 reward_design_lab.py test",
+      "scope": "原创建模反例、望远镜求和、偏好与 MaxEnt 梯度、单步约束优化。不是大规模算法复现。"
+    },
+    {
+      "id": "average",
+      "title": "平均奖励：奖励率、差分价值与持续控制",
+      "path": "algorithms/average-reward/",
+      "file": "lifelong_algorithms_lab.py",
+      "command": "python lifelong_algorithms_lab.py average",
+      "scope": "标准库表格机制实验与单步公式测试；不是深度算法或论文 benchmark 复现。"
+    },
+    {
+      "id": "state",
+      "title": "Agent state：部分可观测性、递归记忆与在线信用分配",
+      "path": "construction/state/",
+      "file": "state_meta_lab.py",
+      "command": "python3 state_meta_lab.py state",
+      "scope": "Bayes 过滤、标量 RTRL/BPTT/TBPTT、重置式监督提示实验、单个线性 RTU 风格旋转块；不是原论文 RL 基准复现。"
+    },
+    {
+      "id": "value",
+      "title": "价值预测与时间差分学习",
+      "path": "algorithms/value/",
+      "file": "foundations_detail_lab.py",
+      "command": "python3 foundations_detail_lab.py value\npython3 foundations_detail_lab.py test",
+      "scope": "Python 3.10+，仅标准库。实现表格 MC/TD 完整小实验；资格迹的前后向推导与实现见时间信用分配章。"
+    },
+    {
+      "id": "gvf",
+      "title": "通用价值函数与预测知识",
+      "path": "construction/predictive-knowledge/",
+      "file": "gvf_lab.py",
+      "command": "python3 gvf_lab.py compare\npython3 gvf_lab.py test",
+      "scope": "六个线性学习器、三个共享经验的预测问题、解析 Bellman 参照与一个 off-policy 期望发散反例。"
+    },
+    {
+      "id": "control",
+      "title": "持续控制：比较策略与学习智能体",
+      "path": "algorithms/control/",
+      "file": "continual_control_lab.py",
+      "command": "python3 continual_control_lab.py demo\npython3 continual_control_lab.py test",
+      "scope": "Python 3.10+，仅标准库。五组可解析持续控制反例、轨迹重要性采样、精确枚举与 29 个测试；教学模型不是论文 benchmark 或大规模性能复现。"
+    },
+    {
+      "id": "deep-value",
+      "title": "深度价值学习：DQN 与 Double DQN",
+      "path": "algorithms/deep-value/",
+      "file": "foundations_detail_lab.py",
+      "command": "python3 foundations_detail_lab.py deep-value\npython3 foundations_detail_lab.py test",
+      "scope": "Python 3.10+，仅标准库。包含两层网络及手写反向传播、replay 与目标网络。实验环境为可解析的小型 MDP。"
+    },
+    {
+      "id": "policy",
+      "title": "策略梯度、Actor–Critic 与 PPO",
+      "path": "algorithms/policy/",
+      "file": "foundations_detail_lab.py",
+      "command": "python3 foundations_detail_lab.py policy\npython3 foundations_detail_lab.py test",
+      "scope": "Python 3.10+，仅标准库。执行 PPO bandit 完整采样/优化循环，独立实现多步 GAE；不声称包含网络 PPO 的通用训练工程。"
+    },
+    {
+      "id": "soft-control",
+      "title": "最大熵控制与 Soft Actor–Critic",
+      "path": "algorithms/soft-control/",
+      "file": "foundations_detail_lab.py",
+      "command": "python3 foundations_detail_lab.py soft-control\npython3 foundations_detail_lab.py test",
+      "scope": "Python 3.10+，仅标准库。运行精确离散 actor 优化和公式检查；连续 SAC 的完整训练顺序在正文，作者工程在章末。"
+    },
+    {
+      "id": "credit",
+      "title": "时间信用分配：从资格迹到深度梯度学习",
+      "path": "algorithms/credit-assignment/",
+      "file": "credit_assignment_lab.py",
+      "command": "python3 credit_assignment_lab.py all",
+      "scope": "标准库：31项检查覆盖冻结／在线等价、策略校正、Q(σ)端点、V-trace目标变化、状态λ、期望迹混叠反例、非线性梯度迹有限差分及actor／递归敏感度；不是完整论文复现。"
+    },
+    {
+      "id": "streaming",
+      "title": "流式强化学习：交互协议与更新稳定性",
+      "path": "algorithms/streaming/",
+      "file": "lifelong_algorithms_lab.py",
+      "command": "python lifelong_algorithms_lab.py streaming",
+      "scope": "流式 TD、在线统计与 ObGD 的机制检查；meta_frontier_lab.py 提供 Intentional 输出尺度实验。不包含完整神经网络控制训练。"
+    },
+    {
+      "id": "meta",
+      "title": "学习规则的适应：在线元梯度与跨任务元学习",
+      "path": "algorithms/meta/",
+      "file": "state_meta_lab.py",
+      "command": "python3 state_meta_lab.py meta",
+      "scope": "多步超梯度、IDBD/TIDBD、标量 MAML 与解析 context；meta_frontier_lab.py 提供 Metatrace 线性特例。"
+    },
+    {
+      "id": "goals",
+      "title": "目标与子任务：条件控制、经验重用与技能设计",
+      "path": "construction/goals/",
+      "file": "knowledge_algorithms_lab.py",
+      "command": "python3 knowledge_algorithms_lab.py goals",
+      "scope": "目标重标记、子任务 TD 与有限目标课程的表格实验；深度方法另附原论文和作者工程。"
+    },
+    {
+      "id": "options",
+      "title": "Options：多步决策、技能发现与可复用行为",
+      "path": "construction/options/",
+      "file": "knowledge_algorithms_lab.py",
+      "command": "python3 knowledge_algorithms_lab.py options",
+      "scope": "SMDP、intra-option、动作与终止梯度的表格实验；深度技能训练另附原论文和作者工程。"
+    },
+    {
+      "id": "dyna",
+      "title": "Dyna：模型学习与规划",
+      "path": "algorithms/dyna/",
+      "file": "foundations_detail_lab.py",
+      "command": "python3 foundations_detail_lab.py dyna\npython3 foundations_detail_lab.py test",
+      "scope": "Python 3.10+，仅标准库。完整表格 Dyna-Q 与解析参照；概率模型、优先队列与神经世界模型需按正文接口进一步实现。"
+    },
+    {
+      "id": "models",
+      "title": "模型与后果预测：学什么，才能用于下一次决策？",
+      "path": "construction/models/",
+      "file": "knowledge_algorithms_lab.py",
+      "command": "python3 knowledge_algorithms_lab.py models",
+      "scope": "表格 option model、SF/GPI 与条件反例；不包含完整深度世界模型训练。"
+    },
+    {
+      "id": "planning",
+      "title": "规划：把模型中的经验转成更好的决策",
+      "path": "construction/planning/",
+      "file": "knowledge_algorithms_lab.py",
+      "command": "python3 knowledge_algorithms_lab.py planning",
+      "scope": "表格 Dyna、优先传播、option value iteration 与枚举 MPC；深度规划和想象训练另附原论文及作者工程。"
+    },
+    {
+      "id": "retention",
+      "title": "知识保留：经验重放、参数约束与模型记忆",
+      "path": "algorithms/retention/",
+      "file": "lifelong_algorithms_lab.py",
+      "command": "python lifelong_algorithms_lab.py retention",
+      "scope": "存储策略、目标项和 trace 数值实验；完整 CLEAR 训练还需要神经网络、序列收集与环境配置。"
+    },
+    {
+      "id": "plasticity",
+      "title": "可塑性：梯度通路、有效学习率与预测干扰",
+      "path": "algorithms/plasticity/",
+      "file": "lifelong_algorithms_lab.py",
+      "command": "python lifelong_algorithms_lab.py plasticity",
+      "scope": "替换、optimizer 状态与合成 aged/fresh 机制诊断；不是 ReDo/CBP 全论文复现。"
+    },
+    {
+      "id": "exploration",
+      "title": "持续探索：新奇、不确定性、学习进展与恢复",
+      "path": "algorithms/exploration/",
+      "file": "lifelong_algorithms_lab.py",
+      "command": "python lifelong_algorithms_lab.py exploration",
+      "scope": "内部奖励/进展/恢复接口的确定性检查；非 RND、课程或安全算法完整性能复现。"
+    },
+    {
+      "id": "architectures",
+      "title": "持续智能体架构：模块接口、更新调度与长期评价",
+      "path": "construction/architectures/",
+      "file": "lifelong_algorithms_lab.py",
+      "command": "python lifelong_algorithms_lab.py architectures",
+      "scope": "六状态、双动作、手工记忆的集成教学骨架；不是完整 OaK/STOMP 性能复现。"
+    },
+    {
+      "id": "experiments",
+      "title": "实验设计：从更新正确到持续学习证据",
+      "path": "experiments/",
+      "file": "experiment_design_lab.py",
+      "command": "python experiment_design_lab.py demo --tiny",
+      "scope": "标准库非平稳 bandit 的开发选择、独立测试、配对区间及失败诊断；不包含大型神经网络基准。"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "study-tabular-bandits",
+      "title": "多臂老虎机：估计、探索与直接策略学习",
+      "track": "tabular",
+      "order": 1,
+      "kind": "core",
+      "displayOrdinal": 1,
+      "path": "foundations/tabular/bandits/",
+      "file": "tabular_textbook_lab.py",
+      "command": "python3 tabular_textbook_lab.py bandits\npython3 tabular_textbook_lab.py test",
+      "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+      "connectsTo": [
+        "control",
+        "exploration",
+        "streaming"
+      ]
+    },
+    {
+      "id": "study-tabular-mdps",
+      "title": "MDP、回报与价值：序列决策的数学对象",
+      "track": "tabular",
+      "order": 2,
+      "kind": "core",
+      "displayOrdinal": 2,
+      "path": "foundations/tabular/mdps/",
+      "file": "tabular_textbook_lab.py",
+      "command": "python3 tabular_textbook_lab.py mdps\npython3 tabular_textbook_lab.py test",
+      "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+      "connectsTo": [
+        "objectives",
+        "value",
+        "state"
+      ]
+    },
+    {
+      "id": "study-tabular-dynamic-programming",
+      "title": "动态规划：评价、改善与最优递推",
+      "track": "tabular",
+      "order": 3,
+      "kind": "core",
+      "displayOrdinal": 3,
+      "path": "foundations/tabular/dynamic-programming/",
+      "file": "tabular_textbook_lab.py",
+      "command": "python3 tabular_textbook_lab.py dynamic-programming\npython3 tabular_textbook_lab.py test",
+      "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+      "connectsTo": [
+        "value",
+        "control",
+        "planning"
+      ]
+    },
+    {
+      "id": "study-tabular-monte-carlo",
+      "title": "Monte Carlo：完整回报、探索控制与离策略评价",
+      "track": "tabular",
+      "order": 4,
+      "kind": "core",
+      "displayOrdinal": 4,
+      "path": "foundations/tabular/monte-carlo/",
+      "file": "tabular_textbook_lab.py",
+      "command": "python3 tabular_textbook_lab.py monte-carlo\npython3 tabular_textbook_lab.py test",
+      "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+      "connectsTo": [
+        "value",
+        "control",
+        "gvf",
+        "retention"
+      ]
+    },
+    {
+      "id": "study-tabular-temporal-difference",
+      "title": "TD 预测与控制：SARSA、Expected SARSA、Q-learning 和 Double Q",
+      "track": "tabular",
+      "order": 5,
+      "kind": "core",
+      "displayOrdinal": 5,
+      "path": "foundations/tabular/temporal-difference/",
+      "file": "tabular_textbook_lab.py",
+      "command": "python3 tabular_textbook_lab.py temporal-difference\npython3 tabular_textbook_lab.py test",
+      "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+      "connectsTo": [
+        "value",
+        "control",
+        "deep-value"
+      ]
+    },
+    {
+      "id": "study-tabular-multistep",
+      "title": "多步学习：n-step、Tree Backup 与 Q(σ)",
+      "track": "tabular",
+      "order": 6,
+      "kind": "core",
+      "displayOrdinal": 6,
+      "path": "foundations/tabular/multistep/",
+      "file": "tabular_textbook_lab.py",
+      "command": "python3 tabular_textbook_lab.py multistep\npython3 tabular_textbook_lab.py test",
+      "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+      "connectsTo": [
+        "credit",
+        "value",
+        "control",
+        "gvf"
+      ]
+    },
+    {
+      "id": "study-tabular-planning",
+      "title": "学习与规划：Dyna、优先扫描和执行时搜索",
+      "track": "tabular",
+      "order": 7,
+      "kind": "core",
+      "displayOrdinal": 7,
+      "path": "foundations/tabular/planning/",
+      "file": "tabular_textbook_lab.py",
+      "command": "python3 tabular_textbook_lab.py planning\npython3 tabular_textbook_lab.py test",
+      "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+      "connectsTo": [
+        "dyna",
+        "models",
+        "planning",
+        "architectures"
+      ]
+    },
+    {
+      "id": "study-approximation-prediction",
+      "title": "函数逼近预测：从回归到 TD 固定点",
+      "track": "approximation",
+      "order": 1,
+      "kind": "core",
+      "displayOrdinal": 1,
+      "path": "foundations/approximation/prediction/",
+      "file": "approximation_textbook_lab.py",
+      "command": "python3 approximation_textbook_lab.py prediction\npython3 approximation_textbook_lab.py test",
+      "scope": "标准库教学实现。命令运行本章的可解析小问题和全文件的公式测试；不依赖深度学习库，不等同于论文中的大规模实验。",
+      "connectsTo": [
+        "value",
+        "gvf",
+        "state"
+      ]
+    },
+    {
+      "id": "study-approximation-features-control",
+      "title": "特征、泛化与半梯度控制",
+      "track": "approximation",
+      "order": 2,
+      "kind": "core",
+      "displayOrdinal": 2,
+      "path": "foundations/approximation/features-control/",
+      "file": "approximation_textbook_lab.py",
+      "command": "python3 approximation_textbook_lab.py features-control\npython3 approximation_textbook_lab.py test",
+      "scope": "标准库教学实现。命令运行本章的可解析小问题和全文件的公式测试；不依赖深度学习库，不等同于论文中的大规模实验。",
+      "connectsTo": [
+        "control",
+        "state",
+        "streaming"
+      ]
+    },
+    {
+      "id": "study-approximation-average-control",
+      "title": "持续控制与平均奖励",
+      "track": "approximation",
+      "order": 3,
+      "kind": "core",
+      "displayOrdinal": 3,
+      "path": "foundations/approximation/average-control/",
+      "file": "approximation_textbook_lab.py",
+      "command": "python3 approximation_textbook_lab.py average-control\npython3 approximation_textbook_lab.py test",
+      "scope": "标准库教学实现。命令运行本章的可解析小问题和全文件的公式测试；不依赖深度学习库，不等同于论文中的大规模实验。",
+      "connectsTo": [
+        "average",
+        "objectives",
+        "streaming"
+      ]
+    },
+    {
+      "id": "study-approximation-off-policy",
+      "title": "离策略函数逼近：覆盖、发散与稳定更新",
+      "track": "approximation",
+      "order": 4,
+      "kind": "core",
+      "displayOrdinal": 4,
+      "path": "foundations/approximation/off-policy/",
+      "file": "approximation_textbook_lab.py",
+      "command": "python3 approximation_textbook_lab.py off-policy\npython3 approximation_textbook_lab.py test",
+      "scope": "标准库教学实现。命令运行本章的可解析小问题和全文件的公式测试；不依赖深度学习库，不等同于论文中的大规模实验。",
+      "connectsTo": [
+        "gvf",
+        "value",
+        "deep-value"
+      ]
+    },
+    {
+      "id": "study-approximation-traces",
+      "title": "多步回报、资格迹与 True-online TD",
+      "track": "approximation",
+      "order": 5,
+      "kind": "core",
+      "displayOrdinal": 5,
+      "path": "foundations/approximation/traces/",
+      "file": "approximation_textbook_lab.py",
+      "command": "python3 approximation_textbook_lab.py traces\npython3 approximation_textbook_lab.py test",
+      "scope": "标准库教学实现。命令运行本章的可解析小问题和全文件的公式测试；不依赖深度学习库，不等同于论文中的大规模实验。",
+      "connectsTo": [
+        "credit",
+        "streaming",
+        "gvf",
+        "state"
+      ]
+    },
+    {
+      "id": "study-approximation-policy-gradient",
+      "title": "策略梯度、基线与 Actor–Critic",
+      "track": "approximation",
+      "order": 6,
+      "kind": "core",
+      "displayOrdinal": 6,
+      "path": "foundations/approximation/policy-gradient/",
+      "file": "approximation_textbook_lab.py",
+      "command": "python3 approximation_textbook_lab.py policy-gradient\npython3 approximation_textbook_lab.py test",
+      "scope": "标准库教学实现。命令运行本章的可解析小问题和全文件的公式测试；不依赖深度学习库，不等同于论文中的大规模实验。",
+      "connectsTo": [
+        "policy",
+        "soft-control",
+        "average",
+        "meta"
+      ]
+    },
+    {
+      "id": "study-deep-deep-value",
+      "title": "深度价值学习：DQN、Double DQN 与目标的时间顺序",
+      "track": "deep",
+      "order": 1,
+      "kind": "core",
+      "displayOrdinal": 1,
+      "path": "foundations/deep/deep-value/",
+      "file": "deep_textbook_train.py",
+      "command": "python3 deep_textbook_train.py dqn --steps 2000 --seed 0",
+      "scope": "CPU DeadlineChain 完整训练；需要同目录 deep_textbook_lab.py 和 PyTorch。",
+      "connectsTo": [
+        "deep-value",
+        "control",
+        "retention",
+        "plasticity"
+      ]
+    },
+    {
+      "id": "study-deep-policy-gradient",
+      "title": "策略梯度：从轨迹概率到 GAE 与 actor–critic",
+      "track": "deep",
+      "order": 2,
+      "kind": "core",
+      "displayOrdinal": 2,
+      "path": "foundations/deep/policy-gradient/",
+      "file": "deep_textbook_lab.py",
+      "command": "python3 deep_textbook_lab.py test",
+      "scope": "本文件用标准库核验数值；deep_textbook_train.py 提供 DQN/PPO 小任务训练与连续控制更新核，连续控制完整教学训练见 implementations/deep/ 的独立实现。",
+      "connectsTo": [
+        "policy",
+        "credit",
+        "state"
+      ]
+    },
+    {
+      "id": "study-deep-trust-region",
+      "title": "策略更新的尺度：TRPO 与 PPO",
+      "track": "deep",
+      "order": 3,
+      "kind": "core",
+      "displayOrdinal": 3,
+      "path": "foundations/deep/trust-region/",
+      "file": "deep_textbook_lab.py",
+      "command": "python3 deep_textbook_lab.py test",
+      "scope": "本文件用标准库核验数值；deep_textbook_train.py 提供 DQN/PPO 小任务训练与连续控制更新核，连续控制完整教学训练见 implementations/deep/ 的独立实现。",
+      "connectsTo": [
+        "policy",
+        "control",
+        "experiments"
+      ]
+    },
+    {
+      "id": "study-deep-deterministic-control",
+      "title": "连续动作的价值优化：DDPG 与 TD3",
+      "track": "deep",
+      "order": 4,
+      "kind": "core",
+      "displayOrdinal": 4,
+      "path": "foundations/deep/deterministic-control/",
+      "file": "deep_textbook_lab.py",
+      "command": "python3 deep_textbook_lab.py test",
+      "scope": "本文件用标准库核验数值；deep_textbook_train.py 提供 DQN/PPO 小任务训练与连续控制更新核，连续控制完整教学训练见 implementations/deep/ 的独立实现。",
+      "connectsTo": [
+        "control",
+        "policy",
+        "soft-control",
+        "experiments"
+      ]
+    },
+    {
+      "id": "study-deep-entropy-control",
+      "title": "最大熵连续控制：SAC 的价值、密度与温度",
+      "track": "deep",
+      "order": 5,
+      "kind": "core",
+      "displayOrdinal": 5,
+      "path": "foundations/deep/entropy-control/",
+      "file": "deep_textbook_lab.py",
+      "command": "python3 deep_textbook_lab.py test",
+      "scope": "本文件用标准库核验数值；deep_textbook_train.py 提供 DQN/PPO 小任务训练与连续控制更新核，连续控制完整教学训练见 implementations/deep/ 的独立实现。",
+      "connectsTo": [
+        "soft-control",
+        "policy",
+        "exploration",
+        "meta"
+      ]
+    },
+    {
+      "id": "study-deep-practice",
+      "title": "深度 RL 的机制接口：模型、记忆、离线数据与实验",
+      "track": "deep",
+      "order": 6,
+      "kind": "core",
+      "displayOrdinal": 6,
+      "path": "foundations/deep/practice/",
+      "file": "deep_textbook_lab.py",
+      "command": "python3 deep_textbook_lab.py test",
+      "scope": "本文件用标准库核验数值；deep_textbook_train.py 提供 DQN/PPO 小任务训练与连续控制更新核，连续控制完整教学训练见 implementations/deep/ 的独立实现。",
+      "connectsTo": [
+        "state",
+        "models",
+        "planning",
+        "credit",
+        "retention",
+        "plasticity",
+        "experiments"
+      ]
+    },
+    {
+      "id": "study-deep-systems",
+      "title": "大规模训练：算法与系统怎样共同设计",
+      "track": "deep",
+      "order": 6.5,
+      "kind": "core",
+      "displayOrdinal": 7,
+      "path": "foundations/deep/systems/",
+      "file": "distributed_systems_lab.py",
+      "command": "python3 distributed_systems_lab.py test\npython3 distributed_systems_lab.py demo",
+      "scope": "标准库精确核验：V-trace、队列年龄与分片概率。不启动训练，也不测量真实集群性能。",
+      "connectsTo": [
+        "deep-value",
+        "policy",
+        "credit",
+        "streaming",
+        "experiments"
+      ]
+    },
+    {
+      "id": "study-deep-partial-observability",
+      "title": "不完全可观测：信念状态、信息行动与递归记忆",
+      "track": "deep",
+      "order": 7,
+      "kind": "branch",
+      "displayOrdinal": null,
+      "path": "foundations/deep/partial-observability/",
+      "file": "extended_foundations_lab.py",
+      "command": "python3 extended_foundations_lab.py test",
+      "scope": "标准库解析机制实验；不包含完整神经网络训练或大型 benchmark。",
+      "connectsTo": [
+        "state",
+        "gvf",
+        "credit",
+        "models"
+      ]
+    },
+    {
+      "id": "study-deep-exploration",
+      "title": "探索与不确定性：后验、乐观估计和时间一致行动",
+      "track": "deep",
+      "order": 8,
+      "kind": "branch",
+      "displayOrdinal": null,
+      "path": "foundations/deep/exploration/",
+      "file": "extended_foundations_lab.py",
+      "command": "python3 extended_foundations_lab.py test",
+      "scope": "标准库解析机制实验；不包含完整神经网络训练或大型 benchmark。",
+      "connectsTo": [
+        "exploration",
+        "goals",
+        "options",
+        "gvf",
+        "experiments"
+      ]
+    },
+    {
+      "id": "study-deep-distributional",
+      "title": "分布强化学习：Bellman 分布、分位数与风险目标",
+      "track": "deep",
+      "order": 9,
+      "kind": "branch",
+      "displayOrdinal": null,
+      "path": "foundations/deep/distributional/",
+      "file": "extended_foundations_lab.py",
+      "command": "python3 extended_foundations_lab.py test",
+      "scope": "标准库解析机制实验；不包含完整神经网络训练或大型 benchmark。",
+      "connectsTo": [
+        "deep-value",
+        "gvf",
+        "objectives",
+        "experiments"
+      ]
+    },
+    {
+      "id": "study-deep-offline",
+      "title": "离线强化学习：数据支持、策略评估与保守改进",
+      "track": "deep",
+      "order": 10,
+      "kind": "branch",
+      "displayOrdinal": null,
+      "path": "foundations/deep/offline/",
+      "file": "extended_foundations_lab.py",
+      "command": "python3 extended_foundations_lab.py test",
+      "scope": "标准库解析机制实验；不包含完整神经网络训练或大型 benchmark。",
+      "connectsTo": [
+        "control",
+        "deep-value",
+        "retention",
+        "experiments"
+      ]
+    },
+    {
+      "id": "study-deep-model-based",
+      "title": "模型学习与规划：MPC、短模型 rollout 和潜在想象",
+      "track": "deep",
+      "order": 11,
+      "kind": "branch",
+      "displayOrdinal": null,
+      "path": "foundations/deep/model-based/",
+      "file": "extended_foundations_lab.py",
+      "command": "python3 extended_foundations_lab.py test",
+      "scope": "标准库解析机制实验；不包含完整神经网络训练或大型 benchmark。",
+      "connectsTo": [
+        "models",
+        "planning",
+        "dyna",
+        "state",
+        "architectures"
+      ]
+    },
+    {
+      "id": "study-deep-constraints",
+      "title": "约束强化学习：占据测度、拉格朗日与可行策略",
+      "track": "deep",
+      "order": 12,
+      "kind": "branch",
+      "displayOrdinal": null,
+      "path": "foundations/deep/constraints/",
+      "file": "extended_foundations_lab.py",
+      "command": "python3 extended_foundations_lab.py test",
+      "scope": "标准库解析机制实验；不包含完整神经网络训练或大型 benchmark。",
+      "connectsTo": [
+        "objectives",
+        "control",
+        "planning",
+        "experiments"
+      ]
+    },
+    {
+      "id": "study-deep-multi-agent",
+      "title": "多智能体合作：结构化探索与信用分配",
+      "track": "deep",
+      "order": 13,
+      "kind": "branch",
+      "displayOrdinal": null,
+      "path": "foundations/deep/multi-agent/",
+      "file": "marl_objectives_lab.py",
+      "command": "python3 marl_objectives_lab.py test\npython3 marl_objectives_lab.py demo --out results/marl-objectives",
+      "scope": "标准库枚举的协调探索概率、反事实梯度方差与顺序更新机制实验；精确计算不是神经训练曲线，也不是完整论文复现。",
+      "connectsTo": [
+        "state",
+        "control",
+        "credit",
+        "meta",
+        "experiments",
+        "architectures"
+      ]
+    },
+    {
+      "id": "study-deep-marl-populations",
+      "title": "自对弈与开放式多智能体学习：评估、目标与策略种群",
+      "track": "deep",
+      "order": 15,
+      "kind": "branch",
+      "displayOrdinal": null,
+      "path": "foundations/deep/multi-agent-populations/",
+      "file": "marl_objectives_lab.py",
+      "command": "python3 marl_objectives_lab.py test",
+      "scope": "精确有限游戏的评价与学习目标诊断；不是神经 PSRO、COLE 或 HOLA 的论文性能复现。",
+      "connectsTo": [
+        "control",
+        "exploration",
+        "goals",
+        "meta",
+        "retention",
+        "experiments",
+        "architectures"
+      ]
+    },
+    {
+      "id": "study-deep-marl-reasoning",
+      "title": "对手建模与递归推理：预测谁，回应什么？",
+      "track": "deep",
+      "order": 16,
+      "kind": "branch",
+      "displayOrdinal": null,
+      "path": "foundations/deep/multi-agent-reasoning/",
+      "file": "marl_objectives_lab.py",
+      "command": "python3 marl_objectives_lab.py test",
+      "scope": "下载本页配套脚本后运行精确条件评分检查；本页另附软响应梯度的独立代码。均不是 PR2/GR2 神经训练。",
+      "connectsTo": [
+        "state",
+        "control",
+        "meta",
+        "experiments",
+        "architectures"
+      ]
+    }
+  ]
+}

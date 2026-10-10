@@ -1,0 +1,554 @@
+{
+  "evidence": "exact-deterministic-model-and-backups",
+  "sampledRuns": 0,
+  "gamma": 0.9,
+  "actions": {
+    "S": [
+      "upper",
+      "lower"
+    ],
+    "A": [
+      "cross"
+    ],
+    "B": [
+      "forward"
+    ],
+    "C": [
+      "forward"
+    ],
+    "X": [],
+    "Y": []
+  },
+  "history": [
+    {
+      "s": "S",
+      "a": "upper",
+      "next": "A",
+      "physicalDone": false
+    },
+    {
+      "s": "A",
+      "a": "cross",
+      "next": "X",
+      "physicalDone": true
+    },
+    {
+      "s": "S",
+      "a": "lower",
+      "next": "B",
+      "physicalDone": false
+    },
+    {
+      "s": "B",
+      "a": "forward",
+      "next": "C",
+      "physicalDone": false
+    },
+    {
+      "s": "C",
+      "a": "forward",
+      "next": "X",
+      "physicalDone": true
+    }
+  ],
+  "newHistory": [
+    {
+      "s": "S",
+      "a": "upper",
+      "next": "A",
+      "physicalDone": false
+    },
+    {
+      "s": "A",
+      "a": "cross",
+      "next": "Y",
+      "physicalDone": true
+    }
+  ],
+  "protocol": {
+    "oldEnvironmentSteps": 5,
+    "newEnvironmentSteps": 2,
+    "totalEnvironmentSteps": 7,
+    "resets": 2,
+    "informativeChangedRows": 1,
+    "callsPerXSweep": 5,
+    "callsPerASweep": 4,
+    "tieBreak": "lower",
+    "knowledge": "Known state labels and action sets; transition model receives observed rows only. Current truth is evaluator-only.",
+    "diagnostic": "Exact route evaluation, no independent sampled evaluation episodes."
+  },
+  "oldModel": {
+    "S:upper": {
+      "next": "A",
+      "physicalDone": false
+    },
+    "A:cross": {
+      "next": "X",
+      "physicalDone": true
+    },
+    "S:lower": {
+      "next": "B",
+      "physicalDone": false
+    },
+    "B:forward": {
+      "next": "C",
+      "physicalDone": false
+    },
+    "C:forward": {
+      "next": "X",
+      "physicalDone": true
+    }
+  },
+  "updatedModel": {
+    "S:upper": {
+      "next": "A",
+      "physicalDone": false
+    },
+    "A:cross": {
+      "next": "Y",
+      "physicalDone": true
+    },
+    "S:lower": {
+      "next": "B",
+      "physicalDone": false
+    },
+    "B:forward": {
+      "next": "C",
+      "physicalDone": false
+    },
+    "C:forward": {
+      "next": "X",
+      "physicalDone": true
+    }
+  },
+  "goals": {
+    "X": [
+      {
+        "k": 0,
+        "calls": 0,
+        "q": {
+          "S:upper": 0,
+          "S:lower": 0,
+          "A:cross": 0,
+          "B:forward": 0,
+          "C:forward": 0
+        },
+        "values": {
+          "S": 0,
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "X": 0,
+          "Y": 0
+        },
+        "choice": "lower"
+      },
+      {
+        "k": 1,
+        "calls": 5,
+        "q": {
+          "S:upper": 0,
+          "S:lower": 0,
+          "A:cross": 1,
+          "B:forward": 0,
+          "C:forward": 1
+        },
+        "values": {
+          "S": 0,
+          "A": 1,
+          "B": 0,
+          "C": 1,
+          "X": 0,
+          "Y": 0
+        },
+        "choice": "lower"
+      },
+      {
+        "k": 2,
+        "calls": 10,
+        "q": {
+          "S:upper": 0.9,
+          "S:lower": 0,
+          "A:cross": 1,
+          "B:forward": 0.9,
+          "C:forward": 1
+        },
+        "values": {
+          "S": 0.9,
+          "A": 1,
+          "B": 0.9,
+          "C": 1,
+          "X": 0,
+          "Y": 0
+        },
+        "choice": "upper"
+      },
+      {
+        "k": 3,
+        "calls": 15,
+        "q": {
+          "S:upper": 0.9,
+          "S:lower": 0.81,
+          "A:cross": 1,
+          "B:forward": 0.9,
+          "C:forward": 1
+        },
+        "values": {
+          "S": 0.9,
+          "A": 1,
+          "B": 0.9,
+          "C": 1,
+          "X": 0,
+          "Y": 0
+        },
+        "choice": "upper"
+      },
+      {
+        "k": 4,
+        "calls": 20,
+        "q": {
+          "S:upper": 0.9,
+          "S:lower": 0.81,
+          "A:cross": 1,
+          "B:forward": 0.9,
+          "C:forward": 1
+        },
+        "values": {
+          "S": 0.9,
+          "A": 1,
+          "B": 0.9,
+          "C": 1,
+          "X": 0,
+          "Y": 0
+        },
+        "choice": "upper"
+      }
+    ],
+    "A": [
+      {
+        "k": 0,
+        "calls": 0,
+        "q": {
+          "S:upper": 0,
+          "S:lower": 0,
+          "A:cross": 0,
+          "B:forward": 0,
+          "C:forward": 0
+        },
+        "values": {
+          "S": 0,
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "X": 0,
+          "Y": 0
+        },
+        "choice": "lower"
+      },
+      {
+        "k": 1,
+        "calls": 4,
+        "q": {
+          "S:upper": 1,
+          "S:lower": 0,
+          "A:cross": 0,
+          "B:forward": 0,
+          "C:forward": 0
+        },
+        "values": {
+          "S": 1,
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "X": 0,
+          "Y": 0
+        },
+        "choice": "upper"
+      },
+      {
+        "k": 2,
+        "calls": 8,
+        "q": {
+          "S:upper": 1,
+          "S:lower": 0,
+          "A:cross": 0,
+          "B:forward": 0,
+          "C:forward": 0
+        },
+        "values": {
+          "S": 1,
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "X": 0,
+          "Y": 0
+        },
+        "choice": "upper"
+      },
+      {
+        "k": 3,
+        "calls": 12,
+        "q": {
+          "S:upper": 1,
+          "S:lower": 0,
+          "A:cross": 0,
+          "B:forward": 0,
+          "C:forward": 0
+        },
+        "values": {
+          "S": 1,
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "X": 0,
+          "Y": 0
+        },
+        "choice": "upper"
+      },
+      {
+        "k": 4,
+        "calls": 16,
+        "q": {
+          "S:upper": 1,
+          "S:lower": 0,
+          "A:cross": 0,
+          "B:forward": 0,
+          "C:forward": 0
+        },
+        "values": {
+          "S": 1,
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "X": 0,
+          "Y": 0
+        },
+        "choice": "upper"
+      }
+    ]
+  },
+  "labels": {
+    "X": {
+      "reward": 0,
+      "done": false
+    },
+    "A": {
+      "reward": 1,
+      "done": true
+    }
+  },
+  "afterChange": {
+    "stale": [
+      {
+        "k": 0,
+        "calls": 0,
+        "q": {
+          "S:upper": 0.9,
+          "S:lower": 0.81,
+          "A:cross": 1,
+          "B:forward": 0.9,
+          "C:forward": 1
+        },
+        "values": {
+          "S": 0.9,
+          "A": 1,
+          "B": 0.9,
+          "C": 1,
+          "X": 0,
+          "Y": 0
+        },
+        "choice": "upper",
+        "currentReturn": 0
+      },
+      {
+        "k": 1,
+        "calls": 5,
+        "q": {
+          "S:upper": 0.9,
+          "S:lower": 0.81,
+          "A:cross": 1,
+          "B:forward": 0.9,
+          "C:forward": 1
+        },
+        "values": {
+          "S": 0.9,
+          "A": 1,
+          "B": 0.9,
+          "C": 1,
+          "X": 0,
+          "Y": 0
+        },
+        "choice": "upper",
+        "currentReturn": 0
+      },
+      {
+        "k": 2,
+        "calls": 10,
+        "q": {
+          "S:upper": 0.9,
+          "S:lower": 0.81,
+          "A:cross": 1,
+          "B:forward": 0.9,
+          "C:forward": 1
+        },
+        "values": {
+          "S": 0.9,
+          "A": 1,
+          "B": 0.9,
+          "C": 1,
+          "X": 0,
+          "Y": 0
+        },
+        "choice": "upper",
+        "currentReturn": 0
+      },
+      {
+        "k": 3,
+        "calls": 15,
+        "q": {
+          "S:upper": 0.9,
+          "S:lower": 0.81,
+          "A:cross": 1,
+          "B:forward": 0.9,
+          "C:forward": 1
+        },
+        "values": {
+          "S": 0.9,
+          "A": 1,
+          "B": 0.9,
+          "C": 1,
+          "X": 0,
+          "Y": 0
+        },
+        "choice": "upper",
+        "currentReturn": 0
+      }
+    ],
+    "repaired": [
+      {
+        "k": 0,
+        "calls": 0,
+        "q": {
+          "S:upper": 0.9,
+          "S:lower": 0.81,
+          "A:cross": 1,
+          "B:forward": 0.9,
+          "C:forward": 1
+        },
+        "values": {
+          "S": 0.9,
+          "A": 1,
+          "B": 0.9,
+          "C": 1,
+          "X": 0,
+          "Y": 0
+        },
+        "choice": "upper",
+        "currentReturn": 0
+      },
+      {
+        "k": 1,
+        "calls": 5,
+        "q": {
+          "S:upper": 0.9,
+          "S:lower": 0.81,
+          "A:cross": 0,
+          "B:forward": 0.9,
+          "C:forward": 1
+        },
+        "values": {
+          "S": 0.9,
+          "A": 0,
+          "B": 0.9,
+          "C": 1,
+          "X": 0,
+          "Y": 0
+        },
+        "choice": "upper",
+        "currentReturn": 0
+      },
+      {
+        "k": 2,
+        "calls": 10,
+        "q": {
+          "S:upper": 0,
+          "S:lower": 0.81,
+          "A:cross": 0,
+          "B:forward": 0.9,
+          "C:forward": 1
+        },
+        "values": {
+          "S": 0.81,
+          "A": 0,
+          "B": 0.9,
+          "C": 1,
+          "X": 0,
+          "Y": 0
+        },
+        "choice": "lower",
+        "currentReturn": 0.81
+      },
+      {
+        "k": 3,
+        "calls": 15,
+        "q": {
+          "S:upper": 0,
+          "S:lower": 0.81,
+          "A:cross": 0,
+          "B:forward": 0.9,
+          "C:forward": 1
+        },
+        "values": {
+          "S": 0.81,
+          "A": 0,
+          "B": 0.9,
+          "C": 1,
+          "X": 0,
+          "Y": 0
+        },
+        "choice": "lower",
+        "currentReturn": 0.81
+      }
+    ]
+  },
+  "currentTransitionL1Mean": {
+    "stale": 0.4,
+    "repaired": 0
+  },
+  "physicalRoutes": {
+    "upper": [
+      {
+        "s": "S",
+        "a": "upper",
+        "next": "A",
+        "physicalDone": false
+      },
+      {
+        "s": "A",
+        "a": "cross",
+        "next": "X",
+        "physicalDone": true
+      }
+    ],
+    "lower": [
+      {
+        "s": "S",
+        "a": "lower",
+        "next": "B",
+        "physicalDone": false
+      },
+      {
+        "s": "B",
+        "a": "forward",
+        "next": "C",
+        "physicalDone": false
+      },
+      {
+        "s": "C",
+        "a": "forward",
+        "next": "X",
+        "physicalDone": true
+      }
+    ]
+  }
+}

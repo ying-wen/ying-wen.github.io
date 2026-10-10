@@ -1,0 +1,68 @@
+{
+  "kind": "constructed-exact-example",
+  "gamma": 1,
+  "lam": 0.5,
+  "epsilon": 0.2,
+  "rewards": [
+    0,
+    0,
+    1
+  ],
+  "values": [
+    0.2,
+    0.8,
+    0.4,
+    0
+  ],
+  "delta": [
+    0.6000000000000001,
+    -0.4,
+    0.6
+  ],
+  "advantage": [
+    0.55,
+    -0.10000000000000003,
+    0.6
+  ],
+  "lambda_target": [
+    0.75,
+    0.7,
+    1
+  ],
+  "reward_to_go": [
+    1,
+    1,
+    1
+  ],
+  "old_probability": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "probability": [
+    0.7,
+    0.3,
+    0.55
+  ],
+  "ratio": [
+    1.4,
+    0.6,
+    1.1
+  ],
+  "term": [
+    0.66,
+    -0.08000000000000003,
+    0.66
+  ],
+  "logp_derivative": [
+    0,
+    0,
+    0.66
+  ],
+  "exact_evaluation": {
+    "old_return": 0.125,
+    "candidate_return": 0.1155
+  },
+  "random_rollouts": 0,
+  "optimizer_steps": 0
+}

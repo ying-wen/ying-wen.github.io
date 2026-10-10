@@ -1,0 +1,828 @@
+{
+  "schema_version": 1,
+  "contracts": {
+    "bandit_sample_average": {
+      "task": "stationary_bernoulli_bandit",
+      "metric": "累计平均奖励",
+      "unit": "reward",
+      "clock": "environment_steps",
+      "higherBetter": true,
+      "object": "行为策略实际收到的外部奖励。value 是从第1步至当前 step 的奖励总和除以 step，已经包含这段交互的探索代价。",
+      "clockMeaning": "step 是实际拉臂次数；每次选择只给所选臂增加一个样本。UCB 的上界项只参与动作选择，不加入环境奖励。梯度 bandit 每次用旧策略概率和收到本次奖励前的基线更新全部偏好，再更新奖励基线。一次环境步不等于只改一个参数。",
+      "reduction": "每条记录已是累计均值。末点给全程平均奖励，不能再把所有记录点的 value 平均当成全程平均。",
+      "reconstruct": "末点 value × step 可恢复该运行的累计奖励；两个检查点的累计量相减，可恢复这段区间的奖励总和。稀疏检查点不能恢复区间内每一步奖励、访问计数、动作价值或策略概率。各臂真实均值固定为0.2、0.5、0.8；这些曲线不测量变化后的适应。",
+      "producers": [
+        "classic/bandit_sample_average.py",
+        "classic/bandit_constant_step.py",
+        "classic/bandit_ucb.py",
+        "classic/bandit_gradient.py",
+        "classic/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "bandit_constant_step": {
+      "task": "stationary_bernoulli_bandit",
+      "metric": "累计平均奖励",
+      "unit": "reward",
+      "clock": "environment_steps",
+      "higherBetter": true,
+      "object": "行为策略实际收到的外部奖励。value 是从第1步至当前 step 的奖励总和除以 step，已经包含这段交互的探索代价。",
+      "clockMeaning": "step 是实际拉臂次数；每次选择只给所选臂增加一个样本。UCB 的上界项只参与动作选择，不加入环境奖励。梯度 bandit 每次用旧策略概率和收到本次奖励前的基线更新全部偏好，再更新奖励基线。一次环境步不等于只改一个参数。",
+      "reduction": "每条记录已是累计均值。末点给全程平均奖励，不能再把所有记录点的 value 平均当成全程平均。",
+      "reconstruct": "末点 value × step 可恢复该运行的累计奖励；两个检查点的累计量相减，可恢复这段区间的奖励总和。稀疏检查点不能恢复区间内每一步奖励、访问计数、动作价值或策略概率。各臂真实均值固定为0.2、0.5、0.8；这些曲线不测量变化后的适应。",
+      "producers": [
+        "classic/bandit_sample_average.py",
+        "classic/bandit_constant_step.py",
+        "classic/bandit_ucb.py",
+        "classic/bandit_gradient.py",
+        "classic/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "bandit_ucb": {
+      "task": "stationary_bernoulli_bandit",
+      "metric": "累计平均奖励",
+      "unit": "reward",
+      "clock": "environment_steps",
+      "higherBetter": true,
+      "object": "行为策略实际收到的外部奖励。value 是从第1步至当前 step 的奖励总和除以 step，已经包含这段交互的探索代价。",
+      "clockMeaning": "step 是实际拉臂次数；每次选择只给所选臂增加一个样本。UCB 的上界项只参与动作选择，不加入环境奖励。梯度 bandit 每次用旧策略概率和收到本次奖励前的基线更新全部偏好，再更新奖励基线。一次环境步不等于只改一个参数。",
+      "reduction": "每条记录已是累计均值。末点给全程平均奖励，不能再把所有记录点的 value 平均当成全程平均。",
+      "reconstruct": "末点 value × step 可恢复该运行的累计奖励；两个检查点的累计量相减，可恢复这段区间的奖励总和。稀疏检查点不能恢复区间内每一步奖励、访问计数、动作价值或策略概率。各臂真实均值固定为0.2、0.5、0.8；这些曲线不测量变化后的适应。",
+      "producers": [
+        "classic/bandit_sample_average.py",
+        "classic/bandit_constant_step.py",
+        "classic/bandit_ucb.py",
+        "classic/bandit_gradient.py",
+        "classic/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "bandit_gradient": {
+      "task": "stationary_bernoulli_bandit",
+      "metric": "累计平均奖励",
+      "unit": "reward",
+      "clock": "environment_steps",
+      "higherBetter": true,
+      "object": "行为策略实际收到的外部奖励。value 是从第1步至当前 step 的奖励总和除以 step，已经包含这段交互的探索代价。",
+      "clockMeaning": "step 是实际拉臂次数；每次选择只给所选臂增加一个样本。UCB 的上界项只参与动作选择，不加入环境奖励。梯度 bandit 每次用旧策略概率和收到本次奖励前的基线更新全部偏好，再更新奖励基线。一次环境步不等于只改一个参数。",
+      "reduction": "每条记录已是累计均值。末点给全程平均奖励，不能再把所有记录点的 value 平均当成全程平均。",
+      "reconstruct": "末点 value × step 可恢复该运行的累计奖励；两个检查点的累计量相减，可恢复这段区间的奖励总和。稀疏检查点不能恢复区间内每一步奖励、访问计数、动作价值或策略概率。各臂真实均值固定为0.2、0.5、0.8；这些曲线不测量变化后的适应。",
+      "producers": [
+        "classic/bandit_sample_average.py",
+        "classic/bandit_constant_step.py",
+        "classic/bandit_ucb.py",
+        "classic/bandit_gradient.py",
+        "classic/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "td0": {
+      "task": "random_walk_prediction",
+      "metric": "五状态价值 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "higherBetter": false,
+      "object": "当前价值估计与真实值 s/6 的误差。在五个非终止状态 s=1,…,5 上均匀平均平方误差后开方；权重不是训练访问频率。",
+      "clockMeaning": "step 包含全部真实转移，也包含尚未完成的回合。MC 在自然终止后，对该回合首次访问的每个状态写一次回报均值；同回合重复访问不增加该状态的样本数。TD(0) 每个真实步写入；资格迹可同时影响多个状态。相同环境步不表示相同参数写入次数，预算结束也不产生额外终止反馈。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。 各状态初值均为0。MC 用各状态已完成回合的首次访问计数决定步长；TD(0) 用常数步长0.1，比较不仅改变了是否自举。",
+      "reconstruct": "CSV 可重算各记录时刻的跨种子均值、样本标准差和末点误差；没有保存全部预测向量，不能仅凭 value 重新计算状态权重或逐状态误差。 日志未保存回合边界、首次访问计数或逐步价值，曲线平台不能单独区分等待终止、零更新和稀疏记录漏掉变化。",
+      "producers": [
+        "classic/_common.py",
+        "classic/td0.py",
+        "classic/td_lambda.py",
+        "classic/true_online_td.py",
+        "classic/mc_prediction.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "td_lambda": {
+      "task": "random_walk_prediction",
+      "metric": "五状态价值 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "higherBetter": false,
+      "object": "当前价值估计与真实值 s/6 的误差。在五个非终止状态 s=1,…,5 上均匀平均平方误差后开方；权重不是训练访问频率。",
+      "clockMeaning": "step 包含全部真实转移，也包含尚未完成的回合。MC 在自然终止后，对该回合首次访问的每个状态写一次回报均值；同回合重复访问不增加该状态的样本数。TD(0) 每个真实步写入；资格迹可同时影响多个状态。相同环境步不表示相同参数写入次数，预算结束也不产生额外终止反馈。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。 各状态初值均为0。MC 用各状态已完成回合的首次访问计数决定步长；TD(0) 用常数步长0.1，比较不仅改变了是否自举。",
+      "reconstruct": "CSV 可重算各记录时刻的跨种子均值、样本标准差和末点误差；没有保存全部预测向量，不能仅凭 value 重新计算状态权重或逐状态误差。 日志未保存回合边界、首次访问计数或逐步价值，曲线平台不能单独区分等待终止、零更新和稀疏记录漏掉变化。",
+      "producers": [
+        "classic/_common.py",
+        "classic/td0.py",
+        "classic/td_lambda.py",
+        "classic/true_online_td.py",
+        "classic/mc_prediction.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "true_online_td": {
+      "task": "random_walk_prediction",
+      "metric": "五状态价值 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "higherBetter": false,
+      "object": "当前价值估计与真实值 s/6 的误差。在五个非终止状态 s=1,…,5 上均匀平均平方误差后开方；权重不是训练访问频率。",
+      "clockMeaning": "step 包含全部真实转移，也包含尚未完成的回合。MC 在自然终止后，对该回合首次访问的每个状态写一次回报均值；同回合重复访问不增加该状态的样本数。TD(0) 每个真实步写入；资格迹可同时影响多个状态。相同环境步不表示相同参数写入次数，预算结束也不产生额外终止反馈。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。 各状态初值均为0。MC 用各状态已完成回合的首次访问计数决定步长；TD(0) 用常数步长0.1，比较不仅改变了是否自举。",
+      "reconstruct": "CSV 可重算各记录时刻的跨种子均值、样本标准差和末点误差；没有保存全部预测向量，不能仅凭 value 重新计算状态权重或逐状态误差。 日志未保存回合边界、首次访问计数或逐步价值，曲线平台不能单独区分等待终止、零更新和稀疏记录漏掉变化。",
+      "producers": [
+        "classic/_common.py",
+        "classic/td0.py",
+        "classic/td_lambda.py",
+        "classic/true_online_td.py",
+        "classic/mc_prediction.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "mc_prediction": {
+      "task": "random_walk_prediction",
+      "metric": "五状态价值 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "higherBetter": false,
+      "object": "当前价值估计与真实值 s/6 的误差。在五个非终止状态 s=1,…,5 上均匀平均平方误差后开方；权重不是训练访问频率。",
+      "clockMeaning": "step 包含全部真实转移，也包含尚未完成的回合。MC 在自然终止后，对该回合首次访问的每个状态写一次回报均值；同回合重复访问不增加该状态的样本数。TD(0) 每个真实步写入；资格迹可同时影响多个状态。相同环境步不表示相同参数写入次数，预算结束也不产生额外终止反馈。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。 各状态初值均为0。MC 用各状态已完成回合的首次访问计数决定步长；TD(0) 用常数步长0.1，比较不仅改变了是否自举。",
+      "reconstruct": "CSV 可重算各记录时刻的跨种子均值、样本标准差和末点误差；没有保存全部预测向量，不能仅凭 value 重新计算状态权重或逐状态误差。 日志未保存回合边界、首次访问计数或逐步价值，曲线平台不能单独区分等待终止、零更新和稀疏记录漏掉变化。",
+      "producers": [
+        "classic/_common.py",
+        "classic/td0.py",
+        "classic/td_lambda.py",
+        "classic/true_online_td.py",
+        "classic/mc_prediction.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "linear_td": {
+      "task": "random_walk_linear_prediction",
+      "metric": "五状态价值 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "higherBetter": false,
+      "object": "共享线性特征产生的五个状态预测，与 s/6 逐项比较后取均匀 RMSE。该量评价预测函数，不是 TD 残差或权重距离。",
+      "clockMeaning": "step 是实际随机游走转移数；不是梯度分量数或辅助权重更新数。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV 可重算各记录时刻的跨种子均值、样本标准差和末点误差；没有保存全部预测向量，不能仅凭 value 重新计算状态权重或逐状态误差。",
+      "producers": [
+        "classic/_common.py",
+        "classic/linear_td.py",
+        "classic/gtd2.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "gtd2": {
+      "task": "random_walk_linear_prediction",
+      "metric": "五状态价值 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "higherBetter": false,
+      "object": "共享线性特征产生的五个状态预测，与 s/6 逐项比较后取均匀 RMSE。该量评价预测函数，不是 TD 残差或权重距离。",
+      "clockMeaning": "step 是实际随机游走转移数；不是梯度分量数或辅助权重更新数。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV 可重算各记录时刻的跨种子均值、样本标准差和末点误差；没有保存全部预测向量，不能仅凭 value 重新计算状态权重或逐状态误差。",
+      "producers": [
+        "classic/_common.py",
+        "classic/linear_td.py",
+        "classic/gtd2.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "nstep_td": {
+      "task": "random_walk_prediction",
+      "metric": "五状态价值 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "higherBetter": false,
+      "object": "当前三步 TD 价值估计与真实值 s/6 的误差。在五个非终止状态 s=1,…,5 上均匀平均平方误差后开方；权重不是训练访问频率。每回合从状态3开始，无偏左右游走，左端奖励0、右端奖励1，γ=1。",
+      "clockMeaning": "step 是实际随机游走转移数，包含尚未成熟的三步目标。队列积满三条后，每来一条真实转移，就用三步奖励和当前尾状态的价值更新最早的状态；自然终止时再更新余下的一步、两步尾项，不增加环境步。预算结束时至多两条未成熟转移保留为未更新。TD(0)对照每个真实步更新一次，相同 step 不保证相同写入时序。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。 两方法都从价值0开始、使用常数步长0.1；三步 TD 改变了等待长度和自举位置。每15步记录一次，第一点是第15步，不包含初值或全部中间更新。",
+      "reconstruct": "CSV 可重算各记录时刻的跨种子均值、样本标准差和末点误差；没有保存全部预测向量，不能仅凭 value 重新计算状态权重或逐状态误差。 CSV 仅有 step、value、phase，没有回合边界、pending 队列或写入计数，不能由误差平台恢复实际更新次数或判断哪些尾项仍在等待。该固定预测任务没有控制行动或变化后的适应阶段。",
+      "producers": [
+        "classic/nstep_td.py",
+        "classic/td0.py",
+        "classic/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "value_iteration": {
+      "task": "chain_exact_planning",
+      "metric": "最优价值最大绝对误差",
+      "unit": "value",
+      "clock": "model_sweeps",
+      "higherBetter": false,
+      "object": "已知六格链中，五个非终止格 s=0,…,4 的当前规划值与精确最优值逐项比较，取最大绝对误差。到格5奖励1，其余转移奖励−.01，γ=.95；终点没有待更新参数。value 是价值误差，不是冻结策略回报或 Bellman 扫描残差。",
+      "clockMeaning": "step 是一轮同步模型扫描，全部目标读取同一份旧价值；每轮写入五个状态，backups=5×step。VI每轮计算10个状态动作目标；策略迭代每轮先计算5个固定策略目标，扫描残差小于1e−10后才改善策略，改善时另计算10个目标。这些额外查询未计入 backups。1200轮对应6000次状态写入，没有真实环境交互。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。 两方法均从价值0开始，策略迭代初始策略总向左。此计算完全确定，seed 不参与更新，五份相同运行和零标准差不提供随机性能的不确定性估计。每15轮才记录一次，首点近零不能说明恰在第15轮收敛。",
+      "reconstruct": "CSV 可重算跨记录文件的均值、样本标准差及 backups=5×step，末点读取已记录的最大误差。没有逐状态价值、扫描残差、策略或改善次数，不能仅凭 value 重算误差向量、首次收敛轮数或全部模型查询成本。已知模型规划没有学习过程中的真实奖励，误差曲线不测量持续控制收益。",
+      "producers": [
+        "classic/value_iteration.py",
+        "classic/policy_iteration.py",
+        "classic/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "gvf_td": {
+      "task": "vector_gvf_prediction",
+      "metric": "两个 GVF 四状态分量 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "higherBetter": false,
+      "object": "两个 GVF × 两个状态共四个分量，与当前 cumulant 幅度对应的精确值作均匀 RMSE。中点后的参照也改用新幅度。",
+      "clockMeaning": "step 是真实交替转移数。四个预测分量共用同一条经验，不计作四个环境步。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV 可重算各记录时刻的跨种子均值、样本标准差和末点误差；没有保存全部预测向量，不能仅凭 value 重新计算状态权重或逐状态误差。",
+      "producers": [
+        "continual/gvf_td.py",
+        "continual/gvf_gtd_lambda.py",
+        "continual/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "gvf_gtd_lambda": {
+      "task": "vector_gvf_prediction",
+      "metric": "两个 GVF 四状态分量 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "higherBetter": false,
+      "object": "两个 GVF × 两个状态共四个分量，与当前 cumulant 幅度对应的精确值作均匀 RMSE。中点后的参照也改用新幅度。",
+      "clockMeaning": "step 是真实交替转移数。四个预测分量共用同一条经验，不计作四个环境步。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV 可重算各记录时刻的跨种子均值、样本标准差和末点误差；没有保存全部预测向量，不能仅凭 value 重新计算状态权重或逐状态误差。",
+      "producers": [
+        "continual/gvf_td.py",
+        "continual/gvf_gtd_lambda.py",
+        "continual/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "option_smdp_q": {
+      "task": "option_chain_control",
+      "metric": "原始奖励贪心策略折扣回报",
+      "unit": "return",
+      "clock": "environment_steps",
+      "higherBetter": true,
+      "object": "固定当前参数，从起点执行确定性贪心策略的精确折扣回报（γ=.95）。option 评价遵循执行至停止后才重新选择的规则；循环路径用几何级数求尾项。",
+      "clockMeaning": "step 是学习期间的原始环境转移。一个两步 option 仍计两步，不能用高层选择次数替代。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV 可重算冻结贪心回报曲线。value 不是探索中的行为奖励，也未记录逐步行为奖励，因此不能从它重建训练生命期收益。",
+      "producers": [
+        "continual/option_smdp_q.py",
+        "continual/primitive_q.py",
+        "continual/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "option_model": {
+      "task": "ek_option_model",
+      "metric": "冻结reward/discounted-endpoint联合RMSE",
+      "unit": "rmse",
+      "clock": "environment_steps",
+      "higherBetter": false,
+      "object": "六个起点各有一个奖励模型和七个折扣终点权重，共48个分量。与固定 option 模型的数值固定点比较，合并平方误差、除以48再开方。",
+      "clockMeaning": "step 是真实原始转移数；完成的 option 数另存 completed_options。这里学习模型，不执行任务策略改善。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV 可重算这项联合误差的跨种子汇总。仅有 value 不能拆回奖励误差与终点权重误差；两者的尺度也会影响联合分数。",
+      "producers": [
+        "extended_knowledge/option_model.py",
+        "extended_knowledge/option_model_monte_carlo.py",
+        "extended_knowledge/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "option_value_iteration": {
+      "task": "ek_option_planning",
+      "metric": "冻结精确最优价值最大误差",
+      "unit": "absolute_error",
+      "clock": "model_backups",
+      "higherBetter": false,
+      "object": "七个状态的当前规划值与已知模型下的最优值逐项相减，取最大绝对误差。终止状态的参照值为0。",
+      "clockMeaning": "step 是一次状态最大化备份，不是环境交互。同一次状态备份评估多少原始动作和 option，另见 primitive_backups、option_backups；模型预计算也不含在 step 中。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV 可重算各记录时刻的跨种子均值、样本标准差和末点误差；没有保存全部预测向量，不能仅凭 value 重新计算状态权重或逐状态误差。",
+      "producers": [
+        "extended_knowledge/option_value_iteration.py",
+        "extended_knowledge/primitive_value_iteration.py",
+        "extended_knowledge/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "deep-dqn": {
+      "task": "deadline-chain",
+      "metric": "frozen_evaluation_return",
+      "unit": "return",
+      "clock": "environment_steps",
+      "higherBetter": true,
+      "object": "冻结当前网络，以 argmax 选择动作，在独立 DeadlineChain 中跑12次完整回合，取未折扣外部回报的平均。这里起点相同且评价过程确定，12次并非12个独立训练种子。",
+      "clockMeaning": "step 只数训练环境转移。评价交互另计；任务中的12步期限是真正终止条件。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV 的 phase=evaluation。可以重算冻结评估曲线；未保存逐步训练奖励，不能从这些评估点反推训练全程收益。",
+      "producers": [
+        "deep/dqn.py",
+        "deep/double_dqn.py",
+        "deep/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "deep-double_dqn": {
+      "task": "deadline-chain",
+      "metric": "frozen_evaluation_return",
+      "unit": "return",
+      "clock": "environment_steps",
+      "higherBetter": true,
+      "object": "冻结当前网络，以 argmax 选择动作，在独立 DeadlineChain 中跑12次完整回合，取未折扣外部回报的平均。这里起点相同且评价过程确定，12次并非12个独立训练种子。",
+      "clockMeaning": "step 只数训练环境转移。评价交互另计；任务中的12步期限是真正终止条件。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV 的 phase=evaluation。可以重算冻结评估曲线；未保存逐步训练奖励，不能从这些评估点反推训练全程收益。",
+      "producers": [
+        "deep/dqn.py",
+        "deep/double_dqn.py",
+        "deep/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "deep-c51": {
+      "task": "deadline-chain",
+      "metric": "frozen_evaluation_return",
+      "unit": "return",
+      "clock": "environment_steps",
+      "higherBetter": true,
+      "object": "冻结当前网络，按预测分布的均值选贪心动作，在独立 DeadlineChain 中评价12次，平均未折扣外部回报。每次都从位置0、剩余12步开始；到位置4奖励1，其余步奖励−.02。相同网络的12次确定性评价不是12个训练种子。这里没有按分位数或尾部风险选动作。",
+      "clockMeaning": "step 只数真实训练转移。第32步首次更新，此后每两个环境步从回放中无放回取32条经验，做一次梯度更新；每100步复制目标网络。1200步对应585次梯度更新。两算法与 DQN 的更新时钟相同，但网络输出数、损失计算及梯度裁剪设置不同，相同交互预算不等于相同计算预算。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。 每个运行有独立初始化和探索随机性；先在运行内完成12次冻结评价，再跨训练种子汇总。训练目标的 γ=.99，图中回报不折扣；12步期限是任务终止，不是训练预算截断。",
+      "reconstruct": "CSV 保存冻结回报、样本数和梯度更新数；loss 是最近一次批次损失，不能在 C51、QR-DQN 与 DQN 间直接比较数值。日志没有保存完整预测分布或逐步行为奖励，所以不能由这张图重算分位数校准、Wasserstein 误差、风险表现或训练累计收益。两步订单的解析算例与本神经控制任务不同。",
+      "producers": [
+        "deep/c51.py",
+        "deep/qr_dqn.py",
+        "deep/dqn.py",
+        "deep/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "deep-qr_dqn": {
+      "task": "deadline-chain",
+      "metric": "frozen_evaluation_return",
+      "unit": "return",
+      "clock": "environment_steps",
+      "higherBetter": true,
+      "object": "冻结当前网络，按预测分布的均值选贪心动作，在独立 DeadlineChain 中评价12次，平均未折扣外部回报。每次都从位置0、剩余12步开始；到位置4奖励1，其余步奖励−.02。相同网络的12次确定性评价不是12个训练种子。这里没有按分位数或尾部风险选动作。",
+      "clockMeaning": "step 只数真实训练转移。第32步首次更新，此后每两个环境步从回放中无放回取32条经验，做一次梯度更新；每100步复制目标网络。1200步对应585次梯度更新。两算法与 DQN 的更新时钟相同，但网络输出数、损失计算及梯度裁剪设置不同，相同交互预算不等于相同计算预算。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。 每个运行有独立初始化和探索随机性；先在运行内完成12次冻结评价，再跨训练种子汇总。训练目标的 γ=.99，图中回报不折扣；12步期限是任务终止，不是训练预算截断。",
+      "reconstruct": "CSV 保存冻结回报、样本数和梯度更新数；loss 是最近一次批次损失，不能在 C51、QR-DQN 与 DQN 间直接比较数值。日志没有保存完整预测分布或逐步行为奖励，所以不能由这张图重算分位数校准、Wasserstein 误差、风险表现或训练累计收益。两步订单的解析算例与本神经控制任务不同。",
+      "producers": [
+        "deep/c51.py",
+        "deep/qr_dqn.py",
+        "deep/dqn.py",
+        "deep/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "deep-ddpg": {
+      "task": "bounded-lq",
+      "metric": "frozen_evaluation_return",
+      "unit": "return",
+      "clock": "environment_steps",
+      "higherBetter": true,
+      "object": "冻结当前 actor，在种子991生成的同一组12个初态上各跑40步，平均未折扣外部回报。SAC 此处执行 tanh(mean)，没有抽样动作，也不把熵奖励加入评估。",
+      "clockMeaning": "step 只数训练环境转移；评估交互另计。critic、actor 和 target 的更新数保存在独立字段，相同 step 不保证相同计算量。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV 可重算冻结评估曲线并读取更新计数；没有逐步训练奖励，不能重建行为策略的生命期收益。12个初态的平均先在单次运行内完成。",
+      "producers": [
+        "deep/ddpg.py",
+        "deep/td3.py",
+        "deep/sac.py",
+        "deep/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "deep-td3": {
+      "task": "bounded-lq",
+      "metric": "frozen_evaluation_return",
+      "unit": "return",
+      "clock": "environment_steps",
+      "higherBetter": true,
+      "object": "冻结当前 actor，在种子991生成的同一组12个初态上各跑40步，平均未折扣外部回报。SAC 此处执行 tanh(mean)，没有抽样动作，也不把熵奖励加入评估。",
+      "clockMeaning": "step 只数训练环境转移；评估交互另计。critic、actor 和 target 的更新数保存在独立字段，相同 step 不保证相同计算量。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV 可重算冻结评估曲线并读取更新计数；没有逐步训练奖励，不能重建行为策略的生命期收益。12个初态的平均先在单次运行内完成。",
+      "producers": [
+        "deep/ddpg.py",
+        "deep/td3.py",
+        "deep/sac.py",
+        "deep/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "deep-sac": {
+      "task": "bounded-lq",
+      "metric": "frozen_evaluation_return",
+      "unit": "return",
+      "clock": "environment_steps",
+      "higherBetter": true,
+      "object": "冻结当前 actor，在种子991生成的同一组12个初态上各跑40步，平均未折扣外部回报。SAC 此处执行 tanh(mean)，没有抽样动作，也不把熵奖励加入评估。",
+      "clockMeaning": "step 只数训练环境转移；评估交互另计。critic、actor 和 target 的更新数保存在独立字段，相同 step 不保证相同计算量。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV 可重算冻结评估曲线并读取更新计数；没有逐步训练奖励，不能重建行为策略的生命期收益。12个初态的平均先在单次运行内完成。",
+      "producers": [
+        "deep/ddpg.py",
+        "deep/td3.py",
+        "deep/sac.py",
+        "deep/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "deep-ppo": {
+      "task": "deadline-chain",
+      "metric": "frozen_evaluation_return",
+      "unit": "return",
+      "clock": "environment_steps",
+      "higherBetter": true,
+      "object": "冻结当前 actor，在独立 DeadlineChain 中按 argmax 动作重复12次完整回合，取未折扣外部回报的平均。每次都从位置0、剩余12步开始；到位置4奖励1，其余步奖励−.02。评价环境和动作选择都确定，同一网络的12次回合相同，不能当成12个训练种子。",
+      "clockMeaning": "step 只数训练环境转移，评价交互另计。旧记录每60步用新批次更新，1200步有20批；每批最多4次全批策略梯度和固定4次 critic 梯度。策略更新前的样本近似 KL 大于.03时停止余下策略更新，实际策略梯度次数没有写入CSV；updated_batches 计批次，不能直接当成梯度次数。采样截止不重置环境，真实终止才关闭自举。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。 第0步评价尚未更新的网络；其余点在本批更新后评价。训练用γ=1、λ=.95的GAE和批内归一化优势，旧 log-prob、优势与回报在多轮优化中冻结；图中 argmax 回报与随机采样策略的期望回报、PPO代理目标分别定义。这是单环境、全批次教学实现，不是论文基准复现。",
+      "reconstruct": "CSV 可重算冻结回报均值和样本标准差，samples 核对真实预算，updated_batches×4给出critic梯度数（末点80）。已知确定性任务下，成功时回合长度L=1+(1−value)/.02，失败时L=12；12×L给本检查点额外评价转移数。日志没有逐步训练奖励、旧概率、优势、KL、clip fraction或actor更新计数；不能恢复训练累计收益、随机策略回报、实际信赖域变化或策略梯度总数。policy_loss和value_loss是最近批次中最后一次优化所用损失，不能跨方法直接比较其数值。",
+      "producers": [
+        "deep/ppo.py",
+        "deep/vpg.py",
+        "deep/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "deep-vpg": {
+      "task": "deadline-chain",
+      "metric": "frozen_evaluation_return",
+      "unit": "return",
+      "clock": "environment_steps",
+      "higherBetter": true,
+      "object": "冻结当前 actor，在独立 DeadlineChain 中按 argmax 动作重复12次完整回合，取未折扣外部回报的平均。每次都从位置0、剩余12步开始；到位置4奖励1，其余步奖励−.02。评价环境和动作选择都确定，同一网络的12次回合相同，不能当成12个训练种子。",
+      "clockMeaning": "step 只数训练环境转移，包含未完成回合的 pending_samples；评价交互另计。到位置4或用尽任务的12步时，VPG用该完整回合做一次actor梯度和一次critic梯度，updated_batches因此是已更新回合数。预算末尾未完成回合不作Monte Carlo更新，不能把预算截断当成终止。A2C对照每60步更新一批，1200步有20次actor和20次critic梯度，相同环境预算没有对齐更新次数。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。 第0步评价尚未更新的网络；后续每60步记录当前网络，可能仍在等待下一完整回合。VPG用γ=1的reward-to-go减去采样时的价值基线，没有优势归一化；A2C用一步自举。图中argmax回报与随机行为策略的期望回报分别定义，两方法还改变了等待长度与优化时钟。这是单环境教学实现，不是论文基准复现。",
+      "reconstruct": "CSV 可重算冻结回报均值和样本标准差；updated_batches给出VPG的actor、critic各自梯度次数，samples−pending_samples给出已用于完整回合更新的转移数。已知确定性任务下，成功时回合长度L=1+(1−value)/.02，失败时L=12；12×L给本检查点额外评价转移数。未保存训练奖励、回合回报、基线、优势或策略概率，不能恢复训练累计收益、随机行为策略回报或完整梯度。policy_loss和value_loss来自最近完成回合（A2C为最近批次），不是检查点间的平均。",
+      "producers": [
+        "deep/vpg.py",
+        "deep/a2c.py",
+        "deep/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "shared_nonlinear": {
+      "task": "nonlinear_interference_diagnostic",
+      "metric": "两个固定条件目标的均匀 RMSE",
+      "unit": "prediction",
+      "clock": "stream_observations",
+      "higherBetter": false,
+      "object": "每次写入之后，在A、B两个固定监督目标上取均匀 RMSE。即使当前只观察A，也测量B；未观察条件的诊断不进入该步训练。",
+      "clockMeaning": "step 是输入流中的监督观测数；没有控制行动或环境奖励。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV 可汇总 value，并用 error_A、error_B 核对两个条件误差。上下文可用性改变，但两个条件的目标没有改变。",
+      "producers": [
+        "nonlinear_diagnostics/shared_nonlinear.py",
+        "nonlinear_diagnostics/isolated_nonlinear.py",
+        "nonlinear_diagnostics/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "isolated_nonlinear": {
+      "task": "nonlinear_interference_diagnostic",
+      "metric": "两个固定条件目标的均匀 RMSE",
+      "unit": "prediction",
+      "clock": "stream_observations",
+      "higherBetter": false,
+      "object": "每次写入之后，在A、B两个固定监督目标上取均匀 RMSE。即使当前只观察A，也测量B；未观察条件的诊断不进入该步训练。",
+      "clockMeaning": "step 是输入流中的监督观测数；没有控制行动或环境奖励。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV 可汇总 value，并用 error_A、error_B 核对两个条件误差。上下文可用性改变，但两个条件的目标没有改变。",
+      "producers": [
+        "nonlinear_diagnostics/shared_nonlinear.py",
+        "nonlinear_diagnostics/isolated_nonlinear.py",
+        "nonlinear_diagnostics/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "lagged_nonlinear_td": {
+      "task": "nonlinear_target_diagnostic",
+      "metric": "二状态真实价值 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "higherBetter": false,
+      "object": "当前在线网络在两状态的预测与真实值20/9、25/9比较，取均匀 RMSE。测量的是在线网络，不是滞后目标副本。",
+      "clockMeaning": "step 是真实转移数；target_copies 和 target_age 描述复制时钟，不替代交互时钟。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV 可重算各记录时刻的跨种子均值、样本标准差和末点误差；没有保存全部预测向量，不能仅凭 value 重新计算状态权重或逐状态误差。",
+      "producers": [
+        "nonlinear_diagnostics/lagged_nonlinear_td.py",
+        "nonlinear_diagnostics/online_nonlinear_td.py",
+        "nonlinear_diagnostics/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "online_nonlinear_td": {
+      "task": "nonlinear_target_diagnostic",
+      "metric": "二状态真实价值 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "higherBetter": false,
+      "object": "当前在线网络在两状态的预测与真实值20/9、25/9比较，取均匀 RMSE。测量的是在线网络，不是滞后目标副本。",
+      "clockMeaning": "step 是真实转移数；target_copies 和 target_age 描述复制时钟，不替代交互时钟。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV 可重算各记录时刻的跨种子均值、样本标准差和末点误差；没有保存全部预测向量，不能仅凭 value 重新计算状态权重或逐状态误差。",
+      "producers": [
+        "nonlinear_diagnostics/lagged_nonlinear_td.py",
+        "nonlinear_diagnostics/online_nonlinear_td.py",
+        "nonlinear_diagnostics/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "neural_td_trace": {
+      "task": "sc_neural_delayed_prediction",
+      "metric": "全状态预测 RMSE",
+      "unit": "RMSE",
+      "clock": "environment_steps",
+      "higherBetter": false,
+      "object": "六个状态的神经预测与0.7×0.9^(5−s)逐项比较，取均匀 RMSE。0.7来自末端奖励成功概率，参照不是本回合抽到的0或1。",
+      "clockMeaning": "step 是真实原始转移，包含末端奖励转移；完成回合数、梯度次数和迹范数另记。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV 可重算各记录时刻的跨种子均值、样本标准差和末点误差；没有保存全部预测向量，不能仅凭 value 重新计算状态权重或逐状态误差。",
+      "producers": [
+        "streaming_composition/neural_td_trace.py",
+        "streaming_composition/neural_td0.py",
+        "streaming_composition/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "neural_td0": {
+      "task": "sc_neural_delayed_prediction",
+      "metric": "全状态预测 RMSE",
+      "unit": "RMSE",
+      "clock": "environment_steps",
+      "higherBetter": false,
+      "object": "六个状态的神经预测与0.7×0.9^(5−s)逐项比较，取均匀 RMSE。0.7来自末端奖励成功概率，参照不是本回合抽到的0或1。",
+      "clockMeaning": "step 是真实原始转移，包含末端奖励转移；完成回合数、梯度次数和迹范数另记。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV 可重算各记录时刻的跨种子均值、样本标准差和末点误差；没有保存全部预测向量，不能仅凭 value 重新计算状态权重或逐状态误差。",
+      "producers": [
+        "streaming_composition/neural_td_trace.py",
+        "streaming_composition/neural_td0.py",
+        "streaming_composition/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "rtrl": {
+      "task": "recurrent_sequence_prediction",
+      "metric": "更新前序列预测平方误差 EMA",
+      "unit": "squared_error",
+      "clock": "sequences",
+      "higherBetter": false,
+      "object": "每段含8个独立均匀输入。教师递归网络从零状态生成末端标签；学生也从零状态展开，先计算末端预测误差，再更新一次参数。value 是这些更新前误差平方的指数平均，不是更新后的误差或独立测试集误差。",
+      "clockMeaning": "step 是已经处理的序列数，element_steps=8×step。段内参数固定，段间学习；两种方法都前向处理全部8个输入。RTRL传播完整参数敏感度；TBPTT只反传最后3个位置，保留第5个位置的活动数值。这里没有环境行动、经验回放或跨段保留的活动。",
+      "reduction": "第一段的 EMA 等于该段误差平方；以后按0.95×旧EMA+0.05×新误差平方更新。教师输入权重在总序列预算中点从0.4变为−0.4；变化时不清空EMA，曲线包含先前误差的残留权重。取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV可重算检查点上的跨运行均值、样本标准差，并由element_steps核对输入预算。只保存每15段的EMA和更新后递归权重，未保存逐段输入、预测、标签和全部参数；不能由EMA恢复各段误差、完整梯度或持续控制收益。",
+      "producers": [
+        "continual/rtrl.py",
+        "continual/tbptt.py",
+        "continual/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "tbptt": {
+      "task": "recurrent_sequence_prediction",
+      "metric": "更新前序列预测平方误差 EMA",
+      "unit": "squared_error",
+      "clock": "sequences",
+      "higherBetter": false,
+      "object": "每段含8个独立均匀输入。教师递归网络从零状态生成末端标签；学生也从零状态展开，先计算末端预测误差，再更新一次参数。value 是这些更新前误差平方的指数平均，不是更新后的误差或独立测试集误差。",
+      "clockMeaning": "step 是已经处理的序列数，element_steps=8×step。段内参数固定，段间学习；两种方法都前向处理全部8个输入。RTRL传播完整参数敏感度；TBPTT只反传最后3个位置，保留第5个位置的活动数值。这里没有环境行动、经验回放或跨段保留的活动。",
+      "reduction": "第一段的 EMA 等于该段误差平方；以后按0.95×旧EMA+0.05×新误差平方更新。教师输入权重在总序列预算中点从0.4变为−0.4；变化时不清空EMA，曲线包含先前误差的残留权重。取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV可重算检查点上的跨运行均值、样本标准差，并由element_steps核对输入预算。只保存每15段的EMA和更新后递归权重，未保存逐段输入、预测、标签和全部参数；不能由EMA恢复各段误差、完整梯度或持续控制收益。",
+      "producers": [
+        "continual/rtrl.py",
+        "continual/tbptt.py",
+        "continual/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "integrated_recent_model": {
+      "task": "integrated_continuing_ring",
+      "metric": "最近100个真实步的平均外部奖励",
+      "unit": "reward_per_environment_step",
+      "clock": "environment_steps",
+      "higherBetter": true,
+      "object": "七状态环中，实际行为最近 min(step,100) 个原始转移的平均外部奖励。每步奖励为到达当前奖励位置的指示量减0.02。该窗口包括探索、技能执行和尚未完成的技能；不是冻结贪心策略的价值，也不是算法内部的 estimated_rate。",
+      "clockMeaning": "step 只数真实转移，奖励位置在预算中点改变，不重置世界或学习器。高层真实备份只在一个原子动作或 option 完成后进行；近期模型与累计模型每次完成各做4次模型备份，故 model_backups=4×real_backups。不规划的对照仍学习模型，但 model_backups 始终为0。每个真实步还更新两个给定子任务，subtask_backups=2×step。相同真实步数未必包含相同规划计算。",
+      "reduction": "窗口每步滑动，但只在第1步、每20步和预算末尾记录。变化后的前99步仍可含旧阶段奖励。average_reward 是从第1步累计的实际奖励率；estimated_rate 则由每次完成后的差分误差递增，二者的定义不同。技能策略改变时，版本化方法清除对应模型和高层 Q，不清空奖励窗口。取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "lifetime_reward 与 average_reward×step 可互查，并可用累计量差恢复检查点之间的总奖励。step≥120的20步检查点可用相隔100步的累计量重算 value；其余稀疏窗口不一定能重建。预算末尾 pending_duration>0 时，其奖励已计入真实收益，但这段尚未产生高层备份或完整段模型样本。model_reward_mae 只平均最近至多100个“此前已有对应模型”的完整段奖励预测误差，既不是全状态误差，也没有检验时长和终点分布；模型清除会改变哪些样本进入它。",
+      "producers": [
+        "integrated_agents/_system.py",
+        "integrated_agents/integrated_recent_model.py",
+        "integrated_agents/integrated_cumulative_model.py",
+        "integrated_agents/integrated_no_planning.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "integrated_cumulative_model": {
+      "task": "integrated_continuing_ring",
+      "metric": "最近100个真实步的平均外部奖励",
+      "unit": "reward_per_environment_step",
+      "clock": "environment_steps",
+      "higherBetter": true,
+      "object": "七状态环中，实际行为最近 min(step,100) 个原始转移的平均外部奖励。每步奖励为到达当前奖励位置的指示量减0.02。该窗口包括探索、技能执行和尚未完成的技能；不是冻结贪心策略的价值，也不是算法内部的 estimated_rate。",
+      "clockMeaning": "step 只数真实转移，奖励位置在预算中点改变，不重置世界或学习器。高层真实备份只在一个原子动作或 option 完成后进行；近期模型与累计模型每次完成各做4次模型备份，故 model_backups=4×real_backups。不规划的对照仍学习模型，但 model_backups 始终为0。每个真实步还更新两个给定子任务，subtask_backups=2×step。相同真实步数未必包含相同规划计算。",
+      "reduction": "窗口每步滑动，但只在第1步、每20步和预算末尾记录。变化后的前99步仍可含旧阶段奖励。average_reward 是从第1步累计的实际奖励率；estimated_rate 则由每次完成后的差分误差递增，二者的定义不同。技能策略改变时，版本化方法清除对应模型和高层 Q，不清空奖励窗口。取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "lifetime_reward 与 average_reward×step 可互查，并可用累计量差恢复检查点之间的总奖励。step≥120的20步检查点可用相隔100步的累计量重算 value；其余稀疏窗口不一定能重建。预算末尾 pending_duration>0 时，其奖励已计入真实收益，但这段尚未产生高层备份或完整段模型样本。model_reward_mae 只平均最近至多100个“此前已有对应模型”的完整段奖励预测误差，既不是全状态误差，也没有检验时长和终点分布；模型清除会改变哪些样本进入它。",
+      "producers": [
+        "integrated_agents/_system.py",
+        "integrated_agents/integrated_recent_model.py",
+        "integrated_agents/integrated_cumulative_model.py",
+        "integrated_agents/integrated_no_planning.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "dyna_q": {
+      "task": "chain_control",
+      "metric": "确定性贪心策略折扣回报",
+      "unit": "return",
+      "clock": "environment_steps",
+      "higherBetter": true,
+      "object": "冻结当前 Q，从六格链的起点0按确定性贪心动作计算折扣回报（γ=.95）。并列时评价选动作0，训练则在并列最优动作间均匀分配利用概率。循环路径的尾项用几何级数计入。",
+      "clockMeaning": "step 是真实转移次数，包含到达终点的那一步。Dyna 每步直接更新一次 Q，再做5次模型更新；优先扫描先写模型和队列，Q 只在出队时更新，每步至多5次。model_backups 不含排队、查找前驱和计算优先级的成本。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV 可重算冻结贪心回报曲线及模型更新次数。Dyna 的 Q 更新总数为 step + model_backups；本优先扫描实现的 Q 更新总数就是 model_backups。日志没有逐步行为奖励或 Q 表，不能恢复训练累计收益或每个检查点的策略。",
+      "producers": [
+        "classic/dyna_q.py",
+        "classic/prioritized_sweeping.py",
+        "classic/q_learning.py",
+        "classic/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "prioritized_sweeping": {
+      "task": "chain_control",
+      "metric": "确定性贪心策略折扣回报",
+      "unit": "return",
+      "clock": "environment_steps",
+      "higherBetter": true,
+      "object": "冻结当前 Q，从六格链的起点0按确定性贪心动作计算折扣回报（γ=.95）。并列时评价选动作0，训练则在并列最优动作间均匀分配利用概率。循环路径的尾项用几何级数计入。",
+      "clockMeaning": "step 是真实转移次数，包含到达终点的那一步。Dyna 每步直接更新一次 Q，再做5次模型更新；优先扫描先写模型和队列，Q 只在出队时更新，每步至多5次。model_backups 不含排队、查找前驱和计算优先级的成本。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。",
+      "reconstruct": "CSV 可重算冻结贪心回报曲线及模型更新次数。Dyna 的 Q 更新总数为 step + model_backups；本优先扫描实现的 Q 更新总数就是 model_backups。日志没有逐步行为奖励或 Q 表，不能恢复训练累计收益或每个检查点的策略。",
+      "producers": [
+        "classic/dyna_q.py",
+        "classic/prioritized_sweeping.py",
+        "classic/q_learning.py",
+        "classic/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "differential_td_offpolicy": {
+      "task": "average_prediction_offpolicy",
+      "metric": "参考状态对齐后的差分价值RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "higherBetter": false,
+      "object": "先从三个当前差分价值中统一减去状态0的估计，再与目标策略的差分价值比较，取三状态均匀 RMSE。目标策略的真值由真实模型仅作评价求得，不提供给学习更新。",
+      "clockMeaning": "step 是行为策略产生的真实转移数；每次转移更新差分价值和奖励率，无回合终止或重置。评价解方程不增加环境步。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。 主图消除了公共平移，需同时看 gain_abs_error（目标奖励率误差）和 raw_bias_offset（未经对齐的状态0值）；小的对齐误差不能代替正确的奖励率。",
+      "reconstruct": "CSV 保存 bias_0、bias_1、bias_2，可结合已知模型独立重算 RMSE。gain 与 true_gain 可重算奖励率误差；experienced_reward_rate × step 可恢复行为累计奖励，但行为奖励率不等于目标策略奖励率。",
+      "producers": [
+        "average_systems/differential_td_offpolicy.py",
+        "average_systems/wrong_behavior_mean_td.py",
+        "average_systems/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "mc_control": {
+      "task": "extended_chain_control",
+      "metric": "贪心策略精确折扣回报",
+      "unit": "return",
+      "clock": "environment_steps",
+      "higherBetter": true,
+      "object": "冻结当前 Q，从六格链的起点0按确定性贪心动作计算原奖励折扣回报（γ=.95）。并列时评价选动作0；训练的 ε=.1 策略则在并列最优动作间均分利用概率。到终点奖励1，其余转移奖励−.01；循环路径保留无限折扣尾项。",
+      "clockMeaning": "step 是实际训练转移数，包含未完成回合中的转移。MC 只在自然终止后更新首次访问状态动作的完整回报均值；预算用尽时不把未完成轨迹当成终止。Watkins Q(λ)每个真实步更新当前资格覆盖的 Q，两个方法相同 step 不表示相同写入次数或内存。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。 此处评价的是不加探索的冻结策略；MC 实际学习的回报来自带探索的历史策略，两者需要区分。",
+      "reconstruct": "CSV 可重算冻结贪心回报的均值和标准差。它没有逐步奖励、Q 表、回合边界或更新计数，不能从平台期判断是否尚未结束一个回合，也不能重建训练累计收益。教学脚本中的两步控制任务与本六格链分别解释。",
+      "producers": [
+        "extended_classic/mc_control.py",
+        "extended_classic/watkins_q_lambda.py",
+        "extended_classic/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "rvi_multistate": {
+      "task": "average_known_model_planning",
+      "metric": "最优偏差参考对齐RMSE",
+      "unit": "value",
+      "clock": "model_sweeps",
+      "higherBetter": false,
+      "object": "把三个规划值对齐到状态0后，与已知三状态模型的最优差分价值作均匀 RMSE。主图比较相对值，不比较共同增长的绝对值；未规范化 VI 也可得到正确的相对值。",
+      "clockMeaning": "step 是一轮同步扫描：3状态 × 2动作，共6次状态动作期望备份，每个备份再对3个后继求和。model_backups = 6 × step，environment_updates 始终为0；该图没有真实采样。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。 本计算完全确定，种子不参与更新；重复曲线及零标准差不构成多次随机实验的证据。",
+      "reconstruct": "CSV 的三个 bias 字段可独立重算对齐 RMSE，raw_bias_offset 保留公共偏移。RVI 的 gain 是该轮减去的参考值；未规范化 VI 的 gain 是参考值的单轮增量，不是随扫描累积的绝对值。",
+      "producers": [
+        "average_systems/rvi_multistate.py",
+        "average_systems/unnormalized_vi_multistate.py",
+        "average_systems/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    },
+    "differential_dyna": {
+      "task": "average_control_learned_model",
+      "metric": "冻结贪心策略的精确平均奖励",
+      "unit": "reward_rate",
+      "clock": "environment_steps",
+      "higherBetter": true,
+      "object": "固定当前 Q 所选的贪心策略，在真实三状态模型上求其长期平均奖励。真实模型只用于评价。value 不是算法内部的 gain_estimate，也不是带探索的行为所收到的平均奖励。",
+      "clockMeaning": "step 是真实交互数。两方法每步都直接更新 Q 和率；Differential Dyna 另做5次经验模型期望备份。environment_updates、model_backups、total_backups 分别记录这两类更新及其和，尚未计模型维护与求和的全部运行时间。",
+      "reduction": "取该记录时刻的值；不先对曲线上的时间点求平均。 全程行为奖励率另看 experienced_reward_rate：它已把从第1步开始的探索与学习成本纳入平均，不应再次平均各稀疏检查点。",
+      "reconstruct": "CSV 可重算奖励率差 optimal_gain − value 和各更新计数。experienced_reward_rate × step 给出累计真实奖励；模型奖励不加入该总量。日志未保存 Q 表与每步奖励，不能仅凭冻结策略的 value 恢复策略或逐步行为轨迹。",
+      "producers": [
+        "average_systems/differential_dyna.py",
+        "average_systems/differential_q_multistate.py",
+        "average_systems/_common.py"
+      ],
+      "field": "value",
+      "clockField": "step",
+      "summary": "先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。"
+    }
+  }
+}

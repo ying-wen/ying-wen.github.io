@@ -1,0 +1,816 @@
+# 学习为何困难：从共享参数到变化中的学习目标
+
+会运行 DQN 或 PPO 之后，怎样判断失败来自问题定义、信息不足、估计偏差、更新不稳定，还是学习能力本身发生变化？
+
+## 本章内容
+
+- 将预测对象、误差目标、数据分布和更新方向分开。
+- 由一个线性反例和三个非线性配对实验，解释工程方法实际改变了什么。
+- 理解这些困难怎样进入平均奖励、GVF、资格迹、技能与完整持续智能体。
+
+<a id="chapter-prerequisites"></a>
+
+## 预备知识与符号
+
+### 价值预测
+
+给定策略与回报定义，估计从当前信息出发的未来回报；不是所有预测都以环境奖励为累计量。
+
+### 参数化函数
+
+同一组参数服务多个输入。神经网络还会通过学习改变内部特征。
+
+### 梯度与半梯度
+
+梯度对完整目标求导。半梯度在构造更新时固定自举目标；这是一项算法选择，不是忘记写求导符号。
+
+<a id="nonlinear-setting"></a>
+
+## 1 · 先固定问题：表示、目标、数据与更新不是同一件事
+
+本章先研究一个固定策略的预测问题。环境是有限 MDP。奖励有界，折扣小于 1。策略暂时不变。这样可以把策略改善和探索的困难移开，单独检查：预测目标明确以后，学习器为何仍会失败。后面再放回控制、持续变化和非线性表示。
+
+$$
+v_\pi(s)=\mathbb E_\pi\!\left[\sum_{k=0}^{\infty}\gamma^k R_{t+k+1}\mid S_t=s\right],\qquad v_\pi=T_\pi v_\pi=r_\pi+\gamma P_\pi v_\pi.
+$$
+
+目标价值由环境、策略和折扣共同确定。它不由网络、优化器或损失曲线定义。
+
+学习器选择函数族 $\{v_\theta\}$。评价者指定状态权重 $d$。数据来自行为策略 $b$，或来自允许重复查询的生成模型。算法规定怎样从这些数据更新 $\theta$。这四项必须分别写清楚。仅写“用神经网络拟合价值”还没有定义一个算法。
+
+| 层次 | 应当检查的问题 | 不能据此推出 |
+| --- | --- | --- |
+| 信息 | 两个历史被压成同一状态后，未来是否仍不同？ | 增大优化步数不能补回丢失的信息。 |
+| 表示 | 函数族能否同时表达所有需要的预测？ | 低训练误差不说明未访问状态也准确。 |
+| 统计 | 什么状态和动作被采样？后继和回报有什么噪声？ | 更多同类样本不自动消除覆盖缺口。 |
+| 更新动力学 | 期望更新是否指向稳定固定点？步长是否适当？ | 即使真值可表示，更新仍可能发散。 |
+| 持续变化 | 策略、世界、表示或预测问题本身是否改变？ | 固定任务的收敛定理不等于长期追踪保证。 |
+
+诊断时按这五层逐项排除。否则，表示不足可能被误称为优化失败；有偏目标可能被误称为步长没调好；对旧数据反复拟合的稳定曲线也可能掩盖新分布上的失效。
+
+| 首先区分的目标 | 谁决定其含义 | 学习误差降低能说明什么 |
+| --- | --- | --- |
+| 主任务评价：折扣回报或长期奖励率 | 奖励来源与时间评价准则 | 这是行为的比较标准，不由 critic 的损失函数决定。 |
+| 预测问题：某种行为下累计什么 | GVF 的 cumulant、continuation 和目标策略 | 答案可能更准确；没有使用路径就不保证控制改善。 |
+| 技能子任务：学会怎样行动和停止 | 给定或构建的内部奖励、技能策略与停止机制 | 子任务能力可能提高；内部奖金不能直接算作主任务收益。 |
+| 求解代理：TD 误差或回归损失 | 学习算法、采样权重及梯度约定 | 某种代理被优化；不自动证明正确固定点或最优主任务策略。 |
+
+这些目标之间必须有明确的连接。平均奖励章解释更换行为评价准则；GVF 章解释怎样定义和使用预测；option 章解释技能构建、执行和主任务调用；本章则检查给定这些对象以后，参数更新是否可靠。相同的 TD 形式可以服务不同问题，不能用相似的代码代替问题定义。
+
+<a id="nonlinear-frontier-map"></a>
+
+## 研究延伸 · 先分清需要改变哪一个环节
+
+前面的反例说明，训练失败不能只归因于“网络不够大”或“步长不合适”。下面按干预位置组织研究。一个方法可以改善某项困难，同时保留其他困难。监督学习中的可塑性结果，也不能直接替代强化学习中的自举稳定性结果。
+
+| 需要解释的现象 | 研究切入点 | 代表方法 | 对应的基础问题 |
+| --- | --- | --- | --- |
+| 离策略 TD 的更新方向不稳定 | 分析期望更新的 Jacobian，再限制网络尺度与曲率。 | PQN | 半梯度、自举反馈、deadly triad。 |
+| 当前输入与后继输入的归一化统计不一致 | 让两类输入共享一次批统计。 | CrossQ | 目标网络、训练/推断模式、批依赖。 |
+| 标量目标的尺度与噪声使回归难训练 | 把标量目标编码成平滑的类别标签。 | HL-Gauss | 损失与价值目标不是同一个对象。 |
+| 网络随学习逐渐失去可训练方向 | 改变激活函数，或维护快慢参数副本。 | Deep Fourier Features；Hare–Tortoise | 表示曲率、可塑性、参数历史。 |
+| 不同权重需要不同的遗忘速度 | 对权重衰减率做在线元学习。 | FADE | 信用迹、元敏感度、学习与遗忘。 |
+| 噪声中的弱信号难以逐样本提取 | 选择性步长与网络级元学习。 | Oak 的 NetworkIDBD 研究设想与实验 | 噪声、追踪和元梯度近似。 |
+| 不同研究使用不同任务与指标 | 统一骨干、协议和诊断，但保留指标定义。 | Plasticine | 机制指标与控制效果的因果区别。 |
+
+阅读顺序是：先看每项的输入和目标，再看更新式，然后看它的实验证据覆盖了哪类问题。最后才决定是否把它放入同一个持续学习智能体。这里提供作者工程与论文中的代码入口；这些外部大型实验不属于前面八个 CPU 诊断实验的复现结果。
+
+<a id="nonlinear-sharing"></a>
+
+## 2 · 从表格到神经网络：一次更新会影响哪些预测？
+
+![两个状态连接到共享参数，随后用梯度向量显示固定特征与非线性梯度随参数变化的区别。](https://yingwen.io/crl-figures/concept-credit-shared-gradients.svg)
+
+先看连接：更新一个状态，会沿共享参数改变另一个状态。再看梯度方向：在线性例子中方向固定，在非线性例子中方向会转动。后者还会使先前累计的资格迹与当前梯度不再对齐。图的独立算例用于解释几何关系，本节随后给出一般公式。
+
+$$
+\begin{aligned}v_w(s)&=x(s)^\top w,\\w^+&=w+\alpha\delta x(s),\\v_{w^+}(\bar s)-v_w(\bar s)&=\alpha\delta\,x(\bar s)^\top x(s).\end{aligned}
+$$
+
+固定线性特征下，这个关系是精确等式。两个状态的特征内积决定交叉更新。表格的不同状态特征正交，因此一次更新只改变一个表项。
+
+共享本身不是错误。相似状态应当共享信息时，交叉更新节省样本。相似观测却需要相反预测时，相同共享关系可能产生干扰。线性特征固定了这种关系；学习表示则会不断改变这种关系。
+
+$$
+v_{\theta+\Delta\theta}(\bar s)-v_\theta(\bar s)=\nabla v_\theta(\bar s)^\top\Delta\theta+O(\|\Delta\theta\|^2),\qquad K_\theta(\bar s,s)=\nabla v_\theta(\bar s)^\top\nabla v_\theta(s).
+$$
+
+对平滑网络，小步更新的交叉影响由梯度内积决定。这是一阶局部近似。网络改变以后，梯度和内积也改变；不能把初始的核当作整个训练过程的常数。
+
+例如 $v_\theta(x)=a\tanh(bx+c)+d$。四个参数共同影响所有输入。隐藏单元饱和时，关于 $b,c$ 的梯度变小；但输出偏置 $d$ 仍可改变所有预测。因此“小梯度”“无表示变化”和“无遗忘”不是同一现象。
+
+若观测不满足 Markov 性，应先说明网络输入的是单次观测、有限窗口还是递归 agent state。本章的共享表示诊断不能替代状态充分性检验。
+
+<a id="nonlinear-objectives"></a>
+
+## 3 · 三种误差与半梯度：先问优化的究竟是什么
+
+$$
+\begin{aligned}J_{\rm VE}(\theta)&=\tfrac12\mathbb E_{S\sim d}[(v_\pi(S)-v_\theta(S))^2],\\J_{\rm BE}(\theta)&=\tfrac12\mathbb E_{S\sim d}[(T_\pi v_\theta(S)-v_\theta(S))^2],\\J_{\rm sample}(\theta)&=\tfrac12\mathbb E[(R+\gamma v_\theta(S')-v_\theta(S))^2].\end{aligned}
+$$
+
+价值误差使用未知真值。Bellman 残差先对一步后果取条件期望，再平方。样本 TD 误差先平方，再对后果取期望。后两者一般不同。
+
+$$
+\delta=R+\gamma v_\theta(S')-v_\theta(S),\qquad \theta^+=\theta+\alpha\delta\nabla v_\theta(S).
+$$
+
+这是半梯度 TD。它没有对目标中的下一状态预测求导。它通常不是上述样本平方误差的梯度，也不能仅凭“loss 降了”解释其固定点。
+
+$$
+-\nabla\tfrac12\delta^2=\delta\,[\nabla v_\theta(S)-\gamma\nabla v_\theta(S')].
+$$
+
+对同一个样本目标完整求导会产生另一种更新。这个更新可以精确优化样本残差目标，却不一定优化所期望的 Bellman 残差。
+
+实现中的 detach 或 stop-gradient 是计算图约定。它使这次反向传播不穿过目标分支。下次前向计算仍会使用变化后的在线参数，因此目标仍然移动。冻结目标网络另外保存参数副本，才会在一段更新期间固定目标函数。
+
+**算法：冻结目标半梯度更新；复制必须发生在明确的时刻**
+
+1. 读取同一组旧参数 θ 与目标参数 θ⁻
+1. y ← r + γ v(下一状态; θ⁻)
+1. δ ← y − v(当前状态; θ)
+1. g ← 当前预测对 θ 的梯度
+1. θ ← θ + α δ g
+1. 到达指定复制时刻后，再令 θ⁻ ← θ 的独立副本
+
+<a id="nonlinear-frontier-hlgauss"></a>
+
+## HL-Gauss · 相同标量价值，可以用不同的学习几何表示
+
+假定本次 TD 标签 y 已经算好并被冻结。网络可以直接输出一个数，也可以输出若干有序区间的概率，再用这些概率读出一个数。两种表示可以服务同一价值问题，却让相同误差通过不同的输出坐标进入网络。现在只改变这一层，不改变行为策略或奖励目标。
+
+$$
+b_0<\cdots<b_m,\qquad z_i=(b_i+b_{i+1})/2,\qquad \widehat p_i=\operatorname{softmax}(\ell)_i,\qquad Q_\theta(s,a)=\sum_{i=0}^{m-1}z_i\widehat p_i(s,a).
+$$
+
+边界 b 划分有限区间，中心 z 是各类别读出的数值。softmax 保证预测质量非负且和为一，因此标量读出位于最小与最大中心之间。还需定义标量标签 y 应当变成什么类别标签。
+
+把全部质量交给包含 y 的一个区间，是最直接的编码。但在区间边界两侧，两个几乎相等的标签会突然变成不同的 one-hot 向量。Histogram Loss 让邻近标签共享邻近区间的质量；HL-Gauss 选择以 y 为中心、宽度由设计者规定的高斯核。
+
+$$
+p_i(y)=\frac{\displaystyle\int_{b_i}^{b_{i+1}}\exp[-(u-y)^2/(2\sigma^2)]\,\mathrm du}{\displaystyle\int_{b_0}^{b_m}\exp[-(u-y)^2/(2\sigma^2)]\,\mathrm du}=\frac{\Phi((b_{i+1}-y)/\sigma)-\Phi((b_i-y)/\sigma)}{\Phi((b_m-y)/\sigma)-\Phi((b_0-y)/\sigma)},\qquad\sigma>0.
+$$
+
+先对每个区间积分，再按保留在整个有限区间内的质量归一化。Φ 是标准正态 CDF。σ 决定标签平滑，而不是从环境估计出的回报标准差；有限区间远离 y 时，还需处理分母很小造成的数值问题。
+
+$$
+L(\theta;y)=-\sum_i p_i(y)\log\widehat p_i,\qquad \frac{\partial L}{\partial\ell_i}=\widehat p_i-p_i(y),\qquad \nabla_\theta L=\sum_i[\widehat p_i-p_i(y)]\nabla_\theta\ell_i.
+$$
+
+当前反传固定标签概率 p(y)。交叉熵先在 logit 坐标上给出 −1 到 1 之间的误差信号，再乘网络 Jacobian；有界的是每个输出坐标的导数，而不是整个参数梯度。
+
+取区间边界 $(0,1,2)$、标签 $y=1$。对任意正的 σ，对称性给出标签概率 $(.5,.5)$，中心读出仍为1。即使环境结果完全确定，编码熵也等于 $\log2$。若改成 $y=0$，两个中心仍为 .5 和1.5，任何概率组合的读出都至少为 .5；因此有限支撑和离散中心已经改变了能精确表示的标签范围。
+
+这解释了一种区别：平方误差对标量预测的导数随残差大小增长；分类输出先在 logit 空间分配有限的误差信号。实验包含噪声目标、变化目标以及不同 RL 骨干。但收益不能全部由这一条导数界解释。
+
+Farebrother 等人的 Stop Regressing（ICML 2024）将这类标签编码用于价值学习，Histogram Loss 的思想来自 Imani 与 White 的早期工作。它与 C51 的区别在构造目标的那一步：这里先得到一个标量 y，再人为展开为平滑标签；C51 传播的是后续随机回报分布。两者都可用交叉熵，所预测的内容却不同。
+
+原始代码入口在论文 [附录 A：JAX 与 PyTorch 参考实现](https://arxiv.org/html/2403.03950v1#A1)。这里有损失变换，不等于论文所有 Atari、机器人和 Transformer 实验的完整可复现工程。学习时先测概率和是否为 1、标量重建误差及极端目标的数值稳定性，再接入 DQN。
+
+实验问题：固定网络、数据和更新预算，只替换 MSE、Two-Hot、HL-Gauss。用同一实际价值 RMSE 评价，不能把交叉熵与平方误差的数值直接比较。再逐项加入目标漂移与回放年龄，观察收益来自哪里。
+
+<a id="nonlinear-double-sampling"></a>
+
+## 4 · Double sampling：不是多取一个 minibatch 就解决了
+
+$$
+J_{\rm sample}=J_{\rm BE}+\tfrac12\mathbb E_S\!\left[\operatorname{Var}(R+\gamma v_\theta(S')\mid S)\right].
+$$
+
+固定策略、固定采样分布时，这是条件方差分解。方差项一般依赖参数。优化样本残差会额外倾向降低该方差，不只是减小 Bellman 期望残差。
+
+手算一个局部预测目标。在被评价的状态 A，预测为 $w$。奖励为 1，折扣为 $1/2$。后继特征 $X$ 等概率为 0 或 2，后继预测为 $Xw$。这里只评价 A 的条件 Bellman 残差，并未要求所有后继状态都满足自己的 Bellman 方程。
+
+$$
+\begin{aligned}\delta(X)&=1+(X/2-1)w,\\J_{\rm BE}(w)&=\tfrac12(1-w/2)^2,\quad w_{\rm BE}=2,\\J_{\rm sample}(w)&=\tfrac14[(1-w)^2+1],\quad w_{\rm sample}=1.\end{aligned}
+$$
+
+两个优化问题的解不同。即使单样本残差下降完全正确，它仍会停在真实 MSBE 为 1/8 的地方。
+
+$$
+-\nabla J_{\rm BE}=\mathbb E_{S\sim d}\!\left[\mathbb E[\delta\mid S]\;\mathbb E[\nabla v_\theta(S)-\gamma\nabla v_\theta(S')\mid S]\right].
+$$
+
+先固定当前状态，再分别估计两个条件期望的乘积，最后对当前状态取期望。同一状态下独立采样两次后果可给出无偏乘积估计；两项若共用后继，则一般多出协方差项。
+
+本章的双采样实验使用可重复查询的生成模型。单生命期轨迹通常不能回到完全相同的状态重新抽一次后果。连续状态下，从回放里抽两个看起来相近的状态也不满足严格的条件独立同分布要求。学习模型可以提供近似样本，但会引入模型偏差。
+
+两个对照每次都花费两次后继查询。单样本法平均两份各自的梯度。双采样法交叉相乘再对称平均。这样比较的是相关性导致的目标偏差，而不是悄悄给一个方法更多数据。
+
+<a id="experiment-double_sample_residual"></a>
+
+### 实验：实验 · 两个样本都有，乘法次序仍能改变学习目标
+
+为什么把两个有偏样本梯度平均，并不等价于用独立后继估计 Bellman 期望残差的梯度？
+
+**环境与可用信息。** 只评价一个当前状态的条件目标：当前预测为 w，奖励为 1，折扣 0.5；后继特征 X 等概率为 0 或 2，后继预测为 Xw。真实目标为 (1−0.5w) 平方的一半，最小点是 w=2。
+
+**设置。** 五种子各做 1200 次更新，w 从零开始，步长为 0.4/(1+0.03t)。每次都独立查询两个后继，合计 2400 次模型查询。单样本残差法平均两个各自梯度；双采样法交叉配对残差与独立后继梯度，并取对称平均。
+
+**检验的机制。** 同一随机后继同时出现在残差和导数中，会引入协方差项。多平均几个这种乘积只能减小其噪声，不能删除偏差。交叉配对利用的是条件独立性，而非更多查询。
+
+**测量。** 主图使用同一个解析真实 MSBE，而不是各算法自己的训练损失。日志的 parameter 应分别趋向 2 与 1；successor_queries 明确记录查询成本。
+
+```bash
+python3 implementations/nonlinear_diagnostics/double_sample_residual.py --steps 1200 --seeds 0 1 2 3 4 --out results/MY_NEW_RUN
+```
+
+在[完整代码包](https://yingwen.io/crl-code/learning-code.zip)的根目录运行。
+
+![实测学习曲线](https://yingwen.io/crl-code/results/double_sample_residual/curves.svg)
+
+横轴：paired_successor_queries。纵轴：真实 MSBE。每种方法 1200 paired_successor_queries；训练种子 0、1、2、3、4。曲线是种子均值，阴影是 ±1 个样本标准差，不是置信区间。相同交互量不保证相同计算量。
+
+**结果分析。** 第 1200 次更新，双采样的平均真实 MSBE 为 0.000182，单样本残差法为 0.125000。后者很稳定，却停在另一个优化问题的解。这正是“训练损失下降”不足以保证目标正确的例子。
+
+**结论边界。** 这里可以从同一起点重复查询条件独立后继。单条不可回退轨迹通常没有该权限。该例只定义当前状态的局部残差，不是所有状态 Bellman 方程的完整控制实验。
+
+**继续实验。** 枚举两个后继的四种组合，比较两个方向估计的期望。再将两次查询强制成同一个 X，观察双采样公式如何重新产生偏差。
+
+[源码](https://yingwen.io/crl-code/implementations/nonlinear_diagnostics/double_sample_residual.py) · [逐种子记录](https://yingwen.io/crl-code/results/double_sample_residual/raw-runs.zip) · [配置与来源](https://yingwen.io/crl-code/results/double_sample_residual/manifest.json) · [绘图数据](https://yingwen.io/crl-code/results/double_sample_residual/curves.json)
+
+<a id="nonlinear-triad"></a>
+
+## 5 · Deadly triad：一个线性反例已足够
+
+| 因素 | 它改变什么 | 不能误读为 |
+| --- | --- | --- |
+| 函数逼近 | 不同状态通过共享参数耦合。 | 仅指很深的神经网络。 |
+| 自举 | 当前目标依赖另一个尚未完全准确的预测。 | 所有目标噪声都叫自举。 |
+| 离策略 | 评价策略和数据策略不同，状态权重也可能不匹配。 | 只要动作重要性比正确，状态权重便全部正确。 |
+
+先固定参数 w，并从行为策略的平稳分布 $d_b$ 抽取状态，再按行为策略和环境抽取一步转移。令 $\phi=\phi(S)$、$\phi'=\phi(S')$，且行为策略覆盖目标策略的动作。动作比率 $\rho=\pi(A\mid S)/b(A\mid S)$ 将下一步后果改为目标策略的条件分布，但当前状态仍按 $d_b$ 加权。由此得到平均更新场：
+
+$$
+h(w)=\mathbb E_{d_b,b,P}\!\left[\rho(R+\gamma\phi'^\top w-\phi^\top w)\phi\right]=\mathbf b-Aw,\qquad \mathbf b=\Phi^\top D_b r_\pi,\qquad A=\Phi^\top D_b(I-\gamma P_\pi)\Phi.
+$$
+
+$\Phi$ 的行是固定状态特征，$D_b$ 是行为状态权重，粗体 $\mathbf b$ 是奖励向量，不是行为策略。这里的期望始终把 w 当作固定输入；实际在线参数与当前状态可能相关，不能把它直接写成任意时刻的无条件期望等式。
+
+平均场把问题转成线性动力系统。若 w* 满足 Aw*=b，则冻结分布的期望迭代使误差变为 (I−αA)(w−w*)。A 若有负实部特征值，相应的离散更新模长在任意正 α 下都大于一。减小步长只减慢该方向的增长，不能改变其不稳定性。A 的特征值都具有正实部时，小步长下的这个平均迭代才稳定；随机在线收敛还需要另查采样和步长条件。
+
+Baird 星形例子有六个上状态和一个下状态。目标策略总转移到下状态。行为策略以 1/7 的概率采取该动作，另外 6/7 的概率均匀转移到上状态。因此行为状态分布均匀。奖励全为零，真实价值全为零。八维固定特征允许表示零价值。
+
+$$
+x(i)=(2e_i+e_8)/\sqrt5\quad(i=1,\ldots,6),\qquad x(7)=(e_7+2e_8)/\sqrt5.
+$$
+
+所有特征长度相同。发散不是某个输入没有归一化，也不来自训练标签无法表示。
+
+独立实现对七个状态枚举精确期望，因此没有随机采样噪声。半梯度 TD 仍会出现价值误差增长。对照对已知模型的 Bellman 残差求真梯度。这个对照改变了优化目标；它不是给原 TD 多加一项通用稳定器。
+
+三者同时出现不等于必然发散。去掉一个因素也不等于所有算法都安全。特别是非线性在策略 TD 仍可能失去固定线性 TD 的保证。正确结论是：每套更新需要自己的条件和论证，不能拿三项清单替代证明。
+
+误差图使用 log10(1 + RMSE)。它只改变显示尺度。参数、更新和原始 RMSE 都不裁剪。已知模型 sweep 与真实环境步不是同一种预算。
+
+<a id="experiment-baird_expected_td"></a>
+
+### 实验：实验 · 去掉噪声与非线性，TD 仍能发散
+
+已知真值可表示、输入已归一化且每步使用精确期望时，离策略半梯度为什么仍会越学越错？
+
+**环境与可用信息。** Baird 星形七状态、八维固定线性特征，每个特征向量单位长度。目标策略总转移到下状态，行为状态分布均匀。奖励全零，γ=0.99，真值全零。
+
+**设置。** 五种子各运行 1200 个精确七状态 sweep，不是 1200 个环境步。步长 0.05，初始参数接近全 1，其中下状态专有坐标为 10，其他坐标加入 ±0.01 的种子扰动。对照用同一已知模型求 Bellman 残差真梯度。
+
+**检验的机制。** 所有状态项先用同一旧参数计算再同时更新。没有采样噪声、神经网络、回放或优化器矩。差异来自更新方向及其优化目标；残差梯度对照不是把半梯度 TD 的同一个固定点简单稳定化。
+
+**测量。** 图中纵轴为 log10(1+价值 RMSE)，只压缩显示尺度。原始 rmse 与 parameter_norm 都保留，训练没有裁剪。不要把纵轴 2.64 误读为原始误差只有 2.64。
+
+```bash
+python3 implementations/nonlinear_diagnostics/baird_expected_td.py --steps 1200 --seeds 0 1 2 3 4 --out results/MY_NEW_RUN
+```
+
+在[完整代码包](https://yingwen.io/crl-code/learning-code.zip)的根目录运行。
+
+![实测学习曲线](https://yingwen.io/crl-code/results/baird_expected_td/curves.svg)
+
+横轴：expected_sweeps。纵轴：log10(1 + 七状态价值 RMSE)。每种方法 1200 expected_sweeps；训练种子 0、1、2、3、4。曲线是种子均值，阴影是 ±1 个样本标准差，不是置信区间。相同交互量不保证相同计算量。
+
+**结果分析。** 半梯度 TD 的平均图值由约 0.529 增至 2.641；五种子原始 RMSE 末尾约为 436–438。残差梯度末尾图值约 0.271，未发生同样增长。该反例直接说明不稳定并非只能归因于深网或随机噪声。
+
+**结论边界。** 精确模型 sweep 不是严格流式算法；特征冗余，参数解不唯一。有限预算中残差梯度仍有非零价值误差，不能把下降曲线写成已经达到真值。
+
+**继续实验。** 对期望 TD 更新矩阵检查特征值，再将步长减半并延长横轴，区分“增长较慢”与“根本稳定”。保持原始 RMSE 和对数图同时可见。
+
+[源码](https://yingwen.io/crl-code/implementations/nonlinear_diagnostics/baird_expected_td.py) · [逐种子记录](https://yingwen.io/crl-code/results/baird_expected_td/raw-runs.zip) · [配置与来源](https://yingwen.io/crl-code/results/baird_expected_td/manifest.json) · [绘图数据](https://yingwen.io/crl-code/results/baird_expected_td/curves.json)
+
+<a id="nonlinear-stability"></a>
+
+## 6 · 非线性究竟新增了什么？梯度特征也在学习
+
+前面的残差梯度为 Bellman 方程选择了一个可以下降的误差，但它一般需要双采样，而且选择的近似未必与 TD 相同。另一条路线是保留 TD 的零期望更新条件，再寻找对应的标量目标。固定线性特征时，这导向投影 Bellman 误差。网络的表示会改变，投影又应如何定义？
+
+继续固定策略、状态权重 $d$ 和一步后果分布，假定预测关于参数可两次连续微分。将全部状态预测排成向量 $v_\theta$，令 $\Phi_\theta$ 的第 s 行为 $\phi_\theta(s)^\top=\nabla v_\theta(s)^\top$。小的参数变化只能产生 $\Delta v\approx\Phi_\theta\Delta\theta$ 这样的价值变化。这些一阶可实现的方向构成当前的切空间；它随参数移动，而固定线性特征的空间不动。
+
+$$
+e_\theta=T_\pi v_\theta-v_\theta,\qquad u_\theta=\arg\min_u\tfrac12\|e_\theta-\Phi_\theta u\|_D^2,\qquad D=\operatorname{diag}(d).
+$$
+
+先固定 θ，问 Bellman 残差中哪一部分可以由当前的一阶价值变化表示。这里拟合的是残差向量，不是真实价值；u 是这项投影的系数，不是已经决定要执行的参数步长。
+
+$$
+C_\theta u_\theta=b_\theta,\qquad C_\theta=\Phi_\theta^\top D\Phi_\theta=\mathbb E[\phi\phi^\top],\qquad b_\theta=\Phi_\theta^\top De_\theta=\mathbb E[\delta\phi].
+$$
+
+对投影的平方误差关于 u 求导，得到正规方程。δ 的条件均值就是相应状态的 Bellman 残差，所以最后一个期望可用一步后果估计。以下假定 C 在所讨论邻域内可逆。
+
+$$
+J_{\rm tangent}(\theta)=\tfrac12\|\Phi_\theta u_\theta\|_D^2=\tfrac12u_\theta^\top C_\theta u_\theta=\tfrac12b_\theta^\top C_\theta^{-1}b_\theta.
+$$
+
+目标是投影残差的长度，不是刚才用来寻找投影系数的拟合误差。它为零恰好意味着 b 为零，即普通 TD 的平均更新为零；尚未被表示的残差仍可能存在。
+
+现在才让 θ 改变。它既改变残差，也改变可实现的方向，因此 $b_\theta$ 和 $C_\theta$ 都要微分。由逆矩阵的微分公式得到 $\mathrm dJ=u_\theta^\top\mathrm db_\theta-\tfrac12u_\theta^\top(\mathrm dC_\theta)u_\theta$。忽略第二项，会漏掉梯度特征内积随参数变化的贡献。
+
+$$
+-\nabla J_{\rm tangent}=\mathbb E[(\phi-\gamma\phi')\phi^\top u_\theta-(\delta-\phi^\top u_\theta)\nabla^2v_\theta(S)u_\theta].
+$$
+
+第一项来自 TD 残差对当前与后继预测的依赖。第二项合并了梯度特征和投影矩阵的变化，是 Hessian 与向量的乘积；φ′ 表示后继状态的预测梯度。固定线性特征时二阶导数为零，才退回线性表达。
+
+一个两状态算例可看见这项差别。按固定分布各以一半概率查询两状态，它们都自循环，$\gamma=.5$，奖励分别为1和0，预测为 $v_\theta=(\theta,\theta^2)$。在 $\theta=1$ 时，$b=-.25,C=2.5,u=-.1$。完整负梯度为 −.155；若只保留第一项则为 −.125。两个方向在这里同号，数值却不是同一目标的导数。可对 $J=b^2/(2C)$ 作有限差分核验，而不需要训练一个大网络。
+
+非线性 GTD 的经典研究使用辅助权重估计上述向量，并采用双时间尺度及参数投影等条件。结论针对固定预测问题和适当平滑性、采样及非退化条件。ReLU 的不可微点、过参数化导致的奇异梯度协方差、持续改变的策略和特征，不能不加检查地塞进同一个保证。
+
+这条理论路线说明“神经网络只能靠技巧训练”并不准确。但有条件的预测收敛，也不是无限生命期控制已被解决。这里给出目标和必要修正的推导边界；八个诊断实现没有冒充完整非线性 GTD 论文复现。
+
+<a id="nonlinear-frontier-pqn"></a>
+
+## PQN · 能否直接改善 TD 动力学，而不依赖大回放库与目标副本？
+
+目标副本可以暂时减慢自举反馈，但我们还可以直接问：当前预测发生一点扰动，后续 TD 更新会把它拉回，还是进一步放大？回答这个问题不必先找一个损失函数，可以检查平均更新对参数扰动的响应。先固定采样分布与评价策略，并假设网络在所分析邻域内二次可微。
+
+$$
+F(\theta)=\mathbb E[\delta_\theta\phi_\theta],\quad \delta_\theta=R+\gamma Q_\theta(S',A')-Q_\theta(S,A),\quad \phi_\theta=\nabla_\theta Q_\theta(S,A).
+$$
+
+网络梯度充当局部特征。下一状态的梯度记作 φ′。这仍是半梯度 TD 的期望更新，不是均方 Bellman 残差的负梯度。
+
+设 $F(\theta_*)=0$，小偏差为 $e=\theta-\theta_*$，记平均更新的 Jacobian 为 $J_*=\nabla F(\theta_*)$。一阶近似给出 $e^+\approx(I+\alpha J_*)e$。因此稳定性首先要看 J 怎样作用于偏差，而不是只看 TD 误差是否变小。
+
+$$
+\|(I+\alpha J_*)e\|^2-\|e\|^2=2\alpha e^\top J_*e+\alpha^2\|J_*e\|^2.
+$$
+
+这是线性化递推的精确代数式。若 J 的对称部分负定，第一项使小偏差缩短，第二项说明步长不能任意大。结合邻域内的平滑条件，可得到冻结分布平均递推的局部稳定性；随机学习还要处理采样噪声。
+
+例如标量平均更新 $F(w)=-.2w$ 在 $0<\alpha<10$ 时缩小偏差；若 $F(w)=+.8w$，任何正步长都放大非零偏差。两者都能把每次更新做得很小，但只有前者的反馈方向是恢复性的。下面把这项方向检查展开到神经 TD。
+
+$$
+u^\top\nabla F(\theta)u=\gamma\mathbb E[(u^\top\phi)(u^\top\phi')]-\mathbb E[(u^\top\phi)^2]+\mathbb E[\delta_\theta\,u^\top\nabla^2 Q_\theta(S,A)u].
+$$
+
+沿方向 u，前两项描述自举与当前预测的反馈；最后一项来自非线性曲率。固定线性特征没有最后一项，但前两项仍可能不稳定。
+
+这个分解给出了两种可以检查的干预：限制当前与后继梯度的自举相关，以及限制残差乘曲率的影响。Gallici 等人的 Simplifying Deep Temporal Difference Learning（ICLR 2025）据此分析特定缩放的 LayerNorm 网络与正则化更新，并提出 PQN。理论还使用宽度、参数、奖励、采样和步长条件；实际控制又会改变策略与分布，应与这里冻结问题的分析分别考察。
+
+$$
+G_t^{\lambda}=R_{t+1}+\gamma_{t+1}\left[(1-\lambda)\max_a Q_\theta(S_{t+1},a)+\lambda G_{t+1}^{\lambda}\right],\qquad G_T^{\lambda}=\max_a Q_\theta(S_T,a).
+$$
+
+短轨迹从后向前构造多步目标。真实终止令对应 γ 为零。存好的目标在随后的回归更新中停止梯度；这不是普通累积资格迹。
+
+PQN 从多个并行环境收集短轨迹，再分 minibatch 做若干轮更新。它减少了历史回放与目标副本依赖，但仍保存短轨迹、重复使用数据，并使用并行世界。它不能直接作为单生命期、每步一次更新的严格流式基线。
+
+作者工程入口：[purejaxql](https://github.com/mttga/purejaxql)。阅读 [Gymnax 完整训练文件](https://github.com/mttga/purejaxql/blob/47af6d7b35c89ddfe633aaf7341bdb8964cb7cce/purejaxql/pqn_gymnax.py)，依次追踪采样、末状态自举、反向目标和多轮更新。仓库另有 simplified 目录；它简化控制流，不取消这些实验条件。
+
+一个应当单独核对的细节：上述固定版本的 Gymnax 文件在去掉末转移后，以末状态 Q 值初始化反向扫描。该片段与本节采用的 λ-return 递推的时间下标对齐需检查。下面的非终止两步算例给出差异。它只检查这一片段，不判定其他变体或整篇论文的实验结论。
+
+可独立运行的索引对照；对应固定版本 pqn_gymnax.py 的反向目标构造
+
+```python
+gamma, lam = 0.9, 0.5
+q1, q2 = 2.0, 10.0  # Q(s1), Q(s2)；两步奖励均为 0
+g1 = gamma * q2
+standard_g0 = gamma * ((1 - lam) * q1 + lam * g1)
+fragment_g0 = gamma * q2 + gamma * lam * (g1 - q2)
+assert abs(standard_g0 - 4.95) < 1e-12
+assert abs(fragment_g0 - 8.55) < 1e-12
+```
+
+实验问题：在同一预测任务中，分别改变 LayerNorm、正则化、轨迹长度和数据复用次数。记录价值误差、参数范数、更新次数和真实样本数。若同时改变所有项，不能把效果只归因于归一化。
+
+<a id="nonlinear-tricks"></a>
+
+## 7 · 工程方法各自做了什么，而没有做什么
+
+| 方法 | 直接作用 | 新增代价或改变 | 仍未解决 |
+| --- | --- | --- | --- |
+| Target network | 在一段更新内固定自举目标参数。 | 额外参数副本、复制跳变、对变化的滞后。 | 跨复制时刻的稳定性；表示不足；探索。 |
+| Replay | 重复使用历史转移，可减弱相邻样本相关性。 | 存储、额外梯度、旧分布权重；通常不再严格流式。 | 当前策略/世界与旧数据的差异；无限记忆不现实。 |
+| 输入归一化 | 调整不同输入方向的尺度。 | 在线统计改变同一观测的数值编码。 | 不能使混叠状态变得充分，也不提供 TD 收敛保证。 |
+| 奖励缩放 | 改变目标及梯度的数值尺度。 | 固定正比例对许多目标保留策略排序；时变缩放需重新分析。 | 不能把不正确的目标改正确。 |
+| 奖励裁剪 | 把任务奖励映射到受限范围。 | 一般改变相对奖励大小和最优策略。 | 不是无害的数值操作。 |
+| 梯度范数裁剪 | 限制一次参数位移的尺度。 | 对随机梯度施加非线性变换，可能改变平均方向。 | 不消除自举反馈，也不保证不缓慢漂移。 |
+| TD 残差裁剪 / Huber | 在冻结目标下减弱极端误差的影响。 | 局部回归的损失形状发生变化。 | 不等同于裁剪奖励或裁剪整个梯度范数。 |
+| Adam / RMSProp | 按历史梯度统计预处理更新。 | 额外状态、方向相关的有效步长、对分布变化的滞后。 | 不保证半梯度成为真梯度，或保证保留可塑性。 |
+| 停止梯度 | 指定某次反向传播中忽略哪条依赖。 | 所实现的导数可能不再是原表达式的全导数。 | 不让下一次前向目标自动保持不变。 |
+
+DQN 原始代码把回放采样、目标网络选择、TD 残差裁剪和目标副本更新写在不同位置。这些设计可以组合，但解决的不是同一个问题。阅读代码时应分别追踪它们，而不是把整个训练循环统称为“梯度下降”。
+
+本章二状态实验中，即时目标和冻结 50 步目标都能学习。冻结目标可能更慢。这是应当保留的结果：一个装置在某些困难场景有用，不意味着所有小任务都应该受益。
+
+<a id="experiment-lagged_nonlinear_td"></a>
+
+### 实验：实验 · 冻结自举目标，也会冻结必要的信息传播
+
+目标网络降低短期目标变化的同时，需要付出多少学习滞后？
+
+**环境与可用信息。** 两个状态永远交替，A→B 奖励 0，B→A 奖励 1，γ=0.8。输入分别为 −1 与 1，真实价值为 20/9 与 25/9。预测器为 a·tanh(bx+c)+d。
+
+**设置。** 五种子各 1200 个转移。初值为 [0.3±0.03,0.4,0,0]，步长 0.03。实验每 50 次在线更新后复制一次独立目标参数；对照每步用在线参数自举。两者均为半梯度，只对当前预测求导。
+
+**检验的机制。** 冻结参数使同一个状态的目标在一个复制区间内保持稳定，但较新的价值信息只能在复制后进入后继目标。第 50 步仍用旧副本更新，随后才复制；独立存储和更新时序都影响结果。
+
+**测量。** 主图使用在线网络相对于两状态真值的 RMSE。日志的 target_age、target_copies 和 target_drift 可定位复制时刻。冻结目标方法额外保存四个参数，未使用回放。
+
+```bash
+python3 implementations/nonlinear_diagnostics/lagged_nonlinear_td.py --steps 1200 --seeds 0 1 2 3 4 --out results/MY_NEW_RUN
+```
+
+在[完整代码包](https://yingwen.io/crl-code/learning-code.zip)的根目录运行。
+
+![实测学习曲线](https://yingwen.io/crl-figures/result-lagged_nonlinear_td.svg)
+
+横轴：environment_steps。纵轴：二状态真实价值 RMSE。每种方法 1200 environment_steps；训练种子 0、1、2、3、4。曲线是种子均值，阴影是 ±1 个样本标准差，不是置信区间。相同交互量不保证相同计算量。
+
+<details>
+<summary>这张曲线的 value 与 step</summary>
+
+**value：评价什么。** 当前在线网络在两状态的预测与真实值20/9、25/9比较，取均匀 RMSE。测量的是在线网络，不是滞后目标副本。
+
+**step：怎样计时。** step 是真实转移数；target_copies 和 target_age 描述复制时钟，不替代交互时钟。
+
+**怎样汇总。** 取该记录时刻的值；不先对曲线上的时间点求平均。 先在每个完整运行内计算 value，再在同一 step 上跨运行种子求均值和样本标准差（分母 n−1）。时间点不是独立重复；确定性计算即使换用种子也可能完全相同。标准差带不是置信区间，也不是单次观测的取值范围；图中的带可能越过奖励或误差的可行边界。
+
+**从记录能重算什么。** CSV 可重算各记录时刻的跨种子均值、样本标准差和末点误差；没有保存全部预测向量，不能仅凭 value 重新计算状态权重或逐状态误差。
+
+计算位置：[nonlinear_diagnostics/lagged_nonlinear_td.py](https://yingwen.io/crl-code/implementations/nonlinear_diagnostics/lagged_nonlinear_td.py) · [nonlinear_diagnostics/online_nonlinear_td.py](https://yingwen.io/crl-code/implementations/nonlinear_diagnostics/online_nonlinear_td.py) · [nonlinear_diagnostics/_common.py](https://yingwen.io/crl-code/implementations/nonlinear_diagnostics/_common.py)
+
+</details>
+
+**结果分析。** 第 600 步，冻结 50 步目标的平均 RMSE 为 0.2384，即时目标为 0.00890；末尾为 0.0206 对 0.0000201。两者均下降，但冻结目标在此任务明显更慢。它不是所有自举问题都应启用的免费改进。
+
+**结论边界。** 这是两状态、四参数、固定策略预测。没有离策略控制或 DQN 的其他机制。不能由此推断目标网络在复杂 Q-learning 中无效，也不能把冻结期间局部平稳当成全程收敛证明。
+
+**继续实验。** 比较复制周期 1、5、50、200，分别报告达到指定误差所需转移数与目标变化幅度。再改变奖励，在相同预算下测追踪滞后，而不是只看静态任务的最终值。
+
+[源码](https://yingwen.io/crl-code/implementations/nonlinear_diagnostics/lagged_nonlinear_td.py) · [逐种子记录](https://yingwen.io/crl-code/results/lagged_nonlinear_td/raw-runs.zip) · [配置与来源](https://yingwen.io/crl-code/results/lagged_nonlinear_td/manifest.json) · [绘图数据](https://yingwen.io/crl-code/results/lagged_nonlinear_td/curves.json)
+
+<a id="nonlinear-frontier-crossq"></a>
+
+## CrossQ · 去掉目标网络，不等于去掉批处理
+
+Bhatt 等人的 CrossQ（ICLR 2024）研究连续控制中的离策略 actor–critic。问题是：使用 BatchNorm 时，当前样本与用于自举的后继样本具有不同分布，分开的前向过程可能使用不一致的统计量。其干预对象是 critic 的输入批与归一化方式。
+
+$$
+\mathcal B_{\rm joint}=\{(S_i,A_i)\}_{i=1}^{B}\cup\{(S'_i,A'_i):A'_i\sim\pi_\psi(\cdot\mid S'_i)\}_{i=1}^{B}.
+$$
+
+把两类输入拼接，执行一次训练模式的 critic 前向，再拆成当前值与后继值。同一前向过程使用共同的批统计。作者工程还提供 batch renormalization 模式。
+
+$$
+y_i=R_i+\gamma_i\left[\min_{j=1,2}Q_{\theta_j}(S'_i,A'_i;\mathcal B_{\rm joint})-\alpha_{\rm ent}\log\pi_\psi(A'_i\mid S'_i)\right],\quad L=\frac1{2B}\sum_{i,j}\left(Q_{\theta_j}(S_i,A_i;\mathcal B_{\rm joint})-\operatorname{sg}(y_i)\right)^2.
+$$
+
+sg 表示停止目标分支的梯度。这里用的是当前 critic 参数，不是滞后的目标参数。分号后的批说明：训练模式下，一个样本的输出还依赖同批其他样本。
+
+因此 CrossQ 并没有变成 Bellman 残差梯度法。它也没有消除批依赖。BatchNorm 不能与对单个样本内部特征归一化的 LayerNorm 混为一谈。把 batch size 直接改成 1，会改变统计和算法行为。
+
+作者连续控制实验支持低 update-to-data ratio 下的竞争性表现。原始配置同时采用宽 critic、特定 Adam 动量和延迟 actor 更新。回放仍存在。不能只删除 SAC 的 target network，其余保持任意默认值，就声称复现了 CrossQ。
+
+代码入口：[作者仓库](https://github.com/adityab/CrossQ)；[update_critic](https://github.com/adityab/CrossQ/blob/a318a266679bec3f9d93c44e029860a6da077c89/sbx/sac/sac.py#L250-L349) 明确展示拼接、拆分与 stop_gradient；[train.py](https://github.com/adityab/CrossQ/blob/a318a266679bec3f9d93c44e029860a6da077c89/train.py) 给出 CrossQ 的整套配置。
+
+作者工程中的训练入口；需要其 JAX、Gymnasium/MuJoCo 环境，不是本地 CPU 微实验
+
+```sh
+python train.py -algo crossq -env Humanoid-v4 -seed 9 -wandb_mode disabled
+```
+
+实验问题：先在冻结 actor 的 critic 任务中比较分开批统计、共同批统计与 LayerNorm。再恢复策略学习。除了回报，应检查训练/推断两种模式的 Q 差异。这能区分统计失配和策略变化。
+
+<a id="nonlinear-interference"></a>
+
+## 8 · 干扰、遗忘、表示漂移和可塑性丧失要分别测量
+
+$$
+L_j(\theta-\alpha g_i)-L_j(\theta)=-\alpha\nabla L_j(\theta)^\top g_i+O(\alpha^2),\qquad g_i=\nabla L_i(\theta).
+$$
+
+小步长下，两个损失梯度内积为负时，沿一个损失下降会使另一个上升。这是局部结论；不能只凭一个负内积推断整个训练必然失败。
+
+| 现象 | 适合的观测 | 需要排除的混淆 |
+| --- | --- | --- |
+| 梯度干扰 | 固定参数下的梯度内积、一次更新后的跨样本损失变化。 | 大步长二阶项；不同量纲的损失。 |
+| 遗忘 | 曾经学好的旧预测或技能再次评估时变差。 | 世界本身已变化，旧答案已不正确。 |
+| 表示漂移 | 同一探针输入的隐藏特征、预测或梯度随时间改变。 | 可逆重参数化可改变特征但不改变功能。 |
+| 可塑性丧失 | 在控制难度和训练预算后，学习新目标越来越慢。 | 旧知识保留得少并不等于新知识学不动。 |
+| 休眠单元 | 预先指定输入分布上的激活或贡献很小。 | 换一个分布可能重新活跃；阈值是操作定义。 |
+
+共享/隔离对照只研究两个固定回归目标。观测顺序是 A、B、A。共享网络在学习 B 时可能改坏 A。隔离网络不产生交叉更新，但使用双倍参数并预知上下文路由。这不是参数匹配的性能竞赛，也不是证明了长期可塑性丧失。
+
+研究可塑性需要更长的变化序列、固定的新任务评价协议以及重置或新网络对照。Continual Backpropagation 与 ReDo 通过不同标准检测、更新或替换低效单元。替换单元同时改变表示；相关预测头、优化器矩和资格迹是否需要重置，也必须明确。
+
+![Dohare 等预印本图 3：随着 Online Permuted MNIST 任务推进，三种步长下的不活跃单元比例与权重幅度上升，表示的有效秩下降；三幅图分别对应这三个指标。](https://yingwen.io/crl-figures/plasticity-v3-figure-3.svg)
+
+可塑性诊断：学习变慢时，网络内部发生了什么？。Shibhansh Dohare、J. Fernando Hernandez-Garcia、Parash Rahman、A. Rupam Mahmood、Richard S. Sutton，Maintaining Plasticity in Deep Continual Learning，Figure 3，arXiv:2306.13812v3（2024 预印本；不是 Nature 版本的图号）。
+
+读图：横轴是任务序号，不是回报。三幅面板分别看不活跃单元、权重幅度与有效秩，颜色表示不同步长。论文报告三十次运行的均值与正负一个标准误；这些量与新任务学习能力一起分析，才构成可塑性诊断。
+
+解释边界：该图来自监督学习的 Online Permuted MNIST，不是 RL 成绩。共变趋势并不单独识别因果机制；低秩或单元不活跃也不总意味着学习失败。要判断一个 RL 系统是否失去可塑性，仍需新经验上的受控适应测试。
+
+[论文与图注](https://arxiv.org/html/2306.13812v3#S4.F3) · [作者原图](https://arxiv.org/html/2306.13812v3/backprop_summaries.svg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+
+原图版权属于 Dohare 等作者；本图单独保留 CC BY-SA 4.0，不适用本站原创教程的 CC BY 4.0 许可。 直接保存作者预印本在 arXiv HTML 中提供的矢量图；未修改。中文读图说明与原图分开呈现。
+
+<a id="nonlinear-frontier-fourier"></a>
+
+## Deep Fourier Features · 保留可训练方向，而不是只增加参数
+
+Lewandowski、Schuurmans 与 Machado 的 Deep Fourier Features（ICLR 2025）从可训练性出发。固定线性模型在适当条件下可以不断拟合新目标，但表达能力有限。一般深层非线性网络更灵活，却可能在训练中形成难以更新的表示。
+
+$$
+\varphi(z)=\begin{bmatrix}\sin z\\\cos z\end{bmatrix},\qquad \varphi'(z)=\begin{bmatrix}\cos z\\-\sin z\end{bmatrix},\qquad \|\varphi'(z)\|_2^2=1.
+$$
+
+单个正弦导数可能为零，但正弦与余弦的成对导数不会同时为零。这是标量激活对的精确性质，不是整张网络 Jacobian 的等距保证。
+
+方法在隐藏层拼接正弦与余弦。网络仍通过权重矩阵组合这些特征；坏条件数、跨层缩放及参数共享干扰并不会自动消失。成对输出还会改变下一层输入维度，比较时需要报告总参数量。
+
+论文的理论对象包括固定线性逼近与特定深线性设置。最终会议版本的实验结论包含 Fourier 特征与正则化的组合。主要评估是持续监督学习中的标签噪声、类别增量与像素置换。它不是非线性离策略 TD 或平均奖励控制的收敛证明。
+
+原文入口：[ICLR 2025 论文](https://proceedings.iclr.cc/paper_files/paper/2025/hash/4d42358702dff82e1436550a05ade260-Abstract-Conference.html)。公开论文及作者论文页未给出可确认的专属作者代码入口；[Plasticine](https://github.com/RLE-Foundation/Plasticine) 提供 DFF 集成实现，但应标为该框架的实现，而不是 DFF 作者工程。
+
+实验问题：先在本章 A/B/A 回归任务中比较 ReLU、tanh 与成对 Fourier 激活。匹配参数数目和更新预算。然后保持预测问题不变，加上自举与离策略采样。这样才能知道解决的是激活饱和、旧目标干扰，还是 TD 动力学。
+
+<a id="nonlinear-frontier-hare"></a>
+
+## Hare–Tortoise · 快速拟合与较慢的参数历史如何相互作用？
+
+Lee 等人的 Hare–Tortoise Networks（ICML 2024）区分新数据上的可训练性与泛化。快速网络随当前数据更新。慢速网络维护快速参数的指数平均。周期性地用慢速参数重新初始化快速网络。
+
+$$
+\theta_{t+1}=\operatorname{Learn}(\theta_t;Z_t),\qquad \bar\theta_{t+1}=\beta\bar\theta_t+(1-\beta)\theta_{t+1},\qquad \theta_{t+1}\leftarrow\bar\theta_{t+1}\ \text{at reset times}.
+$$
+
+这里的复制方向与普通目标网络不同：慢副本会重新赋值给真正接受训练的快网络。不是仅用慢网络计算一个自举标签。
+
+参数平均可能减弱短期更新中的波动；重新起点也会改变随后优化的轨迹。二者都可能损失最近学到的信息。它不是“把无用单元随机重置”的 ReDo，也不是“给每个参数学习遗忘率”的 FADE。
+
+论文同时讨论 warm-start、持续监督学习与 RL 场景。作者仓库公开的 README 复现说明主要覆盖监督实验图。不能据此认为所有 RL 结果已由同一命令覆盖。
+
+代码入口：[作者仓库](https://github.com/dojeon-ai/Hare-Tortoise)；[训练器中的 EMA 与周期复制](https://github.com/dojeon-ai/Hare-Tortoise/blob/4ec5ebbe809793aeca25809ea4cb8c45058deadf/src/trainers/base.py#L151-L188)。README 给出数据下载和 scripts/paper/continual/ 实验脚本，依赖 GPU/PyTorch 环境。
+
+实施时还要决定优化器动量、归一化缓冲、资格迹和元敏感度怎样处理。参数副本必须有独立存储。仅给变量换名字或共享底层数组，不能实现两个时间尺度。比较“复制参数但保留动量”和“复制并重置动量”应作为不同算法配置。
+
+实验问题：在相同漂移速度下，分别关闭 EMA、周期复制以及二者组合。分开测当前目标学习速度、旧目标误差与独立测试分布上的误差。不要把训练误差低自动解释成泛化好。
+
+<a id="nonlinear-trace-history"></a>
+
+## 9 · 流式更新为什么使旧梯度和旧优化器状态更重要
+
+$$
+e_t=\gamma_t\lambda_t e_{t-1}+\nabla v_{\theta_t}(S_t)=\sum_{k=0}^{t}\left(\prod_{j=k+1}^{t}\gamma_j\lambda_j\right)\nabla v_{\theta_k}(S_k).
+$$
+
+普通累积梯度迹压缩历史梯度。每个历史项在当时的参数上计算。它不是把所有历史样本重新放到当前网络上反向传播。
+
+$$
+\nabla v_{\theta_t}(S_k)-\nabla v_{\theta_k}(S_k)\approx\nabla^2v_{\theta_k}(S_k)(\theta_t-\theta_k).
+$$
+
+平滑条件下，差异与表示曲率及参数位移有关。长迹、大更新和快速表示变化可能放大这种差异。这个近似解释风险，不是一个无需条件的误差界。
+
+历史梯度仍有其明确算法含义，不应简单称为“错误梯度”。问题在于：你想实现的是在线 TD 的历史信用，还是当前参数下的序列损失梯度？这两个目标不同。BPTT、RTRL、普通梯度迹和梯度迹修正，不是同一个算法的不同名字。
+
+固定线性特征时，历史特征不因权重改变而失效。荷兰迹与 true-online TD 可以在规定的线性设置下精确对应在线前向视角。把它直接移植到可变神经表示，不会自动得到相同等价性。
+
+如果一项参数更新同时使用资格迹、Adam 和特征替换，系统至少保存三类历史：过去的信用方向、过去的梯度尺度和旧单元的身份。替换一个单元后保留旧动量，可能把新单元沿旧方向推走；保留旧迹，可能把过去的信用赋给已经改变含义的参数。清空也会丢掉信用信息。二者都是算法选择，应做消融。
+
+严格流式限制的是可保存的经验与每步计算。资格迹可以在不保存整条原始轨迹的情况下传播信用，但仍需要与参数规模相当的状态。递归 agent state 的精确在线参数敏感度还可能远大于一条迹，必须单独计入预算。
+
+<a id="nonlinear-frontier-fade"></a>
+
+## FADE · 元学习不仅可以调步长，也可以调遗忘速度
+
+Ramesh、Lewandowski 与 Schmidhuber 的 FADE（2026 预印本）研究逐样本、无回放的变化预测问题。不同参数可能承担稳定知识与快速变化知识。统一常数的权重衰减无法表达这种差别。FADE 对每个参数的衰减率做在线元梯度更新。
+
+先看线性平方误差。令 $\delta_t=y_t-w_t^\top x_t$。用 $\kappa_i=\exp(\beta_i)$ 表示衰减率，避免与 TD 的折扣和迹参数混淆。令 $h_i\approx\partial w_i/\partial\beta_i$。下式是论文线性算法的符号改写。
+
+$$
+\begin{aligned}\beta_{t+1,i}&=\beta_{t,i}+\eta\delta_t x_{t,i}h_{t,i},\quad\kappa_{t+1,i}=e^{\beta_{t+1,i}},\\h_{t+1,i}&=h_{t,i}[1-\kappa_{t+1,i}-\alpha x_{t,i}^{2}]_+-\kappa_{t+1,i}w_{t,i},\\w_{t+1,i}&=(1-\kappa_{t+1,i})w_{t,i}+\alpha\delta_t x_{t,i}.\end{aligned}
+$$
+
+所有右侧权重使用更新前的 $w$。$[a]_+=\max(a,0)$。$h$ 是关于学习规则的敏感度，不是把奖励分配给过去状态的 TD 资格迹。
+
+推导忽略一个衰减参数对其他权重的交叉敏感度，并使用正部截断。它是有明确近似的元学习规则。指数参数化只保证衰减率为正，不保证小于 1；不能从公式直接推出任何元步长都稳定。注意这里的衰减不再乘一次 α，它不同于把 L2 惩罚直接加入 SGD 损失。
+
+作者在线性追踪、变化的教师网络与流式标签置换分类中评估。神经网络主要在最后线性层使用 FADE。论文报告直接把线性近似扩展到所有层，效果明显低于仅用于输出层。这项负面证据说明：线性元梯度并不能无条件移植到共享非线性表示。论文没有给出 CRL 控制收益或非线性 TD 收敛结果。
+
+代码入口：[作者工程 Fade](https://github.com/Aditya-Ramesh-10/Fade)；[algs.py](https://github.com/Aditya-Ramesh-10/Fade/blob/dd4e2965f4820fcab1e872846af5abacfb03ae5c/algs.py#L74-L105) 展示线性更新；optimizers.py 区分神经网络优化器。训练入口分别为 train_linear.py、train_nonlinear_multi_op.py 和 train_permuted_emnist.py。超参数在脚本顶部配置。
+
+在作者工程及其依赖环境中运行，不是在本教程仓库运行；先用线性追踪核对元参数、敏感度与权重的更新次序
+
+```bash
+FADE_CHECKOUT="/path/to/Fade"  # 改为上面固定版本作者仓库的绝对路径
+(cd "$FADE_CHECKOUT" && WANDB_MODE=disabled python3 "$FADE_CHECKOUT/train_linear.py")
+```
+
+接入 GVF 的研究问题是：同一编码器服务快慢不同的预测时，应让头部、共享特征还是两者遗忘？最低限度要有“仅头部固定衰减”的强基线，再比较自适应衰减。若改成 TD 目标，还必须重推自举依赖，不应只把监督误差替换成 δ。
+
+<a id="nonlinear-frontier-oak"></a>
+
+## Oak 的在线噪声实验 · 一个重要问题，还不是完整算法规格
+
+Oak Lab 的 Learning from experience instead of curated datasets（2026）把问题放在逐样本噪声学习上：有用信号稀少，大量特征不相关，标签包含强噪声。其 NetworkIDBD 实验意在让不同连接采取不同的学习速度，而不是先把经验整理成容易训练的数据集。
+
+公开博客包含线性特征实验，以及在较大噪声图像中间歇出现 MNIST 数字的设置。它比较特定常步长 SGD 与 NetworkIDBD 的表现和连接权重。应将这些看作该实验设置下的作者证据，不能推广为“SGD 无法从噪声中学习”。
+
+$$
+Y=X^\top w_*+\varepsilon,\quad\mathbb E[X\varepsilon]=0\quad\Longrightarrow\quad\mathbb E[X(Y-X^\top w)]=\mathbb E[XX^\top](w_*-w).
+$$
+
+这个线性例子里，独立零均值标签噪声不改变 SGD 的期望方向，却会增大更新方差。常步长的长期误差、稀疏信号的学习速度和变化目标的追踪能力是不同问题。
+
+减小步长可以降低部分噪声影响，却可能使追踪变慢。对不相关特征减小步长、对有效特征保留学习能力，是元学习值得研究的方向。但连接重要性会随表示变化；并不能由线性 IDBD 的公式唯一确定整个非线性 NetworkIDBD。
+
+原文入口：[Oak 研究博客](https://oaklab.ai/posts/learning-from-experience-instead-of-curated-datasets)。该页面没有给出完整网络级更新式、算法伪代码或作者仓库入口。因此不能把这里的概念说明标成已实现 NetworkIDBD。另一个 [event-driven / batch-size-one 页面](https://oaklab.ai/posts/event-driven-computation-with-batch-size-one) 目前只有 Coming soon，不构成可复核的算法或结果。
+
+可做的研究起点是公开一个独立的弱信号追踪任务。固定信号频率、无关维数、噪声方差、参数预算与调参预算。比较常步长 SGD、衰减步长 SGD、IDBD 与可公开复核的非线性元学习方法。分别报告无噪声真值误差、在线观测误差、步长分布和变化后的恢复速度。这是建议的实验协议，不是对博客结果的已完成复现。
+
+<a id="nonlinear-gvf-options"></a>
+
+## 10 · GVF 与 option 不会替学习算法消除这些困难
+
+$$
+\delta_t^{(j)}=C_{t+1}^{(j)}+\gamma_{t+1}^{(j)}v_{\theta}^{(j)}(S_{t+1})-v_{\theta}^{(j)}(S_t),\qquad \rho_t^{(j)}=\pi_j(A_t\mid S_t)/b(A_t\mid S_t).
+$$
+
+一个 GVF 首先规定预测哪种累积信号、按哪种策略以及延续多久。不同问题有不同误差和离策略比。GVF 是问题接口，不是某一种神奇的预测更新。
+
+多个 GVF 共用编码器时，一个问题的更新会移动其他问题的表示和目标。不同 cumulant 的尺度、稀疏程度和时间尺度也不同。把所有损失直接相加，隐含选择了权重。加辅助预测不保证改善控制；应同时测量各预测误差与实际控制收益。
+
+$$
+\delta_t^o=\sum_{k=0}^{\tau-1}\gamma^k R_{t+k+1}+\gamma^\tau V(S_{t+\tau})-Q(S_t,o).
+$$
+
+一个 option 执行多步后，用累计奖励和终点预测形成 SMDP 目标。持续时间进入折扣指数。平均奖励版本则扣除奖励率乘真实持续时间，而不是每次 option 只减一次奖励率。
+
+学习 option 内部策略、终止函数或状态编码器，会改变其奖励分布、终点分布和持续时间。旧 option 模型不再必然描述当前技能。规划器继续大量查询旧模型时，会重复放大同一种偏差。需要记录技能版本、模型误差和更新时钟，或设计适当的重新学习协议。
+
+时间抽象可以缩短高层决策的信用距离，但把一部分困难转移给了子任务构建、技能评价和模型维护。资格迹决定怎样分配过去的信用。GVF 决定预测问题。Option 决定行为时间尺度。这三个维度可以组合，不能互相替代。
+
+<a id="nonlinear-experiments"></a>
+
+## 11 · 八个入口：先复核机制，再讨论性能
+
+| 问题 | 实现与对照 | 必须看的量 | 预算 |
+| --- | --- | --- | --- |
+| 线性离策略自举 | baird_expected_td ↔ baird_residual_gradient | 真实价值 RMSE、Bellman 残差、参数范数。 | 每步一次七状态期望 sweep。 |
+| 样本乘积偏差 | single_sample_residual ↔ double_sample_residual | 真实 MSBE、参数是否趋近 1 或 2。 | 每步两次条件后继查询。 |
+| 共享表示干扰 | shared_nonlinear ↔ isolated_nonlinear | A/B 各自误差、未观测预测漂移、梯度内积。 | 每步一个观测；参数量 4 对 8。 |
+| 目标依赖与滞后 | online_nonlinear_td ↔ lagged_nonlinear_td | 真实价值 RMSE、目标漂移、目标年龄和复制次数。 | 每步一个真实环境转移。 |
+
+逐文件阅读与运行：[Baird 期望 TD](/zh/continual-rl/code/baird_expected_td/) · [精确残差梯度](/zh/continual-rl/code/baird_residual_gradient/) · [单后继残差](/zh/continual-rl/code/single_sample_residual/) · [独立双后继](/zh/continual-rl/code/double_sample_residual/) · [共享网络](/zh/continual-rl/code/shared_nonlinear/) · [隔离网络](/zh/continual-rl/code/isolated_nonlinear/) · [即时目标 TD](/zh/continual-rl/code/online_nonlinear_td/) · [冻结目标 TD](/zh/continual-rl/code/lagged_nonlinear_td/)。
+
+在教程仓库根目录运行；每条命令自动加入对应对照，输出目录必须尚不存在
+
+```sh
+python3 implementations/nonlinear_diagnostics/baird_expected_td.py --steps 1200 --seeds 0 1 2 3 4 --out results/baird-diagnostic
+python3 implementations/nonlinear_diagnostics/double_sample_residual.py --steps 1200 --seeds 0 1 2 3 4 --out results/double-sampling-diagnostic
+python3 implementations/nonlinear_diagnostics/shared_nonlinear.py --steps 1200 --seeds 0 1 2 3 4 --out results/interference-diagnostic
+python3 implementations/nonlinear_diagnostics/lagged_nonlinear_td.py --steps 1200 --seeds 0 1 2 3 4 --out results/target-diagnostic
+python3 -m unittest discover -s tests -p test_nonlinear_diagnostics.py
+```
+
+- 先做有限差分：真梯度、半梯度和指定冻结目标的梯度是否一致？不要拿不同目标的导数互相验证。
+- 再枚举期望：小问题中直接算出梯度估计的期望，检查偏差来源。
+- 随后检查时序：每项更新使用旧参数还是更新后的参数？目标复制在前还是在后？
+- 最后运行多个种子。图中保留发散、滞后和不优于对照的结果。不要把通过单元测试写成方法有效性证据。
+
+<a id="nonlinear-frontier-plasticine"></a>
+
+## Plasticine · 从机制诊断走向统一的深度 RL 对照
+
+Yuan 等人的 Plasticine 提供面向可塑性研究的开源实验框架。它组合 CleanRL 风格训练循环、可塑性干预和诊断指标，并提供 ALE、Continual Procgen 与 Continual DMC 场景。它的价值是让不同机制在相同骨干中比较，不是把所有方法合成一个公认最优智能体。
+
+必须先固定指标定义。例如特征矩阵 $F$ 的奇异值为 $\sigma_i$。不同文献中的“rank”可能指代下列三个不同量；它们不能互换。
+
+$$
+\begin{aligned}r_{0.99}(F)&=\min\{k:\textstyle\sum_{i=1}^{k}\sigma_i\ge0.99\sum_j\sigma_j\},\\r_{\rm eff}(F)&=\exp(-\textstyle\sum_i p_i\log p_i),\quad p_i=\sigma_i/\textstyle\sum_j\sigma_j,\\r_{\rm stable}(F)&=\|F\|_F^2/\|F\|_2^2.\end{aligned}
+$$
+
+以上针对非零矩阵。Plasticine 固定版本的 compute_stable_rank 实际计算第一种 99% 谱质量阈值秩，而不是第三种数学上常见的 stable rank。阅读图表时应报告公式，不能只报告函数名。
+
+较高特征秩不是可塑性的充分条件。探针数据的分布、样本数、特征缩放及中心化都会影响结果。测量函数还应处理零矩阵和秩不足输入。休眠单元少、梯度大或参数持续变化，都不能单独证明学习新目标更快。
+
+代码入口：[Plasticine 作者工程](https://github.com/RLE-Foundation/Plasticine)；[秩指标源码](https://github.com/RLE-Foundation/Plasticine/blob/aa00b4bb18f7fe298a47e1ce36c32ba55ce064e8/plasticine_metrics/rank.py)；[PPO 与持续 Procgen 训练入口](https://github.com/RLE-Foundation/Plasticine/blob/aa00b4bb18f7fe298a47e1ce36c32ba55ce064e8/plasticine/ppo_continual_procgen_plasticine.py)。框架里的 DFF、ReDo 等是集成实现，各方法的原始作者工程需另行区分。
+
+作者工程的基础入口；先保留默认基线，再逐个启用干预，避免一次打开所有方法
+
+```sh
+python plasticine/ppo_continual_procgen_plasticine.py --env_id starpilot --seed 1
+```
+
+从本章迁移到该框架时，保留两层结果。第一层是可解析小任务中的机制正确性。第二层是在真实交互预算下的控制收益和长期适应曲线。二者各自必要，但不能互相代替。
+
+<a id="nonlinear-checks"></a>
+
+## 12 · 学完以后，应能独立回答什么
+
+- 某方法训练 loss 不断降低，价值预测仍变差。至少检查哪些原因？答：损失目标是否等于评价目标、状态分布是否一致、样本残差是否含参数相关方差，以及是否遗漏未访问状态。
+- 一个线性 TD 方法发散，换成更大网络能否保证解决？答：不能。先检查自举、采样分布和期望更新；更大表示没有自动修复动力系统。
+- stop-gradient 与冻结目标是不是一回事？答：不是。前者切断当次导数，后者在多步之间保存参数副本。
+- 梯度内积为负是否证明应该隔离所有知识？答：不是。它只给出局部冲突；共享还可能产生正迁移。隔离改变容量、路由信息和泛化范围。
+- Double sampling 能否由一段 replay batch 自动提供？答：不能。需要同一当前状态下条件独立的后果，而不只是两个任意样本。
+- GVF 预测越来越准，控制是否一定改善？答：不一定。需证明这些预测与控制决策相关，并检查共享表示训练是否同时损坏其他能力。
+- 本章是否已完整实现非线性持续学习智能体？答：没有。这里隔离并检查组成部分的困难；模块组合还需要共享状态、行为分布、预算和更新时序的闭环实验。
+
+<a id="nonlinear-frontier-protocol"></a>
+
+## 怎样把这些方向变成一个可信的研究问题？
+
+- 先限定问题：固定策略预测、控制、变化世界还是单生命期学习。明确可以重置环境、存回放和并行多少世界。
+- 再限定干预：改表示、改目标编码、改更新方向、改步长还是改遗忘。一次只提出一个主要因果解释。
+- 写出每一步的计算图：哪些量用旧参数，哪些目标停止梯度，哪些副本何时更新，哪些历史状态跨任务保留。
+- 先做精确测试：目标索引、终止语义、重要性比、有限差分、参数副本独立性与零输入边界。
+- 再做受控对照：匹配真实样本、梯度次数、存储、参数数目和调参预算。不同资源约束的结果分别报告。
+- 最后检验长时效果：记录新目标适应、旧知识误差、当前控制回报与失败率。预先定义探针，保留失败种子。
+
+| 拟研究的组合 | 首先要排除的解释 | 不能先作出的结论 |
+| --- | --- | --- |
+| PQN 结构 + 单步流式更新 | 收益是否来自并行采样或短轨迹重复训练。 | 去掉回放后仍有同样的稳定性。 |
+| HL-Gauss + 多个共享 GVF | 支撑范围与各 cumulant 尺度是否匹配；共享梯度是否冲突。 | 分类头天然支持任意预测时间尺度。 |
+| Fourier 特征 + 资格迹 | 表示变化是否改变历史梯度的意义；参数是否匹配。 | 局部激活导数不消失就保证长期 TD 稳定。 |
+| FADE + average-reward critic | 奖励率估计、自举与衰减的元依赖是否被忽略。 | 监督学习的元梯度可原样用于差分 TD。 |
+| 快慢网络 + option 模型 | 技能变化与模型版本是否同步；旧优化器和迹是否一致。 | 较平滑的模型就更准确，规划就会更好。 |
+
+这些尚未完成的组合是研究问题，不是建议直接堆入默认智能体的配方。已有教材的 [在线信用分配](/zh/continual-rl/algorithms/credit-assignment/)、[元学习](/zh/continual-rl/algorithms/meta/)、[流式更新](/zh/continual-rl/algorithms/streaming/) 与 [可塑性](/zh/continual-rl/algorithms/plasticity/) 分别提供基础机制。这里的扩展负责说明它们在共享非线性学习器中为何可能互相影响。
+
+
+
+<a id="chapter-code"></a>
+
+## 下载与运行
+
+基础线性逼近检查；本章八个独立非线性诊断及多种子结果见正文实现入口与代码包。
+
+[下载 approximation_textbook_lab.py](https://yingwen.io/zh/continual-rl/download/approximation_textbook_lab.py)
+
+```sh
+python approximation_textbook_lab.py test
+```
+
+<a id="lesson-sources"></a>
+
+## 参考文献与实现
+
+- [Sutton & Barto · Reinforcement Learning: An Introduction, 2nd edition](http://incompleteideas.net/book/the-book-2nd.html)：第 9–12 章：函数逼近、半梯度、离策略稳定性和资格迹。这里的诊断按问题与目标自行推导，不复制原书实现。
+
+- [Baird · Residual Algorithms (ICML 1995)](https://leemon.com/papers/1995b.pdf)：残差梯度与函数逼近反例的原始论文。本站采用明确写出的单位范数星形特征和期望更新；不宣称复刻原论文实验设置。
+
+- [Maei et al. · Convergent TD Learning with Arbitrary Smooth Function Approximation (NeurIPS 2009)](https://proceedings.neurips.cc/paper/2009/file/3a15c7d0bbe60300a39f76f8a5ba6896-Paper.pdf)：切空间投影目标、Hessian-vector 修正、双时间尺度与投影条件。固定预测的保证不能直接用于任意变化中的深度控制器。
+
+- [van Hasselt et al. · Deep RL and the Deadly Triad (2018)](https://arxiv.org/abs/1812.02648)：研究深度 Q 学习中函数逼近、自举和离策略的相互作用。三项同时出现不是每次必发散的判据。
+
+- [DeepMind · DQN 原始 NeuralQLearner.lua](https://github.com/google-deepmind/dqn/blob/9d9b1d13a2b491d6ebd4d046740c511c662bbe0f/dqn/NeuralQLearner.lua)：原始代码分别实现目标副本、回放采样、终止掩码和 TD 残差裁剪。诊断代码不是 Atari DQN 复现。
+
+- [Yu et al. · Gradient Surgery for Multi-Task Learning (NeurIPS 2020)](https://arxiv.org/abs/2001.06782)：梯度冲突及多任务优化的一条研究路线。本章只实现干扰诊断与隔离对照，没有冒充 PCGrad 算法。
+
+- [Dohare et al. · Loss of Plasticity in Deep Continual Learning (Nature 2024)](https://www.nature.com/articles/s41586-024-07711-7)：长期可塑性实证与 Continual Backpropagation。两任务干扰诊断不等于复现长期可塑性丧失。
+
+- [Continual Backpropagation · 作者 Generate-and-Test 实现](https://github.com/shibhansh/loss-of-plasticity/blob/a6b79580d85f3025bdb601566d3627c5f489f13b/lop/algos/gnt.py)：单元效用、成熟期、替换预算和参数重置。检查替换后的优化器状态与信用状态时，应同时阅读训练器。
+
+- [Sokar et al. · The Dormant Neuron Phenomenon in Deep RL (ICML 2023)](https://proceedings.mlr.press/v202/sokar23a.html)：休眠单元及 ReDo。休眠、遗忘和可塑性丧失是不同的操作性概念。
+
+- [Gallici et al. — Simplifying Deep Temporal Difference Learning (ICLR 2025)](https://arxiv.org/abs/2407.04811)：PQN：固定点稳定性的条件、LayerNorm/正则化分析及并行短轨迹控制实验。
+
+- [PQN — author implementation, pinned Gymnax variant](https://github.com/mttga/purejaxql/blob/47af6d7b35c89ddfe633aaf7341bdb8964cb7cce/purejaxql/pqn_gymnax.py)：注意 λ-return 扫描初始化的时间索引。正文给出与标准递推对齐的独立两步算例。
+
+- [Bhatt et al. — CrossQ (ICLR 2024)](https://proceedings.iclr.cc/paper_files/paper/2024/file/f381114cf5aba4e45552869863deaaa7-Paper-Conference.pdf)：共同批统计、无需目标 critic 的离策略连续控制；仍使用 replay。
+
+- [CrossQ — author critic implementation](https://github.com/adityab/CrossQ/blob/a318a266679bec3f9d93c44e029860a6da077c89/sbx/sac/sac.py)：联合前向、当前/后继拆分与停止目标梯度。
+
+- [Farebrother et al. — Stop Regressing (ICML 2024)](https://proceedings.mlr.press/v235/farebrother24a.html)：价值回归的分类参数化；区分 HL-Gauss 和分布 Bellman 学习。
+
+- [HL-Gauss — original reference implementations in Appendix A](https://arxiv.org/html/2403.03950v1#A1)：JAX/PyTorch 损失变换；有限支撑归一化。不是全部任务的完整训练工程。
+
+- [Lewandowski, Schuurmans & Machado — Plastic Learning with Deep Fourier Features (ICLR 2025)](https://proceedings.iclr.cc/paper_files/paper/2025/hash/4d42358702dff82e1436550a05ade260-Abstract-Conference.html)：最终会议版本强调 Fourier 激活结合正则化；主要证据为持续监督学习。
+
+- [Lee et al. — Slow and Steady Wins the Race (ICML 2024)](https://proceedings.mlr.press/v235/lee24d.html)：Hare–Tortoise 快慢网络、训练能力与泛化。
+
+- [Hare–Tortoise — author training loop](https://github.com/dojeon-ai/Hare-Tortoise/blob/4ec5ebbe809793aeca25809ea4cb8c45058deadf/src/trainers/base.py)：EMA 与周期性快网络赋值；公开 README 的复现说明主要覆盖监督实验。
+
+- [Ramesh, Lewandowski & Schmidhuber — Learning to Forget (2026 preprint)](https://arxiv.org/abs/2604.27063)：FADE 逐参数在线衰减元学习；线性推导、头部应用及全层扩展的负面证据。
+
+- [FADE — original linear algorithms](https://github.com/Aditya-Ramesh-10/Fade/blob/dd4e2965f4820fcab1e872846af5abacfb03ae5c/algs.py)：FADE、IDBD、固定衰减与耦合/解耦组合的作者实现。
+
+- [Oak Lab — Learning from experience instead of curated datasets](https://oaklab.ai/posts/learning-from-experience-instead-of-curated-datasets)：NetworkIDBD 噪声学习实验；页面未提供完整更新式与作者仓库。
+
+- [Oak Lab — Event-driven neural networks with batch-size one learning algorithms](https://oaklab.ai/posts/event-driven-computation-with-batch-size-one)：页面仅为 Coming soon；不作为已发表方法或结果。
+
+- [Yuan et al. — Plasticine (2026 preprint version)](https://arxiv.org/abs/2504.17490)：可塑性方法、指标与持续 RL 场景的统一实验框架。
+
+- [Plasticine — source-pinned rank metrics](https://github.com/RLE-Foundation/Plasticine/blob/aa00b4bb18f7fe298a47e1ce36c32ba55ce064e8/plasticine_metrics/rank.py)：compute_stable_rank 采用 99% 奇异值质量阈值秩；需与通常的 stable rank 区分。

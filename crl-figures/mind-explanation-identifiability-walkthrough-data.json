@@ -1,0 +1,1041 @@
+{
+  "kind": "original exact teaching example",
+  "participantCount": 0,
+  "sampledRuns": 0,
+  "randomGeneratorUsed": false,
+  "protocol": {
+    "resetEveryRun": true,
+    "initialValues": [
+      0,
+      0
+    ],
+    "probePerRun": 1,
+    "probeFeedback": false,
+    "conditions": [
+      1,
+      2
+    ],
+    "independentUnit": "one reset-feedback-probe run",
+    "stableParametersAssumed": true
+  },
+  "candidates": [
+    {
+      "id": "A",
+      "alpha": 0.2,
+      "beta": 5,
+      "runs": [
+        {
+          "n": 1,
+          "alpha": 0.2,
+          "beta": 5,
+          "initial": [
+            0,
+            0
+          ],
+          "forcedAction": "L",
+          "rewards": [
+            1
+          ],
+          "values": [
+            0,
+            0.2
+          ],
+          "rightValue": 0,
+          "probe": {
+            "feedback": false,
+            "update": false,
+            "qBefore": 0.2,
+            "qAfter": 0.2,
+            "probabilityLeft": 0.7310585786300049
+          }
+        },
+        {
+          "n": 2,
+          "alpha": 0.2,
+          "beta": 5,
+          "initial": [
+            0,
+            0
+          ],
+          "forcedAction": "L",
+          "rewards": [
+            1,
+            1
+          ],
+          "values": [
+            0,
+            0.2,
+            0.36000000000000004
+          ],
+          "rightValue": 0,
+          "probe": {
+            "feedback": false,
+            "update": false,
+            "qBefore": 0.36000000000000004,
+            "qAfter": 0.36000000000000004,
+            "probabilityLeft": 0.8581489350995123
+          }
+        }
+      ],
+      "logLikelihood": -98.82392980442971
+    },
+    {
+      "id": "B",
+      "alpha": 0.5,
+      "beta": 2,
+      "runs": [
+        {
+          "n": 1,
+          "alpha": 0.5,
+          "beta": 2,
+          "initial": [
+            0,
+            0
+          ],
+          "forcedAction": "L",
+          "rewards": [
+            1
+          ],
+          "values": [
+            0,
+            0.5
+          ],
+          "rightValue": 0,
+          "probe": {
+            "feedback": false,
+            "update": false,
+            "qBefore": 0.5,
+            "qAfter": 0.5,
+            "probabilityLeft": 0.7310585786300049
+          }
+        },
+        {
+          "n": 2,
+          "alpha": 0.5,
+          "beta": 2,
+          "initial": [
+            0,
+            0
+          ],
+          "forcedAction": "L",
+          "rewards": [
+            1,
+            1
+          ],
+          "values": [
+            0,
+            0.5,
+            0.75
+          ],
+          "rightValue": 0,
+          "probe": {
+            "feedback": false,
+            "update": false,
+            "qBefore": 0.75,
+            "qAfter": 0.75,
+            "probabilityLeft": 0.8175744761936437
+          }
+        }
+      ],
+      "logLikelihood": -99.46749655009754
+    }
+  ],
+  "counts": [
+    {
+      "n": 1,
+      "total": 100,
+      "left": 73
+    },
+    {
+      "n": 2,
+      "total": 100,
+      "left": 86
+    }
+  ],
+  "countOrigin": "fixed illustrative counts, not sampled or observed participants",
+  "fitted": {
+    "identified": true,
+    "alpha": 0.17489567198359546,
+    "beta": 5.686947903647117,
+    "ratio": 1.8251043280164045,
+    "z1": 0.994622575144062,
+    "z2": 1.8152899666382492
+  },
+  "maximumLogLikelihood": -98.82223251925356,
+  "profile": [
+    {
+      "alpha": 0.01,
+      "beta": 93.68394844940991,
+      "logLikelihood": -98.86972383565659,
+      "boundary": null,
+      "gap": 0.04749131640302551,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.02,
+      "beta": 47.010293880370554,
+      "logLikelihood": -98.86442899812138,
+      "boundary": null,
+      "gap": 0.04219647886782241,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.03,
+      "beta": 31.452990373575318,
+      "logLikelihood": -98.85941332218067,
+      "boundary": null,
+      "gap": 0.03718080292711079,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.04,
+      "beta": 23.674776544256325,
+      "logLikelihood": -98.85468311253263,
+      "boundary": null,
+      "gap": 0.03245059327906574,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.05,
+      "beta": 19.00820010146628,
+      "logLikelihood": -98.85024480067986,
+      "boundary": null,
+      "gap": 0.028012281426299523,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.06,
+      "beta": 15.897443602394336,
+      "logLikelihood": -98.84610494759579,
+      "boundary": null,
+      "gap": 0.023872428342230023,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.07,
+      "beta": 13.675728131523126,
+      "logLikelihood": -98.84227024645106,
+      "boundary": null,
+      "gap": 0.020037727197504296,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.08,
+      "beta": 12.009664220389727,
+      "logLikelihood": -98.83874752540177,
+      "boundary": null,
+      "gap": 0.016515006148210887,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.09,
+      "beta": 10.714035487479634,
+      "logLikelihood": -98.83554375044075,
+      "boundary": null,
+      "gap": 0.013311231187188355,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.1,
+      "beta": 9.677712094159816,
+      "logLikelihood": -98.83266602831375,
+      "boundary": null,
+      "gap": 0.010433509060192137,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.11,
+      "beta": 8.829975042806655,
+      "logLikelihood": -98.83012160950156,
+      "boundary": null,
+      "gap": 0.007889090247999775,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.12,
+      "beta": 8.12367832584755,
+      "logLikelihood": -98.82791789127012,
+      "boundary": null,
+      "gap": 0.0056853720165577215,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.13,
+      "beta": 7.526182390607918,
+      "logLikelihood": -98.82606242078997,
+      "boundary": null,
+      "gap": 0.003829901536406055,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.14,
+      "beta": 7.014173262060044,
+      "logLikelihood": -98.82456289832677,
+      "boundary": null,
+      "gap": 0.002330379073214317,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.15,
+      "beta": 6.570554016452004,
+      "logLikelihood": -98.82342718050451,
+      "boundary": null,
+      "gap": 0.001194661250949025,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.16,
+      "beta": 6.182501952305811,
+      "logLikelihood": -98.82266328364328,
+      "boundary": null,
+      "gap": 0.00043076438971922926,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.17,
+      "beta": 5.84021146574962,
+      "logLikelihood": -98.8222793871731,
+      "boundary": null,
+      "gap": 0.00004686791953645297,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.18,
+      "beta": 5.536055967386519,
+      "logLikelihood": -98.82228383712578,
+      "boundary": null,
+      "gap": 0.00005131787222012463,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.19,
+      "beta": 5.264014456975124,
+      "logLikelihood": -98.8226851497069,
+      "boundary": null,
+      "gap": 0.0004526304533385428,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.2,
+      "beta": 5.0192701256870755,
+      "logLikelihood": -98.8234920149491,
+      "boundary": null,
+      "gap": 0.0012594956955354064,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.21,
+      "beta": 4.797923643414967,
+      "logLikelihood": -98.82471330044916,
+      "boundary": null,
+      "gap": 0.002480781195600912,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.22,
+      "beta": 4.59678464043199,
+      "logLikelihood": -98.82635805519082,
+      "boundary": null,
+      "gap": 0.004125535937262725,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.23,
+      "beta": 4.413217585121652,
+      "logLikelihood": -98.82843551345482,
+      "boundary": null,
+      "gap": 0.006202994201260026,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.24,
+      "beta": 4.245026192256226,
+      "logLikelihood": -98.83095509881886,
+      "boundary": null,
+      "gap": 0.008722579565301203,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.25,
+      "beta": 4.090365573269516,
+      "logLikelihood": -98.83392642824896,
+      "boundary": null,
+      "gap": 0.01169390899539735,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.26,
+      "beta": 3.9476746595246537,
+      "logLikelihood": -98.8373593162847,
+      "boundary": null,
+      "gap": 0.015126797031143724,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.27,
+      "beta": 3.8156236426144217,
+      "logLikelihood": -98.84126377932036,
+      "boundary": null,
+      "gap": 0.019031260066796563,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.28,
+      "beta": 3.6930726774351514,
+      "logLikelihood": -98.84565003998398,
+      "boundary": null,
+      "gap": 0.023417520730419028,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.29,
+      "beta": 3.579039129432835,
+      "logLikelihood": -98.85052853161699,
+      "boundary": null,
+      "gap": 0.028296012363426826,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.3,
+      "beta": 3.472671372380405,
+      "logLikelihood": -98.855909902856,
+      "boundary": null,
+      "gap": 0.03367738360243777,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.31,
+      "beta": 3.373227657533154,
+      "logLikelihood": -98.86180502231984,
+      "boundary": null,
+      "gap": 0.03957250306628168,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.32,
+      "beta": 3.280058944797421,
+      "logLikelihood": -98.86822498340335,
+      "boundary": null,
+      "gap": 0.045992464149790635,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.33,
+      "beta": 3.192594855484625,
+      "logLikelihood": -98.87518110918097,
+      "boundary": null,
+      "gap": 0.052948589927410694,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.34,
+      "beta": 3.1103321039703786,
+      "logLikelihood": -98.8826849574221,
+      "boundary": null,
+      "gap": 0.0604524381685394,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.35,
+      "beta": 3.0328249124767854,
+      "logLikelihood": -98.89074832572072,
+      "boundary": null,
+      "gap": 0.06851580646716116,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.36,
+      "beta": 2.9596770233696654,
+      "logLikelihood": -98.89938325674194,
+      "boundary": null,
+      "gap": 0.07715073748838108,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.37,
+      "beta": 2.8905350067372186,
+      "logLikelihood": -98.90860204358759,
+      "boundary": null,
+      "gap": 0.08636952433403167,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.38,
+      "beta": 2.8250826246446774,
+      "logLikelihood": -98.91841723528373,
+      "boundary": null,
+      "gap": 0.09618471603016587,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.39,
+      "beta": 2.763036062404149,
+      "logLikelihood": -98.92884164239219,
+      "boundary": null,
+      "gap": 0.10660912313862525,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.4,
+      "beta": 2.7041398751309957,
+      "logLikelihood": -98.93988834274916,
+      "boundary": null,
+      "gap": 0.11765582349559622,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.41,
+      "beta": 2.648163527463592,
+      "logLikelihood": -98.95157068733292,
+      "boundary": null,
+      "gap": 0.12933816807935727,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.42,
+      "beta": 2.594898427584872,
+      "logLikelihood": -98.96390230626358,
+      "boundary": null,
+      "gap": 0.14166978701001653,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.43,
+      "beta": 2.5441553750767936,
+      "logLikelihood": -98.9768971149373,
+      "boundary": null,
+      "gap": 0.1546645956837409,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.44,
+      "beta": 2.495762356769605,
+      "logLikelihood": -98.99056932029752,
+      "boundary": null,
+      "gap": 0.16833680104396365,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.45,
+      "beta": 2.4495626364522067,
+      "logLikelihood": -99.00493342724587,
+      "boundary": null,
+      "gap": 0.18270090799231298,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.46,
+      "beta": 2.4054130937244578,
+      "logLikelihood": -99.02000424519524,
+      "boundary": null,
+      "gap": 0.1977717259416778,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.47,
+      "beta": 2.363182774883965,
+      "logLikelihood": -99.03579689476761,
+      "boundary": null,
+      "gap": 0.2135643755140535,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.48,
+      "beta": 2.32275162492445,
+      "logLikelihood": -99.05232681463917,
+      "boundary": null,
+      "gap": 0.2300942953856122,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.49,
+      "beta": 2.284009374771304,
+      "logLikelihood": -99.06960976853514,
+      "boundary": null,
+      "gap": 0.247377249281584,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.5,
+      "beta": 2.2468545620198572,
+      "logLikelihood": -99.08766185237687,
+      "boundary": null,
+      "gap": 0.26542933312330774,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.51,
+      "beta": 2.2111936668510808,
+      "logLikelihood": -99.10649950158357,
+      "boundary": null,
+      "gap": 0.2842669823300099,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.52,
+      "beta": 2.1769403476187383,
+      "logLikelihood": -99.12613949853097,
+      "boundary": null,
+      "gap": 0.3039069792774143,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.53,
+      "beta": 2.144014762942348,
+      "logLikelihood": -99.14659898016939,
+      "boundary": null,
+      "gap": 0.3243664609158259,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.54,
+      "beta": 2.112342969090834,
+      "logLikelihood": -99.167895445803,
+      "boundary": null,
+      "gap": 0.3456629265494371,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.55,
+      "beta": 2.081856383072892,
+      "logLikelihood": -99.19004676503299,
+      "boundary": null,
+      "gap": 0.367814245779428,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.56,
+      "beta": 2.052491303219168,
+      "logLikelihood": -99.21307118586608,
+      "boundary": null,
+      "gap": 0.39083866661252387,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.57,
+      "beta": 2.0241884801942653,
+      "logLikelihood": -99.23698734299052,
+      "boundary": null,
+      "gap": 0.41475482373695627,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.58,
+      "beta": 1.9968927323505832,
+      "logLikelihood": -99.26181426622128,
+      "boundary": null,
+      "gap": 0.43958174696771835,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.59,
+      "beta": 1.9705526001613833,
+      "logLikelihood": -99.28757138911598,
+      "boundary": null,
+      "gap": 0.46533886986242123,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.6,
+      "beta": 1.9451200351720925,
+      "logLikelihood": -99.31427855776276,
+      "boundary": null,
+      "gap": 0.49204603850920137,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.61,
+      "beta": 1.9205501195069345,
+      "logLikelihood": -99.34195603974162,
+      "boundary": null,
+      "gap": 0.519723520488057,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.62,
+      "beta": 1.8968008124792406,
+      "logLikelihood": -99.37062453325977,
+      "boundary": null,
+      "gap": 0.5483920140062111,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.63,
+      "beta": 1.8738327212919694,
+      "logLikelihood": -99.40030517646201,
+      "boundary": null,
+      "gap": 0.5780726572084518,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.64,
+      "beta": 1.8516088931916315,
+      "logLikelihood": -99.43101955691623,
+      "boundary": null,
+      "gap": 0.6087870376626654,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.65,
+      "beta": 1.8300946267631737,
+      "logLikelihood": -99.46278972127426,
+      "boundary": null,
+      "gap": 0.6405572020207018,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.66,
+      "beta": 1.8092573003336203,
+      "logLikelihood": -99.49563818510777,
+      "boundary": null,
+      "gap": 0.6734056658542045,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.67,
+      "beta": 1.7890662156948212,
+      "logLikelihood": -99.5295879429185,
+      "boundary": null,
+      "gap": 0.7073554236649358,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.68,
+      "beta": 1.7694924555660725,
+      "logLikelihood": -99.5646624783216,
+      "boundary": null,
+      "gap": 0.7424299590680334,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.69,
+      "beta": 1.7505087534004105,
+      "logLikelihood": -99.60088577440061,
+      "boundary": null,
+      "gap": 0.7786532551470486,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.7,
+      "beta": 1.732089374297792,
+      "logLikelihood": -99.63828232423204,
+      "boundary": null,
+      "gap": 0.8160498049784763,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.71,
+      "beta": 1.7142100059276641,
+      "logLikelihood": -99.67687714157644,
+      "boundary": null,
+      "gap": 0.8546446223228799,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.72,
+      "beta": 1.6968476584852175,
+      "logLikelihood": -99.71669577173293,
+      "boundary": null,
+      "gap": 0.894463252479369,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.73,
+      "beta": 1.679980572812453,
+      "logLikelihood": -99.75776430255313,
+      "boundary": null,
+      "gap": 0.9355317832995667,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.74,
+      "beta": 1.6635881359089977,
+      "logLikelihood": -99.80010937560952,
+      "boundary": null,
+      "gap": 0.9778768563559623,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.75,
+      "beta": 1.647650803140146,
+      "logLikelihood": -99.8437581975125,
+      "boundary": null,
+      "gap": 1.0215256782589393,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.76,
+      "beta": 1.6321500265223863,
+      "logLikelihood": -99.88873855136976,
+      "boundary": null,
+      "gap": 1.0665060321161945,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.77,
+      "beta": 1.6170681885309275,
+      "logLikelihood": -99.93507880838035,
+      "boundary": null,
+      "gap": 1.112846289126793,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.78,
+      "beta": 1.6023885409305882,
+      "logLikelihood": -99.98280793955448,
+      "boundary": null,
+      "gap": 1.1605754203009155,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.79,
+      "beta": 1.5880951481817558,
+      "logLikelihood": -100.03195552754943,
+      "boundary": null,
+      "gap": 1.2097230082958674,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.8,
+      "beta": 1.57417283501784,
+      "logLikelihood": -100.08255177861031,
+      "boundary": null,
+      "gap": 1.2603192593567485,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.81,
+      "beta": 1.560607137830349,
+      "logLikelihood": -100.13462753460301,
+      "boundary": null,
+      "gap": 1.312395015349452,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.82,
+      "beta": 1.547384259533085,
+      "logLikelihood": -100.1882142851252,
+      "boundary": null,
+      "gap": 1.3659817658716378,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.83,
+      "beta": 1.534491027608473,
+      "logLikelihood": -100.24334417967945,
+      "boundary": null,
+      "gap": 1.4211116604258933,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.84,
+      "beta": 1.5219148550671773,
+      "logLikelihood": -100.30005003989098,
+      "boundary": null,
+      "gap": 1.4778175206374158,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.85,
+      "beta": 1.509643704077341,
+      "logLikelihood": -100.35836537175021,
+      "boundary": null,
+      "gap": 1.5361328524966495,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.86,
+      "beta": 1.497666052042263,
+      "logLikelihood": -100.41832437785834,
+      "boundary": null,
+      "gap": 1.5960918586047796,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.87,
+      "beta": 1.485970859925572,
+      "logLikelihood": -100.47996196965181,
+      "boundary": null,
+      "gap": 1.65772945039825,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.88,
+      "beta": 1.4745475426410648,
+      "logLikelihood": -100.54331377957907,
+      "boundary": null,
+      "gap": 1.721081260325505,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.89,
+      "beta": 1.4633859413406403,
+      "logLikelihood": -100.6084161731998,
+      "boundary": null,
+      "gap": 1.7861836539462388,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.9,
+      "beta": 1.4524762974484946,
+      "logLikelihood": -100.67530626117497,
+      "boundary": null,
+      "gap": 1.8530737419214063,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.91,
+      "beta": 1.4418092283028972,
+      "logLikelihood": -100.74402191111093,
+      "boundary": null,
+      "gap": 1.9217893918573736,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.92,
+      "beta": 1.4313757042788327,
+      "logLikelihood": -100.81460175921976,
+      "boundary": null,
+      "gap": 1.9923692399661945,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.93,
+      "beta": 1.421167027275569,
+      "logLikelihood": -100.88708522175168,
+      "boundary": null,
+      "gap": 2.064852702498115,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.94,
+      "beta": 1.411174810462958,
+      "logLikelihood": -100.96151250615364,
+      "boundary": null,
+      "gap": 2.1392799869000783,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.95,
+      "beta": 1.4013909591891265,
+      "logLikelihood": -101.03792462190188,
+      "boundary": null,
+      "gap": 2.215692102648319,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.96,
+      "beta": 1.3918076529602255,
+      "logLikelihood": -101.11636339095307,
+      "boundary": null,
+      "gap": 2.294130871699508,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.97,
+      "beta": 1.38241732841021,
+      "logLikelihood": -101.19687145775204,
+      "boundary": null,
+      "gap": 2.374638938498478,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.98,
+      "beta": 1.3732126631852508,
+      "logLikelihood": -101.2794922987301,
+      "boundary": null,
+      "gap": 2.4572597794765443,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 0.99,
+      "beta": 1.364186560673431,
+      "logLikelihood": -101.36427023122077,
+      "boundary": null,
+      "gap": 2.542037711967211,
+      "singleConditionGap": 0
+    },
+    {
+      "alpha": 1,
+      "beta": 1.3553321355159227,
+      "logLikelihood": -101.45125042171391,
+      "boundary": null,
+      "gap": 2.6290179024603475,
+      "singleConditionGap": 0
+    }
+  ],
+  "modelRecovery": {
+    "totalPerCondition": 20,
+    "threshold": 2,
+    "rule": "select accumulating iff k2-k1 >= threshold",
+    "generators": [
+      {
+        "id": "accumulating",
+        "p1": 0.7310585786300049,
+        "p2": 0.8581489350995123
+      },
+      {
+        "id": "first-feedback-latch",
+        "p1": 0.7310585786300049,
+        "p2": 0.7310585786300049
+      }
+    ],
+    "confusion": [
+      [
+        0.660824797497095,
+        0.33917520250290334
+      ],
+      [
+        0.295844242075401,
+        0.7041557579245977
+      ]
+    ],
+    "sampledRuns": 0,
+    "interpretation": "exact count-distribution recovery for two fixed generators only"
+  },
+  "distinguishingSequence": {
+    "rewards": [
+      1,
+      0
+    ],
+    "accumulating": {
+      "rewards": [
+        1,
+        0
+      ],
+      "values": [
+        0,
+        0.2,
+        0.16
+      ],
+      "probabilityLeft": 0.6899744811276125
+    },
+    "latchProbabilityLeft": 0.7310585786300049,
+    "boundaryAccumulating": {
+      "rewards": [
+        1,
+        0
+      ],
+      "values": [
+        0,
+        1,
+        0
+      ],
+      "probabilityLeft": 0.5
+    }
+  },
+  "probabilityGeometry": {
+    "p1Range": [
+      0.5,
+      0.97
+    ],
+    "alphaSlices": [
+      1,
+      0.5,
+      0.2,
+      0.02
+    ],
+    "upperBoundary": "p2 = sigmoid(2 logit(p1)); alpha=0 is excluded",
+    "lowerBoundary": "p2 = p1; alpha=1 intersects the first-feedback latch"
+  }
+}

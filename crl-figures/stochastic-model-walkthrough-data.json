@@ -1,0 +1,1047 @@
+{
+  "evidence": "exact-enumeration-and-prescribed-records",
+  "sampledRuns": 0,
+  "gamma": 0.9,
+  "alpha": 1,
+  "actions": {
+    "S": [
+      "go",
+      "exit"
+    ],
+    "A": [
+      "cross"
+    ],
+    "G": [],
+    "D": [],
+    "B": []
+  },
+  "initialRealRecord": {
+    "s": "S",
+    "a": "exit",
+    "next": "B",
+    "reward": 0.6,
+    "done": true
+  },
+  "teachingOutcomes": [
+    "D",
+    "G",
+    "G",
+    "G"
+  ],
+  "prefixes": [
+    {
+      "n": 1,
+      "successes": 0,
+      "distribution": [
+        {
+          "next": "D",
+          "reward": 0,
+          "done": true,
+          "count": 1,
+          "probability": 1
+        }
+      ],
+      "rewardMean": 0,
+      "q": {
+        "S:go": 0,
+        "S:exit": 0.6,
+        "A:cross": 0
+      },
+      "choice": "exit",
+      "counts": {
+        "environmentSteps": 3,
+        "resets": 1,
+        "modelWrites": 3,
+        "directBackups": 3,
+        "modelQueries": 2,
+        "outcomeEvaluations": 2,
+        "planningBackups": 2
+      },
+      "realRecords": [
+        {
+          "s": "S",
+          "a": "go",
+          "next": "A",
+          "reward": 0,
+          "done": false
+        },
+        {
+          "s": "A",
+          "a": "cross",
+          "next": "D",
+          "reward": 0,
+          "done": true
+        }
+      ],
+      "acquisition": "prescribed-exploration"
+    },
+    {
+      "n": 2,
+      "successes": 1,
+      "distribution": [
+        {
+          "next": "D",
+          "reward": 0,
+          "done": true,
+          "count": 1,
+          "probability": 0.5
+        },
+        {
+          "next": "G",
+          "reward": 1,
+          "done": true,
+          "count": 1,
+          "probability": 0.5
+        }
+      ],
+      "rewardMean": 0.5,
+      "q": {
+        "S:go": 0.45,
+        "S:exit": 0.6,
+        "A:cross": 0.5
+      },
+      "choice": "exit",
+      "counts": {
+        "environmentSteps": 5,
+        "resets": 2,
+        "modelWrites": 5,
+        "directBackups": 5,
+        "modelQueries": 4,
+        "outcomeEvaluations": 5,
+        "planningBackups": 4
+      },
+      "realRecords": [
+        {
+          "s": "S",
+          "a": "go",
+          "next": "A",
+          "reward": 0,
+          "done": false
+        },
+        {
+          "s": "A",
+          "a": "cross",
+          "next": "G",
+          "reward": 1,
+          "done": true
+        }
+      ],
+      "acquisition": "prescribed-exploration"
+    },
+    {
+      "n": 3,
+      "successes": 2,
+      "distribution": [
+        {
+          "next": "D",
+          "reward": 0,
+          "done": true,
+          "count": 1,
+          "probability": 0.3333333333333333
+        },
+        {
+          "next": "G",
+          "reward": 1,
+          "done": true,
+          "count": 2,
+          "probability": 0.6666666666666666
+        }
+      ],
+      "rewardMean": 0.6666666666666666,
+      "q": {
+        "S:go": 0.6,
+        "S:exit": 0.6,
+        "A:cross": 0.6666666666666666
+      },
+      "choice": "exit",
+      "counts": {
+        "environmentSteps": 7,
+        "resets": 3,
+        "modelWrites": 7,
+        "directBackups": 7,
+        "modelQueries": 6,
+        "outcomeEvaluations": 8,
+        "planningBackups": 6
+      },
+      "realRecords": [
+        {
+          "s": "S",
+          "a": "go",
+          "next": "A",
+          "reward": 0,
+          "done": false
+        },
+        {
+          "s": "A",
+          "a": "cross",
+          "next": "G",
+          "reward": 1,
+          "done": true
+        }
+      ],
+      "acquisition": "prescribed-exploration"
+    },
+    {
+      "n": 4,
+      "successes": 3,
+      "distribution": [
+        {
+          "next": "D",
+          "reward": 0,
+          "done": true,
+          "count": 1,
+          "probability": 0.25
+        },
+        {
+          "next": "G",
+          "reward": 1,
+          "done": true,
+          "count": 3,
+          "probability": 0.75
+        }
+      ],
+      "rewardMean": 0.75,
+      "q": {
+        "S:go": 0.675,
+        "S:exit": 0.6,
+        "A:cross": 0.75
+      },
+      "choice": "go",
+      "counts": {
+        "environmentSteps": 9,
+        "resets": 4,
+        "modelWrites": 9,
+        "directBackups": 9,
+        "modelQueries": 8,
+        "outcomeEvaluations": 11,
+        "planningBackups": 8
+      },
+      "realRecords": [
+        {
+          "s": "S",
+          "a": "go",
+          "next": "A",
+          "reward": 0,
+          "done": false
+        },
+        {
+          "s": "A",
+          "a": "cross",
+          "next": "G",
+          "reward": 1,
+          "done": true
+        }
+      ],
+      "acquisition": "prescribed-exploration"
+    }
+  ],
+  "afterFour": {
+    "n": 4,
+    "successes": 3,
+    "distribution": [
+      {
+        "next": "D",
+        "reward": 0,
+        "done": true,
+        "count": 1,
+        "probability": 0.25
+      },
+      {
+        "next": "G",
+        "reward": 1,
+        "done": true,
+        "count": 3,
+        "probability": 0.75
+      }
+    ],
+    "rewardMean": 0.75,
+    "q": {
+      "S:go": 0.675,
+      "S:exit": 0.6,
+      "A:cross": 0.75
+    },
+    "choice": "go",
+    "counts": {
+      "environmentSteps": 9,
+      "resets": 4,
+      "modelWrites": 9,
+      "directBackups": 9,
+      "modelQueries": 8,
+      "outcomeEvaluations": 11,
+      "planningBackups": 8
+    }
+  },
+  "closure": {
+    "firstAction": "go",
+    "route": [
+      "S",
+      "A",
+      "D"
+    ],
+    "rewards": [
+      0,
+      0
+    ],
+    "return": 0,
+    "realSteps": 2,
+    "counts": {
+      "environmentSteps": 2,
+      "resets": 1,
+      "modelWrites": 2,
+      "directBackups": 2,
+      "modelQueries": 2,
+      "outcomeEvaluations": 3,
+      "planningBackups": 2
+    },
+    "after": {
+      "n": 5,
+      "successes": 3,
+      "distribution": [
+        {
+          "next": "D",
+          "reward": 0,
+          "done": true,
+          "count": 2,
+          "probability": 0.4
+        },
+        {
+          "next": "G",
+          "reward": 1,
+          "done": true,
+          "count": 3,
+          "probability": 0.6
+        }
+      ],
+      "rewardMean": 0.6,
+      "q": {
+        "S:go": 0.54,
+        "S:exit": 0.6,
+        "A:cross": 0.6
+      },
+      "choice": "exit",
+      "counts": {
+        "environmentSteps": 11,
+        "resets": 5,
+        "modelWrites": 11,
+        "directBackups": 11,
+        "modelQueries": 10,
+        "outcomeEvaluations": 14,
+        "planningBackups": 10
+      }
+    }
+  },
+  "frozen": {
+    "frozenQ": {
+      "S:go": 0.45,
+      "S:exit": 0.6,
+      "A:cross": 0.5
+    },
+    "model": {
+      "S:exit": {
+        "n": 1,
+        "outcomes": [
+          {
+            "next": "B",
+            "reward": 0.6,
+            "done": true,
+            "count": 1
+          }
+        ]
+      },
+      "S:go": {
+        "n": 2,
+        "outcomes": [
+          {
+            "next": "A",
+            "reward": 0,
+            "done": false,
+            "count": 2
+          }
+        ]
+      },
+      "A:cross": {
+        "n": 2,
+        "outcomes": [
+          {
+            "next": "D",
+            "reward": 0,
+            "done": true,
+            "count": 1
+          },
+          {
+            "next": "G",
+            "reward": 1,
+            "done": true,
+            "count": 1
+          }
+        ]
+      }
+    },
+    "realCounts": {
+      "environmentSteps": 5,
+      "resets": 2,
+      "modelWrites": 5,
+      "directBackups": 5,
+      "modelQueries": 4,
+      "outcomeEvaluations": 5,
+      "planningBackups": 4
+    },
+    "branches": {
+      "sampleD": {
+        "cross": {
+          "pair": "A:cross",
+          "before": 0.5,
+          "target": 0,
+          "after": 0
+        },
+        "go": {
+          "pair": "S:go",
+          "before": 0.45,
+          "target": 0,
+          "after": 0
+        },
+        "q": {
+          "S:go": 0,
+          "S:exit": 0.6,
+          "A:cross": 0
+        },
+        "choice": "exit",
+        "counts": {
+          "environmentSteps": 0,
+          "resets": 0,
+          "modelWrites": 0,
+          "directBackups": 0,
+          "modelQueries": 2,
+          "outcomeEvaluations": 2,
+          "planningBackups": 2
+        },
+        "nextExperience": {
+          "firstAction": "exit",
+          "route": [
+            "S",
+            "B"
+          ],
+          "rewards": [
+            0.6
+          ],
+          "return": 0.6,
+          "realSteps": 1,
+          "counts": {
+            "environmentSteps": 1,
+            "resets": 1,
+            "modelWrites": 1,
+            "directBackups": 1,
+            "modelQueries": 2,
+            "outcomeEvaluations": 3,
+            "planningBackups": 2
+          },
+          "after": {
+            "n": 2,
+            "successes": 1,
+            "distribution": [
+              {
+                "next": "D",
+                "reward": 0,
+                "done": true,
+                "count": 1,
+                "probability": 0.5
+              },
+              {
+                "next": "G",
+                "reward": 1,
+                "done": true,
+                "count": 1,
+                "probability": 0.5
+              }
+            ],
+            "rewardMean": 0.5,
+            "q": {
+              "S:go": 0.45,
+              "S:exit": 0.6,
+              "A:cross": 0.5
+            },
+            "choice": "exit",
+            "counts": {
+              "environmentSteps": 6,
+              "resets": 3,
+              "modelWrites": 6,
+              "directBackups": 6,
+              "modelQueries": 8,
+              "outcomeEvaluations": 10,
+              "planningBackups": 8
+            }
+          }
+        }
+      },
+      "sampleG": {
+        "cross": {
+          "pair": "A:cross",
+          "before": 0.5,
+          "target": 1,
+          "after": 1
+        },
+        "go": {
+          "pair": "S:go",
+          "before": 0.45,
+          "target": 0.9,
+          "after": 0.9
+        },
+        "q": {
+          "S:go": 0.9,
+          "S:exit": 0.6,
+          "A:cross": 1
+        },
+        "choice": "go",
+        "counts": {
+          "environmentSteps": 0,
+          "resets": 0,
+          "modelWrites": 0,
+          "directBackups": 0,
+          "modelQueries": 2,
+          "outcomeEvaluations": 2,
+          "planningBackups": 2
+        },
+        "nextExperience": {
+          "firstAction": "go",
+          "route": [
+            "S",
+            "A",
+            "D"
+          ],
+          "rewards": [
+            0,
+            0
+          ],
+          "return": 0,
+          "realSteps": 2,
+          "counts": {
+            "environmentSteps": 2,
+            "resets": 1,
+            "modelWrites": 2,
+            "directBackups": 2,
+            "modelQueries": 2,
+            "outcomeEvaluations": 3,
+            "planningBackups": 2
+          },
+          "after": {
+            "n": 3,
+            "successes": 1,
+            "distribution": [
+              {
+                "next": "D",
+                "reward": 0,
+                "done": true,
+                "count": 2,
+                "probability": 0.6666666666666666
+              },
+              {
+                "next": "G",
+                "reward": 1,
+                "done": true,
+                "count": 1,
+                "probability": 0.3333333333333333
+              }
+            ],
+            "rewardMean": 0.3333333333333333,
+            "q": {
+              "S:go": 0.29999999999999993,
+              "S:exit": 0.6,
+              "A:cross": 0.3333333333333333
+            },
+            "choice": "exit",
+            "counts": {
+              "environmentSteps": 7,
+              "resets": 3,
+              "modelWrites": 7,
+              "directBackups": 7,
+              "modelQueries": 8,
+              "outcomeEvaluations": 10,
+              "planningBackups": 8
+            }
+          }
+        }
+      },
+      "expected": {
+        "cross": {
+          "pair": "A:cross",
+          "before": 0.5,
+          "target": 0.5,
+          "after": 0.5
+        },
+        "go": {
+          "pair": "S:go",
+          "before": 0.45,
+          "target": 0.45,
+          "after": 0.45
+        },
+        "q": {
+          "S:go": 0.45,
+          "S:exit": 0.6,
+          "A:cross": 0.5
+        },
+        "choice": "exit",
+        "counts": {
+          "environmentSteps": 0,
+          "resets": 0,
+          "modelWrites": 0,
+          "directBackups": 0,
+          "modelQueries": 2,
+          "outcomeEvaluations": 3,
+          "planningBackups": 2
+        },
+        "nextExperience": {
+          "firstAction": "exit",
+          "route": [
+            "S",
+            "B"
+          ],
+          "rewards": [
+            0.6
+          ],
+          "return": 0.6,
+          "realSteps": 1,
+          "counts": {
+            "environmentSteps": 1,
+            "resets": 1,
+            "modelWrites": 1,
+            "directBackups": 1,
+            "modelQueries": 2,
+            "outcomeEvaluations": 3,
+            "planningBackups": 2
+          },
+          "after": {
+            "n": 2,
+            "successes": 1,
+            "distribution": [
+              {
+                "next": "D",
+                "reward": 0,
+                "done": true,
+                "count": 1,
+                "probability": 0.5
+              },
+              {
+                "next": "G",
+                "reward": 1,
+                "done": true,
+                "count": 1,
+                "probability": 0.5
+              }
+            ],
+            "rewardMean": 0.5,
+            "q": {
+              "S:go": 0.45,
+              "S:exit": 0.6,
+              "A:cross": 0.5
+            },
+            "choice": "exit",
+            "counts": {
+              "environmentSteps": 6,
+              "resets": 3,
+              "modelWrites": 6,
+              "directBackups": 6,
+              "modelQueries": 8,
+              "outcomeEvaluations": 11,
+              "planningBackups": 8
+            }
+          }
+        }
+      }
+    }
+  },
+  "enumeration": {
+    "sequences": [
+      {
+        "outcomes": [
+          "D",
+          "D",
+          "D",
+          "D"
+        ],
+        "successes": 0,
+        "probability": 0.00390625,
+        "choice": "exit",
+        "estimatedGo": 0,
+        "trueNextEpisodeValue": 0.6,
+        "environmentSteps": 9
+      },
+      {
+        "outcomes": [
+          "G",
+          "D",
+          "D",
+          "D"
+        ],
+        "successes": 1,
+        "probability": 0.01171875,
+        "choice": "exit",
+        "estimatedGo": 0.225,
+        "trueNextEpisodeValue": 0.6,
+        "environmentSteps": 9
+      },
+      {
+        "outcomes": [
+          "D",
+          "G",
+          "D",
+          "D"
+        ],
+        "successes": 1,
+        "probability": 0.01171875,
+        "choice": "exit",
+        "estimatedGo": 0.225,
+        "trueNextEpisodeValue": 0.6,
+        "environmentSteps": 9
+      },
+      {
+        "outcomes": [
+          "G",
+          "G",
+          "D",
+          "D"
+        ],
+        "successes": 2,
+        "probability": 0.03515625,
+        "choice": "exit",
+        "estimatedGo": 0.45,
+        "trueNextEpisodeValue": 0.6,
+        "environmentSteps": 9
+      },
+      {
+        "outcomes": [
+          "D",
+          "D",
+          "G",
+          "D"
+        ],
+        "successes": 1,
+        "probability": 0.01171875,
+        "choice": "exit",
+        "estimatedGo": 0.225,
+        "trueNextEpisodeValue": 0.6,
+        "environmentSteps": 9
+      },
+      {
+        "outcomes": [
+          "G",
+          "D",
+          "G",
+          "D"
+        ],
+        "successes": 2,
+        "probability": 0.03515625,
+        "choice": "exit",
+        "estimatedGo": 0.45,
+        "trueNextEpisodeValue": 0.6,
+        "environmentSteps": 9
+      },
+      {
+        "outcomes": [
+          "D",
+          "G",
+          "G",
+          "D"
+        ],
+        "successes": 2,
+        "probability": 0.03515625,
+        "choice": "exit",
+        "estimatedGo": 0.45,
+        "trueNextEpisodeValue": 0.6,
+        "environmentSteps": 9
+      },
+      {
+        "outcomes": [
+          "G",
+          "G",
+          "G",
+          "D"
+        ],
+        "successes": 3,
+        "probability": 0.10546875,
+        "choice": "go",
+        "estimatedGo": 0.675,
+        "trueNextEpisodeValue": 0.675,
+        "environmentSteps": 9
+      },
+      {
+        "outcomes": [
+          "D",
+          "D",
+          "D",
+          "G"
+        ],
+        "successes": 1,
+        "probability": 0.01171875,
+        "choice": "exit",
+        "estimatedGo": 0.225,
+        "trueNextEpisodeValue": 0.6,
+        "environmentSteps": 9
+      },
+      {
+        "outcomes": [
+          "G",
+          "D",
+          "D",
+          "G"
+        ],
+        "successes": 2,
+        "probability": 0.03515625,
+        "choice": "exit",
+        "estimatedGo": 0.45,
+        "trueNextEpisodeValue": 0.6,
+        "environmentSteps": 9
+      },
+      {
+        "outcomes": [
+          "D",
+          "G",
+          "D",
+          "G"
+        ],
+        "successes": 2,
+        "probability": 0.03515625,
+        "choice": "exit",
+        "estimatedGo": 0.45,
+        "trueNextEpisodeValue": 0.6,
+        "environmentSteps": 9
+      },
+      {
+        "outcomes": [
+          "G",
+          "G",
+          "D",
+          "G"
+        ],
+        "successes": 3,
+        "probability": 0.10546875,
+        "choice": "go",
+        "estimatedGo": 0.675,
+        "trueNextEpisodeValue": 0.675,
+        "environmentSteps": 9
+      },
+      {
+        "outcomes": [
+          "D",
+          "D",
+          "G",
+          "G"
+        ],
+        "successes": 2,
+        "probability": 0.03515625,
+        "choice": "exit",
+        "estimatedGo": 0.45,
+        "trueNextEpisodeValue": 0.6,
+        "environmentSteps": 9
+      },
+      {
+        "outcomes": [
+          "G",
+          "D",
+          "G",
+          "G"
+        ],
+        "successes": 3,
+        "probability": 0.10546875,
+        "choice": "go",
+        "estimatedGo": 0.675,
+        "trueNextEpisodeValue": 0.675,
+        "environmentSteps": 9
+      },
+      {
+        "outcomes": [
+          "D",
+          "G",
+          "G",
+          "G"
+        ],
+        "successes": 3,
+        "probability": 0.10546875,
+        "choice": "go",
+        "estimatedGo": 0.675,
+        "trueNextEpisodeValue": 0.675,
+        "environmentSteps": 9
+      },
+      {
+        "outcomes": [
+          "G",
+          "G",
+          "G",
+          "G"
+        ],
+        "successes": 4,
+        "probability": 0.31640625,
+        "choice": "go",
+        "estimatedGo": 0.9,
+        "trueNextEpisodeValue": 0.675,
+        "environmentSteps": 9
+      }
+    ],
+    "successBins": [
+      {
+        "successes": 0,
+        "probability": 0.00390625,
+        "choice": "exit"
+      },
+      {
+        "successes": 1,
+        "probability": 0.046875,
+        "choice": "exit"
+      },
+      {
+        "successes": 2,
+        "probability": 0.2109375,
+        "choice": "exit"
+      },
+      {
+        "successes": 3,
+        "probability": 0.421875,
+        "choice": "go"
+      },
+      {
+        "successes": 4,
+        "probability": 0.31640625,
+        "choice": "go"
+      }
+    ],
+    "chooseGoProbability": 0.73828125,
+    "wrongChoiceProbability": 0.26171875,
+    "expectedNextEpisodeValue": 0.65537109375,
+    "expectedNextRealSteps": 1.73828125
+  },
+  "greedyTrap": {
+    "crossBefore": {
+      "n": 2,
+      "outcomes": [
+        {
+          "next": "D",
+          "reward": 0,
+          "done": true,
+          "count": 1
+        },
+        {
+          "next": "G",
+          "reward": 1,
+          "done": true,
+          "count": 1
+        }
+      ]
+    },
+    "crossAfter": {
+      "n": 2,
+      "outcomes": [
+        {
+          "next": "D",
+          "reward": 0,
+          "done": true,
+          "count": 1
+        },
+        {
+          "next": "G",
+          "reward": 1,
+          "done": true,
+          "count": 1
+        }
+      ]
+    },
+    "greedyEpisode": {
+      "firstAction": "exit",
+      "route": [
+        "S",
+        "B"
+      ],
+      "rewards": [
+        0.6
+      ],
+      "return": 0.6,
+      "realSteps": 1,
+      "counts": {
+        "environmentSteps": 1,
+        "resets": 1,
+        "modelWrites": 1,
+        "directBackups": 1,
+        "modelQueries": 2,
+        "outcomeEvaluations": 3,
+        "planningBackups": 2
+      },
+      "after": {
+        "n": 2,
+        "successes": 1,
+        "distribution": [
+          {
+            "next": "D",
+            "reward": 0,
+            "done": true,
+            "count": 1,
+            "probability": 0.5
+          },
+          {
+            "next": "G",
+            "reward": 1,
+            "done": true,
+            "count": 1,
+            "probability": 0.5
+          }
+        ],
+        "rewardMean": 0.5,
+        "q": {
+          "S:go": 0.45,
+          "S:exit": 0.6,
+          "A:cross": 0.5
+        },
+        "choice": "exit",
+        "counts": {
+          "environmentSteps": 6,
+          "resets": 3,
+          "modelWrites": 6,
+          "directBackups": 6,
+          "modelQueries": 6,
+          "outcomeEvaluations": 8,
+          "planningBackups": 6
+        }
+      }
+    },
+    "tenImaginedEpisodes": {
+      "environmentSteps": 0,
+      "resets": 0,
+      "modelWrites": 0,
+      "directBackups": 0,
+      "modelQueries": 10,
+      "outcomeEvaluations": 10,
+      "planningBackups": 10
+    }
+  },
+  "readerTruth": {
+    "cross": [
+      {
+        "next": "G",
+        "reward": 1,
+        "done": true,
+        "probability": 0.75
+      },
+      {
+        "next": "D",
+        "reward": 0,
+        "done": true,
+        "probability": 0.25
+      }
+    ],
+    "values": {
+      "A:cross": 0.75,
+      "S:go": 0.675,
+      "S:exit": 0.6
+    },
+    "greedyThreshold": 0.6666666666666666
+  },
+  "protocol": {
+    "variant": "Independent stationary stochastic variant; no deterministic old-phase records are reused.",
+    "acquisition": "Real exit once, then four prescribed exploratory go/cross episodes; D,G,G,G is one possible outcome record.",
+    "model": "Empirical counts of joint reward/successor/termination outcomes; unseen outcomes receive zero empirical mass, not a certainty claim.",
+    "update": "Each real row: direct alpha=1 update and one model write; after each crossing/real episode: expected cross, then expected go.",
+    "frozen": "Only the initial cross target comparison reads the common frozen Q; propagation to go reads the branch updated cross.",
+    "modelQuery": "One interface request; expectation returns all observed joint outcomes, sample returns one. Outcome evaluations are charged separately.",
+    "counts": "Real steps, resets, model writes, direct backups, model queries, expanded outcomes and planning backups are separate units.",
+    "tie": "Mathematical ties choose exit; JS uses 1e-12 tolerance and independent Fraction Python uses exact rationals.",
+    "enumeration": "All 16 sequences of four iid true cross outcomes; five acquired episodes cost nine real steps. Next autonomous episodes cost one or two steps.",
+    "closure": "After D,G,G,G, greedy go actually receives D; the empirical model changes from 3/4 to 3/5 and replanning changes go from .675 to .54."
+  }
+}

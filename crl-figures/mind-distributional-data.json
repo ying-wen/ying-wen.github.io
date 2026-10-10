@@ -1,0 +1,36 @@
+{
+  "kind": "exact-one-step-model",
+  "rewards": [
+    0,
+    0.5,
+    1
+  ],
+  "comparison": [
+    0.5
+  ],
+  "taus": [
+    0.2,
+    0.5,
+    0.8
+  ],
+  "rows": [
+    {
+      "tau": 0.2,
+      "value": 0.25,
+      "constant": 0.5,
+      "errorAtHalf": 0.25
+    },
+    {
+      "tau": 0.5,
+      "value": 0.5,
+      "constant": 0.5,
+      "errorAtHalf": 0
+    },
+    {
+      "tau": 0.8,
+      "value": 0.75,
+      "constant": 0.5,
+      "errorAtHalf": -0.25
+    }
+  ]
+}

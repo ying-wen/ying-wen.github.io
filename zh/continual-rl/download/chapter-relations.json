@@ -1,0 +1,4482 @@
+{
+  "schema_version": 1,
+  "chapters": [
+    {
+      "id": "study-tabular-bandits",
+      "path": "foundations/tabular/bandits/",
+      "title": "多臂老虎机：估计、探索与直接策略学习",
+      "question": "没有状态转移时，仍需一边估计动作收益，一边决定下一次尝试什么。这个最小问题把估计误差、探索代价和策略更新分开。",
+      "book": "classic-rl",
+      "group": "tabular",
+      "kind": "core",
+      "order": 1,
+      "preparation": [],
+      "usedBy": [
+        {
+          "chapterId": "study-deep-exploration",
+          "title": "探索与不确定性：后验、乐观估计和时间一致行动",
+          "path": "foundations/deep/exploration/",
+          "why": "区分价值估计、乐观选择与直接策略更新。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "tracking",
+          "title": "估计与适应",
+          "question": "旧经验越来越多时，怎样仍对新变化作出反应？",
+          "path": "code/#practice-tracking",
+          "steps": [
+            {
+              "number": 1,
+              "title": "先固定经验，检查估计"
+            },
+            {
+              "number": 2,
+              "title": "区分估计、选择分数和策略偏好"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "tabular_textbook_lab.py",
+        "command": "python3 tabular_textbook_lab.py bandits\npython3 tabular_textbook_lab.py test",
+        "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+        "path": "download/tabular_textbook_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "bandit_tracking_walkthrough.py",
+          "path": "/crl-code/tutorials/bandit_tracking_walkthrough.py",
+          "section": "lesson-code",
+          "sectionTitle": "7 · 源码与实验观察"
+        },
+        {
+          "file": "bandit_exploration_walkthrough.py",
+          "path": "/crl-code/tutorials/bandit_exploration_walkthrough.py",
+          "section": "lesson-code",
+          "sectionTitle": "7 · 源码与实验观察"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "bandit_constant_step",
+          "title": "实验 · 固定步长与样本平均，怎样利用同一条奖励流？",
+          "path": "foundations/tabular/bandits/#experiment-bandit_constant_step",
+          "implementationPath": "code/bandit_constant_step/",
+          "afterSection": "lesson-derive"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "learning-rules",
+          "title": "07 · 哪些学习参数应当适应，怎样评价学出来的更新规则？",
+          "path": "research/#research-learning-rules",
+          "setting": "权重在内层学习，步长、return 参数、初始化或整个更新器在外层适应。在线元学习使用一段持续经验；跨任务元 RL 使用任务分布及重置。两者的元目标和数据权限不同。",
+          "bridge": "样本平均与常数步长在同一变化奖励流中的差别，先展示跟踪速度与噪声的取舍，再引出怎样从经验选择步长。"
+        },
+        {
+          "questionId": "experience-selection",
+          "title": "14 · 应当探索什么、练习什么，以及如何保留未来交互与学习的机会？",
+          "path": "research/#research-experience-selection",
+          "setting": "智能体的行为决定未来数据。新奇、可学习性、学习进展和任务收益并不一致。课程 teacher 能否选目标、改环境或重置，也会从根本上改变问题。",
+          "bridge": "探索在当期收益与信息之间取舍；估计更准确却未必选择更好，说明取得的信息还需要任务用途。"
+        },
+        {
+          "questionId": "measurement",
+          "title": "16 · 什么实验能区分“仍在更新”与“仍在有效学习”？",
+          "path": "research/#research-measurement",
+          "setting": "一条长曲线包含适应、探索、保留、环境变化和随机波动。训练中评估可能重置环境或暂停更新，这些操作会改变单生命期。研究需要先确定估计量与独立随机单位。",
+          "bridge": "同一奖励流中估计误差与选取动作的收益可以给出不同结论，要求评价指标先对应明确对象。"
+        }
+      ]
+    },
+    {
+      "id": "study-tabular-mdps",
+      "path": "foundations/tabular/mdps/",
+      "title": "MDP、回报与价值：序列决策的数学对象",
+      "question": "动作会改变后续状态时，需要评价整个未来。本章从随机交互过程推导价值与 Bellman 方程，明确后续算法共同使用的数学对象。",
+      "book": "classic-rl",
+      "group": "tabular",
+      "kind": "core",
+      "order": 2,
+      "preparation": [],
+      "usedBy": [
+        {
+          "chapterId": "study-tabular-dynamic-programming",
+          "title": "动态规划：评价、改善与最优递推",
+          "path": "foundations/tabular/dynamic-programming/",
+          "why": "区分环境模型、策略价值与最优价值，再讨论已知模型下的备份。"
+        },
+        {
+          "chapterId": "study-tabular-monte-carlo",
+          "title": "Monte Carlo：完整回报、探索控制与离策略评价",
+          "path": "foundations/tabular/monte-carlo/",
+          "why": "明确完整回报和固定策略的价值。"
+        },
+        {
+          "chapterId": "study-approximation-average-control",
+          "title": "持续控制与平均奖励",
+          "path": "foundations/approximation/average-control/",
+          "why": "区分任务目标、回报和策略价值。"
+        },
+        {
+          "chapterId": "study-approximation-policy-gradient",
+          "title": "策略梯度、基线与 Actor–Critic",
+          "path": "foundations/approximation/policy-gradient/",
+          "why": "明确策略决定轨迹分布及要优化的回报。"
+        },
+        {
+          "chapterId": "study-deep-partial-observability",
+          "title": "不完全可观测：信念状态、信息行动与递归记忆",
+          "path": "foundations/deep/partial-observability/",
+          "why": "区分状态与当前观测，理解Markov条件。"
+        },
+        {
+          "chapterId": "study-deep-constraints",
+          "title": "约束强化学习：占据测度、拉格朗日与可行策略",
+          "path": "foundations/deep/constraints/",
+          "why": "明确回报与访问分布。"
+        },
+        {
+          "chapterId": "objectives",
+          "title": "强化学习问题的形式化：交互、目标与持续学习",
+          "path": "foundations/objectives/",
+          "why": "明确交互、回报和策略价值，再把比较对象扩展为持续更新的学习器。"
+        }
+      ],
+      "practice": [],
+      "executable": {
+        "file": "tabular_textbook_lab.py",
+        "command": "python3 tabular_textbook_lab.py mdps\npython3 tabular_textbook_lab.py test",
+        "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+        "path": "download/tabular_textbook_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "mdp_dp_walkthrough.py",
+          "path": "/crl-code/tutorials/mdp_dp_walkthrough.py",
+          "section": "lesson-code",
+          "sectionTitle": "7 · 模型表示与实验观察"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "iterative_policy_evaluation",
+          "title": "实验 · Bellman 方程求的是哪个策略的价值？",
+          "path": "foundations/tabular/mdps/#experiment-iterative_policy_evaluation",
+          "implementationPath": "code/iterative_policy_evaluation/",
+          "afterSection": "mdp-bellman"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "reward-design",
+          "title": "奖励表示与奖励学习：目标怎样进入智能体？",
+          "path": "research/#research-reward-design",
+          "setting": "设计者拥有偏好，智能体只能接收有限观测和奖励。奖励可能手写，也可能由人的比较或示范推断。必须分开目标变化、奖励估计变化与环境变化。",
+          "bridge": "先明确状态、奖励与回报的定义，再问设计者的偏好能否由这一状态上的奖励表达。"
+        },
+        {
+          "questionId": "lifetime-objective",
+          "title": "01 · 什么目标能够评价一个始终在学习的智能体？",
+          "path": "research/#research-lifetime-objective",
+          "setting": "智能体只有有限存储和每步计算时间。学习改变其后续行为，环境可能持续而不终止，也可能存在成本不为零的重置。比较前需规定奖励、时间单位、评价时域和可用干预。平稳环境仍可能对有限资源智能体提出长期学习需求。",
+          "bridge": "折扣和与有限期回报已经给出不同的比较对象；评价持续学习器时，还需把初始学习和恢复代价放回这些时间范围。"
+        },
+        {
+          "questionId": "agent-state",
+          "title": "02 · 有限的内部状态应当保留哪些历史信息？",
+          "path": "research/#research-agent-state",
+          "setting": "当前观测不能唯一决定后续结果。智能体从历史构造内部状态，但内部状态维度、计算和信用传播长度受限。环境的隐藏状态、网络活动、可学习参数以及 replay buffer 是不同对象。",
+          "bridge": "Markov 条件规定状态需要支持哪些预测；当前观察不满足这一条件时，才需要研究内部状态应保留哪些历史。"
+        }
+      ]
+    },
+    {
+      "id": "study-tabular-dynamic-programming",
+      "path": "foundations/tabular/dynamic-programming/",
+      "title": "动态规划：评价、改善与最优递推",
+      "question": "已知环境模型时，怎样通过局部计算得到长期价值和策略？本章将 Bellman 方程转化为迭代，并证明评价与改善之间的联系。",
+      "book": "classic-rl",
+      "group": "tabular",
+      "kind": "core",
+      "order": 3,
+      "preparation": [
+        {
+          "chapterId": "study-tabular-mdps",
+          "title": "MDP、回报与价值：序列决策的数学对象",
+          "path": "foundations/tabular/mdps/",
+          "why": "区分环境模型、策略价值与最优价值，再讨论已知模型下的备份。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "study-tabular-monte-carlo",
+          "title": "Monte Carlo：完整回报、探索控制与离策略评价",
+          "path": "foundations/tabular/monte-carlo/",
+          "why": "理解策略评价与策略改善的不同作用。"
+        },
+        {
+          "chapterId": "study-tabular-temporal-difference",
+          "title": "TD 预测与控制：SARSA、Expected SARSA、Q-learning 和 Double Q",
+          "path": "foundations/tabular/temporal-difference/",
+          "why": "理解Bellman递推如何用后继价值表达当前价值。"
+        },
+        {
+          "chapterId": "study-tabular-planning",
+          "title": "学习与规划：Dyna、优先扫描和执行时搜索",
+          "path": "foundations/tabular/planning/",
+          "why": "理解模型备份与价值传播。"
+        }
+      ],
+      "practice": [],
+      "executable": {
+        "file": "tabular_textbook_lab.py",
+        "command": "python3 tabular_textbook_lab.py dynamic-programming\npython3 tabular_textbook_lab.py test",
+        "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+        "path": "download/tabular_textbook_lab.py"
+      },
+      "walkthroughs": [],
+      "results": [
+        {
+          "algorithmId": "value_iteration",
+          "title": "实验 · 每轮改善，还是先把旧策略评价到很精确？",
+          "path": "foundations/tabular/dynamic-programming/#experiment-value_iteration",
+          "implementationPath": "code/value_iteration/",
+          "afterSection": "dp-algorithms"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "planning-budget",
+          "title": "11 · 什么时候值得规划，应该把计算花在哪里？",
+          "path": "research/#research-planning-budget",
+          "setting": "规划用已学模型进行额外计算。真实交互、模型更新、搜索和想象训练共享有限预算。问题不是简单地增加规划步数，而是选择何时、何处、以什么时间尺度使用模型。",
+          "bridge": "在准确模型上比较相同 backup 数量的更新次序，可先隔离计算分配，再引入模型也会出错的困难。"
+        }
+      ]
+    },
+    {
+      "id": "study-tabular-monte-carlo",
+      "path": "foundations/tabular/monte-carlo/",
+      "title": "Monte Carlo：完整回报、探索控制与离策略评价",
+      "question": "不知道模型时，可以将完整回报作为样本。估计还会改变下一次行动：需要看清回报来自哪一版策略、探索怎样影响收益，以及长回合怎样消耗有效覆盖。",
+      "book": "classic-rl",
+      "group": "tabular",
+      "kind": "core",
+      "order": 4,
+      "preparation": [
+        {
+          "chapterId": "study-tabular-mdps",
+          "title": "MDP、回报与价值：序列决策的数学对象",
+          "path": "foundations/tabular/mdps/",
+          "why": "明确完整回报和固定策略的价值。"
+        },
+        {
+          "chapterId": "study-tabular-dynamic-programming",
+          "title": "动态规划：评价、改善与最优递推",
+          "path": "foundations/tabular/dynamic-programming/",
+          "why": "理解策略评价与策略改善的不同作用。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "study-tabular-temporal-difference",
+          "title": "TD 预测与控制：SARSA、Expected SARSA、Q-learning 和 Double Q",
+          "path": "foundations/tabular/temporal-difference/",
+          "why": "知道完整回报提供什么信息，才能比较等待终止与立即自举。"
+        },
+        {
+          "chapterId": "study-approximation-off-policy",
+          "title": "离策略函数逼近：覆盖、发散与稳定更新",
+          "path": "foundations/approximation/off-policy/",
+          "why": "掌握行为策略、目标策略与重要性比率。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "prediction",
+          "title": "预测与控制",
+          "question": "学会预测更多事情，什么时候会改变行动？",
+          "path": "code/#practice-prediction",
+          "steps": []
+        },
+        {
+          "id": "action-evidence",
+          "title": "行动与经验",
+          "question": "行动决定了能得到哪些证据。学习又怎样改变下一次行动？",
+          "path": "code/#practice-action-evidence",
+          "steps": [
+            {
+              "number": 1,
+              "title": "让 MC 估计真正改变下一回合"
+            },
+            {
+              "number": 2,
+              "title": "把探索行为与要改善的策略分开"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "tabular_textbook_lab.py",
+        "command": "python3 tabular_textbook_lab.py monte-carlo\npython3 tabular_textbook_lab.py test",
+        "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+        "path": "download/tabular_textbook_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "mc-control-walkthrough.py",
+          "path": "/crl-code/tutorials/mc-control-walkthrough.py",
+          "section": "mc-control-loop",
+          "sectionTitle": "3.1 · 估计改变行动，行动产生下一条回报"
+        },
+        {
+          "file": "mc-offpolicy-control-walkthrough.py",
+          "path": "/crl-code/tutorials/mc-offpolicy-control-walkthrough.py",
+          "section": "mc-offpolicy-loop",
+          "sectionTitle": "5.6 · 从一条真实路径走过 Q、C、W 和下一版行为"
+        },
+        {
+          "file": "monte-carlo-walkthrough.py",
+          "path": "/crl-code/tutorials/monte-carlo-walkthrough.py",
+          "section": "lesson-code",
+          "sectionTitle": "8 · 实验观察与估计诊断"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "weighted_is",
+          "title": "实验 · 自归一化降低波动时，也改变了有限样本性质",
+          "path": "foundations/tabular/monte-carlo/#experiment-weighted_is",
+          "implementationPath": "code/weighted_is/",
+          "afterSection": "mc-estimators"
+        }
+      ],
+      "research": []
+    },
+    {
+      "id": "study-tabular-temporal-difference",
+      "path": "foundations/tabular/temporal-difference/",
+      "title": "TD 预测与控制：SARSA、Expected SARSA、Q-learning 和 Double Q",
+      "question": "如何在完整回报尚不可用时学习？TD 用下一预测补足未来；控制算法再根据不同的下一动作处理方式，形成不同的学习目标。",
+      "book": "classic-rl",
+      "group": "tabular",
+      "kind": "core",
+      "order": 5,
+      "preparation": [
+        {
+          "chapterId": "study-tabular-monte-carlo",
+          "title": "Monte Carlo：完整回报、探索控制与离策略评价",
+          "path": "foundations/tabular/monte-carlo/",
+          "why": "知道完整回报提供什么信息，才能比较等待终止与立即自举。"
+        },
+        {
+          "chapterId": "study-tabular-dynamic-programming",
+          "title": "动态规划：评价、改善与最优递推",
+          "path": "foundations/tabular/dynamic-programming/",
+          "why": "理解Bellman递推如何用后继价值表达当前价值。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "study-tabular-multistep",
+          "title": "多步学习：n-step、Tree Backup 与 Q(σ)",
+          "path": "foundations/tabular/multistep/",
+          "why": "掌握一步TD、Sarsa与目标策略，再改变等待长度和分支期望。"
+        },
+        {
+          "chapterId": "study-tabular-planning",
+          "title": "学习与规划：Dyna、优先扫描和执行时搜索",
+          "path": "foundations/tabular/planning/",
+          "why": "区分真实转移产生的样本更新和模型产生的更新。"
+        },
+        {
+          "chapterId": "study-approximation-prediction",
+          "title": "函数逼近预测：从回归到 TD 固定点",
+          "path": "foundations/approximation/prediction/",
+          "why": "先固定预测对象，理解MC回报与TD目标，再研究共享参数。"
+        },
+        {
+          "chapterId": "study-approximation-features-control",
+          "title": "特征、泛化与半梯度控制",
+          "path": "foundations/approximation/features-control/",
+          "why": "掌握Sarsa与行为策略对后续经验的影响。"
+        },
+        {
+          "chapterId": "options",
+          "title": "Options：多步决策、技能发现与可复用行为",
+          "path": "construction/options/",
+          "why": "掌握原子动作的控制更新，再处理可变时长行为。"
+        },
+        {
+          "chapterId": "value",
+          "title": "价值预测与时间差分学习",
+          "path": "algorithms/value/",
+          "why": "完整的一步预测推导在第一册。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "prediction",
+          "title": "预测与控制",
+          "question": "学会预测更多事情，什么时候会改变行动？",
+          "path": "code/#practice-prediction",
+          "steps": [
+            {
+              "number": 1,
+              "title": "固定策略，先检查一个答案"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "tabular_textbook_lab.py",
+        "command": "python3 tabular_textbook_lab.py temporal-difference\npython3 tabular_textbook_lab.py test",
+        "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+        "path": "download/tabular_textbook_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "control_targets_walkthrough.py",
+          "path": "/crl-code/tutorials/control_targets_walkthrough.py",
+          "section": "td-control-targets",
+          "sectionTitle": "3 · 控制的三种下一动作"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "td0",
+          "title": "实验 · 能立即更新，不等于有限预算内必然更准确",
+          "path": "foundations/tabular/temporal-difference/#experiment-td0",
+          "implementationPath": "code/td0/",
+          "afterSection": "lesson-derive"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "continual-control",
+          "title": "04 · 旧价值什么时候应该复用，什么时候应该快速改写？",
+          "path": "research/#research-continual-control",
+          "setting": "策略改善不断改变数据分布。奖励或动力学还可能发生外部变化。一个旧价值函数既可能提供知识，也可能阻碍适应；仅靠最终价值误差不能判断控制失败的原因。",
+          "bridge": "区分 SARSA、Expected SARSA 与 Q-learning 的目标和实际行为，才能把变化后的估计滞后与探索不足分别检查。"
+        }
+      ]
+    },
+    {
+      "id": "study-tabular-multistep",
+      "path": "foundations/tabular/multistep/",
+      "title": "多步学习：n-step、Tree Backup 与 Q(σ)",
+      "question": "学习目标可以在一步 bootstrap 与完整回报之间选择，也可以在动作采样与动作期望之间选择。这是两条不同的设计维度。",
+      "book": "classic-rl",
+      "group": "tabular",
+      "kind": "core",
+      "order": 6,
+      "preparation": [
+        {
+          "chapterId": "study-tabular-temporal-difference",
+          "title": "TD 预测与控制：SARSA、Expected SARSA、Q-learning 和 Double Q",
+          "path": "foundations/tabular/temporal-difference/",
+          "why": "掌握一步TD、Sarsa与目标策略，再改变等待长度和分支期望。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "study-approximation-traces",
+          "title": "多步回报、资格迹与 True-online TD",
+          "path": "foundations/approximation/traces/",
+          "why": "知道多步回报由哪些奖励和尾值组成。"
+        }
+      ],
+      "practice": [],
+      "executable": {
+        "file": "tabular_textbook_lab.py",
+        "command": "python3 tabular_textbook_lab.py multistep\npython3 tabular_textbook_lab.py test",
+        "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+        "path": "download/tabular_textbook_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "control_targets_walkthrough.py",
+          "path": "/crl-code/tutorials/control_targets_walkthrough.py",
+          "section": "multistep-algorithm",
+          "sectionTitle": "6 · 完整 n-step 执行顺序"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "retrace",
+          "title": "实验 · 后继误差传播多远，取决于什么系数？",
+          "path": "foundations/tabular/multistep/#experiment-retrace",
+          "implementationPath": "code/retrace/",
+          "afterSection": "tree-backup"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "temporal-credit",
+          "title": "05 · 远处的反馈应该怎样更新早先的决策与内部计算？",
+          "path": "research/#research-temporal-credit",
+          "setting": "关键线索或动作很早出现，奖励很晚到达。时间信用涉及不同时间步；结构信用涉及同一计算图中的参数与中间量。是否只能在线更新，是另一个资源条件。",
+          "bridge": "多步目标明确等待多少真实奖励、从哪里自举，为研究有限等待和计算下的延迟信用建立参照。"
+        }
+      ]
+    },
+    {
+      "id": "study-tabular-planning",
+      "path": "foundations/tabular/planning/",
+      "title": "学习与规划：Dyna、优先扫描和执行时搜索",
+      "question": "真实经验既能直接改进价值，也能训练后果模型。规划使用这个模型继续计算，关键是模型语义、backup 的成本以及计算应分配到哪里。",
+      "book": "classic-rl",
+      "group": "tabular",
+      "kind": "core",
+      "order": 7,
+      "preparation": [
+        {
+          "chapterId": "study-tabular-dynamic-programming",
+          "title": "动态规划：评价、改善与最优递推",
+          "path": "foundations/tabular/dynamic-programming/",
+          "why": "理解模型备份与价值传播。"
+        },
+        {
+          "chapterId": "study-tabular-temporal-difference",
+          "title": "TD 预测与控制：SARSA、Expected SARSA、Q-learning 和 Double Q",
+          "path": "foundations/tabular/temporal-difference/",
+          "why": "区分真实转移产生的样本更新和模型产生的更新。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "study-deep-model-based",
+          "title": "模型学习与规划：MPC、短模型 rollout 和潜在想象",
+          "path": "foundations/deep/model-based/",
+          "why": "理解模型查询、备份与真实交互的区别。"
+        },
+        {
+          "chapterId": "dyna",
+          "title": "Dyna：模型学习与规划",
+          "path": "algorithms/dyna/",
+          "why": "区分真实经验、模型学习和模拟更新。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "skills",
+          "title": "技能与规划",
+          "question": "一个多步行为怎样成为可学习、可预测、可规划的动作？",
+          "path": "code/#practice-skills",
+          "steps": [
+            {
+              "number": 1,
+              "title": "先学习一次动作的后果"
+            },
+            {
+              "number": 2,
+              "title": "给规划计算设一个明确预算"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "tabular_textbook_lab.py",
+        "command": "python3 tabular_textbook_lab.py planning\npython3 tabular_textbook_lab.py test",
+        "scope": "Python 3，仅标准库。下载完整文件后在其目录运行；页面展示核心区域。小环境和解析检验用于理解机制，不是论文基准复现。",
+        "path": "download/tabular_textbook_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "planning-budget-walkthrough.py",
+          "path": "/crl-code/tutorials/planning-budget-walkthrough.py",
+          "section": "lesson-code",
+          "sectionTitle": "7 · 可运行模型循环"
+        },
+        {
+          "file": "stochastic-model-walkthrough.py",
+          "path": "/crl-code/tutorials/stochastic-model-walkthrough.py",
+          "section": "lesson-code",
+          "sectionTitle": "7 · 可运行模型循环"
+        },
+        {
+          "file": "dyna-planning-walkthrough.py",
+          "path": "/crl-code/tutorials/dyna-planning-walkthrough.py",
+          "section": "lesson-code",
+          "sectionTitle": "7 · 可运行模型循环"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "dyna_q",
+          "title": "同一批真实经验，增加五次模型备份",
+          "path": "foundations/tabular/planning/#experiment-dyna_q",
+          "implementationPath": "code/dyna_q/",
+          "afterSection": "planning-dyna"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "useful-options",
+          "title": "08 · 什么样的时间抽象值得加入技能库？",
+          "path": "research/#research-useful-options",
+          "setting": "Option 具有启动条件、内部策略与终止规则。技能发现还要决定哪些 option 值得占用容量。探索覆盖、执行效率、信用压缩和规划价值是不同用途，不能仅凭技能数量或轨迹图判断。",
+          "bridge": "区分实际执行、模型预测与规划 backup 的用途，才能评价一个长行为节省的经验或计算是否抵偿其维护成本。"
+        },
+        {
+          "questionId": "planning-budget",
+          "title": "11 · 什么时候值得规划，应该把计算花在哪里？",
+          "path": "research/#research-planning-budget",
+          "setting": "规划用已学模型进行额外计算。真实交互、模型更新、搜索和想象训练共享有限预算。问题不是简单地增加规划步数，而是选择何时、何处、以什么时间尺度使用模型。",
+          "bridge": "前驱传播、优先扫描与执行时搜索把计算用于不同位置，由此可问下一次模型查询的净收益。"
+        },
+        {
+          "questionId": "integrated-architecture",
+          "title": "15 · 状态、知识、技能与规划怎样共同构成持续智能体？",
+          "path": "research/#research-integrated-architecture",
+          "setting": "完整 agent 同时更新状态、预测、控制、技能与模型。每个局部学习器看到的输入和目标都可能被其他模块改变。整体表现还受内存、计算分配和数据获取限制。",
+          "bridge": "Dyna 中同一经验的直接学习、模型学习和规划三种用途，构成检查模块接口与相互影响的最小闭环。"
+        }
+      ]
+    },
+    {
+      "id": "study-approximation-prediction",
+      "path": "foundations/approximation/prediction/",
+      "title": "函数逼近预测：从回归到 TD 固定点",
+      "question": "共享少量参数以后，MC、TD 和最小二乘方法究竟在求解什么？",
+      "book": "classic-rl",
+      "group": "approximation",
+      "kind": "core",
+      "order": 101,
+      "preparation": [
+        {
+          "chapterId": "study-tabular-temporal-difference",
+          "title": "TD 预测与控制：SARSA、Expected SARSA、Q-learning 和 Double Q",
+          "path": "foundations/tabular/temporal-difference/",
+          "why": "先固定预测对象，理解MC回报与TD目标，再研究共享参数。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "study-approximation-features-control",
+          "title": "特征、泛化与半梯度控制",
+          "path": "foundations/approximation/features-control/",
+          "why": "理解一个参数写入怎样同时改变多个状态的预测。"
+        },
+        {
+          "chapterId": "study-approximation-off-policy",
+          "title": "离策略函数逼近：覆盖、发散与稳定更新",
+          "path": "foundations/approximation/off-policy/",
+          "why": "区分逼近误差、投影和TD固定点。"
+        },
+        {
+          "chapterId": "study-approximation-traces",
+          "title": "多步回报、资格迹与 True-online TD",
+          "path": "foundations/approximation/traces/",
+          "why": "知道梯度对应哪个参数版本，哪些状态共享参数。"
+        },
+        {
+          "chapterId": "study-approximation-policy-gradient",
+          "title": "策略梯度、基线与 Actor–Critic",
+          "path": "foundations/approximation/policy-gradient/",
+          "why": "理解critic提供的是近似预测，不是已知真值。"
+        },
+        {
+          "chapterId": "study-deep-partial-observability",
+          "title": "不完全可观测：信念状态、信息行动与递归记忆",
+          "path": "foundations/deep/partial-observability/",
+          "why": "理解参数化预测及其误差，再引入递归活动。"
+        },
+        {
+          "chapterId": "gvf",
+          "title": "通用价值函数与预测知识",
+          "path": "construction/predictive-knowledge/",
+          "why": "掌握固定预测问题下的TD目标与近似误差。"
+        },
+        {
+          "chapterId": "retention",
+          "title": "知识保留：经验重放、参数约束与模型记忆",
+          "path": "algorithms/retention/",
+          "why": "理解共享参数的误差与干扰。"
+        },
+        {
+          "chapterId": "value",
+          "title": "价值预测与时间差分学习",
+          "path": "algorithms/value/",
+          "why": "共享参数下的误差与半梯度在第一册。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "prediction",
+          "title": "预测与控制",
+          "question": "学会预测更多事情，什么时候会改变行动？",
+          "path": "code/#practice-prediction",
+          "steps": [
+            {
+              "number": 2,
+              "title": "让两个状态共享参数"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "approximation_textbook_lab.py",
+        "command": "python3 approximation_textbook_lab.py prediction\npython3 approximation_textbook_lab.py test",
+        "scope": "标准库教学实现。命令运行本章的可解析小问题和全文件的公式测试；不依赖深度学习库，不等同于论文中的大规模实验。",
+        "path": "download/approximation_textbook_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "shared_gradient_walkthrough.py",
+          "path": "/crl-code/tutorials/shared_gradient_walkthrough.py",
+          "section": "prediction-sharing",
+          "sectionTitle": "共享几何 · 一次更新究竟帮助了谁？"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "gradient_mc",
+          "title": "实验 · 两个共享参数，怎样从回报或 Bellman 方程得到？",
+          "path": "foundations/approximation/prediction/#experiment-gradient_mc",
+          "implementationPath": "code/gradient_mc/",
+          "afterSection": "prediction-algorithm"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "predictive-knowledge",
+          "title": "03 · 哪些预测值得学习，谁来使用这些预测？",
+          "path": "research/#research-predictive-knowledge",
+          "setting": "同一数据流可以支持许多不同未来问题。计算和容量有限，行为策略也未必覆盖每个目标策略。核心研究对象不仅是一个预测器的误差，还包括问题的选择、淘汰与下游用途。",
+          "bridge": "先理解固定预测问题下的误差、投影与半梯度答案，再研究有限预算应该用来维持哪些预测问题。"
+        },
+        {
+          "questionId": "streaming-stability",
+          "title": "06 · 不存 replay、每步只处理新经验时，怎样避免更新失稳？",
+          "path": "research/#research-streaming-stability",
+          "setting": "数据到达后立即用于学习；过去 transition 不被存储再训练。资格迹、递归活动和 optimizer 状态仍可存在，但须计入内存。数值稳定、样本利用率和动作 deadline 都是评价对象。",
+          "bridge": "共享参数的几何表明相同参数步长可能产生不同输出变化，为流式更新的尺度控制提供直接检查对象。"
+        },
+        {
+          "questionId": "plasticity",
+          "title": "13 · 为什么训练越久，学习新东西反而越慢？",
+          "path": "research/#research-plasticity",
+          "setting": "长期训练后的网络面对新的可学习目标，下降速度比新初始化更慢。需在相同数据和目标上比较 aged 与 fresh 网络，才能把优化能力下降和探索失败区分开。",
+          "bridge": "固定特征与固定新目标提供简单的学习参照，帮助将表示不足、共享干扰与更新规则的困难分开。"
+        }
+      ]
+    },
+    {
+      "id": "study-approximation-features-control",
+      "path": "foundations/approximation/features-control/",
+      "title": "特征、泛化与半梯度控制",
+      "question": "特征怎样改变学习行为，Sarsa 又怎样在共享参数下改善策略？",
+      "book": "classic-rl",
+      "group": "approximation",
+      "kind": "core",
+      "order": 102,
+      "preparation": [
+        {
+          "chapterId": "study-approximation-prediction",
+          "title": "函数逼近预测：从回归到 TD 固定点",
+          "path": "foundations/approximation/prediction/",
+          "why": "理解一个参数写入怎样同时改变多个状态的预测。"
+        },
+        {
+          "chapterId": "study-tabular-temporal-difference",
+          "title": "TD 预测与控制：SARSA、Expected SARSA、Q-learning 和 Double Q",
+          "path": "foundations/tabular/temporal-difference/",
+          "why": "掌握Sarsa与行为策略对后续经验的影响。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "study-approximation-average-control",
+          "title": "持续控制与平均奖励",
+          "path": "foundations/approximation/average-control/",
+          "why": "理解半梯度控制，再把折扣目标换为长期奖励率。"
+        },
+        {
+          "chapterId": "study-deep-deep-value",
+          "title": "深度价值学习：DQN、Double DQN 与目标的时间顺序",
+          "path": "foundations/deep/deep-value/",
+          "why": "从半梯度动作价值更新进入神经网络控制。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "prediction",
+          "title": "预测与控制",
+          "question": "学会预测更多事情，什么时候会改变行动？",
+          "path": "code/#practice-prediction",
+          "steps": []
+        }
+      ],
+      "executable": {
+        "file": "approximation_textbook_lab.py",
+        "command": "python3 approximation_textbook_lab.py features-control\npython3 approximation_textbook_lab.py test",
+        "scope": "标准库教学实现。命令运行本章的可解析小问题和全文件的公式测试；不依赖深度学习库，不等同于论文中的大规模实验。",
+        "path": "download/approximation_textbook_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "feature-control-walkthrough.py",
+          "path": "/crl-code/tutorials/feature-control-walkthrough.py",
+          "section": "features-sarsa-corridor",
+          "sectionTitle": "4.1 · 在走廊里执行更新，再看它选出的经验"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "semi_gradient_sarsa",
+          "title": "实验 · 共享特征怎样把一次 Sarsa 更新扩散到其他状态？",
+          "path": "foundations/approximation/features-control/#experiment-semi_gradient_sarsa",
+          "implementationPath": "code/semi_gradient_sarsa/",
+          "afterSection": "lesson-derive"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "continual-control",
+          "title": "04 · 旧价值什么时候应该复用，什么时候应该快速改写？",
+          "path": "research/#research-continual-control",
+          "setting": "策略改善不断改变数据分布。奖励或动力学还可能发生外部变化。一个旧价值函数既可能提供知识，也可能阻碍适应；仅靠最终价值误差不能判断控制失败的原因。",
+          "bridge": "走廊中的共享特征让一次价值更新改变下一次选择，说明旧价值的复用还会改变随后得到的数据。"
+        },
+        {
+          "questionId": "retention-transfer",
+          "title": "12 · 怎样保留旧能力，而不把过时知识强加给新任务？",
+          "path": "research/#research-retention-transfer",
+          "setting": "学习分布变化后，旧任务能力可能下降。保存旧轨迹、生成旧经验、保持旧策略或分配独立模块都可以减少遗忘，但也可能减慢适应。任务边界和回访权限决定哪些方法可用。",
+          "bridge": "共享特征使新经验同时改变未访问状态的预测，提供了检查旧能力受干扰以及何时可复用的最小情形。"
+        }
+      ]
+    },
+    {
+      "id": "study-approximation-average-control",
+      "path": "foundations/approximation/average-control/",
+      "title": "持续控制与平均奖励",
+      "question": "智能体没有自然回合终点时，怎样定义和学习长期控制目标？",
+      "book": "classic-rl",
+      "group": "approximation",
+      "kind": "core",
+      "order": 103,
+      "preparation": [
+        {
+          "chapterId": "study-tabular-mdps",
+          "title": "MDP、回报与价值：序列决策的数学对象",
+          "path": "foundations/tabular/mdps/",
+          "why": "区分任务目标、回报和策略价值。"
+        },
+        {
+          "chapterId": "study-approximation-features-control",
+          "title": "特征、泛化与半梯度控制",
+          "path": "foundations/approximation/features-control/",
+          "why": "理解半梯度控制，再把折扣目标换为长期奖励率。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "average",
+          "title": "平均奖励：奖励率、差分价值与持续控制",
+          "path": "algorithms/average-reward/",
+          "why": "掌握奖励率、差分价值和基本预测/控制更新。"
+        }
+      ],
+      "practice": [],
+      "executable": {
+        "file": "approximation_textbook_lab.py",
+        "command": "python3 approximation_textbook_lab.py average-control\npython3 approximation_textbook_lab.py test",
+        "scope": "标准库教学实现。命令运行本章的可解析小问题和全文件的公式测试；不依赖深度学习库，不等同于论文中的大规模实验。",
+        "path": "download/approximation_textbook_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "average_rate_walkthrough.py",
+          "path": "/crl-code/tutorials/average_rate_walkthrough.py",
+          "section": "average-rate-cycles",
+          "sectionTitle": "2.1 · 同一个服务站：决策次数与真实秒数"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "differential_dyna",
+          "title": "实验 · 学得模型的五次规划值得多少真实经验",
+          "path": "foundations/approximation/average-control/#experiment-differential_dyna",
+          "implementationPath": "code/differential_dyna/",
+          "afterSection": "lesson-code"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "lifetime-objective",
+          "title": "01 · 什么目标能够评价一个始终在学习的智能体？",
+          "path": "research/#research-lifetime-objective",
+          "setting": "智能体只有有限存储和每步计算时间。学习改变其后续行为，环境可能持续而不终止，也可能存在成本不为零的重置。比较前需规定奖励、时间单位、评价时域和可用干预。平稳环境仍可能对有限资源智能体提出长期学习需求。",
+          "bridge": "周期链的奖励率与暂态价值说明长期极限会忽略有限前缀，由此可问适应成本何时改变实际部署期的排序。"
+        }
+      ]
+    },
+    {
+      "id": "study-approximation-off-policy",
+      "path": "foundations/approximation/off-policy/",
+      "title": "离策略函数逼近：覆盖、发散与稳定更新",
+      "question": "行为数据足够覆盖目标策略，为什么 TD 仍可能发散，又能怎样修复？",
+      "book": "classic-rl",
+      "group": "approximation",
+      "kind": "core",
+      "order": 104,
+      "preparation": [
+        {
+          "chapterId": "study-approximation-prediction",
+          "title": "函数逼近预测：从回归到 TD 固定点",
+          "path": "foundations/approximation/prediction/",
+          "why": "区分逼近误差、投影和TD固定点。"
+        },
+        {
+          "chapterId": "study-tabular-monte-carlo",
+          "title": "Monte Carlo：完整回报、探索控制与离策略评价",
+          "path": "foundations/tabular/monte-carlo/",
+          "why": "掌握行为策略、目标策略与重要性比率。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "study-deep-deep-value",
+          "title": "深度价值学习：DQN、Double DQN 与目标的时间顺序",
+          "path": "foundations/deep/deep-value/",
+          "why": "理解离策略、自举与共享表示共同带来的稳定性问题。"
+        },
+        {
+          "chapterId": "study-deep-systems",
+          "title": "大规模训练：算法与系统怎样共同设计",
+          "path": "foundations/deep/systems/",
+          "why": "理解异步采样导致的行为策略与当前策略差异。"
+        },
+        {
+          "chapterId": "study-deep-offline",
+          "title": "离线强化学习：数据支持、策略评估与保守改进",
+          "path": "foundations/deep/offline/",
+          "why": "理解支持、采样分布与离策略估计。"
+        }
+      ],
+      "practice": [],
+      "executable": {
+        "file": "approximation_textbook_lab.py",
+        "command": "python3 approximation_textbook_lab.py off-policy\npython3 approximation_textbook_lab.py test",
+        "scope": "标准库教学实现。命令运行本章的可解析小问题和全文件的公式测试；不依赖深度学习库，不等同于论文中的大规模实验。",
+        "path": "download/approximation_textbook_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "offpolicy-geometry-walkthrough.py",
+          "path": "/crl-code/tutorials/offpolicy-geometry-walkthrough.py",
+          "section": "lesson-code",
+          "sectionTitle": "8 · 两种独立计算检查同一例子"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "baird_expected_td",
+          "title": "实验 · 去掉噪声与非线性，TD 仍能发散",
+          "path": "foundations/approximation/off-policy/#experiment-baird_expected_td",
+          "implementationPath": "code/baird_expected_td/",
+          "afterSection": "offpolicy-counterexample"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "predictive-knowledge",
+          "title": "03 · 哪些预测值得学习，谁来使用这些预测？",
+          "path": "research/#research-predictive-knowledge",
+          "setting": "同一数据流可以支持许多不同未来问题。计算和容量有限，行为策略也未必覆盖每个目标策略。核心研究对象不仅是一个预测器的误差，还包括问题的选择、淘汰与下游用途。",
+          "bridge": "同一经验流学习多个策略条件预测时，覆盖与稳定性决定哪些答案可学；答案可学以后，还要寻找使用它的消费者。"
+        },
+        {
+          "questionId": "streaming-stability",
+          "title": "06 · 不存 replay、每步只处理新经验时，怎样避免更新失稳？",
+          "path": "research/#research-streaming-stability",
+          "setting": "数据到达后立即用于学习；过去 transition 不被存储再训练。资格迹、递归活动和 optimizer 状态仍可存在，但须计入内存。数值稳定、样本利用率和动作 deadline 都是评价对象。",
+          "bridge": "覆盖充分仍可能发生的 TD 发散说明，小步长或尺度归一化与修正期望更新方向是两项不同工作。"
+        }
+      ]
+    },
+    {
+      "id": "study-approximation-traces",
+      "path": "foundations/approximation/traces/",
+      "title": "多步回报、资格迹与 True-online TD",
+      "question": "当前到来的奖励怎样更新过去的预测，同时保留正确的在线更新语义？",
+      "book": "classic-rl",
+      "group": "approximation",
+      "kind": "core",
+      "order": 105,
+      "preparation": [
+        {
+          "chapterId": "study-tabular-multistep",
+          "title": "多步学习：n-step、Tree Backup 与 Q(σ)",
+          "path": "foundations/tabular/multistep/",
+          "why": "知道多步回报由哪些奖励和尾值组成。"
+        },
+        {
+          "chapterId": "study-approximation-prediction",
+          "title": "函数逼近预测：从回归到 TD 固定点",
+          "path": "foundations/approximation/prediction/",
+          "why": "知道梯度对应哪个参数版本，哪些状态共享参数。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "study-deep-policy-gradient",
+          "title": "策略梯度：从轨迹概率到 GAE 与 actor–critic",
+          "path": "foundations/deep/policy-gradient/",
+          "why": "理解多步误差加权，再解释GAE中的等待长度。"
+        },
+        {
+          "chapterId": "credit",
+          "title": "时间信用分配：从资格迹到深度梯度学习",
+          "path": "algorithms/credit-assignment/",
+          "why": "以线性前后向视图为基准，再讨论非线性和在线变化。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "prediction",
+          "title": "预测与控制",
+          "question": "学会预测更多事情，什么时候会改变行动？",
+          "path": "code/#practice-prediction",
+          "steps": [
+            {
+              "number": 2,
+              "title": "让两个状态共享参数"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "approximation_textbook_lab.py",
+        "command": "python3 approximation_textbook_lab.py traces\npython3 approximation_textbook_lab.py test",
+        "scope": "标准库教学实现。命令运行本章的可解析小问题和全文件的公式测试；不依赖深度学习库，不等同于论文中的大规模实验。",
+        "path": "download/approximation_textbook_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "shared_gradient_walkthrough.py",
+          "path": "/crl-code/tutorials/shared_gradient_walkthrough.py",
+          "section": "lesson-code",
+          "sectionTitle": "6 · 两个独立实现逐前缀对照"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "true_online_td",
+          "title": "实验 · True-online 的“精确”，不表示误差始终最小",
+          "path": "foundations/approximation/traces/#experiment-true_online_td",
+          "implementationPath": "code/true_online_td/",
+          "afterSection": "traces-dutch"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "temporal-credit",
+          "title": "05 · 远处的反馈应该怎样更新早先的决策与内部计算？",
+          "path": "research/#research-temporal-credit",
+          "setting": "关键线索或动作很早出现，奖励很晚到达。时间信用涉及不同时间步；结构信用涉及同一计算图中的参数与中间量。是否只能在线更新，是另一个资源条件。",
+          "bridge": "在线前向参考、荷兰迹和预测差修正说明精确等价依赖哪些版本条件，随后才能研究非线性与变动表示。"
+        },
+        {
+          "questionId": "learning-rules",
+          "title": "07 · 哪些学习参数应当适应，怎样评价学出来的更新规则？",
+          "path": "research/#research-learning-rules",
+          "setting": "权重在内层学习，步长、return 参数、初始化或整个更新器在外层适应。在线元学习使用一段持续经验；跨任务元 RL 使用任务分布及重置。两者的元目标和数据权限不同。",
+          "bridge": "资格迹规定本次误差怎样改变权重；学习步长或迹长度则要继续追踪这些更新怎样影响后续评价。"
+        }
+      ]
+    },
+    {
+      "id": "study-approximation-policy-gradient",
+      "path": "foundations/approximation/policy-gradient/",
+      "title": "策略梯度、基线与 Actor–Critic",
+      "question": "直接学习策略时，哪一个目标的梯度能由经验估计，近似从哪里进入？",
+      "book": "classic-rl",
+      "group": "approximation",
+      "kind": "core",
+      "order": 106,
+      "preparation": [
+        {
+          "chapterId": "study-tabular-mdps",
+          "title": "MDP、回报与价值：序列决策的数学对象",
+          "path": "foundations/tabular/mdps/",
+          "why": "明确策略决定轨迹分布及要优化的回报。"
+        },
+        {
+          "chapterId": "study-approximation-prediction",
+          "title": "函数逼近预测：从回归到 TD 固定点",
+          "path": "foundations/approximation/prediction/",
+          "why": "理解critic提供的是近似预测，不是已知真值。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "study-deep-policy-gradient",
+          "title": "策略梯度：从轨迹概率到 GAE 与 actor–critic",
+          "path": "foundations/deep/policy-gradient/",
+          "why": "掌握轨迹概率、score与基线的基本推导。"
+        },
+        {
+          "chapterId": "study-deep-deterministic-control",
+          "title": "连续动作的价值优化：DDPG 与 TD3",
+          "path": "foundations/deep/deterministic-control/",
+          "why": "理解策略参数怎样通过动作影响目标。"
+        },
+        {
+          "chapterId": "policy",
+          "title": "策略梯度、Actor–Critic 与 PPO",
+          "path": "algorithms/policy/",
+          "why": "从轨迹概率到策略梯度的推导在第一册。"
+        }
+      ],
+      "practice": [],
+      "executable": {
+        "file": "approximation_textbook_lab.py",
+        "command": "python3 approximation_textbook_lab.py policy-gradient\npython3 approximation_textbook_lab.py test",
+        "scope": "标准库教学实现。命令运行本章的可解析小问题和全文件的公式测试；不依赖深度学习库，不等同于论文中的大规模实验。",
+        "path": "download/approximation_textbook_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "policy-gradient-walkthrough.py",
+          "path": "/crl-code/tutorials/policy-gradient-walkthrough.py",
+          "section": "policy-occupancy-example",
+          "sectionTitle": "6.1 · 同一个例子：占用怎样收集全部 score"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "deep-vpg",
+          "title": "实验 · 完整回报与一步 critic 提供不同的策略学习信号",
+          "path": "foundations/approximation/policy-gradient/#experiment-deep-vpg",
+          "implementationPath": "code/deep-vpg/",
+          "afterSection": "policy-algorithm"
+        }
+      ],
+      "research": []
+    },
+    {
+      "id": "study-deep-deep-value",
+      "path": "foundations/deep/deep-value/",
+      "title": "深度价值学习：DQN、Double DQN 与目标的时间顺序",
+      "question": "把表格 Q-learning 换成网络后，损失、数据与目标为什么都需要重新组织？",
+      "book": "deep-rl",
+      "group": "deep-core",
+      "kind": "core",
+      "order": 1,
+      "preparation": [
+        {
+          "chapterId": "study-approximation-features-control",
+          "title": "特征、泛化与半梯度控制",
+          "path": "foundations/approximation/features-control/",
+          "why": "从半梯度动作价值更新进入神经网络控制。"
+        },
+        {
+          "chapterId": "study-approximation-off-policy",
+          "title": "离策略函数逼近：覆盖、发散与稳定更新",
+          "path": "foundations/approximation/off-policy/",
+          "why": "理解离策略、自举与共享表示共同带来的稳定性问题。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "study-deep-deterministic-control",
+          "title": "连续动作的价值优化：DDPG 与 TD3",
+          "path": "foundations/deep/deterministic-control/",
+          "why": "掌握回放、critic标签和目标网络的更新时间。"
+        },
+        {
+          "chapterId": "study-deep-practice",
+          "title": "深度 RL 的机制接口：模型、记忆、离线数据与实验",
+          "path": "foundations/deep/practice/",
+          "why": "掌握采样、回放、标签和参数更新的基本循环。"
+        },
+        {
+          "chapterId": "study-deep-exploration",
+          "title": "探索与不确定性：后验、乐观估计和时间一致行动",
+          "path": "foundations/deep/exploration/",
+          "why": "理解价值网络的数据来源和自举目标。"
+        },
+        {
+          "chapterId": "study-deep-distributional",
+          "title": "分布强化学习：Bellman 分布、分位数与风险目标",
+          "path": "foundations/deep/distributional/",
+          "why": "先掌握期望价值的Bellman目标，再学习回报分布。"
+        },
+        {
+          "chapterId": "study-deep-offline",
+          "title": "离线强化学习：数据支持、策略评估与保守改进",
+          "path": "foundations/deep/offline/",
+          "why": "理解函数逼近怎样给未见动作产生估计。"
+        },
+        {
+          "chapterId": "study-deep-model-based",
+          "title": "模型学习与规划：MPC、短模型 rollout 和潜在想象",
+          "path": "foundations/deep/model-based/",
+          "why": "掌握可学习表示、价值尾项与目标版本。"
+        },
+        {
+          "chapterId": "study-deep-multi-agent",
+          "title": "多智能体合作：结构化探索与信用分配",
+          "path": "foundations/deep/multi-agent/",
+          "why": "掌握动作价值与自举。"
+        },
+        {
+          "chapterId": "plasticity",
+          "title": "可塑性：梯度通路、有效学习率与预测干扰",
+          "path": "algorithms/plasticity/",
+          "why": "理解特征梯度、目标变化与神经网络更新。"
+        },
+        {
+          "chapterId": "deep-value",
+          "title": "深度价值学习：DQN 与 Double DQN",
+          "path": "algorithms/deep-value/",
+          "why": "完整DQN训练循环在第二册；这里回顾其持续使用条件。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "prediction",
+          "title": "预测与控制",
+          "question": "学会预测更多事情，什么时候会改变行动？",
+          "path": "code/#practice-prediction",
+          "steps": [
+            {
+              "number": 6,
+              "title": "再检查深度控制的标签与梯度"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "deep_textbook_train.py",
+        "command": "python3 deep_textbook_train.py dqn --steps 2000 --seed 0",
+        "scope": "CPU DeadlineChain 完整训练；需要同目录 deep_textbook_lab.py 和 PyTorch。",
+        "path": "download/deep_textbook_train.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "dqn_shared_feature_walkthrough.py",
+          "path": "/crl-code/tutorials/dqn_shared_feature_walkthrough.py",
+          "section": "lesson-gradient-paths",
+          "sectionTitle": "2.2 · 固定标签，与让标签参与求导"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "deep-double_dqn",
+          "title": "实验 · 分开选动作与评价动作的 Double DQN",
+          "path": "foundations/deep/deep-value/#experiment-deep-double_dqn",
+          "implementationPath": "code/deep-double_dqn/",
+          "afterSection": "lesson-double"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "continual-control",
+          "title": "04 · 旧价值什么时候应该复用，什么时候应该快速改写？",
+          "path": "research/#research-continual-control",
+          "setting": "策略改善不断改变数据分布。奖励或动力学还可能发生外部变化。一个旧价值函数既可能提供知识，也可能阻碍适应；仅靠最终价值误差不能判断控制失败的原因。",
+          "bridge": "Replay 中的样本年龄与目标网络的参数版本会延缓价值改写；环境变化后，需要判断这些滞后何时有益、何时妨碍适应。"
+        },
+        {
+          "questionId": "streaming-stability",
+          "title": "06 · 不存 replay、每步只处理新经验时，怎样避免更新失稳？",
+          "path": "research/#research-streaming-stability",
+          "setting": "数据到达后立即用于学习；过去 transition 不被存储再训练。资格迹、递归活动和 optimizer 状态仍可存在，但须计入内存。数值稳定、样本利用率和动作 deadline 都是评价对象。",
+          "bridge": "DQN 的采样、回放与优化时钟明确了数据复用权限；撤掉 replay 后，需要重新检查相关性和每步更新幅度。"
+        },
+        {
+          "questionId": "retention-transfer",
+          "title": "12 · 怎样保留旧能力，而不把过时知识强加给新任务？",
+          "path": "research/#research-retention-transfer",
+          "setting": "学习分布变化后，旧任务能力可能下降。保存旧轨迹、生成旧经验、保持旧策略或分配独立模块都可以减少遗忘，但也可能减慢适应。任务边界和回访权限决定哪些方法可用。",
+          "bridge": "Replay 保存旧样本，目标网络保存较慢变化的函数副本；这些保存对象不同，不能用一个遗忘分数解释所有作用。"
+        }
+      ]
+    },
+    {
+      "id": "study-deep-policy-gradient",
+      "path": "foundations/deep/policy-gradient/",
+      "title": "策略梯度：从轨迹概率到 GAE 与 actor–critic",
+      "question": "延迟奖励怎样改变动作概率？有限 rollout、critic 与停止梯度分别改变哪一项估计？",
+      "book": "deep-rl",
+      "group": "deep-core",
+      "kind": "core",
+      "order": 2,
+      "preparation": [
+        {
+          "chapterId": "study-approximation-policy-gradient",
+          "title": "策略梯度、基线与 Actor–Critic",
+          "path": "foundations/approximation/policy-gradient/",
+          "why": "掌握轨迹概率、score与基线的基本推导。"
+        },
+        {
+          "chapterId": "study-approximation-traces",
+          "title": "多步回报、资格迹与 True-online TD",
+          "path": "foundations/approximation/traces/",
+          "why": "理解多步误差加权，再解释GAE中的等待长度。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "study-deep-trust-region",
+          "title": "策略更新的尺度：TRPO 与 PPO",
+          "path": "foundations/deep/trust-region/",
+          "why": "区分采样策略、优势估计与要更新的策略。"
+        },
+        {
+          "chapterId": "study-deep-entropy-control",
+          "title": "最大熵连续控制：SAC 的价值、密度与温度",
+          "path": "foundations/deep/entropy-control/",
+          "why": "区分动作采样分布、策略目标与估计梯度。"
+        },
+        {
+          "chapterId": "study-deep-practice",
+          "title": "深度 RL 的机制接口：模型、记忆、离线数据与实验",
+          "path": "foundations/deep/practice/",
+          "why": "掌握rollout、优势和策略更新之间的数据关系。"
+        },
+        {
+          "chapterId": "study-deep-constraints",
+          "title": "约束强化学习：占据测度、拉格朗日与可行策略",
+          "path": "foundations/deep/constraints/",
+          "why": "理解策略参数改变回报的梯度，再引入成本和乘子。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "policy-control",
+          "title": "策略梯度与控制",
+          "question": "优化器确实降低了损失，为什么行动仍可能变差？",
+          "path": "code/#practice-policy-control",
+          "steps": [
+            {
+              "number": 2,
+              "title": "固定一条轨迹，检查策略改进的依据"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "deep_textbook_lab.py",
+        "command": "python3 deep_textbook_lab.py test",
+        "scope": "本文件用标准库核验数值；deep_textbook_train.py 提供 DQN/PPO 小任务训练与连续控制更新核，连续控制完整教学训练见 implementations/deep/ 的独立实现。",
+        "path": "download/deep_textbook_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "gae_ppo_walkthrough.py",
+          "path": "/crl-code/tutorials/gae_ppo_walkthrough.py",
+          "section": "lesson-code",
+          "sectionTitle": "6 · 从数值核验到实际 on-policy 训练"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "deep-vpg",
+          "title": "实验 · 完整回报与一步 critic 提供不同的策略学习信号",
+          "path": "foundations/deep/policy-gradient/#experiment-deep-vpg",
+          "implementationPath": "code/deep-vpg/",
+          "afterSection": "lesson-algorithm"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "temporal-credit",
+          "title": "05 · 远处的反馈应该怎样更新早先的决策与内部计算？",
+          "path": "research/#research-temporal-credit",
+          "setting": "关键线索或动作很早出现，奖励很晚到达。时间信用涉及不同时间步；结构信用涉及同一计算图中的参数与中间量。是否只能在线更新，是另一个资源条件。",
+          "bridge": "GAE 将价值误差组成动作优势，其 bootstrap 与跨序列边界决定远处反馈怎样进入策略更新。"
+        }
+      ]
+    },
+    {
+      "id": "study-deep-trust-region",
+      "path": "foundations/deep/trust-region/",
+      "title": "策略更新的尺度：TRPO 与 PPO",
+      "question": "旧策略的数据能支持多远的策略更新？怎样从局部代理走到采样、更新与独立评价？",
+      "book": "deep-rl",
+      "group": "deep-core",
+      "kind": "core",
+      "order": 3,
+      "preparation": [
+        {
+          "chapterId": "study-deep-policy-gradient",
+          "title": "策略梯度：从轨迹概率到 GAE 与 actor–critic",
+          "path": "foundations/deep/policy-gradient/",
+          "why": "区分采样策略、优势估计与要更新的策略。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "study-deep-multi-agent",
+          "title": "多智能体合作：结构化探索与信用分配",
+          "path": "foundations/deep/multi-agent/",
+          "why": "理解联合更新前的采样策略与优势估计。"
+        },
+        {
+          "chapterId": "policy",
+          "title": "策略梯度、Actor–Critic 与 PPO",
+          "path": "algorithms/policy/",
+          "why": "批内代理目标与策略更新尺度在第二册。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "policy-control",
+          "title": "策略梯度与控制",
+          "question": "优化器确实降低了损失，为什么行动仍可能变差？",
+          "path": "code/#practice-policy-control",
+          "steps": [
+            {
+              "number": 2,
+              "title": "固定一条轨迹，检查策略改进的依据"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "deep_textbook_lab.py",
+        "command": "python3 deep_textbook_lab.py test",
+        "scope": "本文件用标准库核验数值；deep_textbook_train.py 提供 DQN/PPO 小任务训练与连续控制更新核，连续控制完整教学训练见 implementations/deep/ 的独立实现。",
+        "path": "download/deep_textbook_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "gae_ppo_walkthrough.py",
+          "path": "/crl-code/tutorials/gae_ppo_walkthrough.py",
+          "section": "lesson-example",
+          "sectionTitle": "6 · 数值检验：TRPO 的步长与 PPO 的轨迹"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "deep-ppo",
+          "title": "实验 · PPO 的旧数据、多轮更新与裁剪",
+          "path": "foundations/deep/trust-region/#experiment-deep-ppo",
+          "implementationPath": "code/deep-ppo/",
+          "afterSection": "lesson-ppo"
+        }
+      ],
+      "research": []
+    },
+    {
+      "id": "study-deep-deterministic-control",
+      "path": "foundations/deep/deterministic-control/",
+      "title": "连续动作的价值优化：DDPG 与 TD3",
+      "question": "不能枚举连续动作时，如何用 critic 的梯度改进 actor？",
+      "book": "deep-rl",
+      "group": "deep-core",
+      "kind": "core",
+      "order": 4,
+      "preparation": [
+        {
+          "chapterId": "study-deep-deep-value",
+          "title": "深度价值学习：DQN、Double DQN 与目标的时间顺序",
+          "path": "foundations/deep/deep-value/",
+          "why": "掌握回放、critic标签和目标网络的更新时间。"
+        },
+        {
+          "chapterId": "study-approximation-policy-gradient",
+          "title": "策略梯度、基线与 Actor–Critic",
+          "path": "foundations/approximation/policy-gradient/",
+          "why": "理解策略参数怎样通过动作影响目标。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "study-deep-entropy-control",
+          "title": "最大熵连续控制：SAC 的价值、密度与温度",
+          "path": "foundations/deep/entropy-control/",
+          "why": "掌握连续动作的actor–critic循环。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "policy-control",
+          "title": "策略梯度与控制",
+          "question": "优化器确实降低了损失，为什么行动仍可能变差？",
+          "path": "code/#practice-policy-control",
+          "steps": [
+            {
+              "number": 3,
+              "title": "从动作概率转到连续动作"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "deep_textbook_lab.py",
+        "command": "python3 deep_textbook_lab.py test",
+        "scope": "本文件用标准库核验数值；deep_textbook_train.py 提供 DQN/PPO 小任务训练与连续控制更新核，连续控制完整教学训练见 implementations/deep/ 的独立实现。",
+        "path": "download/deep_textbook_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "continuous_control_walkthrough.py",
+          "path": "/crl-code/tutorials/continuous_control_walkthrough.py",
+          "section": "lesson-critic-error",
+          "sectionTitle": "3.1 · 预测上升，为什么真实回报反而下降？"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "deep-td3",
+          "title": "双 critic 与延迟更新，在小型控制中也可能更差",
+          "path": "foundations/deep/deterministic-control/#experiment-deep-td3",
+          "implementationPath": "code/deep-td3/",
+          "afterSection": "lesson-td3"
+        }
+      ],
+      "research": []
+    },
+    {
+      "id": "study-deep-entropy-control",
+      "path": "foundations/deep/entropy-control/",
+      "title": "最大熵连续控制：SAC 的价值、密度与温度",
+      "question": "随机 actor 不只是加噪声：熵如何进入 Bellman 方程与自动微分？",
+      "book": "deep-rl",
+      "group": "deep-core",
+      "kind": "core",
+      "order": 5,
+      "preparation": [
+        {
+          "chapterId": "study-deep-deterministic-control",
+          "title": "连续动作的价值优化：DDPG 与 TD3",
+          "path": "foundations/deep/deterministic-control/",
+          "why": "掌握连续动作的actor–critic循环。"
+        },
+        {
+          "chapterId": "study-deep-policy-gradient",
+          "title": "策略梯度：从轨迹概率到 GAE 与 actor–critic",
+          "path": "foundations/deep/policy-gradient/",
+          "why": "区分动作采样分布、策略目标与估计梯度。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "study-deep-marl-reasoning",
+          "title": "对手建模与递归推理：预测谁，回应什么？",
+          "path": "foundations/deep/multi-agent-reasoning/",
+          "why": "理解随机策略、熵和软响应。"
+        },
+        {
+          "chapterId": "soft-control",
+          "title": "最大熵控制与 Soft Actor–Critic",
+          "path": "algorithms/soft-control/",
+          "why": "完整soft目标、密度、温度与SAC循环在第二册。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "policy-control",
+          "title": "策略梯度与控制",
+          "question": "优化器确实降低了损失，为什么行动仍可能变差？",
+          "path": "code/#practice-policy-control",
+          "steps": [
+            {
+              "number": 4,
+              "title": "再改变目标，而不只是添加噪声"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "deep_textbook_lab.py",
+        "command": "python3 deep_textbook_lab.py test",
+        "scope": "本文件用标准库核验数值；deep_textbook_train.py 提供 DQN/PPO 小任务训练与连续控制更新核，连续控制完整教学训练见 implementations/deep/ 的独立实现。",
+        "path": "download/deep_textbook_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "continuous_control_walkthrough.py",
+          "path": "/crl-code/tutorials/continuous_control_walkthrough.py",
+          "section": "lesson-example",
+          "sectionTitle": "6 · soft target 与密度手算"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "deep-sac",
+          "title": "实验 · 连续 SAC 的梯度路径与真实控制结果",
+          "path": "foundations/deep/entropy-control/#experiment-deep-sac",
+          "implementationPath": "code/deep-sac/",
+          "afterSection": "lesson-algorithm"
+        }
+      ],
+      "research": []
+    },
+    {
+      "id": "study-deep-practice",
+      "path": "foundations/deep/practice/",
+      "title": "深度 RL 的机制接口：模型、记忆、离线数据与实验",
+      "question": "改变数据来源或 agent state 后，哪些推导和实现条件必须重新检查？",
+      "book": "deep-rl",
+      "group": "deep-core",
+      "kind": "core",
+      "order": 6,
+      "preparation": [
+        {
+          "chapterId": "study-deep-deep-value",
+          "title": "深度价值学习：DQN、Double DQN 与目标的时间顺序",
+          "path": "foundations/deep/deep-value/",
+          "why": "掌握采样、回放、标签和参数更新的基本循环。"
+        },
+        {
+          "chapterId": "study-deep-policy-gradient",
+          "title": "策略梯度：从轨迹概率到 GAE 与 actor–critic",
+          "path": "foundations/deep/policy-gradient/",
+          "why": "掌握rollout、优势和策略更新之间的数据关系。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "study-deep-systems",
+          "title": "大规模训练：算法与系统怎样共同设计",
+          "path": "foundations/deep/systems/",
+          "why": "先分清环境采样、推理与学习的数据接口。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "policy-control",
+          "title": "策略梯度与控制",
+          "question": "优化器确实降低了损失，为什么行动仍可能变差？",
+          "path": "code/#practice-policy-control",
+          "steps": []
+        }
+      ],
+      "executable": {
+        "file": "deep_textbook_lab.py",
+        "command": "python3 deep_textbook_lab.py test",
+        "scope": "本文件用标准库核验数值；deep_textbook_train.py 提供 DQN/PPO 小任务训练与连续控制更新核，连续控制完整教学训练见 implementations/deep/ 的独立实现。",
+        "path": "download/deep_textbook_lab.py"
+      },
+      "walkthroughs": [],
+      "results": [
+        {
+          "algorithmId": "deep-cql",
+          "title": "固定数据中的保守项：限制外推，不创造缺失证据",
+          "path": "foundations/deep/practice/#experiment-deep-cql",
+          "implementationPath": "code/deep-cql/",
+          "afterSection": "lesson-offline"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "agent-state",
+          "title": "02 · 有限的内部状态应当保留哪些历史信息？",
+          "path": "research/#research-agent-state",
+          "setting": "当前观测不能唯一决定后续结果。智能体从历史构造内部状态，但内部状态维度、计算和信用传播长度受限。环境的隐藏状态、网络活动、可学习参数以及 replay buffer 是不同对象。",
+          "bridge": "将 recurrent 活动状态与跨时间参数梯度分开，才能区分线索没有被保存和保存机制没有学会。"
+        },
+        {
+          "questionId": "plasticity",
+          "title": "13 · 为什么训练越久，学习新东西反而越慢？",
+          "path": "research/#research-plasticity",
+          "setting": "长期训练后的网络面对新的可学习目标，下降速度比新初始化更慢。需在相同数据和目标上比较 aged 与 fresh 网络，才能把优化能力下降和探索失败区分开。",
+          "bridge": "训练与评价协议中的参数、优化器和数据权限必须明确，才能比较老网络、新初始化及局部重置后是否还能学会新目标。"
+        },
+        {
+          "questionId": "measurement",
+          "title": "16 · 什么实验能区分“仍在更新”与“仍在有效学习”？",
+          "path": "research/#research-measurement",
+          "setting": "一条长曲线包含适应、探索、保留、环境变化和随机波动。训练中评估可能重置环境或暂停更新，这些操作会改变单生命期。研究需要先确定估计量与独立随机单位。",
+          "bridge": "分开训练过程、冻结评价、随机重复和计算预算，才能判断一个机制改善了哪一段学习过程。"
+        }
+      ]
+    },
+    {
+      "id": "study-deep-systems",
+      "path": "foundations/deep/systems/",
+      "title": "大规模训练：算法与系统怎样共同设计",
+      "question": "环境、推理和学习并行以后，怎样把更多计算变成更快的策略改善？",
+      "book": "deep-rl",
+      "group": "deep-core",
+      "kind": "core",
+      "order": 6.5,
+      "preparation": [
+        {
+          "chapterId": "study-deep-practice",
+          "title": "深度 RL 的机制接口：模型、记忆、离线数据与实验",
+          "path": "foundations/deep/practice/",
+          "why": "先分清环境采样、推理与学习的数据接口。"
+        },
+        {
+          "chapterId": "study-approximation-off-policy",
+          "title": "离策略函数逼近：覆盖、发散与稳定更新",
+          "path": "foundations/approximation/off-policy/",
+          "why": "理解异步采样导致的行为策略与当前策略差异。"
+        }
+      ],
+      "usedBy": [],
+      "practice": [
+        {
+          "id": "prediction",
+          "title": "预测与控制",
+          "question": "学会预测更多事情，什么时候会改变行动？",
+          "path": "code/#practice-prediction",
+          "steps": [
+            {
+              "number": 6,
+              "title": "再检查深度控制的标签与梯度"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "distributed_systems_lab.py",
+        "command": "python3 distributed_systems_lab.py test\npython3 distributed_systems_lab.py demo",
+        "scope": "标准库精确核验：V-trace、队列年龄与分片概率。不启动训练，也不测量真实集群性能。",
+        "path": "download/distributed_systems_lab.py"
+      },
+      "walkthroughs": [],
+      "results": [],
+      "research": [
+        {
+          "questionId": "integrated-architecture",
+          "title": "15 · 状态、知识、技能与规划怎样共同构成持续智能体？",
+          "path": "research/#research-integrated-architecture",
+          "setting": "完整 agent 同时更新状态、预测、控制、技能与模型。每个局部学习器看到的输入和目标都可能被其他模块改变。整体表现还受内存、计算分配和数据获取限制。",
+          "bridge": "行为、学习与参数版本各有时间顺序；检查这些接口后，才能研究多个持续更新的模块能否协同改善行为。"
+        }
+      ]
+    },
+    {
+      "id": "study-deep-partial-observability",
+      "path": "foundations/deep/partial-observability/",
+      "title": "不完全可观测：信念状态、信息行动与递归记忆",
+      "question": "当前观察不能决定未来时，智能体应记住什么，信息又如何影响行动？",
+      "book": "deep-rl",
+      "group": "deep-branches",
+      "kind": "branch",
+      "order": 7,
+      "preparation": [
+        {
+          "chapterId": "study-tabular-mdps",
+          "title": "MDP、回报与价值：序列决策的数学对象",
+          "path": "foundations/tabular/mdps/",
+          "why": "区分状态与当前观测，理解Markov条件。"
+        },
+        {
+          "chapterId": "study-approximation-prediction",
+          "title": "函数逼近预测：从回归到 TD 固定点",
+          "path": "foundations/approximation/prediction/",
+          "why": "理解参数化预测及其误差，再引入递归活动。"
+        }
+      ],
+      "usedBy": [],
+      "practice": [
+        {
+          "id": "action-evidence",
+          "title": "行动与经验",
+          "question": "行动决定了能得到哪些证据。学习又怎样改变下一次行动？",
+          "path": "code/#practice-action-evidence",
+          "steps": [
+            {
+              "number": 5,
+              "title": "重放经验时，先重建决策所需的记忆"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "extended_foundations_lab.py",
+        "command": "python3 extended_foundations_lab.py test",
+        "scope": "标准库解析机制实验；不包含完整神经网络训练或大型 benchmark。",
+        "path": "download/extended_foundations_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "belief-planning-walkthrough.py",
+          "path": "/crl-code/tutorials/belief-planning-walkthrough.py",
+          "section": "lesson-code",
+          "sectionTitle": "7 · 可运行 filter 与信息价值"
+        },
+        {
+          "file": "recurrent-replay-walkthrough.py",
+          "path": "/crl-code/tutorials/recurrent-replay-walkthrough.py",
+          "section": "lesson-code",
+          "sectionTitle": "7 · 可运行 filter 与信息价值"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "extended-bayes_filter",
+          "title": "实验 · 一次错误观测，应当推翻过去的全部证据吗？",
+          "path": "foundations/deep/partial-observability/#experiment-extended-bayes_filter",
+          "implementationPath": "code/extended-bayes_filter/",
+          "afterSection": "lesson-information"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "agent-state",
+          "title": "02 · 有限的内部状态应当保留哪些历史信息？",
+          "path": "research/#research-agent-state",
+          "setting": "当前观测不能唯一决定后续结果。智能体从历史构造内部状态，但内部状态维度、计算和信用传播长度受限。环境的隐藏状态、网络活动、可学习参数以及 replay buffer 是不同对象。",
+          "bridge": "精确信念更新与信息行动提供可检查的参照，进而可以辨认有限递归状态丢失的是哪项决策信息。"
+        }
+      ]
+    },
+    {
+      "id": "study-deep-exploration",
+      "path": "foundations/deep/exploration/",
+      "title": "探索与不确定性：后验、乐观估计和时间一致行动",
+      "question": "为什么每一步都随机，并不等于有效获取长期有用的信息？",
+      "book": "deep-rl",
+      "group": "deep-branches",
+      "kind": "branch",
+      "order": 8,
+      "preparation": [
+        {
+          "chapterId": "study-tabular-bandits",
+          "title": "多臂老虎机：估计、探索与直接策略学习",
+          "path": "foundations/tabular/bandits/",
+          "why": "区分价值估计、乐观选择与直接策略更新。"
+        },
+        {
+          "chapterId": "study-deep-deep-value",
+          "title": "深度价值学习：DQN、Double DQN 与目标的时间顺序",
+          "path": "foundations/deep/deep-value/",
+          "why": "理解价值网络的数据来源和自举目标。"
+        }
+      ],
+      "usedBy": [],
+      "practice": [
+        {
+          "id": "action-evidence",
+          "title": "行动与经验",
+          "question": "行动决定了能得到哪些证据。学习又怎样改变下一次行动？",
+          "path": "code/#practice-action-evidence",
+          "steps": [
+            {
+              "number": 4,
+              "title": "给探索决策足够的持续时间"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "extended_foundations_lab.py",
+        "command": "python3 extended_foundations_lab.py test",
+        "scope": "标准库解析机制实验；不包含完整神经网络训练或大型 benchmark。",
+        "path": "download/extended_foundations_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "deep-exploration-walkthrough.py",
+          "path": "/crl-code/tutorials/deep-exploration-walkthrough.py",
+          "section": "deep-exploration-task",
+          "sectionTitle": "6.1 · 把远端信息接到一个未知奖励模型"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "count_bonus",
+          "title": "实验 · 新奇奖励可以暂时偏离原任务",
+          "path": "foundations/deep/exploration/#experiment-count_bonus",
+          "implementationPath": "code/count_bonus/",
+          "afterSection": "lesson-bonus"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "useful-options",
+          "title": "08 · 什么样的时间抽象值得加入技能库？",
+          "path": "research/#research-useful-options",
+          "setting": "Option 具有启动条件、内部策略与终止规则。技能发现还要决定哪些 option 值得占用容量。探索覆盖、执行效率、信用压缩和规划价值是不同用途，不能仅凭技能数量或轨迹图判断。",
+          "bridge": "时间一致探索解释了长行为的一种用途，同时要求把覆盖改善与技能自身的执行成功率分别评价。"
+        },
+        {
+          "questionId": "goal-construction",
+          "title": "09 · 子目标从哪里来，为什么学习它能帮助总体任务？",
+          "path": "research/#research-goal-construction",
+          "setting": "总体任务奖励已经给定。智能体还可以选择中间状态、预测目标、技能描述或训练课程。定义目标、学习目标条件策略、选择当前目标是三层计算，不应都称为“目标发现”。",
+          "bridge": "内在奖励与学习进展改变智能体练习什么；研究目标构造时，还需检查这种练习是否改善后续外部任务。"
+        },
+        {
+          "questionId": "experience-selection",
+          "title": "14 · 应当探索什么、练习什么，以及如何保留未来交互与学习的机会？",
+          "path": "research/#research-experience-selection",
+          "setting": "智能体的行为决定未来数据。新奇、可学习性、学习进展和任务收益并不一致。课程 teacher 能否选目标、改环境或重置，也会从根本上改变问题。",
+          "bridge": "环境噪声与知识不足会产生不同的信息价值，时间一致探索进一步检验哪些经验值得为之连续行动。"
+        }
+      ]
+    },
+    {
+      "id": "study-deep-distributional",
+      "path": "foundations/deep/distributional/",
+      "title": "分布强化学习：Bellman 分布、分位数与风险目标",
+      "question": "学习完整回报分布，与学习均值、评估风险和估计知识不确定性分别有什么关系？",
+      "book": "deep-rl",
+      "group": "deep-branches",
+      "kind": "branch",
+      "order": 9,
+      "preparation": [
+        {
+          "chapterId": "study-deep-deep-value",
+          "title": "深度价值学习：DQN、Double DQN 与目标的时间顺序",
+          "path": "foundations/deep/deep-value/",
+          "why": "先掌握期望价值的Bellman目标，再学习回报分布。"
+        }
+      ],
+      "usedBy": [],
+      "practice": [
+        {
+          "id": "prediction",
+          "title": "预测与控制",
+          "question": "学会预测更多事情，什么时候会改变行动？",
+          "path": "code/#practice-prediction",
+          "steps": [
+            {
+              "number": 7,
+              "title": "把均值扩成分布，再决定怎样使用"
+            },
+            {
+              "number": 8,
+              "title": "最后撤掉各预测独立存储的条件"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "extended_foundations_lab.py",
+        "command": "python3 extended_foundations_lab.py test",
+        "scope": "标准库解析机制实验；不包含完整神经网络训练或大型 benchmark。",
+        "path": "download/extended_foundations_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "distributional-walkthrough.py",
+          "path": "/crl-code/tutorials/distributional-walkthrough.py",
+          "section": "lesson-setting",
+          "sectionTitle": "1 · 同一均值可以来自不同的回报分布"
+        },
+        {
+          "file": "quantile-walkthrough.py",
+          "path": "/crl-code/tutorials/quantile-walkthrough.py",
+          "section": "lesson-quantiles",
+          "sectionTitle": "4 · 分位数回归与均值决策"
+        },
+        {
+          "file": "neural-distribution-walkthrough.py",
+          "path": "/crl-code/tutorials/neural-distribution-walkthrough.py",
+          "section": "lesson-neural-shared",
+          "sectionTitle": "共享网络：一个输入的下降怎样影响另一个输入"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "deep-c51",
+          "title": "学习回报分布，与按均值选动作是两件事",
+          "path": "foundations/deep/distributional/#experiment-deep-c51",
+          "implementationPath": "code/deep-c51/",
+          "afterSection": "lesson-derive"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "reusable-models",
+          "title": "10 · 模型需要预测什么，才能在变化后继续支持决策？",
+          "path": "research/#research-reusable-models",
+          "setting": "模型用于预测动作或 option 的后果，而不是仅重建观测。状态表示、策略和环境可以分别改变。模型误差必须相对于它将被使用的 backup 或决策定义。",
+          "bridge": "相同回报均值可以对应不同的分布和风险排序，说明只预测平均后果何时不足以支持下游决策。"
+        }
+      ]
+    },
+    {
+      "id": "study-deep-offline",
+      "path": "foundations/deep/offline/",
+      "title": "离线强化学习：数据支持、策略评估与保守改进",
+      "question": "不能补采数据时，怎样判断策略好坏，怎样避免利用没有证据的高价值动作？",
+      "book": "deep-rl",
+      "group": "deep-branches",
+      "kind": "branch",
+      "order": 10,
+      "preparation": [
+        {
+          "chapterId": "study-approximation-off-policy",
+          "title": "离策略函数逼近：覆盖、发散与稳定更新",
+          "path": "foundations/approximation/off-policy/",
+          "why": "理解支持、采样分布与离策略估计。"
+        },
+        {
+          "chapterId": "study-deep-deep-value",
+          "title": "深度价值学习：DQN、Double DQN 与目标的时间顺序",
+          "path": "foundations/deep/deep-value/",
+          "why": "理解函数逼近怎样给未见动作产生估计。"
+        }
+      ],
+      "usedBy": [],
+      "practice": [],
+      "executable": {
+        "file": "extended_foundations_lab.py",
+        "command": "python3 extended_foundations_lab.py test",
+        "scope": "标准库解析机制实验；不包含完整神经网络训练或大型 benchmark。",
+        "path": "download/extended_foundations_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "offline_support_walkthrough.py",
+          "path": "/crl-code/tutorials/offline_support_walkthrough.py",
+          "section": "lesson-code",
+          "sectionTitle": "8 · 估计器与目标函数的可执行核"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "deep-cql",
+          "title": "固定数据中的保守项：限制外推，不创造缺失证据",
+          "path": "foundations/deep/offline/#experiment-deep-cql",
+          "implementationPath": "code/deep-cql/",
+          "afterSection": "lesson-cql"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "retention-transfer",
+          "title": "12 · 怎样保留旧能力，而不把过时知识强加给新任务？",
+          "path": "research/#research-retention-transfer",
+          "setting": "学习分布变化后，旧任务能力可能下降。保存旧轨迹、生成旧经验、保持旧策略或分配独立模块都可以减少遗忘，但也可能减慢适应。任务边界和回访权限决定哪些方法可用。",
+          "bridge": "保留旧经验并不补齐新行为的数据支持，因而复用旧数据时还要检查价值外推和独立策略评价。"
+        },
+        {
+          "questionId": "measurement",
+          "title": "16 · 什么实验能区分“仍在更新”与“仍在有效学习”？",
+          "path": "research/#research-measurement",
+          "setting": "一条长曲线包含适应、探索、保留、环境变化和随机波动。训练中评估可能重置环境或暂停更新，这些操作会改变单生命期。研究需要先确定估计量与独立随机单位。",
+          "bridge": "策略学习、超参数选择和独立离线评价使用不同数据角色，避免把用于选择的方法再次当作独立验证。"
+        }
+      ]
+    },
+    {
+      "id": "study-deep-model-based",
+      "path": "foundations/deep/model-based/",
+      "title": "模型学习与规划：MPC、短模型 rollout 和潜在想象",
+      "question": "模型在哪里进入决策，预测误差又怎样变成控制误差？",
+      "book": "deep-rl",
+      "group": "deep-branches",
+      "kind": "branch",
+      "order": 11,
+      "preparation": [
+        {
+          "chapterId": "study-tabular-planning",
+          "title": "学习与规划：Dyna、优先扫描和执行时搜索",
+          "path": "foundations/tabular/planning/",
+          "why": "理解模型查询、备份与真实交互的区别。"
+        },
+        {
+          "chapterId": "study-deep-deep-value",
+          "title": "深度价值学习：DQN、Double DQN 与目标的时间顺序",
+          "path": "foundations/deep/deep-value/",
+          "why": "掌握可学习表示、价值尾项与目标版本。"
+        }
+      ],
+      "usedBy": [],
+      "practice": [],
+      "executable": {
+        "file": "extended_foundations_lab.py",
+        "command": "python3 extended_foundations_lab.py test",
+        "scope": "标准库解析机制实验；不包含完整神经网络训练或大型 benchmark。",
+        "path": "download/extended_foundations_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "belief-planning-walkthrough.py",
+          "path": "/crl-code/tutorials/belief-planning-walkthrough.py",
+          "section": "lesson-code",
+          "sectionTitle": "8 · 学模型、枚举规划与想象回报核"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "learned_model_mpc",
+          "title": "只执行计划的第一步：短视与有限时域规划",
+          "path": "foundations/deep/model-based/#experiment-learned_model_mpc",
+          "implementationPath": "code/learned_model_mpc/",
+          "afterSection": "lesson-error"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "reusable-models",
+          "title": "10 · 模型需要预测什么，才能在变化后继续支持决策？",
+          "path": "research/#research-reusable-models",
+          "setting": "模型用于预测动作或 option 的后果，而不是仅重建观测。状态表示、策略和环境可以分别改变。模型误差必须相对于它将被使用的 backup 或决策定义。",
+          "bridge": "模型误差经过 rollout 和末端价值进入动作选择，因而模型应保留什么信息取决于它的决策消费者。"
+        },
+        {
+          "questionId": "planning-budget",
+          "title": "11 · 什么时候值得规划，应该把计算花在哪里？",
+          "path": "research/#research-planning-budget",
+          "setting": "规划用已学模型进行额外计算。真实交互、模型更新、搜索和想象训练共享有限预算。问题不是简单地增加规划步数，而是选择何时、何处、以什么时间尺度使用模型。",
+          "bridge": "MPC、短模型 rollout 与潜在想象在不同阶段使用模型，比较规划预算时需同时记录模型误差与真实交互成本。"
+        }
+      ]
+    },
+    {
+      "id": "study-deep-constraints",
+      "path": "foundations/deep/constraints/",
+      "title": "约束强化学习：占据测度、拉格朗日与可行策略",
+      "question": "“回报高且代价不超过预算”与“每一步都安全”之间差了哪些条件？",
+      "book": "deep-rl",
+      "group": "deep-branches",
+      "kind": "branch",
+      "order": 12,
+      "preparation": [
+        {
+          "chapterId": "study-tabular-mdps",
+          "title": "MDP、回报与价值：序列决策的数学对象",
+          "path": "foundations/tabular/mdps/",
+          "why": "明确回报与访问分布。"
+        },
+        {
+          "chapterId": "study-deep-policy-gradient",
+          "title": "策略梯度：从轨迹概率到 GAE 与 actor–critic",
+          "path": "foundations/deep/policy-gradient/",
+          "why": "理解策略参数改变回报的梯度，再引入成本和乘子。"
+        }
+      ],
+      "usedBy": [],
+      "practice": [],
+      "executable": {
+        "file": "extended_foundations_lab.py",
+        "command": "python3 extended_foundations_lab.py test",
+        "scope": "标准库解析机制实验；不包含完整神经网络训练或大型 benchmark。",
+        "path": "download/extended_foundations_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "constraint-control-walkthrough.py",
+          "path": "/crl-code/tutorials/constraint-control-walkthrough.py",
+          "section": "lesson-code",
+          "sectionTitle": "8 · 占据流、解析混合与 primal–dual 核"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "cmdp_primal_dual",
+          "title": "奖励提高，不代表满足成本约束",
+          "path": "foundations/deep/constraints/#experiment-cmdp_primal_dual",
+          "implementationPath": "code/cmdp_primal_dual/",
+          "afterSection": "lesson-dual"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "reward-design",
+          "title": "奖励表示与奖励学习：目标怎样进入智能体？",
+          "path": "research/#research-reward-design",
+          "setting": "设计者拥有偏好，智能体只能接收有限观测和奖励。奖励可能手写，也可能由人的比较或示范推断。必须分开目标变化、奖励估计变化与环境变化。",
+          "bridge": "将回报目标与成本可行性分开，才能判断改变奖励是在表达偏好，还是只用惩罚近似另一项约束。"
+        },
+        {
+          "questionId": "experience-selection",
+          "title": "14 · 应当探索什么、练习什么，以及如何保留未来交互与学习的机会？",
+          "path": "research/#research-experience-selection",
+          "setting": "智能体的行为决定未来数据。新奇、可学习性、学习进展和任务收益并不一致。课程 teacher 能否选目标、改环境或重置，也会从根本上改变问题。",
+          "bridge": "平均成本约束不等于逐步安全或长期可恢复性，选择探索经验时需要分别规定这些未来交互条件。"
+        }
+      ]
+    },
+    {
+      "id": "study-deep-multi-agent",
+      "path": "foundations/deep/multi-agent/",
+      "title": "多智能体合作：结构化探索与信用分配",
+      "question": "团队共享一个奖励时，怎样从联合经验中学习可执行的协作策略，并正确处理同伴更新？",
+      "book": "deep-rl",
+      "group": "deep-branches",
+      "kind": "branch",
+      "order": 13,
+      "preparation": [
+        {
+          "chapterId": "study-deep-deep-value",
+          "title": "深度价值学习：DQN、Double DQN 与目标的时间顺序",
+          "path": "foundations/deep/deep-value/",
+          "why": "掌握动作价值与自举。"
+        },
+        {
+          "chapterId": "study-deep-trust-region",
+          "title": "策略更新的尺度：TRPO 与 PPO",
+          "path": "foundations/deep/trust-region/",
+          "why": "理解联合更新前的采样策略与优势估计。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "study-deep-marl-populations",
+          "title": "自对弈与开放式多智能体学习：评估、目标与策略种群",
+          "path": "foundations/deep/multi-agent-populations/",
+          "why": "区分联合策略、局部信息与集中训练，再研究对手和伙伴分布。"
+        },
+        {
+          "chapterId": "study-deep-marl-reasoning",
+          "title": "对手建模与递归推理：预测谁，回应什么？",
+          "path": "foundations/deep/multi-agent-reasoning/",
+          "why": "明确他人的策略怎样进入自己的决策问题。"
+        }
+      ],
+      "practice": [],
+      "executable": {
+        "file": "marl_objectives_lab.py",
+        "command": "python3 marl_objectives_lab.py test\npython3 marl_objectives_lab.py demo --out results/marl-objectives",
+        "scope": "标准库枚举的协调探索概率、反事实梯度方差与顺序更新机制实验；精确计算不是神经训练曲线，也不是完整论文复现。",
+        "path": "download/marl_objectives_lab.py"
+      },
+      "walkthroughs": [],
+      "results": [
+        {
+          "algorithmId": "qmix_cooperative",
+          "title": "集中训练的价值，能否支持分散选动作",
+          "path": "foundations/deep/multi-agent/#experiment-qmix_cooperative",
+          "implementationPath": "code/qmix_cooperative/",
+          "afterSection": "lesson-factorization"
+        }
+      ],
+      "research": []
+    },
+    {
+      "id": "study-deep-marl-populations",
+      "path": "foundations/deep/multi-agent-populations/",
+      "title": "自对弈与开放式多智能体学习：评估、目标与策略种群",
+      "question": "自对弈怎样产生课程和训练标签，又怎样通过历史保留、交互评价与策略种群发现值得继续学习的问题？",
+      "book": "deep-rl",
+      "group": "deep-branches",
+      "kind": "branch",
+      "order": 15,
+      "preparation": [
+        {
+          "chapterId": "study-deep-multi-agent",
+          "title": "多智能体合作：结构化探索与信用分配",
+          "path": "foundations/deep/multi-agent/",
+          "why": "区分联合策略、局部信息与集中训练，再研究对手和伙伴分布。"
+        }
+      ],
+      "usedBy": [],
+      "practice": [],
+      "executable": {
+        "file": "marl_objectives_lab.py",
+        "command": "python3 marl_objectives_lab.py test",
+        "scope": "精确有限游戏的评价与学习目标诊断；不是神经 PSRO、COLE 或 HOLA 的论文性能复现。",
+        "path": "download/marl_objectives_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "selfplay_search_labels.py",
+          "path": "/crl-code/tutorials/selfplay_search_labels.py",
+          "section": "lesson-code",
+          "sectionTitle": "8 · 算例与原始工程：从标签到种群评价"
+        }
+      ],
+      "results": [],
+      "research": []
+    },
+    {
+      "id": "study-deep-marl-reasoning",
+      "path": "foundations/deep/multi-agent-reasoning/",
+      "title": "对手建模与递归推理：预测谁，回应什么？",
+      "question": "给定参与者和评价目标，怎样利用行为预测、条件响应与有限递归改善决策，并检验模型是否可信？",
+      "book": "deep-rl",
+      "group": "deep-branches",
+      "kind": "branch",
+      "order": 16,
+      "preparation": [
+        {
+          "chapterId": "study-deep-multi-agent",
+          "title": "多智能体合作：结构化探索与信用分配",
+          "path": "foundations/deep/multi-agent/",
+          "why": "明确他人的策略怎样进入自己的决策问题。"
+        },
+        {
+          "chapterId": "study-deep-entropy-control",
+          "title": "最大熵连续控制：SAC 的价值、密度与温度",
+          "path": "foundations/deep/entropy-control/",
+          "why": "理解随机策略、熵和软响应。"
+        }
+      ],
+      "usedBy": [],
+      "practice": [],
+      "executable": {
+        "file": "marl_objectives_lab.py",
+        "command": "python3 marl_objectives_lab.py test",
+        "scope": "下载本页配套脚本后运行精确条件评分检查；本页另附软响应梯度的独立代码。均不是 PR2/GR2 神经训练。",
+        "path": "download/marl_objectives_lab.py"
+      },
+      "walkthroughs": [],
+      "results": [],
+      "research": []
+    },
+    {
+      "id": "objectives",
+      "path": "foundations/objectives/",
+      "title": "强化学习问题的形式化：交互、目标与持续学习",
+      "question": "一个长期运行的智能体应当优化什么？这个选择怎样影响状态、价值函数、学习算法和评价？",
+      "book": "continual-rl",
+      "group": "lifetime",
+      "kind": "core",
+      "order": 0,
+      "preparation": [
+        {
+          "chapterId": "study-tabular-mdps",
+          "title": "MDP、回报与价值：序列决策的数学对象",
+          "path": "foundations/tabular/mdps/",
+          "why": "明确交互、回报和策略价值，再把比较对象扩展为持续更新的学习器。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "reward-design",
+          "title": "奖励假设与奖励设计",
+          "path": "foundations/reward-design/",
+          "why": "先确定比较行为与学习过程的准则，再问奖励怎样表达这一目标。"
+        },
+        {
+          "chapterId": "control",
+          "title": "持续控制：比较策略与学习智能体",
+          "path": "algorithms/control/",
+          "why": "区分固定策略的表现与整个学习过程的收益。"
+        },
+        {
+          "chapterId": "state",
+          "title": "Agent state：部分可观测性、递归记忆与在线信用分配",
+          "path": "construction/state/",
+          "why": "明确智能体收到的历史，以及评价持续学习过程的范围。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "policy-control",
+          "title": "策略梯度与控制",
+          "question": "优化器确实降低了损失，为什么行动仍可能变差？",
+          "path": "code/#practice-policy-control",
+          "steps": [
+            {
+              "number": 6,
+              "title": "把评价对象扩展到完整学习过程"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "objectives_lab.py",
+        "command": "python3 objectives_lab.py all",
+        "scope": "标准库解析实验：周期策略偏好、随机停止、终止与截断、势函数塑形、在线与冻结评价。",
+        "path": "download/objectives_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "lifetime_evaluation_walkthrough.py",
+          "path": "/crl-code/tutorials/lifetime_evaluation_walkthrough.py",
+          "section": "lesson-noisy-lifetime",
+          "sectionTitle": "9.2 奖励带噪声时，哪一个学习器更好？"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "potential_shaping",
+          "title": "实验 · 保持最优策略，不等于保持学习轨迹",
+          "path": "foundations/objectives/#experiment-potential_shaping",
+          "implementationPath": "code/potential_shaping/",
+          "afterSection": "lesson-shaping"
+        },
+        {
+          "algorithmId": "bandit_constant_step",
+          "title": "实验 · 把探索期间的代价计入评价",
+          "path": "foundations/objectives/#experiment-bandit_constant_step",
+          "implementationPath": "code/bandit_constant_step/",
+          "afterSection": "lesson-lifetime"
+        },
+        {
+          "algorithmId": "learner_control_online",
+          "title": "实验 · 评价完整学习过程，而不是重置后的最终策略",
+          "path": "foundations/objectives/#experiment-learner_control_online",
+          "implementationPath": "code/learner_control_online/",
+          "afterSection": "lesson-lifetime"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "reward-design",
+          "title": "奖励表示与奖励学习：目标怎样进入智能体？",
+          "path": "research/#research-reward-design",
+          "setting": "设计者拥有偏好，智能体只能接收有限观测和奖励。奖励可能手写，也可能由人的比较或示范推断。必须分开目标变化、奖励估计变化与环境变化。",
+          "bridge": "设计者拥有偏好，智能体只能接收有限观测和奖励。奖励可能手写，也可能由人的比较或示范推断。必须分开目标变化、奖励估计变化与环境变化。"
+        },
+        {
+          "questionId": "lifetime-objective",
+          "title": "01 · 什么目标能够评价一个始终在学习的智能体？",
+          "path": "research/#research-lifetime-objective",
+          "setting": "智能体只有有限存储和每步计算时间。学习改变其后续行为，环境可能持续而不终止，也可能存在成本不为零的重置。比较前需规定奖励、时间单位、评价时域和可用干预。平稳环境仍可能对有限资源智能体提出长期学习需求。",
+          "bridge": "智能体只有有限存储和每步计算时间。学习改变其后续行为，环境可能持续而不终止，也可能存在成本不为零的重置。比较前需规定奖励、时间单位、评价时域和可用干预。平稳环境仍可能对有限资源智能体提出长期学习需求。"
+        },
+        {
+          "questionId": "goal-construction",
+          "title": "09 · 子目标从哪里来，为什么学习它能帮助总体任务？",
+          "path": "research/#research-goal-construction",
+          "setting": "总体任务奖励已经给定。智能体还可以选择中间状态、预测目标、技能描述或训练课程。定义目标、学习目标条件策略、选择当前目标是三层计算，不应都称为“目标发现”。",
+          "bridge": "总体任务奖励已经给定。智能体还可以选择中间状态、预测目标、技能描述或训练课程。定义目标、学习目标条件策略、选择当前目标是三层计算，不应都称为“目标发现”。"
+        },
+        {
+          "questionId": "experience-selection",
+          "title": "14 · 应当探索什么、练习什么，以及如何保留未来交互与学习的机会？",
+          "path": "research/#research-experience-selection",
+          "setting": "智能体的行为决定未来数据。新奇、可学习性、学习进展和任务收益并不一致。课程 teacher 能否选目标、改环境或重置，也会从根本上改变问题。",
+          "bridge": "智能体的行为决定未来数据。新奇、可学习性、学习进展和任务收益并不一致。课程 teacher 能否选目标、改环境或重置，也会从根本上改变问题。"
+        },
+        {
+          "questionId": "measurement",
+          "title": "16 · 什么实验能区分“仍在更新”与“仍在有效学习”？",
+          "path": "research/#research-measurement",
+          "setting": "一条长曲线包含适应、探索、保留、环境变化和随机波动。训练中评估可能重置环境或暂停更新，这些操作会改变单生命期。研究需要先确定估计量与独立随机单位。",
+          "bridge": "一条长曲线包含适应、探索、保留、环境变化和随机波动。训练中评估可能重置环境或暂停更新，这些操作会改变单生命期。研究需要先确定估计量与独立随机单位。"
+        }
+      ]
+    },
+    {
+      "id": "reward-design",
+      "path": "foundations/reward-design/",
+      "title": "奖励假设与奖励设计",
+      "question": "什么样的目标可以表示为奖励？智能体学会最大化奖励，是否就实现了设计者的意图？",
+      "book": "continual-rl",
+      "group": "lifetime",
+      "kind": "core",
+      "order": 1,
+      "preparation": [
+        {
+          "chapterId": "objectives",
+          "title": "强化学习问题的形式化：交互、目标与持续学习",
+          "path": "foundations/objectives/",
+          "why": "先确定比较行为与学习过程的准则，再问奖励怎样表达这一目标。"
+        }
+      ],
+      "usedBy": [],
+      "practice": [
+        {
+          "id": "policy-control",
+          "title": "策略梯度与控制",
+          "question": "优化器确实降低了损失，为什么行动仍可能变差？",
+          "path": "code/#practice-policy-control",
+          "steps": [
+            {
+              "number": 1,
+              "title": "先检查正在改善哪个目标"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "reward_design_lab.py",
+        "command": "python3 reward_design_lab.py demo\npython3 reward_design_lab.py test",
+        "scope": "原创建模反例、望远镜求和、偏好与 MaxEnt 梯度、单步约束优化。不是大规模算法复现。",
+        "path": "download/reward_design_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "reward-design-walkthrough.py",
+          "path": "/crl-code/tutorials/reward-design-walkthrough.py",
+          "section": "lesson-code",
+          "sectionTitle": "13. 运行、阅读原始代码与选择基准"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "potential_shaping",
+          "title": "实验 · 势差奖励的保证与短预算失败",
+          "path": "foundations/reward-design/#experiment-potential_shaping",
+          "implementationPath": "code/potential_shaping/",
+          "afterSection": "lesson-derive"
+        },
+        {
+          "algorithmId": "preference_reward",
+          "title": "实验 · 从有噪声的片段比较学习奖励",
+          "path": "foundations/reward-design/#experiment-preference_reward",
+          "implementationPath": "code/preference_reward/",
+          "afterSection": "lesson-preference"
+        },
+        {
+          "algorithmId": "maxent_irl",
+          "title": "实验 · 全轨迹配分函数与示范特征匹配",
+          "path": "foundations/reward-design/#experiment-maxent_irl",
+          "implementationPath": "code/maxent_irl/",
+          "afterSection": "lesson-irl"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "reward-design",
+          "title": "奖励表示与奖励学习：目标怎样进入智能体？",
+          "path": "research/#research-reward-design",
+          "setting": "设计者拥有偏好，智能体只能接收有限观测和奖励。奖励可能手写，也可能由人的比较或示范推断。必须分开目标变化、奖励估计变化与环境变化。",
+          "bridge": "设计者拥有偏好，智能体只能接收有限观测和奖励。奖励可能手写，也可能由人的比较或示范推断。必须分开目标变化、奖励估计变化与环境变化。"
+        }
+      ]
+    },
+    {
+      "id": "control",
+      "path": "algorithms/control/",
+      "title": "持续控制：比较策略与学习智能体",
+      "question": "一个智能体当前做得好，不代表它以后仍能学得好。持续控制要评价完整的行动—学习过程：行动改变世界和数据，学习改变后续行动，有限记忆与计算又限制了这个过程。本章从这些依赖出发，定义可以比较的对象，并用可解析反例检验不同评价标准。",
+      "book": "continual-rl",
+      "group": "lifetime",
+      "kind": "core",
+      "order": 2,
+      "preparation": [
+        {
+          "chapterId": "objectives",
+          "title": "强化学习问题的形式化：交互、目标与持续学习",
+          "path": "foundations/objectives/",
+          "why": "区分固定策略的表现与整个学习过程的收益。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "average",
+          "title": "平均奖励：奖励率、差分价值与持续控制",
+          "path": "algorithms/average-reward/",
+          "why": "明确在相同资源和交互条件下比较什么。"
+        },
+        {
+          "chapterId": "retention",
+          "title": "知识保留：经验重放、参数约束与模型记忆",
+          "path": "algorithms/retention/",
+          "why": "区分旧任务诊断与生命期收益。"
+        },
+        {
+          "chapterId": "planning",
+          "title": "规划：把模型中的经验转成更好的决策",
+          "path": "construction/planning/",
+          "why": "把计算成本和实际行动放回同一评价问题。"
+        },
+        {
+          "chapterId": "exploration",
+          "title": "持续探索：新奇、不确定性、学习进展与恢复",
+          "path": "algorithms/exploration/",
+          "why": "将试探的收益和成本计入真实交互。"
+        },
+        {
+          "chapterId": "experiments",
+          "title": "实验设计：从更新正确到持续学习证据",
+          "path": "experiments/",
+          "why": "先规定要比较的完整学习器与目标。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "policy-control",
+          "title": "策略梯度与控制",
+          "question": "优化器确实降低了损失，为什么行动仍可能变差？",
+          "path": "code/#practice-policy-control",
+          "steps": [
+            {
+              "number": 6,
+              "title": "把评价对象扩展到完整学习过程"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "continual_control_lab.py",
+        "command": "python3 continual_control_lab.py demo\npython3 continual_control_lab.py test",
+        "scope": "Python 3.10+，仅标准库。五组可解析持续控制反例、轨迹重要性采样、精确枚举与 29 个测试；教学模型不是论文 benchmark 或大规模性能复现。",
+        "path": "download/continual_control_lab.py"
+      },
+      "walkthroughs": [],
+      "results": [
+        {
+          "algorithmId": "learner_control_online",
+          "title": "实验 · 同一检查点后继续学习，还是仅保留活动记忆",
+          "path": "algorithms/control/#experiment-learner_control_online",
+          "implementationPath": "code/learner_control_online/",
+          "afterSection": "control-learning-potential"
+        },
+        {
+          "algorithmId": "bandit_constant_step",
+          "title": "实验 · 相同初始行动分布，不同学习规则",
+          "path": "algorithms/control/#experiment-bandit_constant_step",
+          "implementationPath": "code/bandit_constant_step/",
+          "afterSection": "control-learning-potential"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "reward-design",
+          "title": "奖励表示与奖励学习：目标怎样进入智能体？",
+          "path": "research/#research-reward-design",
+          "setting": "设计者拥有偏好，智能体只能接收有限观测和奖励。奖励可能手写，也可能由人的比较或示范推断。必须分开目标变化、奖励估计变化与环境变化。",
+          "bridge": "设计者拥有偏好，智能体只能接收有限观测和奖励。奖励可能手写，也可能由人的比较或示范推断。必须分开目标变化、奖励估计变化与环境变化。"
+        },
+        {
+          "questionId": "lifetime-objective",
+          "title": "01 · 什么目标能够评价一个始终在学习的智能体？",
+          "path": "research/#research-lifetime-objective",
+          "setting": "智能体只有有限存储和每步计算时间。学习改变其后续行为，环境可能持续而不终止，也可能存在成本不为零的重置。比较前需规定奖励、时间单位、评价时域和可用干预。平稳环境仍可能对有限资源智能体提出长期学习需求。",
+          "bridge": "智能体只有有限存储和每步计算时间。学习改变其后续行为，环境可能持续而不终止，也可能存在成本不为零的重置。比较前需规定奖励、时间单位、评价时域和可用干预。平稳环境仍可能对有限资源智能体提出长期学习需求。"
+        },
+        {
+          "questionId": "continual-control",
+          "title": "04 · 旧价值什么时候应该复用，什么时候应该快速改写？",
+          "path": "research/#research-continual-control",
+          "setting": "策略改善不断改变数据分布。奖励或动力学还可能发生外部变化。一个旧价值函数既可能提供知识，也可能阻碍适应；仅靠最终价值误差不能判断控制失败的原因。",
+          "bridge": "策略改善不断改变数据分布。奖励或动力学还可能发生外部变化。一个旧价值函数既可能提供知识，也可能阻碍适应；仅靠最终价值误差不能判断控制失败的原因。"
+        },
+        {
+          "questionId": "retention-transfer",
+          "title": "12 · 怎样保留旧能力，而不把过时知识强加给新任务？",
+          "path": "research/#research-retention-transfer",
+          "setting": "学习分布变化后，旧任务能力可能下降。保存旧轨迹、生成旧经验、保持旧策略或分配独立模块都可以减少遗忘，但也可能减慢适应。任务边界和回访权限决定哪些方法可用。",
+          "bridge": "学习分布变化后，旧任务能力可能下降。保存旧轨迹、生成旧经验、保持旧策略或分配独立模块都可以减少遗忘，但也可能减慢适应。任务边界和回访权限决定哪些方法可用。"
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "path": "algorithms/average-reward/",
+      "title": "平均奖励：奖励率、差分价值与持续控制",
+      "question": "为什么长期奖励率与折扣回报可能选择不同策略？去掉目标中的折扣后，预测、控制与规划各需要多解决什么问题？",
+      "book": "continual-rl",
+      "group": "lifetime",
+      "kind": "core",
+      "order": 3,
+      "preparation": [
+        {
+          "chapterId": "control",
+          "title": "持续控制：比较策略与学习智能体",
+          "path": "algorithms/control/",
+          "why": "明确在相同资源和交互条件下比较什么。"
+        },
+        {
+          "chapterId": "study-approximation-average-control",
+          "title": "持续控制与平均奖励",
+          "path": "foundations/approximation/average-control/",
+          "why": "掌握奖励率、差分价值和基本预测/控制更新。"
+        }
+      ],
+      "usedBy": [],
+      "practice": [
+        {
+          "id": "policy-control",
+          "title": "策略梯度与控制",
+          "question": "优化器确实降低了损失，为什么行动仍可能变差？",
+          "path": "code/#practice-policy-control",
+          "steps": [
+            {
+              "number": 6,
+              "title": "把评价对象扩展到完整学习过程"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "lifelong_algorithms_lab.py",
+        "command": "python lifelong_algorithms_lab.py average",
+        "scope": "标准库表格机制实验与单步公式测试；不是深度算法或论文 benchmark 复现。",
+        "path": "download/lifelong_algorithms_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "average_rate_walkthrough.py",
+          "path": "/crl-code/tutorials/average_rate_walkthrough.py",
+          "section": "average-rate-task",
+          "sectionTitle": "7.1 · 贯穿算例：让预测与控制共用一个时钟"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "differential_td_offpolicy",
+          "title": "实验 · 行为奖励率为什么不能替代目标奖励率",
+          "path": "algorithms/average-reward/#experiment-differential_td_offpolicy",
+          "implementationPath": "code/differential_td_offpolicy/",
+          "afterSection": "lesson-offpolicy"
+        },
+        {
+          "algorithmId": "rvi_multistate",
+          "title": "实验 · 相对价值归一化改变的是公共尺度",
+          "path": "algorithms/average-reward/#experiment-rvi_multistate",
+          "implementationPath": "code/rvi_multistate/",
+          "afterSection": "lesson-rvi"
+        },
+        {
+          "algorithmId": "differential_dyna",
+          "title": "实验 · 学得模型的五次规划值得多少真实经验",
+          "path": "algorithms/average-reward/#experiment-differential_dyna",
+          "implementationPath": "code/differential_dyna/",
+          "afterSection": "lesson-dyna"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "lifetime-objective",
+          "title": "01 · 什么目标能够评价一个始终在学习的智能体？",
+          "path": "research/#research-lifetime-objective",
+          "setting": "智能体只有有限存储和每步计算时间。学习改变其后续行为，环境可能持续而不终止，也可能存在成本不为零的重置。比较前需规定奖励、时间单位、评价时域和可用干预。平稳环境仍可能对有限资源智能体提出长期学习需求。",
+          "bridge": "智能体只有有限存储和每步计算时间。学习改变其后续行为，环境可能持续而不终止，也可能存在成本不为零的重置。比较前需规定奖励、时间单位、评价时域和可用干预。平稳环境仍可能对有限资源智能体提出长期学习需求。"
+        },
+        {
+          "questionId": "reusable-models",
+          "title": "10 · 模型需要预测什么，才能在变化后继续支持决策？",
+          "path": "research/#research-reusable-models",
+          "setting": "模型用于预测动作或 option 的后果，而不是仅重建观测。状态表示、策略和环境可以分别改变。模型误差必须相对于它将被使用的 backup 或决策定义。",
+          "bridge": "模型用于预测动作或 option 的后果，而不是仅重建观测。状态表示、策略和环境可以分别改变。模型误差必须相对于它将被使用的 backup 或决策定义。"
+        }
+      ]
+    },
+    {
+      "id": "state",
+      "path": "construction/state/",
+      "title": "Agent state：部分可观测性、递归记忆与在线信用分配",
+      "question": "任务目标给定以后，智能体应当保留哪些历史信息，才能预测未来并选择动作？",
+      "book": "continual-rl",
+      "group": "knowledge",
+      "kind": "core",
+      "order": 4,
+      "preparation": [
+        {
+          "chapterId": "objectives",
+          "title": "强化学习问题的形式化：交互、目标与持续学习",
+          "path": "foundations/objectives/",
+          "why": "明确智能体收到的历史，以及评价持续学习过程的范围。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "gvf",
+          "title": "通用价值函数与预测知识",
+          "path": "construction/predictive-knowledge/",
+          "why": "理解预测输入是智能体能维护的状态。"
+        },
+        {
+          "chapterId": "architectures",
+          "title": "持续智能体架构：模块接口、更新调度与长期评价",
+          "path": "construction/architectures/",
+          "why": "理解内部状态如何随经验更新。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "prediction",
+          "title": "预测与控制",
+          "question": "学会预测更多事情，什么时候会改变行动？",
+          "path": "code/#practice-prediction",
+          "steps": []
+        },
+        {
+          "id": "action-evidence",
+          "title": "行动与经验",
+          "question": "行动决定了能得到哪些证据。学习又怎样改变下一次行动？",
+          "path": "code/#practice-action-evidence",
+          "steps": [
+            {
+              "number": 6,
+              "title": "撤掉回合重置，保留整段交互历史"
+            },
+            {
+              "number": 7,
+              "title": "把信息保留与信用路径分开"
+            },
+            {
+              "number": 8,
+              "title": "让写入多少也从反馈中学习"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "state_meta_lab.py",
+        "command": "python3 state_meta_lab.py state",
+        "scope": "Bayes 过滤、标量 RTRL/BPTT/TBPTT、重置式监督提示实验、单个线性 RTU 风格旋转块；不是原论文 RL 基准复现。",
+        "path": "download/state_meta_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "recurrent_state_walkthrough.py",
+          "path": "/crl-code/tutorials/recurrent_state_walkthrough.py",
+          "section": "lesson-delayed-recurrent",
+          "sectionTitle": "5.1 四步延迟提示：让保留系数也能学习"
+        },
+        {
+          "file": "state-online-walkthrough.py",
+          "path": "/crl-code/tutorials/state-online-walkthrough.py",
+          "section": "lesson-online-versions",
+          "sectionTitle": "5.2 中途更新参数：活动、trace 与求导对象怎样改变"
+        },
+        {
+          "file": "recurrent-control-walkthrough.py",
+          "path": "/crl-code/tutorials/recurrent-control-walkthrough.py",
+          "section": "lesson-recurrent-control",
+          "sectionTitle": "5.3 学到的递归系数怎样改变行动与下一条经验"
+        },
+        {
+          "file": "continuing-state-walkthrough.py",
+          "path": "/crl-code/tutorials/continuing-state-walkthrough.py",
+          "section": "lesson-continuing-control",
+          "sectionTitle": "5.4 门后继续走：无重置活动、在线变参与后续经验"
+        },
+        {
+          "file": "delayed-state-walkthrough.py",
+          "path": "/crl-code/tutorials/delayed-state-walkthrough.py",
+          "section": "lesson-delayed-memory-budget",
+          "sectionTitle": "5.5 新模式与长走廊：保存信息和保存梯度各花什么资源"
+        },
+        {
+          "file": "learned-memory-walkthrough.py",
+          "path": "/crl-code/tutorials/learned-memory-walkthrough.py",
+          "section": "lesson-learned-memory",
+          "sectionTitle": "5.6 让写入门学习：旧提示该留下多少"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "extended-bayes_filter",
+          "title": "实验 · 一次错误观测，应当推翻过去的全部证据吗？",
+          "path": "construction/state/#experiment-extended-bayes_filter",
+          "implementationPath": "code/extended-bayes_filter/",
+          "afterSection": "lesson-derive"
+        },
+        {
+          "algorithmId": "extended-bptt",
+          "title": "实验 · 截断梯度，不等于删除记忆",
+          "path": "construction/state/#experiment-extended-bptt",
+          "implementationPath": "code/extended-bptt/",
+          "afterSection": "lesson-bptt"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "reward-design",
+          "title": "奖励表示与奖励学习：目标怎样进入智能体？",
+          "path": "research/#research-reward-design",
+          "setting": "设计者拥有偏好，智能体只能接收有限观测和奖励。奖励可能手写，也可能由人的比较或示范推断。必须分开目标变化、奖励估计变化与环境变化。",
+          "bridge": "设计者拥有偏好，智能体只能接收有限观测和奖励。奖励可能手写，也可能由人的比较或示范推断。必须分开目标变化、奖励估计变化与环境变化。"
+        },
+        {
+          "questionId": "agent-state",
+          "title": "02 · 有限的内部状态应当保留哪些历史信息？",
+          "path": "research/#research-agent-state",
+          "setting": "当前观测不能唯一决定后续结果。智能体从历史构造内部状态，但内部状态维度、计算和信用传播长度受限。环境的隐藏状态、网络活动、可学习参数以及 replay buffer 是不同对象。",
+          "bridge": "当前观测不能唯一决定后续结果。智能体从历史构造内部状态，但内部状态维度、计算和信用传播长度受限。环境的隐藏状态、网络活动、可学习参数以及 replay buffer 是不同对象。"
+        },
+        {
+          "questionId": "predictive-knowledge",
+          "title": "03 · 哪些预测值得学习，谁来使用这些预测？",
+          "path": "research/#research-predictive-knowledge",
+          "setting": "同一数据流可以支持许多不同未来问题。计算和容量有限，行为策略也未必覆盖每个目标策略。核心研究对象不仅是一个预测器的误差，还包括问题的选择、淘汰与下游用途。",
+          "bridge": "同一数据流可以支持许多不同未来问题。计算和容量有限，行为策略也未必覆盖每个目标策略。核心研究对象不仅是一个预测器的误差，还包括问题的选择、淘汰与下游用途。"
+        },
+        {
+          "questionId": "temporal-credit",
+          "title": "05 · 远处的反馈应该怎样更新早先的决策与内部计算？",
+          "path": "research/#research-temporal-credit",
+          "setting": "关键线索或动作很早出现，奖励很晚到达。时间信用涉及不同时间步；结构信用涉及同一计算图中的参数与中间量。是否只能在线更新，是另一个资源条件。",
+          "bridge": "关键线索或动作很早出现，奖励很晚到达。时间信用涉及不同时间步；结构信用涉及同一计算图中的参数与中间量。是否只能在线更新，是另一个资源条件。"
+        },
+        {
+          "questionId": "reusable-models",
+          "title": "10 · 模型需要预测什么，才能在变化后继续支持决策？",
+          "path": "research/#research-reusable-models",
+          "setting": "模型用于预测动作或 option 的后果，而不是仅重建观测。状态表示、策略和环境可以分别改变。模型误差必须相对于它将被使用的 backup 或决策定义。",
+          "bridge": "模型用于预测动作或 option 的后果，而不是仅重建观测。状态表示、策略和环境可以分别改变。模型误差必须相对于它将被使用的 backup 或决策定义。"
+        },
+        {
+          "questionId": "integrated-architecture",
+          "title": "15 · 状态、知识、技能与规划怎样共同构成持续智能体？",
+          "path": "research/#research-integrated-architecture",
+          "setting": "完整 agent 同时更新状态、预测、控制、技能与模型。每个局部学习器看到的输入和目标都可能被其他模块改变。整体表现还受内存、计算分配和数据获取限制。",
+          "bridge": "完整 agent 同时更新状态、预测、控制、技能与模型。每个局部学习器看到的输入和目标都可能被其他模块改变。整体表现还受内存、计算分配和数据获取限制。"
+        }
+      ]
+    },
+    {
+      "id": "gvf",
+      "path": "construction/predictive-knowledge/",
+      "title": "通用价值函数与预测知识",
+      "question": "同一张地图既能问“向左会成功吗”，也能问“还要走几步”。怎样规定这些问题，从一条经验流学出答案，再让决策用上它们？",
+      "book": "continual-rl",
+      "group": "knowledge",
+      "kind": "core",
+      "order": 5,
+      "preparation": [
+        {
+          "chapterId": "state",
+          "title": "Agent state：部分可观测性、递归记忆与在线信用分配",
+          "path": "construction/state/",
+          "why": "理解预测输入是智能体能维护的状态。"
+        },
+        {
+          "chapterId": "study-approximation-prediction",
+          "title": "函数逼近预测：从回归到 TD 固定点",
+          "path": "foundations/approximation/prediction/",
+          "why": "掌握固定预测问题下的TD目标与近似误差。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "goals",
+          "title": "目标与子任务：条件控制、经验重用与技能设计",
+          "path": "construction/goals/",
+          "why": "理解如何指定可由经验学习的问题，再讨论选择哪些问题。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "prediction",
+          "title": "预测与控制",
+          "question": "学会预测更多事情，什么时候会改变行动？",
+          "path": "code/#practice-prediction",
+          "steps": [
+            {
+              "number": 3,
+              "title": "在同一世界中改变问题"
+            },
+            {
+              "number": 5,
+              "title": "明确预测的使用者"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "gvf_lab.py",
+        "command": "python3 gvf_lab.py compare\npython3 gvf_lab.py test",
+        "scope": "六个线性学习器、三个共享经验的预测问题、解析 Bellman 参照与一个 off-policy 期望发散反例。",
+        "path": "download/gvf_lab.py"
+      },
+      "walkthroughs": [],
+      "results": [
+        {
+          "algorithmId": "gvf_td",
+          "title": "同一条数据流，两个不同的预测问题",
+          "path": "construction/predictive-knowledge/#experiment-gvf_td",
+          "implementationPath": "code/gvf_td/",
+          "afterSection": "gvf-td"
+        },
+        {
+          "algorithmId": "gvf_shared_td0",
+          "title": "神经GVF的λ=0与λ=0.6：信用传播改变了什么",
+          "path": "construction/predictive-knowledge/#experiment-gvf_shared_td0",
+          "implementationPath": "code/gvf_shared_td0/",
+          "afterSection": "gvf-traces"
+        },
+        {
+          "algorithmId": "gvf_shared_trace",
+          "title": "主问题不变，辅助问题变化：共享表示是否必然有害",
+          "path": "construction/predictive-knowledge/#experiment-gvf_shared_trace",
+          "implementationPath": "code/gvf_shared_trace/",
+          "afterSection": "gvf-neural-coupling"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "agent-state",
+          "title": "02 · 有限的内部状态应当保留哪些历史信息？",
+          "path": "research/#research-agent-state",
+          "setting": "当前观测不能唯一决定后续结果。智能体从历史构造内部状态，但内部状态维度、计算和信用传播长度受限。环境的隐藏状态、网络活动、可学习参数以及 replay buffer 是不同对象。",
+          "bridge": "当前观测不能唯一决定后续结果。智能体从历史构造内部状态，但内部状态维度、计算和信用传播长度受限。环境的隐藏状态、网络活动、可学习参数以及 replay buffer 是不同对象。"
+        },
+        {
+          "questionId": "predictive-knowledge",
+          "title": "03 · 哪些预测值得学习，谁来使用这些预测？",
+          "path": "research/#research-predictive-knowledge",
+          "setting": "同一数据流可以支持许多不同未来问题。计算和容量有限，行为策略也未必覆盖每个目标策略。核心研究对象不仅是一个预测器的误差，还包括问题的选择、淘汰与下游用途。",
+          "bridge": "同一数据流可以支持许多不同未来问题。计算和容量有限，行为策略也未必覆盖每个目标策略。核心研究对象不仅是一个预测器的误差，还包括问题的选择、淘汰与下游用途。"
+        },
+        {
+          "questionId": "useful-options",
+          "title": "08 · 什么样的时间抽象值得加入技能库？",
+          "path": "research/#research-useful-options",
+          "setting": "Option 具有启动条件、内部策略与终止规则。技能发现还要决定哪些 option 值得占用容量。探索覆盖、执行效率、信用压缩和规划价值是不同用途，不能仅凭技能数量或轨迹图判断。",
+          "bridge": "Option 具有启动条件、内部策略与终止规则。技能发现还要决定哪些 option 值得占用容量。探索覆盖、执行效率、信用压缩和规划价值是不同用途，不能仅凭技能数量或轨迹图判断。"
+        },
+        {
+          "questionId": "reusable-models",
+          "title": "10 · 模型需要预测什么，才能在变化后继续支持决策？",
+          "path": "research/#research-reusable-models",
+          "setting": "模型用于预测动作或 option 的后果，而不是仅重建观测。状态表示、策略和环境可以分别改变。模型误差必须相对于它将被使用的 backup 或决策定义。",
+          "bridge": "模型用于预测动作或 option 的后果，而不是仅重建观测。状态表示、策略和环境可以分别改变。模型误差必须相对于它将被使用的 backup 或决策定义。"
+        },
+        {
+          "questionId": "integrated-architecture",
+          "title": "15 · 状态、知识、技能与规划怎样共同构成持续智能体？",
+          "path": "research/#research-integrated-architecture",
+          "setting": "完整 agent 同时更新状态、预测、控制、技能与模型。每个局部学习器看到的输入和目标都可能被其他模块改变。整体表现还受内存、计算分配和数据获取限制。",
+          "bridge": "完整 agent 同时更新状态、预测、控制、技能与模型。每个局部学习器看到的输入和目标都可能被其他模块改变。整体表现还受内存、计算分配和数据获取限制。"
+        }
+      ]
+    },
+    {
+      "id": "credit",
+      "path": "algorithms/credit-assignment/",
+      "title": "时间信用分配：从资格迹到深度梯度学习",
+      "question": "结果到来时，怎样更新过去的预测、动作和记忆参数？策略变化、表示变化和部分可观测性会怎样改变信用与等价条件？",
+      "book": "continual-rl",
+      "group": "learning",
+      "kind": "core",
+      "order": 6,
+      "preparation": [
+        {
+          "chapterId": "study-approximation-traces",
+          "title": "多步回报、资格迹与 True-online TD",
+          "path": "foundations/approximation/traces/",
+          "why": "以线性前后向视图为基准，再讨论非线性和在线变化。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "streaming",
+          "title": "流式强化学习：交互协议与更新稳定性",
+          "path": "algorithms/streaming/",
+          "why": "理解保留的资格与敏感度，再规定单次处理经验时能保存什么。"
+        },
+        {
+          "chapterId": "meta",
+          "title": "学习规则的适应：在线元梯度与跨任务元学习",
+          "path": "algorithms/meta/",
+          "why": "区分对预测参数的信用与对更新规则的敏感度。"
+        }
+      ],
+      "practice": [],
+      "executable": {
+        "file": "credit_assignment_lab.py",
+        "command": "python3 credit_assignment_lab.py all",
+        "scope": "标准库：31项检查覆盖冻结／在线等价、策略校正、Q(σ)端点、V-trace目标变化、状态λ、期望迹混叠反例、非线性梯度迹有限差分及actor／递归敏感度；不是完整论文复现。",
+        "path": "download/credit_assignment_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "credit_meta_walkthrough.py",
+          "path": "/crl-code/tutorials/credit_meta_walkthrough.py",
+          "section": "lesson-prefix-walkthrough",
+          "sectionTitle": "从两步到三步：同一经验流上的预测版本"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "true_online_td",
+          "title": "在线前向等价不等于在任何预算下误差最小",
+          "path": "algorithms/credit-assignment/#experiment-true_online_td",
+          "implementationPath": "code/true_online_td/",
+          "afterSection": "lesson-true-online"
+        },
+        {
+          "algorithmId": "neural_gradient_mc",
+          "title": "旧梯度迹与完整回报：等待、存储和bootstrap怎样交换",
+          "path": "algorithms/credit-assignment/#experiment-neural_gradient_mc",
+          "implementationPath": "code/neural_gradient_mc/",
+          "afterSection": "lesson-neural-streaming"
+        },
+        {
+          "algorithmId": "gradient_eligibility_traces",
+          "title": "让前向与后向曲线重合：先验证双网络梯度目标",
+          "path": "algorithms/credit-assignment/#experiment-gradient_eligibility_traces",
+          "implementationPath": "code/gradient_eligibility_traces/",
+          "afterSection": "lesson-gradient-traces"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "agent-state",
+          "title": "02 · 有限的内部状态应当保留哪些历史信息？",
+          "path": "research/#research-agent-state",
+          "setting": "当前观测不能唯一决定后续结果。智能体从历史构造内部状态，但内部状态维度、计算和信用传播长度受限。环境的隐藏状态、网络活动、可学习参数以及 replay buffer 是不同对象。",
+          "bridge": "当前观测不能唯一决定后续结果。智能体从历史构造内部状态，但内部状态维度、计算和信用传播长度受限。环境的隐藏状态、网络活动、可学习参数以及 replay buffer 是不同对象。"
+        },
+        {
+          "questionId": "temporal-credit",
+          "title": "05 · 远处的反馈应该怎样更新早先的决策与内部计算？",
+          "path": "research/#research-temporal-credit",
+          "setting": "关键线索或动作很早出现，奖励很晚到达。时间信用涉及不同时间步；结构信用涉及同一计算图中的参数与中间量。是否只能在线更新，是另一个资源条件。",
+          "bridge": "关键线索或动作很早出现，奖励很晚到达。时间信用涉及不同时间步；结构信用涉及同一计算图中的参数与中间量。是否只能在线更新，是另一个资源条件。"
+        },
+        {
+          "questionId": "streaming-stability",
+          "title": "06 · 不存 replay、每步只处理新经验时，怎样避免更新失稳？",
+          "path": "research/#research-streaming-stability",
+          "setting": "数据到达后立即用于学习；过去 transition 不被存储再训练。资格迹、递归活动和 optimizer 状态仍可存在，但须计入内存。数值稳定、样本利用率和动作 deadline 都是评价对象。",
+          "bridge": "数据到达后立即用于学习；过去 transition 不被存储再训练。资格迹、递归活动和 optimizer 状态仍可存在，但须计入内存。数值稳定、样本利用率和动作 deadline 都是评价对象。"
+        },
+        {
+          "questionId": "learning-rules",
+          "title": "07 · 哪些学习参数应当适应，怎样评价学出来的更新规则？",
+          "path": "research/#research-learning-rules",
+          "setting": "权重在内层学习，步长、return 参数、初始化或整个更新器在外层适应。在线元学习使用一段持续经验；跨任务元 RL 使用任务分布及重置。两者的元目标和数据权限不同。",
+          "bridge": "权重在内层学习，步长、return 参数、初始化或整个更新器在外层适应。在线元学习使用一段持续经验；跨任务元 RL 使用任务分布及重置。两者的元目标和数据权限不同。"
+        }
+      ]
+    },
+    {
+      "id": "streaming",
+      "path": "algorithms/streaming/",
+      "title": "流式强化学习：交互协议与更新稳定性",
+      "question": "机器人刚获得一条经验，下一次行动已经快到了：学习器能保存什么，还能算几次？从相同数据流、两步 TD 与中途恢复的算例出发，理解原始经验、活动状态、权重、资格迹和尺度统计怎样影响下一次更新。",
+      "book": "continual-rl",
+      "group": "learning",
+      "kind": "core",
+      "order": 7,
+      "preparation": [
+        {
+          "chapterId": "credit",
+          "title": "时间信用分配：从资格迹到深度梯度学习",
+          "path": "algorithms/credit-assignment/",
+          "why": "理解保留的资格与敏感度，再规定单次处理经验时能保存什么。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "meta",
+          "title": "学习规则的适应：在线元梯度与跨任务元学习",
+          "path": "algorithms/meta/",
+          "why": "明确更新器状态及其内存和计算约束。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "tracking",
+          "title": "估计与适应",
+          "question": "旧经验越来越多时，怎样仍对新变化作出反应？",
+          "path": "code/#practice-tracking",
+          "steps": [
+            {
+              "number": 4,
+              "title": "从跟踪进入步长自适应"
+            }
+          ]
+        },
+        {
+          "id": "policy-control",
+          "title": "策略梯度与控制",
+          "question": "优化器确实降低了损失，为什么行动仍可能变差？",
+          "path": "code/#practice-policy-control",
+          "steps": [
+            {
+              "number": 6,
+              "title": "把评价对象扩展到完整学习过程"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "lifelong_algorithms_lab.py",
+        "command": "python lifelong_algorithms_lab.py streaming",
+        "scope": "流式 TD、在线统计与 ObGD 的机制检查；meta_frontier_lab.py 提供 Intentional 输出尺度实验。不包含完整神经网络控制训练。",
+        "path": "download/lifelong_algorithms_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "streaming_state_walkthrough.py",
+          "path": "/crl-code/tutorials/streaming_state_walkthrough.py",
+          "section": "lesson-code",
+          "sectionTitle": "9 · 机制实验与作者实现"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "neural_td_trace",
+          "title": "实验 · 终点奖励怎样沿历史梯度传回去？",
+          "path": "algorithms/streaming/#experiment-neural_td_trace",
+          "implementationPath": "code/neural_td_trace/",
+          "afterSection": "lesson-derive"
+        },
+        {
+          "algorithmId": "extended-obgd2024",
+          "title": "实验 · 限制更新幅度，何时只是把学习变慢？",
+          "path": "algorithms/streaming/#experiment-extended-obgd2024",
+          "implementationPath": "code/extended-obgd2024/",
+          "afterSection": "lesson-scale"
+        },
+        {
+          "algorithmId": "extended-intentional",
+          "title": "实验 · 局部输出尺度控制，不是全程策略稳定性的证书",
+          "path": "algorithms/streaming/#experiment-extended-intentional",
+          "implementationPath": "code/extended-intentional/",
+          "afterSection": "lesson-output-steps"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "streaming-stability",
+          "title": "06 · 不存 replay、每步只处理新经验时，怎样避免更新失稳？",
+          "path": "research/#research-streaming-stability",
+          "setting": "数据到达后立即用于学习；过去 transition 不被存储再训练。资格迹、递归活动和 optimizer 状态仍可存在，但须计入内存。数值稳定、样本利用率和动作 deadline 都是评价对象。",
+          "bridge": "数据到达后立即用于学习；过去 transition 不被存储再训练。资格迹、递归活动和 optimizer 状态仍可存在，但须计入内存。数值稳定、样本利用率和动作 deadline 都是评价对象。"
+        },
+        {
+          "questionId": "learning-rules",
+          "title": "07 · 哪些学习参数应当适应，怎样评价学出来的更新规则？",
+          "path": "research/#research-learning-rules",
+          "setting": "权重在内层学习，步长、return 参数、初始化或整个更新器在外层适应。在线元学习使用一段持续经验；跨任务元 RL 使用任务分布及重置。两者的元目标和数据权限不同。",
+          "bridge": "权重在内层学习，步长、return 参数、初始化或整个更新器在外层适应。在线元学习使用一段持续经验；跨任务元 RL 使用任务分布及重置。两者的元目标和数据权限不同。"
+        },
+        {
+          "questionId": "integrated-architecture",
+          "title": "15 · 状态、知识、技能与规划怎样共同构成持续智能体？",
+          "path": "research/#research-integrated-architecture",
+          "setting": "完整 agent 同时更新状态、预测、控制、技能与模型。每个局部学习器看到的输入和目标都可能被其他模块改变。整体表现还受内存、计算分配和数据获取限制。",
+          "bridge": "完整 agent 同时更新状态、预测、控制、技能与模型。每个局部学习器看到的输入和目标都可能被其他模块改变。整体表现还受内存、计算分配和数据获取限制。"
+        }
+      ]
+    },
+    {
+      "id": "meta",
+      "path": "algorithms/meta/",
+      "title": "学习规则的适应：在线元梯度与跨任务元学习",
+      "question": "一次更新减小了当前误差，但它是否让下一次学习更容易？元学习把这个问题变成可计算的评价：先按某条规则学习，再用后续表现改进这条规则。",
+      "book": "continual-rl",
+      "group": "learning",
+      "kind": "core",
+      "order": 8,
+      "preparation": [
+        {
+          "chapterId": "credit",
+          "title": "时间信用分配：从资格迹到深度梯度学习",
+          "path": "algorithms/credit-assignment/",
+          "why": "区分对预测参数的信用与对更新规则的敏感度。"
+        },
+        {
+          "chapterId": "streaming",
+          "title": "流式强化学习：交互协议与更新稳定性",
+          "path": "algorithms/streaming/",
+          "why": "明确更新器状态及其内存和计算约束。"
+        }
+      ],
+      "usedBy": [],
+      "practice": [
+        {
+          "id": "tracking",
+          "title": "估计与适应",
+          "question": "旧经验越来越多时，怎样仍对新变化作出反应？",
+          "path": "code/#practice-tracking",
+          "steps": []
+        }
+      ],
+      "executable": {
+        "file": "state_meta_lab.py",
+        "command": "python3 state_meta_lab.py meta",
+        "scope": "多步超梯度、IDBD/TIDBD、标量 MAML 与解析 context；meta_frontier_lab.py 提供 Metatrace 线性特例。",
+        "path": "download/state_meta_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "credit_meta_walkthrough.py",
+          "path": "/crl-code/tutorials/credit_meta_walkthrough.py",
+          "section": "lesson-trace-sensitivity",
+          "sectionTitle": "沿同一条经验流，区分资格与步长敏感度"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "idbd",
+          "title": "实验 · 一次权重反转能否激发逐特征步长适应？",
+          "path": "algorithms/meta/#experiment-idbd",
+          "implementationPath": "code/idbd/",
+          "afterSection": "lesson-idbd"
+        },
+        {
+          "algorithmId": "extended-metatrace",
+          "title": "实验 · 元参数确实变化，也可能没有带来可见的行为收益",
+          "path": "algorithms/meta/#experiment-extended-metatrace",
+          "implementationPath": "code/extended-metatrace/",
+          "afterSection": "lesson-metatrace"
+        },
+        {
+          "algorithmId": "extended-meta_gradient",
+          "title": "实验 · 对验证轨迹求元梯度，能否学出有用的 λ？",
+          "path": "algorithms/meta/#experiment-extended-meta_gradient",
+          "implementationPath": "code/extended-meta_gradient/",
+          "afterSection": "lesson-meta-rl"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "predictive-knowledge",
+          "title": "03 · 哪些预测值得学习，谁来使用这些预测？",
+          "path": "research/#research-predictive-knowledge",
+          "setting": "同一数据流可以支持许多不同未来问题。计算和容量有限，行为策略也未必覆盖每个目标策略。核心研究对象不仅是一个预测器的误差，还包括问题的选择、淘汰与下游用途。",
+          "bridge": "同一数据流可以支持许多不同未来问题。计算和容量有限，行为策略也未必覆盖每个目标策略。核心研究对象不仅是一个预测器的误差，还包括问题的选择、淘汰与下游用途。"
+        },
+        {
+          "questionId": "learning-rules",
+          "title": "07 · 哪些学习参数应当适应，怎样评价学出来的更新规则？",
+          "path": "research/#research-learning-rules",
+          "setting": "权重在内层学习，步长、return 参数、初始化或整个更新器在外层适应。在线元学习使用一段持续经验；跨任务元 RL 使用任务分布及重置。两者的元目标和数据权限不同。",
+          "bridge": "权重在内层学习，步长、return 参数、初始化或整个更新器在外层适应。在线元学习使用一段持续经验；跨任务元 RL 使用任务分布及重置。两者的元目标和数据权限不同。"
+        }
+      ]
+    },
+    {
+      "id": "retention",
+      "path": "algorithms/retention/",
+      "title": "知识保留：经验重放、参数约束与模型记忆",
+      "question": "新经验要求适应，旧技能又可能重新有用；如何在固定预算内管理它们的冲突？",
+      "book": "continual-rl",
+      "group": "adaptation",
+      "kind": "core",
+      "order": 9,
+      "preparation": [
+        {
+          "chapterId": "control",
+          "title": "持续控制：比较策略与学习智能体",
+          "path": "algorithms/control/",
+          "why": "区分旧任务诊断与生命期收益。"
+        },
+        {
+          "chapterId": "study-approximation-prediction",
+          "title": "函数逼近预测：从回归到 TD 固定点",
+          "path": "foundations/approximation/prediction/",
+          "why": "理解共享参数的误差与干扰。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "plasticity",
+          "title": "可塑性：梯度通路、有效学习率与预测干扰",
+          "path": "algorithms/plasticity/",
+          "why": "先区分保留旧知识和获得新知识。"
+        }
+      ],
+      "practice": [],
+      "executable": {
+        "file": "lifelong_algorithms_lab.py",
+        "command": "python lifelong_algorithms_lab.py retention",
+        "scope": "存储策略、目标项和 trace 数值实验；完整 CLEAR 训练还需要神经网络、序列收集与环境配置。",
+        "path": "download/lifelong_algorithms_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "retention_plasticity_walkthrough.py",
+          "path": "/crl-code/tutorials/retention_plasticity_walkthrough.py",
+          "section": "lesson-shared-switch",
+          "sectionTitle": "同一反转问题：忘得更多，也可能学得更快"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "reservoir_replay",
+          "title": "实验 · 均匀保留历史，可能妨碍适应当前世界",
+          "path": "algorithms/retention/#experiment-reservoir_replay",
+          "implementationPath": "code/reservoir_replay/",
+          "afterSection": "lesson-derive"
+        },
+        {
+          "algorithmId": "ewc",
+          "title": "实验 · 二次参数约束为何留下非零适应误差？",
+          "path": "algorithms/retention/#experiment-ewc",
+          "implementationPath": "code/ewc/",
+          "afterSection": "lesson-ewc"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "continual-control",
+          "title": "04 · 旧价值什么时候应该复用，什么时候应该快速改写？",
+          "path": "research/#research-continual-control",
+          "setting": "策略改善不断改变数据分布。奖励或动力学还可能发生外部变化。一个旧价值函数既可能提供知识，也可能阻碍适应；仅靠最终价值误差不能判断控制失败的原因。",
+          "bridge": "策略改善不断改变数据分布。奖励或动力学还可能发生外部变化。一个旧价值函数既可能提供知识，也可能阻碍适应；仅靠最终价值误差不能判断控制失败的原因。"
+        },
+        {
+          "questionId": "retention-transfer",
+          "title": "12 · 怎样保留旧能力，而不把过时知识强加给新任务？",
+          "path": "research/#research-retention-transfer",
+          "setting": "学习分布变化后，旧任务能力可能下降。保存旧轨迹、生成旧经验、保持旧策略或分配独立模块都可以减少遗忘，但也可能减慢适应。任务边界和回访权限决定哪些方法可用。",
+          "bridge": "学习分布变化后，旧任务能力可能下降。保存旧轨迹、生成旧经验、保持旧策略或分配独立模块都可以减少遗忘，但也可能减慢适应。任务边界和回访权限决定哪些方法可用。"
+        },
+        {
+          "questionId": "plasticity",
+          "title": "13 · 为什么训练越久，学习新东西反而越慢？",
+          "path": "research/#research-plasticity",
+          "setting": "长期训练后的网络面对新的可学习目标，下降速度比新初始化更慢。需在相同数据和目标上比较 aged 与 fresh 网络，才能把优化能力下降和探索失败区分开。",
+          "bridge": "长期训练后的网络面对新的可学习目标，下降速度比新初始化更慢。需在相同数据和目标上比较 aged 与 fresh 网络，才能把优化能力下降和探索失败区分开。"
+        },
+        {
+          "questionId": "measurement",
+          "title": "16 · 什么实验能区分“仍在更新”与“仍在有效学习”？",
+          "path": "research/#research-measurement",
+          "setting": "一条长曲线包含适应、探索、保留、环境变化和随机波动。训练中评估可能重置环境或暂停更新，这些操作会改变单生命期。研究需要先确定估计量与独立随机单位。",
+          "bridge": "一条长曲线包含适应、探索、保留、环境变化和随机波动。训练中评估可能重置环境或暂停更新，这些操作会改变单生命期。研究需要先确定估计量与独立随机单位。"
+        }
+      ]
+    },
+    {
+      "id": "plasticity",
+      "path": "algorithms/plasticity/",
+      "title": "可塑性：梯度通路、有效学习率与预测干扰",
+      "question": "在相同新数据与更新预算下，学习能力为什么可能下降，又该怎样诊断与恢复？",
+      "book": "continual-rl",
+      "group": "adaptation",
+      "kind": "core",
+      "order": 10,
+      "preparation": [
+        {
+          "chapterId": "retention",
+          "title": "知识保留：经验重放、参数约束与模型记忆",
+          "path": "algorithms/retention/",
+          "why": "先区分保留旧知识和获得新知识。"
+        },
+        {
+          "chapterId": "study-deep-deep-value",
+          "title": "深度价值学习：DQN、Double DQN 与目标的时间顺序",
+          "path": "foundations/deep/deep-value/",
+          "why": "理解特征梯度、目标变化与神经网络更新。"
+        }
+      ],
+      "usedBy": [],
+      "practice": [],
+      "executable": {
+        "file": "lifelong_algorithms_lab.py",
+        "command": "python lifelong_algorithms_lab.py plasticity",
+        "scope": "替换、optimizer 状态与合成 aged/fresh 机制诊断；不是 ReDo/CBP 全论文复现。",
+        "path": "download/lifelong_algorithms_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "retention_plasticity_walkthrough.py",
+          "path": "/crl-code/tutorials/retention_plasticity_walkthrough.py",
+          "section": "lesson-paired-probe",
+          "sectionTitle": "同一反转问题：对称轨道、等函数干预与重新学习"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "extended-redo",
+          "title": "实验 · 回收低活动单元，不保证这个任务学得更好",
+          "path": "algorithms/plasticity/#experiment-extended-redo",
+          "implementationPath": "code/extended-redo/",
+          "afterSection": "lesson-redo"
+        },
+        {
+          "algorithmId": "extended-continual_backprop",
+          "title": "实验 · 生成得更多，不等于检验得更有效",
+          "path": "algorithms/plasticity/#experiment-extended-continual_backprop",
+          "implementationPath": "code/extended-continual_backprop/",
+          "afterSection": "lesson-cbp"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "plasticity",
+          "title": "13 · 为什么训练越久，学习新东西反而越慢？",
+          "path": "research/#research-plasticity",
+          "setting": "长期训练后的网络面对新的可学习目标，下降速度比新初始化更慢。需在相同数据和目标上比较 aged 与 fresh 网络，才能把优化能力下降和探索失败区分开。",
+          "bridge": "长期训练后的网络面对新的可学习目标，下降速度比新初始化更慢。需在相同数据和目标上比较 aged 与 fresh 网络，才能把优化能力下降和探索失败区分开。"
+        },
+        {
+          "questionId": "measurement",
+          "title": "16 · 什么实验能区分“仍在更新”与“仍在有效学习”？",
+          "path": "research/#research-measurement",
+          "setting": "一条长曲线包含适应、探索、保留、环境变化和随机波动。训练中评估可能重置环境或暂停更新，这些操作会改变单生命期。研究需要先确定估计量与独立随机单位。",
+          "bridge": "一条长曲线包含适应、探索、保留、环境变化和随机波动。训练中评估可能重置环境或暂停更新，这些操作会改变单生命期。研究需要先确定估计量与独立随机单位。"
+        }
+      ]
+    },
+    {
+      "id": "goals",
+      "path": "construction/goals/",
+      "title": "目标与子任务：条件控制、经验重用与技能设计",
+      "question": "怎样让同一套控制器应对不同目标、从未成功的尝试中学习，并选择对未来控制有用的子任务？",
+      "book": "continual-rl",
+      "group": "construction",
+      "kind": "core",
+      "order": 11,
+      "preparation": [
+        {
+          "chapterId": "gvf",
+          "title": "通用价值函数与预测知识",
+          "path": "construction/predictive-knowledge/",
+          "why": "理解如何指定可由经验学习的问题，再讨论选择哪些问题。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "options",
+          "title": "Options：多步决策、技能发现与可复用行为",
+          "path": "construction/options/",
+          "why": "区分目标规格与实现目标的行为。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "skills",
+          "title": "技能与规划",
+          "question": "一个多步行为怎样成为可学习、可预测、可规划的动作？",
+          "path": "code/#practice-skills",
+          "steps": [
+            {
+              "number": 5,
+              "title": "让子目标的候选也来自经验"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "knowledge_algorithms_lab.py",
+        "command": "python3 knowledge_algorithms_lab.py goals",
+        "scope": "目标重标记、子任务 TD 与有限目标课程的表格实验；深度方法另附原论文和作者工程。",
+        "path": "download/knowledge_algorithms_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "goal_model_planning_walkthrough.py",
+          "path": "/crl-code/tutorials/goal_model_planning_walkthrough.py",
+          "section": "lesson-shared-world",
+          "sectionTitle": "1.1 同一条运输记录，换目标时究竟改什么"
+        },
+        {
+          "file": "goal_discovery_walkthrough.py",
+          "path": "/crl-code/tutorials/goal_discovery_walkthrough.py",
+          "section": "lesson-discovery-loop",
+          "sectionTitle": "3.2 候选变成行为，再让新经验改变候选与规划"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "her_replay",
+          "title": "HER究竟改了哪部分经验",
+          "path": "construction/goals/#experiment-her_replay",
+          "implementationPath": "code/her_replay/",
+          "afterSection": "lesson-derive"
+        },
+        {
+          "algorithmId": "learning_progress",
+          "title": "“现在学什么”先用可检查的小问题检验",
+          "path": "construction/goals/#experiment-learning_progress",
+          "implementationPath": "code/learning_progress/",
+          "afterSection": "lesson-curriculum"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "reward-design",
+          "title": "奖励表示与奖励学习：目标怎样进入智能体？",
+          "path": "research/#research-reward-design",
+          "setting": "设计者拥有偏好，智能体只能接收有限观测和奖励。奖励可能手写，也可能由人的比较或示范推断。必须分开目标变化、奖励估计变化与环境变化。",
+          "bridge": "设计者拥有偏好，智能体只能接收有限观测和奖励。奖励可能手写，也可能由人的比较或示范推断。必须分开目标变化、奖励估计变化与环境变化。"
+        },
+        {
+          "questionId": "useful-options",
+          "title": "08 · 什么样的时间抽象值得加入技能库？",
+          "path": "research/#research-useful-options",
+          "setting": "Option 具有启动条件、内部策略与终止规则。技能发现还要决定哪些 option 值得占用容量。探索覆盖、执行效率、信用压缩和规划价值是不同用途，不能仅凭技能数量或轨迹图判断。",
+          "bridge": "Option 具有启动条件、内部策略与终止规则。技能发现还要决定哪些 option 值得占用容量。探索覆盖、执行效率、信用压缩和规划价值是不同用途，不能仅凭技能数量或轨迹图判断。"
+        },
+        {
+          "questionId": "goal-construction",
+          "title": "09 · 子目标从哪里来，为什么学习它能帮助总体任务？",
+          "path": "research/#research-goal-construction",
+          "setting": "总体任务奖励已经给定。智能体还可以选择中间状态、预测目标、技能描述或训练课程。定义目标、学习目标条件策略、选择当前目标是三层计算，不应都称为“目标发现”。",
+          "bridge": "总体任务奖励已经给定。智能体还可以选择中间状态、预测目标、技能描述或训练课程。定义目标、学习目标条件策略、选择当前目标是三层计算，不应都称为“目标发现”。"
+        },
+        {
+          "questionId": "experience-selection",
+          "title": "14 · 应当探索什么、练习什么，以及如何保留未来交互与学习的机会？",
+          "path": "research/#research-experience-selection",
+          "setting": "智能体的行为决定未来数据。新奇、可学习性、学习进展和任务收益并不一致。课程 teacher 能否选目标、改环境或重置，也会从根本上改变问题。",
+          "bridge": "智能体的行为决定未来数据。新奇、可学习性、学习进展和任务收益并不一致。课程 teacher 能否选目标、改环境或重置，也会从根本上改变问题。"
+        },
+        {
+          "questionId": "integrated-architecture",
+          "title": "15 · 状态、知识、技能与规划怎样共同构成持续智能体？",
+          "path": "research/#research-integrated-architecture",
+          "setting": "完整 agent 同时更新状态、预测、控制、技能与模型。每个局部学习器看到的输入和目标都可能被其他模块改变。整体表现还受内存、计算分配和数据获取限制。",
+          "bridge": "完整 agent 同时更新状态、预测、控制、技能与模型。每个局部学习器看到的输入和目标都可能被其他模块改变。整体表现还受内存、计算分配和数据获取限制。"
+        }
+      ]
+    },
+    {
+      "id": "options",
+      "path": "construction/options/",
+      "title": "Options：多步决策、技能发现与可复用行为",
+      "question": "怎样把连续多步的行为当成可复用的决策单位，同时仍能在每个原始时间步学习？",
+      "book": "continual-rl",
+      "group": "construction",
+      "kind": "core",
+      "order": 12,
+      "preparation": [
+        {
+          "chapterId": "goals",
+          "title": "目标与子任务：条件控制、经验重用与技能设计",
+          "path": "construction/goals/",
+          "why": "区分目标规格与实现目标的行为。"
+        },
+        {
+          "chapterId": "study-tabular-temporal-difference",
+          "title": "TD 预测与控制：SARSA、Expected SARSA、Q-learning 和 Double Q",
+          "path": "foundations/tabular/temporal-difference/",
+          "why": "掌握原子动作的控制更新，再处理可变时长行为。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "models",
+          "title": "模型与后果预测：学什么，才能用于下一次决策？",
+          "path": "construction/models/",
+          "why": "明确技能的执行、停止与后果。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "skills",
+          "title": "技能与规划",
+          "question": "一个多步行为怎样成为可学习、可预测、可规划的动作？",
+          "path": "code/#practice-skills",
+          "steps": [
+            {
+              "number": 3,
+              "title": "执行一个给定技能"
+            },
+            {
+              "number": 4,
+              "title": "把经验变成后果模型"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "knowledge_algorithms_lab.py",
+        "command": "python3 knowledge_algorithms_lab.py options",
+        "scope": "SMDP、intra-option、动作与终止梯度的表格实验；深度技能训练另附原论文和作者工程。",
+        "path": "download/knowledge_algorithms_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "option_model_walkthrough.py",
+          "path": "/crl-code/tutorials/option_model_walkthrough.py",
+          "section": "lesson-option-practice",
+          "sectionTitle": "动手：从一个固定技能走到模型规划"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "neural_option_smdp",
+          "title": "跨两步的价值，不能当作一步后的价值",
+          "path": "construction/options/#experiment-neural_option_smdp",
+          "implementationPath": "code/neural_option_smdp/",
+          "afterSection": "lesson-derive"
+        },
+        {
+          "algorithmId": "option_critic",
+          "title": "真正学习选项：内部动作、终止与高层选择分别更新",
+          "path": "construction/options/#experiment-option_critic",
+          "implementationPath": "code/option_critic/",
+          "afterSection": "lesson-critic"
+        },
+        {
+          "algorithmId": "integrated_primitive_only",
+          "title": "技能是否值得使用：控制时钟与规划时钟也会改变",
+          "path": "construction/options/#experiment-integrated_primitive_only",
+          "implementationPath": "code/integrated_primitive_only/",
+          "afterSection": "lesson-neural-options"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "useful-options",
+          "title": "08 · 什么样的时间抽象值得加入技能库？",
+          "path": "research/#research-useful-options",
+          "setting": "Option 具有启动条件、内部策略与终止规则。技能发现还要决定哪些 option 值得占用容量。探索覆盖、执行效率、信用压缩和规划价值是不同用途，不能仅凭技能数量或轨迹图判断。",
+          "bridge": "Option 具有启动条件、内部策略与终止规则。技能发现还要决定哪些 option 值得占用容量。探索覆盖、执行效率、信用压缩和规划价值是不同用途，不能仅凭技能数量或轨迹图判断。"
+        },
+        {
+          "questionId": "goal-construction",
+          "title": "09 · 子目标从哪里来，为什么学习它能帮助总体任务？",
+          "path": "research/#research-goal-construction",
+          "setting": "总体任务奖励已经给定。智能体还可以选择中间状态、预测目标、技能描述或训练课程。定义目标、学习目标条件策略、选择当前目标是三层计算，不应都称为“目标发现”。",
+          "bridge": "总体任务奖励已经给定。智能体还可以选择中间状态、预测目标、技能描述或训练课程。定义目标、学习目标条件策略、选择当前目标是三层计算，不应都称为“目标发现”。"
+        },
+        {
+          "questionId": "planning-budget",
+          "title": "11 · 什么时候值得规划，应该把计算花在哪里？",
+          "path": "research/#research-planning-budget",
+          "setting": "规划用已学模型进行额外计算。真实交互、模型更新、搜索和想象训练共享有限预算。问题不是简单地增加规划步数，而是选择何时、何处、以什么时间尺度使用模型。",
+          "bridge": "规划用已学模型进行额外计算。真实交互、模型更新、搜索和想象训练共享有限预算。问题不是简单地增加规划步数，而是选择何时、何处、以什么时间尺度使用模型。"
+        },
+        {
+          "questionId": "integrated-architecture",
+          "title": "15 · 状态、知识、技能与规划怎样共同构成持续智能体？",
+          "path": "research/#research-integrated-architecture",
+          "setting": "完整 agent 同时更新状态、预测、控制、技能与模型。每个局部学习器看到的输入和目标都可能被其他模块改变。整体表现还受内存、计算分配和数据获取限制。",
+          "bridge": "完整 agent 同时更新状态、预测、控制、技能与模型。每个局部学习器看到的输入和目标都可能被其他模块改变。整体表现还受内存、计算分配和数据获取限制。"
+        }
+      ]
+    },
+    {
+      "id": "models",
+      "path": "construction/models/",
+      "title": "模型与后果预测：学什么，才能用于下一次决策？",
+      "question": "执行一个动作或技能以后，会积累多少奖励、何时到哪里；这些预测怎样支持规划与任务变化后的迁移？",
+      "book": "continual-rl",
+      "group": "construction",
+      "kind": "core",
+      "order": 13,
+      "preparation": [
+        {
+          "chapterId": "options",
+          "title": "Options：多步决策、技能发现与可复用行为",
+          "path": "construction/options/",
+          "why": "明确技能的执行、停止与后果。"
+        },
+        {
+          "chapterId": "dyna",
+          "title": "Dyna：模型学习与规划",
+          "path": "algorithms/dyna/",
+          "why": "理解模型如何被更新和使用。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "planning",
+          "title": "规划：把模型中的经验转成更好的决策",
+          "path": "construction/planning/",
+          "why": "明确模型预测的对象、时长和当前版本。"
+        },
+        {
+          "chapterId": "architectures",
+          "title": "持续智能体架构：模块接口、更新调度与长期评价",
+          "path": "construction/architectures/",
+          "why": "理解可学习知识的规格与版本。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "skills",
+          "title": "技能与规划",
+          "question": "一个多步行为怎样成为可学习、可预测、可规划的动作？",
+          "path": "code/#practice-skills",
+          "steps": [
+            {
+              "number": 7,
+              "title": "世界改变，却不告诉智能体"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "knowledge_algorithms_lab.py",
+        "command": "python3 knowledge_algorithms_lab.py models",
+        "scope": "表格 option model、SF/GPI 与条件反例；不包含完整深度世界模型训练。",
+        "path": "download/knowledge_algorithms_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "goal_model_planning_walkthrough.py",
+          "path": "/crl-code/tutorials/goal_model_planning_walkthrough.py",
+          "section": "lesson-model-repair",
+          "sectionTitle": "1.1 从五条记录到模型，再看关闸后的错误"
+        },
+        {
+          "file": "model-change-walkthrough.py",
+          "path": "/crl-code/tutorials/model-change-walkthrough.py",
+          "section": "lesson-model-recheck",
+          "sectionTitle": "1.4 把复查代价放回行动循环"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "option_model",
+          "title": "为什么终点模型的一行不应归一化到1",
+          "path": "construction/models/#experiment-option_model",
+          "implementationPath": "code/option_model/",
+          "afterSection": "lesson-derive"
+        },
+        {
+          "algorithmId": "successor_features_gpi",
+          "title": "后继特征复用的究竟是动力学还是奖励",
+          "path": "construction/models/#experiment-successor_features_gpi",
+          "implementationPath": "code/successor_features_gpi/",
+          "afterSection": "lesson-successors"
+        },
+        {
+          "algorithmId": "integrated_cumulative_model",
+          "title": "累计样本更多，不一定更适合当前模型查询",
+          "path": "construction/models/#experiment-integrated_cumulative_model",
+          "implementationPath": "code/integrated_cumulative_model/",
+          "afterSection": "lesson-branches"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "reusable-models",
+          "title": "10 · 模型需要预测什么，才能在变化后继续支持决策？",
+          "path": "research/#research-reusable-models",
+          "setting": "模型用于预测动作或 option 的后果，而不是仅重建观测。状态表示、策略和环境可以分别改变。模型误差必须相对于它将被使用的 backup 或决策定义。",
+          "bridge": "模型用于预测动作或 option 的后果，而不是仅重建观测。状态表示、策略和环境可以分别改变。模型误差必须相对于它将被使用的 backup 或决策定义。"
+        },
+        {
+          "questionId": "planning-budget",
+          "title": "11 · 什么时候值得规划，应该把计算花在哪里？",
+          "path": "research/#research-planning-budget",
+          "setting": "规划用已学模型进行额外计算。真实交互、模型更新、搜索和想象训练共享有限预算。问题不是简单地增加规划步数，而是选择何时、何处、以什么时间尺度使用模型。",
+          "bridge": "规划用已学模型进行额外计算。真实交互、模型更新、搜索和想象训练共享有限预算。问题不是简单地增加规划步数，而是选择何时、何处、以什么时间尺度使用模型。"
+        },
+        {
+          "questionId": "retention-transfer",
+          "title": "12 · 怎样保留旧能力，而不把过时知识强加给新任务？",
+          "path": "research/#research-retention-transfer",
+          "setting": "学习分布变化后，旧任务能力可能下降。保存旧轨迹、生成旧经验、保持旧策略或分配独立模块都可以减少遗忘，但也可能减慢适应。任务边界和回访权限决定哪些方法可用。",
+          "bridge": "学习分布变化后，旧任务能力可能下降。保存旧轨迹、生成旧经验、保持旧策略或分配独立模块都可以减少遗忘，但也可能减慢适应。任务边界和回访权限决定哪些方法可用。"
+        },
+        {
+          "questionId": "integrated-architecture",
+          "title": "15 · 状态、知识、技能与规划怎样共同构成持续智能体？",
+          "path": "research/#research-integrated-architecture",
+          "setting": "完整 agent 同时更新状态、预测、控制、技能与模型。每个局部学习器看到的输入和目标都可能被其他模块改变。整体表现还受内存、计算分配和数据获取限制。",
+          "bridge": "完整 agent 同时更新状态、预测、控制、技能与模型。每个局部学习器看到的输入和目标都可能被其他模块改变。整体表现还受内存、计算分配和数据获取限制。"
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "path": "construction/planning/",
+      "title": "规划：把模型中的经验转成更好的决策",
+      "question": "真实交互很贵、计算预算有限时，怎样决定想象什么、更新什么，以及何时应该不再相信模型？",
+      "book": "continual-rl",
+      "group": "construction",
+      "kind": "core",
+      "order": 14,
+      "preparation": [
+        {
+          "chapterId": "models",
+          "title": "模型与后果预测：学什么，才能用于下一次决策？",
+          "path": "construction/models/",
+          "why": "明确模型预测的对象、时长和当前版本。"
+        },
+        {
+          "chapterId": "control",
+          "title": "持续控制：比较策略与学习智能体",
+          "path": "algorithms/control/",
+          "why": "把计算成本和实际行动放回同一评价问题。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "architectures",
+          "title": "持续智能体架构：模块接口、更新调度与长期评价",
+          "path": "construction/architectures/",
+          "why": "理解模型使用、资源分配与实际行动。"
+        }
+      ],
+      "practice": [
+        {
+          "id": "skills",
+          "title": "技能与规划",
+          "question": "一个多步行为怎样成为可学习、可预测、可规划的动作？",
+          "path": "code/#practice-skills",
+          "steps": []
+        }
+      ],
+      "executable": {
+        "file": "knowledge_algorithms_lab.py",
+        "command": "python3 knowledge_algorithms_lab.py planning",
+        "scope": "表格 Dyna、优先传播、option value iteration 与枚举 MPC；深度规划和想象训练另附原论文及作者工程。",
+        "path": "download/knowledge_algorithms_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "goal_model_planning_walkthrough.py",
+          "path": "/crl-code/tutorials/goal_model_planning_walkthrough.py",
+          "section": "lesson-replanning",
+          "sectionTitle": "1.1 模型已经修正，起点何时改选路线"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "differential_dyna",
+          "title": "平均奖励规划：每次备份也必须减去奖励率",
+          "path": "construction/planning/#experiment-differential_dyna",
+          "implementationPath": "code/differential_dyna/",
+          "afterSection": "lesson-derive"
+        },
+        {
+          "algorithmId": "option_value_iteration",
+          "title": "时间抽象能加速传播，但不会免费得到模型",
+          "path": "construction/planning/#experiment-option_value_iteration",
+          "implementationPath": "code/option_value_iteration/",
+          "afterSection": "lesson-options"
+        },
+        {
+          "algorithmId": "learned_model_mpc",
+          "title": "只执行计划的第一步：短视与有限时域规划",
+          "path": "construction/planning/#experiment-learned_model_mpc",
+          "implementationPath": "code/learned_model_mpc/",
+          "afterSection": "lesson-search"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "useful-options",
+          "title": "08 · 什么样的时间抽象值得加入技能库？",
+          "path": "research/#research-useful-options",
+          "setting": "Option 具有启动条件、内部策略与终止规则。技能发现还要决定哪些 option 值得占用容量。探索覆盖、执行效率、信用压缩和规划价值是不同用途，不能仅凭技能数量或轨迹图判断。",
+          "bridge": "Option 具有启动条件、内部策略与终止规则。技能发现还要决定哪些 option 值得占用容量。探索覆盖、执行效率、信用压缩和规划价值是不同用途，不能仅凭技能数量或轨迹图判断。"
+        },
+        {
+          "questionId": "planning-budget",
+          "title": "11 · 什么时候值得规划，应该把计算花在哪里？",
+          "path": "research/#research-planning-budget",
+          "setting": "规划用已学模型进行额外计算。真实交互、模型更新、搜索和想象训练共享有限预算。问题不是简单地增加规划步数，而是选择何时、何处、以什么时间尺度使用模型。",
+          "bridge": "规划用已学模型进行额外计算。真实交互、模型更新、搜索和想象训练共享有限预算。问题不是简单地增加规划步数，而是选择何时、何处、以什么时间尺度使用模型。"
+        },
+        {
+          "questionId": "integrated-architecture",
+          "title": "15 · 状态、知识、技能与规划怎样共同构成持续智能体？",
+          "path": "research/#research-integrated-architecture",
+          "setting": "完整 agent 同时更新状态、预测、控制、技能与模型。每个局部学习器看到的输入和目标都可能被其他模块改变。整体表现还受内存、计算分配和数据获取限制。",
+          "bridge": "完整 agent 同时更新状态、预测、控制、技能与模型。每个局部学习器看到的输入和目标都可能被其他模块改变。整体表现还受内存、计算分配和数据获取限制。"
+        }
+      ]
+    },
+    {
+      "id": "exploration",
+      "path": "algorithms/exploration/",
+      "title": "持续探索：新奇、不确定性、学习进展与恢复",
+      "question": "外部奖励稀疏、世界持续改变时，怎样获得有用的新经验，而不是追逐永远无法学会的噪声？",
+      "book": "continual-rl",
+      "group": "exploration",
+      "kind": "core",
+      "order": 15,
+      "preparation": [
+        {
+          "chapterId": "control",
+          "title": "持续控制：比较策略与学习智能体",
+          "path": "algorithms/control/",
+          "why": "将试探的收益和成本计入真实交互。"
+        }
+      ],
+      "usedBy": [],
+      "practice": [],
+      "executable": {
+        "file": "lifelong_algorithms_lab.py",
+        "command": "python lifelong_algorithms_lab.py exploration",
+        "scope": "内部奖励/进展/恢复接口的确定性检查；非 RND、课程或安全算法完整性能复现。",
+        "path": "download/lifelong_algorithms_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "exploration-information-walkthrough.py",
+          "path": "/crl-code/tutorials/exploration-information-walkthrough.py",
+          "section": "lesson-code",
+          "sectionTitle": "9 · 奖励时序实现与探索诊断"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "count_bonus",
+          "title": "实验 · 新奇奖励可以暂时偏离原任务",
+          "path": "algorithms/exploration/#experiment-count_bonus",
+          "implementationPath": "code/count_bonus/",
+          "afterSection": "lesson-derive"
+        },
+        {
+          "algorithmId": "rnd_exploration",
+          "title": "实验 · 预测误差作为内奖，未必优于无偏随机游走",
+          "path": "algorithms/exploration/#experiment-rnd_exploration",
+          "implementationPath": "code/rnd_exploration/",
+          "afterSection": "lesson-rnd"
+        },
+        {
+          "algorithmId": "recovery_filter",
+          "title": "实验 · 前向收益高，可能只是把恢复成本藏起来了",
+          "path": "algorithms/exploration/#experiment-recovery_filter",
+          "implementationPath": "code/recovery_filter/",
+          "afterSection": "lesson-recovery"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "experience-selection",
+          "title": "14 · 应当探索什么、练习什么，以及如何保留未来交互与学习的机会？",
+          "path": "research/#research-experience-selection",
+          "setting": "智能体的行为决定未来数据。新奇、可学习性、学习进展和任务收益并不一致。课程 teacher 能否选目标、改环境或重置，也会从根本上改变问题。",
+          "bridge": "智能体的行为决定未来数据。新奇、可学习性、学习进展和任务收益并不一致。课程 teacher 能否选目标、改环境或重置，也会从根本上改变问题。"
+        }
+      ]
+    },
+    {
+      "id": "architectures",
+      "path": "construction/architectures/",
+      "title": "持续智能体架构：模块接口、更新调度与长期评价",
+      "question": "各模块单独能学，不代表接在一起就能持续改善；它们究竟交换什么、何时更新、如何共享有限计算？",
+      "book": "continual-rl",
+      "group": "architecture",
+      "kind": "core",
+      "order": 16,
+      "preparation": [
+        {
+          "chapterId": "state",
+          "title": "Agent state：部分可观测性、递归记忆与在线信用分配",
+          "path": "construction/state/",
+          "why": "理解内部状态如何随经验更新。"
+        },
+        {
+          "chapterId": "models",
+          "title": "模型与后果预测：学什么，才能用于下一次决策？",
+          "path": "construction/models/",
+          "why": "理解可学习知识的规格与版本。"
+        },
+        {
+          "chapterId": "planning",
+          "title": "规划：把模型中的经验转成更好的决策",
+          "path": "construction/planning/",
+          "why": "理解模型使用、资源分配与实际行动。"
+        }
+      ],
+      "usedBy": [],
+      "practice": [
+        {
+          "id": "skills",
+          "title": "技能与规划",
+          "question": "一个多步行为怎样成为可学习、可预测、可规划的动作？",
+          "path": "code/#practice-skills",
+          "steps": [
+            {
+              "number": 8,
+              "title": "再让技能改变"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "lifelong_algorithms_lab.py",
+        "command": "python lifelong_algorithms_lab.py architectures",
+        "scope": "六状态、双动作、手工记忆的集成教学骨架；不是完整 OaK/STOMP 性能复现。",
+        "path": "download/lifelong_algorithms_lab.py"
+      },
+      "walkthroughs": [
+        {
+          "file": "architecture-walkthrough.py",
+          "path": "/crl-code/tutorials/architecture-walkthrough.py",
+          "section": "lesson-schedule",
+          "sectionTitle": "3 · 真实交互与规划的更新调度"
+        }
+      ],
+      "results": [
+        {
+          "algorithmId": "integrated_recent_model",
+          "title": "预测有了实际消费者：完成一个技能后发生什么",
+          "path": "construction/architectures/#experiment-integrated_recent_model",
+          "implementationPath": "code/integrated_recent_model/",
+          "afterSection": "lesson-model-questions"
+        },
+        {
+          "algorithmId": "integrated_stale_options",
+          "title": "同一个技能名字，可能已经不是同一个模型查询",
+          "path": "construction/architectures/#experiment-integrated_stale_options",
+          "implementationPath": "code/integrated_stale_options/",
+          "afterSection": "lesson-version-contract"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "integrated-architecture",
+          "title": "15 · 状态、知识、技能与规划怎样共同构成持续智能体？",
+          "path": "research/#research-integrated-architecture",
+          "setting": "完整 agent 同时更新状态、预测、控制、技能与模型。每个局部学习器看到的输入和目标都可能被其他模块改变。整体表现还受内存、计算分配和数据获取限制。",
+          "bridge": "完整 agent 同时更新状态、预测、控制、技能与模型。每个局部学习器看到的输入和目标都可能被其他模块改变。整体表现还受内存、计算分配和数据获取限制。"
+        },
+        {
+          "questionId": "measurement",
+          "title": "16 · 什么实验能区分“仍在更新”与“仍在有效学习”？",
+          "path": "research/#research-measurement",
+          "setting": "一条长曲线包含适应、探索、保留、环境变化和随机波动。训练中评估可能重置环境或暂停更新，这些操作会改变单生命期。研究需要先确定估计量与独立随机单位。",
+          "bridge": "一条长曲线包含适应、探索、保留、环境变化和随机波动。训练中评估可能重置环境或暂停更新，这些操作会改变单生命期。研究需要先确定估计量与独立随机单位。"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "path": "experiments/",
+      "title": "实验设计：从更新正确到持续学习证据",
+      "question": "一个算法通过测试、曲线更高，分别能说明什么？怎样用有限预算得到可以重复检验的结论？",
+      "book": "continual-rl",
+      "group": "architecture",
+      "kind": "core",
+      "order": 17,
+      "preparation": [
+        {
+          "chapterId": "control",
+          "title": "持续控制：比较策略与学习智能体",
+          "path": "algorithms/control/",
+          "why": "先规定要比较的完整学习器与目标。"
+        }
+      ],
+      "usedBy": [],
+      "practice": [
+        {
+          "id": "policy-control",
+          "title": "策略梯度与控制",
+          "question": "优化器确实降低了损失，为什么行动仍可能变差？",
+          "path": "code/#practice-policy-control",
+          "steps": [
+            {
+              "number": 6,
+              "title": "把评价对象扩展到完整学习过程"
+            }
+          ]
+        }
+      ],
+      "executable": {
+        "file": "experiment_design_lab.py",
+        "command": "python experiment_design_lab.py demo --tiny",
+        "scope": "标准库非平稳 bandit 的开发选择、独立测试、配对区间及失败诊断；不包含大型神经网络基准。",
+        "path": "download/experiment_design_lab.py"
+      },
+      "walkthroughs": [],
+      "results": [
+        {
+          "algorithmId": "td0",
+          "title": "以完整运行为随机单位读取学习曲线",
+          "path": "experiments/#experiment-td0",
+          "implementationPath": "code/td0/",
+          "afterSection": "lesson-randomness"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "reward-design",
+          "title": "奖励表示与奖励学习：目标怎样进入智能体？",
+          "path": "research/#research-reward-design",
+          "setting": "设计者拥有偏好，智能体只能接收有限观测和奖励。奖励可能手写，也可能由人的比较或示范推断。必须分开目标变化、奖励估计变化与环境变化。",
+          "bridge": "设计者拥有偏好，智能体只能接收有限观测和奖励。奖励可能手写，也可能由人的比较或示范推断。必须分开目标变化、奖励估计变化与环境变化。"
+        },
+        {
+          "questionId": "lifetime-objective",
+          "title": "01 · 什么目标能够评价一个始终在学习的智能体？",
+          "path": "research/#research-lifetime-objective",
+          "setting": "智能体只有有限存储和每步计算时间。学习改变其后续行为，环境可能持续而不终止，也可能存在成本不为零的重置。比较前需规定奖励、时间单位、评价时域和可用干预。平稳环境仍可能对有限资源智能体提出长期学习需求。",
+          "bridge": "智能体只有有限存储和每步计算时间。学习改变其后续行为，环境可能持续而不终止，也可能存在成本不为零的重置。比较前需规定奖励、时间单位、评价时域和可用干预。平稳环境仍可能对有限资源智能体提出长期学习需求。"
+        },
+        {
+          "questionId": "learning-rules",
+          "title": "07 · 哪些学习参数应当适应，怎样评价学出来的更新规则？",
+          "path": "research/#research-learning-rules",
+          "setting": "权重在内层学习，步长、return 参数、初始化或整个更新器在外层适应。在线元学习使用一段持续经验；跨任务元 RL 使用任务分布及重置。两者的元目标和数据权限不同。",
+          "bridge": "权重在内层学习，步长、return 参数、初始化或整个更新器在外层适应。在线元学习使用一段持续经验；跨任务元 RL 使用任务分布及重置。两者的元目标和数据权限不同。"
+        },
+        {
+          "questionId": "retention-transfer",
+          "title": "12 · 怎样保留旧能力，而不把过时知识强加给新任务？",
+          "path": "research/#research-retention-transfer",
+          "setting": "学习分布变化后，旧任务能力可能下降。保存旧轨迹、生成旧经验、保持旧策略或分配独立模块都可以减少遗忘，但也可能减慢适应。任务边界和回访权限决定哪些方法可用。",
+          "bridge": "学习分布变化后，旧任务能力可能下降。保存旧轨迹、生成旧经验、保持旧策略或分配独立模块都可以减少遗忘，但也可能减慢适应。任务边界和回访权限决定哪些方法可用。"
+        },
+        {
+          "questionId": "measurement",
+          "title": "16 · 什么实验能区分“仍在更新”与“仍在有效学习”？",
+          "path": "research/#research-measurement",
+          "setting": "一条长曲线包含适应、探索、保留、环境变化和随机波动。训练中评估可能重置环境或暂停更新，这些操作会改变单生命期。研究需要先确定估计量与独立随机单位。",
+          "bridge": "一条长曲线包含适应、探索、保留、环境变化和随机波动。训练中评估可能重置环境或暂停更新，这些操作会改变单生命期。研究需要先确定估计量与独立随机单位。"
+        }
+      ]
+    },
+    {
+      "id": "value",
+      "path": "algorithms/value/",
+      "title": "价值预测与时间差分学习",
+      "question": "持续学习仍要预测后果。沿用 MC、TD 与资格迹时，需要固定哪些对象，才能分清估计在更新、预测问题在变化，以及学习器未来会改变行为这三件事？",
+      "book": "continual-rl",
+      "group": "bridges",
+      "kind": "bridge",
+      "order": 18,
+      "preparation": [
+        {
+          "chapterId": "study-tabular-temporal-difference",
+          "title": "TD 预测与控制：SARSA、Expected SARSA、Q-learning 和 Double Q",
+          "path": "foundations/tabular/temporal-difference/",
+          "why": "完整的一步预测推导在第一册。"
+        },
+        {
+          "chapterId": "study-approximation-prediction",
+          "title": "函数逼近预测：从回归到 TD 固定点",
+          "path": "foundations/approximation/prediction/",
+          "why": "共享参数下的误差与半梯度在第一册。"
+        }
+      ],
+      "usedBy": [],
+      "practice": [],
+      "executable": {
+        "file": "foundations_detail_lab.py",
+        "command": "python3 foundations_detail_lab.py value\npython3 foundations_detail_lab.py test",
+        "scope": "Python 3.10+，仅标准库。实现表格 MC/TD 完整小实验；资格迹的前后向推导与实现见时间信用分配章。",
+        "path": "download/foundations_detail_lab.py"
+      },
+      "walkthroughs": [],
+      "results": [
+        {
+          "algorithmId": "td0",
+          "title": "实验 · MC 与 TD 估计的是同一个解析价值",
+          "path": "algorithms/value/#experiment-td0",
+          "implementationPath": "code/td0/",
+          "afterSection": "lesson-derive"
+        },
+        {
+          "algorithmId": "nstep_td",
+          "title": "实验 · 三步目标的传播更远，不保证最终误差更低",
+          "path": "algorithms/value/#experiment-nstep_td",
+          "implementationPath": "code/nstep_td/",
+          "afterSection": "value-traces"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "predictive-knowledge",
+          "title": "03 · 哪些预测值得学习，谁来使用这些预测？",
+          "path": "research/#research-predictive-knowledge",
+          "setting": "同一数据流可以支持许多不同未来问题。计算和容量有限，行为策略也未必覆盖每个目标策略。核心研究对象不仅是一个预测器的误差，还包括问题的选择、淘汰与下游用途。",
+          "bridge": "同一数据流可以支持许多不同未来问题。计算和容量有限，行为策略也未必覆盖每个目标策略。核心研究对象不仅是一个预测器的误差，还包括问题的选择、淘汰与下游用途。"
+        },
+        {
+          "questionId": "temporal-credit",
+          "title": "05 · 远处的反馈应该怎样更新早先的决策与内部计算？",
+          "path": "research/#research-temporal-credit",
+          "setting": "关键线索或动作很早出现，奖励很晚到达。时间信用涉及不同时间步；结构信用涉及同一计算图中的参数与中间量。是否只能在线更新，是另一个资源条件。",
+          "bridge": "关键线索或动作很早出现，奖励很晚到达。时间信用涉及不同时间步；结构信用涉及同一计算图中的参数与中间量。是否只能在线更新，是另一个资源条件。"
+        }
+      ]
+    },
+    {
+      "id": "deep-value",
+      "path": "algorithms/deep-value/",
+      "title": "深度价值学习：DQN 与 Double DQN",
+      "question": "把 DQN 放进长期运行的学习器后，哪些量只是为一次更新而固定，哪些旧经验、目标和特征会继续影响未来行动？",
+      "book": "continual-rl",
+      "group": "bridges",
+      "kind": "bridge",
+      "order": 19,
+      "preparation": [
+        {
+          "chapterId": "study-deep-deep-value",
+          "title": "深度价值学习：DQN、Double DQN 与目标的时间顺序",
+          "path": "foundations/deep/deep-value/",
+          "why": "完整DQN训练循环在第二册；这里回顾其持续使用条件。"
+        }
+      ],
+      "usedBy": [],
+      "practice": [],
+      "executable": {
+        "file": "foundations_detail_lab.py",
+        "command": "python3 foundations_detail_lab.py deep-value\npython3 foundations_detail_lab.py test",
+        "scope": "Python 3.10+，仅标准库。包含两层网络及手写反向传播、replay 与目标网络。实验环境为可解析的小型 MDP。",
+        "path": "download/foundations_detail_lab.py"
+      },
+      "walkthroughs": [],
+      "results": [
+        {
+          "algorithmId": "deep-double_dqn",
+          "title": "实验 · 分开选动作与评价动作的 Double DQN",
+          "path": "algorithms/deep-value/#experiment-deep-double_dqn",
+          "implementationPath": "code/deep-double_dqn/",
+          "afterSection": "lesson-derive"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "continual-control",
+          "title": "04 · 旧价值什么时候应该复用，什么时候应该快速改写？",
+          "path": "research/#research-continual-control",
+          "setting": "策略改善不断改变数据分布。奖励或动力学还可能发生外部变化。一个旧价值函数既可能提供知识，也可能阻碍适应；仅靠最终价值误差不能判断控制失败的原因。",
+          "bridge": "策略改善不断改变数据分布。奖励或动力学还可能发生外部变化。一个旧价值函数既可能提供知识，也可能阻碍适应；仅靠最终价值误差不能判断控制失败的原因。"
+        },
+        {
+          "questionId": "plasticity",
+          "title": "13 · 为什么训练越久，学习新东西反而越慢？",
+          "path": "research/#research-plasticity",
+          "setting": "长期训练后的网络面对新的可学习目标，下降速度比新初始化更慢。需在相同数据和目标上比较 aged 与 fresh 网络，才能把优化能力下降和探索失败区分开。",
+          "bridge": "长期训练后的网络面对新的可学习目标，下降速度比新初始化更慢。需在相同数据和目标上比较 aged 与 fresh 网络，才能把优化能力下降和探索失败区分开。"
+        }
+      ]
+    },
+    {
+      "id": "policy",
+      "path": "algorithms/policy/",
+      "title": "策略梯度、Actor–Critic 与 PPO",
+      "question": "策略梯度和 PPO 的一次更新以什么行为分布、价值版本与评价目标为参照？把这些更新连成持续学习过程后，哪些结论还需要重新检验？",
+      "book": "continual-rl",
+      "group": "bridges",
+      "kind": "bridge",
+      "order": 20,
+      "preparation": [
+        {
+          "chapterId": "study-approximation-policy-gradient",
+          "title": "策略梯度、基线与 Actor–Critic",
+          "path": "foundations/approximation/policy-gradient/",
+          "why": "从轨迹概率到策略梯度的推导在第一册。"
+        },
+        {
+          "chapterId": "study-deep-trust-region",
+          "title": "策略更新的尺度：TRPO 与 PPO",
+          "path": "foundations/deep/trust-region/",
+          "why": "批内代理目标与策略更新尺度在第二册。"
+        }
+      ],
+      "usedBy": [],
+      "practice": [],
+      "executable": {
+        "file": "foundations_detail_lab.py",
+        "command": "python3 foundations_detail_lab.py policy\npython3 foundations_detail_lab.py test",
+        "scope": "Python 3.10+，仅标准库。执行 PPO bandit 完整采样/优化循环，独立实现多步 GAE；不声称包含网络 PPO 的通用训练工程。",
+        "path": "download/foundations_detail_lab.py"
+      },
+      "walkthroughs": [],
+      "results": [
+        {
+          "algorithmId": "deep-vpg",
+          "title": "实验 · 完整回报与一步 critic 提供不同的策略学习信号",
+          "path": "algorithms/policy/#experiment-deep-vpg",
+          "implementationPath": "code/deep-vpg/",
+          "afterSection": "lesson-derive"
+        },
+        {
+          "algorithmId": "deep-ppo",
+          "title": "实验 · PPO 的旧数据、多轮更新与裁剪",
+          "path": "algorithms/policy/#experiment-deep-ppo",
+          "implementationPath": "code/deep-ppo/",
+          "afterSection": "policy-ppo"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "continual-control",
+          "title": "04 · 旧价值什么时候应该复用，什么时候应该快速改写？",
+          "path": "research/#research-continual-control",
+          "setting": "策略改善不断改变数据分布。奖励或动力学还可能发生外部变化。一个旧价值函数既可能提供知识，也可能阻碍适应；仅靠最终价值误差不能判断控制失败的原因。",
+          "bridge": "策略改善不断改变数据分布。奖励或动力学还可能发生外部变化。一个旧价值函数既可能提供知识，也可能阻碍适应；仅靠最终价值误差不能判断控制失败的原因。"
+        },
+        {
+          "questionId": "temporal-credit",
+          "title": "05 · 远处的反馈应该怎样更新早先的决策与内部计算？",
+          "path": "research/#research-temporal-credit",
+          "setting": "关键线索或动作很早出现，奖励很晚到达。时间信用涉及不同时间步；结构信用涉及同一计算图中的参数与中间量。是否只能在线更新，是另一个资源条件。",
+          "bridge": "关键线索或动作很早出现，奖励很晚到达。时间信用涉及不同时间步；结构信用涉及同一计算图中的参数与中间量。是否只能在线更新，是另一个资源条件。"
+        },
+        {
+          "questionId": "streaming-stability",
+          "title": "06 · 不存 replay、每步只处理新经验时，怎样避免更新失稳？",
+          "path": "research/#research-streaming-stability",
+          "setting": "数据到达后立即用于学习；过去 transition 不被存储再训练。资格迹、递归活动和 optimizer 状态仍可存在，但须计入内存。数值稳定、样本利用率和动作 deadline 都是评价对象。",
+          "bridge": "数据到达后立即用于学习；过去 transition 不被存储再训练。资格迹、递归活动和 optimizer 状态仍可存在，但须计入内存。数值稳定、样本利用率和动作 deadline 都是评价对象。"
+        }
+      ]
+    },
+    {
+      "id": "soft-control",
+      "path": "algorithms/soft-control/",
+      "title": "最大熵控制与 Soft Actor–Critic",
+      "question": "持续运行 SAC 时，温度改变的是哪个优化问题？怎样区分 soft 价值、外部任务收益，以及长期学习中保留随机性的实际作用？",
+      "book": "continual-rl",
+      "group": "bridges",
+      "kind": "bridge",
+      "order": 21,
+      "preparation": [
+        {
+          "chapterId": "study-deep-entropy-control",
+          "title": "最大熵连续控制：SAC 的价值、密度与温度",
+          "path": "foundations/deep/entropy-control/",
+          "why": "完整soft目标、密度、温度与SAC循环在第二册。"
+        }
+      ],
+      "usedBy": [],
+      "practice": [],
+      "executable": {
+        "file": "foundations_detail_lab.py",
+        "command": "python3 foundations_detail_lab.py soft-control\npython3 foundations_detail_lab.py test",
+        "scope": "Python 3.10+，仅标准库。运行精确离散 actor 优化和公式检查；连续 SAC 的完整训练顺序在正文，作者工程在章末。",
+        "path": "download/foundations_detail_lab.py"
+      },
+      "walkthroughs": [],
+      "results": [
+        {
+          "algorithmId": "deep-sac",
+          "title": "实验 · 连续 SAC 的梯度路径与真实控制结果",
+          "path": "algorithms/soft-control/#experiment-deep-sac",
+          "implementationPath": "code/deep-sac/",
+          "afterSection": "sac-loop"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "continual-control",
+          "title": "04 · 旧价值什么时候应该复用，什么时候应该快速改写？",
+          "path": "research/#research-continual-control",
+          "setting": "策略改善不断改变数据分布。奖励或动力学还可能发生外部变化。一个旧价值函数既可能提供知识，也可能阻碍适应；仅靠最终价值误差不能判断控制失败的原因。",
+          "bridge": "策略改善不断改变数据分布。奖励或动力学还可能发生外部变化。一个旧价值函数既可能提供知识，也可能阻碍适应；仅靠最终价值误差不能判断控制失败的原因。"
+        },
+        {
+          "questionId": "streaming-stability",
+          "title": "06 · 不存 replay、每步只处理新经验时，怎样避免更新失稳？",
+          "path": "research/#research-streaming-stability",
+          "setting": "数据到达后立即用于学习；过去 transition 不被存储再训练。资格迹、递归活动和 optimizer 状态仍可存在，但须计入内存。数值稳定、样本利用率和动作 deadline 都是评价对象。",
+          "bridge": "数据到达后立即用于学习；过去 transition 不被存储再训练。资格迹、递归活动和 optimizer 状态仍可存在，但须计入内存。数值稳定、样本利用率和动作 deadline 都是评价对象。"
+        }
+      ]
+    },
+    {
+      "id": "dyna",
+      "path": "algorithms/dyna/",
+      "title": "Dyna：模型学习与规划",
+      "question": "直接学习从真实经验更新价值或策略；模型学习估计行动后果；规划用这些估计进行额外计算。Dyna 将三者连接，使已有经验可以通过模型继续影响决策。",
+      "book": "continual-rl",
+      "group": "bridges",
+      "kind": "bridge",
+      "order": 22,
+      "preparation": [
+        {
+          "chapterId": "study-tabular-planning",
+          "title": "学习与规划：Dyna、优先扫描和执行时搜索",
+          "path": "foundations/tabular/planning/",
+          "why": "区分真实经验、模型学习和模拟更新。"
+        }
+      ],
+      "usedBy": [
+        {
+          "chapterId": "models",
+          "title": "模型与后果预测：学什么，才能用于下一次决策？",
+          "path": "construction/models/",
+          "why": "理解模型如何被更新和使用。"
+        }
+      ],
+      "practice": [],
+      "executable": {
+        "file": "foundations_detail_lab.py",
+        "command": "python3 foundations_detail_lab.py dyna\npython3 foundations_detail_lab.py test",
+        "scope": "Python 3.10+，仅标准库。完整表格 Dyna-Q 与解析参照；概率模型、优先队列与神经世界模型需按正文接口进一步实现。",
+        "path": "download/foundations_detail_lab.py"
+      },
+      "walkthroughs": [],
+      "results": [
+        {
+          "algorithmId": "dyna_q",
+          "title": "同一批真实经验，增加五次模型备份",
+          "path": "algorithms/dyna/#experiment-dyna_q",
+          "implementationPath": "code/dyna_q/",
+          "afterSection": "dyna-steps"
+        },
+        {
+          "algorithmId": "prioritized_sweeping",
+          "title": "把有限规划预算沿前驱传播",
+          "path": "algorithms/dyna/#experiment-prioritized_sweeping",
+          "implementationPath": "code/prioritized_sweeping/",
+          "afterSection": "dyna-priorities"
+        }
+      ],
+      "research": [
+        {
+          "questionId": "reusable-models",
+          "title": "10 · 模型需要预测什么，才能在变化后继续支持决策？",
+          "path": "research/#research-reusable-models",
+          "setting": "模型用于预测动作或 option 的后果，而不是仅重建观测。状态表示、策略和环境可以分别改变。模型误差必须相对于它将被使用的 backup 或决策定义。",
+          "bridge": "模型用于预测动作或 option 的后果，而不是仅重建观测。状态表示、策略和环境可以分别改变。模型误差必须相对于它将被使用的 backup 或决策定义。"
+        },
+        {
+          "questionId": "planning-budget",
+          "title": "11 · 什么时候值得规划，应该把计算花在哪里？",
+          "path": "research/#research-planning-budget",
+          "setting": "规划用已学模型进行额外计算。真实交互、模型更新、搜索和想象训练共享有限预算。问题不是简单地增加规划步数，而是选择何时、何处、以什么时间尺度使用模型。",
+          "bridge": "规划用已学模型进行额外计算。真实交互、模型更新、搜索和想象训练共享有限预算。问题不是简单地增加规划步数，而是选择何时、何处、以什么时间尺度使用模型。"
+        }
+      ]
+    }
+  ]
+}

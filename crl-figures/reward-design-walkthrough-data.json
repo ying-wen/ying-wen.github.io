@@ -1,0 +1,1530 @@
+{
+  "schema": "reward-design-walkthrough-v1",
+  "evidence": "exact finite model calculation",
+  "config": {
+    "gamma": 0.9,
+    "horizon": 3,
+    "bonus": 3,
+    "startPotential": 1,
+    "nearPotential": 3
+  },
+  "objective": "Discounted delivered-parcel reward; genuine deadline after three actions; state is (t,x).",
+  "information": "Planner knows all transitions and specified rewards; no reward learning, random sampling, or training run.",
+  "budget": "Each displayed policy has one complete episode: 2 or 3 real actions. Planning is exhaustive; no learning-speed claim.",
+  "results": [
+    {
+      "mode": "true",
+      "solution": {
+        "mode": "true",
+        "value": 0.9,
+        "states": {
+          "2:A": {
+            "value": 1,
+            "choice": "deliver",
+            "q": [
+              {
+                "action": "deliver",
+                "value": 1
+              },
+              {
+                "action": "wait",
+                "value": 0
+              }
+            ]
+          },
+          "1:A": {
+            "value": 1,
+            "choice": "deliver",
+            "q": [
+              {
+                "action": "deliver",
+                "value": 1
+              },
+              {
+                "action": "wait",
+                "value": 0.9
+              }
+            ]
+          },
+          "0:S": {
+            "value": 0.9,
+            "choice": "approach",
+            "q": [
+              {
+                "action": "approach",
+                "value": 0.9
+              }
+            ]
+          }
+        }
+      },
+      "paths": [
+        {
+          "id": "early",
+          "label": "第2步送达",
+          "actions": [
+            "approach",
+            "deliver"
+          ],
+          "trace": [
+            {
+              "s": {
+                "t": 0,
+                "x": "S"
+              },
+              "a": "approach",
+              "next": {
+                "t": 1,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 0,
+              "weight": 1,
+              "cumulativeTraining": 0,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 1,
+                "x": "A"
+              },
+              "a": "deliver",
+              "next": {
+                "t": 2,
+                "x": "G"
+              },
+              "reward": 1,
+              "done": true,
+              "training": 1,
+              "weight": 0.9,
+              "cumulativeTraining": 0.9,
+              "cumulativeTrue": 0.9
+            }
+          ],
+          "trainReturn": 0.9,
+          "trueReturn": 0.9,
+          "delivered": true,
+          "steps": 2,
+          "end": {
+            "t": 2,
+            "x": "G"
+          }
+        },
+        {
+          "id": "late",
+          "label": "第3步送达",
+          "actions": [
+            "approach",
+            "wait",
+            "deliver"
+          ],
+          "trace": [
+            {
+              "s": {
+                "t": 0,
+                "x": "S"
+              },
+              "a": "approach",
+              "next": {
+                "t": 1,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 0,
+              "weight": 1,
+              "cumulativeTraining": 0,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 1,
+                "x": "A"
+              },
+              "a": "wait",
+              "next": {
+                "t": 2,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 0,
+              "weight": 0.9,
+              "cumulativeTraining": 0,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 2,
+                "x": "A"
+              },
+              "a": "deliver",
+              "next": {
+                "t": 3,
+                "x": "G"
+              },
+              "reward": 1,
+              "done": true,
+              "training": 1,
+              "weight": 0.81,
+              "cumulativeTraining": 0.81,
+              "cumulativeTrue": 0.81
+            }
+          ],
+          "trainReturn": 0.81,
+          "trueReturn": 0.81,
+          "delivered": true,
+          "steps": 3,
+          "end": {
+            "t": 3,
+            "x": "G"
+          }
+        },
+        {
+          "id": "timeout",
+          "label": "门口等待至超时",
+          "actions": [
+            "approach",
+            "wait",
+            "wait"
+          ],
+          "trace": [
+            {
+              "s": {
+                "t": 0,
+                "x": "S"
+              },
+              "a": "approach",
+              "next": {
+                "t": 1,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 0,
+              "weight": 1,
+              "cumulativeTraining": 0,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 1,
+                "x": "A"
+              },
+              "a": "wait",
+              "next": {
+                "t": 2,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 0,
+              "weight": 0.9,
+              "cumulativeTraining": 0,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 2,
+                "x": "A"
+              },
+              "a": "wait",
+              "next": {
+                "t": 3,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": true,
+              "training": 0,
+              "weight": 0.81,
+              "cumulativeTraining": 0,
+              "cumulativeTrue": 0
+            }
+          ],
+          "trainReturn": 0,
+          "trueReturn": 0,
+          "delivered": false,
+          "steps": 3,
+          "end": {
+            "t": 3,
+            "x": "A"
+          }
+        }
+      ],
+      "selected": "early",
+      "run": {
+        "actions": [
+          "approach",
+          "deliver"
+        ],
+        "trace": [
+          {
+            "s": {
+              "t": 0,
+              "x": "S"
+            },
+            "a": "approach",
+            "next": {
+              "t": 1,
+              "x": "A"
+            },
+            "reward": 0,
+            "done": false,
+            "training": 0,
+            "weight": 1,
+            "cumulativeTraining": 0,
+            "cumulativeTrue": 0
+          },
+          {
+            "s": {
+              "t": 1,
+              "x": "A"
+            },
+            "a": "deliver",
+            "next": {
+              "t": 2,
+              "x": "G"
+            },
+            "reward": 1,
+            "done": true,
+            "training": 1,
+            "weight": 0.9,
+            "cumulativeTraining": 0.9,
+            "cumulativeTrue": 0.9
+          }
+        ],
+        "trainReturn": 0.9,
+        "trueReturn": 0.9,
+        "delivered": true,
+        "steps": 2,
+        "end": {
+          "t": 2,
+          "x": "G"
+        }
+      }
+    },
+    {
+      "mode": "proxy",
+      "solution": {
+        "mode": "proxy",
+        "value": 8.129999999999999,
+        "states": {
+          "2:A": {
+            "value": 3,
+            "choice": "wait",
+            "q": [
+              {
+                "action": "deliver",
+                "value": 1
+              },
+              {
+                "action": "wait",
+                "value": 3
+              }
+            ]
+          },
+          "1:A": {
+            "value": 5.7,
+            "choice": "wait",
+            "q": [
+              {
+                "action": "deliver",
+                "value": 1
+              },
+              {
+                "action": "wait",
+                "value": 5.7
+              }
+            ]
+          },
+          "0:S": {
+            "value": 8.129999999999999,
+            "choice": "approach",
+            "q": [
+              {
+                "action": "approach",
+                "value": 8.129999999999999
+              }
+            ]
+          }
+        }
+      },
+      "paths": [
+        {
+          "id": "early",
+          "label": "第2步送达",
+          "actions": [
+            "approach",
+            "deliver"
+          ],
+          "trace": [
+            {
+              "s": {
+                "t": 0,
+                "x": "S"
+              },
+              "a": "approach",
+              "next": {
+                "t": 1,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 3,
+              "weight": 1,
+              "cumulativeTraining": 3,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 1,
+                "x": "A"
+              },
+              "a": "deliver",
+              "next": {
+                "t": 2,
+                "x": "G"
+              },
+              "reward": 1,
+              "done": true,
+              "training": 1,
+              "weight": 0.9,
+              "cumulativeTraining": 3.9,
+              "cumulativeTrue": 0.9
+            }
+          ],
+          "trainReturn": 3.9,
+          "trueReturn": 0.9,
+          "delivered": true,
+          "steps": 2,
+          "end": {
+            "t": 2,
+            "x": "G"
+          }
+        },
+        {
+          "id": "late",
+          "label": "第3步送达",
+          "actions": [
+            "approach",
+            "wait",
+            "deliver"
+          ],
+          "trace": [
+            {
+              "s": {
+                "t": 0,
+                "x": "S"
+              },
+              "a": "approach",
+              "next": {
+                "t": 1,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 3,
+              "weight": 1,
+              "cumulativeTraining": 3,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 1,
+                "x": "A"
+              },
+              "a": "wait",
+              "next": {
+                "t": 2,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 3,
+              "weight": 0.9,
+              "cumulativeTraining": 5.7,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 2,
+                "x": "A"
+              },
+              "a": "deliver",
+              "next": {
+                "t": 3,
+                "x": "G"
+              },
+              "reward": 1,
+              "done": true,
+              "training": 1,
+              "weight": 0.81,
+              "cumulativeTraining": 6.51,
+              "cumulativeTrue": 0.81
+            }
+          ],
+          "trainReturn": 6.51,
+          "trueReturn": 0.81,
+          "delivered": true,
+          "steps": 3,
+          "end": {
+            "t": 3,
+            "x": "G"
+          }
+        },
+        {
+          "id": "timeout",
+          "label": "门口等待至超时",
+          "actions": [
+            "approach",
+            "wait",
+            "wait"
+          ],
+          "trace": [
+            {
+              "s": {
+                "t": 0,
+                "x": "S"
+              },
+              "a": "approach",
+              "next": {
+                "t": 1,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 3,
+              "weight": 1,
+              "cumulativeTraining": 3,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 1,
+                "x": "A"
+              },
+              "a": "wait",
+              "next": {
+                "t": 2,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 3,
+              "weight": 0.9,
+              "cumulativeTraining": 5.7,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 2,
+                "x": "A"
+              },
+              "a": "wait",
+              "next": {
+                "t": 3,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": true,
+              "training": 3,
+              "weight": 0.81,
+              "cumulativeTraining": 8.13,
+              "cumulativeTrue": 0
+            }
+          ],
+          "trainReturn": 8.13,
+          "trueReturn": 0,
+          "delivered": false,
+          "steps": 3,
+          "end": {
+            "t": 3,
+            "x": "A"
+          }
+        }
+      ],
+      "selected": "timeout",
+      "run": {
+        "actions": [
+          "approach",
+          "wait",
+          "wait"
+        ],
+        "trace": [
+          {
+            "s": {
+              "t": 0,
+              "x": "S"
+            },
+            "a": "approach",
+            "next": {
+              "t": 1,
+              "x": "A"
+            },
+            "reward": 0,
+            "done": false,
+            "training": 3,
+            "weight": 1,
+            "cumulativeTraining": 3,
+            "cumulativeTrue": 0
+          },
+          {
+            "s": {
+              "t": 1,
+              "x": "A"
+            },
+            "a": "wait",
+            "next": {
+              "t": 2,
+              "x": "A"
+            },
+            "reward": 0,
+            "done": false,
+            "training": 3,
+            "weight": 0.9,
+            "cumulativeTraining": 5.7,
+            "cumulativeTrue": 0
+          },
+          {
+            "s": {
+              "t": 2,
+              "x": "A"
+            },
+            "a": "wait",
+            "next": {
+              "t": 3,
+              "x": "A"
+            },
+            "reward": 0,
+            "done": true,
+            "training": 3,
+            "weight": 0.81,
+            "cumulativeTraining": 8.13,
+            "cumulativeTrue": 0
+          }
+        ],
+        "trainReturn": 8.13,
+        "trueReturn": 0,
+        "delivered": false,
+        "steps": 3,
+        "end": {
+          "t": 3,
+          "x": "A"
+        }
+      }
+    },
+    {
+      "mode": "shaping",
+      "solution": {
+        "mode": "shaping",
+        "value": -0.09999999999999987,
+        "states": {
+          "2:A": {
+            "value": -2,
+            "choice": "deliver",
+            "q": [
+              {
+                "action": "deliver",
+                "value": -2
+              },
+              {
+                "action": "wait",
+                "value": -3
+              }
+            ]
+          },
+          "1:A": {
+            "value": -2,
+            "choice": "deliver",
+            "q": [
+              {
+                "action": "deliver",
+                "value": -2
+              },
+              {
+                "action": "wait",
+                "value": -2.0999999999999996
+              }
+            ]
+          },
+          "0:S": {
+            "value": -0.09999999999999987,
+            "choice": "approach",
+            "q": [
+              {
+                "action": "approach",
+                "value": -0.09999999999999987
+              }
+            ]
+          }
+        }
+      },
+      "paths": [
+        {
+          "id": "early",
+          "label": "第2步送达",
+          "actions": [
+            "approach",
+            "deliver"
+          ],
+          "trace": [
+            {
+              "s": {
+                "t": 0,
+                "x": "S"
+              },
+              "a": "approach",
+              "next": {
+                "t": 1,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 1.7000000000000002,
+              "weight": 1,
+              "cumulativeTraining": 1.7000000000000002,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 1,
+                "x": "A"
+              },
+              "a": "deliver",
+              "next": {
+                "t": 2,
+                "x": "G"
+              },
+              "reward": 1,
+              "done": true,
+              "training": -2,
+              "weight": 0.9,
+              "cumulativeTraining": -0.09999999999999987,
+              "cumulativeTrue": 0.9
+            }
+          ],
+          "trainReturn": -0.09999999999999987,
+          "trueReturn": 0.9,
+          "delivered": true,
+          "steps": 2,
+          "end": {
+            "t": 2,
+            "x": "G"
+          }
+        },
+        {
+          "id": "late",
+          "label": "第3步送达",
+          "actions": [
+            "approach",
+            "wait",
+            "deliver"
+          ],
+          "trace": [
+            {
+              "s": {
+                "t": 0,
+                "x": "S"
+              },
+              "a": "approach",
+              "next": {
+                "t": 1,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 1.7000000000000002,
+              "weight": 1,
+              "cumulativeTraining": 1.7000000000000002,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 1,
+                "x": "A"
+              },
+              "a": "wait",
+              "next": {
+                "t": 2,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": -0.2999999999999998,
+              "weight": 0.9,
+              "cumulativeTraining": 1.4300000000000004,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 2,
+                "x": "A"
+              },
+              "a": "deliver",
+              "next": {
+                "t": 3,
+                "x": "G"
+              },
+              "reward": 1,
+              "done": true,
+              "training": -2,
+              "weight": 0.81,
+              "cumulativeTraining": -0.18999999999999972,
+              "cumulativeTrue": 0.81
+            }
+          ],
+          "trainReturn": -0.18999999999999972,
+          "trueReturn": 0.81,
+          "delivered": true,
+          "steps": 3,
+          "end": {
+            "t": 3,
+            "x": "G"
+          }
+        },
+        {
+          "id": "timeout",
+          "label": "门口等待至超时",
+          "actions": [
+            "approach",
+            "wait",
+            "wait"
+          ],
+          "trace": [
+            {
+              "s": {
+                "t": 0,
+                "x": "S"
+              },
+              "a": "approach",
+              "next": {
+                "t": 1,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 1.7000000000000002,
+              "weight": 1,
+              "cumulativeTraining": 1.7000000000000002,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 1,
+                "x": "A"
+              },
+              "a": "wait",
+              "next": {
+                "t": 2,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": -0.2999999999999998,
+              "weight": 0.9,
+              "cumulativeTraining": 1.4300000000000004,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 2,
+                "x": "A"
+              },
+              "a": "wait",
+              "next": {
+                "t": 3,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": true,
+              "training": -3,
+              "weight": 0.81,
+              "cumulativeTraining": -0.9999999999999998,
+              "cumulativeTrue": 0
+            }
+          ],
+          "trainReturn": -0.9999999999999998,
+          "trueReturn": 0,
+          "delivered": false,
+          "steps": 3,
+          "end": {
+            "t": 3,
+            "x": "A"
+          }
+        }
+      ],
+      "selected": "early",
+      "run": {
+        "actions": [
+          "approach",
+          "deliver"
+        ],
+        "trace": [
+          {
+            "s": {
+              "t": 0,
+              "x": "S"
+            },
+            "a": "approach",
+            "next": {
+              "t": 1,
+              "x": "A"
+            },
+            "reward": 0,
+            "done": false,
+            "training": 1.7000000000000002,
+            "weight": 1,
+            "cumulativeTraining": 1.7000000000000002,
+            "cumulativeTrue": 0
+          },
+          {
+            "s": {
+              "t": 1,
+              "x": "A"
+            },
+            "a": "deliver",
+            "next": {
+              "t": 2,
+              "x": "G"
+            },
+            "reward": 1,
+            "done": true,
+            "training": -2,
+            "weight": 0.9,
+            "cumulativeTraining": -0.09999999999999987,
+            "cumulativeTrue": 0.9
+          }
+        ],
+        "trainReturn": -0.09999999999999987,
+        "trueReturn": 0.9,
+        "delivered": true,
+        "steps": 2,
+        "end": {
+          "t": 2,
+          "x": "G"
+        }
+      }
+    },
+    {
+      "mode": "bad-boundary",
+      "solution": {
+        "mode": "bad-boundary",
+        "value": 1.1870000000000005,
+        "states": {
+          "2:A": {
+            "value": -0.2999999999999998,
+            "choice": "wait",
+            "q": [
+              {
+                "action": "deliver",
+                "value": -2
+              },
+              {
+                "action": "wait",
+                "value": -0.2999999999999998
+              }
+            ]
+          },
+          "1:A": {
+            "value": -0.5699999999999996,
+            "choice": "wait",
+            "q": [
+              {
+                "action": "deliver",
+                "value": -2
+              },
+              {
+                "action": "wait",
+                "value": -0.5699999999999996
+              }
+            ]
+          },
+          "0:S": {
+            "value": 1.1870000000000005,
+            "choice": "approach",
+            "q": [
+              {
+                "action": "approach",
+                "value": 1.1870000000000005
+              }
+            ]
+          }
+        }
+      },
+      "paths": [
+        {
+          "id": "early",
+          "label": "第2步送达",
+          "actions": [
+            "approach",
+            "deliver"
+          ],
+          "trace": [
+            {
+              "s": {
+                "t": 0,
+                "x": "S"
+              },
+              "a": "approach",
+              "next": {
+                "t": 1,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 1.7000000000000002,
+              "weight": 1,
+              "cumulativeTraining": 1.7000000000000002,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 1,
+                "x": "A"
+              },
+              "a": "deliver",
+              "next": {
+                "t": 2,
+                "x": "G"
+              },
+              "reward": 1,
+              "done": true,
+              "training": -2,
+              "weight": 0.9,
+              "cumulativeTraining": -0.09999999999999987,
+              "cumulativeTrue": 0.9
+            }
+          ],
+          "trainReturn": -0.09999999999999987,
+          "trueReturn": 0.9,
+          "delivered": true,
+          "steps": 2,
+          "end": {
+            "t": 2,
+            "x": "G"
+          }
+        },
+        {
+          "id": "late",
+          "label": "第3步送达",
+          "actions": [
+            "approach",
+            "wait",
+            "deliver"
+          ],
+          "trace": [
+            {
+              "s": {
+                "t": 0,
+                "x": "S"
+              },
+              "a": "approach",
+              "next": {
+                "t": 1,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 1.7000000000000002,
+              "weight": 1,
+              "cumulativeTraining": 1.7000000000000002,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 1,
+                "x": "A"
+              },
+              "a": "wait",
+              "next": {
+                "t": 2,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": -0.2999999999999998,
+              "weight": 0.9,
+              "cumulativeTraining": 1.4300000000000004,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 2,
+                "x": "A"
+              },
+              "a": "deliver",
+              "next": {
+                "t": 3,
+                "x": "G"
+              },
+              "reward": 1,
+              "done": true,
+              "training": -2,
+              "weight": 0.81,
+              "cumulativeTraining": -0.18999999999999972,
+              "cumulativeTrue": 0.81
+            }
+          ],
+          "trainReturn": -0.18999999999999972,
+          "trueReturn": 0.81,
+          "delivered": true,
+          "steps": 3,
+          "end": {
+            "t": 3,
+            "x": "G"
+          }
+        },
+        {
+          "id": "timeout",
+          "label": "门口等待至超时",
+          "actions": [
+            "approach",
+            "wait",
+            "wait"
+          ],
+          "trace": [
+            {
+              "s": {
+                "t": 0,
+                "x": "S"
+              },
+              "a": "approach",
+              "next": {
+                "t": 1,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 1.7000000000000002,
+              "weight": 1,
+              "cumulativeTraining": 1.7000000000000002,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 1,
+                "x": "A"
+              },
+              "a": "wait",
+              "next": {
+                "t": 2,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": -0.2999999999999998,
+              "weight": 0.9,
+              "cumulativeTraining": 1.4300000000000004,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 2,
+                "x": "A"
+              },
+              "a": "wait",
+              "next": {
+                "t": 3,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": true,
+              "training": -0.2999999999999998,
+              "weight": 0.81,
+              "cumulativeTraining": 1.1870000000000005,
+              "cumulativeTrue": 0
+            }
+          ],
+          "trainReturn": 1.1870000000000005,
+          "trueReturn": 0,
+          "delivered": false,
+          "steps": 3,
+          "end": {
+            "t": 3,
+            "x": "A"
+          }
+        }
+      ],
+      "selected": "timeout",
+      "run": {
+        "actions": [
+          "approach",
+          "wait",
+          "wait"
+        ],
+        "trace": [
+          {
+            "s": {
+              "t": 0,
+              "x": "S"
+            },
+            "a": "approach",
+            "next": {
+              "t": 1,
+              "x": "A"
+            },
+            "reward": 0,
+            "done": false,
+            "training": 1.7000000000000002,
+            "weight": 1,
+            "cumulativeTraining": 1.7000000000000002,
+            "cumulativeTrue": 0
+          },
+          {
+            "s": {
+              "t": 1,
+              "x": "A"
+            },
+            "a": "wait",
+            "next": {
+              "t": 2,
+              "x": "A"
+            },
+            "reward": 0,
+            "done": false,
+            "training": -0.2999999999999998,
+            "weight": 0.9,
+            "cumulativeTraining": 1.4300000000000004,
+            "cumulativeTrue": 0
+          },
+          {
+            "s": {
+              "t": 2,
+              "x": "A"
+            },
+            "a": "wait",
+            "next": {
+              "t": 3,
+              "x": "A"
+            },
+            "reward": 0,
+            "done": true,
+            "training": -0.2999999999999998,
+            "weight": 0.81,
+            "cumulativeTraining": 1.1870000000000005,
+            "cumulativeTrue": 0
+          }
+        ],
+        "trainReturn": 1.1870000000000005,
+        "trueReturn": 0,
+        "delivered": false,
+        "steps": 3,
+        "end": {
+          "t": 3,
+          "x": "A"
+        }
+      }
+    },
+    {
+      "mode": "bad-discount",
+      "solution": {
+        "mode": "bad-discount",
+        "value": 0.3799999999999999,
+        "states": {
+          "2:A": {
+            "value": -2,
+            "choice": "deliver",
+            "q": [
+              {
+                "action": "deliver",
+                "value": -2
+              },
+              {
+                "action": "wait",
+                "value": -3
+              }
+            ]
+          },
+          "1:A": {
+            "value": -1.8,
+            "choice": "wait",
+            "q": [
+              {
+                "action": "deliver",
+                "value": -2
+              },
+              {
+                "action": "wait",
+                "value": -1.8
+              }
+            ]
+          },
+          "0:S": {
+            "value": 0.3799999999999999,
+            "choice": "approach",
+            "q": [
+              {
+                "action": "approach",
+                "value": 0.3799999999999999
+              }
+            ]
+          }
+        }
+      },
+      "paths": [
+        {
+          "id": "early",
+          "label": "第2步送达",
+          "actions": [
+            "approach",
+            "deliver"
+          ],
+          "trace": [
+            {
+              "s": {
+                "t": 0,
+                "x": "S"
+              },
+              "a": "approach",
+              "next": {
+                "t": 1,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 2,
+              "weight": 1,
+              "cumulativeTraining": 2,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 1,
+                "x": "A"
+              },
+              "a": "deliver",
+              "next": {
+                "t": 2,
+                "x": "G"
+              },
+              "reward": 1,
+              "done": true,
+              "training": -2,
+              "weight": 0.9,
+              "cumulativeTraining": 0.19999999999999996,
+              "cumulativeTrue": 0.9
+            }
+          ],
+          "trainReturn": 0.19999999999999996,
+          "trueReturn": 0.9,
+          "delivered": true,
+          "steps": 2,
+          "end": {
+            "t": 2,
+            "x": "G"
+          }
+        },
+        {
+          "id": "late",
+          "label": "第3步送达",
+          "actions": [
+            "approach",
+            "wait",
+            "deliver"
+          ],
+          "trace": [
+            {
+              "s": {
+                "t": 0,
+                "x": "S"
+              },
+              "a": "approach",
+              "next": {
+                "t": 1,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 2,
+              "weight": 1,
+              "cumulativeTraining": 2,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 1,
+                "x": "A"
+              },
+              "a": "wait",
+              "next": {
+                "t": 2,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 0,
+              "weight": 0.9,
+              "cumulativeTraining": 2,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 2,
+                "x": "A"
+              },
+              "a": "deliver",
+              "next": {
+                "t": 3,
+                "x": "G"
+              },
+              "reward": 1,
+              "done": true,
+              "training": -2,
+              "weight": 0.81,
+              "cumulativeTraining": 0.3799999999999999,
+              "cumulativeTrue": 0.81
+            }
+          ],
+          "trainReturn": 0.3799999999999999,
+          "trueReturn": 0.81,
+          "delivered": true,
+          "steps": 3,
+          "end": {
+            "t": 3,
+            "x": "G"
+          }
+        },
+        {
+          "id": "timeout",
+          "label": "门口等待至超时",
+          "actions": [
+            "approach",
+            "wait",
+            "wait"
+          ],
+          "trace": [
+            {
+              "s": {
+                "t": 0,
+                "x": "S"
+              },
+              "a": "approach",
+              "next": {
+                "t": 1,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 2,
+              "weight": 1,
+              "cumulativeTraining": 2,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 1,
+                "x": "A"
+              },
+              "a": "wait",
+              "next": {
+                "t": 2,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": false,
+              "training": 0,
+              "weight": 0.9,
+              "cumulativeTraining": 2,
+              "cumulativeTrue": 0
+            },
+            {
+              "s": {
+                "t": 2,
+                "x": "A"
+              },
+              "a": "wait",
+              "next": {
+                "t": 3,
+                "x": "A"
+              },
+              "reward": 0,
+              "done": true,
+              "training": -3,
+              "weight": 0.81,
+              "cumulativeTraining": -0.43000000000000016,
+              "cumulativeTrue": 0
+            }
+          ],
+          "trainReturn": -0.43000000000000016,
+          "trueReturn": 0,
+          "delivered": false,
+          "steps": 3,
+          "end": {
+            "t": 3,
+            "x": "A"
+          }
+        }
+      ],
+      "selected": "late",
+      "run": {
+        "actions": [
+          "approach",
+          "wait",
+          "deliver"
+        ],
+        "trace": [
+          {
+            "s": {
+              "t": 0,
+              "x": "S"
+            },
+            "a": "approach",
+            "next": {
+              "t": 1,
+              "x": "A"
+            },
+            "reward": 0,
+            "done": false,
+            "training": 2,
+            "weight": 1,
+            "cumulativeTraining": 2,
+            "cumulativeTrue": 0
+          },
+          {
+            "s": {
+              "t": 1,
+              "x": "A"
+            },
+            "a": "wait",
+            "next": {
+              "t": 2,
+              "x": "A"
+            },
+            "reward": 0,
+            "done": false,
+            "training": 0,
+            "weight": 0.9,
+            "cumulativeTraining": 2,
+            "cumulativeTrue": 0
+          },
+          {
+            "s": {
+              "t": 2,
+              "x": "A"
+            },
+            "a": "deliver",
+            "next": {
+              "t": 3,
+              "x": "G"
+            },
+            "reward": 1,
+            "done": true,
+            "training": -2,
+            "weight": 0.81,
+            "cumulativeTraining": 0.3799999999999999,
+            "cumulativeTrue": 0.81
+          }
+        ],
+        "trainReturn": 0.3799999999999999,
+        "trueReturn": 0.81,
+        "delivered": true,
+        "steps": 3,
+        "end": {
+          "t": 3,
+          "x": "G"
+        }
+      }
+    }
+  ]
+}

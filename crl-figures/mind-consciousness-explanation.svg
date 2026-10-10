@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" role="img" aria-labelledby="title desc">
+  <title id="title">同一次选择概率，可以来自不同学习参数</title>
+  <desc id="desc">两模型从零价值开始，接受强制左动作奖励1。学习率0.2逆温度5与学习率0.5逆温度2在一次反馈后的概率都是0.731，两次反馈后分别为0.858与0.818。数值是给定模型的理论计算，不是实验数据。</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10" fill="#52647b"/></marker></defs>
+  <rect width="960" height="660" rx="18" fill="#f8fafc"/>
+  <g font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" fill="#172c45">
+    <text x="36" y="47" font-size="27" font-weight="700">改变实验条件，才能分开相似预测</text>
+    <text x="36" y="79" font-size="18" fill="#52647b">本章自构的参数辨识例子 · 机制示意，非原论文数据</text>
+    <rect x="35" y="108" width="890" height="64" rx="10" fill="#e4edf7"/>
+    <text x="480" y="148" text-anchor="middle" font-size="22">共同设定：Q₀(L) = Q₀(R) = 0；强制左动作，每次奖励 1</text>
+    <text x="36" y="218" font-size="22" font-weight="700">模型</text>
+    <text x="475" y="218" text-anchor="middle" font-size="22" font-weight="700">一次反馈后探测</text>
+    <text x="775" y="218" text-anchor="middle" font-size="22" font-weight="700">两次反馈后探测</text>
+    <path d="M35 238H925" stroke="#b9c8d8"/>
+    <g font-size="23">
+      <text x="36" y="289" font-weight="700" fill="#315a83">A：α = 0.2，β = 5</text>
+      <text x="475" y="281" text-anchor="middle">Q₁(L) = 0.2</text><text x="475" y="322" text-anchor="middle" font-weight="700">p₁(L) ≈ 0.731</text>
+      <text x="775" y="281" text-anchor="middle">Q₂(L) = 0.36</text><text x="775" y="322" text-anchor="middle" fill="#315a83" font-weight="700">p₂(L) ≈ 0.858</text>
+      <text x="36" y="408" font-weight="700" fill="#8a5529">B：α = 0.5，β = 2</text>
+      <text x="475" y="400" text-anchor="middle">Q₁(L) = 0.5</text><text x="475" y="441" text-anchor="middle" font-weight="700">p₁(L) ≈ 0.731</text>
+      <text x="775" y="400" text-anchor="middle">Q₂(L) = 0.75</text><text x="775" y="441" text-anchor="middle" fill="#8a5529" font-weight="700">p₂(L) ≈ 0.818</text>
+    </g>
+    <path d="M628 299H656" stroke="#52647b" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M628 418H656" stroke="#52647b" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="348" y="250" width="248" height="213" rx="12" fill="none" stroke="#879fb8" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="475" y="500" text-anchor="middle" font-size="20" fill="#52647b">βα 相同，预测相同</text>
+    <text x="775" y="500" text-anchor="middle" font-size="20" fill="#52647b">价值积累后，预测分开</text>
+    <rect x="35" y="538" width="890" height="85" rx="10" fill="#fff0de"/>
+    <text x="480" y="573" text-anchor="middle" font-size="21">不是“换一个拟合器”，而是“取得有区分力的数据”。</text>
+    <text x="480" y="605" text-anchor="middle" font-size="18" fill="#7b4b24">每种探测条件独立重置初值；有限样本与其他机制仍可能造成混淆。</text>
+  </g>
+</svg>

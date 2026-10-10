@@ -1,0 +1,190 @@
+<!DOCTYPE html><html lang="zh" class="scroll-smooth" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="从基础强化学习出发，逐步理解持续学习、动手实验与前沿研究。"><meta name="author" content="Ying Wen"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta property="og:title" content="估计、信用分配与平均奖励：公式到实验 — 持续强化学习 · 温颖"><meta property="og:description" content="从基础强化学习出发，逐步理解持续学习、动手实验与前沿研究。"><meta property="og:type" content="website"><meta property="og:url" content="https://yingwen.io/zh/continual-rl/code/guides/extended-classic/"><meta property="og:site_name" content="Ying Wen"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://yingwen.io/yingwen.jpg"><meta property="og:image:alt" content="估计、信用分配与平均奖励：公式到实验 — 持续强化学习 · 温颖"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="估计、信用分配与平均奖励：公式到实验 — 持续强化学习 · 温颖"><meta name="twitter:description" content="从基础强化学习出发，逐步理解持续学习、动手实验与前沿研究。"><meta name="twitter:image" content="https://yingwen.io/yingwen.jpg"><meta name="twitter:image:alt" content="估计、信用分配与平均奖励：公式到实验 — 持续强化学习 · 温颖"><link rel="canonical" href="https://yingwen.io/zh/continual-rl/code/guides/extended-classic/"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="alternate" type="application/rss+xml" title="温颖 - 博客" href="/rss-zh.xml"><link rel="alternate" hreflang="zh" href="https://yingwen.io/zh/continual-rl/code/guides/extended-classic/"><link rel="alternate" hreflang="x-default" href="https://yingwen.io/zh/continual-rl/code/guides/extended-classic/"><link rel="alternate" type="text/markdown" href="https://yingwen.io/crl-code/extended-classic.md"><link rel="describedby" type="text/plain" href="https://yingwen.io/llms.txt"><link rel="sitemap" type="application/xml" href="/sitemap.xml"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://yingwen.io/zh/continual-rl/code/guides/extended-classic/#resource","url":"https://yingwen.io/zh/continual-rl/code/guides/extended-classic/","name":"估计、信用分配与平均奖励：公式到实验","inLanguage":"zh-CN","description":"从基础强化学习出发，逐步理解持续学习、动手实验与前沿研究。","educationalLevel":"基础强化学习至研究入门","isAccessibleForFree":true},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"教学","item":"https://yingwen.io/zh/teaching/"},{"@type":"ListItem","position":2,"name":"持续强化学习","item":"https://yingwen.io/zh/continual-rl/"},{"@type":"ListItem","position":3,"name":"估计、信用分配与平均奖励：公式到实验","item":"https://yingwen.io/zh/continual-rl/code/guides/extended-classic/"}]}]}</script><title>估计、信用分配与平均奖励：公式到实验 — 持续强化学习 · 温颖</title><link rel="stylesheet" href="/_astro/index.Bc0r1rU8.css">
+<style>.implementation-guide[data-astro-cid-ghgzo3ax]{line-height:1.9;overflow-wrap:anywhere}.implementation-guide[data-astro-cid-ghgzo3ax] h1{font-size:2rem;margin:24px 0}.implementation-guide[data-astro-cid-ghgzo3ax] h2{font-size:1.4rem;margin:40px 0 16px}.implementation-guide[data-astro-cid-ghgzo3ax] h3{margin:28px 0 12px;font-size:1.15rem}.implementation-guide[data-astro-cid-ghgzo3ax] p{margin:16px 0}.implementation-guide[data-astro-cid-ghgzo3ax] ul,.implementation-guide[data-astro-cid-ghgzo3ax] ol{padding-left:24px;list-style:revert}.implementation-guide[data-astro-cid-ghgzo3ax] table{display:block;max-width:100%;overflow:auto;border-collapse:collapse}.implementation-guide[data-astro-cid-ghgzo3ax] th,.implementation-guide[data-astro-cid-ghgzo3ax] td{padding:12px;border-bottom:1px solid #dce2e7;text-align:left;min-width:140px}.implementation-guide[data-astro-cid-ghgzo3ax] pre{padding:18px;overflow:auto;background:#f3f6fa;max-width:100%}.implementation-guide[data-astro-cid-ghgzo3ax] .katex-display{overflow:auto;padding:8px 0}.section[data-astro-cid-ghgzo3ax] li[data-astro-cid-ghgzo3ax]{margin:12px 0}.section[data-astro-cid-ghgzo3ax] span[data-astro-cid-ghgzo3ax]{color:#61758a;font-size:.86rem}
+</style>
+<link rel="stylesheet" href="/_astro/_path_.CEn5YxCV.css">
+<link rel="stylesheet" href="/_astro/_path_.DhsgWa2X.css"></head> <body class="font-sans min-h-screen flex flex-col bg-stone-50 text-gray-800" data-astro-cid-37fxchfa> <!-- Navigation --> <header class="sticky top-0 z-50 backdrop-blur border-b bg-white/90 border-gray-200" data-astro-cid-37fxchfa> <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6" data-astro-cid-37fxchfa> <a href="/zh/" class="text-xl font-serif font-bold text-primary-800 hover:text-primary-600 transition-colors" data-astro-cid-37fxchfa>
+Ying Wen
+</a> <div class="hidden md:flex items-center gap-6" data-astro-cid-37fxchfa> <a href="/zh/" class="text-sm font-medium transition-colors text-gray-600 hover:text-primary-700" data-astro-cid-37fxchfa> 首页 </a><a href="/zh/publications/" class="text-sm font-medium transition-colors text-gray-600 hover:text-primary-700" data-astro-cid-37fxchfa> 学术论文 </a><a href="/zh/projects/" class="text-sm font-medium transition-colors text-gray-600 hover:text-primary-700" data-astro-cid-37fxchfa> 开源项目 </a><a href="/zh/teaching/" class="text-sm font-medium transition-colors text-gray-600 hover:text-primary-700" data-astro-cid-37fxchfa> 教学 </a><a href="/zh/blog/" class="text-sm font-medium transition-colors text-gray-600 hover:text-primary-700" data-astro-cid-37fxchfa> 博客 </a><a href="/zh/art/" class="text-sm font-medium transition-colors text-gray-600 hover:text-primary-700" data-astro-cid-37fxchfa> AI艺术 </a> <!-- Language switcher --> <a href="/en/teaching/" class="text-sm text-gray-500 hover:text-primary-700 transition-colors px-2 py-1 rounded border border-gray-200 hover:border-primary-300" id="lang-switch-desktop" data-target-lang="en" data-astro-cid-37fxchfa>
+🌐 EN </a> </div> <!-- Mobile menu button --> <div class="flex items-center gap-2 md:hidden" data-astro-cid-37fxchfa> <a href="/en/teaching/" class="text-sm text-gray-500 hover:text-primary-700 px-2 py-1 rounded border border-gray-200" id="lang-switch-mobile" data-target-lang="en" data-astro-cid-37fxchfa>
+🌐 EN </a> <button id="mobile-menu-btn" class="p-2 text-gray-600 hover:text-primary-700" aria-label="Menu" data-astro-cid-37fxchfa> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-37fxchfa> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" data-astro-cid-37fxchfa></path> </svg> </button> </div> </nav> <!-- Mobile menu --> <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white" data-astro-cid-37fxchfa> <div class="px-4 py-2 space-y-1" data-astro-cid-37fxchfa> <a href="/zh/" class="block py-2 text-sm text-gray-600" data-astro-cid-37fxchfa> 首页 </a><a href="/zh/publications/" class="block py-2 text-sm text-gray-600" data-astro-cid-37fxchfa> 学术论文 </a><a href="/zh/projects/" class="block py-2 text-sm text-gray-600" data-astro-cid-37fxchfa> 开源项目 </a><a href="/zh/teaching/" class="block py-2 text-sm text-gray-600" data-astro-cid-37fxchfa> 教学 </a><a href="/zh/blog/" class="block py-2 text-sm text-gray-600" data-astro-cid-37fxchfa> 博客 </a><a href="/zh/art/" class="block py-2 text-sm text-gray-600" data-astro-cid-37fxchfa> AI艺术 </a> </div> </div> </header> <!-- Main content --> <main class="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6" data-astro-cid-37fxchfa>  <div class="crl" data-astro-cid-we2hv5p6> <div class="crl-crumb" data-astro-cid-we2hv5p6><a href="/zh/teaching/" data-astro-cid-we2hv5p6>教学</a><span data-astro-cid-we2hv5p6>/</span><a href="/zh/continual-rl/" data-astro-cid-we2hv5p6>持续强化学习</a><a class="crl-repository-link" href="https://github.com/ying-wen/continual-rl-tutorial" target="_blank" rel="noopener noreferrer" data-astro-cid-we2hv5p6>GitHub 教程与代码 ↗</a></div> <nav class="crl-nav crl-primary-nav" aria-label="全站主导航" data-astro-cid-we2hv5p6><a href="/zh/continual-rl/" data-astro-cid-we2hv5p6>问题与框架</a><a href="/zh/continual-rl/start/" data-astro-cid-we2hv5p6>基础与方法</a><a href="/zh/continual-rl/research/" data-astro-cid-we2hv5p6>研究问题</a><a href="/zh/continual-rl/labs/" aria-current="true" data-astro-cid-we2hv5p6>实验与实现</a><a href="/zh/continual-rl/library/" data-astro-cid-we2hv5p6>文献与学者</a></nav> <details class="crl-section-navigation" data-section-navigation open data-astro-cid-we2hv5p6> <summary data-astro-cid-we2hv5p6>实验与实现 · 独立算法实现<span data-astro-cid-we2hv5p6>切换栏目</span></summary> <p class="crl-section-purpose" data-astro-cid-we2hv5p6>按教材章节找到环境、源码和结果图。从单步数值检查进入受控学习实验，再学习基线比较、统计评估和作者工程的使用。</p> <nav class="crl-secondary-nav" aria-label="实验与实现栏目" data-course-links data-astro-cid-we2hv5p6><a href="/zh/continual-rl/labs/" data-astro-cid-we2hv5p6>逐章代码与实验</a><a href="/zh/continual-rl/code/" data-route-current="true" aria-current="page" data-astro-cid-we2hv5p6>独立算法实现</a><a href="/zh/continual-rl/first-project/" data-astro-cid-we2hv5p6>第一个实验</a><a href="/zh/continual-rl/experiments/handbook/" data-astro-cid-we2hv5p6>实验方法</a><a href="/zh/continual-rl/experiments/" data-astro-cid-we2hv5p6>算法测试</a><a href="/zh/continual-rl/construction/implementations/" data-astro-cid-we2hv5p6>作者实现对照</a></nav>  <p class="crl-location" data-astro-cid-we2hv5p6><a href="/zh/continual-rl/code/" data-astro-cid-we2hv5p6>独立算法实现</a><span aria-hidden="true" data-astro-cid-we2hv5p6> / </span><span data-astro-cid-we2hv5p6>估计、信用分配与平均奖励：公式到实验</span></p> </details> <div class="crl-reading-tools" data-reading-tools data-reading-enabled="true" data-astro-cid-mw5gzuyi> <aside class="rt-sidebar" data-reading-sidebar hidden data-astro-cid-mw5gzuyi> <strong class="rt-title" data-astro-cid-mw5gzuyi>本页目录</strong> <p class="rt-current" data-reading-current data-astro-cid-mw5gzuyi>阅读位置</p> <nav class="rt-toc" data-reading-nav aria-label="本页目录" data-astro-cid-mw5gzuyi><button type="button" class="rt-depth" data-reading-depth aria-expanded="false" data-astro-cid-mw5gzuyi>展开所有小节</button><ol data-reading-list data-astro-cid-mw5gzuyi></ol></nav> <button class="rt-side-top" type="button" data-reading-top-button data-astro-cid-mw5gzuyi>回到顶部 ↑</button> </aside> <div class="rt-content" data-reading-content data-astro-cid-mw5gzuyi> <header class="page-heading" data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/" data-astro-cid-ghgzo3ax>← 算法实现与实验目录</a><p data-astro-cid-ghgzo3ax>问题、公式、实现边界和对照设计。各方法的完整源码与曲线在下方对应页面。</p></header> <article class="implementation-guide" data-astro-cid-ghgzo3ax><h1 id="表格线性与信用机制的独立扩展">表格、线性与信用机制的独立扩展</h1>
+<p>这组实验围绕四个问题组织：怎样估计价值；怎样传播多步信用；怎样处理无终点的奖励流；怎样在约束或竞争下选择策略。每种方法都有一个明确的小型任务，并与同任务的基线比较。公式检查、实验结果与原论文规模复现是不同层次的证据。</p>
+<p>每个文件包含问题、公式、初值、更新顺序及限制。run(seed,steps,emit)实际采样或执行已知模型备份；通用文件共享环境、采样、测量和线性代数。先选择下面一个实验，再查看源码中的更新式与预算时钟：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>python3 implementations/extended_classic/ordinary_is.py --steps 1200 --seeds 0 1 2 --out results/OPE_NEW_RUN</span></span>
+<span class="line"><span>python3 implementations/extended_classic/gradient_eligibility_traces.py --steps 1200 --seeds 0 1 2 --out results/GTD2_NEW_RUN</span></span>
+<span class="line"><span>python3 -m unittest discover -s tests -p test_extended_classic.py -v</span></span></code></pre>
+<p>输出必须为新目录。比较同时绑定family、task、metric、unit和budget；计算成本、表示容量和信息差异仍须单独解释。</p>
+<h2 id="1-bellman与mc">1. Bellman与MC</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>文件（均位于implementations/extended_classic）</th><th>原覆盖编号</th><th>更新与对照</th></tr></thead><tbody><tr><td>iterative_policy_evaluation.py</td><td>core-policy-evaluation</td><td>同步期望Bellman扫描；对照原地扫描policy_evaluation_inplace</td></tr><tr><td>every_visit_mc.py</td><td>core-every-visit-mc</td><td>每次状态访问的完整回报样本均值；对照first_visit_mc_reference</td></tr><tr><td>mc_control.py</td><td>core-mc-control</td><td>完整回合首次状态动作访问，回合结束后ε-soft改善</td></tr></tbody></table>
+<p>策略评价采用已知六格链、固定π=(0.2,0.8)、γ=0.95，初值0，每扫描5个状态备份。真值来自独立线性方程解。原地和同步使用不同轮内信息顺序；扫描不是环境交互。</p>
+<p>MC预测采用从3开始的五状态无偏随机游走，终点左右奖励0/1，γ=1，真值s/6只用于测量。Every-visit接受同回合相关回报，不把它们称为独立样本。预算末未完成回合不更新，也不补终点。MC control固定ε=0.1，不满足一般GLIE最优收敛的全部条件。</p>
+<p>所有控制链非终点奖励−0.01、终点1、γ=0.95、起点0。冻结贪心策略用确定性终点或无限循环解析评价；一直向左回报精确−0.2，没有100步截断遗漏。</p>
+<h2 id="2-is与dr评价组件">2. IS与DR：评价组件</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>文件</th><th>原覆盖编号</th><th>核心表达式</th></tr></thead><tbody><tr><td>ordinary_is.py</td><td>core-ordinary-is</td><td>ΣWG/N，W=Πρ</td></tr><tr><td>weighted_is.py</td><td>core-weighted-is</td><td>ΣWG/ΣW</td></tr><tr><td>per_decision_is.py</td><td>core-pdis</td><td>Σγᵗ(Πᵢ≤ₜρᵢ)rₜ</td></tr><tr><td>sequential_dr.py</td><td>core-sequential-dr</td><td>DRₜ=Vhatₜ+ρₜ(rₜ+γDRₜ₊₁−Qhatₜ)</td></tr></tbody></table>
+<p>四方法共用三步回合：μ=(0.5,0.5)、π=(0.2,0.8)，Bernoulli动作均值0.1/0.9，γ=0.9。每预算单位一条真实三转移回合，另记3倍原始步数。目标回报0.74(1+0.9+0.9²)只用于测量累计估计误差。</p>
+<p>比率函数拒绝零行为概率及非法概率，允许零目标概率。Weighted IS有限样本通常有偏，总权重0时明确返回0。DR的经验奖励模型只看旧回合，Qhat与Vhat来自同一π；先估计当前DR，之后模型才吸收本回合。准确比率使有偏模型仍可保持期望正确，不等于任意同样本拟合都无偏。这些文件不训练控制策略，不测试未知行为概率或长轨迹方差。</p>
+<h2 id="3-多步预测和控制迹">3. 多步预测和控制迹</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>文件</th><th>原覆盖编号</th><th>范围</th></tr></thead><tbody><tr><td>tree_backup.py</td><td>core-tree-backup</td><td>固定随机策略三步期望分支</td></tr><tr><td>q_sigma.py</td><td>core-q-sigma</td><td>固定策略三步σ=0.5混合</td></tr><tr><td>retrace.py</td><td>core-retrace</td><td>λ=0.8截断误差传播，当前ρ=1</td></tr><tr><td>watkins_q_lambda.py</td><td>core-watkins-q-lambda</td><td>表格控制、累积迹、非贪心动作剪迹</td></tr><tr><td>semi_gradient_sarsa.py</td><td>core-semi-gradient-sarsa</td><td>每动作3个共享多项式特征的线性SARSA</td></tr></tbody></table>
+<p>前三者π=μ=(0.2,0.8)，Q=0，测量固定目标策略十个状态动作RMSE。三步前缀成熟后更新最早Q，真终点冲洗短目标，未成熟预算尾不伪终止。Q(σ)的σ=0/1分别退化Tree Backup/SARSA；没有一般离策略Q(σ)校正。Retrace保留完整目标动作期望，c仅作用下一误差传播；on-policy运行不能展示离策略控制或函数逼近收敛。</p>
+<p>Watkins先用旧Q判断下一动作是否贪心（并列也保留），当前资格加1，传播本次误差，然后才衰减或清迹。终点奖励先获过去资格信用再清迹。半梯度SARSA有6共享权重，表格方法10独立值；同任务比较也需保留容量差异，不证明同表示优势。</p>
+<h2 id="4-线性与平均奖励">4. 线性与平均奖励</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>文件</th><th>原覆盖编号</th><th>目标</th></tr></thead><tbody><tr><td>gradient_mc.py</td><td>core-gradient-mc</td><td>完整回报平方损失的真实梯度</td></tr><tr><td>lstd.py</td><td>core-lstd</td><td>A=Σx(x−γx′)ᵀ、b=Σxr</td></tr><tr><td>differential_td_prediction.py</td><td>core-differential-td</td><td>同一旧δ更新差分价值及奖励率</td></tr><tr><td>relative_value_iteration.py</td><td>core-rvi</td><td>参考状态归一化的已知模型迭代</td></tr><tr><td>average_smdp_option.py</td><td>core-smdp-rate</td><td>旧平均持续时间归一化的固定策略选项更新</td></tr></tbody></table>
+<p>Gradient MC/LSTD同用随机游走、[1,s/6]特征、w=0。终点特征零，预算截断不补终点。LSTD固定加10⁻⁵I避免有限前缀奇异；不是未正则原始LSTD。手算测试另外验证ridge=0可逆解和奇异报错。均匀状态RMSE与采样占用加权投影目标不能混称。</p>
+<p>Differential TD/SMDP同用无终点两状态交替流，从0开始，Bernoulli均值0.2/0.8，率0.5、差分偏差差0.3。选项持续1或3原始步，收集未折扣总奖励；δ=R−gLold+v′−v，Δv=αδ/Lold、Δg=ηΔv，最后更新L。预算中未完成选项不更新。只实现固定策略expected-duration子机制，没有一般多选项控制、intra-option、模型学习或中断。</p>
+<p>RVI另用已知非周期两状态模型：自环0.8、跨状态0.2、奖励0.2/0.8，偏差差真值1.5。每扫描2备份；unnormalized_value_iteration对照保留公共增长项。相对误差曲线可完全相同，这是坐标规范恒等性，不是效能优势。RVI不是未知环境样本学习。</p>
+<h2 id="5-三个信用子机制">5. 三个信用子机制</h2>
+<p>greedy_adaptive_lambda.py对应core-adaptive-lambda。固定bootstrap=0、未来回报N(1,0.25)，Welford学习回报矩，取λ=b²/(b²+variance)。旧统计选择λ，独立验证回报测量混合MSE；对照固定λ=0.5，每预算都消耗一训练/一验证样本。补齐真实矩学习，但不实现整条TD链、全状态λ网络或原论文全部递归矩估计。</p>
+<p>expected_eligibility_traces.py对应core-expected-traces。完整Markov汇合状态的过去迹为[0.72,0,1]或[0,0.72,1]，末奖励独立取0/2。条件迹由历史标签均值学习，本次方向先用旧预测，再吸收标签；对照sampled_eligibility_reference使用本条真实历史。主价值参数冻结，仅比较累计方向均值与[0.36,0.36,1]。初始预测0会有有限前缀偏差。未实现完整ET价值学习、递归ET(λ,η)、神经预测器、表示漂移或非Markov混叠。</p>
+<p>gradient_eligibility_traces.py对应core-gradient-traces。两步0→1→真终点，末奖励Bernoulli(0.5)，V=tanh(w·x)、H=tanh(h·x)，两网络参数回合内冻结、回合间更新。zH累积辅助预测，zη累积辅助输出梯度；主方向−zH∇δ保留下一状态完整导数。前向参考独立递推λ目标和目标梯度，理论预期总方向相同，不声称在线每前缀等价。本组仅含冻结GTD2，不含TDC第三条迹、TDRC正则、QRC控制或原深度基准。</p>
+<h2 id="6-探索约束和零和矩阵">6. 探索、约束和零和矩阵</h2>
+<p>thompson_sampling.py对应core-thompson：三臂平稳Bernoulli、独立Beta(1,1)先验，每步从各臂均值参数的后验分布抽样，再选抽样值最大的臂，用实际奖励更新成功/失败。UCB对照同任务同真实交互预算。后验正确性限定于独立平稳Bernoulli。</p>
+<p>cmdp_primal_dual.py对应core-primal-dual：单状态两动作奖励均值0.2/0.9，cost=动作1，上限0.4。θ初值0，ν初值0；actor随机方向(r−νc)(a−π1)，dual投影max(0,ν+α(c−0.4))，两者均读取旧参数。不用真均值更新，真最优π1=0.4只测量。无约束策略梯度对照明确不保证可行。本实现是Lagrangian子机制，不复现所引CMDP论文的regularized policy iteration、多状态占据测度求解或安全保证；有限训练也不保证从第一步可行。</p>
+<p>minimax_2x2.py对应core-minimax：矩阵[[0.8,−0.2],[−0.4,0.6]]，每步均匀采一个元素并观测σ=0.2 Gaussian噪声，经验均值初始0。学习矩阵后，行玩家解两仿射分支下包络，列玩家解负转置；对照同经验矩阵上的虚拟博弈。真矩阵仅测量Nash间隙。这是经验矩阵子机制，不是Markov game或深度多智能体学习。</p>
+<h2 id="7-原文身份和检查">7. 原文身份和检查</h2>
+<p>各文件META给出原文。下列重点来源已通过原始论文、作者站点或出版社页面核验身份；代码为独立教学实现，不移植作者成绩。</p>
+<ul>
+<li><a href="https://people.eecs.berkeley.edu/~pabbeel/cs287-fa09/readings/BradtkeBarto-lstd-1996">LSTD原文PDF</a>：正则是本实验额外约定。</li>
+<li><a href="https://arxiv.org/abs/1703.01327">Q(σ)</a>、<a href="https://arxiv.org/abs/1606.02647">Retrace</a>、<a href="https://arxiv.org/abs/1511.03722">序贯DR</a>：目标、传播和比率的角色分别核对。</li>
+<li><a href="https://arxiv.org/abs/2006.16318">平均奖励学习</a>、<a href="https://arxiv.org/html/2110.13855">平均奖励Options</a>：本组明确expected-duration固定策略范围。</li>
+<li><a href="https://arxiv.org/html/1607.00446">λ-greedy</a>、<a href="https://arxiv.org/html/2007.01839">Expected Traces</a>、<a href="https://arxiv.org/html/2507.09087v1">Gradient Traces</a>：局部矩、条件迹和冻结双网络范围不同。</li>
+<li><a href="https://www.jstor.org/stable/2332286">Thompson 1933</a>、<a href="https://link.springer.com/article/10.1007/BF01448847">von Neumann 1928</a>：原文书目信息确认，不宣称获取全部订阅全文。</li>
+<li><a href="https://arxiv.org/abs/2101.10895">Primal-Dual CMDP</a>：约束原始对偶背景，不将本子机制称为原文完整算法。</li>
+<li><a href="http://incompleteideas.net/book/the-book-2nd.html">Sutton与Barto第二版</a>与作者OffPolicy PDF作为基础依据；本次访问有超时，不宣称逐页重新核验全书。</li>
+</ul>
+<p>测试覆盖32入口×三个seed的真实1200预算、23个coverage编号、同任务baseline契约、MC访问、IS穷举期望、DR偏模型/零模型、Q(σ)端点及终点/非终点尾值、LSTD方程和奇异边界、Watkins更新后剪迹及并列动作、RVI坐标移位、旧平均时长、Welford矩、双网络前后向及有限差分、dual投影和纯/混合/退化矩阵。</p>
+<p>数学测试验证公式和时序；一般效能仍需另行登记任务、计算预算、完整seed人口和负结果。本组不发布该类效能结论。</p></article> <section class="section" data-astro-cid-ghgzo3ax><h2 data-astro-cid-ghgzo3ax>进入源码与实际结果</h2><ul data-astro-cid-ghgzo3ax><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/average_smdp_option/" data-astro-cid-ghgzo3ax>平均奖励 SMDP 选项更新</a><span data-astro-cid-ghgzo3ax> · 独立子机制实验</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/cmdp_primal_dual/" data-astro-cid-ghgzo3ax>单状态 CMDP 随机原始对偶</a><span data-astro-cid-ghgzo3ax> · 独立子机制实验</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/differential_td_prediction/" data-astro-cid-ghgzo3ax>Differential TD</a><span data-astro-cid-ghgzo3ax> · 独立教学算法</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/every_visit_mc/" data-astro-cid-ghgzo3ax>Every-visit MC</a><span data-astro-cid-ghgzo3ax> · 独立教学算法</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/expected_eligibility_traces/" data-astro-cid-ghgzo3ax>学习条件期望资格迹</a><span data-astro-cid-ghgzo3ax> · 独立子机制实验</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/fictitious_play_reference/" data-astro-cid-ghgzo3ax>经验矩阵虚拟博弈对照</a><span data-astro-cid-ghgzo3ax> · 独立子机制实验</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/first_visit_mc_reference/" data-astro-cid-ghgzo3ax>首次访问 MC 对照</a><span data-astro-cid-ghgzo3ax> · 独立教学算法</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/fixed_lambda_reference/" data-astro-cid-ghgzo3ax>固定λ局部混合对照</a><span data-astro-cid-ghgzo3ax> · 独立子机制实验</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/gradient_eligibility_traces/" data-astro-cid-ghgzo3ax>非线性梯度资格迹 GTD2 机制</a><span data-astro-cid-ghgzo3ax> · 独立子机制实验</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/gradient_mc/" data-astro-cid-ghgzo3ax>Gradient MC</a><span data-astro-cid-ghgzo3ax> · 独立教学算法</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/gradient_trace_forward_reference/" data-astro-cid-ghgzo3ax>冻结参数前向 GTD2 对照</a><span data-astro-cid-ghgzo3ax> · 独立子机制实验</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/greedy_adaptive_lambda/" data-astro-cid-ghgzo3ax>λ-greedy 局部统计量实验</a><span data-astro-cid-ghgzo3ax> · 独立子机制实验</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/iterative_policy_evaluation/" data-astro-cid-ghgzo3ax>迭代策略评价</a><span data-astro-cid-ghgzo3ax> · 独立教学算法</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/lstd/" data-astro-cid-ghgzo3ax>LSTD</a><span data-astro-cid-ghgzo3ax> · 独立教学算法</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/mc_control/" data-astro-cid-ghgzo3ax>首次访问 MC control</a><span data-astro-cid-ghgzo3ax> · 独立教学算法</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/minimax_2x2/" data-astro-cid-ghgzo3ax>经验矩阵 2×2 minimax</a><span data-astro-cid-ghgzo3ax> · 独立子机制实验</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/ordinary_is/" data-astro-cid-ghgzo3ax>Ordinary IS</a><span data-astro-cid-ghgzo3ax> · 独立子机制实验</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/per_decision_is/" data-astro-cid-ghgzo3ax>Per-decision IS</a><span data-astro-cid-ghgzo3ax> · 独立子机制实验</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/policy_evaluation_inplace/" data-astro-cid-ghgzo3ax>原地策略评价对照</a><span data-astro-cid-ghgzo3ax> · 独立教学算法</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/q_sigma/" data-astro-cid-ghgzo3ax>三步 Q(σ)</a><span data-astro-cid-ghgzo3ax> · 独立教学算法</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/relative_value_iteration/" data-astro-cid-ghgzo3ax>Relative Value Iteration</a><span data-astro-cid-ghgzo3ax> · 独立教学算法</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/retrace/" data-astro-cid-ghgzo3ax>三步 Retrace(λ)</a><span data-astro-cid-ghgzo3ax> · 独立教学算法</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/sampled_eligibility_reference/" data-astro-cid-ghgzo3ax>普通采样资格迹对照</a><span data-astro-cid-ghgzo3ax> · 独立子机制实验</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/semi_gradient_sarsa/" data-astro-cid-ghgzo3ax>线性半梯度 SARSA</a><span data-astro-cid-ghgzo3ax> · 独立教学算法</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/sequential_dr/" data-astro-cid-ghgzo3ax>Sequential Doubly Robust</a><span data-astro-cid-ghgzo3ax> · 独立子机制实验</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/thompson_sampling/" data-astro-cid-ghgzo3ax>Beta–Bernoulli Thompson Sampling</a><span data-astro-cid-ghgzo3ax> · 独立教学算法</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/tree_backup/" data-astro-cid-ghgzo3ax>三步 Tree Backup</a><span data-astro-cid-ghgzo3ax> · 独立教学算法</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/ucb_extended_baseline/" data-astro-cid-ghgzo3ax>UCB 对照</a><span data-astro-cid-ghgzo3ax> · 独立教学算法</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/unconstrained_policy_reference/" data-astro-cid-ghgzo3ax>不使用代价约束的策略梯度对照</a><span data-astro-cid-ghgzo3ax> · 独立子机制实验</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/unnormalized_value_iteration/" data-astro-cid-ghgzo3ax>未归一化平均奖励价值迭代对照</a><span data-astro-cid-ghgzo3ax> · 独立教学算法</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/watkins_q_lambda/" data-astro-cid-ghgzo3ax>Watkins Q(λ)</a><span data-astro-cid-ghgzo3ax> · 独立教学算法</span></li><li data-astro-cid-ghgzo3ax><a href="/zh/continual-rl/code/weighted_is/" data-astro-cid-ghgzo3ax>Weighted IS</a><span data-astro-cid-ghgzo3ax> · 独立子机制实验</span></li></ul></section> </div> <div class="rt-floating" data-reading-floating hidden role="group" aria-label="阅读工具" data-astro-cid-mw5gzuyi> <button type="button" data-reading-open hidden aria-haspopup="dialog" aria-expanded="false" data-astro-cid-mw5gzuyi>目录</button> <button type="button" data-reading-top-button aria-label="回到页面顶部" data-astro-cid-mw5gzuyi>顶部 ↑</button> </div> <dialog class="rt-dialog" data-reading-dialog aria-label="本页目录" data-astro-cid-mw5gzuyi> <header data-astro-cid-mw5gzuyi><strong data-astro-cid-mw5gzuyi>本页目录</strong><button type="button" data-reading-close aria-label="关闭本页目录" data-astro-cid-mw5gzuyi>关闭 ×</button></header> <div data-reading-dialog-body data-astro-cid-mw5gzuyi></div> </dialog> </div> <script type="module" src="/_astro/ReadingTools.astro_astro_type_script_index_0_lang.GGjUsQMJ.js"></script>  <footer class="crl-footer" data-astro-cid-we2hv5p6><span data-astro-cid-we2hv5p6>持续强化学习 · 从基础到研究</span><div data-astro-cid-we2hv5p6><a href="https://github.com/ying-wen/continual-rl-tutorial" data-astro-cid-we2hv5p6>GitHub 教程与代码 ↗</a><a href="/crl-code/extended-classic.md" download data-astro-cid-we2hv5p6>下载配套 Markdown</a><a href="/zh/continual-rl/start/" data-astro-cid-we2hv5p6>三册教材</a><a href="/zh/continual-rl/about/" data-astro-cid-we2hv5p6>使用说明</a></div></footer> <script type="module">const s="crl-code-mode";function l(c){const e=c!=="single";document.querySelectorAll(".run-command").forEach(t=>{const o=t.querySelector("pre code"),a=t.querySelector("[data-command-context]");o&&(o.textContent=(e?t.dataset.repoCommand:t.dataset.singleCommand)||""),a&&(a.textContent=e?"在 continual-rl-tutorial 仓库根目录运行。":"在下载的 Python 脚本所在文件夹运行。"),t.querySelectorAll("[data-command-mode]").forEach(r=>r.setAttribute("aria-pressed",String(r.dataset.commandMode===(e?"repo":"single"))));const n=t.querySelector(".copy-status");n&&(n.textContent="")})}function i(){document.querySelectorAll("[data-deep-copy]").forEach(e=>{e.dataset.copyReady||(e.dataset.copyReady="true",e.addEventListener("click",async()=>{const t=e.parentElement?.querySelector("[data-deep-copy-status]");try{await navigator.clipboard.writeText(e.dataset.deepCopy||""),t&&(t.textContent=" 已复制")}catch{t&&(t.textContent=" 请直接选中上方命令复制")}}))});let c="repo";try{c=localStorage.getItem(s)||c}catch{}l(c),document.querySelectorAll(".run-command").forEach(e=>{e.dataset.initialized||(e.dataset.initialized="true",e.querySelectorAll("[data-command-mode]").forEach(t=>{t.addEventListener("click",()=>{const o=t.dataset.commandMode||"repo";l(o);try{localStorage.setItem(s,o)}catch{}})}))}),document.querySelectorAll(".crl pre").forEach(e=>{const t=e.querySelector("code");if(!t||e.dataset.copyReady||e.closest(".complete-download")||e.closest("section")?.querySelector("[data-command]")||!/^(python3 |git clone )/m.test(t.textContent||""))return;e.dataset.copyReady="true";const o=document.createElement("div");o.className="code-tools";const a=document.createElement("span");a.className="copy-status",a.setAttribute("role","status");const n=document.createElement("button");n.type="button",n.className="copy-code",n.textContent="复制命令",n.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(t.textContent||""),a.textContent="已复制"}catch{const r=document.createRange();r.selectNodeContents(t);const d=window.getSelection();d?.removeAllRanges(),d?.addRange(r),a.textContent="已选中，请按 Ctrl+C / ⌘C 复制"}}),o.append(a,n),e.before(o)})}i();document.addEventListener("astro:page-load",i);</script> </div>  </main> <!-- Footer --> <footer class="border-t border-gray-200 bg-white" data-astro-cid-37fxchfa> <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-6 text-sm text-gray-500 sm:flex-row sm:px-6" data-astro-cid-37fxchfa> <p data-astro-cid-37fxchfa>&copy; 2026 温颖 · 上海交通大学</p> <div class="flex gap-4" data-astro-cid-37fxchfa> <a href="https://scholar.google.com/citations?user=_A1CxG8AAAAJ" class="hover:text-primary-700" target="_blank" data-astro-cid-37fxchfa>Scholar</a> <a href="https://github.com/ying-wen" class="hover:text-primary-700" target="_blank" data-astro-cid-37fxchfa>GitHub</a> <a href="mailto:ying.wen@sjtu.edu.cn" class="hover:text-primary-700" data-astro-cid-37fxchfa>Email</a> <a href="/rss.xml" class="hover:text-primary-700" data-astro-cid-37fxchfa>RSS</a> </div> </div> </footer> <script type="module">const n=document.getElementById("mobile-menu-btn"),a=document.getElementById("mobile-menu");n?.addEventListener("click",()=>a?.classList.toggle("hidden"));document.querySelectorAll("[data-target-lang]").forEach(e=>{e.addEventListener("click",()=>{const t=e.dataset.targetLang;t&&localStorage.setItem("preferred-lang",t)})});</script> <script>
+    (function () {
+      var allowedHosts = ['yingwen.io', 'www.yingwen.io'];
+      if (!allowedHosts.includes(window.location.hostname)) return;
+
+      var script = document.createElement('script');
+      script.defer = true;
+      script.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      script.setAttribute('data-cf-beacon', '{"token":"8a256810f17640a2a059322ce5b07248"}');
+      document.head.appendChild(script);
+    })();
+  </script>  </body> </html> <script type="module">const o=()=>{const a=matchMedia("(max-width: 600px)");document.querySelectorAll("[data-section-navigation]").forEach(e=>{if(e.dataset.ready)return;e.dataset.ready="true",e.open=!a.matches;const n=()=>{e.open=!a.matches};a.addEventListener("change",n),document.addEventListener("astro:before-swap",()=>a.removeEventListener("change",n),{once:!0})})};o();document.addEventListener("astro:page-load",o);const r=()=>{document.querySelectorAll("[data-course-links]").forEach(a=>{const e=Array.from(a.querySelectorAll("a")),c=location.hash&&e.find(t=>t.pathname===location.pathname&&t.hash===location.hash)||e.find(t=>t.dataset.routeCurrent==="true");e.forEach(t=>t===c?t.setAttribute("aria-current","page"):t.removeAttribute("aria-current"))})};r();window.addEventListener("hashchange",r);document.addEventListener("astro:page-load",r);</script>  

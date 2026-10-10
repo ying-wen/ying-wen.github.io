@@ -1,0 +1,672 @@
+{
+  "protocol": {
+    "gamma": 0.9,
+    "alpha": 1,
+    "initialQ": 0,
+    "initialModelRows": 0,
+    "warmupEnvironmentSteps": 4,
+    "planningCalls": 2,
+    "followEnvironmentSteps": 3,
+    "resetRule": "After D or G, return to S without reward or an environment step; learner state persists.",
+    "schedule": "Plan only between real steps 4 and 5. Subsequent real steps still update Q and model.",
+    "provenance": "Original deterministic finite calculation; not a performance experiment."
+  },
+  "forward": {
+    "order": "forward",
+    "warmup": [
+      {
+        "state": "S",
+        "action": "near",
+        "reward": 2,
+        "next": "D",
+        "done": true,
+        "update": {
+          "key": "S:near",
+          "before": 0,
+          "target": 2,
+          "after": 2
+        },
+        "t": 1,
+        "k": 0,
+        "q": {
+          "S:near": 2,
+          "S:far": 0,
+          "A:go": 0,
+          "B:go": 0
+        },
+        "counts": {
+          "S:near": 1
+        },
+        "choice": "near"
+      },
+      {
+        "state": "S",
+        "action": "far",
+        "reward": 0,
+        "next": "A",
+        "done": false,
+        "update": {
+          "key": "S:far",
+          "before": 0,
+          "target": 0,
+          "after": 0
+        },
+        "t": 2,
+        "k": 0,
+        "q": {
+          "S:near": 2,
+          "S:far": 0,
+          "A:go": 0,
+          "B:go": 0
+        },
+        "counts": {
+          "S:near": 1,
+          "S:far": 1
+        },
+        "choice": "near"
+      },
+      {
+        "state": "A",
+        "action": "go",
+        "reward": 0,
+        "next": "B",
+        "done": false,
+        "update": {
+          "key": "A:go",
+          "before": 0,
+          "target": 0,
+          "after": 0
+        },
+        "t": 3,
+        "k": 0,
+        "q": {
+          "S:near": 2,
+          "S:far": 0,
+          "A:go": 0,
+          "B:go": 0
+        },
+        "counts": {
+          "S:near": 1,
+          "S:far": 1,
+          "A:go": 1
+        },
+        "choice": "near"
+      },
+      {
+        "state": "B",
+        "action": "go",
+        "reward": 6,
+        "next": "G",
+        "done": true,
+        "update": {
+          "key": "B:go",
+          "before": 0,
+          "target": 6,
+          "after": 6
+        },
+        "t": 4,
+        "k": 0,
+        "q": {
+          "S:near": 2,
+          "S:far": 0,
+          "A:go": 0,
+          "B:go": 6
+        },
+        "counts": {
+          "S:near": 1,
+          "S:far": 1,
+          "A:go": 1,
+          "B:go": 1
+        },
+        "choice": "near"
+      }
+    ],
+    "before": {
+      "t": 4,
+      "k": 0,
+      "q": {
+        "S:near": 2,
+        "S:far": 0,
+        "A:go": 0,
+        "B:go": 6
+      },
+      "counts": {
+        "S:near": 1,
+        "S:far": 1,
+        "A:go": 1,
+        "B:go": 1
+      },
+      "choice": "near"
+    },
+    "planning": [
+      {
+        "key": "S:far",
+        "before": 0,
+        "target": 0,
+        "after": 0,
+        "t": 4,
+        "k": 1,
+        "q": {
+          "S:near": 2,
+          "S:far": 0,
+          "A:go": 0,
+          "B:go": 6
+        },
+        "counts": {
+          "S:near": 1,
+          "S:far": 1,
+          "A:go": 1,
+          "B:go": 1
+        },
+        "choice": "near"
+      },
+      {
+        "key": "A:go",
+        "before": 0,
+        "target": 5.4,
+        "after": 5.4,
+        "t": 4,
+        "k": 2,
+        "q": {
+          "S:near": 2,
+          "S:far": 0,
+          "A:go": 5.4,
+          "B:go": 6
+        },
+        "counts": {
+          "S:near": 1,
+          "S:far": 1,
+          "A:go": 1,
+          "B:go": 1
+        },
+        "choice": "near"
+      }
+    ],
+    "decision": {
+      "t": 4,
+      "k": 2,
+      "q": {
+        "S:near": 2,
+        "S:far": 0,
+        "A:go": 5.4,
+        "B:go": 6
+      },
+      "counts": {
+        "S:near": 1,
+        "S:far": 1,
+        "A:go": 1,
+        "B:go": 1
+      },
+      "choice": "near"
+    },
+    "follow": [
+      {
+        "state": "S",
+        "action": "near",
+        "reward": 2,
+        "next": "D",
+        "done": true,
+        "update": {
+          "key": "S:near",
+          "before": 2,
+          "target": 2,
+          "after": 2
+        },
+        "t": 5,
+        "k": 2,
+        "q": {
+          "S:near": 2,
+          "S:far": 0,
+          "A:go": 5.4,
+          "B:go": 6
+        },
+        "counts": {
+          "S:near": 2,
+          "S:far": 1,
+          "A:go": 1,
+          "B:go": 1
+        },
+        "choice": "near"
+      },
+      {
+        "state": "S",
+        "action": "near",
+        "reward": 2,
+        "next": "D",
+        "done": true,
+        "update": {
+          "key": "S:near",
+          "before": 2,
+          "target": 2,
+          "after": 2
+        },
+        "t": 6,
+        "k": 2,
+        "q": {
+          "S:near": 2,
+          "S:far": 0,
+          "A:go": 5.4,
+          "B:go": 6
+        },
+        "counts": {
+          "S:near": 3,
+          "S:far": 1,
+          "A:go": 1,
+          "B:go": 1
+        },
+        "choice": "near"
+      },
+      {
+        "state": "S",
+        "action": "near",
+        "reward": 2,
+        "next": "D",
+        "done": true,
+        "update": {
+          "key": "S:near",
+          "before": 2,
+          "target": 2,
+          "after": 2
+        },
+        "t": 7,
+        "k": 2,
+        "q": {
+          "S:near": 2,
+          "S:far": 0,
+          "A:go": 5.4,
+          "B:go": 6
+        },
+        "counts": {
+          "S:near": 4,
+          "S:far": 1,
+          "A:go": 1,
+          "B:go": 1
+        },
+        "choice": "near"
+      }
+    ],
+    "final": {
+      "t": 7,
+      "k": 2,
+      "q": {
+        "S:near": 2,
+        "S:far": 0,
+        "A:go": 5.4,
+        "B:go": 6
+      },
+      "counts": {
+        "S:near": 4,
+        "S:far": 1,
+        "A:go": 1,
+        "B:go": 1
+      },
+      "choice": "near"
+    },
+    "observedModel": {
+      "S:near": {
+        "state": "S",
+        "action": "near",
+        "reward": 2,
+        "next": "D",
+        "done": true,
+        "realCount": 4
+      },
+      "S:far": {
+        "state": "S",
+        "action": "far",
+        "reward": 0,
+        "next": "A",
+        "done": false,
+        "realCount": 1
+      },
+      "A:go": {
+        "state": "A",
+        "action": "go",
+        "reward": 0,
+        "next": "B",
+        "done": false,
+        "realCount": 1
+      },
+      "B:go": {
+        "state": "B",
+        "action": "go",
+        "reward": 6,
+        "next": "G",
+        "done": true,
+        "realCount": 1
+      }
+    },
+    "worldSteps": 7,
+    "resets": 5,
+    "followReward": 6
+  },
+  "reverse": {
+    "order": "reverse",
+    "warmup": [
+      {
+        "state": "S",
+        "action": "near",
+        "reward": 2,
+        "next": "D",
+        "done": true,
+        "update": {
+          "key": "S:near",
+          "before": 0,
+          "target": 2,
+          "after": 2
+        },
+        "t": 1,
+        "k": 0,
+        "q": {
+          "S:near": 2,
+          "S:far": 0,
+          "A:go": 0,
+          "B:go": 0
+        },
+        "counts": {
+          "S:near": 1
+        },
+        "choice": "near"
+      },
+      {
+        "state": "S",
+        "action": "far",
+        "reward": 0,
+        "next": "A",
+        "done": false,
+        "update": {
+          "key": "S:far",
+          "before": 0,
+          "target": 0,
+          "after": 0
+        },
+        "t": 2,
+        "k": 0,
+        "q": {
+          "S:near": 2,
+          "S:far": 0,
+          "A:go": 0,
+          "B:go": 0
+        },
+        "counts": {
+          "S:near": 1,
+          "S:far": 1
+        },
+        "choice": "near"
+      },
+      {
+        "state": "A",
+        "action": "go",
+        "reward": 0,
+        "next": "B",
+        "done": false,
+        "update": {
+          "key": "A:go",
+          "before": 0,
+          "target": 0,
+          "after": 0
+        },
+        "t": 3,
+        "k": 0,
+        "q": {
+          "S:near": 2,
+          "S:far": 0,
+          "A:go": 0,
+          "B:go": 0
+        },
+        "counts": {
+          "S:near": 1,
+          "S:far": 1,
+          "A:go": 1
+        },
+        "choice": "near"
+      },
+      {
+        "state": "B",
+        "action": "go",
+        "reward": 6,
+        "next": "G",
+        "done": true,
+        "update": {
+          "key": "B:go",
+          "before": 0,
+          "target": 6,
+          "after": 6
+        },
+        "t": 4,
+        "k": 0,
+        "q": {
+          "S:near": 2,
+          "S:far": 0,
+          "A:go": 0,
+          "B:go": 6
+        },
+        "counts": {
+          "S:near": 1,
+          "S:far": 1,
+          "A:go": 1,
+          "B:go": 1
+        },
+        "choice": "near"
+      }
+    ],
+    "before": {
+      "t": 4,
+      "k": 0,
+      "q": {
+        "S:near": 2,
+        "S:far": 0,
+        "A:go": 0,
+        "B:go": 6
+      },
+      "counts": {
+        "S:near": 1,
+        "S:far": 1,
+        "A:go": 1,
+        "B:go": 1
+      },
+      "choice": "near"
+    },
+    "planning": [
+      {
+        "key": "A:go",
+        "before": 0,
+        "target": 5.4,
+        "after": 5.4,
+        "t": 4,
+        "k": 1,
+        "q": {
+          "S:near": 2,
+          "S:far": 0,
+          "A:go": 5.4,
+          "B:go": 6
+        },
+        "counts": {
+          "S:near": 1,
+          "S:far": 1,
+          "A:go": 1,
+          "B:go": 1
+        },
+        "choice": "near"
+      },
+      {
+        "key": "S:far",
+        "before": 0,
+        "target": 4.86,
+        "after": 4.86,
+        "t": 4,
+        "k": 2,
+        "q": {
+          "S:near": 2,
+          "S:far": 4.86,
+          "A:go": 5.4,
+          "B:go": 6
+        },
+        "counts": {
+          "S:near": 1,
+          "S:far": 1,
+          "A:go": 1,
+          "B:go": 1
+        },
+        "choice": "far"
+      }
+    ],
+    "decision": {
+      "t": 4,
+      "k": 2,
+      "q": {
+        "S:near": 2,
+        "S:far": 4.86,
+        "A:go": 5.4,
+        "B:go": 6
+      },
+      "counts": {
+        "S:near": 1,
+        "S:far": 1,
+        "A:go": 1,
+        "B:go": 1
+      },
+      "choice": "far"
+    },
+    "follow": [
+      {
+        "state": "S",
+        "action": "far",
+        "reward": 0,
+        "next": "A",
+        "done": false,
+        "update": {
+          "key": "S:far",
+          "before": 4.86,
+          "target": 4.86,
+          "after": 4.86
+        },
+        "t": 5,
+        "k": 2,
+        "q": {
+          "S:near": 2,
+          "S:far": 4.86,
+          "A:go": 5.4,
+          "B:go": 6
+        },
+        "counts": {
+          "S:near": 1,
+          "S:far": 2,
+          "A:go": 1,
+          "B:go": 1
+        },
+        "choice": "far"
+      },
+      {
+        "state": "A",
+        "action": "go",
+        "reward": 0,
+        "next": "B",
+        "done": false,
+        "update": {
+          "key": "A:go",
+          "before": 5.4,
+          "target": 5.4,
+          "after": 5.4
+        },
+        "t": 6,
+        "k": 2,
+        "q": {
+          "S:near": 2,
+          "S:far": 4.86,
+          "A:go": 5.4,
+          "B:go": 6
+        },
+        "counts": {
+          "S:near": 1,
+          "S:far": 2,
+          "A:go": 2,
+          "B:go": 1
+        },
+        "choice": "far"
+      },
+      {
+        "state": "B",
+        "action": "go",
+        "reward": 6,
+        "next": "G",
+        "done": true,
+        "update": {
+          "key": "B:go",
+          "before": 6,
+          "target": 6,
+          "after": 6
+        },
+        "t": 7,
+        "k": 2,
+        "q": {
+          "S:near": 2,
+          "S:far": 4.86,
+          "A:go": 5.4,
+          "B:go": 6
+        },
+        "counts": {
+          "S:near": 1,
+          "S:far": 2,
+          "A:go": 2,
+          "B:go": 2
+        },
+        "choice": "far"
+      }
+    ],
+    "final": {
+      "t": 7,
+      "k": 2,
+      "q": {
+        "S:near": 2,
+        "S:far": 4.86,
+        "A:go": 5.4,
+        "B:go": 6
+      },
+      "counts": {
+        "S:near": 1,
+        "S:far": 2,
+        "A:go": 2,
+        "B:go": 2
+      },
+      "choice": "far"
+    },
+    "observedModel": {
+      "S:near": {
+        "state": "S",
+        "action": "near",
+        "reward": 2,
+        "next": "D",
+        "done": true,
+        "realCount": 1
+      },
+      "S:far": {
+        "state": "S",
+        "action": "far",
+        "reward": 0,
+        "next": "A",
+        "done": false,
+        "realCount": 2
+      },
+      "A:go": {
+        "state": "A",
+        "action": "go",
+        "reward": 0,
+        "next": "B",
+        "done": false,
+        "realCount": 2
+      },
+      "B:go": {
+        "state": "B",
+        "action": "go",
+        "reward": 6,
+        "next": "G",
+        "done": true,
+        "realCount": 2
+      }
+    },
+    "worldSteps": 7,
+    "resets": 3,
+    "followReward": 6
+  }
+}

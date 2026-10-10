@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">任务时计算与持久更新的两因素对照</title>
+  <desc id="desc">以冻结或更新持久状态为行，以固定或增加任务时计算为列，构成四个实验条件，并分别估计任务时搜索效应、持久更新效应及交互。</desc>
+  <defs>
+    <style>
+      .bg{fill:#fff}.ink{fill:#20262b}.muted{fill:#68727a}.neutral{fill:#f4f6f7;stroke:#c9d1d6}.amber{fill:#fbf3e8;stroke:#d79a4d}.green{fill:#eaf5f1;stroke:#65a08b}.cell{stroke-width:2.5}.line-o{fill:none;stroke:#bd6d18;stroke-width:5}.line-g{fill:none;stroke:#267763;stroke-width:5}.line-i{fill:none;stroke:#59656c;stroke-width:4;stroke-dasharray:10 8}.t{font:700 42px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.h{font:700 26px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.b{font:400 20px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.s{font:500 17px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.eq{font:500 22px Georgia,"Times New Roman",serif}
+    </style>
+    <marker id="ao" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#bd6d18"/></marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#267763"/></marker>
+  </defs>
+
+  <rect class="bg" width="1600" height="1000"/>
+  <text x="80" y="72" class="t ink">任务时计算 × 持久更新的两因素对照</text>
+  <text x="80" y="114" class="b muted">同一初始状态与未来任务集合；分别操控持久更新和任务时计算。</text>
+
+  <text x="650" y="184" text-anchor="middle" class="h ink">固定任务时计算 c₀</text>
+  <text x="1130" y="184" text-anchor="middle" class="h ink">增加任务时计算 c₁</text>
+  <text x="1130" y="215" text-anchor="middle" class="s muted">c₁ &gt; c₀；候选数、搜索节点或工具调用增加</text>
+
+  <text x="285" y="330" text-anchor="end" class="h ink">冻结分支 A⁻</text>
+  <text x="285" y="362" text-anchor="end" class="s muted">不提交持久更新</text>
+  <text x="285" y="630" text-anchor="end" class="h ink">更新分支 A⁺</text>
+  <text x="285" y="662" text-anchor="end" class="s muted">提交跨任务更新</text>
+
+  <rect x="420" y="245" width="410" height="220" rx="24" class="cell neutral"/>
+  <text x="625" y="298" text-anchor="middle" class="h ink">基线</text>
+  <text x="625" y="350" text-anchor="middle" class="eq ink">J₀⁻ = J(A⁻; D_new, c₀)</text>
+  <text x="625" y="395" text-anchor="middle" class="b muted">冻结持久状态</text>
+  <text x="625" y="427" text-anchor="middle" class="b muted">固定任务时计算</text>
+
+  <rect x="930" y="245" width="410" height="220" rx="24" class="cell amber"/>
+  <text x="1135" y="298" text-anchor="middle" class="h" fill="#a85e12">增加任务时计算</text>
+  <text x="1135" y="350" text-anchor="middle" class="eq ink">J₁⁻ = J(A⁻; D_new, c₁)</text>
+  <text x="1135" y="395" text-anchor="middle" class="b muted">持久状态仍冻结</text>
+  <text x="1135" y="427" text-anchor="middle" class="b muted">只增加任务时计算</text>
+
+  <rect x="420" y="545" width="410" height="220" rx="24" class="cell green"/>
+  <text x="625" y="598" text-anchor="middle" class="h" fill="#267763">提交持久更新</text>
+  <text x="625" y="650" text-anchor="middle" class="eq ink">J₀⁺ = J(A⁺; D_new, c₀)</text>
+  <text x="625" y="695" text-anchor="middle" class="b muted">提交持久更新</text>
+  <text x="625" y="727" text-anchor="middle" class="b muted">未来运行条件保持固定</text>
+
+  <rect x="930" y="545" width="410" height="220" rx="24" fill="#fff" stroke="#59656c" stroke-width="3" stroke-dasharray="10 8"/>
+  <line x1="932" y1="547" x2="1338" y2="547" class="line-o"/>
+  <line x1="932" y1="547" x2="932" y2="763" class="line-g"/>
+  <text x="1135" y="598" text-anchor="middle" class="h ink">联合条件</text>
+  <text x="1135" y="650" text-anchor="middle" class="eq ink">J₁⁺ = J(A⁺; D_new, c₁)</text>
+  <text x="1135" y="695" text-anchor="middle" class="b muted">提交持久更新</text>
+  <text x="1135" y="727" text-anchor="middle" class="b muted">同时增加任务时计算</text>
+
+  <line x1="830" y1="355" x2="920" y2="355" class="line-o" marker-end="url(#ao)"/>
+  <text x="875" y="332" text-anchor="middle" class="s" fill="#a85e12">ΔS⁻</text>
+  <line x1="830" y1="655" x2="920" y2="655" class="line-o" marker-end="url(#ao)"/>
+  <text x="875" y="632" text-anchor="middle" class="s" fill="#a85e12">ΔS⁺</text>
+
+  <line x1="625" y1="465" x2="625" y2="535" class="line-g" marker-end="url(#ag)"/>
+  <text x="650" y="510" class="s" fill="#267763">ΔL⁰</text>
+  <line x1="1135" y1="465" x2="1135" y2="535" class="line-g" marker-end="url(#ag)"/>
+  <text x="1160" y="510" class="s" fill="#267763">ΔL¹</text>
+
+  <path d="M1375 355 H1440 V655 H1375" class="line-i"/>
+  <text x="1470" y="485" text-anchor="middle" class="h ink">ΔI</text>
+  <text x="1470" y="520" text-anchor="middle" class="s muted">差分之差</text>
+  <text x="1470" y="548" text-anchor="middle" class="s muted">两因素交互</text>
+
+  <rect x="210" y="830" width="1180" height="108" rx="22" class="neutral"/>
+  <text x="800" y="872" text-anchor="middle" class="h ink">横向差：任务时搜索　　纵向差：持久更新　　横向差的变化：交互</text>
+  <text x="800" y="910" text-anchor="middle" class="eq ink">ΔI = (J₁⁺ − J₀⁺) − (J₁⁻ − J₀⁻)</text>
+  <text x="800" y="966" text-anchor="middle" class="s muted">只比较基线与联合条件，会把三种变化合并。</text>
+</svg>

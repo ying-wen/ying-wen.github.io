@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="744" viewBox="0 0 1080 744" role="img" aria-labelledby="title desc">
+  <title id="title">可靠性加权与行动覆盖是两种不同问题</title>
+  <desc id="desc">上半部以原创视觉52毫米、触觉56毫米算例，显示视觉权重从0.9降到0.36时组合估计由52.4移至54.56毫米。下半部两个世界在已观察动作A上都给1分，在未观察动作B上分别给3分和负2分。非实验数据。</desc>
+  <rect width="1080" height="744" rx="24" fill="#f7f5ef"/>
+  <g font-family="PingFang SC,Microsoft YaHei,sans-serif" fill="#193c4b">
+    <text x="44" y="52" font-size="29" font-weight="700">预测需要证据；控制还要知道什么值得试</text>
+    <text x="44" y="83" font-size="18" fill="#677781">原创数值算例 · 非心理学实测数据 · 所有假设与计算见正文</text>
+    <rect x="32" y="112" width="1016" height="258" rx="18" fill="#fff" stroke="#d9e0df"/>
+    <text x="56" y="149" font-size="23" font-weight="700">A　证据都已得到：按噪声方差确定组合权重</text>
+    <text x="57" y="190" font-size="20">视觉读数 52 mm</text><text x="767" y="190" font-size="20">触觉读数 56 mm</text>
+    <path d="M139 227H931" stroke="#7d929b" stroke-width="2"/>
+    <path d="M139 216V238M337 220V234M535 220V234M733 220V234M931 216V238" stroke="#7d929b" stroke-width="2"/>
+    <circle cx="218.2" cy="227" r="10" fill="#138b87"/>
+    <circle cx="645.88" cy="227" r="10" fill="#c47736"/>
+    <text x="139" y="267" text-anchor="middle" font-size="18">52</text><text x="535" y="267" text-anchor="middle" font-size="18">54</text><text x="931" y="267" text-anchor="middle" font-size="18">56 mm</text>
+    <text x="57" y="312" font-size="20" fill="#147d78">视觉标准差 1、触觉 3 → 52.4</text>
+    <text x="557" y="312" font-size="20" fill="#a85c25">视觉标准差 4、触觉 3 → 54.56</text>
+    <text x="57" y="346" font-size="18" fill="#677781">输入冲突相同；改变的是可靠性。独立、无偏是此线性组合的条件。</text>
+    <rect x="32" y="390" width="1016" height="251" rx="18" fill="#edf4f4" stroke="#d9e0df"/>
+    <text x="56" y="427" font-size="23" font-weight="700">B　证据没有覆盖：重复观察 A 不能区分两个世界</text>
+    <rect x="307" y="451" width="335" height="138" rx="12" fill="#e0f1ec"/><rect x="664" y="451" width="352" height="138" rx="12" fill="#fff0dd"/>
+    <g font-size="21" text-anchor="middle">
+      <text x="474" y="482">A：记录中出现的动作</text><text x="841" y="482">B：记录中没有的动作</text>
+      <text x="148" y="526">世界一</text><text x="148" y="568">世界二</text>
+      <text x="474" y="526" font-weight="700">+1</text><text x="474" y="568" font-weight="700">+1</text>
+      <text x="841" y="526" font-weight="700" fill="#147d78">+3</text><text x="841" y="568" font-weight="700" fill="#a85c25">−2</text>
+    </g>
+    <text x="56" y="620" font-size="19" fill="#677781">相同数据似然 → 世界后验不变。新干预或额外结构，才能缩小这一歧义。</text>
+    <text x="44" y="681" font-size="22" font-weight="700">先试 B 的价值取决于时间：一步选 A；两步时可能值得探测。</text>
+    <text x="44" y="716" font-size="19" fill="#677781">各世界先验 1/2、结果确定、两步无折扣且无额外约束：先 B 后最优的期望总分为 2.5。</text>
+  </g>
+</svg>
