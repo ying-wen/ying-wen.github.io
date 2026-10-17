@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="548" viewBox="0 0 900 548" role="img" aria-labelledby="title description">
+<title id="title">固定点离最佳表示有多远</title><desc id="description">固定平稳 MRP、在策略、线性不充分特征的教学诊断；不复现原课件实验，不证明深度或非平稳 TD 稳定性。 λ；稳态加权 RMS 距离。原始数值见同目录 results.json。</desc>
+<rect width="100%" height="100%" fill="#fff"/>
+<g font-family="system-ui, -apple-system, Noto Sans CJK SC, sans-serif" fill="#233748">
+<text x="96" y="36" font-size="23" font-weight="650">固定点离最佳表示有多远</text>
+<text x="96" y="68" font-size="16">稳态加权 RMS 距离</text>
+<path d="M96 98h32" fill="none" stroke="#285d82" stroke-width="2.6" stroke-dasharray=""/><text x="139" y="104" font-size="18">TD固定点到最佳投影</text>
+<path d="M347 98h32" fill="none" stroke="#4d5660" stroke-width="2.6" stroke-dasharray="7 5"/><text x="390" y="104" font-size="18">最佳投影本身</text>
+<path d="M96 458H864" stroke="#a4b2c0" fill="none"/><text x="84" y="464" text-anchor="end" font-size="17">0</text>
+<path d="M96 378H864" stroke="#e2e7eb" fill="none"/><text x="84" y="384" text-anchor="end" font-size="17">0.1</text>
+<path d="M96 298H864" stroke="#e2e7eb" fill="none"/><text x="84" y="304" text-anchor="end" font-size="17">0.2</text>
+<path d="M96 217.99999999999997H864" stroke="#e2e7eb" fill="none"/><text x="84" y="223.99999999999997" text-anchor="end" font-size="17">0.3</text>
+<path d="M96 138H864" stroke="#e2e7eb" fill="none"/><text x="84" y="144" text-anchor="end" font-size="17">0.4</text>
+<path d="M96 458v6" stroke="#677789"/><text x="96" y="488" text-anchor="middle" font-size="17">0</text>
+<path d="M249.60000000000002 458v6" stroke="#677789"/><text x="249.60000000000002" y="488" text-anchor="middle" font-size="17">0.2</text>
+<path d="M403.20000000000005 458v6" stroke="#677789"/><text x="403.20000000000005" y="488" text-anchor="middle" font-size="17">0.4</text>
+<path d="M556.8000000000001 458v6" stroke="#677789"/><text x="556.8000000000001" y="488" text-anchor="middle" font-size="17">0.6</text>
+<path d="M710.4000000000001 458v6" stroke="#677789"/><text x="710.4000000000001" y="488" text-anchor="middle" font-size="17">0.8</text>
+<path d="M864 458v6" stroke="#677789"/><text x="864" y="488" text-anchor="middle" font-size="17">1</text>
+<path d="M96 138V458H864" fill="none" stroke="#677789" stroke-width="1.2"/>
+<path d="M96.000 149.026 L103.680 151.209 L111.360 153.404 L119.040 155.612 L126.720 157.834 L134.400 160.069 L142.080 162.317 L149.760 164.579 L157.440 166.855 L165.120 169.144 L172.800 171.448 L180.480 173.765 L188.160 176.097 L195.840 178.443 L203.520 180.804 L211.200 183.179 L218.880 185.569 L226.560 187.974 L234.240 190.394 L241.920 192.829 L249.600 195.279 L257.280 197.745 L264.960 200.226 L272.640 202.723 L280.320 205.237 L288.000 207.766 L295.680 210.311 L303.360 212.873 L311.040 215.451 L318.720 218.046 L326.400 220.657 L334.080 223.286 L341.760 225.932 L349.440 228.595 L357.120 231.276 L364.800 233.975 L372.480 236.691 L380.160 239.425 L387.840 242.178 L395.520 244.949 L403.200 247.739 L410.880 250.547 L418.560 253.374 L426.240 256.221 L433.920 259.087 L441.600 261.972 L449.280 264.877 L456.960 267.803 L464.640 270.748 L472.320 273.714 L480.000 276.700 L487.680 279.707 L495.360 282.735 L503.040 285.785 L510.720 288.855 L518.400 291.948 L526.080 295.062 L533.760 298.199 L541.440 301.358 L549.120 304.540 L556.800 307.744 L564.480 310.972 L572.160 314.223 L579.840 317.498 L587.520 320.796 L595.200 324.119 L602.880 327.466 L610.560 330.838 L618.240 334.235 L625.920 337.657 L633.600 341.104 L641.280 344.578 L648.960 348.077 L656.640 351.603 L664.320 355.156 L672.000 358.736 L679.680 362.343 L687.360 365.977 L695.040 369.640 L702.720 373.331 L710.400 377.050 L718.080 380.798 L725.760 384.576 L733.440 388.383 L741.120 392.221 L748.800 396.088 L756.480 399.986 L764.160 403.916 L771.840 407.876 L779.520 411.869 L787.200 415.893 L794.880 419.951 L802.560 424.041 L810.240 428.165 L817.920 432.322 L825.600 436.514 L833.280 440.740 L840.960 445.001 L848.640 449.298 L856.320 453.631 L864.000 458.000" fill="none" stroke="#285d82" stroke-width="2.6" stroke-linejoin="round" stroke-dasharray=""/>
+<path d="M96.000 458.000 L864.000 458.000" fill="none" stroke="#4d5660" stroke-width="2.6" stroke-linejoin="round" stroke-dasharray="7 5"/>
+<rect x="92.5" y="454.5" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="860.5" y="454.5" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<text x="480" y="523" text-anchor="middle" font-size="18">λ</text></g></svg>

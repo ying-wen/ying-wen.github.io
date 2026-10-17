@@ -1,0 +1,333 @@
+{
+  "tile": {
+    "state": 0.25,
+    "alpha": 0.1,
+    "delta": 1,
+    "width": 1,
+    "count": 2,
+    "active": [
+      "0:0",
+      "1:0"
+    ],
+    "probes": [
+      {
+        "state": -0.25,
+        "keys": [
+          "0:-1",
+          "1:0"
+        ],
+        "shared": 1,
+        "change": 0.1
+      },
+      {
+        "state": 0.25,
+        "keys": [
+          "0:0",
+          "1:0"
+        ],
+        "shared": 2,
+        "change": 0.2
+      },
+      {
+        "state": 0.75,
+        "keys": [
+          "0:0",
+          "1:1"
+        ],
+        "shared": 1,
+        "change": 0.1
+      },
+      {
+        "state": 1.25,
+        "keys": [
+          "0:1",
+          "1:1"
+        ],
+        "shared": 0,
+        "change": 0
+      }
+    ],
+    "intervals": [
+      {
+        "left": -0.5,
+        "right": 0,
+        "change": 0.1
+      },
+      {
+        "left": 0,
+        "right": 0.5,
+        "change": 0.2
+      },
+      {
+        "left": 0.5,
+        "right": 1,
+        "change": 0.1
+      },
+      {
+        "left": 1,
+        "right": 1.5,
+        "change": 0
+      }
+    ]
+  },
+  "gae": {
+    "common": {
+      "reward": 1,
+      "value": 0.5,
+      "nextValue": 1,
+      "gamma": 0.9,
+      "lambda": 0.8,
+      "nextAdvantage": 1
+    },
+    "cases": [
+      {
+        "id": "terminal",
+        "label": "任务真正终止",
+        "bootstrap": 0,
+        "carry": 0,
+        "delta": 0.5,
+        "advantage": 0.5
+      },
+      {
+        "id": "timeout",
+        "label": "人工截断后重置",
+        "bootstrap": 1,
+        "carry": 0,
+        "delta": 1.4,
+        "advantage": 1.4
+      },
+      {
+        "id": "continuous",
+        "label": "下一行仍是同一轨迹",
+        "bootstrap": 1,
+        "carry": 1,
+        "delta": 1.4,
+        "advantage": 2.12
+      }
+    ],
+    "batchEnd": {
+      "delta": 1.4,
+      "advantage": 1.4
+    }
+  },
+  "memory": {
+    "theta": 0.2,
+    "a": 0.5,
+    "inputs": [
+      1,
+      0,
+      0
+    ],
+    "cases": [
+      {
+        "id": "none",
+        "label": "保留完整梯度",
+        "steps": [
+          {
+            "step": 1,
+            "input": 1,
+            "h": 0.2,
+            "sensitivity": 1
+          },
+          {
+            "step": 2,
+            "input": 0,
+            "h": 0.1,
+            "sensitivity": 0.5
+          },
+          {
+            "step": 3,
+            "input": 0,
+            "h": 0.05,
+            "sensitivity": 0.25
+          }
+        ]
+      },
+      {
+        "id": "detach",
+        "label": "仅 detach",
+        "steps": [
+          {
+            "step": 1,
+            "input": 1,
+            "h": 0.2,
+            "sensitivity": 1
+          },
+          {
+            "step": 2,
+            "input": 0,
+            "h": 0.1,
+            "sensitivity": 0
+          },
+          {
+            "step": 3,
+            "input": 0,
+            "h": 0.05,
+            "sensitivity": 0
+          }
+        ]
+      },
+      {
+        "id": "reset",
+        "label": "清空记忆",
+        "steps": [
+          {
+            "step": 1,
+            "input": 1,
+            "h": 0.2,
+            "sensitivity": 1
+          },
+          {
+            "step": 2,
+            "input": 0,
+            "h": 0,
+            "sensitivity": 0
+          },
+          {
+            "step": 3,
+            "input": 0,
+            "h": 0,
+            "sensitivity": 0
+          }
+        ]
+      }
+    ]
+  },
+  "distribution": {
+    "support": [
+      -1,
+      0,
+      1
+    ],
+    "probabilities": [
+      0.2,
+      0.5,
+      0.3
+    ],
+    "reward": 0.5,
+    "gamma": 0.5,
+    "terminal": false,
+    "locations": [
+      0,
+      0.5,
+      1
+    ],
+    "mass": [
+      0,
+      0.45,
+      0.55
+    ],
+    "flows": [
+      {
+        "from": 0,
+        "to": 1,
+        "mass": 0.2
+      },
+      {
+        "from": 1,
+        "to": 1,
+        "mass": 0.25
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "mass": 0.25
+      },
+      {
+        "from": 2,
+        "to": 2,
+        "mass": 0.3
+      }
+    ],
+    "rawMean": 0.55,
+    "projectedMean": 0.55,
+    "terminalCase": {
+      "support": [
+        -1,
+        0,
+        1
+      ],
+      "probabilities": [
+        0.2,
+        0.5,
+        0.3
+      ],
+      "reward": 0,
+      "gamma": 0.5,
+      "terminal": true,
+      "locations": [
+        0,
+        0,
+        0
+      ],
+      "mass": [
+        0,
+        1,
+        0
+      ],
+      "flows": [
+        {
+          "from": 0,
+          "to": 1,
+          "mass": 0.2
+        },
+        {
+          "from": 1,
+          "to": 1,
+          "mass": 0.5
+        },
+        {
+          "from": 2,
+          "to": 1,
+          "mass": 0.3
+        }
+      ],
+      "rawMean": 0,
+      "projectedMean": 0
+    },
+    "clippedCase": {
+      "support": [
+        -1,
+        0,
+        1
+      ],
+      "probabilities": [
+        0.2,
+        0.5,
+        0.3
+      ],
+      "reward": 5,
+      "gamma": 0.5,
+      "terminal": false,
+      "locations": [
+        4.5,
+        5,
+        5.5
+      ],
+      "mass": [
+        0,
+        0,
+        1
+      ],
+      "flows": [
+        {
+          "from": 0,
+          "to": 2,
+          "mass": 0.2
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "mass": 0.5
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "mass": 0.3
+        }
+      ],
+      "rawMean": 5.05,
+      "projectedMean": 1
+    }
+  }
+}

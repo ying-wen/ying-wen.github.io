@@ -1,0 +1,2303 @@
+{
+  "settings": {
+    "old": {
+      "w": -0.8,
+      "rho": 0.8
+    },
+    "current": {
+      "w": 0.8,
+      "rho": 0.8
+    },
+    "target": {
+      "w": 0.6,
+      "rho": 0.7
+    },
+    "gamma": 0.9,
+    "alpha": 0.01,
+    "decisionIndex": 4,
+    "burnStart": 2,
+    "learnStart": 4
+  },
+  "positive": {
+    "cue": 1,
+    "observations": [
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "old": [
+      {
+        "index": 0,
+        "x": 1,
+        "previous": 0,
+        "h": -0.6640367702678491,
+        "dw": 0.5590551677322437,
+        "drho": 0,
+        "jacobian": 0.5590551677322437,
+        "resetBefore": false,
+        "detachedBefore": false
+      },
+      {
+        "index": 1,
+        "x": 0,
+        "previous": -0.6640367702678491,
+        "h": -0.4863203018149431,
+        "dw": 0.3414675707625354,
+        "drho": -0.5069871363503822,
+        "jacobian": 0.7634925640426227,
+        "resetBefore": false,
+        "detachedBefore": false
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "previous": -0.4863203018149431,
+        "h": -0.3705463365711785,
+        "dw": 0.23566600543883304,
+        "drho": -0.7694466747208419,
+        "jacobian": 0.8626954124536789,
+        "resetBefore": false,
+        "detachedBefore": false
+      },
+      {
+        "index": 3,
+        "x": 0,
+        "previous": -0.3705463365711785,
+        "h": -0.2880486689135057,
+        "dw": 0.17288985378483407,
+        "drho": -0.9042846469466581,
+        "jacobian": 0.9170279643371576,
+        "resetBefore": false,
+        "detachedBefore": false
+      },
+      {
+        "index": 4,
+        "x": 0,
+        "previous": -0.2880486689135057,
+        "h": -0.22644482138793742,
+        "dw": 0.1312196290372405,
+        "drho": -0.95961065171739,
+        "jacobian": 0.9487227428665851,
+        "resetBefore": false,
+        "detachedBefore": false
+      }
+    ],
+    "current": [
+      {
+        "index": 0,
+        "x": 1,
+        "previous": 0,
+        "h": 0.6640367702678491,
+        "dw": 0.5590551677322437,
+        "drho": 0,
+        "jacobian": 0.5590551677322437,
+        "resetBefore": false,
+        "detachedBefore": false
+      },
+      {
+        "index": 1,
+        "x": 0,
+        "previous": 0.6640367702678491,
+        "h": 0.4863203018149431,
+        "dw": 0.3414675707625354,
+        "drho": 0.5069871363503822,
+        "jacobian": 0.7634925640426227,
+        "resetBefore": false,
+        "detachedBefore": false
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "previous": 0.4863203018149431,
+        "h": 0.3705463365711785,
+        "dw": 0.23566600543883304,
+        "drho": 0.7694466747208419,
+        "jacobian": 0.8626954124536789,
+        "resetBefore": false,
+        "detachedBefore": false
+      },
+      {
+        "index": 3,
+        "x": 0,
+        "previous": 0.3705463365711785,
+        "h": 0.2880486689135057,
+        "dw": 0.17288985378483407,
+        "drho": 0.9042846469466581,
+        "jacobian": 0.9170279643371576,
+        "resetBefore": false,
+        "detachedBefore": false
+      },
+      {
+        "index": 4,
+        "x": 0,
+        "previous": 0.2880486689135057,
+        "h": 0.22644482138793742,
+        "dw": 0.1312196290372405,
+        "drho": 0.95961065171739,
+        "jacobian": 0.9487227428665851,
+        "resetBefore": false,
+        "detachedBefore": false
+      }
+    ],
+    "target": [
+      {
+        "index": 0,
+        "x": 1,
+        "previous": 0,
+        "h": 0.5370495669980353,
+        "dw": 0.7115777625872228,
+        "drho": 0,
+        "jacobian": 0.7115777625872228,
+        "resetBefore": false,
+        "detachedBefore": false
+      },
+      {
+        "index": 1,
+        "x": 0,
+        "previous": 0.5370495669980353,
+        "h": 0.3591717884287242,
+        "dw": 0.43384678333833976,
+        "drho": 0.467767824013644,
+        "jacobian": 0.8709956263969117,
+        "resetBefore": false,
+        "detachedBefore": false
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "previous": 0.3591717884287242,
+        "h": 0.24625325514850369,
+        "dw": 0.2852766179181654,
+        "drho": 0.644972822338189,
+        "jacobian": 0.939359334328766,
+        "resetBefore": false,
+        "detachedBefore": false
+      },
+      {
+        "index": 3,
+        "x": 0,
+        "previous": 0.24625325514850369,
+        "h": 0.17068999485621267,
+        "dw": 0.19387554371255755,
+        "drho": 0.6774056920989447,
+        "jacobian": 0.9708649256559861,
+        "resetBefore": false,
+        "detachedBefore": false
+      },
+      {
+        "index": 4,
+        "x": 0,
+        "previous": 0.17068999485621267,
+        "h": 0.11891763747058365,
+        "dw": 0.13379370985816744,
+        "drho": 0.6357545555312856,
+        "jacobian": 0.9858585954984148,
+        "resetBefore": false,
+        "detachedBefore": false
+      }
+    ],
+    "recordedAction": "R",
+    "recordedReward": -2,
+    "oldAction": "R",
+    "currentAction": "L",
+    "oldFreshReward": -2,
+    "currentFreshReward": 4,
+    "results": {
+      "full": {
+        "rows": [
+          {
+            "index": 0,
+            "x": 1,
+            "previous": 0,
+            "h": 0.6640367702678491,
+            "dw": 0.5590551677322437,
+            "drho": 0,
+            "jacobian": 0.5590551677322437,
+            "resetBefore": false,
+            "detachedBefore": false
+          },
+          {
+            "index": 1,
+            "x": 0,
+            "previous": 0.6640367702678491,
+            "h": 0.4863203018149431,
+            "dw": 0.3414675707625354,
+            "drho": 0.5069871363503822,
+            "jacobian": 0.7634925640426227,
+            "resetBefore": false,
+            "detachedBefore": false
+          },
+          {
+            "index": 2,
+            "x": 0,
+            "previous": 0.4863203018149431,
+            "h": 0.3705463365711785,
+            "dw": 0.23566600543883304,
+            "drho": 0.7694466747208419,
+            "jacobian": 0.8626954124536789,
+            "resetBefore": false,
+            "detachedBefore": false
+          },
+          {
+            "index": 3,
+            "x": 0,
+            "previous": 0.3705463365711785,
+            "h": 0.2880486689135057,
+            "dw": 0.17288985378483407,
+            "drho": 0.9042846469466581,
+            "jacobian": 0.9170279643371576,
+            "resetBefore": false,
+            "detachedBefore": false
+          },
+          {
+            "index": 4,
+            "x": 0,
+            "previous": 0.2880486689135057,
+            "h": 0.22644482138793742,
+            "dw": 0.1312196290372405,
+            "drho": 0.95961065171739,
+            "jacobian": 0.9487227428665851,
+            "resetBefore": false,
+            "detachedBefore": false
+          }
+        ],
+        "h": 0.22644482138793742,
+        "dw": 0.1312196290372405,
+        "drho": 0.95961065171739,
+        "q": {
+          "L": 1.6793344641638122,
+          "R": 0.32066553583618773
+        },
+        "action": "L",
+        "freshReward": 4,
+        "stateError": 0,
+        "sample": {
+          "action": "R",
+          "reward": -2,
+          "y": -2,
+          "q": 0.32066553583618773,
+          "residual": 2.320665535836188,
+          "loss": 2.6927442646089306,
+          "gradient": {
+            "w": -0.9135506121958005,
+            "rho": -6.680806101785551
+          },
+          "updated": {
+            "w": 0.8091355061219581,
+            "rho": 0.8668080610178556
+          }
+        }
+      },
+      "prefixDetached": {
+        "rows": [
+          {
+            "index": 0,
+            "x": 1,
+            "previous": 0,
+            "h": 0.6640367702678491,
+            "dw": 0.5590551677322437,
+            "drho": 0,
+            "jacobian": 0.5590551677322437,
+            "resetBefore": false,
+            "detachedBefore": false
+          },
+          {
+            "index": 1,
+            "x": 0,
+            "previous": 0.6640367702678491,
+            "h": 0.4863203018149431,
+            "dw": 0.3414675707625354,
+            "drho": 0.5069871363503822,
+            "jacobian": 0.7634925640426227,
+            "resetBefore": false,
+            "detachedBefore": false
+          },
+          {
+            "index": 2,
+            "x": 0,
+            "previous": 0.4863203018149431,
+            "h": 0.3705463365711785,
+            "dw": 0.23566600543883304,
+            "drho": 0.7694466747208419,
+            "jacobian": 0.8626954124536789,
+            "resetBefore": false,
+            "detachedBefore": false
+          },
+          {
+            "index": 3,
+            "x": 0,
+            "previous": 0.3705463365711785,
+            "h": 0.2880486689135057,
+            "dw": 0.17288985378483407,
+            "drho": 0.9042846469466581,
+            "jacobian": 0.9170279643371576,
+            "resetBefore": false,
+            "detachedBefore": false
+          },
+          {
+            "index": 4,
+            "x": 0,
+            "previous": 0.2880486689135057,
+            "h": 0.22644482138793742,
+            "dw": 0,
+            "drho": 0.27327832325069,
+            "jacobian": 0.9487227428665851,
+            "resetBefore": false,
+            "detachedBefore": true
+          }
+        ],
+        "h": 0.22644482138793742,
+        "dw": 0,
+        "drho": 0.27327832325069,
+        "q": {
+          "L": 1.6793344641638122,
+          "R": 0.32066553583618773
+        },
+        "action": "L",
+        "freshReward": 4,
+        "stateError": 0,
+        "sample": {
+          "action": "R",
+          "reward": -2,
+          "y": -2,
+          "q": 0.32066553583618773,
+          "residual": 2.320665535836188,
+          "loss": 2.6927442646089306,
+          "gradient": {
+            "w": 0,
+            "rho": -1.9025627593769325
+          },
+          "updated": {
+            "w": 0.8,
+            "rho": 0.8190256275937694
+          }
+        }
+      },
+      "storedBurnDetached": {
+        "rows": [
+          {
+            "index": 0,
+            "x": 0,
+            "previous": -0.4863203018149431,
+            "h": -0.3705463365711785,
+            "dw": 0,
+            "drho": -0.41954629335884,
+            "jacobian": 0.8626954124536789,
+            "resetBefore": false,
+            "detachedBefore": false
+          },
+          {
+            "index": 1,
+            "x": 0,
+            "previous": -0.3705463365711785,
+            "h": -0.2880486689135057,
+            "dw": 0,
+            "drho": -0.6475898993937047,
+            "jacobian": 0.9170279643371576,
+            "resetBefore": false,
+            "detachedBefore": false
+          },
+          {
+            "index": 2,
+            "x": 0,
+            "previous": -0.2880486689135057,
+            "h": -0.22644482138793742,
+            "dw": 0,
+            "drho": -0.27327832325069,
+            "jacobian": 0.9487227428665851,
+            "resetBefore": false,
+            "detachedBefore": true
+          }
+        ],
+        "h": -0.22644482138793742,
+        "dw": 0,
+        "drho": -0.27327832325069,
+        "q": {
+          "L": 0.32066553583618773,
+          "R": 1.6793344641638122
+        },
+        "action": "R",
+        "freshReward": -2,
+        "stateError": 0.45288964277587485,
+        "sample": {
+          "action": "R",
+          "reward": -2,
+          "y": -2,
+          "q": 1.6793344641638122,
+          "residual": 3.679334464163812,
+          "loss": 6.7687510495918035,
+          "gradient": {
+            "w": 0,
+            "rho": 3.016447059135488
+          },
+          "updated": {
+            "w": 0.8,
+            "rho": 0.7698355294086452
+          }
+        }
+      },
+      "storedBurnAttached": {
+        "rows": [
+          {
+            "index": 0,
+            "x": 0,
+            "previous": -0.4863203018149431,
+            "h": -0.3705463365711785,
+            "dw": 0,
+            "drho": -0.41954629335884,
+            "jacobian": 0.8626954124536789,
+            "resetBefore": false,
+            "detachedBefore": false
+          },
+          {
+            "index": 1,
+            "x": 0,
+            "previous": -0.3705463365711785,
+            "h": -0.2880486689135057,
+            "dw": 0,
+            "drho": -0.6475898993937047,
+            "jacobian": 0.9170279643371576,
+            "resetBefore": false,
+            "detachedBefore": false
+          },
+          {
+            "index": 2,
+            "x": 0,
+            "previous": -0.2880486689135057,
+            "h": -0.22644482138793742,
+            "dw": 0,
+            "drho": -0.7647849357350831,
+            "jacobian": 0.9487227428665851,
+            "resetBefore": false,
+            "detachedBefore": false
+          }
+        ],
+        "h": -0.22644482138793742,
+        "dw": 0,
+        "drho": -0.7647849357350831,
+        "q": {
+          "L": 0.32066553583618773,
+          "R": 1.6793344641638122
+        },
+        "action": "R",
+        "freshReward": -2,
+        "stateError": 0.45288964277587485,
+        "sample": {
+          "action": "R",
+          "reward": -2,
+          "y": -2,
+          "q": 1.6793344641638122,
+          "residual": 3.679334464163812,
+          "loss": 6.7687510495918035,
+          "gradient": {
+            "w": 0,
+            "rho": 8.441698715170192
+          },
+          "updated": {
+            "w": 0.8,
+            "rho": 0.7155830128482981
+          }
+        }
+      },
+      "zeroBurn": {
+        "rows": [
+          {
+            "index": 0,
+            "x": 0,
+            "previous": 0,
+            "h": 0,
+            "dw": 0,
+            "drho": 0,
+            "jacobian": 1,
+            "resetBefore": false,
+            "detachedBefore": false
+          },
+          {
+            "index": 1,
+            "x": 0,
+            "previous": 0,
+            "h": 0,
+            "dw": 0,
+            "drho": 0,
+            "jacobian": 1,
+            "resetBefore": false,
+            "detachedBefore": false
+          },
+          {
+            "index": 2,
+            "x": 0,
+            "previous": 0,
+            "h": 0,
+            "dw": 0,
+            "drho": 0,
+            "jacobian": 1,
+            "resetBefore": false,
+            "detachedBefore": true
+          }
+        ],
+        "h": 0,
+        "dw": 0,
+        "drho": 0,
+        "q": {
+          "L": 1,
+          "R": 1
+        },
+        "action": "L",
+        "freshReward": 4,
+        "stateError": 0.22644482138793742,
+        "sample": {
+          "action": "R",
+          "reward": -2,
+          "y": -2,
+          "q": 1,
+          "residual": 3,
+          "loss": 4.5,
+          "gradient": {
+            "w": 0,
+            "rho": 0
+          },
+          "updated": {
+            "w": 0.8,
+            "rho": 0.8
+          }
+        }
+      },
+      "zeroAtLearn": {
+        "rows": [
+          {
+            "index": 0,
+            "x": 0,
+            "previous": 0,
+            "h": 0,
+            "dw": 0,
+            "drho": 0,
+            "jacobian": 1,
+            "resetBefore": false,
+            "detachedBefore": false
+          }
+        ],
+        "h": 0,
+        "dw": 0,
+        "drho": 0,
+        "q": {
+          "L": 1,
+          "R": 1
+        },
+        "action": "L",
+        "freshReward": 4,
+        "stateError": 0.22644482138793742,
+        "sample": {
+          "action": "R",
+          "reward": -2,
+          "y": -2,
+          "q": 1,
+          "residual": 3,
+          "loss": 4.5,
+          "gradient": {
+            "w": 0,
+            "rho": 0
+          },
+          "updated": {
+            "w": 0.8,
+            "rho": 0.8
+          }
+        }
+      },
+      "storedAtLearn": {
+        "rows": [
+          {
+            "index": 0,
+            "x": 0,
+            "previous": -0.2880486689135057,
+            "h": -0.22644482138793742,
+            "dw": 0,
+            "drho": -0.27327832325069,
+            "jacobian": 0.9487227428665851,
+            "resetBefore": false,
+            "detachedBefore": false
+          }
+        ],
+        "h": -0.22644482138793742,
+        "dw": 0,
+        "drho": -0.27327832325069,
+        "q": {
+          "L": 0.32066553583618773,
+          "R": 1.6793344641638122
+        },
+        "action": "R",
+        "freshReward": -2,
+        "stateError": 0.45288964277587485,
+        "sample": {
+          "action": "R",
+          "reward": -2,
+          "y": -2,
+          "q": 1.6793344641638122,
+          "residual": 3.679334464163812,
+          "loss": 6.7687510495918035,
+          "gradient": {
+            "w": 0,
+            "rho": 3.016447059135488
+          },
+          "updated": {
+            "w": 0.8,
+            "rho": 0.7698355294086452
+          }
+        }
+      }
+    },
+    "bootstrap": {
+      "prediction": 1.2489161069885273,
+      "y": 1.2210776211705758,
+      "nextAction": "L",
+      "continuation": 1.356752912411751,
+      "wrongSharedStateTarget": 1.511401017747431
+    }
+  },
+  "branches": [
+    {
+      "cue": -1,
+      "observations": [
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "old": [
+        {
+          "index": 0,
+          "x": -1,
+          "previous": 0,
+          "h": 0.6640367702678491,
+          "dw": -0.5590551677322437,
+          "drho": 0,
+          "jacobian": 0.5590551677322437,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 1,
+          "x": 0,
+          "previous": 0.6640367702678491,
+          "h": 0.4863203018149431,
+          "dw": -0.3414675707625354,
+          "drho": 0.5069871363503822,
+          "jacobian": 0.7634925640426227,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 2,
+          "x": 0,
+          "previous": 0.4863203018149431,
+          "h": 0.3705463365711785,
+          "dw": -0.23566600543883304,
+          "drho": 0.7694466747208419,
+          "jacobian": 0.8626954124536789,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 3,
+          "x": 0,
+          "previous": 0.3705463365711785,
+          "h": 0.2880486689135057,
+          "dw": -0.17288985378483407,
+          "drho": 0.9042846469466581,
+          "jacobian": 0.9170279643371576,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "previous": 0.2880486689135057,
+          "h": 0.22644482138793742,
+          "dw": -0.1312196290372405,
+          "drho": 0.95961065171739,
+          "jacobian": 0.9487227428665851,
+          "resetBefore": false,
+          "detachedBefore": false
+        }
+      ],
+      "current": [
+        {
+          "index": 0,
+          "x": -1,
+          "previous": 0,
+          "h": -0.6640367702678491,
+          "dw": -0.5590551677322437,
+          "drho": 0,
+          "jacobian": 0.5590551677322437,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 1,
+          "x": 0,
+          "previous": -0.6640367702678491,
+          "h": -0.4863203018149431,
+          "dw": -0.3414675707625354,
+          "drho": -0.5069871363503822,
+          "jacobian": 0.7634925640426227,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 2,
+          "x": 0,
+          "previous": -0.4863203018149431,
+          "h": -0.3705463365711785,
+          "dw": -0.23566600543883304,
+          "drho": -0.7694466747208419,
+          "jacobian": 0.8626954124536789,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 3,
+          "x": 0,
+          "previous": -0.3705463365711785,
+          "h": -0.2880486689135057,
+          "dw": -0.17288985378483407,
+          "drho": -0.9042846469466581,
+          "jacobian": 0.9170279643371576,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "previous": -0.2880486689135057,
+          "h": -0.22644482138793742,
+          "dw": -0.1312196290372405,
+          "drho": -0.95961065171739,
+          "jacobian": 0.9487227428665851,
+          "resetBefore": false,
+          "detachedBefore": false
+        }
+      ],
+      "target": [
+        {
+          "index": 0,
+          "x": -1,
+          "previous": 0,
+          "h": -0.5370495669980353,
+          "dw": -0.7115777625872228,
+          "drho": 0,
+          "jacobian": 0.7115777625872228,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 1,
+          "x": 0,
+          "previous": -0.5370495669980353,
+          "h": -0.3591717884287242,
+          "dw": -0.43384678333833976,
+          "drho": -0.467767824013644,
+          "jacobian": 0.8709956263969117,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 2,
+          "x": 0,
+          "previous": -0.3591717884287242,
+          "h": -0.24625325514850369,
+          "dw": -0.2852766179181654,
+          "drho": -0.644972822338189,
+          "jacobian": 0.939359334328766,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 3,
+          "x": 0,
+          "previous": -0.24625325514850369,
+          "h": -0.17068999485621267,
+          "dw": -0.19387554371255755,
+          "drho": -0.6774056920989447,
+          "jacobian": 0.9708649256559861,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "previous": -0.17068999485621267,
+          "h": -0.11891763747058365,
+          "dw": -0.13379370985816744,
+          "drho": -0.6357545555312856,
+          "jacobian": 0.9858585954984148,
+          "resetBefore": false,
+          "detachedBefore": false
+        }
+      ],
+      "recordedAction": "L",
+      "recordedReward": -2,
+      "oldAction": "L",
+      "currentAction": "R",
+      "oldFreshReward": -2,
+      "currentFreshReward": 4,
+      "results": {
+        "full": {
+          "rows": [
+            {
+              "index": 0,
+              "x": -1,
+              "previous": 0,
+              "h": -0.6640367702678491,
+              "dw": -0.5590551677322437,
+              "drho": 0,
+              "jacobian": 0.5590551677322437,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 1,
+              "x": 0,
+              "previous": -0.6640367702678491,
+              "h": -0.4863203018149431,
+              "dw": -0.3414675707625354,
+              "drho": -0.5069871363503822,
+              "jacobian": 0.7634925640426227,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 2,
+              "x": 0,
+              "previous": -0.4863203018149431,
+              "h": -0.3705463365711785,
+              "dw": -0.23566600543883304,
+              "drho": -0.7694466747208419,
+              "jacobian": 0.8626954124536789,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 3,
+              "x": 0,
+              "previous": -0.3705463365711785,
+              "h": -0.2880486689135057,
+              "dw": -0.17288985378483407,
+              "drho": -0.9042846469466581,
+              "jacobian": 0.9170279643371576,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 4,
+              "x": 0,
+              "previous": -0.2880486689135057,
+              "h": -0.22644482138793742,
+              "dw": -0.1312196290372405,
+              "drho": -0.95961065171739,
+              "jacobian": 0.9487227428665851,
+              "resetBefore": false,
+              "detachedBefore": false
+            }
+          ],
+          "h": -0.22644482138793742,
+          "dw": -0.1312196290372405,
+          "drho": -0.95961065171739,
+          "q": {
+            "L": 0.32066553583618773,
+            "R": 1.6793344641638122
+          },
+          "action": "R",
+          "freshReward": 4,
+          "stateError": 0,
+          "sample": {
+            "action": "L",
+            "reward": -2,
+            "y": -2,
+            "q": 0.32066553583618773,
+            "residual": 2.320665535836188,
+            "loss": 2.6927442646089306,
+            "gradient": {
+              "w": -0.9135506121958005,
+              "rho": -6.680806101785551
+            },
+            "updated": {
+              "w": 0.8091355061219581,
+              "rho": 0.8668080610178556
+            }
+          }
+        },
+        "prefixDetached": {
+          "rows": [
+            {
+              "index": 0,
+              "x": -1,
+              "previous": 0,
+              "h": -0.6640367702678491,
+              "dw": -0.5590551677322437,
+              "drho": 0,
+              "jacobian": 0.5590551677322437,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 1,
+              "x": 0,
+              "previous": -0.6640367702678491,
+              "h": -0.4863203018149431,
+              "dw": -0.3414675707625354,
+              "drho": -0.5069871363503822,
+              "jacobian": 0.7634925640426227,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 2,
+              "x": 0,
+              "previous": -0.4863203018149431,
+              "h": -0.3705463365711785,
+              "dw": -0.23566600543883304,
+              "drho": -0.7694466747208419,
+              "jacobian": 0.8626954124536789,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 3,
+              "x": 0,
+              "previous": -0.3705463365711785,
+              "h": -0.2880486689135057,
+              "dw": -0.17288985378483407,
+              "drho": -0.9042846469466581,
+              "jacobian": 0.9170279643371576,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 4,
+              "x": 0,
+              "previous": -0.2880486689135057,
+              "h": -0.22644482138793742,
+              "dw": 0,
+              "drho": -0.27327832325069,
+              "jacobian": 0.9487227428665851,
+              "resetBefore": false,
+              "detachedBefore": true
+            }
+          ],
+          "h": -0.22644482138793742,
+          "dw": 0,
+          "drho": -0.27327832325069,
+          "q": {
+            "L": 0.32066553583618773,
+            "R": 1.6793344641638122
+          },
+          "action": "R",
+          "freshReward": 4,
+          "stateError": 0,
+          "sample": {
+            "action": "L",
+            "reward": -2,
+            "y": -2,
+            "q": 0.32066553583618773,
+            "residual": 2.320665535836188,
+            "loss": 2.6927442646089306,
+            "gradient": {
+              "w": 0,
+              "rho": -1.9025627593769325
+            },
+            "updated": {
+              "w": 0.8,
+              "rho": 0.8190256275937694
+            }
+          }
+        },
+        "storedBurnDetached": {
+          "rows": [
+            {
+              "index": 0,
+              "x": 0,
+              "previous": 0.4863203018149431,
+              "h": 0.3705463365711785,
+              "dw": 0,
+              "drho": 0.41954629335884,
+              "jacobian": 0.8626954124536789,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 1,
+              "x": 0,
+              "previous": 0.3705463365711785,
+              "h": 0.2880486689135057,
+              "dw": 0,
+              "drho": 0.6475898993937047,
+              "jacobian": 0.9170279643371576,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 2,
+              "x": 0,
+              "previous": 0.2880486689135057,
+              "h": 0.22644482138793742,
+              "dw": 0,
+              "drho": 0.27327832325069,
+              "jacobian": 0.9487227428665851,
+              "resetBefore": false,
+              "detachedBefore": true
+            }
+          ],
+          "h": 0.22644482138793742,
+          "dw": 0,
+          "drho": 0.27327832325069,
+          "q": {
+            "L": 1.6793344641638122,
+            "R": 0.32066553583618773
+          },
+          "action": "L",
+          "freshReward": -2,
+          "stateError": 0.45288964277587485,
+          "sample": {
+            "action": "L",
+            "reward": -2,
+            "y": -2,
+            "q": 1.6793344641638122,
+            "residual": 3.679334464163812,
+            "loss": 6.7687510495918035,
+            "gradient": {
+              "w": 0,
+              "rho": 3.016447059135488
+            },
+            "updated": {
+              "w": 0.8,
+              "rho": 0.7698355294086452
+            }
+          }
+        },
+        "storedBurnAttached": {
+          "rows": [
+            {
+              "index": 0,
+              "x": 0,
+              "previous": 0.4863203018149431,
+              "h": 0.3705463365711785,
+              "dw": 0,
+              "drho": 0.41954629335884,
+              "jacobian": 0.8626954124536789,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 1,
+              "x": 0,
+              "previous": 0.3705463365711785,
+              "h": 0.2880486689135057,
+              "dw": 0,
+              "drho": 0.6475898993937047,
+              "jacobian": 0.9170279643371576,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 2,
+              "x": 0,
+              "previous": 0.2880486689135057,
+              "h": 0.22644482138793742,
+              "dw": 0,
+              "drho": 0.7647849357350831,
+              "jacobian": 0.9487227428665851,
+              "resetBefore": false,
+              "detachedBefore": false
+            }
+          ],
+          "h": 0.22644482138793742,
+          "dw": 0,
+          "drho": 0.7647849357350831,
+          "q": {
+            "L": 1.6793344641638122,
+            "R": 0.32066553583618773
+          },
+          "action": "L",
+          "freshReward": -2,
+          "stateError": 0.45288964277587485,
+          "sample": {
+            "action": "L",
+            "reward": -2,
+            "y": -2,
+            "q": 1.6793344641638122,
+            "residual": 3.679334464163812,
+            "loss": 6.7687510495918035,
+            "gradient": {
+              "w": 0,
+              "rho": 8.441698715170192
+            },
+            "updated": {
+              "w": 0.8,
+              "rho": 0.7155830128482981
+            }
+          }
+        },
+        "zeroBurn": {
+          "rows": [
+            {
+              "index": 0,
+              "x": 0,
+              "previous": 0,
+              "h": 0,
+              "dw": 0,
+              "drho": 0,
+              "jacobian": 1,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 1,
+              "x": 0,
+              "previous": 0,
+              "h": 0,
+              "dw": 0,
+              "drho": 0,
+              "jacobian": 1,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 2,
+              "x": 0,
+              "previous": 0,
+              "h": 0,
+              "dw": 0,
+              "drho": 0,
+              "jacobian": 1,
+              "resetBefore": false,
+              "detachedBefore": true
+            }
+          ],
+          "h": 0,
+          "dw": 0,
+          "drho": 0,
+          "q": {
+            "L": 1,
+            "R": 1
+          },
+          "action": "L",
+          "freshReward": -2,
+          "stateError": 0.22644482138793742,
+          "sample": {
+            "action": "L",
+            "reward": -2,
+            "y": -2,
+            "q": 1,
+            "residual": 3,
+            "loss": 4.5,
+            "gradient": {
+              "w": 0,
+              "rho": 0
+            },
+            "updated": {
+              "w": 0.8,
+              "rho": 0.8
+            }
+          }
+        },
+        "zeroAtLearn": {
+          "rows": [
+            {
+              "index": 0,
+              "x": 0,
+              "previous": 0,
+              "h": 0,
+              "dw": 0,
+              "drho": 0,
+              "jacobian": 1,
+              "resetBefore": false,
+              "detachedBefore": false
+            }
+          ],
+          "h": 0,
+          "dw": 0,
+          "drho": 0,
+          "q": {
+            "L": 1,
+            "R": 1
+          },
+          "action": "L",
+          "freshReward": -2,
+          "stateError": 0.22644482138793742,
+          "sample": {
+            "action": "L",
+            "reward": -2,
+            "y": -2,
+            "q": 1,
+            "residual": 3,
+            "loss": 4.5,
+            "gradient": {
+              "w": 0,
+              "rho": 0
+            },
+            "updated": {
+              "w": 0.8,
+              "rho": 0.8
+            }
+          }
+        },
+        "storedAtLearn": {
+          "rows": [
+            {
+              "index": 0,
+              "x": 0,
+              "previous": 0.2880486689135057,
+              "h": 0.22644482138793742,
+              "dw": 0,
+              "drho": 0.27327832325069,
+              "jacobian": 0.9487227428665851,
+              "resetBefore": false,
+              "detachedBefore": false
+            }
+          ],
+          "h": 0.22644482138793742,
+          "dw": 0,
+          "drho": 0.27327832325069,
+          "q": {
+            "L": 1.6793344641638122,
+            "R": 0.32066553583618773
+          },
+          "action": "L",
+          "freshReward": -2,
+          "stateError": 0.45288964277587485,
+          "sample": {
+            "action": "L",
+            "reward": -2,
+            "y": -2,
+            "q": 1.6793344641638122,
+            "residual": 3.679334464163812,
+            "loss": 6.7687510495918035,
+            "gradient": {
+              "w": 0,
+              "rho": 3.016447059135488
+            },
+            "updated": {
+              "w": 0.8,
+              "rho": 0.7698355294086452
+            }
+          }
+        }
+      },
+      "bootstrap": {
+        "prediction": 1.2489161069885273,
+        "y": 1.2210776211705758,
+        "nextAction": "R",
+        "continuation": 1.356752912411751,
+        "wrongSharedStateTarget": 1.511401017747431
+      }
+    },
+    {
+      "cue": 1,
+      "observations": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "old": [
+        {
+          "index": 0,
+          "x": 1,
+          "previous": 0,
+          "h": -0.6640367702678491,
+          "dw": 0.5590551677322437,
+          "drho": 0,
+          "jacobian": 0.5590551677322437,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 1,
+          "x": 0,
+          "previous": -0.6640367702678491,
+          "h": -0.4863203018149431,
+          "dw": 0.3414675707625354,
+          "drho": -0.5069871363503822,
+          "jacobian": 0.7634925640426227,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 2,
+          "x": 0,
+          "previous": -0.4863203018149431,
+          "h": -0.3705463365711785,
+          "dw": 0.23566600543883304,
+          "drho": -0.7694466747208419,
+          "jacobian": 0.8626954124536789,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 3,
+          "x": 0,
+          "previous": -0.3705463365711785,
+          "h": -0.2880486689135057,
+          "dw": 0.17288985378483407,
+          "drho": -0.9042846469466581,
+          "jacobian": 0.9170279643371576,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "previous": -0.2880486689135057,
+          "h": -0.22644482138793742,
+          "dw": 0.1312196290372405,
+          "drho": -0.95961065171739,
+          "jacobian": 0.9487227428665851,
+          "resetBefore": false,
+          "detachedBefore": false
+        }
+      ],
+      "current": [
+        {
+          "index": 0,
+          "x": 1,
+          "previous": 0,
+          "h": 0.6640367702678491,
+          "dw": 0.5590551677322437,
+          "drho": 0,
+          "jacobian": 0.5590551677322437,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 1,
+          "x": 0,
+          "previous": 0.6640367702678491,
+          "h": 0.4863203018149431,
+          "dw": 0.3414675707625354,
+          "drho": 0.5069871363503822,
+          "jacobian": 0.7634925640426227,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 2,
+          "x": 0,
+          "previous": 0.4863203018149431,
+          "h": 0.3705463365711785,
+          "dw": 0.23566600543883304,
+          "drho": 0.7694466747208419,
+          "jacobian": 0.8626954124536789,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 3,
+          "x": 0,
+          "previous": 0.3705463365711785,
+          "h": 0.2880486689135057,
+          "dw": 0.17288985378483407,
+          "drho": 0.9042846469466581,
+          "jacobian": 0.9170279643371576,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "previous": 0.2880486689135057,
+          "h": 0.22644482138793742,
+          "dw": 0.1312196290372405,
+          "drho": 0.95961065171739,
+          "jacobian": 0.9487227428665851,
+          "resetBefore": false,
+          "detachedBefore": false
+        }
+      ],
+      "target": [
+        {
+          "index": 0,
+          "x": 1,
+          "previous": 0,
+          "h": 0.5370495669980353,
+          "dw": 0.7115777625872228,
+          "drho": 0,
+          "jacobian": 0.7115777625872228,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 1,
+          "x": 0,
+          "previous": 0.5370495669980353,
+          "h": 0.3591717884287242,
+          "dw": 0.43384678333833976,
+          "drho": 0.467767824013644,
+          "jacobian": 0.8709956263969117,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 2,
+          "x": 0,
+          "previous": 0.3591717884287242,
+          "h": 0.24625325514850369,
+          "dw": 0.2852766179181654,
+          "drho": 0.644972822338189,
+          "jacobian": 0.939359334328766,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 3,
+          "x": 0,
+          "previous": 0.24625325514850369,
+          "h": 0.17068999485621267,
+          "dw": 0.19387554371255755,
+          "drho": 0.6774056920989447,
+          "jacobian": 0.9708649256559861,
+          "resetBefore": false,
+          "detachedBefore": false
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "previous": 0.17068999485621267,
+          "h": 0.11891763747058365,
+          "dw": 0.13379370985816744,
+          "drho": 0.6357545555312856,
+          "jacobian": 0.9858585954984148,
+          "resetBefore": false,
+          "detachedBefore": false
+        }
+      ],
+      "recordedAction": "R",
+      "recordedReward": -2,
+      "oldAction": "R",
+      "currentAction": "L",
+      "oldFreshReward": -2,
+      "currentFreshReward": 4,
+      "results": {
+        "full": {
+          "rows": [
+            {
+              "index": 0,
+              "x": 1,
+              "previous": 0,
+              "h": 0.6640367702678491,
+              "dw": 0.5590551677322437,
+              "drho": 0,
+              "jacobian": 0.5590551677322437,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 1,
+              "x": 0,
+              "previous": 0.6640367702678491,
+              "h": 0.4863203018149431,
+              "dw": 0.3414675707625354,
+              "drho": 0.5069871363503822,
+              "jacobian": 0.7634925640426227,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 2,
+              "x": 0,
+              "previous": 0.4863203018149431,
+              "h": 0.3705463365711785,
+              "dw": 0.23566600543883304,
+              "drho": 0.7694466747208419,
+              "jacobian": 0.8626954124536789,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 3,
+              "x": 0,
+              "previous": 0.3705463365711785,
+              "h": 0.2880486689135057,
+              "dw": 0.17288985378483407,
+              "drho": 0.9042846469466581,
+              "jacobian": 0.9170279643371576,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 4,
+              "x": 0,
+              "previous": 0.2880486689135057,
+              "h": 0.22644482138793742,
+              "dw": 0.1312196290372405,
+              "drho": 0.95961065171739,
+              "jacobian": 0.9487227428665851,
+              "resetBefore": false,
+              "detachedBefore": false
+            }
+          ],
+          "h": 0.22644482138793742,
+          "dw": 0.1312196290372405,
+          "drho": 0.95961065171739,
+          "q": {
+            "L": 1.6793344641638122,
+            "R": 0.32066553583618773
+          },
+          "action": "L",
+          "freshReward": 4,
+          "stateError": 0,
+          "sample": {
+            "action": "R",
+            "reward": -2,
+            "y": -2,
+            "q": 0.32066553583618773,
+            "residual": 2.320665535836188,
+            "loss": 2.6927442646089306,
+            "gradient": {
+              "w": -0.9135506121958005,
+              "rho": -6.680806101785551
+            },
+            "updated": {
+              "w": 0.8091355061219581,
+              "rho": 0.8668080610178556
+            }
+          }
+        },
+        "prefixDetached": {
+          "rows": [
+            {
+              "index": 0,
+              "x": 1,
+              "previous": 0,
+              "h": 0.6640367702678491,
+              "dw": 0.5590551677322437,
+              "drho": 0,
+              "jacobian": 0.5590551677322437,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 1,
+              "x": 0,
+              "previous": 0.6640367702678491,
+              "h": 0.4863203018149431,
+              "dw": 0.3414675707625354,
+              "drho": 0.5069871363503822,
+              "jacobian": 0.7634925640426227,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 2,
+              "x": 0,
+              "previous": 0.4863203018149431,
+              "h": 0.3705463365711785,
+              "dw": 0.23566600543883304,
+              "drho": 0.7694466747208419,
+              "jacobian": 0.8626954124536789,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 3,
+              "x": 0,
+              "previous": 0.3705463365711785,
+              "h": 0.2880486689135057,
+              "dw": 0.17288985378483407,
+              "drho": 0.9042846469466581,
+              "jacobian": 0.9170279643371576,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 4,
+              "x": 0,
+              "previous": 0.2880486689135057,
+              "h": 0.22644482138793742,
+              "dw": 0,
+              "drho": 0.27327832325069,
+              "jacobian": 0.9487227428665851,
+              "resetBefore": false,
+              "detachedBefore": true
+            }
+          ],
+          "h": 0.22644482138793742,
+          "dw": 0,
+          "drho": 0.27327832325069,
+          "q": {
+            "L": 1.6793344641638122,
+            "R": 0.32066553583618773
+          },
+          "action": "L",
+          "freshReward": 4,
+          "stateError": 0,
+          "sample": {
+            "action": "R",
+            "reward": -2,
+            "y": -2,
+            "q": 0.32066553583618773,
+            "residual": 2.320665535836188,
+            "loss": 2.6927442646089306,
+            "gradient": {
+              "w": 0,
+              "rho": -1.9025627593769325
+            },
+            "updated": {
+              "w": 0.8,
+              "rho": 0.8190256275937694
+            }
+          }
+        },
+        "storedBurnDetached": {
+          "rows": [
+            {
+              "index": 0,
+              "x": 0,
+              "previous": -0.4863203018149431,
+              "h": -0.3705463365711785,
+              "dw": 0,
+              "drho": -0.41954629335884,
+              "jacobian": 0.8626954124536789,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 1,
+              "x": 0,
+              "previous": -0.3705463365711785,
+              "h": -0.2880486689135057,
+              "dw": 0,
+              "drho": -0.6475898993937047,
+              "jacobian": 0.9170279643371576,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 2,
+              "x": 0,
+              "previous": -0.2880486689135057,
+              "h": -0.22644482138793742,
+              "dw": 0,
+              "drho": -0.27327832325069,
+              "jacobian": 0.9487227428665851,
+              "resetBefore": false,
+              "detachedBefore": true
+            }
+          ],
+          "h": -0.22644482138793742,
+          "dw": 0,
+          "drho": -0.27327832325069,
+          "q": {
+            "L": 0.32066553583618773,
+            "R": 1.6793344641638122
+          },
+          "action": "R",
+          "freshReward": -2,
+          "stateError": 0.45288964277587485,
+          "sample": {
+            "action": "R",
+            "reward": -2,
+            "y": -2,
+            "q": 1.6793344641638122,
+            "residual": 3.679334464163812,
+            "loss": 6.7687510495918035,
+            "gradient": {
+              "w": 0,
+              "rho": 3.016447059135488
+            },
+            "updated": {
+              "w": 0.8,
+              "rho": 0.7698355294086452
+            }
+          }
+        },
+        "storedBurnAttached": {
+          "rows": [
+            {
+              "index": 0,
+              "x": 0,
+              "previous": -0.4863203018149431,
+              "h": -0.3705463365711785,
+              "dw": 0,
+              "drho": -0.41954629335884,
+              "jacobian": 0.8626954124536789,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 1,
+              "x": 0,
+              "previous": -0.3705463365711785,
+              "h": -0.2880486689135057,
+              "dw": 0,
+              "drho": -0.6475898993937047,
+              "jacobian": 0.9170279643371576,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 2,
+              "x": 0,
+              "previous": -0.2880486689135057,
+              "h": -0.22644482138793742,
+              "dw": 0,
+              "drho": -0.7647849357350831,
+              "jacobian": 0.9487227428665851,
+              "resetBefore": false,
+              "detachedBefore": false
+            }
+          ],
+          "h": -0.22644482138793742,
+          "dw": 0,
+          "drho": -0.7647849357350831,
+          "q": {
+            "L": 0.32066553583618773,
+            "R": 1.6793344641638122
+          },
+          "action": "R",
+          "freshReward": -2,
+          "stateError": 0.45288964277587485,
+          "sample": {
+            "action": "R",
+            "reward": -2,
+            "y": -2,
+            "q": 1.6793344641638122,
+            "residual": 3.679334464163812,
+            "loss": 6.7687510495918035,
+            "gradient": {
+              "w": 0,
+              "rho": 8.441698715170192
+            },
+            "updated": {
+              "w": 0.8,
+              "rho": 0.7155830128482981
+            }
+          }
+        },
+        "zeroBurn": {
+          "rows": [
+            {
+              "index": 0,
+              "x": 0,
+              "previous": 0,
+              "h": 0,
+              "dw": 0,
+              "drho": 0,
+              "jacobian": 1,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 1,
+              "x": 0,
+              "previous": 0,
+              "h": 0,
+              "dw": 0,
+              "drho": 0,
+              "jacobian": 1,
+              "resetBefore": false,
+              "detachedBefore": false
+            },
+            {
+              "index": 2,
+              "x": 0,
+              "previous": 0,
+              "h": 0,
+              "dw": 0,
+              "drho": 0,
+              "jacobian": 1,
+              "resetBefore": false,
+              "detachedBefore": true
+            }
+          ],
+          "h": 0,
+          "dw": 0,
+          "drho": 0,
+          "q": {
+            "L": 1,
+            "R": 1
+          },
+          "action": "L",
+          "freshReward": 4,
+          "stateError": 0.22644482138793742,
+          "sample": {
+            "action": "R",
+            "reward": -2,
+            "y": -2,
+            "q": 1,
+            "residual": 3,
+            "loss": 4.5,
+            "gradient": {
+              "w": 0,
+              "rho": 0
+            },
+            "updated": {
+              "w": 0.8,
+              "rho": 0.8
+            }
+          }
+        },
+        "zeroAtLearn": {
+          "rows": [
+            {
+              "index": 0,
+              "x": 0,
+              "previous": 0,
+              "h": 0,
+              "dw": 0,
+              "drho": 0,
+              "jacobian": 1,
+              "resetBefore": false,
+              "detachedBefore": false
+            }
+          ],
+          "h": 0,
+          "dw": 0,
+          "drho": 0,
+          "q": {
+            "L": 1,
+            "R": 1
+          },
+          "action": "L",
+          "freshReward": 4,
+          "stateError": 0.22644482138793742,
+          "sample": {
+            "action": "R",
+            "reward": -2,
+            "y": -2,
+            "q": 1,
+            "residual": 3,
+            "loss": 4.5,
+            "gradient": {
+              "w": 0,
+              "rho": 0
+            },
+            "updated": {
+              "w": 0.8,
+              "rho": 0.8
+            }
+          }
+        },
+        "storedAtLearn": {
+          "rows": [
+            {
+              "index": 0,
+              "x": 0,
+              "previous": -0.2880486689135057,
+              "h": -0.22644482138793742,
+              "dw": 0,
+              "drho": -0.27327832325069,
+              "jacobian": 0.9487227428665851,
+              "resetBefore": false,
+              "detachedBefore": false
+            }
+          ],
+          "h": -0.22644482138793742,
+          "dw": 0,
+          "drho": -0.27327832325069,
+          "q": {
+            "L": 0.32066553583618773,
+            "R": 1.6793344641638122
+          },
+          "action": "R",
+          "freshReward": -2,
+          "stateError": 0.45288964277587485,
+          "sample": {
+            "action": "R",
+            "reward": -2,
+            "y": -2,
+            "q": 1.6793344641638122,
+            "residual": 3.679334464163812,
+            "loss": 6.7687510495918035,
+            "gradient": {
+              "w": 0,
+              "rho": 3.016447059135488
+            },
+            "updated": {
+              "w": 0.8,
+              "rho": 0.7698355294086452
+            }
+          }
+        }
+      },
+      "bootstrap": {
+        "prediction": 1.2489161069885273,
+        "y": 1.2210776211705758,
+        "nextAction": "L",
+        "continuation": 1.356752912411751,
+        "wrongSharedStateTarget": 1.511401017747431
+      }
+    }
+  ],
+  "initialErrors": {
+    "contractive": [
+      {
+        "B": 0,
+        "reference": 0.6640367702678491,
+        "stored": -0.6640367702678491,
+        "zero": 0,
+        "storedError": 1.3280735405356983,
+        "zeroError": 0.6640367702678491,
+        "storedAction": "R",
+        "referenceAction": "L"
+      },
+      {
+        "B": 1,
+        "reference": 0.4863203018149431,
+        "stored": -0.4863203018149431,
+        "zero": 0,
+        "storedError": 0.9726406036298862,
+        "zeroError": 0.4863203018149431,
+        "storedAction": "R",
+        "referenceAction": "L"
+      },
+      {
+        "B": 2,
+        "reference": 0.3705463365711785,
+        "stored": -0.3705463365711785,
+        "zero": 0,
+        "storedError": 0.741092673142357,
+        "zeroError": 0.3705463365711785,
+        "storedAction": "R",
+        "referenceAction": "L"
+      },
+      {
+        "B": 3,
+        "reference": 0.2880486689135057,
+        "stored": -0.2880486689135057,
+        "zero": 0,
+        "storedError": 0.5760973378270114,
+        "zeroError": 0.2880486689135057,
+        "storedAction": "R",
+        "referenceAction": "L"
+      },
+      {
+        "B": 4,
+        "reference": 0.22644482138793742,
+        "stored": -0.22644482138793742,
+        "zero": 0,
+        "storedError": 0.45288964277587485,
+        "zeroError": 0.22644482138793742,
+        "storedAction": "R",
+        "referenceAction": "L"
+      },
+      {
+        "B": 5,
+        "reference": 0.17919983894457067,
+        "stored": -0.17919983894457067,
+        "zero": 0,
+        "storedError": 0.35839967788914134,
+        "zeroError": 0.17919983894457067,
+        "storedAction": "R",
+        "referenceAction": "L"
+      },
+      {
+        "B": 6,
+        "reference": 0.1423857651170971,
+        "stored": -0.1423857651170971,
+        "zero": 0,
+        "storedError": 0.2847715302341942,
+        "zeroError": 0.1423857651170971,
+        "storedAction": "R",
+        "referenceAction": "L"
+      },
+      {
+        "B": 7,
+        "reference": 0.11341849440648347,
+        "stored": -0.11341849440648347,
+        "zero": 0,
+        "storedError": 0.22683698881296693,
+        "zeroError": 0.11341849440648347,
+        "storedAction": "R",
+        "referenceAction": "L"
+      },
+      {
+        "B": 8,
+        "reference": 0.09048661222166698,
+        "stored": -0.09048661222166698,
+        "zero": 0,
+        "storedError": 0.18097322444333397,
+        "zeroError": 0.09048661222166698,
+        "storedAction": "R",
+        "referenceAction": "L"
+      }
+    ],
+    "noncontractive": [
+      {
+        "B": 0,
+        "reference": 0.6640367702678491,
+        "stored": -0.6640367702678491,
+        "zero": 0,
+        "storedError": 1.3280735405356983,
+        "zeroError": 0.6640367702678491,
+        "storedAction": "R",
+        "referenceAction": "L"
+      },
+      {
+        "B": 1,
+        "reference": 0.6622687624624507,
+        "stored": -0.6622687624624507,
+        "zero": 0,
+        "storedError": 1.3245375249249014,
+        "zeroError": 0.6622687624624507,
+        "storedAction": "R",
+        "referenceAction": "L"
+      },
+      {
+        "B": 2,
+        "reference": 0.661076016672674,
+        "stored": -0.661076016672674,
+        "zero": 0,
+        "storedError": 1.322152033345348,
+        "zeroError": 0.661076016672674,
+        "storedAction": "R",
+        "referenceAction": "L"
+      },
+      {
+        "B": 3,
+        "reference": 0.6602694657862279,
+        "stored": -0.6602694657862279,
+        "zero": 0,
+        "storedError": 1.3205389315724558,
+        "zeroError": 0.6602694657862279,
+        "storedAction": "R",
+        "referenceAction": "L"
+      },
+      {
+        "B": 4,
+        "reference": 0.6597232004154927,
+        "stored": -0.6597232004154927,
+        "zero": 0,
+        "storedError": 1.3194464008309854,
+        "zeroError": 0.6597232004154927,
+        "storedAction": "R",
+        "referenceAction": "L"
+      },
+      {
+        "B": 5,
+        "reference": 0.6593528262258371,
+        "stored": -0.6593528262258371,
+        "zero": 0,
+        "storedError": 1.3187056524516743,
+        "zeroError": 0.6593528262258371,
+        "storedAction": "R",
+        "referenceAction": "L"
+      },
+      {
+        "B": 6,
+        "reference": 0.6591015260749802,
+        "stored": -0.6591015260749802,
+        "zero": 0,
+        "storedError": 1.3182030521499604,
+        "zeroError": 0.6591015260749802,
+        "storedAction": "R",
+        "referenceAction": "L"
+      },
+      {
+        "B": 7,
+        "reference": 0.658930934204757,
+        "stored": -0.658930934204757,
+        "zero": 0,
+        "storedError": 1.317861868409514,
+        "zeroError": 0.658930934204757,
+        "storedAction": "R",
+        "referenceAction": "L"
+      },
+      {
+        "B": 8,
+        "reference": 0.6588150914721478,
+        "stored": -0.6588150914721478,
+        "zero": 0,
+        "storedError": 1.3176301829442956,
+        "zeroError": 0.6588150914721478,
+        "storedAction": "R",
+        "referenceAction": "L"
+      }
+    ]
+  },
+  "missingCue": {
+    "observedSuffix": [
+      0,
+      0,
+      0
+    ],
+    "zeroStates": [
+      0,
+      0
+    ],
+    "zeroActions": [
+      "L",
+      "L"
+    ],
+    "meanFreshReward": 1,
+    "fullMeanFreshReward": 4
+  },
+  "boundaries": {
+    "chunk": [
+      {
+        "index": 0,
+        "x": 1,
+        "previous": 0,
+        "h": 0.6640367702678491,
+        "dw": 0.5590551677322437,
+        "drho": 0,
+        "jacobian": 0.5590551677322437,
+        "resetBefore": false,
+        "detachedBefore": false
+      },
+      {
+        "index": 1,
+        "x": 0,
+        "previous": 0.6640367702678491,
+        "h": 0.4863203018149431,
+        "dw": 0.3414675707625354,
+        "drho": 0.5069871363503822,
+        "jacobian": 0.7634925640426227,
+        "resetBefore": false,
+        "detachedBefore": false
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "previous": 0.4863203018149431,
+        "h": 0.3705463365711785,
+        "dw": 0,
+        "drho": 0.41954629335884,
+        "jacobian": 0.8626954124536789,
+        "resetBefore": false,
+        "detachedBefore": true
+      },
+      {
+        "index": 3,
+        "x": 0,
+        "previous": 0.3705463365711785,
+        "h": 0.2880486689135057,
+        "dw": 0,
+        "drho": 0.6475898993937047,
+        "jacobian": 0.9170279643371576,
+        "resetBefore": false,
+        "detachedBefore": false
+      },
+      {
+        "index": 4,
+        "x": 0,
+        "previous": 0.2880486689135057,
+        "h": 0.22644482138793742,
+        "dw": 0,
+        "drho": 0.7647849357350831,
+        "jacobian": 0.9487227428665851,
+        "resetBefore": false,
+        "detachedBefore": false
+      }
+    ],
+    "falseReset": [
+      {
+        "index": 0,
+        "x": 1,
+        "previous": 0,
+        "h": 0.6640367702678491,
+        "dw": 0.5590551677322437,
+        "drho": 0,
+        "jacobian": 0.5590551677322437,
+        "resetBefore": false,
+        "detachedBefore": false
+      },
+      {
+        "index": 1,
+        "x": 0,
+        "previous": 0.6640367702678491,
+        "h": 0.4863203018149431,
+        "dw": 0.3414675707625354,
+        "drho": 0.5069871363503822,
+        "jacobian": 0.7634925640426227,
+        "resetBefore": false,
+        "detachedBefore": false
+      },
+      {
+        "index": 2,
+        "x": 0,
+        "previous": 0,
+        "h": 0,
+        "dw": 0,
+        "drho": 0,
+        "jacobian": 1,
+        "resetBefore": true,
+        "detachedBefore": false
+      },
+      {
+        "index": 3,
+        "x": 0,
+        "previous": 0,
+        "h": 0,
+        "dw": 0,
+        "drho": 0,
+        "jacobian": 1,
+        "resetBefore": false,
+        "detachedBefore": false
+      },
+      {
+        "index": 4,
+        "x": 0,
+        "previous": 0,
+        "h": 0,
+        "dw": 0,
+        "drho": 0,
+        "jacobian": 1,
+        "resetBefore": false,
+        "detachedBefore": false
+      }
+    ],
+    "newEpisode": [
+      {
+        "index": 0,
+        "x": 1,
+        "previous": 0,
+        "h": 0.6640367702678491,
+        "dw": 0.5590551677322437,
+        "drho": 0,
+        "jacobian": 0.5590551677322437,
+        "resetBefore": false,
+        "detachedBefore": false
+      },
+      {
+        "index": 1,
+        "x": 0,
+        "previous": 0.6640367702678491,
+        "h": 0.4863203018149431,
+        "dw": 0.3414675707625354,
+        "drho": 0.5069871363503822,
+        "jacobian": 0.7634925640426227,
+        "resetBefore": false,
+        "detachedBefore": false
+      },
+      {
+        "index": 2,
+        "x": -1,
+        "previous": 0,
+        "h": -0.6640367702678491,
+        "dw": -0.5590551677322437,
+        "drho": 0,
+        "jacobian": 0.5590551677322437,
+        "resetBefore": true,
+        "detachedBefore": false
+      },
+      {
+        "index": 3,
+        "x": 0,
+        "previous": -0.6640367702678491,
+        "h": -0.4863203018149431,
+        "dw": -0.3414675707625354,
+        "drho": -0.5069871363503822,
+        "jacobian": 0.7634925640426227,
+        "resetBefore": false,
+        "detachedBefore": false
+      }
+    ],
+    "chunkTarget": 1.2210776211705758,
+    "falseTerminalTarget": 0,
+    "realTerminalTarget": -2
+  },
+  "scope": "Fixed nonlinear recurrent Q mechanism; old/current/target weights are given; no random training or benchmark reproduction."
+}

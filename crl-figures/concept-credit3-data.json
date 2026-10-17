@@ -1,0 +1,211 @@
+{
+  "kind": "exact",
+  "tree": {
+    "gamma": 0.9,
+    "reward": 1,
+    "probabilities": [
+      0.25,
+      0.75
+    ],
+    "q": [
+      2,
+      4
+    ],
+    "sampled": 0,
+    "deepReturn": 6,
+    "expectedOld": 3.5,
+    "replacement": 1,
+    "leaves": [
+      1.5,
+      3
+    ],
+    "target": 5.05,
+    "sarsa": 6.4
+  },
+  "trace": {
+    "alpha": 0.5,
+    "gamma": 1,
+    "lambda": 0.5,
+    "features": [
+      1,
+      1,
+      0
+    ],
+    "rewards": [
+      1,
+      2
+    ],
+    "steps": [
+      {
+        "t": 0,
+        "x": 1,
+        "xp": 1,
+        "reward": 1,
+        "before": 0,
+        "v": 0,
+        "vp": 0,
+        "oldValue": 0,
+        "oldTrace": 0,
+        "carry": 0,
+        "add": 1,
+        "e": 1,
+        "delta": 1,
+        "td": 0.5,
+        "correction": 0,
+        "after": 0.5
+      },
+      {
+        "t": 1,
+        "x": 1,
+        "xp": 0,
+        "reward": 2,
+        "before": 0.5,
+        "v": 0.5,
+        "vp": 0,
+        "oldValue": 0,
+        "oldTrace": 1,
+        "carry": 0.5,
+        "add": 0.75,
+        "e": 1.25,
+        "delta": 1.5,
+        "td": 0.9375,
+        "correction": 0.0625,
+        "after": 1.5
+      }
+    ],
+    "history": [
+      0,
+      0.5,
+      1.5
+    ],
+    "dutchOnly": 1.4375,
+    "accumulating": 1.625
+  },
+  "emphasis": {
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "gamma": [
+      0,
+      0.5,
+      0.5
+    ],
+    "interest": [
+      1,
+      0,
+      0
+    ],
+    "rho": [
+      2,
+      4,
+      1
+    ],
+    "cumulant": [
+      0,
+      1,
+      0
+    ],
+    "lambda": 0,
+    "rows": [
+      {
+        "state": "A",
+        "t": 0,
+        "previousRatio": 0,
+        "carry": 0,
+        "F": 1,
+        "M": 1,
+        "currentRatio": 2,
+        "traceCoefficient": 2
+      },
+      {
+        "state": "B",
+        "t": 1,
+        "previousRatio": 2,
+        "carry": 1,
+        "F": 1,
+        "M": 1,
+        "currentRatio": 4,
+        "traceCoefficient": 4
+      },
+      {
+        "state": "C",
+        "t": 2,
+        "previousRatio": 4,
+        "carry": 2,
+        "F": 2,
+        "M": 2,
+        "currentRatio": 1,
+        "traceCoefficient": 2
+      }
+    ]
+  },
+  "option": {
+    "rate": 1,
+    "values": {
+      "G": 4,
+      "F": 0
+    },
+    "versions": [
+      {
+        "version": 1,
+        "path": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "endpoint": "G",
+        "rewards": [
+          -1,
+          4
+        ],
+        "duration": 2,
+        "reward": 3,
+        "tail": 4,
+        "backup": 5
+      },
+      {
+        "version": 2,
+        "path": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "endpoint": "F",
+        "rewards": [
+          -1,
+          -1,
+          -1
+        ],
+        "duration": 3,
+        "reward": -3,
+        "tail": 0,
+        "backup": -6
+      }
+    ],
+    "staleError": 11
+  }
+}

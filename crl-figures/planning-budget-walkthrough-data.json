@@ -1,0 +1,3389 @@
+{
+  "evidence": "exact-model-and-finite-enumeration",
+  "randomTrainingRuns": 0,
+  "gamma": 0.9,
+  "exitReward": 0.6,
+  "branchRewards": [
+    2,
+    2,
+    0,
+    0
+  ],
+  "actions": {
+    "S": [
+      "go",
+      "exit"
+    ],
+    "A": [
+      "cross"
+    ],
+    "C1": [
+      "collect",
+      "wait"
+    ],
+    "C2": [
+      "collect",
+      "wait"
+    ],
+    "C3": [
+      "collect",
+      "wait"
+    ],
+    "C4": [
+      "collect",
+      "wait"
+    ],
+    "G": [],
+    "D": [],
+    "B": []
+  },
+  "model": {
+    "S:go": [
+      {
+        "next": "A",
+        "reward": 0,
+        "done": false,
+        "p": 1
+      }
+    ],
+    "S:exit": [
+      {
+        "next": "B",
+        "reward": 0.6,
+        "done": true,
+        "p": 1
+      }
+    ],
+    "A:cross": [
+      {
+        "next": "C1",
+        "reward": 0,
+        "done": false,
+        "p": 0.25
+      },
+      {
+        "next": "C2",
+        "reward": 0,
+        "done": false,
+        "p": 0.25
+      },
+      {
+        "next": "C3",
+        "reward": 0,
+        "done": false,
+        "p": 0.25
+      },
+      {
+        "next": "C4",
+        "reward": 0,
+        "done": false,
+        "p": 0.25
+      }
+    ],
+    "C1:collect": [
+      {
+        "next": "G",
+        "reward": 2,
+        "done": true,
+        "p": 1
+      }
+    ],
+    "C1:wait": [
+      {
+        "next": "D",
+        "reward": 0,
+        "done": true,
+        "p": 1
+      }
+    ],
+    "C2:collect": [
+      {
+        "next": "G",
+        "reward": 2,
+        "done": true,
+        "p": 1
+      }
+    ],
+    "C2:wait": [
+      {
+        "next": "D",
+        "reward": 0,
+        "done": true,
+        "p": 1
+      }
+    ],
+    "C3:collect": [
+      {
+        "next": "G",
+        "reward": 0,
+        "done": true,
+        "p": 1
+      }
+    ],
+    "C3:wait": [
+      {
+        "next": "D",
+        "reward": 0,
+        "done": true,
+        "p": 1
+      }
+    ],
+    "C4:collect": [
+      {
+        "next": "G",
+        "reward": 0,
+        "done": true,
+        "p": 1
+      }
+    ],
+    "C4:wait": [
+      {
+        "next": "D",
+        "reward": 0,
+        "done": true,
+        "p": 1
+      }
+    ]
+  },
+  "initialQ": {
+    "S:go": 0,
+    "S:exit": 0.6,
+    "A:cross": 0,
+    "C1:collect": 0,
+    "C1:wait": 0,
+    "C2:collect": 0,
+    "C2:wait": 0,
+    "C3:collect": 0,
+    "C3:wait": 0,
+    "C4:collect": 0,
+    "C4:wait": 0
+  },
+  "truth": {
+    "paths": [
+      {
+        "route": [
+          "S",
+          "A",
+          "C1",
+          "G"
+        ],
+        "probability": 0.25,
+        "rewards": [
+          0,
+          0,
+          2
+        ],
+        "return": 1.62,
+        "realTransitions": 3
+      },
+      {
+        "route": [
+          "S",
+          "A",
+          "C2",
+          "G"
+        ],
+        "probability": 0.25,
+        "rewards": [
+          0,
+          0,
+          2
+        ],
+        "return": 1.62,
+        "realTransitions": 3
+      },
+      {
+        "route": [
+          "S",
+          "A",
+          "C3",
+          "G"
+        ],
+        "probability": 0.25,
+        "rewards": [
+          0,
+          0,
+          0
+        ],
+        "return": 0,
+        "realTransitions": 3
+      },
+      {
+        "route": [
+          "S",
+          "A",
+          "C4",
+          "G"
+        ],
+        "probability": 0.25,
+        "rewards": [
+          0,
+          0,
+          0
+        ],
+        "return": 0,
+        "realTransitions": 3
+      }
+    ],
+    "go": 0.81,
+    "exit": 0.6
+  },
+  "costs": {
+    "leaf": {
+      "modelQueries": 1,
+      "expandedOutcomes": 1,
+      "actionValueReads": 0,
+      "qWrites": 1
+    },
+    "sampleCross": {
+      "modelQueries": 1,
+      "expandedOutcomes": 1,
+      "actionValueReads": 2,
+      "qWrites": 1
+    },
+    "expectedCross": {
+      "modelQueries": 1,
+      "expandedOutcomes": 4,
+      "actionValueReads": 8,
+      "qWrites": 1
+    },
+    "go": {
+      "modelQueries": 1,
+      "expandedOutcomes": 1,
+      "actionValueReads": 1,
+      "qWrites": 1
+    }
+  },
+  "order": {
+    "forward": {
+      "order": "forward",
+      "mode": "expected",
+      "budget": 30,
+      "q": {
+        "S:go": 0,
+        "S:exit": 0.6,
+        "A:cross": 0,
+        "C1:collect": 2,
+        "C1:wait": 0,
+        "C2:collect": 2,
+        "C2:wait": 0,
+        "C3:collect": 0,
+        "C3:wait": 0,
+        "C4:collect": 0,
+        "C4:wait": 0
+      },
+      "choice": "exit",
+      "counts": {
+        "environmentTransitions": 0,
+        "modelWrites": 0,
+        "modelQueries": 6,
+        "expandedOutcomes": 9,
+        "actionValueReads": 9,
+        "qWrites": 6,
+        "scheduleAppends": 6,
+        "scheduleBudgetChecks": 6,
+        "sampleSelections": 0,
+        "queuePushes": 0,
+        "queuePops": 0,
+        "work": 30
+      },
+      "unusedBudget": 0,
+      "stoppedAt": null,
+      "complete": true,
+      "events": [
+        {
+          "pair": "S:go",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 0,
+          "after": 0,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 1,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "A:cross",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 0,
+          "after": 0,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 4,
+            "actionValueReads": 8,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "C1:collect",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 2,
+          "after": 2,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 0,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "C2:collect",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 2,
+          "after": 2,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 0,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "C3:collect",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 0,
+          "after": 0,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 0,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "C4:collect",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 0,
+          "after": 0,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 0,
+            "qWrites": 1
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 0,
+            "C1:wait": 0,
+            "C2:collect": 0,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 0,
+          "leafMean": 0
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 0,
+            "C1:wait": 0,
+            "C2:collect": 0,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 4,
+          "leafMean": 0
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 0,
+            "C1:wait": 0,
+            "C2:collect": 0,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 18,
+          "leafMean": 0
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 0,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 21,
+          "leafMean": 0.5
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 24,
+          "leafMean": 1
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 27,
+          "leafMean": 1
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 30,
+          "leafMean": 1
+        }
+      ]
+    },
+    "backward": {
+      "order": "backward",
+      "mode": "expected",
+      "budget": 30,
+      "q": {
+        "S:go": 0.81,
+        "S:exit": 0.6,
+        "A:cross": 0.9,
+        "C1:collect": 2,
+        "C1:wait": 0,
+        "C2:collect": 2,
+        "C2:wait": 0,
+        "C3:collect": 0,
+        "C3:wait": 0,
+        "C4:collect": 0,
+        "C4:wait": 0
+      },
+      "choice": "go",
+      "counts": {
+        "environmentTransitions": 0,
+        "modelWrites": 0,
+        "modelQueries": 6,
+        "expandedOutcomes": 9,
+        "actionValueReads": 9,
+        "qWrites": 6,
+        "scheduleAppends": 6,
+        "scheduleBudgetChecks": 6,
+        "sampleSelections": 0,
+        "queuePushes": 0,
+        "queuePops": 0,
+        "work": 30
+      },
+      "unusedBudget": 0,
+      "stoppedAt": null,
+      "complete": true,
+      "events": [
+        {
+          "pair": "C1:collect",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 2,
+          "after": 2,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 0,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "C2:collect",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 2,
+          "after": 2,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 0,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "C3:collect",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 0,
+          "after": 0,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 0,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "C4:collect",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 0,
+          "after": 0,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 0,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "A:cross",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 0.9,
+          "after": 0.9,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 4,
+            "actionValueReads": 8,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "S:go",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 0.81,
+          "after": 0.81,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 1,
+            "qWrites": 1
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 0,
+            "C1:wait": 0,
+            "C2:collect": 0,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 0,
+          "leafMean": 0
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 0,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 3,
+          "leafMean": 0.5
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 6,
+          "leafMean": 1
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 9,
+          "leafMean": 1
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 12,
+          "leafMean": 1
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0.9,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 26,
+          "leafMean": 1
+        },
+        {
+          "q": {
+            "S:go": 0.81,
+            "S:exit": 0.6,
+            "A:cross": 0.9,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 30,
+          "leafMean": 1
+        }
+      ]
+    }
+  },
+  "sameOrder": {
+    "expected": {
+      "order": "backward",
+      "mode": "expected",
+      "budget": 30,
+      "q": {
+        "S:go": 0.81,
+        "S:exit": 0.6,
+        "A:cross": 0.9,
+        "C1:collect": 2,
+        "C1:wait": 0,
+        "C2:collect": 2,
+        "C2:wait": 0,
+        "C3:collect": 0,
+        "C3:wait": 0,
+        "C4:collect": 0,
+        "C4:wait": 0
+      },
+      "choice": "go",
+      "counts": {
+        "environmentTransitions": 0,
+        "modelWrites": 0,
+        "modelQueries": 6,
+        "expandedOutcomes": 9,
+        "actionValueReads": 9,
+        "qWrites": 6,
+        "scheduleAppends": 6,
+        "scheduleBudgetChecks": 6,
+        "sampleSelections": 0,
+        "queuePushes": 0,
+        "queuePops": 0,
+        "work": 30
+      },
+      "unusedBudget": 0,
+      "stoppedAt": null,
+      "complete": true,
+      "events": [
+        {
+          "pair": "C1:collect",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 2,
+          "after": 2,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 0,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "C2:collect",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 2,
+          "after": 2,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 0,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "C3:collect",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 0,
+          "after": 0,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 0,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "C4:collect",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 0,
+          "after": 0,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 0,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "A:cross",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 0.9,
+          "after": 0.9,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 4,
+            "actionValueReads": 8,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "S:go",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 0.81,
+          "after": 0.81,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 1,
+            "qWrites": 1
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 0,
+            "C1:wait": 0,
+            "C2:collect": 0,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 0,
+          "leafMean": 0
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 0,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 3,
+          "leafMean": 0.5
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 6,
+          "leafMean": 1
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 9,
+          "leafMean": 1
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 12,
+          "leafMean": 1
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0.9,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 26,
+          "leafMean": 1
+        },
+        {
+          "q": {
+            "S:go": 0.81,
+            "S:exit": 0.6,
+            "A:cross": 0.9,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 30,
+          "leafMean": 1
+        }
+      ]
+    },
+    "samplePositive": {
+      "order": "backward",
+      "mode": "sample",
+      "budget": 21,
+      "q": {
+        "S:go": 1.62,
+        "S:exit": 0.6,
+        "A:cross": 1.8,
+        "C1:collect": 2,
+        "C1:wait": 0,
+        "C2:collect": 2,
+        "C2:wait": 0,
+        "C3:collect": 0,
+        "C3:wait": 0,
+        "C4:collect": 0,
+        "C4:wait": 0
+      },
+      "choice": "go",
+      "counts": {
+        "environmentTransitions": 0,
+        "modelWrites": 0,
+        "modelQueries": 6,
+        "expandedOutcomes": 6,
+        "actionValueReads": 3,
+        "qWrites": 6,
+        "scheduleAppends": 6,
+        "scheduleBudgetChecks": 6,
+        "sampleSelections": 1,
+        "queuePushes": 0,
+        "queuePops": 0,
+        "work": 21
+      },
+      "unusedBudget": 0,
+      "stoppedAt": null,
+      "complete": true,
+      "events": [
+        {
+          "pair": "C1:collect",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 2,
+          "after": 2,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 0,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "C2:collect",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 2,
+          "after": 2,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 0,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "C3:collect",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 0,
+          "after": 0,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 0,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "C4:collect",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 0,
+          "after": 0,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 0,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "A:cross",
+          "mode": "sample",
+          "draw": 0,
+          "alpha": 1,
+          "before": 0,
+          "target": 1.8,
+          "after": 1.8,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 2,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "S:go",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 1.62,
+          "after": 1.62,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 1,
+            "qWrites": 1
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 0,
+            "C1:wait": 0,
+            "C2:collect": 0,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 0,
+          "leafMean": 0
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 0,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 3,
+          "leafMean": 0.5
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 6,
+          "leafMean": 1
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 9,
+          "leafMean": 1
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 12,
+          "leafMean": 1
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 1.8,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 17,
+          "leafMean": 1
+        },
+        {
+          "q": {
+            "S:go": 1.62,
+            "S:exit": 0.6,
+            "A:cross": 1.8,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 21,
+          "leafMean": 1
+        }
+      ]
+    },
+    "sampleZero": {
+      "order": "backward",
+      "mode": "sample",
+      "budget": 21,
+      "q": {
+        "S:go": 0,
+        "S:exit": 0.6,
+        "A:cross": 0,
+        "C1:collect": 2,
+        "C1:wait": 0,
+        "C2:collect": 2,
+        "C2:wait": 0,
+        "C3:collect": 0,
+        "C3:wait": 0,
+        "C4:collect": 0,
+        "C4:wait": 0
+      },
+      "choice": "exit",
+      "counts": {
+        "environmentTransitions": 0,
+        "modelWrites": 0,
+        "modelQueries": 6,
+        "expandedOutcomes": 6,
+        "actionValueReads": 3,
+        "qWrites": 6,
+        "scheduleAppends": 6,
+        "scheduleBudgetChecks": 6,
+        "sampleSelections": 1,
+        "queuePushes": 0,
+        "queuePops": 0,
+        "work": 21
+      },
+      "unusedBudget": 0,
+      "stoppedAt": null,
+      "complete": true,
+      "events": [
+        {
+          "pair": "C1:collect",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 2,
+          "after": 2,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 0,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "C2:collect",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 2,
+          "after": 2,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 0,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "C3:collect",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 0,
+          "after": 0,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 0,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "C4:collect",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 0,
+          "after": 0,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 0,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "A:cross",
+          "mode": "sample",
+          "draw": 2,
+          "alpha": 1,
+          "before": 0,
+          "target": 0,
+          "after": 0,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 2,
+            "qWrites": 1
+          }
+        },
+        {
+          "pair": "S:go",
+          "mode": "expected",
+          "draw": null,
+          "alpha": 1,
+          "before": 0,
+          "target": 0,
+          "after": 0,
+          "cost": {
+            "modelQueries": 1,
+            "expandedOutcomes": 1,
+            "actionValueReads": 1,
+            "qWrites": 1
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 0,
+            "C1:wait": 0,
+            "C2:collect": 0,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 0,
+          "leafMean": 0
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 0,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 3,
+          "leafMean": 0.5
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 6,
+          "leafMean": 1
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 9,
+          "leafMean": 1
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 12,
+          "leafMean": 1
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 17,
+          "leafMean": 1
+        },
+        {
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0,
+            "C1:collect": 2,
+            "C1:wait": 0,
+            "C2:collect": 2,
+            "C2:wait": 0,
+            "C3:collect": 0,
+            "C3:wait": 0,
+            "C4:collect": 0,
+            "C4:wait": 0
+          },
+          "work": 21,
+          "leafMean": 1
+        }
+      ]
+    }
+  },
+  "frozen": {
+    "expectedCross": 0.9,
+    "targetVariance": 0.81,
+    "samples": [
+      {
+        "n": 1,
+        "enumeratedSequences": 4,
+        "bins": [
+          {
+            "positive": 0,
+            "sequences": 2,
+            "probability": 0.5,
+            "meanEstimatedGo": 0,
+            "estimateRange": [
+              0,
+              0
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 1,
+            "sequences": 2,
+            "probability": 0.5,
+            "meanEstimatedGo": 1.62,
+            "estimateRange": [
+              1.62,
+              1.62
+            ],
+            "chooseGoProbability": 0.5
+          }
+        ],
+        "chooseGoProbability": 0.5,
+        "meanGo": 0.81,
+        "mseGo": 0.6561000000000001,
+        "meanTrueReturn": 0.7050000000000001,
+        "meanNextRealTransitions": 2,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 6,
+          "expandedOutcomes": 6,
+          "actionValueReads": 3,
+          "qWrites": 6,
+          "scheduleAppends": 6,
+          "scheduleBudgetChecks": 6,
+          "sampleSelections": 1,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 21
+        },
+        "unusedBudget": 0,
+        "complete": true
+      },
+      {
+        "n": 2,
+        "enumeratedSequences": 16,
+        "bins": [
+          {
+            "positive": 0,
+            "sequences": 4,
+            "probability": 0.25,
+            "meanEstimatedGo": 0,
+            "estimateRange": [
+              0,
+              0
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 1,
+            "sequences": 8,
+            "probability": 0.5,
+            "meanEstimatedGo": 0.8100000000000003,
+            "estimateRange": [
+              0.81,
+              0.81
+            ],
+            "chooseGoProbability": 0.5
+          },
+          {
+            "positive": 2,
+            "sequences": 4,
+            "probability": 0.25,
+            "meanEstimatedGo": 1.62,
+            "estimateRange": [
+              1.62,
+              1.62
+            ],
+            "chooseGoProbability": 0.25
+          }
+        ],
+        "chooseGoProbability": 0.75,
+        "meanGo": 0.8100000000000003,
+        "mseGo": 0.3280500000000001,
+        "meanTrueReturn": 0.7575000000000002,
+        "meanNextRealTransitions": 2.5,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 7,
+          "expandedOutcomes": 7,
+          "actionValueReads": 5,
+          "qWrites": 7,
+          "scheduleAppends": 7,
+          "scheduleBudgetChecks": 7,
+          "sampleSelections": 2,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 26
+        },
+        "unusedBudget": 0,
+        "complete": true
+      },
+      {
+        "n": 3,
+        "enumeratedSequences": 64,
+        "bins": [
+          {
+            "positive": 0,
+            "sequences": 8,
+            "probability": 0.125,
+            "meanEstimatedGo": 0,
+            "estimateRange": [
+              0,
+              0
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 1,
+            "sequences": 24,
+            "probability": 0.375,
+            "meanEstimatedGo": 0.5400000000000004,
+            "estimateRange": [
+              0.54,
+              0.5400000000000001
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 2,
+            "sequences": 24,
+            "probability": 0.375,
+            "meanEstimatedGo": 1.0800000000000007,
+            "estimateRange": [
+              1.08,
+              1.0800000000000003
+            ],
+            "chooseGoProbability": 0.375
+          },
+          {
+            "positive": 3,
+            "sequences": 8,
+            "probability": 0.125,
+            "meanEstimatedGo": 1.6200000000000006,
+            "estimateRange": [
+              1.62,
+              1.62
+            ],
+            "chooseGoProbability": 0.125
+          }
+        ],
+        "chooseGoProbability": 0.5,
+        "meanGo": 0.8099999999999994,
+        "mseGo": 0.21870000000000014,
+        "meanTrueReturn": 0.7050000000000006,
+        "meanNextRealTransitions": 2,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 8,
+          "expandedOutcomes": 8,
+          "actionValueReads": 7,
+          "qWrites": 8,
+          "scheduleAppends": 8,
+          "scheduleBudgetChecks": 8,
+          "sampleSelections": 3,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 31
+        },
+        "unusedBudget": 0,
+        "complete": true
+      },
+      {
+        "n": 4,
+        "enumeratedSequences": 256,
+        "bins": [
+          {
+            "positive": 0,
+            "sequences": 16,
+            "probability": 0.0625,
+            "meanEstimatedGo": 0,
+            "estimateRange": [
+              0,
+              0
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 1,
+            "sequences": 64,
+            "probability": 0.25,
+            "meanEstimatedGo": 0.4050000000000003,
+            "estimateRange": [
+              0.40499999999999997,
+              0.4050000000000001
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 2,
+            "sequences": 96,
+            "probability": 0.375,
+            "meanEstimatedGo": 0.810000000000001,
+            "estimateRange": [
+              0.8099999999999999,
+              0.8100000000000002
+            ],
+            "chooseGoProbability": 0.375
+          },
+          {
+            "positive": 3,
+            "sequences": 64,
+            "probability": 0.25,
+            "meanEstimatedGo": 1.2150000000000019,
+            "estimateRange": [
+              1.215,
+              1.215
+            ],
+            "chooseGoProbability": 0.25
+          },
+          {
+            "positive": 4,
+            "sequences": 16,
+            "probability": 0.0625,
+            "meanEstimatedGo": 1.6200000000000008,
+            "estimateRange": [
+              1.62,
+              1.62
+            ],
+            "chooseGoProbability": 0.0625
+          }
+        ],
+        "chooseGoProbability": 0.6875,
+        "meanGo": 0.8100000000000018,
+        "mseGo": 0.16402500000000003,
+        "meanTrueReturn": 0.7443749999999996,
+        "meanNextRealTransitions": 2.375,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 9,
+          "expandedOutcomes": 9,
+          "actionValueReads": 9,
+          "qWrites": 9,
+          "scheduleAppends": 9,
+          "scheduleBudgetChecks": 9,
+          "sampleSelections": 4,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 36
+        },
+        "unusedBudget": 0,
+        "complete": true
+      }
+    ]
+  },
+  "moving": {
+    "n": 2,
+    "enumeratedSequences": 16,
+    "bins": [
+      {
+        "positive": 0,
+        "sequences": 4,
+        "probability": 0.25,
+        "meanEstimatedGo": 0,
+        "estimateRange": [
+          0,
+          0
+        ],
+        "chooseGoProbability": 0
+      },
+      {
+        "positive": 1,
+        "sequences": 8,
+        "probability": 0.5,
+        "meanEstimatedGo": 0.405,
+        "estimateRange": [
+          0,
+          0.81
+        ],
+        "chooseGoProbability": 0.25
+      },
+      {
+        "positive": 2,
+        "sequences": 4,
+        "probability": 0.25,
+        "meanEstimatedGo": 0.81,
+        "estimateRange": [
+          0.81,
+          0.81
+        ],
+        "chooseGoProbability": 0.25
+      }
+    ],
+    "chooseGoProbability": 0.5,
+    "meanGo": 0.40500000000000014,
+    "mseGo": 0.3280500000000001,
+    "meanTrueReturn": 0.705,
+    "meanNextRealTransitions": 2,
+    "counts": {
+      "environmentTransitions": 0,
+      "modelWrites": 0,
+      "modelQueries": 7,
+      "expandedOutcomes": 7,
+      "actionValueReads": 5,
+      "qWrites": 7,
+      "scheduleAppends": 7,
+      "scheduleBudgetChecks": 7,
+      "sampleSelections": 2,
+      "queuePushes": 0,
+      "queuePops": 0,
+      "work": 26
+    },
+    "unusedBudget": 0,
+    "complete": true
+  },
+  "budgets": [
+    {
+      "budget": 12,
+      "n": 1,
+      "sample": {
+        "n": 1,
+        "enumeratedSequences": 4,
+        "bins": [
+          {
+            "positive": 0,
+            "sequences": 2,
+            "probability": 0.5,
+            "meanEstimatedGo": 0,
+            "estimateRange": [
+              0,
+              0
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 1,
+            "sequences": 2,
+            "probability": 0.5,
+            "meanEstimatedGo": 0,
+            "estimateRange": [
+              0,
+              0
+            ],
+            "chooseGoProbability": 0
+          }
+        ],
+        "chooseGoProbability": 0,
+        "meanGo": 0,
+        "mseGo": 0.6561000000000001,
+        "meanTrueReturn": 0.6,
+        "meanNextRealTransitions": 1,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 4,
+          "expandedOutcomes": 4,
+          "actionValueReads": 0,
+          "qWrites": 4,
+          "scheduleAppends": 6,
+          "scheduleBudgetChecks": 5,
+          "sampleSelections": 0,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 12
+        },
+        "unusedBudget": 0,
+        "complete": false
+      },
+      "expected": {
+        "choice": "exit",
+        "qGo": 0,
+        "chooseGoProbability": 0,
+        "trueReturn": 0.6,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 4,
+          "expandedOutcomes": 4,
+          "actionValueReads": 0,
+          "qWrites": 4,
+          "scheduleAppends": 6,
+          "scheduleBudgetChecks": 5,
+          "sampleSelections": 0,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 12
+        },
+        "unusedBudget": 0,
+        "complete": false
+      }
+    },
+    {
+      "budget": 20,
+      "n": 1,
+      "sample": {
+        "n": 1,
+        "enumeratedSequences": 4,
+        "bins": [
+          {
+            "positive": 0,
+            "sequences": 2,
+            "probability": 0.5,
+            "meanEstimatedGo": 0,
+            "estimateRange": [
+              0,
+              0
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 1,
+            "sequences": 2,
+            "probability": 0.5,
+            "meanEstimatedGo": 0,
+            "estimateRange": [
+              0,
+              0
+            ],
+            "chooseGoProbability": 0
+          }
+        ],
+        "chooseGoProbability": 0,
+        "meanGo": 0,
+        "mseGo": 0.6561000000000001,
+        "meanTrueReturn": 0.6,
+        "meanNextRealTransitions": 1,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 5,
+          "expandedOutcomes": 5,
+          "actionValueReads": 2,
+          "qWrites": 5,
+          "scheduleAppends": 6,
+          "scheduleBudgetChecks": 6,
+          "sampleSelections": 1,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 17
+        },
+        "unusedBudget": 3,
+        "complete": false
+      },
+      "expected": {
+        "choice": "exit",
+        "qGo": 0,
+        "chooseGoProbability": 0,
+        "trueReturn": 0.6,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 4,
+          "expandedOutcomes": 4,
+          "actionValueReads": 0,
+          "qWrites": 4,
+          "scheduleAppends": 6,
+          "scheduleBudgetChecks": 5,
+          "sampleSelections": 0,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 12
+        },
+        "unusedBudget": 8,
+        "complete": false
+      }
+    },
+    {
+      "budget": 21,
+      "n": 1,
+      "sample": {
+        "n": 1,
+        "enumeratedSequences": 4,
+        "bins": [
+          {
+            "positive": 0,
+            "sequences": 2,
+            "probability": 0.5,
+            "meanEstimatedGo": 0,
+            "estimateRange": [
+              0,
+              0
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 1,
+            "sequences": 2,
+            "probability": 0.5,
+            "meanEstimatedGo": 1.62,
+            "estimateRange": [
+              1.62,
+              1.62
+            ],
+            "chooseGoProbability": 0.5
+          }
+        ],
+        "chooseGoProbability": 0.5,
+        "meanGo": 0.81,
+        "mseGo": 0.6561000000000001,
+        "meanTrueReturn": 0.7050000000000001,
+        "meanNextRealTransitions": 2,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 6,
+          "expandedOutcomes": 6,
+          "actionValueReads": 3,
+          "qWrites": 6,
+          "scheduleAppends": 6,
+          "scheduleBudgetChecks": 6,
+          "sampleSelections": 1,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 21
+        },
+        "unusedBudget": 0,
+        "complete": true
+      },
+      "expected": {
+        "choice": "exit",
+        "qGo": 0,
+        "chooseGoProbability": 0,
+        "trueReturn": 0.6,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 4,
+          "expandedOutcomes": 4,
+          "actionValueReads": 0,
+          "qWrites": 4,
+          "scheduleAppends": 6,
+          "scheduleBudgetChecks": 5,
+          "sampleSelections": 0,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 12
+        },
+        "unusedBudget": 9,
+        "complete": false
+      }
+    },
+    {
+      "budget": 25,
+      "n": 1,
+      "sample": {
+        "n": 1,
+        "enumeratedSequences": 4,
+        "bins": [
+          {
+            "positive": 0,
+            "sequences": 2,
+            "probability": 0.5,
+            "meanEstimatedGo": 0,
+            "estimateRange": [
+              0,
+              0
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 1,
+            "sequences": 2,
+            "probability": 0.5,
+            "meanEstimatedGo": 1.62,
+            "estimateRange": [
+              1.62,
+              1.62
+            ],
+            "chooseGoProbability": 0.5
+          }
+        ],
+        "chooseGoProbability": 0.5,
+        "meanGo": 0.81,
+        "mseGo": 0.6561000000000001,
+        "meanTrueReturn": 0.7050000000000001,
+        "meanNextRealTransitions": 2,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 6,
+          "expandedOutcomes": 6,
+          "actionValueReads": 3,
+          "qWrites": 6,
+          "scheduleAppends": 6,
+          "scheduleBudgetChecks": 6,
+          "sampleSelections": 1,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 21
+        },
+        "unusedBudget": 4,
+        "complete": true
+      },
+      "expected": {
+        "choice": "exit",
+        "qGo": 0,
+        "chooseGoProbability": 0,
+        "trueReturn": 0.6,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 4,
+          "expandedOutcomes": 4,
+          "actionValueReads": 0,
+          "qWrites": 4,
+          "scheduleAppends": 6,
+          "scheduleBudgetChecks": 5,
+          "sampleSelections": 0,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 12
+        },
+        "unusedBudget": 13,
+        "complete": false
+      }
+    },
+    {
+      "budget": 26,
+      "n": 2,
+      "sample": {
+        "n": 2,
+        "enumeratedSequences": 16,
+        "bins": [
+          {
+            "positive": 0,
+            "sequences": 4,
+            "probability": 0.25,
+            "meanEstimatedGo": 0,
+            "estimateRange": [
+              0,
+              0
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 1,
+            "sequences": 8,
+            "probability": 0.5,
+            "meanEstimatedGo": 0.8100000000000003,
+            "estimateRange": [
+              0.81,
+              0.81
+            ],
+            "chooseGoProbability": 0.5
+          },
+          {
+            "positive": 2,
+            "sequences": 4,
+            "probability": 0.25,
+            "meanEstimatedGo": 1.62,
+            "estimateRange": [
+              1.62,
+              1.62
+            ],
+            "chooseGoProbability": 0.25
+          }
+        ],
+        "chooseGoProbability": 0.75,
+        "meanGo": 0.8100000000000003,
+        "mseGo": 0.3280500000000001,
+        "meanTrueReturn": 0.7575000000000002,
+        "meanNextRealTransitions": 2.5,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 7,
+          "expandedOutcomes": 7,
+          "actionValueReads": 5,
+          "qWrites": 7,
+          "scheduleAppends": 7,
+          "scheduleBudgetChecks": 7,
+          "sampleSelections": 2,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 26
+        },
+        "unusedBudget": 0,
+        "complete": true
+      },
+      "expected": {
+        "choice": "exit",
+        "qGo": 0,
+        "chooseGoProbability": 0,
+        "trueReturn": 0.6,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 5,
+          "expandedOutcomes": 8,
+          "actionValueReads": 8,
+          "qWrites": 5,
+          "scheduleAppends": 6,
+          "scheduleBudgetChecks": 6,
+          "sampleSelections": 0,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 26
+        },
+        "unusedBudget": 0,
+        "complete": false
+      }
+    },
+    {
+      "budget": 29,
+      "n": 2,
+      "sample": {
+        "n": 2,
+        "enumeratedSequences": 16,
+        "bins": [
+          {
+            "positive": 0,
+            "sequences": 4,
+            "probability": 0.25,
+            "meanEstimatedGo": 0,
+            "estimateRange": [
+              0,
+              0
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 1,
+            "sequences": 8,
+            "probability": 0.5,
+            "meanEstimatedGo": 0.8100000000000003,
+            "estimateRange": [
+              0.81,
+              0.81
+            ],
+            "chooseGoProbability": 0.5
+          },
+          {
+            "positive": 2,
+            "sequences": 4,
+            "probability": 0.25,
+            "meanEstimatedGo": 1.62,
+            "estimateRange": [
+              1.62,
+              1.62
+            ],
+            "chooseGoProbability": 0.25
+          }
+        ],
+        "chooseGoProbability": 0.75,
+        "meanGo": 0.8100000000000003,
+        "mseGo": 0.3280500000000001,
+        "meanTrueReturn": 0.7575000000000002,
+        "meanNextRealTransitions": 2.5,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 7,
+          "expandedOutcomes": 7,
+          "actionValueReads": 5,
+          "qWrites": 7,
+          "scheduleAppends": 7,
+          "scheduleBudgetChecks": 7,
+          "sampleSelections": 2,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 26
+        },
+        "unusedBudget": 3,
+        "complete": true
+      },
+      "expected": {
+        "choice": "exit",
+        "qGo": 0,
+        "chooseGoProbability": 0,
+        "trueReturn": 0.6,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 5,
+          "expandedOutcomes": 8,
+          "actionValueReads": 8,
+          "qWrites": 5,
+          "scheduleAppends": 6,
+          "scheduleBudgetChecks": 6,
+          "sampleSelections": 0,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 26
+        },
+        "unusedBudget": 3,
+        "complete": false
+      }
+    },
+    {
+      "budget": 30,
+      "n": 2,
+      "sample": {
+        "n": 2,
+        "enumeratedSequences": 16,
+        "bins": [
+          {
+            "positive": 0,
+            "sequences": 4,
+            "probability": 0.25,
+            "meanEstimatedGo": 0,
+            "estimateRange": [
+              0,
+              0
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 1,
+            "sequences": 8,
+            "probability": 0.5,
+            "meanEstimatedGo": 0.8100000000000003,
+            "estimateRange": [
+              0.81,
+              0.81
+            ],
+            "chooseGoProbability": 0.5
+          },
+          {
+            "positive": 2,
+            "sequences": 4,
+            "probability": 0.25,
+            "meanEstimatedGo": 1.62,
+            "estimateRange": [
+              1.62,
+              1.62
+            ],
+            "chooseGoProbability": 0.25
+          }
+        ],
+        "chooseGoProbability": 0.75,
+        "meanGo": 0.8100000000000003,
+        "mseGo": 0.3280500000000001,
+        "meanTrueReturn": 0.7575000000000002,
+        "meanNextRealTransitions": 2.5,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 7,
+          "expandedOutcomes": 7,
+          "actionValueReads": 5,
+          "qWrites": 7,
+          "scheduleAppends": 7,
+          "scheduleBudgetChecks": 7,
+          "sampleSelections": 2,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 26
+        },
+        "unusedBudget": 4,
+        "complete": true
+      },
+      "expected": {
+        "choice": "go",
+        "qGo": 0.81,
+        "chooseGoProbability": 1,
+        "trueReturn": 0.81,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 6,
+          "expandedOutcomes": 9,
+          "actionValueReads": 9,
+          "qWrites": 6,
+          "scheduleAppends": 6,
+          "scheduleBudgetChecks": 6,
+          "sampleSelections": 0,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 30
+        },
+        "unusedBudget": 0,
+        "complete": true
+      }
+    },
+    {
+      "budget": 31,
+      "n": 3,
+      "sample": {
+        "n": 3,
+        "enumeratedSequences": 64,
+        "bins": [
+          {
+            "positive": 0,
+            "sequences": 8,
+            "probability": 0.125,
+            "meanEstimatedGo": 0,
+            "estimateRange": [
+              0,
+              0
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 1,
+            "sequences": 24,
+            "probability": 0.375,
+            "meanEstimatedGo": 0.5400000000000004,
+            "estimateRange": [
+              0.54,
+              0.5400000000000001
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 2,
+            "sequences": 24,
+            "probability": 0.375,
+            "meanEstimatedGo": 1.0800000000000007,
+            "estimateRange": [
+              1.08,
+              1.0800000000000003
+            ],
+            "chooseGoProbability": 0.375
+          },
+          {
+            "positive": 3,
+            "sequences": 8,
+            "probability": 0.125,
+            "meanEstimatedGo": 1.6200000000000006,
+            "estimateRange": [
+              1.62,
+              1.62
+            ],
+            "chooseGoProbability": 0.125
+          }
+        ],
+        "chooseGoProbability": 0.5,
+        "meanGo": 0.8099999999999994,
+        "mseGo": 0.21870000000000014,
+        "meanTrueReturn": 0.7050000000000006,
+        "meanNextRealTransitions": 2,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 8,
+          "expandedOutcomes": 8,
+          "actionValueReads": 7,
+          "qWrites": 8,
+          "scheduleAppends": 8,
+          "scheduleBudgetChecks": 8,
+          "sampleSelections": 3,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 31
+        },
+        "unusedBudget": 0,
+        "complete": true
+      },
+      "expected": {
+        "choice": "go",
+        "qGo": 0.81,
+        "chooseGoProbability": 1,
+        "trueReturn": 0.81,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 6,
+          "expandedOutcomes": 9,
+          "actionValueReads": 9,
+          "qWrites": 6,
+          "scheduleAppends": 6,
+          "scheduleBudgetChecks": 6,
+          "sampleSelections": 0,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 30
+        },
+        "unusedBudget": 1,
+        "complete": true
+      }
+    },
+    {
+      "budget": 35,
+      "n": 3,
+      "sample": {
+        "n": 3,
+        "enumeratedSequences": 64,
+        "bins": [
+          {
+            "positive": 0,
+            "sequences": 8,
+            "probability": 0.125,
+            "meanEstimatedGo": 0,
+            "estimateRange": [
+              0,
+              0
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 1,
+            "sequences": 24,
+            "probability": 0.375,
+            "meanEstimatedGo": 0.5400000000000004,
+            "estimateRange": [
+              0.54,
+              0.5400000000000001
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 2,
+            "sequences": 24,
+            "probability": 0.375,
+            "meanEstimatedGo": 1.0800000000000007,
+            "estimateRange": [
+              1.08,
+              1.0800000000000003
+            ],
+            "chooseGoProbability": 0.375
+          },
+          {
+            "positive": 3,
+            "sequences": 8,
+            "probability": 0.125,
+            "meanEstimatedGo": 1.6200000000000006,
+            "estimateRange": [
+              1.62,
+              1.62
+            ],
+            "chooseGoProbability": 0.125
+          }
+        ],
+        "chooseGoProbability": 0.5,
+        "meanGo": 0.8099999999999994,
+        "mseGo": 0.21870000000000014,
+        "meanTrueReturn": 0.7050000000000006,
+        "meanNextRealTransitions": 2,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 8,
+          "expandedOutcomes": 8,
+          "actionValueReads": 7,
+          "qWrites": 8,
+          "scheduleAppends": 8,
+          "scheduleBudgetChecks": 8,
+          "sampleSelections": 3,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 31
+        },
+        "unusedBudget": 4,
+        "complete": true
+      },
+      "expected": {
+        "choice": "go",
+        "qGo": 0.81,
+        "chooseGoProbability": 1,
+        "trueReturn": 0.81,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 6,
+          "expandedOutcomes": 9,
+          "actionValueReads": 9,
+          "qWrites": 6,
+          "scheduleAppends": 6,
+          "scheduleBudgetChecks": 6,
+          "sampleSelections": 0,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 30
+        },
+        "unusedBudget": 5,
+        "complete": true
+      }
+    },
+    {
+      "budget": 36,
+      "n": 4,
+      "sample": {
+        "n": 4,
+        "enumeratedSequences": 256,
+        "bins": [
+          {
+            "positive": 0,
+            "sequences": 16,
+            "probability": 0.0625,
+            "meanEstimatedGo": 0,
+            "estimateRange": [
+              0,
+              0
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 1,
+            "sequences": 64,
+            "probability": 0.25,
+            "meanEstimatedGo": 0.4050000000000003,
+            "estimateRange": [
+              0.40499999999999997,
+              0.4050000000000001
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 2,
+            "sequences": 96,
+            "probability": 0.375,
+            "meanEstimatedGo": 0.810000000000001,
+            "estimateRange": [
+              0.8099999999999999,
+              0.8100000000000002
+            ],
+            "chooseGoProbability": 0.375
+          },
+          {
+            "positive": 3,
+            "sequences": 64,
+            "probability": 0.25,
+            "meanEstimatedGo": 1.2150000000000019,
+            "estimateRange": [
+              1.215,
+              1.215
+            ],
+            "chooseGoProbability": 0.25
+          },
+          {
+            "positive": 4,
+            "sequences": 16,
+            "probability": 0.0625,
+            "meanEstimatedGo": 1.6200000000000008,
+            "estimateRange": [
+              1.62,
+              1.62
+            ],
+            "chooseGoProbability": 0.0625
+          }
+        ],
+        "chooseGoProbability": 0.6875,
+        "meanGo": 0.8100000000000018,
+        "mseGo": 0.16402500000000003,
+        "meanTrueReturn": 0.7443749999999996,
+        "meanNextRealTransitions": 2.375,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 9,
+          "expandedOutcomes": 9,
+          "actionValueReads": 9,
+          "qWrites": 9,
+          "scheduleAppends": 9,
+          "scheduleBudgetChecks": 9,
+          "sampleSelections": 4,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 36
+        },
+        "unusedBudget": 0,
+        "complete": true
+      },
+      "expected": {
+        "choice": "go",
+        "qGo": 0.81,
+        "chooseGoProbability": 1,
+        "trueReturn": 0.81,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 6,
+          "expandedOutcomes": 9,
+          "actionValueReads": 9,
+          "qWrites": 6,
+          "scheduleAppends": 6,
+          "scheduleBudgetChecks": 6,
+          "sampleSelections": 0,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 30
+        },
+        "unusedBudget": 6,
+        "complete": true
+      }
+    },
+    {
+      "budget": 40,
+      "n": 4,
+      "sample": {
+        "n": 4,
+        "enumeratedSequences": 256,
+        "bins": [
+          {
+            "positive": 0,
+            "sequences": 16,
+            "probability": 0.0625,
+            "meanEstimatedGo": 0,
+            "estimateRange": [
+              0,
+              0
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 1,
+            "sequences": 64,
+            "probability": 0.25,
+            "meanEstimatedGo": 0.4050000000000003,
+            "estimateRange": [
+              0.40499999999999997,
+              0.4050000000000001
+            ],
+            "chooseGoProbability": 0
+          },
+          {
+            "positive": 2,
+            "sequences": 96,
+            "probability": 0.375,
+            "meanEstimatedGo": 0.810000000000001,
+            "estimateRange": [
+              0.8099999999999999,
+              0.8100000000000002
+            ],
+            "chooseGoProbability": 0.375
+          },
+          {
+            "positive": 3,
+            "sequences": 64,
+            "probability": 0.25,
+            "meanEstimatedGo": 1.2150000000000019,
+            "estimateRange": [
+              1.215,
+              1.215
+            ],
+            "chooseGoProbability": 0.25
+          },
+          {
+            "positive": 4,
+            "sequences": 16,
+            "probability": 0.0625,
+            "meanEstimatedGo": 1.6200000000000008,
+            "estimateRange": [
+              1.62,
+              1.62
+            ],
+            "chooseGoProbability": 0.0625
+          }
+        ],
+        "chooseGoProbability": 0.6875,
+        "meanGo": 0.8100000000000018,
+        "mseGo": 0.16402500000000003,
+        "meanTrueReturn": 0.7443749999999996,
+        "meanNextRealTransitions": 2.375,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 9,
+          "expandedOutcomes": 9,
+          "actionValueReads": 9,
+          "qWrites": 9,
+          "scheduleAppends": 9,
+          "scheduleBudgetChecks": 9,
+          "sampleSelections": 4,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 36
+        },
+        "unusedBudget": 4,
+        "complete": true
+      },
+      "expected": {
+        "choice": "go",
+        "qGo": 0.81,
+        "chooseGoProbability": 1,
+        "trueReturn": 0.81,
+        "counts": {
+          "environmentTransitions": 0,
+          "modelWrites": 0,
+          "modelQueries": 6,
+          "expandedOutcomes": 9,
+          "actionValueReads": 9,
+          "qWrites": 6,
+          "scheduleAppends": 6,
+          "scheduleBudgetChecks": 6,
+          "sampleSelections": 0,
+          "queuePushes": 0,
+          "queuePops": 0,
+          "work": 30
+        },
+        "unusedBudget": 10,
+        "complete": true
+      }
+    }
+  ],
+  "nearTie": {
+    "exitReward": 0.82,
+    "truth": {
+      "paths": [
+        {
+          "route": [
+            "S",
+            "A",
+            "C1",
+            "G"
+          ],
+          "probability": 0.25,
+          "rewards": [
+            0,
+            0,
+            2
+          ],
+          "return": 1.62,
+          "realTransitions": 3
+        },
+        {
+          "route": [
+            "S",
+            "A",
+            "C2",
+            "G"
+          ],
+          "probability": 0.25,
+          "rewards": [
+            0,
+            0,
+            2
+          ],
+          "return": 1.62,
+          "realTransitions": 3
+        },
+        {
+          "route": [
+            "S",
+            "A",
+            "C3",
+            "G"
+          ],
+          "probability": 0.25,
+          "rewards": [
+            0,
+            0,
+            0
+          ],
+          "return": 0,
+          "realTransitions": 3
+        },
+        {
+          "route": [
+            "S",
+            "A",
+            "C4",
+            "G"
+          ],
+          "probability": 0.25,
+          "rewards": [
+            0,
+            0,
+            0
+          ],
+          "return": 0,
+          "realTransitions": 3
+        }
+      ],
+      "go": 0.81,
+      "exit": 0.82
+    },
+    "budgets": [
+      {
+        "budget": 21,
+        "n": 1,
+        "sample": {
+          "n": 1,
+          "enumeratedSequences": 4,
+          "bins": [
+            {
+              "positive": 0,
+              "sequences": 2,
+              "probability": 0.5,
+              "meanEstimatedGo": 0,
+              "estimateRange": [
+                0,
+                0
+              ],
+              "chooseGoProbability": 0
+            },
+            {
+              "positive": 1,
+              "sequences": 2,
+              "probability": 0.5,
+              "meanEstimatedGo": 1.62,
+              "estimateRange": [
+                1.62,
+                1.62
+              ],
+              "chooseGoProbability": 0.5
+            }
+          ],
+          "chooseGoProbability": 0.5,
+          "meanGo": 0.81,
+          "mseGo": 0.6561000000000001,
+          "meanTrueReturn": 0.815,
+          "meanNextRealTransitions": 2,
+          "counts": {
+            "environmentTransitions": 0,
+            "modelWrites": 0,
+            "modelQueries": 6,
+            "expandedOutcomes": 6,
+            "actionValueReads": 3,
+            "qWrites": 6,
+            "scheduleAppends": 6,
+            "scheduleBudgetChecks": 6,
+            "sampleSelections": 1,
+            "queuePushes": 0,
+            "queuePops": 0,
+            "work": 21
+          },
+          "unusedBudget": 0,
+          "complete": true
+        },
+        "expected": {
+          "choice": "exit",
+          "qGo": 0,
+          "chooseGoProbability": 0,
+          "trueReturn": 0.82,
+          "counts": {
+            "environmentTransitions": 0,
+            "modelWrites": 0,
+            "modelQueries": 4,
+            "expandedOutcomes": 4,
+            "actionValueReads": 0,
+            "qWrites": 4,
+            "scheduleAppends": 6,
+            "scheduleBudgetChecks": 5,
+            "sampleSelections": 0,
+            "queuePushes": 0,
+            "queuePops": 0,
+            "work": 12
+          },
+          "unusedBudget": 9,
+          "complete": false
+        }
+      },
+      {
+        "budget": 26,
+        "n": 2,
+        "sample": {
+          "n": 2,
+          "enumeratedSequences": 16,
+          "bins": [
+            {
+              "positive": 0,
+              "sequences": 4,
+              "probability": 0.25,
+              "meanEstimatedGo": 0,
+              "estimateRange": [
+                0,
+                0
+              ],
+              "chooseGoProbability": 0
+            },
+            {
+              "positive": 1,
+              "sequences": 8,
+              "probability": 0.5,
+              "meanEstimatedGo": 0.8100000000000003,
+              "estimateRange": [
+                0.81,
+                0.81
+              ],
+              "chooseGoProbability": 0
+            },
+            {
+              "positive": 2,
+              "sequences": 4,
+              "probability": 0.25,
+              "meanEstimatedGo": 1.62,
+              "estimateRange": [
+                1.62,
+                1.62
+              ],
+              "chooseGoProbability": 0.25
+            }
+          ],
+          "chooseGoProbability": 0.25,
+          "meanGo": 0.8100000000000003,
+          "mseGo": 0.3280500000000001,
+          "meanTrueReturn": 0.8175000000000002,
+          "meanNextRealTransitions": 1.5,
+          "counts": {
+            "environmentTransitions": 0,
+            "modelWrites": 0,
+            "modelQueries": 7,
+            "expandedOutcomes": 7,
+            "actionValueReads": 5,
+            "qWrites": 7,
+            "scheduleAppends": 7,
+            "scheduleBudgetChecks": 7,
+            "sampleSelections": 2,
+            "queuePushes": 0,
+            "queuePops": 0,
+            "work": 26
+          },
+          "unusedBudget": 0,
+          "complete": true
+        },
+        "expected": {
+          "choice": "exit",
+          "qGo": 0,
+          "chooseGoProbability": 0,
+          "trueReturn": 0.82,
+          "counts": {
+            "environmentTransitions": 0,
+            "modelWrites": 0,
+            "modelQueries": 5,
+            "expandedOutcomes": 8,
+            "actionValueReads": 8,
+            "qWrites": 5,
+            "scheduleAppends": 6,
+            "scheduleBudgetChecks": 6,
+            "sampleSelections": 0,
+            "queuePushes": 0,
+            "queuePops": 0,
+            "work": 26
+          },
+          "unusedBudget": 0,
+          "complete": false
+        }
+      },
+      {
+        "budget": 30,
+        "n": 2,
+        "sample": {
+          "n": 2,
+          "enumeratedSequences": 16,
+          "bins": [
+            {
+              "positive": 0,
+              "sequences": 4,
+              "probability": 0.25,
+              "meanEstimatedGo": 0,
+              "estimateRange": [
+                0,
+                0
+              ],
+              "chooseGoProbability": 0
+            },
+            {
+              "positive": 1,
+              "sequences": 8,
+              "probability": 0.5,
+              "meanEstimatedGo": 0.8100000000000003,
+              "estimateRange": [
+                0.81,
+                0.81
+              ],
+              "chooseGoProbability": 0
+            },
+            {
+              "positive": 2,
+              "sequences": 4,
+              "probability": 0.25,
+              "meanEstimatedGo": 1.62,
+              "estimateRange": [
+                1.62,
+                1.62
+              ],
+              "chooseGoProbability": 0.25
+            }
+          ],
+          "chooseGoProbability": 0.25,
+          "meanGo": 0.8100000000000003,
+          "mseGo": 0.3280500000000001,
+          "meanTrueReturn": 0.8175000000000002,
+          "meanNextRealTransitions": 1.5,
+          "counts": {
+            "environmentTransitions": 0,
+            "modelWrites": 0,
+            "modelQueries": 7,
+            "expandedOutcomes": 7,
+            "actionValueReads": 5,
+            "qWrites": 7,
+            "scheduleAppends": 7,
+            "scheduleBudgetChecks": 7,
+            "sampleSelections": 2,
+            "queuePushes": 0,
+            "queuePops": 0,
+            "work": 26
+          },
+          "unusedBudget": 4,
+          "complete": true
+        },
+        "expected": {
+          "choice": "exit",
+          "qGo": 0.81,
+          "chooseGoProbability": 0,
+          "trueReturn": 0.82,
+          "counts": {
+            "environmentTransitions": 0,
+            "modelWrites": 0,
+            "modelQueries": 6,
+            "expandedOutcomes": 9,
+            "actionValueReads": 9,
+            "qWrites": 6,
+            "scheduleAppends": 6,
+            "scheduleBudgetChecks": 6,
+            "sampleSelections": 0,
+            "queuePushes": 0,
+            "queuePops": 0,
+            "work": 30
+          },
+          "unusedBudget": 0,
+          "complete": true
+        }
+      },
+      {
+        "budget": 31,
+        "n": 3,
+        "sample": {
+          "n": 3,
+          "enumeratedSequences": 64,
+          "bins": [
+            {
+              "positive": 0,
+              "sequences": 8,
+              "probability": 0.125,
+              "meanEstimatedGo": 0,
+              "estimateRange": [
+                0,
+                0
+              ],
+              "chooseGoProbability": 0
+            },
+            {
+              "positive": 1,
+              "sequences": 24,
+              "probability": 0.375,
+              "meanEstimatedGo": 0.5400000000000004,
+              "estimateRange": [
+                0.54,
+                0.5400000000000001
+              ],
+              "chooseGoProbability": 0
+            },
+            {
+              "positive": 2,
+              "sequences": 24,
+              "probability": 0.375,
+              "meanEstimatedGo": 1.0800000000000007,
+              "estimateRange": [
+                1.08,
+                1.0800000000000003
+              ],
+              "chooseGoProbability": 0.375
+            },
+            {
+              "positive": 3,
+              "sequences": 8,
+              "probability": 0.125,
+              "meanEstimatedGo": 1.6200000000000006,
+              "estimateRange": [
+                1.62,
+                1.62
+              ],
+              "chooseGoProbability": 0.125
+            }
+          ],
+          "chooseGoProbability": 0.5,
+          "meanGo": 0.8099999999999994,
+          "mseGo": 0.21870000000000014,
+          "meanTrueReturn": 0.8150000000000001,
+          "meanNextRealTransitions": 2,
+          "counts": {
+            "environmentTransitions": 0,
+            "modelWrites": 0,
+            "modelQueries": 8,
+            "expandedOutcomes": 8,
+            "actionValueReads": 7,
+            "qWrites": 8,
+            "scheduleAppends": 8,
+            "scheduleBudgetChecks": 8,
+            "sampleSelections": 3,
+            "queuePushes": 0,
+            "queuePops": 0,
+            "work": 31
+          },
+          "unusedBudget": 0,
+          "complete": true
+        },
+        "expected": {
+          "choice": "exit",
+          "qGo": 0.81,
+          "chooseGoProbability": 0,
+          "trueReturn": 0.82,
+          "counts": {
+            "environmentTransitions": 0,
+            "modelWrites": 0,
+            "modelQueries": 6,
+            "expandedOutcomes": 9,
+            "actionValueReads": 9,
+            "qWrites": 6,
+            "scheduleAppends": 6,
+            "scheduleBudgetChecks": 6,
+            "sampleSelections": 0,
+            "queuePushes": 0,
+            "queuePops": 0,
+            "work": 30
+          },
+          "unusedBudget": 1,
+          "complete": true
+        }
+      },
+      {
+        "budget": 36,
+        "n": 4,
+        "sample": {
+          "n": 4,
+          "enumeratedSequences": 256,
+          "bins": [
+            {
+              "positive": 0,
+              "sequences": 16,
+              "probability": 0.0625,
+              "meanEstimatedGo": 0,
+              "estimateRange": [
+                0,
+                0
+              ],
+              "chooseGoProbability": 0
+            },
+            {
+              "positive": 1,
+              "sequences": 64,
+              "probability": 0.25,
+              "meanEstimatedGo": 0.4050000000000003,
+              "estimateRange": [
+                0.40499999999999997,
+                0.4050000000000001
+              ],
+              "chooseGoProbability": 0
+            },
+            {
+              "positive": 2,
+              "sequences": 96,
+              "probability": 0.375,
+              "meanEstimatedGo": 0.810000000000001,
+              "estimateRange": [
+                0.8099999999999999,
+                0.8100000000000002
+              ],
+              "chooseGoProbability": 0
+            },
+            {
+              "positive": 3,
+              "sequences": 64,
+              "probability": 0.25,
+              "meanEstimatedGo": 1.2150000000000019,
+              "estimateRange": [
+                1.215,
+                1.215
+              ],
+              "chooseGoProbability": 0.25
+            },
+            {
+              "positive": 4,
+              "sequences": 16,
+              "probability": 0.0625,
+              "meanEstimatedGo": 1.6200000000000008,
+              "estimateRange": [
+                1.62,
+                1.62
+              ],
+              "chooseGoProbability": 0.0625
+            }
+          ],
+          "chooseGoProbability": 0.3125,
+          "meanGo": 0.8100000000000018,
+          "mseGo": 0.16402500000000003,
+          "meanTrueReturn": 0.8168749999999967,
+          "meanNextRealTransitions": 1.625,
+          "counts": {
+            "environmentTransitions": 0,
+            "modelWrites": 0,
+            "modelQueries": 9,
+            "expandedOutcomes": 9,
+            "actionValueReads": 9,
+            "qWrites": 9,
+            "scheduleAppends": 9,
+            "scheduleBudgetChecks": 9,
+            "sampleSelections": 4,
+            "queuePushes": 0,
+            "queuePops": 0,
+            "work": 36
+          },
+          "unusedBudget": 0,
+          "complete": true
+        },
+        "expected": {
+          "choice": "exit",
+          "qGo": 0.81,
+          "chooseGoProbability": 0,
+          "trueReturn": 0.82,
+          "counts": {
+            "environmentTransitions": 0,
+            "modelWrites": 0,
+            "modelQueries": 6,
+            "expandedOutcomes": 9,
+            "actionValueReads": 9,
+            "qWrites": 6,
+            "scheduleAppends": 6,
+            "scheduleBudgetChecks": 6,
+            "sampleSelections": 0,
+            "queuePushes": 0,
+            "queuePops": 0,
+            "work": 30
+          },
+          "unusedBudget": 6,
+          "complete": true
+        }
+      }
+    ]
+  },
+  "nextReal": {
+    "forward": {
+      "firstAction": "exit",
+      "route": [
+        "S",
+        "B"
+      ],
+      "rewards": [
+        0.6
+      ],
+      "return": 0.6,
+      "environmentTransitions": 1
+    },
+    "backwardPositive": {
+      "firstAction": "go",
+      "lastAction": "collect",
+      "route": [
+        "S",
+        "A",
+        "C1",
+        "G"
+      ],
+      "rewards": [
+        0,
+        0,
+        2
+      ],
+      "return": 1.62,
+      "environmentTransitions": 3
+    },
+    "backwardZero": {
+      "firstAction": "go",
+      "lastAction": "collect",
+      "route": [
+        "S",
+        "A",
+        "C3",
+        "G"
+      ],
+      "rewards": [
+        0,
+        0,
+        0
+      ],
+      "return": 0,
+      "environmentTransitions": 3
+    }
+  },
+  "protocol": {
+    "model": "Given exact distribution model, independent variant; no earlier empirical records are reused. Reward-path truth is reader-only.",
+    "initial": "All Q zero except known exit payoff. Wait Q zero is correct here; collect values are computed by leaf backups. Ties at S choose exit; leaf ties choose collect.",
+    "budget": "W=model interface queries + joint outcomes processed + successor action-value reads + Q writes. Atomic backup; halt before an item that cannot fit.",
+    "schedule": "Static topology-based leaf order C1,C2,C3,C4, then cross, then go; it does not inspect rewards or true values to choose leaf order.",
+    "overhead": "Count schedule appends, metadata/budget checks, and modeled sample selections separately. W excludes those operations, RNG, arithmetic, memory allocations and wall-clock time. No priority queue is used.",
+    "sampling": "Supplied successor selectors enumerate iid uniform model draws exactly. After leaf backups, hold leaf Q fixed; cross uses alpha_k=1/k; go reads the resulting cross once.",
+    "moving": "First cross sample precedes all leaf updates; second follows them. Same n=2 primitive work, but targets have different conditional means.",
+    "action": "Only after planning stops does S compare go with exit. Next real episode is separately charged and does not feed back into the frozen comparisons."
+  }
+}

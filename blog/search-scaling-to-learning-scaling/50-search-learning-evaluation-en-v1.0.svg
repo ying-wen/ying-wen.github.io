@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Search Scaling and Learning Scaling use different axes</title><desc id="desc">Search varies task-time computation at fixed persistent state. Learning varies accumulated experience with future computation fixed.</desc>
+  <defs><style>.t{font:700 36px Inter,Arial;fill:#0f172a}.h{font:700 25px Inter,Arial;fill:#0f172a}.b{font:18px Inter,Arial;fill:#334155}.s{font:15px Inter,Arial;fill:#475569}.box{fill:#fff;stroke:#cbd5e1;stroke-width:2}.axis{stroke:#475569;stroke-width:2}.blue{stroke:#2563eb;stroke-width:5;fill:none}.green{stroke:#059669;stroke-width:5;fill:none}</style></defs>
+  <rect width="1600" height="900" fill="#fff"/><text x="80" y="70" class="t">The same score improvement can come from two different processes</text>
+  <rect x="70" y="145" width="700" height="575" rx="20" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="105" y="195" class="h">Search Scaling</text><text x="105" y="228" class="b">Fixed initial learning state and fixed search procedure</text>
+  <line x1="155" y1="615" x2="650" y2="615" class="axis"/><line x1="155" y1="615" x2="155" y2="315" class="axis"/>
+  <path d="M165 585 C260 550 350 470 430 415 C500 365 565 340 635 330" class="blue"/>
+  <text x="300" y="662" class="b">Task-time search computation</text><text x="90" y="470" class="b" transform="rotate(-90 90 470)">Current-task performance</text>
+  <text x="105" y="750" class="s">Reset task-local search state between independent repetitions.</text>
+
+  <rect x="830" y="145" width="700" height="575" rx="20" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="2"/>
+  <text x="865" y="195" class="h">Learning Scaling</text><text x="865" y="228" class="b">Persistent updates from first-person, action-conditioned experience</text>
+  <line x1="915" y1="615" x2="1410" y2="615" class="axis"/><line x1="915" y1="615" x2="915" y2="315" class="axis"/>
+  <path d="M925 585 C1010 560 1090 525 1175 455 C1250 395 1325 350 1395 335" class="green"/>
+  <text x="1075" y="662" class="b">Accumulated experience</text><text x="850" y="485" class="b" transform="rotate(-90 850 485)">Later control and learnability</text>
+  <text x="865" y="750" class="s">Hold future search computation and evaluation comparable.</text>
+  <rect x="210" y="800" width="1180" height="58" rx="14" fill="#f8fafc" stroke="#cbd5e1"/><text x="260" y="837" class="b">Reset test: if an advantage vanishes with task-local state, it was search; if it persists under equal future compute, it may be learning.</text>
+</svg>
