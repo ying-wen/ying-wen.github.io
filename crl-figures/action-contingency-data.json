@@ -1,0 +1,131 @@
+{
+  "hammond": {
+    "source": "Hammond (1980), Experiment I, pp.298–300, Table 1 and Figure 1",
+    "kind": "schematic",
+    "action": "at least one lever press during an unsignaled 1-second window",
+    "noAction": "zero lever presses during the same kind of 1-second window",
+    "outcome": "water delivered at window end according to a programmed conditional probability",
+    "afterPretraining": [
+      {
+        "id": "A1",
+        "sessions": 14,
+        "pAfterAction": 0.05,
+        "pWithoutAction": 0
+      },
+      {
+        "id": "B1",
+        "sessions": 18,
+        "pAfterAction": 0.05,
+        "pWithoutAction": 0.05
+      },
+      {
+        "id": "A2",
+        "sessions": 17,
+        "pAfterAction": 0.05,
+        "pWithoutAction": 0
+      },
+      {
+        "id": "B2",
+        "sessions": 18,
+        "pAfterAction": 0.05,
+        "pWithoutAction": 0.05
+      }
+    ],
+    "extinctionTest": false,
+    "measuredResponseRates": null
+  },
+  "example": {
+    "kind": "exact",
+    "constructed": true,
+    "totalWindows": 40,
+    "windowSeconds": 1,
+    "outcomeConvention": "at most one delivery at the end of each equal window",
+    "probabilityOrigin": "externally specified teaching assumptions, not estimates from realized events",
+    "exposureOrigin": "three separate given allocations of action/no-action windows; not animal observations",
+    "realizedEvents": null,
+    "schedules": [
+      {
+        "id": "positive",
+        "label": "正关系",
+        "pAfterAction": 0.25,
+        "pWithoutAction": 0,
+        "delta": 0.25
+      },
+      {
+        "id": "degraded",
+        "label": "零关系",
+        "pAfterAction": 0.25,
+        "pWithoutAction": 0.25,
+        "delta": 0
+      },
+      {
+        "id": "extinction",
+        "label": "停止投放",
+        "pAfterAction": 0,
+        "pWithoutAction": 0,
+        "delta": 0
+      }
+    ],
+    "exposures": [
+      {
+        "actionWindows": 10,
+        "noActionWindows": 30,
+        "actionFraction": 0.25,
+        "expectations": {
+          "positive": 2.5,
+          "degraded": 10,
+          "extinction": 0
+        }
+      },
+      {
+        "actionWindows": 20,
+        "noActionWindows": 20,
+        "actionFraction": 0.5,
+        "expectations": {
+          "positive": 5,
+          "degraded": 10,
+          "extinction": 0
+        }
+      },
+      {
+        "actionWindows": 30,
+        "noActionWindows": 10,
+        "actionFraction": 0.75,
+        "expectations": {
+          "positive": 7.5,
+          "degraded": 10,
+          "extinction": 0
+        }
+      }
+    ]
+  },
+  "yin": {
+    "source": "Yin, Ostlund, Knowlton & Balleine (2005), Experiment 3, pp.515, 518–521, Figures 7–8",
+    "kind": "schematic",
+    "actions": 2,
+    "outcomes": [
+      "pellets",
+      "20% sucrose solution"
+    ],
+    "assignmentCounterbalanced": true,
+    "training": "CRF, RR5, RR10, RR20, two days at each stage; each action trained separately",
+    "devaluation": {
+      "prefeedMinutes": 60,
+      "infusionAfterPrefeeding": true,
+      "drugDuringAcquisition": false,
+      "extinctionMinutes": 10,
+      "rewardedTestMinutes": 20
+    },
+    "degradation": {
+      "retrainingDays": 1,
+      "degradationDays": 3,
+      "infusionAfterDegradationLearning": true,
+      "extinctionMinutes": 5
+    },
+    "groups": [
+      "ACSF vehicle",
+      "muscimol into pDMS"
+    ],
+    "measuredResponseRates": null
+  }
+}

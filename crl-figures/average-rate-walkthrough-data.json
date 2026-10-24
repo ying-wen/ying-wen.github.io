@@ -1,0 +1,775 @@
+{
+  "kind": "exact",
+  "sampledRuns": 0,
+  "units": {
+    "time": "seconds",
+    "reward": "reward",
+    "gain": "reward/second",
+    "bias": "reward"
+  },
+  "transitions": {
+    "E": [
+      {
+        "action": "enter",
+        "next": "H",
+        "reward": -3,
+        "duration": 2
+      }
+    ],
+    "H": [
+      {
+        "action": "quick",
+        "next": "A",
+        "reward": 0,
+        "duration": 1
+      },
+      {
+        "action": "slow",
+        "next": "B",
+        "reward": 0,
+        "duration": 1
+      }
+    ],
+    "A": [
+      {
+        "action": "return",
+        "next": "H",
+        "reward": 4,
+        "duration": 1
+      }
+    ],
+    "B": [
+      {
+        "action": "return",
+        "next": "H",
+        "reward": 9,
+        "duration": 3
+      }
+    ]
+  },
+  "quick": {
+    "slowProbability": 0,
+    "gain": 2,
+    "cycleReward": 4,
+    "cycleTime": 2,
+    "bias": {
+      "E": -7,
+      "H": 0,
+      "A": 2,
+      "B": 3
+    },
+    "eventStationary": {
+      "E": 0,
+      "H": 0.5,
+      "A": 0.5,
+      "B": 0
+    }
+  },
+  "slow": {
+    "slowProbability": 1,
+    "gain": 2.25,
+    "cycleReward": 9,
+    "cycleTime": 4,
+    "bias": {
+      "E": -7.5,
+      "H": 0,
+      "A": 1.75,
+      "B": 2.25
+    },
+    "eventStationary": {
+      "E": 0,
+      "H": 0.5,
+      "A": 0,
+      "B": 0.5
+    }
+  },
+  "mixed": {
+    "slowProbability": 0.5,
+    "gain": 2.1666666666666665,
+    "cycleReward": 6.5,
+    "cycleTime": 3,
+    "bias": {
+      "E": -7.333333333333333,
+      "H": 0,
+      "A": 1.8333333333333335,
+      "B": 2.5
+    },
+    "eventStationary": {
+      "E": 0,
+      "H": 0.5,
+      "A": 0.25,
+      "B": 0.25
+    }
+  },
+  "changedQuick": {
+    "slowProbability": 0,
+    "gain": 2,
+    "cycleReward": 4,
+    "cycleTime": 2,
+    "bias": {
+      "E": -7,
+      "H": 0,
+      "A": 2,
+      "B": 1
+    },
+    "eventStationary": {
+      "E": 0,
+      "H": 0.5,
+      "A": 0.5,
+      "B": 0
+    }
+  },
+  "changedSlow": {
+    "slowProbability": 1,
+    "gain": 1.8,
+    "cycleReward": 9,
+    "cycleTime": 5,
+    "bias": {
+      "E": -6.6,
+      "H": 0,
+      "A": 2.2,
+      "B": 1.7999999999999998
+    },
+    "eventStationary": {
+      "E": 0,
+      "H": 0.5,
+      "A": 0,
+      "B": 0.5
+    }
+  },
+  "quickActionValues": [
+    {
+      "action": "quick",
+      "value": 0
+    },
+    {
+      "action": "slow",
+      "value": 1
+    }
+  ],
+  "slowActionValues": [
+    {
+      "action": "quick",
+      "value": -0.5
+    },
+    {
+      "action": "slow",
+      "value": 0
+    }
+  ],
+  "changedQuickActionValues": [
+    {
+      "action": "quick",
+      "value": 0
+    },
+    {
+      "action": "slow",
+      "value": -1
+    }
+  ],
+  "durationMean": {
+    "quick": 2,
+    "slow": 1.5
+  },
+  "predictionBackup": {
+    "delta": 1,
+    "increment": 0.09999999999999999,
+    "value": 2.1,
+    "rate": 2.05
+  },
+  "quickLifetime": {
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        -3
+      ],
+      [
+        3,
+        -3
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        9,
+        9
+      ],
+      [
+        10,
+        13
+      ],
+      [
+        11,
+        13
+      ],
+      [
+        12,
+        17
+      ],
+      [
+        13,
+        17
+      ],
+      [
+        14,
+        21
+      ],
+      [
+        15,
+        21
+      ],
+      [
+        16,
+        25
+      ],
+      [
+        17,
+        25
+      ],
+      [
+        18,
+        29
+      ]
+    ],
+    "events": [
+      {
+        "n": 1,
+        "start": 0,
+        "time": 2,
+        "state": "H",
+        "origin": "E",
+        "reward": -3,
+        "duration": 2,
+        "total": -3
+      },
+      {
+        "n": 2,
+        "start": 2,
+        "time": 3,
+        "state": "A",
+        "origin": "H",
+        "reward": 0,
+        "duration": 1,
+        "total": -3
+      },
+      {
+        "n": 3,
+        "start": 3,
+        "time": 4,
+        "state": "H",
+        "origin": "A",
+        "reward": 4,
+        "duration": 1,
+        "total": 1
+      },
+      {
+        "n": 4,
+        "start": 4,
+        "time": 5,
+        "state": "A",
+        "origin": "H",
+        "reward": 0,
+        "duration": 1,
+        "total": 1
+      },
+      {
+        "n": 5,
+        "start": 5,
+        "time": 6,
+        "state": "H",
+        "origin": "A",
+        "reward": 4,
+        "duration": 1,
+        "total": 5
+      },
+      {
+        "n": 6,
+        "start": 6,
+        "time": 7,
+        "state": "A",
+        "origin": "H",
+        "reward": 0,
+        "duration": 1,
+        "total": 5
+      },
+      {
+        "n": 7,
+        "start": 7,
+        "time": 8,
+        "state": "H",
+        "origin": "A",
+        "reward": 4,
+        "duration": 1,
+        "total": 9
+      },
+      {
+        "n": 8,
+        "start": 8,
+        "time": 9,
+        "state": "A",
+        "origin": "H",
+        "reward": 0,
+        "duration": 1,
+        "total": 9
+      },
+      {
+        "n": 9,
+        "start": 9,
+        "time": 10,
+        "state": "H",
+        "origin": "A",
+        "reward": 4,
+        "duration": 1,
+        "total": 13
+      },
+      {
+        "n": 10,
+        "start": 10,
+        "time": 11,
+        "state": "A",
+        "origin": "H",
+        "reward": 0,
+        "duration": 1,
+        "total": 13
+      },
+      {
+        "n": 11,
+        "start": 11,
+        "time": 12,
+        "state": "H",
+        "origin": "A",
+        "reward": 4,
+        "duration": 1,
+        "total": 17
+      },
+      {
+        "n": 12,
+        "start": 12,
+        "time": 13,
+        "state": "A",
+        "origin": "H",
+        "reward": 0,
+        "duration": 1,
+        "total": 17
+      },
+      {
+        "n": 13,
+        "start": 13,
+        "time": 14,
+        "state": "H",
+        "origin": "A",
+        "reward": 4,
+        "duration": 1,
+        "total": 21
+      },
+      {
+        "n": 14,
+        "start": 14,
+        "time": 15,
+        "state": "A",
+        "origin": "H",
+        "reward": 0,
+        "duration": 1,
+        "total": 21
+      },
+      {
+        "n": 15,
+        "start": 15,
+        "time": 16,
+        "state": "H",
+        "origin": "A",
+        "reward": 4,
+        "duration": 1,
+        "total": 25
+      },
+      {
+        "n": 16,
+        "start": 16,
+        "time": 17,
+        "state": "A",
+        "origin": "H",
+        "reward": 0,
+        "duration": 1,
+        "total": 25
+      },
+      {
+        "n": 17,
+        "start": 17,
+        "time": 18,
+        "state": "H",
+        "origin": "A",
+        "reward": 4,
+        "duration": 1,
+        "total": 29
+      }
+    ],
+    "physicalSeconds": 18,
+    "completedEvents": 17,
+    "totalReward": 29
+  },
+  "slowLifetime": {
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        -3
+      ],
+      [
+        3,
+        -3
+      ],
+      [
+        4,
+        -3
+      ],
+      [
+        5,
+        -3
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        8,
+        6
+      ],
+      [
+        9,
+        6
+      ],
+      [
+        10,
+        15
+      ],
+      [
+        11,
+        15
+      ],
+      [
+        12,
+        15
+      ],
+      [
+        13,
+        15
+      ],
+      [
+        14,
+        24
+      ],
+      [
+        15,
+        24
+      ],
+      [
+        16,
+        24
+      ],
+      [
+        17,
+        24
+      ],
+      [
+        18,
+        33
+      ]
+    ],
+    "events": [
+      {
+        "n": 1,
+        "start": 0,
+        "time": 2,
+        "state": "H",
+        "origin": "E",
+        "reward": -3,
+        "duration": 2,
+        "total": -3
+      },
+      {
+        "n": 2,
+        "start": 2,
+        "time": 3,
+        "state": "B",
+        "origin": "H",
+        "reward": 0,
+        "duration": 1,
+        "total": -3
+      },
+      {
+        "n": 3,
+        "start": 3,
+        "time": 6,
+        "state": "H",
+        "origin": "B",
+        "reward": 9,
+        "duration": 3,
+        "total": 6
+      },
+      {
+        "n": 4,
+        "start": 6,
+        "time": 7,
+        "state": "B",
+        "origin": "H",
+        "reward": 0,
+        "duration": 1,
+        "total": 6
+      },
+      {
+        "n": 5,
+        "start": 7,
+        "time": 10,
+        "state": "H",
+        "origin": "B",
+        "reward": 9,
+        "duration": 3,
+        "total": 15
+      },
+      {
+        "n": 6,
+        "start": 10,
+        "time": 11,
+        "state": "B",
+        "origin": "H",
+        "reward": 0,
+        "duration": 1,
+        "total": 15
+      },
+      {
+        "n": 7,
+        "start": 11,
+        "time": 14,
+        "state": "H",
+        "origin": "B",
+        "reward": 9,
+        "duration": 3,
+        "total": 24
+      },
+      {
+        "n": 8,
+        "start": 14,
+        "time": 15,
+        "state": "B",
+        "origin": "H",
+        "reward": 0,
+        "duration": 1,
+        "total": 24
+      },
+      {
+        "n": 9,
+        "start": 15,
+        "time": 18,
+        "state": "H",
+        "origin": "B",
+        "reward": 9,
+        "duration": 3,
+        "total": 33
+      }
+    ],
+    "physicalSeconds": 18,
+    "completedEvents": 9,
+    "totalReward": 33
+  },
+  "changedSlowLifetime": {
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        -3
+      ],
+      [
+        3,
+        -3
+      ],
+      [
+        4,
+        -3
+      ],
+      [
+        5,
+        -3
+      ],
+      [
+        6,
+        -3
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        8,
+        6
+      ],
+      [
+        9,
+        6
+      ],
+      [
+        10,
+        6
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        12,
+        15
+      ],
+      [
+        13,
+        15
+      ],
+      [
+        14,
+        15
+      ],
+      [
+        15,
+        15
+      ],
+      [
+        16,
+        15
+      ],
+      [
+        17,
+        24
+      ],
+      [
+        18,
+        24
+      ]
+    ],
+    "events": [
+      {
+        "n": 1,
+        "start": 0,
+        "time": 2,
+        "state": "H",
+        "origin": "E",
+        "reward": -3,
+        "duration": 2,
+        "total": -3
+      },
+      {
+        "n": 2,
+        "start": 2,
+        "time": 3,
+        "state": "B",
+        "origin": "H",
+        "reward": 0,
+        "duration": 1,
+        "total": -3
+      },
+      {
+        "n": 3,
+        "start": 3,
+        "time": 7,
+        "state": "H",
+        "origin": "B",
+        "reward": 9,
+        "duration": 4,
+        "total": 6
+      },
+      {
+        "n": 4,
+        "start": 7,
+        "time": 8,
+        "state": "B",
+        "origin": "H",
+        "reward": 0,
+        "duration": 1,
+        "total": 6
+      },
+      {
+        "n": 5,
+        "start": 8,
+        "time": 12,
+        "state": "H",
+        "origin": "B",
+        "reward": 9,
+        "duration": 4,
+        "total": 15
+      },
+      {
+        "n": 6,
+        "start": 12,
+        "time": 13,
+        "state": "B",
+        "origin": "H",
+        "reward": 0,
+        "duration": 1,
+        "total": 15
+      },
+      {
+        "n": 7,
+        "start": 13,
+        "time": 17,
+        "state": "H",
+        "origin": "B",
+        "reward": 9,
+        "duration": 4,
+        "total": 24
+      },
+      {
+        "n": 8,
+        "start": 17,
+        "time": 18,
+        "state": "B",
+        "origin": "H",
+        "reward": 0,
+        "duration": 1,
+        "total": 24
+      }
+    ],
+    "physicalSeconds": 18,
+    "completedEvents": 8,
+    "totalReward": 24
+  }
+}

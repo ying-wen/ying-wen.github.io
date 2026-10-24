@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="680" viewBox="0 0 1080 680" role="img" aria-labelledby="title desc">
+  <title id="title">奖励、误差与神经测量不是同一个量</title>
+  <desc id="desc">左侧三行原创有限试次算例：意外奖励误差为正、预期奖励误差为零、奖励遗漏误差为负。右侧将中脑细胞放电、轴突末梢释放与局部调节分开。无实测数据。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#647985"/></marker></defs>
+  <rect width="1080" height="680" rx="24" fill="#f7f5ef"/>
+  <g font-family="PingFang SC,Microsoft YaHei,sans-serif" fill="#193c4b">
+    <text x="44" y="53" font-size="29" font-weight="700">相同的奖励，可以带来不同的学习误差</text>
+    <text x="44" y="84" font-size="18" fill="#677781">原创机制示意 · 无实测波形 · 左侧固定有限试次，γ = 1</text>
+    <rect x="32" y="114" width="580" height="455" rx="18" fill="#fff" stroke="#d9e0df"/>
+    <text x="56" y="150" font-size="23" font-weight="700">A　先规定预测对象，再解释活动</text>
+    <text x="56" y="186" font-size="18">奖励到来前估计 v　→　结果 r　→　终止价值 0</text>
+    <text x="58" y="232" font-size="21">意外奖励</text><text x="58" y="261" font-size="18" fill="#677781">v = 0，r = 1</text>
+    <path d="M244 259H548" stroke="#a7b5bb" stroke-width="2"/>
+    <path d="M406 259V211" stroke="#138b87" stroke-width="5"/><circle cx="406" cy="211" r="6" fill="#138b87"/>
+    <text x="442" y="231" font-size="22" fill="#138b87">δ = +1</text>
+    <text x="58" y="333" font-size="21">已预期奖励</text><text x="58" y="362" font-size="18" fill="#677781">v = 1，r = 1</text>
+    <path d="M244 358H548" stroke="#a7b5bb" stroke-width="2"/>
+    <circle cx="406" cy="358" r="6" fill="#647985"/><text x="442" y="331" font-size="22">δ = 0</text>
+    <text x="58" y="434" font-size="21">预期奖励遗漏</text><text x="58" y="463" font-size="18" fill="#677781">v = 1，r = 0</text>
+    <path d="M244 457H548" stroke="#a7b5bb" stroke-width="2"/>
+    <path d="M406 457V505" stroke="#c47736" stroke-width="5"/><circle cx="406" cy="505" r="6" fill="#c47736"/>
+    <text x="442" y="497" font-size="22" fill="#a85c25">δ = −1</text>
+    <path d="M406 197V528" stroke="#b5c0c5" stroke-dasharray="4 5"/>
+    <text x="357" y="548" font-size="18" fill="#677781">结果时刻</text>
+    <rect x="632" y="114" width="416" height="455" rx="18" fill="#edf4f4" stroke="#d9e0df"/>
+    <text x="656" y="150" font-size="23" font-weight="700">B　放电不等于末梢释放</text>
+    <circle cx="696" cy="233" r="29" fill="#426f84"/>
+    <path d="M725 233H941" stroke="#426f84" stroke-width="6"/>
+    <circle cx="948" cy="233" r="18" fill="#138b87"/>
+    <g fill="#138b87"><circle cx="974" cy="213" r="5"/><circle cx="981" cy="235" r="5"/><circle cx="971" cy="254" r="5"/></g>
+    <text x="655" y="295" font-size="20">VTA 细胞</text><text x="889" y="295" font-size="20">NAc 末梢</text>
+    <text x="655" y="324" font-size="18" fill="#677781">测量放电</text><text x="889" y="324" font-size="18" fill="#677781">测量释放</text>
+    <rect x="854" y="367" width="167" height="48" rx="12" fill="#fff0dd"/>
+    <text x="876" y="398" font-size="20" fill="#a85c25">局部调节候选</text>
+    <path d="M1021 391H1031V233H991" fill="none" stroke="#c47736" stroke-width="3" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+    <text x="656" y="462" font-size="20">同一任务中比较，仍可有分离：</text>
+    <text x="656" y="494" font-size="19">线索锁定的响应 ≠ 全部动态</text>
+    <text x="656" y="531" font-size="18" fill="#677781">Mohebi 等（2019）的测量问题</text>
+    <text x="44" y="612" font-size="22" font-weight="700">检验教学作用：改变训练时的信号，再测后续行为。</text>
+    <text x="44" y="646" font-size="19" fill="#677781">相似波形是线索；时序干预、保持测试与替代解释共同约束机制。</text>
+  </g>
+</svg>

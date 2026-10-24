@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img" aria-labelledby="title desc">
+  <title id="title">Learning Scaling 先定义长期目标，并持续构造用于控制的主观状态</title>
+  <desc id="desc">智能体从第一人称历史构造用于预测与控制的主观状态，行动改变后续经验，学习状态继续参与未来行动。参数变化、记忆增长、旧题保持和训练损失下降只是更新活动或局部诊断，不能代替持续强化学习的长期控制目标。Learning Scaling 同时考察长期任务效用、恢复、保持、后期可塑性和新任务学习效率随累计经历的变化。</desc>
+  <rect width="1600" height="1120" fill="#ffffff"/>
+  <style>
+    .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+    .serif{font-family:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",serif}
+    .mono{font-family:"SFMono-Regular",Consolas,monospace}
+    .title{font-size:43px;font-weight:730;fill:#17211c}.lead{font-size:21px;fill:#56615b}
+    .h2{font-size:27px;font-weight:720;fill:#223129}.h3{font-size:20px;font-weight:700;fill:#2f3d35}
+    .body{font-size:18px;fill:#3e4b44}.small{font-size:16px;fill:#65716a}.tiny{font-size:14px;fill:#718078}
+    .green{fill:#2f704f}.orange{fill:#b84e1b}.blue{fill:#365f82}.purple{fill:#6f5683}.red{fill:#985047}
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#64716a"/></marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#2f704f"/></marker>
+  </defs>
+
+  <text x="800" y="60" text-anchor="middle" class="sans title">Learning Scaling 先定义长期目标，再考察经验的持续作用</text>
+  <text x="800" y="98" text-anchor="middle" class="serif lead">主观状态、控制与可塑性需要沿同一条第一人称历史共同发展</text>
+
+  <g transform="translate(55,145)">
+    <rect width="1490" height="220" rx="18" fill="#f7fbf8" stroke="#6f9f83" stroke-width="2"/>
+    <text x="30" y="43" class="sans h2 green">第一人称、行动条件的经验流与主观状态构造</text>
+    <text x="30" y="76" class="serif small">环境只给出局部观测；智能体从自身历史形成内部状态，策略再改变以后遇到的观测与反馈</text>
+
+    <g transform="translate(50,112)">
+      <rect width="205" height="72" rx="12" fill="#ffffff" stroke="#8fb09d"/><text x="102" y="31" text-anchor="middle" class="mono body">sₜ = ψₜ(Hₜ)</text><text x="102" y="56" text-anchor="middle" class="serif small">从历史构造主观状态</text>
+      <path d="M220 36 H340" stroke="#2f704f" stroke-width="3" marker-end="url(#arrowGreen)"/>
+      <text x="280" y="24" text-anchor="middle" class="mono small">Aₜ ~ π(zₜ,sₜ)</text>
+      <rect x="360" width="250" height="72" rx="12" fill="#ffffff" stroke="#8fb09d"/><text x="485" y="31" text-anchor="middle" class="serif body">环境转移与反馈</text><text x="485" y="56" text-anchor="middle" class="mono small">Oₜ₊₁, Rₜ₊₁</text>
+      <path d="M625 36 H745" stroke="#2f704f" stroke-width="3" marker-end="url(#arrowGreen)"/>
+      <rect x="765" width="250" height="72" rx="12" fill="#ffffff" stroke="#8fb09d"/><text x="890" y="31" text-anchor="middle" class="mono body">zₜ₊₁ = U(zₜ,eₜ)</text><text x="890" y="56" text-anchor="middle" class="serif small">学习状态递推</text>
+      <path d="M1030 36 H1150" stroke="#2f704f" stroke-width="3" marker-end="url(#arrowGreen)"/>
+      <rect x="1170" width="220" height="72" rx="12" fill="#ffffff" stroke="#8fb09d"/><text x="1280" y="31" text-anchor="middle" class="serif body">后续交互</text><text x="1280" y="56" text-anchor="middle" class="mono small">Hₜ₊₁, sₜ₊₁, πₜ₊₁</text>
+    </g>
+  </g>
+
+  <g transform="translate(55,410)">
+    <rect width="675" height="290" rx="18" fill="#fff8f6" stroke="#cf9a90" stroke-width="2"/>
+    <text x="337" y="44" text-anchor="middle" class="sans h2 red">常见替代项：说明状态在变，但不定义长期目标</text>
+    <g transform="translate(28,78)">
+      <rect width="290" height="72" rx="11" fill="#ffffff" stroke="#d7b2aa"/><text x="145" y="31" text-anchor="middle" class="sans h3">参数或记忆持续变化</text><text x="145" y="56" text-anchor="middle" class="serif small">更新活动，不等于控制改善</text>
+      <rect x="329" width="290" height="72" rx="11" fill="#ffffff" stroke="#d7b2aa"/><text x="474" y="31" text-anchor="middle" class="sans h3">旧任务正确率保持</text><text x="474" y="56" text-anchor="middle" class="serif small">关注遗忘，不回答可塑性</text>
+      <rect y="94" width="290" height="72" rx="11" fill="#ffffff" stroke="#d7b2aa"/><text x="145" y="125" text-anchor="middle" class="sans h3">时序语料损失下降</text><text x="145" y="150" text-anchor="middle" class="serif small">训练目标，不含行动后果</text>
+      <rect x="329" y="94" width="290" height="72" rx="11" fill="#ffffff" stroke="#d7b2aa"/><text x="474" y="125" text-anchor="middle" class="sans h3">相似任务检索提高</text><text x="474" y="150" text-anchor="middle" class="serif small">经历复用，不保证迁移</text>
+    </g>
+    <text x="337" y="263" text-anchor="middle" class="serif body red">实现形式、算法和局部指标不能代替 objective</text>
+  </g>
+
+  <path d="M750 555 H835" stroke="#64716a" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="792" y="538" text-anchor="middle" class="serif small">先定义</text>
+
+  <g transform="translate(850,410)">
+    <rect width="695" height="290" rx="18" fill="#f6f9fc" stroke="#809bb2" stroke-width="2"/>
+    <text x="347" y="44" text-anchor="middle" class="sans h2 blue">持续强化学习：优化实际发生的长期交互</text>
+    <rect x="30" y="80" width="635" height="74" rx="12" fill="#ffffff" stroke="#a6b7c5"/>
+    <text x="347" y="111" text-anchor="middle" class="mono body">𝒥run(n,w) = E[ w⁻¹ Σₖ₌₀ʷ⁻¹ Rₙ₊ₖ₊₁ ]</text>
+    <text x="347" y="137" text-anchor="middle" class="serif small">reward rate 只是一个选择；实际任务也可采用折扣回报、约束效用或其他具名目标</text>
+    <text x="42" y="194" class="serif body">• 适应发生期间的机会损失与最差时间窗</text>
+    <text x="42" y="226" class="serif body">• 环境变化后的恢复时间与策略诱导的经验变化</text>
+    <text x="42" y="258" class="serif body">• 不依赖人为 task ID，允许 continuing interaction</text>
+  </g>
+
+  <g transform="translate(55,750)">
+    <rect width="1490" height="310" rx="18" fill="#fafafa" stroke="#cfd5d2"/>
+    <text x="745" y="43" text-anchor="middle" class="sans h2">Learning Scaling 是随累计经历 n 变化的一组响应</text>
+
+    <g transform="translate(28,78)">
+      <rect width="450" height="184" rx="13" fill="#f7fbf8" stroke="#8fb09d"/>
+      <text x="225" y="36" text-anchor="middle" class="sans h3 green">主要目标：持续控制</text>
+      <text x="24" y="74" class="serif body">长期任务效用或 reward rate</text>
+      <text x="24" y="108" class="serif body">恢复、动态 regret 与安全约束</text>
+      <text x="24" y="142" class="serif body">实际经验流中的累计机会成本</text>
+      <text x="225" y="170" text-anchor="middle" class="serif small">目标必须在算法与实现形式之前声明</text>
+
+      <rect x="492" width="450" height="184" rx="13" fill="#fff9f5" stroke="#d79b77"/>
+      <text x="717" y="36" text-anchor="middle" class="sans h3 orange">诊断量：持续可学习性</text>
+      <text x="516" y="74" class="serif body">跨条件迁移与旧能力保持</text>
+      <text x="516" y="108" class="serif body">后期可塑性与新任务学习效率</text>
+      <text x="516" y="142" class="serif body">固定未来计算后的适应曲线</text>
+      <text x="717" y="170" text-anchor="middle" class="serif small">遗忘与可塑性必须分开</text>
+
+      <rect x="984" width="450" height="184" rx="13" fill="#f7f6fa" stroke="#a596b2"/>
+      <text x="1209" y="36" text-anchor="middle" class="sans h3 purple">研究对象：连续交互过程</text>
+      <text x="1008" y="74" class="serif body">历史依赖的学习状态参与未来行动</text>
+      <text x="1008" y="108" class="serif body">未来运行计算保持一致</text>
+      <text x="1008" y="142" class="serif body">共同初始分布下的独立长期运行</text>
+      <text x="1209" y="170" text-anchor="middle" class="serif small">有限实验不证明“永不停止学习”</text>
+    </g>
+  </g>
+</svg>

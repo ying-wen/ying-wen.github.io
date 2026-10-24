@@ -1,0 +1,147 @@
+{
+  "kind": "exact-calculation",
+  "loops": [
+    {
+      "name": "A",
+      "reward": 2,
+      "duration": 1,
+      "rate": 2,
+      "totalAt12": 24
+    },
+    {
+      "name": "B",
+      "reward": 3,
+      "duration": 3,
+      "rate": 1,
+      "totalAt12": 12
+    }
+  ],
+  "mixture": {
+    "reward": 5,
+    "duration": 4,
+    "rate": 1.25,
+    "meanPerDecisionRate": 1.5
+  },
+  "gvf": {
+    "bonus": 5,
+    "alpha": 1,
+    "routes": [
+      {
+        "name": "左路",
+        "energy": [
+          1,
+          1
+        ],
+        "hit": [
+          0,
+          1
+        ],
+        "continuation": [
+          1,
+          0
+        ],
+        "rewards": [
+          -1,
+          4
+        ],
+        "energyReturn": 2,
+        "hitReturn": 1,
+        "taskReturn": 3,
+        "learnedEnergy": 2,
+        "learnedHit": 1
+      },
+      {
+        "name": "右路",
+        "energy": [
+          1,
+          2,
+          1
+        ],
+        "hit": [
+          0,
+          0,
+          1
+        ],
+        "continuation": [
+          1,
+          1,
+          0
+        ],
+        "rewards": [
+          -1,
+          -2,
+          4
+        ],
+        "energyReturn": 4,
+        "hitReturn": 1,
+        "taskReturn": 1,
+        "learnedEnergy": 4,
+        "learnedHit": 1
+      }
+    ]
+  },
+  "options": {
+    "gamma": 0.9,
+    "goalValue": 10,
+    "otherValue": 0,
+    "items": [
+      {
+        "name": "快路",
+        "duration": 2,
+        "success": 0.6,
+        "reward": -1.9,
+        "mass": 0.81,
+        "goalWeight": 0.486,
+        "otherWeight": 0.32400000000000007,
+        "tail": 4.859999999999999,
+        "value": 2.9599999999999995
+      },
+      {
+        "name": "稳路",
+        "duration": 4,
+        "success": 0.9,
+        "reward": -3.439,
+        "mass": 0.6561,
+        "goalWeight": 0.5904900000000001,
+        "otherWeight": 0.06560999999999999,
+        "tail": 5.9049000000000005,
+        "value": 2.4659000000000004
+      }
+    ]
+  },
+  "architecture": {
+    "x": 1,
+    "phi": 1,
+    "target": 2,
+    "alpha": 1,
+    "gradient": -1,
+    "newPhi": 2,
+    "before": {
+      "feature": 1,
+      "prediction": 2,
+      "q": [
+        1,
+        1.5
+      ],
+      "model": 0.5
+    },
+    "after": {
+      "feature": 2,
+      "prediction": 4,
+      "q": [
+        2,
+        1.5
+      ],
+      "model": 1
+    },
+    "compensated": {
+      "feature": 2,
+      "prediction": 2,
+      "q": [
+        1,
+        1.5
+      ],
+      "model": 0.5
+    }
+  }
+}

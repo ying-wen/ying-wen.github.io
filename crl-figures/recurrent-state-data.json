@@ -1,0 +1,139 @@
+{
+  "kind": "exact-mechanism",
+  "sampled_runs": 0,
+  "config": {
+    "a": 0.5,
+    "b": 1,
+    "w": 1,
+    "target": 1,
+    "alpha": 0.1,
+    "h0": 0,
+    "finite_difference_epsilon": 0.000001
+  },
+  "observations": [
+    1,
+    0,
+    0,
+    0
+  ],
+  "rows": [
+    {
+      "t": 1,
+      "observation": 1,
+      "old_h": 0,
+      "h": 1,
+      "sensitivity": [
+        0,
+        1
+      ]
+    },
+    {
+      "t": 2,
+      "observation": 0,
+      "old_h": 1,
+      "h": 0.5,
+      "sensitivity": [
+        1,
+        0.5
+      ]
+    },
+    {
+      "t": 3,
+      "observation": 0,
+      "old_h": 0.5,
+      "h": 0.25,
+      "sensitivity": [
+        1,
+        0.25
+      ]
+    },
+    {
+      "t": 4,
+      "observation": 0,
+      "old_h": 0.25,
+      "h": 0.125,
+      "sensitivity": [
+        0.75,
+        0.125
+      ]
+    }
+  ],
+  "prediction": 0.125,
+  "residual": -0.875,
+  "loss": 0.3828125,
+  "modes": {
+    "full": {
+      "window": 4,
+      "final_h": 0.125,
+      "sensitivity": [
+        0.75,
+        0.125
+      ],
+      "gradient_theta": [
+        -0.65625,
+        -0.109375
+      ],
+      "write_theta": [
+        0.065625,
+        0.010937500000000001
+      ],
+      "write_w": 0
+    },
+    "last_two": {
+      "window": 2,
+      "final_h": 0.125,
+      "sensitivity": [
+        0.5,
+        0
+      ],
+      "gradient_theta": [
+        -0.4375,
+        0
+      ],
+      "write_theta": [
+        0.043750000000000004,
+        0
+      ],
+      "write_w": 0
+    },
+    "detach_each": {
+      "window": 1,
+      "final_h": 0.125,
+      "sensitivity": [
+        0.25,
+        0
+      ],
+      "gradient_theta": [
+        -0.21875,
+        0
+      ],
+      "write_theta": [
+        0.021875000000000002,
+        0
+      ],
+      "write_w": 0
+    },
+    "readout_only": {
+      "final_h": 0.125,
+      "gradient_w": -0.109375,
+      "write_theta": [
+        0,
+        0
+      ],
+      "write_w": 0.010937500000000001
+    }
+  },
+  "finite_difference": [
+    -0.656249999980707,
+    -0.109375000029166
+  ],
+  "erased_cue": {
+    "final_h": 0,
+    "sensitivity": [
+      0,
+      0
+    ],
+    "prediction_for_positive_target": 0,
+    "prediction_for_negative_target": 0
+  }
+}

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="602" viewBox="0 0 720 602" role="img" aria-labelledby="overview-shared-title overview-shared-desc" data-crl-visual="v1" data-evidence-kind="exact">
+  <title id="overview-shared-title">两个状态，共用一个预测值</title>
+  <desc id="overview-shared-desc">原创解析示意。状态 s₁ 和 s₂ 的固定目标分别是 0 和 2。独立表格可分别预测 0 与 2；若两状态的特征都为 1、预测都为标量 w，等权平均平方误差 L(w)=[w²+(w−2)²]/2 的最优点是 w=1。数轴上空心圆为两个目标，菱形为两个状态共用的预测。分别从 w=1 出发，用单样本半平方误差的梯度更新 w′=w+0.5(y−w)：见目标 0 得 0.5，见目标 2 得 1.5；每次更新同时改变两个状态的预测。两根箭头是独立的单次更新情景，不是实测学习曲线。</desc>
+  <rect width="720" height="602" fill="#fff"/>
+  <defs><marker id="shared-blue-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#146ca1"/></marker><marker id="shared-orange-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#b65a28"/></marker></defs>
+  <g font-family="system-ui,-apple-system,'PingFang SC','Noto Sans CJK SC',sans-serif" fill="#19354e">
+    <text x="28" y="42" font-size="26">两个状态，共用一个预测值</text>
+    <g font-size="20" text-anchor="middle"><text x="425" y="89" fill="#146ca1">s₁</text><text x="599" y="89" fill="#b65a28">s₂</text><text x="425" y="128">0</text><text x="599" y="128">2</text><text x="425" y="173">w</text><text x="599" y="173">w</text></g>
+    <g font-size="20"><text x="28" y="128">独立表格可拟合目标</text><text x="28" y="173">相同特征 x(s) = 1</text></g>
+    <path d="M28 102H692M28 145H692M28 194H692" stroke="#dce5ec"/>
+    <text x="28" y="233" font-size="21">等权平方误差：L(w) = [w² + (w − 2)²] / 2</text>
+    <text x="360" y="269" font-size="20" text-anchor="middle" fill="#258375">最优共享预测 w* = 1</text>
+    <path d="M110 324H610" stroke="#c8d6e0" stroke-width="2"/>
+    <g stroke="#c8d6e0"><path d="M120 319V331M240 319V331M360 319V331M480 319V331M600 319V331"/></g>
+    <circle cx="120" cy="324" r="11" fill="#fff" stroke="#146ca1" stroke-width="3"/><circle cx="600" cy="324" r="11" fill="#fff" stroke="#b65a28" stroke-width="3"/>
+    <path d="M360 311 373 324 360 337 347 324Z" fill="#258375"/>
+    <g font-size="19" text-anchor="middle"><text x="120" y="302" fill="#146ca1">s₁ 的目标</text><text x="600" y="302" fill="#b65a28">s₂ 的目标</text><text x="120" y="362">0</text><text x="240" y="362">0.5</text><text x="360" y="362">1</text><text x="480" y="362">1.5</text><text x="600" y="362">2</text></g>
+    <text x="28" y="406" font-size="20">单样本更新：各从 w = 1 出发，α = 0.5</text>
+    <g stroke="#dce5ec" stroke-dasharray="4 5"><path d="M240 418V491M360 418V491M480 450V491"/></g>
+    <g fill="none" stroke-width="3"><path d="M357 429H253" stroke="#146ca1" marker-end="url(#shared-blue-arrow)"/><path d="M363 482H467" stroke="#b65a28" marker-end="url(#shared-orange-arrow)"/></g>
+    <path d="M240 419 250 429 240 439 230 429Z" fill="#146ca1"/><path d="M480 472 490 482 480 492 470 482Z" fill="#b65a28"/><path d="M360 421 368 429 360 437 352 429Z" fill="#fff" stroke="#258375" stroke-width="2"/><path d="M360 474 368 482 360 490 352 482Z" fill="#fff" stroke="#258375" stroke-width="2"/>
+    <g font-size="19"><text x="388" y="436" fill="#146ca1">见 s₁：y = 0 → w′ = 0.5</text><text x="28" y="489" fill="#b65a28">见 s₂：y = 2 → w′ = 1.5</text></g>
+    <text x="360" y="542" font-size="20" text-anchor="middle">w′ = w + α(y − w)</text>
+    <text x="360" y="578" font-size="18" text-anchor="middle" fill="#52687b">菱形一移动，两个状态的预测一起变</text>
+  </g>
+</svg>

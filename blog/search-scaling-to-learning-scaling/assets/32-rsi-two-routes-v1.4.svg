@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="940" viewBox="0 0 1500 940" role="img" aria-labelledby="title desc">
+  <title id="title">RSI 的研发搜索路径与运行时持续学习路径</title>
+  <desc id="desc">RSI 是能力对后续改进速率的跨轮反馈；它可以经由 AI 研发搜索或运行时的持续学习形成，但两条路径采用不同的中间评估。</desc>
+  <rect width="1500" height="940" fill="#ffffff"/>
+  <style>
+    .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+    .serif{font-family:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",serif}
+    .h1{font-size:34px;font-weight:700;fill:#18211d}.h2{font-size:25px;font-weight:700}.h3{font-size:18px;font-weight:700;fill:#2b3731}
+    .body{font-size:17px;fill:#3b4841}.small{font-size:15px;fill:#64706a}.math{font-family:"STIX Two Math","Times New Roman",serif;font-size:20px;fill:#26332c}
+    .orange{fill:#b94d18}.green{fill:#2e6f4e}.purple{fill:#6b527c}
+  </style>
+
+  <text x="750" y="56" text-anchor="middle" class="sans h1">RSI 不是一种算法，而是一项跨轮反馈关系</text>
+  <text x="750" y="91" text-anchor="middle" class="serif body">Search Scaling 与 Learning Scaling 都可能参与；单次自修改、自主运行或系统分数提高均不足以建立 RSI</text>
+
+  <rect x="70" y="128" width="645" height="590" rx="18" fill="#fffaf6" stroke="#cf7342" stroke-width="2"/>
+  <rect x="785" y="128" width="645" height="590" rx="18" fill="#f7fbf8" stroke="#5e9174" stroke-width="2"/>
+  <text x="392" y="179" text-anchor="middle" class="sans h2 orange">路径 A｜AI 研发搜索</text>
+  <text x="1107" y="179" text-anchor="middle" class="sans h2 green">路径 B｜运行时持续学习</text>
+  <text x="392" y="211" text-anchor="middle" class="serif small">能力提高 proposal、评价、实验与提交的生产率</text>
+  <text x="1107" y="211" text-anchor="middle" class="serif small">能力改善经历转化过程与新任务学习效率</text>
+
+  <g transform="translate(104,252)">
+    <rect width="150" height="74" rx="12" fill="#fff" stroke="#d9a181"/>
+    <text x="75" y="30" text-anchor="middle" class="sans h3">当前能力</text>
+    <text x="75" y="57" text-anchor="middle" class="math">Iₖ</text>
+    <path d="M156 37h52" stroke="#b94d18" stroke-width="2.5" marker-end="url(#ao)"/>
+    <rect x="216" width="260" height="74" rx="12" fill="#fff" stroke="#d9a181"/>
+    <text x="346" y="29" text-anchor="middle" class="sans h3">研发搜索能力</text>
+    <text x="346" y="56" text-anchor="middle" class="serif small">提出 · 评价 · 实验 · 提交</text>
+    <path d="M482 37h52" stroke="#b94d18" stroke-width="2.5" marker-end="url(#ao)"/>
+    <rect x="542" width="150" height="74" rx="12" fill="#fff" stroke="#d9a181"/>
+    <text x="617" y="30" text-anchor="middle" class="sans h3">后继能力</text>
+    <text x="617" y="57" text-anchor="middle" class="math">Iₖ₊₁</text>
+    <path d="M617 80C617 132 75 132 75 80" fill="none" stroke="#b94d18" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#ao)"/>
+  </g>
+
+  <g transform="translate(819,252)">
+    <rect width="150" height="74" rx="12" fill="#fff" stroke="#90b49d"/>
+    <text x="75" y="30" text-anchor="middle" class="sans h3">当前能力</text>
+    <text x="75" y="57" text-anchor="middle" class="math">Iₜ</text>
+    <path d="M156 37h52" stroke="#2e6f4e" stroke-width="2.5" marker-end="url(#ag)"/>
+    <rect x="216" width="260" height="74" rx="12" fill="#fff" stroke="#90b49d"/>
+    <text x="346" y="29" text-anchor="middle" class="sans h3">经历转化过程</text>
+    <text x="346" y="56" text-anchor="middle" class="serif small">状态 · 信用 · 更新 · 行为抽象</text>
+    <path d="M482 37h52" stroke="#2e6f4e" stroke-width="2.5" marker-end="url(#ag)"/>
+    <rect x="542" width="150" height="74" rx="12" fill="#fff" stroke="#90b49d"/>
+    <text x="617" y="30" text-anchor="middle" class="sans h3">后续能力</text>
+    <text x="617" y="57" text-anchor="middle" class="math">Iₜ₊₁</text>
+    <path d="M617 80C617 132 75 132 75 80" fill="none" stroke="#2e6f4e" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#ag)"/>
+  </g>
+
+  <g transform="translate(104,435)">
+    <rect width="577" height="102" rx="12" fill="#fff" stroke="#ead3c5"/>
+    <text x="20" y="31" class="sans h3">中间评估</text>
+    <text x="20" y="59" class="serif body">固定人类劳动、计算、数据、设施与评价程序时，</text>
+    <text x="20" y="85" class="serif body">单位时间内的研发改进幅度是否随 Iₖ 提高？</text>
+  </g>
+  <g transform="translate(819,435)">
+    <rect width="577" height="102" rx="12" fill="#fff" stroke="#d0e3d7"/>
+    <text x="20" y="31" class="sans h3">中间评估</text>
+    <text x="20" y="59" class="serif body">在匹配的新任务上，达到同一相对性能阈值所需</text>
+    <text x="20" y="85" class="serif body">经历数 nρ,t 是否随运行阶段下降？</text>
+  </g>
+
+  <g transform="translate(104,558)">
+    <rect width="577" height="122" rx="12" fill="#fff4ec" stroke="#d59a77"/>
+    <text x="20" y="31" class="sans h3 orange">与相邻概念的关系</text>
+    <text x="20" y="59" class="serif small">• 目标为 AI 研发：属于 AI4AI</text>
+    <text x="20" y="83" class="serif small">• 自主更新运行：满足 Self-evolving 自主性判据</text>
+    <text x="20" y="107" class="serif small">• 候选随计算扩展：可以评估 design-level Search Scaling</text>
+  </g>
+  <g transform="translate(819,558)">
+    <rect width="577" height="122" rx="12" fill="#eef7f1" stroke="#91b69e"/>
+    <text x="20" y="31" class="sans h3 green">与相邻概念的关系</text>
+    <text x="20" y="59" class="serif small">• 跨任务持久更新：进入 experience scaling</text>
+    <text x="20" y="83" class="serif small">• 迁移、保持、可塑性成立：支持 Learning Scaling</text>
+    <text x="20" y="107" class="serif small">• 学得更快：仍需继续检验跨轮改进速率</text>
+  </g>
+
+  <g transform="translate(70,756)">
+    <rect width="1360" height="126" rx="18" fill="#f8f5fa" stroke="#9d86aa" stroke-width="1.5"/>
+    <text x="680" y="37" text-anchor="middle" class="sans h2 purple">共同的 RSI 估计条件</text>
+    <text x="680" y="72" text-anchor="middle" class="serif body">在外部投入与评估程序可比时，较高的当前能力 I 是否使下一轮能力变化速率 v = ΔI / Δt 提高？</text>
+    <text x="680" y="103" text-anchor="middle" class="serif small">v 随 I 提高表示正向反馈；能否形成自我维持的加速，还取决于更强的动力学条件</text>
+  </g>
+
+  <defs>
+    <marker id="ao" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#b94d18"/></marker>
+    <marker id="ag" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#2e6f4e"/></marker>
+  </defs>
+</svg>

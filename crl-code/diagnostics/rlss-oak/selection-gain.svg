@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="572" viewBox="0 0 900 572" role="img" aria-labelledby="title description">
+<title id="title">模型刷新修复选择，不修复技能本身</title><desc id="description">原创五状态机制诊断；精确 option 求解加 MC 后果拟合；不是完整 OaK 或作者 benchmark 复现。 新版本的完整 option 样本数；所选再生策略的实际长期奖励率。原始数值见同目录 results.json。</desc>
+<rect width="100%" height="100%" fill="#fff"/>
+<g font-family="system-ui, -apple-system, Noto Sans CJK SC, sans-serif" fill="#233748">
+<text x="96" y="36" font-size="23" font-weight="650">模型刷新修复选择，不修复技能本身</text>
+<text x="96" y="68" font-size="16">所选再生策略的实际长期奖励率</text>
+<path d="M96 98h32" fill="none" stroke="#285d82" stroke-width="2.6" stroke-dasharray=""/><text x="139" y="104" font-size="18">冻结旧模型</text>
+<path d="M274 98h32" fill="none" stroke="#ad5733" stroke-width="2.6" stroke-dasharray="9 5"/><text x="317" y="104" font-size="18">混合新旧样本</text>
+<path d="M470 98h32" fill="none" stroke="#69803f" stroke-width="2.6" stroke-dasharray="3 4"/><text x="513" y="104" font-size="18">分版本重估</text>
+<path d="M648 98h32" fill="none" stroke="#4d5660" stroke-width="2.6" stroke-dasharray="7 5"/><text x="691" y="104" font-size="18">冻结 μ 的奖励率</text>
+<text x="96" y="131" font-size="16" fill="#586574">阴影：均值 ± 1 标准误，不是置信区间</text>
+<path d="M96 482H864" stroke="#a4b2c0" fill="none"/><text x="84" y="488" text-anchor="end" font-size="17">0</text>
+<path d="M96 418H864" stroke="#e2e7eb" fill="none"/><text x="84" y="424" text-anchor="end" font-size="17">0.2</text>
+<path d="M96 354H864" stroke="#e2e7eb" fill="none"/><text x="84" y="360" text-anchor="end" font-size="17">0.4</text>
+<path d="M96 290H864" stroke="#e2e7eb" fill="none"/><text x="84" y="296" text-anchor="end" font-size="17">0.6</text>
+<path d="M96 226H864" stroke="#e2e7eb" fill="none"/><text x="84" y="232" text-anchor="end" font-size="17">0.8</text>
+<path d="M96 162H864" stroke="#e2e7eb" fill="none"/><text x="84" y="168" text-anchor="end" font-size="17">1</text>
+<path d="M96 482v6" stroke="#677789"/><text x="96" y="512" text-anchor="middle" font-size="17">1</text>
+<path d="M243.5764705882353 482v6" stroke="#677789"/><text x="243.5764705882353" y="512" text-anchor="middle" font-size="17">50</text>
+<path d="M394.16470588235296 482v6" stroke="#677789"/><text x="394.16470588235296" y="512" text-anchor="middle" font-size="17">100</text>
+<path d="M544.7529411764706 482v6" stroke="#677789"/><text x="544.7529411764706" y="512" text-anchor="middle" font-size="17">150</text>
+<path d="M695.3411764705883 482v6" stroke="#677789"/><text x="695.3411764705883" y="512" text-anchor="middle" font-size="17">200</text>
+<path d="M864 482v6" stroke="#677789"/><text x="864" y="512" text-anchor="middle" font-size="17">256</text>
+<path d="M96 162V482H864" fill="none" stroke="#677789" stroke-width="1.2"/>
+<polygon points="96,482 99.01176470588236,482 105.03529411764706,482 117.08235294117647,482 141.1764705882353,482 165.2705882352941,482 189.36470588235295,482 285.74117647058824,482 478.49411764705883,482 864,482 864,482 478.49411764705883,482 285.74117647058824,482 189.36470588235295,482 165.2705882352941,482 141.1764705882353,482 117.08235294117647,482 105.03529411764706,482 99.01176470588236,482 96,482" fill="#285d82" fill-opacity="0.10" stroke="none"/>
+<polygon points="96,482 99.01176470588236,482 105.03529411764706,482 117.08235294117647,482 141.1764705882353,422.9847022354653 165.2705882352941,219.92174872340064 189.36470588235295,162 285.74117647058824,162 478.49411764705883,162 864,162 864,162 478.49411764705883,162 285.74117647058824,162 189.36470588235295,172 165.2705882352941,254.07825127659933 141.1764705882353,451.0152977645347 117.08235294117647,482 105.03529411764706,482 99.01176470588236,482 96,482" fill="#ad5733" fill-opacity="0.10" stroke="none"/>
+<polygon points="96,162 99.01176470588236,162 105.03529411764706,162 117.08235294117647,162 141.1764705882353,162 165.2705882352941,162 189.36470588235295,162 285.74117647058824,162 478.49411764705883,162 864,162 864,162 478.49411764705883,162 285.74117647058824,162 189.36470588235295,162 165.2705882352941,162 141.1764705882353,162 117.08235294117647,162 105.03529411764706,162 99.01176470588236,162 96,162" fill="#69803f" fill-opacity="0.10" stroke="none"/>
+<path d="M96.000 482.000 L99.012 482.000 L105.035 482.000 L117.082 482.000 L141.176 482.000 L165.271 482.000 L189.365 482.000 L285.741 482.000 L478.494 482.000 L864.000 482.000" fill="none" stroke="#285d82" stroke-width="2.6" stroke-linejoin="round" stroke-dasharray=""/>
+<circle cx="96" cy="482" r="3.5" fill="#285d82"/>
+<circle cx="99.01176470588236" cy="482" r="3.5" fill="#285d82"/>
+<circle cx="105.03529411764706" cy="482" r="3.5" fill="#285d82"/>
+<circle cx="117.08235294117647" cy="482" r="3.5" fill="#285d82"/>
+<circle cx="141.1764705882353" cy="482" r="3.5" fill="#285d82"/>
+<circle cx="165.2705882352941" cy="482" r="3.5" fill="#285d82"/>
+<circle cx="189.36470588235295" cy="482" r="3.5" fill="#285d82"/>
+<circle cx="285.74117647058824" cy="482" r="3.5" fill="#285d82"/>
+<circle cx="478.49411764705883" cy="482" r="3.5" fill="#285d82"/>
+<circle cx="864" cy="482" r="3.5" fill="#285d82"/>
+<path d="M96.000 482.000 L99.012 482.000 L105.035 482.000 L117.082 482.000 L141.176 437.000 L165.271 237.000 L189.365 167.000 L285.741 162.000 L478.494 162.000 L864.000 162.000" fill="none" stroke="#ad5733" stroke-width="2.6" stroke-linejoin="round" stroke-dasharray="9 5"/>
+<rect x="92.5" y="478.5" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<rect x="95.51176470588236" y="478.5" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<rect x="101.53529411764706" y="478.5" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<rect x="113.58235294117647" y="478.5" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<rect x="137.6764705882353" y="433.5" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<rect x="161.7705882352941" y="233.5" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<rect x="185.86470588235295" y="163.5" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<rect x="282.24117647058824" y="158.5" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<rect x="474.99411764705883" y="158.5" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<rect x="860.5" y="158.5" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<path d="M96.000 162.000 L99.012 162.000 L105.035 162.000 L117.082 162.000 L141.176 162.000 L165.271 162.000 L189.365 162.000 L285.741 162.000 L478.494 162.000 L864.000 162.000" fill="none" stroke="#69803f" stroke-width="2.6" stroke-linejoin="round" stroke-dasharray="3 4"/>
+<circle cx="96" cy="162" r="3.5" fill="#69803f"/>
+<circle cx="99.01176470588236" cy="162" r="3.5" fill="#69803f"/>
+<circle cx="105.03529411764706" cy="162" r="3.5" fill="#69803f"/>
+<circle cx="117.08235294117647" cy="162" r="3.5" fill="#69803f"/>
+<circle cx="141.1764705882353" cy="162" r="3.5" fill="#69803f"/>
+<circle cx="165.2705882352941" cy="162" r="3.5" fill="#69803f"/>
+<circle cx="189.36470588235295" cy="162" r="3.5" fill="#69803f"/>
+<circle cx="285.74117647058824" cy="162" r="3.5" fill="#69803f"/>
+<circle cx="478.49411764705883" cy="162" r="3.5" fill="#69803f"/>
+<circle cx="864" cy="162" r="3.5" fill="#69803f"/>
+<path d="M96.000 162.000 L99.012 162.000 L105.035 162.000 L117.082 162.000 L141.176 162.000 L165.271 162.000 L189.365 162.000 L285.741 162.000 L478.494 162.000 L864.000 162.000" fill="none" stroke="#4d5660" stroke-width="2.6" stroke-linejoin="round" stroke-dasharray="7 5"/>
+<rect x="92.5" y="158.5" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="95.51176470588236" y="158.5" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="101.53529411764706" y="158.5" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="113.58235294117647" y="158.5" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="137.6764705882353" y="158.5" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="161.7705882352941" y="158.5" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="185.86470588235295" y="158.5" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="282.24117647058824" y="158.5" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="474.99411764705883" y="158.5" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="860.5" y="158.5" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<text x="480" y="547" text-anchor="middle" font-size="18">新版本的完整 option 样本数</text></g></svg>

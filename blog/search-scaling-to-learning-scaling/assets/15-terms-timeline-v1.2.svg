@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1020" viewBox="0 0 1600 1020" role="img" aria-labelledby="title desc">
+  <title id="title">训练、测试、部署、推断、推理、搜索、规划与学习的关系</title>
+  <desc id="desc">训练产生可部署的持久状态；部署任务中可以包含推断、推理、搜索与规划；测试是评估程序；任务经历只有经持久更新影响未来新任务时才构成学习。</desc>
+  <defs>
+    <style>
+      .bg{fill:#fff}.ink{fill:#20262b}.muted{fill:#68727a}.blue{fill:#edf4fb;stroke:#8faed0}.amber{fill:#fbf3e8;stroke:#d9a962}.green{fill:#eaf5f1;stroke:#73a494}.gray{fill:#f4f6f7;stroke:#cbd2d7}.purple{fill:#f5effa;stroke:#aa92ca}.box{stroke-width:2}.line{fill:none;stroke:#657078;stroke-width:4;marker-end:url(#a)}.dash{fill:none;stroke:#9aa3a9;stroke-width:2.5;stroke-dasharray:8 8}.greenline{fill:none;stroke:#3f816e;stroke-width:4;marker-end:url(#g)}
+      .t{font:700 42px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.h{font:700 27px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.b{font:400 21px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.s{font:500 17px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.eq{font:600 24px Georgia,"Times New Roman",serif}
+    </style>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#657078"/></marker>
+    <marker id="g" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3f816e"/></marker>
+  </defs>
+
+  <rect class="bg" width="1600" height="1020"/>
+  <text x="80" y="72" class="t ink">这些术语由时间段与状态保留共同区分</text>
+  <text x="80" y="114" class="b muted">先判断过程何时发生，再判断任务状态清空后有哪些变化进入未来任务。</text>
+
+  <rect x="70" y="175" width="330" height="235" rx="24" class="box blue"/>
+  <text x="105" y="228" class="h ink">训练 Training</text>
+  <text x="105" y="274" class="b ink">数据 · 目标函数 · 优化程序</text>
+  <text x="105" y="310" class="b ink">更新规则 · 停止条件</text>
+  <rect x="105" y="340" width="260" height="45" rx="13" fill="#fff" opacity="0.84"/>
+  <text x="235" y="369" text-anchor="middle" class="eq ink">产生可部署状态 z₀</text>
+
+  <path d="M400 292H465" class="line"/>
+
+  <rect x="475" y="150" width="1055" height="660" rx="30" fill="#fff" stroke="#aeb8be" stroke-width="2.5"/>
+  <text x="520" y="205" class="h ink">部署 Deployment</text>
+  <text x="520" y="239" class="s muted">系统面向实际任务、用户或环境运行；部署既可以只含推断，也可以允许持久更新。</text>
+
+  <rect x="1190" y="178" width="285" height="68" rx="17" class="box gray"/>
+  <text x="1215" y="207" class="s muted">测试 Testing</text>
+  <text x="1215" y="232" class="s ink">按预先固定的程序评估</text>
+
+  <rect x="520" y="275" width="955" height="280" rx="24" class="dash"/>
+  <text x="555" y="316" class="h ink">一次任务运行</text>
+
+  <rect x="555" y="345" width="205" height="115" rx="18" class="box blue"/>
+  <text x="657" y="389" text-anchor="middle" class="h ink">推断</text>
+  <text x="657" y="428" text-anchor="middle" class="s muted">由状态与输入计算输出</text>
+
+  <rect x="785" y="345" width="205" height="115" rx="18" class="box purple"/>
+  <text x="887" y="389" text-anchor="middle" class="h ink">推理</text>
+  <text x="887" y="428" text-anchor="middle" class="s muted">形成判断所需的中间计算</text>
+
+  <rect x="1015" y="345" width="205" height="115" rx="18" class="box amber"/>
+  <text x="1117" y="389" text-anchor="middle" class="h ink">搜索</text>
+  <text x="1117" y="428" text-anchor="middle" class="s muted">生成、展开与评价候选</text>
+
+  <rect x="1245" y="345" width="195" height="115" rx="18" class="box amber"/>
+  <text x="1342" y="389" text-anchor="middle" class="h ink">规划</text>
+  <text x="1342" y="428" text-anchor="middle" class="s muted">比较未来行动序列</text>
+
+  <rect x="555" y="487" width="885" height="45" rx="13" fill="#f4f6f7"/>
+  <text x="997" y="516" text-anchor="middle" class="s ink">推理、搜索与规划可以嵌套或交替，并不存在固定的串行关系。</text>
+
+  <rect x="520" y="595" width="250" height="120" rx="20" class="box purple"/>
+  <text x="645" y="637" text-anchor="middle" class="h ink">经历 eₜ</text>
+  <text x="645" y="677" text-anchor="middle" class="s muted">观测 · 行动 · 反馈 · 时间关系</text>
+
+  <path d="M770 655H835" class="line"/>
+
+  <rect x="845" y="585" width="275" height="140" rx="20" class="box gray"/>
+  <text x="982" y="628" text-anchor="middle" class="h ink">任务内状态清空</text>
+  <text x="982" y="667" text-anchor="middle" class="s muted">context · scratchpad · 搜索树</text>
+  <text x="982" y="697" text-anchor="middle" class="eq ink">zₜ₊₁ = zₜ</text>
+
+  <path d="M770 655C900 770 1050 770 1160 655" class="greenline"/>
+
+  <rect x="1160" y="585" width="315" height="140" rx="20" class="box green"/>
+  <text x="1317" y="628" text-anchor="middle" class="h ink">持久更新 U</text>
+  <text x="1317" y="667" text-anchor="middle" class="s muted">参数 · 长期记忆 · 策略结构 · 控制规则</text>
+  <text x="1317" y="697" text-anchor="middle" class="eq ink">zₜ₊₁ = U(zₜ,eₜ)</text>
+
+  <path d="M1317 725V855" class="greenline"/>
+  <rect x="300" y="855" width="1000" height="115" rx="24" class="box green"/>
+  <text x="800" y="902" text-anchor="middle" class="h ink">学习 Learning</text>
+  <text x="800" y="941" text-anchor="middle" class="b ink">经历引起持久状态变化，并由该变化影响未来新任务中的预测、决策或再学习。</text>
+
+  <rect x="70" y="465" width="330" height="245" rx="24" class="box gray"/>
+  <text x="105" y="518" class="h ink">两项边界</text>
+  <text x="105" y="566" class="b ink">Testing ≠ Deployment</text>
+  <text x="105" y="602" class="s muted">前者是评估程序，后者是运行时期。</text>
+  <text x="105" y="652" class="b ink">Adaptation ≠ Learning</text>
+  <text x="105" y="688" class="s muted">任务内变化只有跨任务保留后才纳入 learning 分析。</text>
+</svg>
