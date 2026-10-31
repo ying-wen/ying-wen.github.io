@@ -1,0 +1,1372 @@
+{
+  "records": [
+    {
+      "id": "bandit_sample_average",
+      "source": "/crl-code/results/bandit_sample_average/curves.json",
+      "sha256": "b4c98927c322e8065f381f202d41c31f8078cdd6ddcbc2c51b82d8e3a1ab46ff",
+      "metric": "累计平均奖励",
+      "unit": "reward",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          0.8665281221373744
+        ]
+      },
+      "series": [
+        {
+          "id": "bandit_sample_average",
+          "points": 80
+        },
+        {
+          "id": "bandit_constant_step",
+          "points": 80
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "bandit_constant_step",
+      "source": "/crl-code/results/bandit_constant_step/curves.json",
+      "sha256": "34eb597bb6f218e7d2753f3d0106299bf4712e2e38603b57038d3a3e851433a4",
+      "metric": "累计平均奖励",
+      "unit": "reward",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          0.8665281221373744
+        ]
+      },
+      "series": [
+        {
+          "id": "bandit_constant_step",
+          "points": 80
+        },
+        {
+          "id": "bandit_sample_average",
+          "points": 80
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "bandit_ucb",
+      "source": "/crl-code/results/bandit_ucb/curves.json",
+      "sha256": "ffea8b1099b23102ed3e4652f05b97682da1799ca0d11b79947534f481603f7c",
+      "metric": "累计平均奖励",
+      "unit": "reward",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          0.8665281221373744
+        ]
+      },
+      "series": [
+        {
+          "id": "bandit_ucb",
+          "points": 80
+        },
+        {
+          "id": "bandit_sample_average",
+          "points": 80
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "bandit_gradient",
+      "source": "/crl-code/results/bandit_gradient/curves.json",
+      "sha256": "48f64681738b5f8329d57c5f31073a03b4da727647e6a09a00bdf7acdb2bfdcd",
+      "metric": "累计平均奖励",
+      "unit": "reward",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          0.8665281221373744
+        ]
+      },
+      "series": [
+        {
+          "id": "bandit_gradient",
+          "points": 80
+        },
+        {
+          "id": "bandit_sample_average",
+          "points": 80
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "td0",
+      "source": "/crl-code/results/td0/curves.json",
+      "sha256": "052577c1f066e2760180d16d725b77ab84a6e82b82f71722eda9b84d7a60583e",
+      "metric": "五状态价值 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          0.6568162337066585
+        ]
+      },
+      "series": [
+        {
+          "id": "td0",
+          "points": 80
+        },
+        {
+          "id": "mc_prediction",
+          "points": 80
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "td_lambda",
+      "source": "/crl-code/results/td_lambda/curves.json",
+      "sha256": "5c8c0ff31031814b591765c8584a40d5f20ca0607cc8afb1469cdb495b736316",
+      "metric": "五状态价值 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          0.6236689826122296
+        ]
+      },
+      "series": [
+        {
+          "id": "td_lambda",
+          "points": 80
+        },
+        {
+          "id": "td0",
+          "points": 80
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "mc_prediction",
+      "source": "/crl-code/results/mc_prediction/curves.json",
+      "sha256": "c2ca0fc0da7441301072bb5b050cb1245185bba243be71803ff084eefbfe9e23",
+      "metric": "五状态价值 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          0.6568162337066585
+        ]
+      },
+      "series": [
+        {
+          "id": "mc_prediction",
+          "points": 80
+        },
+        {
+          "id": "td0",
+          "points": 80
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "gvf_td",
+      "source": "/crl-code/results/gvf_td/curves.json",
+      "sha256": "036ac60159d7069a3819939a15fec8bf6b09f5168217f9b1f7d44bb4cc17ef73",
+      "metric": "两个 GVF 四状态分量 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          1.8812606979417426
+        ]
+      },
+      "series": [
+        {
+          "id": "gvf_td",
+          "points": 80
+        },
+        {
+          "id": "gvf_gtd_lambda",
+          "points": 80
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "gvf_gtd_lambda",
+      "source": "/crl-code/results/gvf_gtd_lambda/curves.json",
+      "sha256": "3df30f8879232c8ae5d1d4f58af8fd84e5a8704454e5e658962627a0d4a130d5",
+      "metric": "两个 GVF 四状态分量 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          1.8812606979417426
+        ]
+      },
+      "series": [
+        {
+          "id": "gvf_gtd_lambda",
+          "points": 80
+        },
+        {
+          "id": "gvf_td",
+          "points": 80
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "option_smdp_q",
+      "source": "/crl-code/results/option_smdp_q/curves.json",
+      "sha256": "5b87b051434fb0baec991d8886a3ca23a04d778b4d2dadcdebeed4b12e6c93de",
+      "metric": "原始奖励贪心策略折扣回报",
+      "unit": "return",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          -0.5000549961311149,
+          1.1358890699186048
+        ]
+      },
+      "series": [
+        {
+          "id": "option_smdp_q",
+          "points": 80
+        },
+        {
+          "id": "primitive_q",
+          "points": 80
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "option_model",
+      "source": "/crl-code/results/option_model/curves.json",
+      "sha256": "b7c84c722e38c38b5b6e03e2117027a38feda515d2ac362c674e80d295626aa2",
+      "metric": "冻结reward/discounted-endpoint联合RMSE",
+      "unit": "rmse",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          0.23867295901147173
+        ]
+      },
+      "series": [
+        {
+          "id": "option_model",
+          "points": 61
+        },
+        {
+          "id": "option_model_monte_carlo",
+          "points": 61
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "option_value_iteration",
+      "source": "/crl-code/results/option_value_iteration/curves.json",
+      "sha256": "789e2915af80e6fa356bdbb042e29870f9dada2cbe934a0298f9753b1ae2255a",
+      "metric": "冻结精确最优价值最大误差",
+      "unit": "absolute_error",
+      "clock": "model_backups",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          -0.18844254797488452,
+          1.0914186575365297
+        ]
+      },
+      "series": [
+        {
+          "id": "option_value_iteration",
+          "points": 61
+        },
+        {
+          "id": "primitive_value_iteration",
+          "points": 61
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "linear_td",
+      "source": "/crl-code/results/linear_td/curves.json",
+      "sha256": "f31eb4f20ab73babf6858d8fbc40563a1e8b9bb956ce8dc7c11234e944766cd7",
+      "metric": "五状态价值 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          0.6172172636222631
+        ]
+      },
+      "series": [
+        {
+          "id": "linear_td",
+          "points": 80
+        },
+        {
+          "id": "gtd2",
+          "points": 80
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "gtd2",
+      "source": "/crl-code/results/gtd2/curves.json",
+      "sha256": "c36cb3d9822e26392168e4eebb4639e24b299b9af796c7ba3856ea04d1974e83",
+      "metric": "五状态价值 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          0.6172172636222631
+        ]
+      },
+      "series": [
+        {
+          "id": "gtd2",
+          "points": 80
+        },
+        {
+          "id": "linear_td",
+          "points": 80
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "true_online_td",
+      "source": "/crl-code/results/true_online_td/curves.json",
+      "sha256": "f62c68e458e65e68bc8a6ec99905fd0c696a9299bf02473e77cbfd228595a040",
+      "metric": "五状态价值 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          0.6237508933371995
+        ]
+      },
+      "series": [
+        {
+          "id": "true_online_td",
+          "points": 80
+        },
+        {
+          "id": "td0",
+          "points": 80
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "deep-dqn",
+      "source": "/crl-code/results/deep-dqn/curves.json",
+      "sha256": "437be0bfff932d991bfb9d927ae803bec1b0204f9dceaff6b3cefecea91cdbe0",
+      "metric": "frozen_evaluation_return",
+      "unit": "return",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          -0.6022490061051462,
+          1.3727859695203417
+        ]
+      },
+      "series": [
+        {
+          "id": "deep-dqn",
+          "points": 21
+        },
+        {
+          "id": "deep-double_dqn",
+          "points": 21
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "deep-double_dqn",
+      "source": "/crl-code/results/deep-double_dqn/curves.json",
+      "sha256": "97e1683df3f3c91b736b05d5201f8771ddc0a416ec44f63390abbf55786bcce2",
+      "metric": "frozen_evaluation_return",
+      "unit": "return",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          -0.6022490061051462,
+          1.3727859695203417
+        ]
+      },
+      "series": [
+        {
+          "id": "deep-double_dqn",
+          "points": 21
+        },
+        {
+          "id": "deep-dqn",
+          "points": 21
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "shared_nonlinear",
+      "source": "/crl-code/results/shared_nonlinear/curves.json",
+      "sha256": "dc30a4c6c58f71c7ae2944f9a94598f4d5b335e8d5f6d16ee860cc5a0bc7097c",
+      "metric": "两个固定条件目标的均匀 RMSE",
+      "unit": "prediction",
+      "clock": "stream_observations",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          0.8548121130830878
+        ]
+      },
+      "series": [
+        {
+          "id": "shared_nonlinear",
+          "points": 25
+        },
+        {
+          "id": "isolated_nonlinear",
+          "points": 25
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "isolated_nonlinear",
+      "source": "/crl-code/results/isolated_nonlinear/curves.json",
+      "sha256": "cabc7eff16d983c3f2dd5f26fdbb0140313d0aa6d8e847b194addffb22e35381",
+      "metric": "两个固定条件目标的均匀 RMSE",
+      "unit": "prediction",
+      "clock": "stream_observations",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          0.8548121130830878
+        ]
+      },
+      "series": [
+        {
+          "id": "isolated_nonlinear",
+          "points": 25
+        },
+        {
+          "id": "shared_nonlinear",
+          "points": 25
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "lagged_nonlinear_td",
+      "source": "/crl-code/results/lagged_nonlinear_td/curves.json",
+      "sha256": "1b079600ff687ff91a1c982df42ffde312e503da3a8b18701d793c2eca55f2e8",
+      "metric": "二状态真实价值 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          2.706448791200911
+        ]
+      },
+      "series": [
+        {
+          "id": "lagged_nonlinear_td",
+          "points": 25
+        },
+        {
+          "id": "online_nonlinear_td",
+          "points": 25
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "online_nonlinear_td",
+      "source": "/crl-code/results/online_nonlinear_td/curves.json",
+      "sha256": "ba82d26ac2be3ef7cd9f2ab7c156980a3871c1378fa157d34be5f036fbaf52dd",
+      "metric": "二状态真实价值 RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          2.706448791200911
+        ]
+      },
+      "series": [
+        {
+          "id": "online_nonlinear_td",
+          "points": 25
+        },
+        {
+          "id": "lagged_nonlinear_td",
+          "points": 25
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "neural_td_trace",
+      "source": "/crl-code/results/neural_td_trace/curves.json",
+      "sha256": "01ebc0ad0d0fcf37f4187dfa42d23a88170dfcbe3e72a06c94687a41d854fef1",
+      "metric": "全状态预测 RMSE",
+      "unit": "RMSE",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          0.8330891242122781
+        ]
+      },
+      "series": [
+        {
+          "id": "neural_td_trace",
+          "points": 21
+        },
+        {
+          "id": "neural_td0",
+          "points": 21
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "neural_td0",
+      "source": "/crl-code/results/neural_td0/curves.json",
+      "sha256": "dde2562a3494165abaa19e63554f5ee54fbcde5159cd8543f5c0ac9cc53bd6ff",
+      "metric": "全状态预测 RMSE",
+      "unit": "RMSE",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          0.8330891242122781
+        ]
+      },
+      "series": [
+        {
+          "id": "neural_td0",
+          "points": 21
+        },
+        {
+          "id": "neural_td_trace",
+          "points": 21
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "deep-ddpg",
+      "source": "/crl-code/results/deep-ddpg/curves.json",
+      "sha256": "2d278a498f89e06204419f83ba4e2cef5206c15015c17f73add891a10172b1a5",
+      "metric": "frozen_evaluation_return",
+      "unit": "return",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          -148.4752758800045,
+          45.03740785229012
+        ]
+      },
+      "series": [
+        {
+          "id": "deep-ddpg",
+          "points": 21
+        },
+        {
+          "id": "deep-td3",
+          "points": 21
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "deep-td3",
+      "source": "/crl-code/results/deep-td3/curves.json",
+      "sha256": "2fd590474071b0b98b82f1736894a3226d27d2d60df0f634898b55a34acfc256",
+      "metric": "frozen_evaluation_return",
+      "unit": "return",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          -148.4752758800045,
+          45.03740785229012
+        ]
+      },
+      "series": [
+        {
+          "id": "deep-td3",
+          "points": 21
+        },
+        {
+          "id": "deep-ddpg",
+          "points": 21
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "deep-sac",
+      "source": "/crl-code/results/deep-sac/curves.json",
+      "sha256": "464115d2a66ffa3628a445a6123402788ea3ffd6ddc59690d2e201ad4c5de7f1",
+      "metric": "frozen_evaluation_return",
+      "unit": "return",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          -148.070188316706,
+          34.10004364323084
+        ]
+      },
+      "series": [
+        {
+          "id": "deep-sac",
+          "points": 21
+        },
+        {
+          "id": "deep-ddpg",
+          "points": 21
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "dyna_q",
+      "source": "/crl-code/results/dyna_q/curves.json",
+      "sha256": "a6495fa5419dc53f3db1321353594cc0b501af4a8b1f0ca77a37d50539dc76c8",
+      "metric": "确定性贪心策略折扣回报",
+      "unit": "return",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          -0.3989219779434647,
+          1.1281096069810934
+        ]
+      },
+      "series": [
+        {
+          "id": "dyna_q",
+          "points": 80
+        },
+        {
+          "id": "q_learning",
+          "points": 80
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "prioritized_sweeping",
+      "source": "/crl-code/results/prioritized_sweeping/curves.json",
+      "sha256": "bb1d8e61cd920096ef79e718e99b55e16e130ea8423190c1ce86676a0c4a8c69",
+      "metric": "确定性贪心策略折扣回报",
+      "unit": "return",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          -0.3989219779434647,
+          1.1281096069810934
+        ]
+      },
+      "series": [
+        {
+          "id": "prioritized_sweeping",
+          "points": 80
+        },
+        {
+          "id": "q_learning",
+          "points": 80
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "differential_td_offpolicy",
+      "source": "/crl-code/results/differential_td_offpolicy/curves.json",
+      "sha256": "05d39e74cc798ad8b7695bd0b6cf0fcfc0cf93f90b50b58f916a48b024e00e1a",
+      "metric": "参考状态对齐后的差分价值RMSE",
+      "unit": "value",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          0.41236664636131987
+        ]
+      },
+      "series": [
+        {
+          "id": "differential_td_offpolicy",
+          "points": 21
+        },
+        {
+          "id": "wrong_behavior_mean_td",
+          "points": 21
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "rvi_multistate",
+      "source": "/crl-code/results/rvi_multistate/curves.json",
+      "sha256": "8ec8c791a33ced3a42526f52cf1b27203fc4dcae5d783ef864d8c8e2b690127f",
+      "metric": "最优偏差参考对齐RMSE",
+      "unit": "value",
+      "clock": "model_sweeps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          0.46492580053165466
+        ]
+      },
+      "series": [
+        {
+          "id": "rvi_multistate",
+          "points": 21
+        },
+        {
+          "id": "unnormalized_vi_multistate",
+          "points": 21
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "differential_dyna",
+      "source": "/crl-code/results/differential_dyna/curves.json",
+      "sha256": "8d266adbc78c4f189235b3762d3af980728f76c2f4a3d98d9d00bed26cf427f1",
+      "metric": "冻结贪心策略的精确平均奖励",
+      "unit": "reward_rate",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          0,
+          0.7133005373083389
+        ]
+      },
+      "series": [
+        {
+          "id": "differential_dyna",
+          "points": 21
+        },
+        {
+          "id": "differential_q_multistate",
+          "points": 21
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "mc_control",
+      "source": "/crl-code/results/mc_control/curves.json",
+      "sha256": "e538359756e792580e33edd8fc0202d3835b1674df7abe613e3365af07aa1fc4",
+      "metric": "贪心策略精确折扣回报",
+      "unit": "return",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          -0.5000549961311149,
+          1.1358890699186048
+        ]
+      },
+      "series": [
+        {
+          "id": "mc_control",
+          "points": 80
+        },
+        {
+          "id": "watkins_q_lambda",
+          "points": 80
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "deep-c51",
+      "source": "/crl-code/results/deep-c51/curves.json",
+      "sha256": "182ad15f0e9519f5d11ac9fe988c1631fdce3d3ffc69fae2a5dfe47ad820a9e7",
+      "metric": "frozen_evaluation_return",
+      "unit": "return",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          -0.5611126638139533,
+          1.3696216354979422
+        ]
+      },
+      "series": [
+        {
+          "id": "deep-c51",
+          "points": 21
+        },
+        {
+          "id": "deep-dqn",
+          "points": 21
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "deep-qr_dqn",
+      "source": "/crl-code/results/deep-qr_dqn/curves.json",
+      "sha256": "a85aced36bd40610b072024e6310d30077cd583827ff7ac82a157dcd097fe125",
+      "metric": "frozen_evaluation_return",
+      "unit": "return",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          -0.6022490061051462,
+          1.3727859695203417
+        ]
+      },
+      "series": [
+        {
+          "id": "deep-qr_dqn",
+          "points": 21
+        },
+        {
+          "id": "deep-dqn",
+          "points": 21
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "rtrl",
+      "source": "/crl-code/results/rtrl/curves.json",
+      "sha256": "6210868e1ed69722784c9fb47453c93d859caa37ba7c508a58454c3a471d53b9",
+      "metric": "更新前序列预测平方误差 EMA",
+      "unit": "squared_error",
+      "clock": "sequences",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          -0.0085399246246802,
+          0.22755610232137985
+        ]
+      },
+      "series": [
+        {
+          "id": "rtrl",
+          "points": 80
+        },
+        {
+          "id": "tbptt",
+          "points": 80
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "tbptt",
+      "source": "/crl-code/results/tbptt/curves.json",
+      "sha256": "ce734377d90100119d6baff418ab9acae195d5cb148ef53835f01e458118e056",
+      "metric": "更新前序列预测平方误差 EMA",
+      "unit": "squared_error",
+      "clock": "sequences",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          -0.0085399246246802,
+          0.22755610232137985
+        ]
+      },
+      "series": [
+        {
+          "id": "tbptt",
+          "points": 80
+        },
+        {
+          "id": "rtrl",
+          "points": 80
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "integrated_recent_model",
+      "source": "/crl-code/results/integrated_recent_model/curves.json",
+      "sha256": "412e56303be1d01f3e7cb20dc0e5d433f24c1e79dcd43c070de50e927938d59a",
+      "metric": "最近100个真实步的平均外部奖励",
+      "unit": "reward_per_environment_step",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          -0.21154036210557936,
+          1.0153581667059925
+        ]
+      },
+      "series": [
+        {
+          "id": "integrated_recent_model",
+          "points": 61
+        },
+        {
+          "id": "integrated_no_planning",
+          "points": 61
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    },
+    {
+      "id": "integrated_cumulative_model",
+      "source": "/crl-code/results/integrated_cumulative_model/curves.json",
+      "sha256": "f4729cf7d4ee0cdad3c1776682cb702a6f05552ca3fb62ccb77c004c4dea4664",
+      "metric": "最近100个真实步的平均外部奖励",
+      "unit": "reward_per_environment_step",
+      "clock": "environment_steps",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "domains": {
+        "x": [
+          0,
+          1200
+        ],
+        "y": [
+          -0.21154036210557936,
+          1.0153581667059925
+        ]
+      },
+      "series": [
+        {
+          "id": "integrated_cumulative_model",
+          "points": 61
+        },
+        {
+          "id": "integrated_recent_model",
+          "points": 61
+        }
+      ],
+      "transformation": "none; unchanged mean and sample SD at every recorded step"
+    }
+  ]
+}

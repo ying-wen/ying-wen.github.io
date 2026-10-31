@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="548" viewBox="0 0 900 548" role="img" aria-labelledby="title description">
+<title id="title">最后四个回合仍存在常数步长周期</title><desc id="description">机制诊断与有限步长/采样分布核验；不是原论文性能复现，也不提供一般算法排序。 累计转移数（奇数=A 更新后，偶数=B 更新后）；更新后的共享参数 θ。原始数值见同目录 results.json。</desc>
+<rect width="100%" height="100%" fill="#fff"/>
+<g font-family="system-ui, -apple-system, Noto Sans CJK SC, sans-serif" fill="#233748">
+<text x="96" y="36" font-size="23" font-weight="650">最后四个回合仍存在常数步长周期</text>
+<text x="96" y="68" font-size="16">更新后的共享参数 θ</text>
+<path d="M96 98h32" fill="none" stroke="#285d82" stroke-width="2.6" stroke-dasharray=""/><text x="139" y="104" font-size="18">TD：逐步在线</text>
+<path d="M293 98h32" fill="none" stroke="#ad5733" stroke-width="2.6" stroke-dasharray="9 5"/><text x="336" y="104" font-size="18">ETD：逐步在线</text>
+<path d="M96 458H864" stroke="#a4b2c0" fill="none"/><text x="84" y="464" text-anchor="end" font-size="17">0</text>
+<path d="M96 378H864" stroke="#e2e7eb" fill="none"/><text x="84" y="384" text-anchor="end" font-size="17">0.5</text>
+<path d="M96 298H864" stroke="#e2e7eb" fill="none"/><text x="84" y="304" text-anchor="end" font-size="17">1</text>
+<path d="M96 218H864" stroke="#e2e7eb" fill="none"/><text x="84" y="224" text-anchor="end" font-size="17">1.5</text>
+<path d="M96 138H864" stroke="#e2e7eb" fill="none"/><text x="84" y="144" text-anchor="end" font-size="17">2</text>
+<path d="M96 458v6" stroke="#677789"/><text x="96" y="488" text-anchor="middle" font-size="17">392</text>
+<path d="M288 458v6" stroke="#677789"/><text x="288" y="488" text-anchor="middle" font-size="17">394</text>
+<path d="M480 458v6" stroke="#677789"/><text x="480" y="488" text-anchor="middle" font-size="17">396</text>
+<path d="M672 458v6" stroke="#677789"/><text x="672" y="488" text-anchor="middle" font-size="17">398</text>
+<path d="M864 458v6" stroke="#677789"/><text x="864" y="488" text-anchor="middle" font-size="17">400</text>
+<path d="M96 138V458H864" fill="none" stroke="#677789" stroke-width="1.2"/>
+<path d="M96.000 154.000 L192.000 138.000 L288.000 154.000 L384.000 138.000 L480.000 154.000 L576.000 138.000 L672.000 154.000 L768.000 138.000 L864.000 154.000" fill="none" stroke="#285d82" stroke-width="2.6" stroke-linejoin="round" stroke-dasharray=""/>
+<circle cx="96" cy="154.00000032689286" r="3.5" fill="#285d82"/>
+<circle cx="192" cy="138.00000032689286" r="3.5" fill="#285d82"/>
+<circle cx="288" cy="154.00000029420357" r="3.5" fill="#285d82"/>
+<circle cx="384" cy="138.00000029420357" r="3.5" fill="#285d82"/>
+<circle cx="480" cy="154.00000026478318" r="3.5" fill="#285d82"/>
+<circle cx="576" cy="138.00000026478318" r="3.5" fill="#285d82"/>
+<circle cx="672" cy="154.00000023830484" r="3.5" fill="#285d82"/>
+<circle cx="768" cy="138.0000002383049" r="3.5" fill="#285d82"/>
+<circle cx="864" cy="154.00000021447437" r="3.5" fill="#285d82"/>
+<path d="M96.000 234.000 L192.000 218.000 L288.000 234.000 L384.000 218.000 L480.000 234.000 L576.000 218.000 L672.000 234.000 L768.000 218.000 L864.000 234.000" fill="none" stroke="#ad5733" stroke-width="2.6" stroke-linejoin="round" stroke-dasharray="9 5"/>
+<rect x="92.5" y="230.50000000000006" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<rect x="188.5" y="214.50000000000006" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<rect x="284.5" y="230.50000000000006" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<rect x="380.5" y="214.50000000000006" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<rect x="476.5" y="230.50000000000006" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<rect x="572.5" y="214.50000000000006" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<rect x="668.5" y="230.50000000000006" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<rect x="764.5" y="214.50000000000006" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<rect x="860.5" y="230.50000000000006" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<text x="480" y="523" text-anchor="middle" font-size="18">累计转移数（奇数=A 更新后，偶数=B 更新后）</text></g></svg>

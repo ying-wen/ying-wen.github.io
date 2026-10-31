@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "study_id": "model-memory-planning",
+  "status": "unfilled-protocol",
+  "purpose": "descriptive-reanalysis-and-prospective-study-design",
+  "execution_status": "not-started",
+  "instructions": "填写null字段并保留开发历史。此文件没有执行回执或结果；旧记录可描述性复算，未来确认需要独立协议与新证据。",
+  "researcher": null,
+  "question": null,
+  "retrospective": {
+    "evidence_status": "existing-public-records-descriptive-only",
+    "archive_url": "https://yingwen.io/crl-code/results/integrated_recent_model/raw-runs.zip",
+    "algorithms": [
+      "integrated_recent_model",
+      "integrated_cumulative_model",
+      "integrated_no_planning"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "environment_steps": 1200,
+    "reward_switch_after_step": 600,
+    "command": "python3 compare_continual_runs.py --archive raw-runs.zip > comparison.json",
+    "analysis_output_sha256": null,
+    "observations": null
+  },
+  "comparison": {
+    "primary": [
+      "integrated_recent_model",
+      "integrated_cumulative_model"
+    ],
+    "secondary": [
+      "integrated_recent_model",
+      "integrated_no_planning"
+    ],
+    "primary_metric": "lifetime_reward(T)/T",
+    "direction": "recent minus comparator; positive favors recent",
+    "auxiliary_metrics": [
+      "post_change_rate",
+      "last_window",
+      "resource_profile",
+      "model_reward_mae"
+    ],
+    "minimum_meaningful_difference": null,
+    "falsifying_observations": null,
+    "missing_factorial_cell": "cumulative model without planning; not present in selected existing records",
+    "complete_method_claim": null,
+    "same_backbone_mechanism_claim": null
+  },
+  "development": {
+    "already_exposed": "All existing public runs and their 1200/600 schedule are development evidence.",
+    "accessible_environment_specification": null,
+    "allowed_prefix_steps": null,
+    "seeds": null,
+    "candidate_configurations": null,
+    "candidate_count_limit": null,
+    "selection_rule": null,
+    "total_environment_step_limit": null,
+    "total_compute_limit": null,
+    "all_trials_and_failures": null
+  },
+  "prospective_test": {
+    "status": "not-designed-or-run",
+    "scope": "Fill whether the claim concerns the known schedule or unseen change schedules.",
+    "source_sha256": null,
+    "protocol_sha256": null,
+    "configuration_sha256": null,
+    "independent_environment_schedule_interface": null,
+    "sealed_seed_custodian": null,
+    "sealed_seed_manifest_sha256": null,
+    "sealed_environment_manifest_sha256": null,
+    "unseal_rule": null,
+    "runs_per_method": null,
+    "sample_size_rationale": null,
+    "environment_steps_per_run": null,
+    "computation_budget_definition": null,
+    "computation_budget_per_run": null,
+    "memory_budget_bytes": null,
+    "behavior_and_planning_rng_separation": null,
+    "external_randomness_pairing": null,
+    "uncertainty_method": null,
+    "missing_and_failed_run_policy": null,
+    "stopping_rule": null,
+    "online_learning_during_test": true,
+    "designer_retuning_after_unsealing": false
+  },
+  "information_contract": {
+    "learner_observes": [
+      "position",
+      "executed action",
+      "next position",
+      "external reward"
+    ],
+    "designer_given": [
+      "seven positions",
+      "two subgoals 1 and 4",
+      "maximum skill duration 6",
+      "fixed learning and exploration rules"
+    ],
+    "evaluator_only": [
+      "active rewarding position",
+      "change schedule",
+      "analysis phase labels"
+    ],
+    "no_reset_at_change": true,
+    "unfinished_macro_reward_counts": true,
+    "unfinished_macro_is_model_sample": false,
+    "learned_revisit_or_planning_schedule": false
+  },
+  "proposed_logging": [
+    {
+      "stream": "真实交互：逐原子步",
+      "required_fields": [
+        "run_id",
+        "seed",
+        "t",
+        "state_before",
+        "primitive_action",
+        "successor",
+        "external_reward",
+        "cumulative_reward",
+        "active_option",
+        "option_version",
+        "macro_id"
+      ],
+      "reason": "从收到的原始奖励独立重算J，并判断模型变化是否先改变行动、再改变经验。",
+      "legacy_gap": "旧CSV只有稀疏检查点的累计奖励；没有逐步状态、动作与奖励。"
+    },
+    {
+      "stream": "宏动作边界：每次完成或预算截断",
+      "required_fields": [
+        "macro_id",
+        "start_t",
+        "end_t",
+        "start_state",
+        "option_id",
+        "executed_policy_version",
+        "reward_sum",
+        "duration",
+        "successor",
+        "stop_reason",
+        "censored"
+      ],
+      "reason": "区分到目标、达到6步上限与整个运行的截断。未完成宏动作不得写入完整模型；已经收到的外部奖励仍计入J。",
+      "legacy_gap": "旧记录有累计完成数、上限停止数和pending_duration，不能恢复每次边界。"
+    },
+    {
+      "stream": "模型与控制：每次真实/模拟写入",
+      "required_fields": [
+        "update_id",
+        "model_cell",
+        "model_count_before",
+        "model_version",
+        "prediction_before",
+        "observed_target",
+        "model_after",
+        "q_before",
+        "q_after",
+        "rate_before",
+        "rate_after",
+        "backup_source",
+        "policy_commit",
+        "invalidated_cells"
+      ],
+      "reason": "检查旧模型被谁读取、误差用哪个参数版本，以及规划是否跨过动作排序阈值；不能从一次残差下降推出后续收益。",
+      "legacy_gap": "旧记录只保存误差滑窗、模型单元数、失效次数与备份总数。"
+    },
+    {
+      "stream": "资源：逐步计数＋运行汇总",
+      "required_fields": [
+        "environment_steps",
+        "real_backups",
+        "model_backups",
+        "subtask_backups",
+        "model_writes",
+        "model_cells",
+        "peak_memory_bytes",
+        "elapsed_seconds",
+        "process_cpu_seconds",
+        "hardware",
+        "dependency_versions"
+      ],
+      "reason": "把交互节省与计算/存储代价分别报告。时间和峰值内存随平台变化，须保存测量方法；单元数不是字节数。",
+      "legacy_gap": "旧日志可重算前三种备份与单元数；没有足以比较的墙钟、CPU或峰值内存记录。"
+    },
+    {
+      "stream": "随机性与来源：运行前与检查点",
+      "required_fields": [
+        "source_hashes",
+        "protocol_hash",
+        "config_hash",
+        "environment_rng_id",
+        "behavior_rng_id",
+        "planning_rng_id",
+        "rng_states",
+        "learner_checkpoint_hash",
+        "diagnostic_rng_id"
+      ],
+      "reason": "让后续运行可检查环境配对、行为与规划随机流、学习器恢复及诊断隔离。主流和诊断流各自记账。",
+      "legacy_gap": "旧包包含源码哈希、配置和种子；行为与规划共用随机发生器，没有逐检查点完整状态。"
+    }
+  ],
+  "prospective_protocol": {
+    "schema": "continual-ring-protocol-v2",
+    "implementation_url": "https://yingwen.io/crl-code/tutorials/continual_protocol.py",
+    "implementation_status": "validation-and-fixed-sequence-fixture",
+    "research_status": "not-run",
+    "configurations": [
+      {
+        "id": "recent-planning",
+        "memory": "recent",
+        "planning": 4
+      },
+      {
+        "id": "cumulative-planning",
+        "memory": "cumulative",
+        "planning": 4
+      },
+      {
+        "id": "recent-no-planning",
+        "memory": "recent",
+        "planning": 0
+      },
+      {
+        "id": "cumulative-no-planning",
+        "memory": "cumulative",
+        "planning": 0
+      }
+    ],
+    "independent_environment_schedule_interface": "separate evaluator-owned JSON with inclusive start_step and rewarding_position",
+    "rng_streams": [
+      "environment",
+      "behavior",
+      "planning"
+    ],
+    "behavior_pairing": "by draw call, not guaranteed by atomic step",
+    "legacy_reproduction": false,
+    "default_mode": "validate",
+    "performance_run_cli": false,
+    "completed_log_events": [
+      "run_start",
+      "macro_start",
+      "atomic_step",
+      "subtask_update",
+      "macro_boundary",
+      "real_update",
+      "model_write",
+      "planning_update",
+      "policy_commit",
+      "resource_counts",
+      "run_end"
+    ],
+    "pending": [
+      "sealed study design and runner",
+      "complete checkpoint and tested resume",
+      "isolated frozen diagnostic",
+      "wall-clock CPU peak-memory hardware measurement",
+      "compute-matched comparison and learned scheduling"
+    ],
+    "fixture_evidence": "fixed-sequence-semantics-only",
+    "results": null,
+    "execution_receipt": null
+  },
+  "freeze_diagnostic_state": [
+    "Q",
+    "subtask Q",
+    "committed policies",
+    "option versions",
+    "model cells and counts",
+    "rate estimate",
+    "pending macro state",
+    "all RNG states"
+  ],
+  "diagnosis_isolated_from_main_stream": null,
+  "results": null,
+  "execution_receipt": null
+}

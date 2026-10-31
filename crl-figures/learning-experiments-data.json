@@ -1,0 +1,25 @@
+{
+  "kind": "independent-teaching-calculations",
+  "occupancy": {
+    "windowSeconds": 30,
+    "baselineSeconds": 6,
+    "cueSeconds": 18,
+    "differenceSeconds": 12,
+    "differencePercentagePoints": 40
+  },
+  "baiting": {
+    "assignmentProbability": 0.1,
+    "unvisitedTrials": [
+      1,
+      2,
+      3
+    ],
+    "availability": [
+      0.09999999999999998,
+      0.18999999999999995,
+      0.2709999999999999
+    ],
+    "initialRewardAvailable": false,
+    "extraPortionsAccumulate": false
+  }
+}

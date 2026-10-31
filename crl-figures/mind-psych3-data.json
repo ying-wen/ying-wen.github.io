@@ -1,0 +1,103 @@
+{
+  "kind": "independent-teaching-calculations",
+  "identity": {
+    "predicted": [
+      3,
+      0
+    ],
+    "observed": [
+      0,
+      3
+    ],
+    "utility": [
+      1,
+      1
+    ],
+    "featureError": [
+      -3,
+      3
+    ],
+    "scalarError": 0
+  },
+  "devaluation": {
+    "outcomeProbability": 1,
+    "utilityBefore": 1,
+    "utilityAfter": 0,
+    "cachedActionValue": 1,
+    "recomputedValue": 0
+  },
+  "replay": {
+    "chains": [
+      [
+        "A1",
+        "A2",
+        "A3",
+        "A4"
+      ],
+      [
+        "B1",
+        "B2",
+        "B3",
+        "B4"
+      ]
+    ],
+    "visual": [
+      "A3",
+      "B1",
+      "A1",
+      "B4",
+      "A4",
+      "B2",
+      "A2",
+      "B3"
+    ],
+    "trueEdges": [
+      "A1→A2",
+      "A2→A3",
+      "A3→A4",
+      "B1→B2",
+      "B2→B3",
+      "B3→B4"
+    ],
+    "visualEdges": [
+      "A3→B1",
+      "B1→A1",
+      "A1→B4",
+      "B4→A4",
+      "A4→B2",
+      "B2→A2",
+      "A2→B3"
+    ],
+    "sharedEdges": []
+  },
+  "renewal": {
+    "memories": [
+      1,
+      0
+    ],
+    "contextWeights": [
+      [
+        0.9,
+        0.1
+      ],
+      [
+        0.1,
+        0.9
+      ],
+      [
+        0.9,
+        0.1
+      ]
+    ],
+    "predictions": [
+      0.9,
+      0.1,
+      0.9
+    ],
+    "overwrittenMemory": 0,
+    "frozenOverwritePredictions": [
+      0,
+      0
+    ]
+  }
+}

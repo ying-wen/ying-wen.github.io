@@ -1,0 +1,4523 @@
+{
+  "metadata": {
+    "kind": "exact",
+    "sampled_runs": 0,
+    "clock": "primitive environment steps; H is an evaluation cutoff, not termination",
+    "unknown": "fixed theta L/R; prior and observation/transition laws given"
+  },
+  "config": {
+    "horizon": 6,
+    "recovery": 4,
+    "prior": 0.5,
+    "discount": 1
+  },
+  "prediction": {
+    "before": {
+      "sign": 1,
+      "screen": 1
+    },
+    "after": {
+      "sign": 0,
+      "screen": 1
+    },
+    "information_bits": {
+      "sign": 1,
+      "screen": 0
+    },
+    "overfit_screen": {
+      "old_mean": 0,
+      "new_mean": 1,
+      "same_sample_before": 1,
+      "same_sample_after": 0,
+      "fresh_frame_before": 1,
+      "fresh_frame_after": 2
+    }
+  },
+  "choices": {
+    "left": {
+      "value": 3.5,
+      "mass": 1,
+      "outcomes": {
+        "1": 0.5,
+        "6": 0.5
+      }
+    },
+    "right": {
+      "value": 3.5,
+      "mass": 1,
+      "outcomes": {
+        "1": 0.5,
+        "6": 0.5
+      }
+    },
+    "sign": {
+      "value": 5,
+      "mass": 1,
+      "outcomes": {
+        "5": 1
+      }
+    },
+    "screen": {
+      "value": 4,
+      "mass": 1,
+      "outcomes": {
+        "4": 1
+      }
+    }
+  },
+  "decision": {
+    "value": 5,
+    "action": "sign",
+    "values": {
+      "left": 3.5,
+      "right": 3.5,
+      "sign": 5,
+      "screen": 4
+    }
+  },
+  "trajectories": {
+    "sign_L": {
+      "theta": "L",
+      "events": [
+        {
+          "step": 1,
+          "from": "J",
+          "action": "sign",
+          "reward": 0,
+          "to": "J",
+          "recovery_remaining": 0,
+          "q_before": 0.5,
+          "q_after": 0,
+          "control_q_before": 0.5,
+          "control_q_after": 0,
+          "observation": {
+            "channel": "sign",
+            "z": -1
+          }
+        },
+        {
+          "step": 2,
+          "from": "J",
+          "action": "left",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 0,
+          "q_after": 0,
+          "control_q_before": 0,
+          "control_q_after": 0,
+          "observation": {
+            "channel": "route",
+            "side": "L",
+            "good": true
+          }
+        },
+        {
+          "step": 3,
+          "from": "G",
+          "action": "collect",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 0,
+          "q_after": 0,
+          "control_q_before": 0,
+          "control_q_after": 0,
+          "observation": null
+        },
+        {
+          "step": 4,
+          "from": "G",
+          "action": "collect",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 0,
+          "q_after": 0,
+          "control_q_before": 0,
+          "control_q_after": 0,
+          "observation": null
+        },
+        {
+          "step": 5,
+          "from": "G",
+          "action": "collect",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 0,
+          "q_after": 0,
+          "control_q_before": 0,
+          "control_q_after": 0,
+          "observation": null
+        },
+        {
+          "step": 6,
+          "from": "G",
+          "action": "collect",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 0,
+          "q_after": 0,
+          "control_q_before": 0,
+          "control_q_after": 0,
+          "observation": null
+        }
+      ],
+      "total": 5,
+      "final_state": {
+        "place": "G",
+        "remaining": 0
+      },
+      "final_q": 0
+    },
+    "sign_R": {
+      "theta": "R",
+      "events": [
+        {
+          "step": 1,
+          "from": "J",
+          "action": "sign",
+          "reward": 0,
+          "to": "J",
+          "recovery_remaining": 0,
+          "q_before": 0.5,
+          "q_after": 1,
+          "control_q_before": 0.5,
+          "control_q_after": 1,
+          "observation": {
+            "channel": "sign",
+            "z": 1
+          }
+        },
+        {
+          "step": 2,
+          "from": "J",
+          "action": "right",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 1,
+          "q_after": 1,
+          "control_q_before": 1,
+          "control_q_after": 1,
+          "observation": {
+            "channel": "route",
+            "side": "R",
+            "good": true
+          }
+        },
+        {
+          "step": 3,
+          "from": "G",
+          "action": "collect",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 1,
+          "q_after": 1,
+          "control_q_before": 1,
+          "control_q_after": 1,
+          "observation": null
+        },
+        {
+          "step": 4,
+          "from": "G",
+          "action": "collect",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 1,
+          "q_after": 1,
+          "control_q_before": 1,
+          "control_q_after": 1,
+          "observation": null
+        },
+        {
+          "step": 5,
+          "from": "G",
+          "action": "collect",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 1,
+          "q_after": 1,
+          "control_q_before": 1,
+          "control_q_after": 1,
+          "observation": null
+        },
+        {
+          "step": 6,
+          "from": "G",
+          "action": "collect",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 1,
+          "q_after": 1,
+          "control_q_before": 1,
+          "control_q_after": 1,
+          "observation": null
+        }
+      ],
+      "total": 5,
+      "final_state": {
+        "place": "G",
+        "remaining": 0
+      },
+      "final_q": 1
+    },
+    "direct_L": {
+      "theta": "L",
+      "events": [
+        {
+          "step": 1,
+          "from": "J",
+          "action": "left",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 0.5,
+          "q_after": 0,
+          "control_q_before": 0.5,
+          "control_q_after": 0,
+          "observation": {
+            "channel": "route",
+            "side": "L",
+            "good": true
+          }
+        },
+        {
+          "step": 2,
+          "from": "G",
+          "action": "collect",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 0,
+          "q_after": 0,
+          "control_q_before": 0,
+          "control_q_after": 0,
+          "observation": null
+        },
+        {
+          "step": 3,
+          "from": "G",
+          "action": "collect",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 0,
+          "q_after": 0,
+          "control_q_before": 0,
+          "control_q_after": 0,
+          "observation": null
+        },
+        {
+          "step": 4,
+          "from": "G",
+          "action": "collect",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 0,
+          "q_after": 0,
+          "control_q_before": 0,
+          "control_q_after": 0,
+          "observation": null
+        },
+        {
+          "step": 5,
+          "from": "G",
+          "action": "collect",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 0,
+          "q_after": 0,
+          "control_q_before": 0,
+          "control_q_after": 0,
+          "observation": null
+        },
+        {
+          "step": 6,
+          "from": "G",
+          "action": "collect",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 0,
+          "q_after": 0,
+          "control_q_before": 0,
+          "control_q_after": 0,
+          "observation": null
+        }
+      ],
+      "total": 6,
+      "final_state": {
+        "place": "G",
+        "remaining": 0
+      },
+      "final_q": 0
+    },
+    "direct_R": {
+      "theta": "R",
+      "events": [
+        {
+          "step": 1,
+          "from": "J",
+          "action": "left",
+          "reward": 0,
+          "to": "D",
+          "recovery_remaining": 4,
+          "q_before": 0.5,
+          "q_after": 1,
+          "control_q_before": 0.5,
+          "control_q_after": 1,
+          "observation": {
+            "channel": "route",
+            "side": "L",
+            "good": false
+          }
+        },
+        {
+          "step": 2,
+          "from": "D",
+          "action": "recover",
+          "reward": 0,
+          "to": "D",
+          "recovery_remaining": 3,
+          "q_before": 1,
+          "q_after": 1,
+          "control_q_before": 1,
+          "control_q_after": 1,
+          "observation": null
+        },
+        {
+          "step": 3,
+          "from": "D",
+          "action": "recover",
+          "reward": 0,
+          "to": "D",
+          "recovery_remaining": 2,
+          "q_before": 1,
+          "q_after": 1,
+          "control_q_before": 1,
+          "control_q_after": 1,
+          "observation": null
+        },
+        {
+          "step": 4,
+          "from": "D",
+          "action": "recover",
+          "reward": 0,
+          "to": "D",
+          "recovery_remaining": 1,
+          "q_before": 1,
+          "q_after": 1,
+          "control_q_before": 1,
+          "control_q_after": 1,
+          "observation": null
+        },
+        {
+          "step": 5,
+          "from": "D",
+          "action": "recover",
+          "reward": 0,
+          "to": "J",
+          "recovery_remaining": 0,
+          "q_before": 1,
+          "q_after": 1,
+          "control_q_before": 1,
+          "control_q_after": 1,
+          "observation": null
+        },
+        {
+          "step": 6,
+          "from": "J",
+          "action": "right",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 1,
+          "q_after": 1,
+          "control_q_before": 1,
+          "control_q_after": 1,
+          "observation": {
+            "channel": "route",
+            "side": "R",
+            "good": true
+          }
+        }
+      ],
+      "total": 1,
+      "final_state": {
+        "place": "G",
+        "remaining": 0
+      },
+      "final_q": 1
+    },
+    "screen_R": {
+      "theta": "R",
+      "events": [
+        {
+          "step": 1,
+          "from": "J",
+          "action": "screen",
+          "reward": 0,
+          "to": "J",
+          "recovery_remaining": 0,
+          "q_before": 0.5,
+          "q_after": 0.5,
+          "control_q_before": 0.5,
+          "control_q_after": 0.5,
+          "observation": {
+            "channel": "screen",
+            "z": -1
+          }
+        },
+        {
+          "step": 2,
+          "from": "J",
+          "action": "sign",
+          "reward": 0,
+          "to": "J",
+          "recovery_remaining": 0,
+          "q_before": 0.5,
+          "q_after": 1,
+          "control_q_before": 0.5,
+          "control_q_after": 1,
+          "observation": {
+            "channel": "sign",
+            "z": 1
+          }
+        },
+        {
+          "step": 3,
+          "from": "J",
+          "action": "right",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 1,
+          "q_after": 1,
+          "control_q_before": 1,
+          "control_q_after": 1,
+          "observation": {
+            "channel": "route",
+            "side": "R",
+            "good": true
+          }
+        },
+        {
+          "step": 4,
+          "from": "G",
+          "action": "collect",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 1,
+          "q_after": 1,
+          "control_q_before": 1,
+          "control_q_after": 1,
+          "observation": null
+        },
+        {
+          "step": 5,
+          "from": "G",
+          "action": "collect",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 1,
+          "q_after": 1,
+          "control_q_before": 1,
+          "control_q_after": 1,
+          "observation": null
+        },
+        {
+          "step": 6,
+          "from": "G",
+          "action": "collect",
+          "reward": 1,
+          "to": "G",
+          "recovery_remaining": 0,
+          "q_before": 1,
+          "q_after": 1,
+          "control_q_before": 1,
+          "control_q_after": 1,
+          "observation": null
+        }
+      ],
+      "total": 4,
+      "final_state": {
+        "place": "G",
+        "remaining": 0
+      },
+      "final_q": 1
+    }
+  },
+  "contrasts": {
+    "zero_extra_recovery": {
+      "value": 5.5,
+      "action": "left",
+      "values": {
+        "left": 5.5,
+        "right": 5.5,
+        "sign": 5,
+        "screen": 4.5
+      }
+    },
+    "one_step_left": {
+      "value": 0.5,
+      "action": "left",
+      "values": {
+        "left": 0.5,
+        "right": 0.5,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    "known_world": {
+      "value": 6,
+      "action": "right",
+      "values": {
+        "left": 1,
+        "right": 6,
+        "sign": 5,
+        "screen": 5
+      }
+    },
+    "disconnected_consumer": {
+      "value": 2.5,
+      "mass": 1,
+      "outcomes": {
+        "0": 0.5,
+        "5": 0.5
+      }
+    }
+  },
+  "matrix": [
+    {
+      "horizon": 0,
+      "recovery": 0,
+      "prior": 0,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 0,
+      "prior": 0.25,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 0,
+      "prior": 0.5,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 0,
+      "prior": 0.75,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 0,
+      "prior": 1,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 1,
+      "prior": 0,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 1,
+      "prior": 0.25,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 1,
+      "prior": 0.5,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 1,
+      "prior": 0.75,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 1,
+      "prior": 1,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 2,
+      "prior": 0,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 2,
+      "prior": 0.25,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 2,
+      "prior": 0.5,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 2,
+      "prior": 0.75,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 2,
+      "prior": 1,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 3,
+      "prior": 0,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 3,
+      "prior": 0.25,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 3,
+      "prior": 0.5,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 3,
+      "prior": 0.75,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 3,
+      "prior": 1,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 4,
+      "prior": 0,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 4,
+      "prior": 0.25,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 4,
+      "prior": 0.5,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 4,
+      "prior": 0.75,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 4,
+      "prior": 1,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 5,
+      "prior": 0,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 5,
+      "prior": 0.25,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 5,
+      "prior": 0.5,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 5,
+      "prior": 0.75,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 5,
+      "prior": 1,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 6,
+      "prior": 0,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 6,
+      "prior": 0.25,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 6,
+      "prior": 0.5,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 6,
+      "prior": 0.75,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 0,
+      "recovery": 6,
+      "prior": 1,
+      "value": 0,
+      "action": null,
+      "values": {}
+    },
+    {
+      "horizon": 1,
+      "recovery": 0,
+      "prior": 0,
+      "value": 1,
+      "action": "left",
+      "values": {
+        "left": 1,
+        "right": 0,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 0,
+      "prior": 0.25,
+      "value": 0.75,
+      "action": "left",
+      "values": {
+        "left": 0.75,
+        "right": 0.25,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 0,
+      "prior": 0.5,
+      "value": 0.5,
+      "action": "left",
+      "values": {
+        "left": 0.5,
+        "right": 0.5,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 0,
+      "prior": 0.75,
+      "value": 0.75,
+      "action": "right",
+      "values": {
+        "left": 0.25,
+        "right": 0.75,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 0,
+      "prior": 1,
+      "value": 1,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 1,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 1,
+      "prior": 0,
+      "value": 1,
+      "action": "left",
+      "values": {
+        "left": 1,
+        "right": 0,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 1,
+      "prior": 0.25,
+      "value": 0.75,
+      "action": "left",
+      "values": {
+        "left": 0.75,
+        "right": 0.25,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 1,
+      "prior": 0.5,
+      "value": 0.5,
+      "action": "left",
+      "values": {
+        "left": 0.5,
+        "right": 0.5,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 1,
+      "prior": 0.75,
+      "value": 0.75,
+      "action": "right",
+      "values": {
+        "left": 0.25,
+        "right": 0.75,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 1,
+      "prior": 1,
+      "value": 1,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 1,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 2,
+      "prior": 0,
+      "value": 1,
+      "action": "left",
+      "values": {
+        "left": 1,
+        "right": 0,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 2,
+      "prior": 0.25,
+      "value": 0.75,
+      "action": "left",
+      "values": {
+        "left": 0.75,
+        "right": 0.25,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 2,
+      "prior": 0.5,
+      "value": 0.5,
+      "action": "left",
+      "values": {
+        "left": 0.5,
+        "right": 0.5,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 2,
+      "prior": 0.75,
+      "value": 0.75,
+      "action": "right",
+      "values": {
+        "left": 0.25,
+        "right": 0.75,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 2,
+      "prior": 1,
+      "value": 1,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 1,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 3,
+      "prior": 0,
+      "value": 1,
+      "action": "left",
+      "values": {
+        "left": 1,
+        "right": 0,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 3,
+      "prior": 0.25,
+      "value": 0.75,
+      "action": "left",
+      "values": {
+        "left": 0.75,
+        "right": 0.25,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 3,
+      "prior": 0.5,
+      "value": 0.5,
+      "action": "left",
+      "values": {
+        "left": 0.5,
+        "right": 0.5,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 3,
+      "prior": 0.75,
+      "value": 0.75,
+      "action": "right",
+      "values": {
+        "left": 0.25,
+        "right": 0.75,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 3,
+      "prior": 1,
+      "value": 1,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 1,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 4,
+      "prior": 0,
+      "value": 1,
+      "action": "left",
+      "values": {
+        "left": 1,
+        "right": 0,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 4,
+      "prior": 0.25,
+      "value": 0.75,
+      "action": "left",
+      "values": {
+        "left": 0.75,
+        "right": 0.25,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 4,
+      "prior": 0.5,
+      "value": 0.5,
+      "action": "left",
+      "values": {
+        "left": 0.5,
+        "right": 0.5,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 4,
+      "prior": 0.75,
+      "value": 0.75,
+      "action": "right",
+      "values": {
+        "left": 0.25,
+        "right": 0.75,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 4,
+      "prior": 1,
+      "value": 1,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 1,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 5,
+      "prior": 0,
+      "value": 1,
+      "action": "left",
+      "values": {
+        "left": 1,
+        "right": 0,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 5,
+      "prior": 0.25,
+      "value": 0.75,
+      "action": "left",
+      "values": {
+        "left": 0.75,
+        "right": 0.25,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 5,
+      "prior": 0.5,
+      "value": 0.5,
+      "action": "left",
+      "values": {
+        "left": 0.5,
+        "right": 0.5,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 5,
+      "prior": 0.75,
+      "value": 0.75,
+      "action": "right",
+      "values": {
+        "left": 0.25,
+        "right": 0.75,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 5,
+      "prior": 1,
+      "value": 1,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 1,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 6,
+      "prior": 0,
+      "value": 1,
+      "action": "left",
+      "values": {
+        "left": 1,
+        "right": 0,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 6,
+      "prior": 0.25,
+      "value": 0.75,
+      "action": "left",
+      "values": {
+        "left": 0.75,
+        "right": 0.25,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 6,
+      "prior": 0.5,
+      "value": 0.5,
+      "action": "left",
+      "values": {
+        "left": 0.5,
+        "right": 0.5,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 6,
+      "prior": 0.75,
+      "value": 0.75,
+      "action": "right",
+      "values": {
+        "left": 0.25,
+        "right": 0.75,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 1,
+      "recovery": 6,
+      "prior": 1,
+      "value": 1,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 1,
+        "sign": 0,
+        "screen": 0
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 0,
+      "prior": 0,
+      "value": 2,
+      "action": "left",
+      "values": {
+        "left": 2,
+        "right": 1,
+        "sign": 1,
+        "screen": 1
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 0,
+      "prior": 0.25,
+      "value": 1.75,
+      "action": "left",
+      "values": {
+        "left": 1.75,
+        "right": 1.25,
+        "sign": 1,
+        "screen": 0.75
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 0,
+      "prior": 0.5,
+      "value": 1.5,
+      "action": "left",
+      "values": {
+        "left": 1.5,
+        "right": 1.5,
+        "sign": 1,
+        "screen": 0.5
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 0,
+      "prior": 0.75,
+      "value": 1.75,
+      "action": "right",
+      "values": {
+        "left": 1.25,
+        "right": 1.75,
+        "sign": 1,
+        "screen": 0.75
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 0,
+      "prior": 1,
+      "value": 2,
+      "action": "right",
+      "values": {
+        "left": 1,
+        "right": 2,
+        "sign": 1,
+        "screen": 1
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 1,
+      "prior": 0,
+      "value": 2,
+      "action": "left",
+      "values": {
+        "left": 2,
+        "right": 0,
+        "sign": 1,
+        "screen": 1
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 1,
+      "prior": 0.25,
+      "value": 1.5,
+      "action": "left",
+      "values": {
+        "left": 1.5,
+        "right": 0.5,
+        "sign": 1,
+        "screen": 0.75
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 1,
+      "prior": 0.5,
+      "value": 1,
+      "action": "left",
+      "values": {
+        "left": 1,
+        "right": 1,
+        "sign": 1,
+        "screen": 0.5
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 1,
+      "prior": 0.75,
+      "value": 1.5,
+      "action": "right",
+      "values": {
+        "left": 0.5,
+        "right": 1.5,
+        "sign": 1,
+        "screen": 0.75
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 1,
+      "prior": 1,
+      "value": 2,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 2,
+        "sign": 1,
+        "screen": 1
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 2,
+      "prior": 0,
+      "value": 2,
+      "action": "left",
+      "values": {
+        "left": 2,
+        "right": 0,
+        "sign": 1,
+        "screen": 1
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 2,
+      "prior": 0.25,
+      "value": 1.5,
+      "action": "left",
+      "values": {
+        "left": 1.5,
+        "right": 0.5,
+        "sign": 1,
+        "screen": 0.75
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 2,
+      "prior": 0.5,
+      "value": 1,
+      "action": "left",
+      "values": {
+        "left": 1,
+        "right": 1,
+        "sign": 1,
+        "screen": 0.5
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 2,
+      "prior": 0.75,
+      "value": 1.5,
+      "action": "right",
+      "values": {
+        "left": 0.5,
+        "right": 1.5,
+        "sign": 1,
+        "screen": 0.75
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 2,
+      "prior": 1,
+      "value": 2,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 2,
+        "sign": 1,
+        "screen": 1
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 3,
+      "prior": 0,
+      "value": 2,
+      "action": "left",
+      "values": {
+        "left": 2,
+        "right": 0,
+        "sign": 1,
+        "screen": 1
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 3,
+      "prior": 0.25,
+      "value": 1.5,
+      "action": "left",
+      "values": {
+        "left": 1.5,
+        "right": 0.5,
+        "sign": 1,
+        "screen": 0.75
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 3,
+      "prior": 0.5,
+      "value": 1,
+      "action": "left",
+      "values": {
+        "left": 1,
+        "right": 1,
+        "sign": 1,
+        "screen": 0.5
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 3,
+      "prior": 0.75,
+      "value": 1.5,
+      "action": "right",
+      "values": {
+        "left": 0.5,
+        "right": 1.5,
+        "sign": 1,
+        "screen": 0.75
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 3,
+      "prior": 1,
+      "value": 2,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 2,
+        "sign": 1,
+        "screen": 1
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 4,
+      "prior": 0,
+      "value": 2,
+      "action": "left",
+      "values": {
+        "left": 2,
+        "right": 0,
+        "sign": 1,
+        "screen": 1
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 4,
+      "prior": 0.25,
+      "value": 1.5,
+      "action": "left",
+      "values": {
+        "left": 1.5,
+        "right": 0.5,
+        "sign": 1,
+        "screen": 0.75
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 4,
+      "prior": 0.5,
+      "value": 1,
+      "action": "left",
+      "values": {
+        "left": 1,
+        "right": 1,
+        "sign": 1,
+        "screen": 0.5
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 4,
+      "prior": 0.75,
+      "value": 1.5,
+      "action": "right",
+      "values": {
+        "left": 0.5,
+        "right": 1.5,
+        "sign": 1,
+        "screen": 0.75
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 4,
+      "prior": 1,
+      "value": 2,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 2,
+        "sign": 1,
+        "screen": 1
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 5,
+      "prior": 0,
+      "value": 2,
+      "action": "left",
+      "values": {
+        "left": 2,
+        "right": 0,
+        "sign": 1,
+        "screen": 1
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 5,
+      "prior": 0.25,
+      "value": 1.5,
+      "action": "left",
+      "values": {
+        "left": 1.5,
+        "right": 0.5,
+        "sign": 1,
+        "screen": 0.75
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 5,
+      "prior": 0.5,
+      "value": 1,
+      "action": "left",
+      "values": {
+        "left": 1,
+        "right": 1,
+        "sign": 1,
+        "screen": 0.5
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 5,
+      "prior": 0.75,
+      "value": 1.5,
+      "action": "right",
+      "values": {
+        "left": 0.5,
+        "right": 1.5,
+        "sign": 1,
+        "screen": 0.75
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 5,
+      "prior": 1,
+      "value": 2,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 2,
+        "sign": 1,
+        "screen": 1
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 6,
+      "prior": 0,
+      "value": 2,
+      "action": "left",
+      "values": {
+        "left": 2,
+        "right": 0,
+        "sign": 1,
+        "screen": 1
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 6,
+      "prior": 0.25,
+      "value": 1.5,
+      "action": "left",
+      "values": {
+        "left": 1.5,
+        "right": 0.5,
+        "sign": 1,
+        "screen": 0.75
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 6,
+      "prior": 0.5,
+      "value": 1,
+      "action": "left",
+      "values": {
+        "left": 1,
+        "right": 1,
+        "sign": 1,
+        "screen": 0.5
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 6,
+      "prior": 0.75,
+      "value": 1.5,
+      "action": "right",
+      "values": {
+        "left": 0.5,
+        "right": 1.5,
+        "sign": 1,
+        "screen": 0.75
+      }
+    },
+    {
+      "horizon": 2,
+      "recovery": 6,
+      "prior": 1,
+      "value": 2,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 2,
+        "sign": 1,
+        "screen": 1
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 0,
+      "prior": 0,
+      "value": 3,
+      "action": "left",
+      "values": {
+        "left": 3,
+        "right": 2,
+        "sign": 2,
+        "screen": 2
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 0,
+      "prior": 0.25,
+      "value": 2.75,
+      "action": "left",
+      "values": {
+        "left": 2.75,
+        "right": 2.25,
+        "sign": 2,
+        "screen": 1.75
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 0,
+      "prior": 0.5,
+      "value": 2.5,
+      "action": "left",
+      "values": {
+        "left": 2.5,
+        "right": 2.5,
+        "sign": 2,
+        "screen": 1.5
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 0,
+      "prior": 0.75,
+      "value": 2.75,
+      "action": "right",
+      "values": {
+        "left": 2.25,
+        "right": 2.75,
+        "sign": 2,
+        "screen": 1.75
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 0,
+      "prior": 1,
+      "value": 3,
+      "action": "right",
+      "values": {
+        "left": 2,
+        "right": 3,
+        "sign": 2,
+        "screen": 2
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 1,
+      "prior": 0,
+      "value": 3,
+      "action": "left",
+      "values": {
+        "left": 3,
+        "right": 1,
+        "sign": 2,
+        "screen": 2
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 1,
+      "prior": 0.25,
+      "value": 2.5,
+      "action": "left",
+      "values": {
+        "left": 2.5,
+        "right": 1.5,
+        "sign": 2,
+        "screen": 1.5
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 1,
+      "prior": 0.5,
+      "value": 2,
+      "action": "left",
+      "values": {
+        "left": 2,
+        "right": 2,
+        "sign": 2,
+        "screen": 1
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 1,
+      "prior": 0.75,
+      "value": 2.5,
+      "action": "right",
+      "values": {
+        "left": 1.5,
+        "right": 2.5,
+        "sign": 2,
+        "screen": 1.5
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 1,
+      "prior": 1,
+      "value": 3,
+      "action": "right",
+      "values": {
+        "left": 1,
+        "right": 3,
+        "sign": 2,
+        "screen": 2
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 2,
+      "prior": 0,
+      "value": 3,
+      "action": "left",
+      "values": {
+        "left": 3,
+        "right": 0,
+        "sign": 2,
+        "screen": 2
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 2,
+      "prior": 0.25,
+      "value": 2.25,
+      "action": "left",
+      "values": {
+        "left": 2.25,
+        "right": 0.75,
+        "sign": 2,
+        "screen": 1.5
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 2,
+      "prior": 0.5,
+      "value": 2,
+      "action": "sign",
+      "values": {
+        "left": 1.5,
+        "right": 1.5,
+        "sign": 2,
+        "screen": 1
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 2,
+      "prior": 0.75,
+      "value": 2.25,
+      "action": "right",
+      "values": {
+        "left": 0.75,
+        "right": 2.25,
+        "sign": 2,
+        "screen": 1.5
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 2,
+      "prior": 1,
+      "value": 3,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 3,
+        "sign": 2,
+        "screen": 2
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 3,
+      "prior": 0,
+      "value": 3,
+      "action": "left",
+      "values": {
+        "left": 3,
+        "right": 0,
+        "sign": 2,
+        "screen": 2
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 3,
+      "prior": 0.25,
+      "value": 2.25,
+      "action": "left",
+      "values": {
+        "left": 2.25,
+        "right": 0.75,
+        "sign": 2,
+        "screen": 1.5
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 3,
+      "prior": 0.5,
+      "value": 2,
+      "action": "sign",
+      "values": {
+        "left": 1.5,
+        "right": 1.5,
+        "sign": 2,
+        "screen": 1
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 3,
+      "prior": 0.75,
+      "value": 2.25,
+      "action": "right",
+      "values": {
+        "left": 0.75,
+        "right": 2.25,
+        "sign": 2,
+        "screen": 1.5
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 3,
+      "prior": 1,
+      "value": 3,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 3,
+        "sign": 2,
+        "screen": 2
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 4,
+      "prior": 0,
+      "value": 3,
+      "action": "left",
+      "values": {
+        "left": 3,
+        "right": 0,
+        "sign": 2,
+        "screen": 2
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 4,
+      "prior": 0.25,
+      "value": 2.25,
+      "action": "left",
+      "values": {
+        "left": 2.25,
+        "right": 0.75,
+        "sign": 2,
+        "screen": 1.5
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 4,
+      "prior": 0.5,
+      "value": 2,
+      "action": "sign",
+      "values": {
+        "left": 1.5,
+        "right": 1.5,
+        "sign": 2,
+        "screen": 1
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 4,
+      "prior": 0.75,
+      "value": 2.25,
+      "action": "right",
+      "values": {
+        "left": 0.75,
+        "right": 2.25,
+        "sign": 2,
+        "screen": 1.5
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 4,
+      "prior": 1,
+      "value": 3,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 3,
+        "sign": 2,
+        "screen": 2
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 5,
+      "prior": 0,
+      "value": 3,
+      "action": "left",
+      "values": {
+        "left": 3,
+        "right": 0,
+        "sign": 2,
+        "screen": 2
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 5,
+      "prior": 0.25,
+      "value": 2.25,
+      "action": "left",
+      "values": {
+        "left": 2.25,
+        "right": 0.75,
+        "sign": 2,
+        "screen": 1.5
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 5,
+      "prior": 0.5,
+      "value": 2,
+      "action": "sign",
+      "values": {
+        "left": 1.5,
+        "right": 1.5,
+        "sign": 2,
+        "screen": 1
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 5,
+      "prior": 0.75,
+      "value": 2.25,
+      "action": "right",
+      "values": {
+        "left": 0.75,
+        "right": 2.25,
+        "sign": 2,
+        "screen": 1.5
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 5,
+      "prior": 1,
+      "value": 3,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 3,
+        "sign": 2,
+        "screen": 2
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 6,
+      "prior": 0,
+      "value": 3,
+      "action": "left",
+      "values": {
+        "left": 3,
+        "right": 0,
+        "sign": 2,
+        "screen": 2
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 6,
+      "prior": 0.25,
+      "value": 2.25,
+      "action": "left",
+      "values": {
+        "left": 2.25,
+        "right": 0.75,
+        "sign": 2,
+        "screen": 1.5
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 6,
+      "prior": 0.5,
+      "value": 2,
+      "action": "sign",
+      "values": {
+        "left": 1.5,
+        "right": 1.5,
+        "sign": 2,
+        "screen": 1
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 6,
+      "prior": 0.75,
+      "value": 2.25,
+      "action": "right",
+      "values": {
+        "left": 0.75,
+        "right": 2.25,
+        "sign": 2,
+        "screen": 1.5
+      }
+    },
+    {
+      "horizon": 3,
+      "recovery": 6,
+      "prior": 1,
+      "value": 3,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 3,
+        "sign": 2,
+        "screen": 2
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 0,
+      "prior": 0,
+      "value": 4,
+      "action": "left",
+      "values": {
+        "left": 4,
+        "right": 3,
+        "sign": 3,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 0,
+      "prior": 0.25,
+      "value": 3.75,
+      "action": "left",
+      "values": {
+        "left": 3.75,
+        "right": 3.25,
+        "sign": 3,
+        "screen": 2.75
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 0,
+      "prior": 0.5,
+      "value": 3.5,
+      "action": "left",
+      "values": {
+        "left": 3.5,
+        "right": 3.5,
+        "sign": 3,
+        "screen": 2.5
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 0,
+      "prior": 0.75,
+      "value": 3.75,
+      "action": "right",
+      "values": {
+        "left": 3.25,
+        "right": 3.75,
+        "sign": 3,
+        "screen": 2.75
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 0,
+      "prior": 1,
+      "value": 4,
+      "action": "right",
+      "values": {
+        "left": 3,
+        "right": 4,
+        "sign": 3,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 1,
+      "prior": 0,
+      "value": 4,
+      "action": "left",
+      "values": {
+        "left": 4,
+        "right": 2,
+        "sign": 3,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 1,
+      "prior": 0.25,
+      "value": 3.5,
+      "action": "left",
+      "values": {
+        "left": 3.5,
+        "right": 2.5,
+        "sign": 3,
+        "screen": 2.5
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 1,
+      "prior": 0.5,
+      "value": 3,
+      "action": "left",
+      "values": {
+        "left": 3,
+        "right": 3,
+        "sign": 3,
+        "screen": 2
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 1,
+      "prior": 0.75,
+      "value": 3.5,
+      "action": "right",
+      "values": {
+        "left": 2.5,
+        "right": 3.5,
+        "sign": 3,
+        "screen": 2.5
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 1,
+      "prior": 1,
+      "value": 4,
+      "action": "right",
+      "values": {
+        "left": 2,
+        "right": 4,
+        "sign": 3,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 2,
+      "prior": 0,
+      "value": 4,
+      "action": "left",
+      "values": {
+        "left": 4,
+        "right": 1,
+        "sign": 3,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 2,
+      "prior": 0.25,
+      "value": 3.25,
+      "action": "left",
+      "values": {
+        "left": 3.25,
+        "right": 1.75,
+        "sign": 3,
+        "screen": 2.25
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 2,
+      "prior": 0.5,
+      "value": 3,
+      "action": "sign",
+      "values": {
+        "left": 2.5,
+        "right": 2.5,
+        "sign": 3,
+        "screen": 2
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 2,
+      "prior": 0.75,
+      "value": 3.25,
+      "action": "right",
+      "values": {
+        "left": 1.75,
+        "right": 3.25,
+        "sign": 3,
+        "screen": 2.25
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 2,
+      "prior": 1,
+      "value": 4,
+      "action": "right",
+      "values": {
+        "left": 1,
+        "right": 4,
+        "sign": 3,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 3,
+      "prior": 0,
+      "value": 4,
+      "action": "left",
+      "values": {
+        "left": 4,
+        "right": 0,
+        "sign": 3,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 3,
+      "prior": 0.25,
+      "value": 3,
+      "action": "left",
+      "values": {
+        "left": 3,
+        "right": 1,
+        "sign": 3,
+        "screen": 2.25
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 3,
+      "prior": 0.5,
+      "value": 3,
+      "action": "sign",
+      "values": {
+        "left": 2,
+        "right": 2,
+        "sign": 3,
+        "screen": 2
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 3,
+      "prior": 0.75,
+      "value": 3,
+      "action": "right",
+      "values": {
+        "left": 1,
+        "right": 3,
+        "sign": 3,
+        "screen": 2.25
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 3,
+      "prior": 1,
+      "value": 4,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 4,
+        "sign": 3,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 4,
+      "prior": 0,
+      "value": 4,
+      "action": "left",
+      "values": {
+        "left": 4,
+        "right": 0,
+        "sign": 3,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 4,
+      "prior": 0.25,
+      "value": 3,
+      "action": "left",
+      "values": {
+        "left": 3,
+        "right": 1,
+        "sign": 3,
+        "screen": 2.25
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 4,
+      "prior": 0.5,
+      "value": 3,
+      "action": "sign",
+      "values": {
+        "left": 2,
+        "right": 2,
+        "sign": 3,
+        "screen": 2
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 4,
+      "prior": 0.75,
+      "value": 3,
+      "action": "right",
+      "values": {
+        "left": 1,
+        "right": 3,
+        "sign": 3,
+        "screen": 2.25
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 4,
+      "prior": 1,
+      "value": 4,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 4,
+        "sign": 3,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 5,
+      "prior": 0,
+      "value": 4,
+      "action": "left",
+      "values": {
+        "left": 4,
+        "right": 0,
+        "sign": 3,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 5,
+      "prior": 0.25,
+      "value": 3,
+      "action": "left",
+      "values": {
+        "left": 3,
+        "right": 1,
+        "sign": 3,
+        "screen": 2.25
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 5,
+      "prior": 0.5,
+      "value": 3,
+      "action": "sign",
+      "values": {
+        "left": 2,
+        "right": 2,
+        "sign": 3,
+        "screen": 2
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 5,
+      "prior": 0.75,
+      "value": 3,
+      "action": "right",
+      "values": {
+        "left": 1,
+        "right": 3,
+        "sign": 3,
+        "screen": 2.25
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 5,
+      "prior": 1,
+      "value": 4,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 4,
+        "sign": 3,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 6,
+      "prior": 0,
+      "value": 4,
+      "action": "left",
+      "values": {
+        "left": 4,
+        "right": 0,
+        "sign": 3,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 6,
+      "prior": 0.25,
+      "value": 3,
+      "action": "left",
+      "values": {
+        "left": 3,
+        "right": 1,
+        "sign": 3,
+        "screen": 2.25
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 6,
+      "prior": 0.5,
+      "value": 3,
+      "action": "sign",
+      "values": {
+        "left": 2,
+        "right": 2,
+        "sign": 3,
+        "screen": 2
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 6,
+      "prior": 0.75,
+      "value": 3,
+      "action": "right",
+      "values": {
+        "left": 1,
+        "right": 3,
+        "sign": 3,
+        "screen": 2.25
+      }
+    },
+    {
+      "horizon": 4,
+      "recovery": 6,
+      "prior": 1,
+      "value": 4,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 4,
+        "sign": 3,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 0,
+      "prior": 0,
+      "value": 5,
+      "action": "left",
+      "values": {
+        "left": 5,
+        "right": 4,
+        "sign": 4,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 0,
+      "prior": 0.25,
+      "value": 4.75,
+      "action": "left",
+      "values": {
+        "left": 4.75,
+        "right": 4.25,
+        "sign": 4,
+        "screen": 3.75
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 0,
+      "prior": 0.5,
+      "value": 4.5,
+      "action": "left",
+      "values": {
+        "left": 4.5,
+        "right": 4.5,
+        "sign": 4,
+        "screen": 3.5
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 0,
+      "prior": 0.75,
+      "value": 4.75,
+      "action": "right",
+      "values": {
+        "left": 4.25,
+        "right": 4.75,
+        "sign": 4,
+        "screen": 3.75
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 0,
+      "prior": 1,
+      "value": 5,
+      "action": "right",
+      "values": {
+        "left": 4,
+        "right": 5,
+        "sign": 4,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 1,
+      "prior": 0,
+      "value": 5,
+      "action": "left",
+      "values": {
+        "left": 5,
+        "right": 3,
+        "sign": 4,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 1,
+      "prior": 0.25,
+      "value": 4.5,
+      "action": "left",
+      "values": {
+        "left": 4.5,
+        "right": 3.5,
+        "sign": 4,
+        "screen": 3.5
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 1,
+      "prior": 0.5,
+      "value": 4,
+      "action": "left",
+      "values": {
+        "left": 4,
+        "right": 4,
+        "sign": 4,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 1,
+      "prior": 0.75,
+      "value": 4.5,
+      "action": "right",
+      "values": {
+        "left": 3.5,
+        "right": 4.5,
+        "sign": 4,
+        "screen": 3.5
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 1,
+      "prior": 1,
+      "value": 5,
+      "action": "right",
+      "values": {
+        "left": 3,
+        "right": 5,
+        "sign": 4,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 2,
+      "prior": 0,
+      "value": 5,
+      "action": "left",
+      "values": {
+        "left": 5,
+        "right": 2,
+        "sign": 4,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 2,
+      "prior": 0.25,
+      "value": 4.25,
+      "action": "left",
+      "values": {
+        "left": 4.25,
+        "right": 2.75,
+        "sign": 4,
+        "screen": 3.25
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 2,
+      "prior": 0.5,
+      "value": 4,
+      "action": "sign",
+      "values": {
+        "left": 3.5,
+        "right": 3.5,
+        "sign": 4,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 2,
+      "prior": 0.75,
+      "value": 4.25,
+      "action": "right",
+      "values": {
+        "left": 2.75,
+        "right": 4.25,
+        "sign": 4,
+        "screen": 3.25
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 2,
+      "prior": 1,
+      "value": 5,
+      "action": "right",
+      "values": {
+        "left": 2,
+        "right": 5,
+        "sign": 4,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 3,
+      "prior": 0,
+      "value": 5,
+      "action": "left",
+      "values": {
+        "left": 5,
+        "right": 1,
+        "sign": 4,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 3,
+      "prior": 0.25,
+      "value": 4,
+      "action": "left",
+      "values": {
+        "left": 4,
+        "right": 2,
+        "sign": 4,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 3,
+      "prior": 0.5,
+      "value": 4,
+      "action": "sign",
+      "values": {
+        "left": 3,
+        "right": 3,
+        "sign": 4,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 3,
+      "prior": 0.75,
+      "value": 4,
+      "action": "right",
+      "values": {
+        "left": 2,
+        "right": 4,
+        "sign": 4,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 3,
+      "prior": 1,
+      "value": 5,
+      "action": "right",
+      "values": {
+        "left": 1,
+        "right": 5,
+        "sign": 4,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 4,
+      "prior": 0,
+      "value": 5,
+      "action": "left",
+      "values": {
+        "left": 5,
+        "right": 0,
+        "sign": 4,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 4,
+      "prior": 0.25,
+      "value": 4,
+      "action": "sign",
+      "values": {
+        "left": 3.75,
+        "right": 1.25,
+        "sign": 4,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 4,
+      "prior": 0.5,
+      "value": 4,
+      "action": "sign",
+      "values": {
+        "left": 2.5,
+        "right": 2.5,
+        "sign": 4,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 4,
+      "prior": 0.75,
+      "value": 4,
+      "action": "sign",
+      "values": {
+        "left": 1.25,
+        "right": 3.75,
+        "sign": 4,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 4,
+      "prior": 1,
+      "value": 5,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 5,
+        "sign": 4,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 5,
+      "prior": 0,
+      "value": 5,
+      "action": "left",
+      "values": {
+        "left": 5,
+        "right": 0,
+        "sign": 4,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 5,
+      "prior": 0.25,
+      "value": 4,
+      "action": "sign",
+      "values": {
+        "left": 3.75,
+        "right": 1.25,
+        "sign": 4,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 5,
+      "prior": 0.5,
+      "value": 4,
+      "action": "sign",
+      "values": {
+        "left": 2.5,
+        "right": 2.5,
+        "sign": 4,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 5,
+      "prior": 0.75,
+      "value": 4,
+      "action": "sign",
+      "values": {
+        "left": 1.25,
+        "right": 3.75,
+        "sign": 4,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 5,
+      "prior": 1,
+      "value": 5,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 5,
+        "sign": 4,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 6,
+      "prior": 0,
+      "value": 5,
+      "action": "left",
+      "values": {
+        "left": 5,
+        "right": 0,
+        "sign": 4,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 6,
+      "prior": 0.25,
+      "value": 4,
+      "action": "sign",
+      "values": {
+        "left": 3.75,
+        "right": 1.25,
+        "sign": 4,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 6,
+      "prior": 0.5,
+      "value": 4,
+      "action": "sign",
+      "values": {
+        "left": 2.5,
+        "right": 2.5,
+        "sign": 4,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 6,
+      "prior": 0.75,
+      "value": 4,
+      "action": "sign",
+      "values": {
+        "left": 1.25,
+        "right": 3.75,
+        "sign": 4,
+        "screen": 3
+      }
+    },
+    {
+      "horizon": 5,
+      "recovery": 6,
+      "prior": 1,
+      "value": 5,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 5,
+        "sign": 4,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 0,
+      "prior": 0,
+      "value": 6,
+      "action": "left",
+      "values": {
+        "left": 6,
+        "right": 5,
+        "sign": 5,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 0,
+      "prior": 0.25,
+      "value": 5.75,
+      "action": "left",
+      "values": {
+        "left": 5.75,
+        "right": 5.25,
+        "sign": 5,
+        "screen": 4.75
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 0,
+      "prior": 0.5,
+      "value": 5.5,
+      "action": "left",
+      "values": {
+        "left": 5.5,
+        "right": 5.5,
+        "sign": 5,
+        "screen": 4.5
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 0,
+      "prior": 0.75,
+      "value": 5.75,
+      "action": "right",
+      "values": {
+        "left": 5.25,
+        "right": 5.75,
+        "sign": 5,
+        "screen": 4.75
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 0,
+      "prior": 1,
+      "value": 6,
+      "action": "right",
+      "values": {
+        "left": 5,
+        "right": 6,
+        "sign": 5,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 1,
+      "prior": 0,
+      "value": 6,
+      "action": "left",
+      "values": {
+        "left": 6,
+        "right": 4,
+        "sign": 5,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 1,
+      "prior": 0.25,
+      "value": 5.5,
+      "action": "left",
+      "values": {
+        "left": 5.5,
+        "right": 4.5,
+        "sign": 5,
+        "screen": 4.5
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 1,
+      "prior": 0.5,
+      "value": 5,
+      "action": "left",
+      "values": {
+        "left": 5,
+        "right": 5,
+        "sign": 5,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 1,
+      "prior": 0.75,
+      "value": 5.5,
+      "action": "right",
+      "values": {
+        "left": 4.5,
+        "right": 5.5,
+        "sign": 5,
+        "screen": 4.5
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 1,
+      "prior": 1,
+      "value": 6,
+      "action": "right",
+      "values": {
+        "left": 4,
+        "right": 6,
+        "sign": 5,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 2,
+      "prior": 0,
+      "value": 6,
+      "action": "left",
+      "values": {
+        "left": 6,
+        "right": 3,
+        "sign": 5,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 2,
+      "prior": 0.25,
+      "value": 5.25,
+      "action": "left",
+      "values": {
+        "left": 5.25,
+        "right": 3.75,
+        "sign": 5,
+        "screen": 4.25
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 2,
+      "prior": 0.5,
+      "value": 5,
+      "action": "sign",
+      "values": {
+        "left": 4.5,
+        "right": 4.5,
+        "sign": 5,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 2,
+      "prior": 0.75,
+      "value": 5.25,
+      "action": "right",
+      "values": {
+        "left": 3.75,
+        "right": 5.25,
+        "sign": 5,
+        "screen": 4.25
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 2,
+      "prior": 1,
+      "value": 6,
+      "action": "right",
+      "values": {
+        "left": 3,
+        "right": 6,
+        "sign": 5,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 3,
+      "prior": 0,
+      "value": 6,
+      "action": "left",
+      "values": {
+        "left": 6,
+        "right": 2,
+        "sign": 5,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 3,
+      "prior": 0.25,
+      "value": 5,
+      "action": "left",
+      "values": {
+        "left": 5,
+        "right": 3,
+        "sign": 5,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 3,
+      "prior": 0.5,
+      "value": 5,
+      "action": "sign",
+      "values": {
+        "left": 4,
+        "right": 4,
+        "sign": 5,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 3,
+      "prior": 0.75,
+      "value": 5,
+      "action": "right",
+      "values": {
+        "left": 3,
+        "right": 5,
+        "sign": 5,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 3,
+      "prior": 1,
+      "value": 6,
+      "action": "right",
+      "values": {
+        "left": 2,
+        "right": 6,
+        "sign": 5,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 4,
+      "prior": 0,
+      "value": 6,
+      "action": "left",
+      "values": {
+        "left": 6,
+        "right": 1,
+        "sign": 5,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 4,
+      "prior": 0.25,
+      "value": 5,
+      "action": "sign",
+      "values": {
+        "left": 4.75,
+        "right": 2.25,
+        "sign": 5,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 4,
+      "prior": 0.5,
+      "value": 5,
+      "action": "sign",
+      "values": {
+        "left": 3.5,
+        "right": 3.5,
+        "sign": 5,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 4,
+      "prior": 0.75,
+      "value": 5,
+      "action": "sign",
+      "values": {
+        "left": 2.25,
+        "right": 4.75,
+        "sign": 5,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 4,
+      "prior": 1,
+      "value": 6,
+      "action": "right",
+      "values": {
+        "left": 1,
+        "right": 6,
+        "sign": 5,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 5,
+      "prior": 0,
+      "value": 6,
+      "action": "left",
+      "values": {
+        "left": 6,
+        "right": 0,
+        "sign": 5,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 5,
+      "prior": 0.25,
+      "value": 5,
+      "action": "sign",
+      "values": {
+        "left": 4.5,
+        "right": 1.5,
+        "sign": 5,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 5,
+      "prior": 0.5,
+      "value": 5,
+      "action": "sign",
+      "values": {
+        "left": 3,
+        "right": 3,
+        "sign": 5,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 5,
+      "prior": 0.75,
+      "value": 5,
+      "action": "sign",
+      "values": {
+        "left": 1.5,
+        "right": 4.5,
+        "sign": 5,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 5,
+      "prior": 1,
+      "value": 6,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 6,
+        "sign": 5,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 6,
+      "prior": 0,
+      "value": 6,
+      "action": "left",
+      "values": {
+        "left": 6,
+        "right": 0,
+        "sign": 5,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 6,
+      "prior": 0.25,
+      "value": 5,
+      "action": "sign",
+      "values": {
+        "left": 4.5,
+        "right": 1.5,
+        "sign": 5,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 6,
+      "prior": 0.5,
+      "value": 5,
+      "action": "sign",
+      "values": {
+        "left": 3,
+        "right": 3,
+        "sign": 5,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 6,
+      "prior": 0.75,
+      "value": 5,
+      "action": "sign",
+      "values": {
+        "left": 1.5,
+        "right": 4.5,
+        "sign": 5,
+        "screen": 4
+      }
+    },
+    {
+      "horizon": 6,
+      "recovery": 6,
+      "prior": 1,
+      "value": 6,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 6,
+        "sign": 5,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 0,
+      "prior": 0,
+      "value": 7,
+      "action": "left",
+      "values": {
+        "left": 7,
+        "right": 6,
+        "sign": 6,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 0,
+      "prior": 0.25,
+      "value": 6.75,
+      "action": "left",
+      "values": {
+        "left": 6.75,
+        "right": 6.25,
+        "sign": 6,
+        "screen": 5.75
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 0,
+      "prior": 0.5,
+      "value": 6.5,
+      "action": "left",
+      "values": {
+        "left": 6.5,
+        "right": 6.5,
+        "sign": 6,
+        "screen": 5.5
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 0,
+      "prior": 0.75,
+      "value": 6.75,
+      "action": "right",
+      "values": {
+        "left": 6.25,
+        "right": 6.75,
+        "sign": 6,
+        "screen": 5.75
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 0,
+      "prior": 1,
+      "value": 7,
+      "action": "right",
+      "values": {
+        "left": 6,
+        "right": 7,
+        "sign": 6,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 1,
+      "prior": 0,
+      "value": 7,
+      "action": "left",
+      "values": {
+        "left": 7,
+        "right": 5,
+        "sign": 6,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 1,
+      "prior": 0.25,
+      "value": 6.5,
+      "action": "left",
+      "values": {
+        "left": 6.5,
+        "right": 5.5,
+        "sign": 6,
+        "screen": 5.5
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 1,
+      "prior": 0.5,
+      "value": 6,
+      "action": "left",
+      "values": {
+        "left": 6,
+        "right": 6,
+        "sign": 6,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 1,
+      "prior": 0.75,
+      "value": 6.5,
+      "action": "right",
+      "values": {
+        "left": 5.5,
+        "right": 6.5,
+        "sign": 6,
+        "screen": 5.5
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 1,
+      "prior": 1,
+      "value": 7,
+      "action": "right",
+      "values": {
+        "left": 5,
+        "right": 7,
+        "sign": 6,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 2,
+      "prior": 0,
+      "value": 7,
+      "action": "left",
+      "values": {
+        "left": 7,
+        "right": 4,
+        "sign": 6,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 2,
+      "prior": 0.25,
+      "value": 6.25,
+      "action": "left",
+      "values": {
+        "left": 6.25,
+        "right": 4.75,
+        "sign": 6,
+        "screen": 5.25
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 2,
+      "prior": 0.5,
+      "value": 6,
+      "action": "sign",
+      "values": {
+        "left": 5.5,
+        "right": 5.5,
+        "sign": 6,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 2,
+      "prior": 0.75,
+      "value": 6.25,
+      "action": "right",
+      "values": {
+        "left": 4.75,
+        "right": 6.25,
+        "sign": 6,
+        "screen": 5.25
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 2,
+      "prior": 1,
+      "value": 7,
+      "action": "right",
+      "values": {
+        "left": 4,
+        "right": 7,
+        "sign": 6,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 3,
+      "prior": 0,
+      "value": 7,
+      "action": "left",
+      "values": {
+        "left": 7,
+        "right": 3,
+        "sign": 6,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 3,
+      "prior": 0.25,
+      "value": 6,
+      "action": "left",
+      "values": {
+        "left": 6,
+        "right": 4,
+        "sign": 6,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 3,
+      "prior": 0.5,
+      "value": 6,
+      "action": "sign",
+      "values": {
+        "left": 5,
+        "right": 5,
+        "sign": 6,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 3,
+      "prior": 0.75,
+      "value": 6,
+      "action": "right",
+      "values": {
+        "left": 4,
+        "right": 6,
+        "sign": 6,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 3,
+      "prior": 1,
+      "value": 7,
+      "action": "right",
+      "values": {
+        "left": 3,
+        "right": 7,
+        "sign": 6,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 4,
+      "prior": 0,
+      "value": 7,
+      "action": "left",
+      "values": {
+        "left": 7,
+        "right": 2,
+        "sign": 6,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 4,
+      "prior": 0.25,
+      "value": 6,
+      "action": "sign",
+      "values": {
+        "left": 5.75,
+        "right": 3.25,
+        "sign": 6,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 4,
+      "prior": 0.5,
+      "value": 6,
+      "action": "sign",
+      "values": {
+        "left": 4.5,
+        "right": 4.5,
+        "sign": 6,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 4,
+      "prior": 0.75,
+      "value": 6,
+      "action": "sign",
+      "values": {
+        "left": 3.25,
+        "right": 5.75,
+        "sign": 6,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 4,
+      "prior": 1,
+      "value": 7,
+      "action": "right",
+      "values": {
+        "left": 2,
+        "right": 7,
+        "sign": 6,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 5,
+      "prior": 0,
+      "value": 7,
+      "action": "left",
+      "values": {
+        "left": 7,
+        "right": 1,
+        "sign": 6,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 5,
+      "prior": 0.25,
+      "value": 6,
+      "action": "sign",
+      "values": {
+        "left": 5.5,
+        "right": 2.5,
+        "sign": 6,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 5,
+      "prior": 0.5,
+      "value": 6,
+      "action": "sign",
+      "values": {
+        "left": 4,
+        "right": 4,
+        "sign": 6,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 5,
+      "prior": 0.75,
+      "value": 6,
+      "action": "sign",
+      "values": {
+        "left": 2.5,
+        "right": 5.5,
+        "sign": 6,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 5,
+      "prior": 1,
+      "value": 7,
+      "action": "right",
+      "values": {
+        "left": 1,
+        "right": 7,
+        "sign": 6,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 6,
+      "prior": 0,
+      "value": 7,
+      "action": "left",
+      "values": {
+        "left": 7,
+        "right": 0,
+        "sign": 6,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 6,
+      "prior": 0.25,
+      "value": 6,
+      "action": "sign",
+      "values": {
+        "left": 5.25,
+        "right": 1.75,
+        "sign": 6,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 6,
+      "prior": 0.5,
+      "value": 6,
+      "action": "sign",
+      "values": {
+        "left": 3.5,
+        "right": 3.5,
+        "sign": 6,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 6,
+      "prior": 0.75,
+      "value": 6,
+      "action": "sign",
+      "values": {
+        "left": 1.75,
+        "right": 5.25,
+        "sign": 6,
+        "screen": 5
+      }
+    },
+    {
+      "horizon": 7,
+      "recovery": 6,
+      "prior": 1,
+      "value": 7,
+      "action": "right",
+      "values": {
+        "left": 0,
+        "right": 7,
+        "sign": 6,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 0,
+      "prior": 0,
+      "value": 8,
+      "action": "left",
+      "values": {
+        "left": 8,
+        "right": 7,
+        "sign": 7,
+        "screen": 7
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 0,
+      "prior": 0.25,
+      "value": 7.75,
+      "action": "left",
+      "values": {
+        "left": 7.75,
+        "right": 7.25,
+        "sign": 7,
+        "screen": 6.75
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 0,
+      "prior": 0.5,
+      "value": 7.5,
+      "action": "left",
+      "values": {
+        "left": 7.5,
+        "right": 7.5,
+        "sign": 7,
+        "screen": 6.5
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 0,
+      "prior": 0.75,
+      "value": 7.75,
+      "action": "right",
+      "values": {
+        "left": 7.25,
+        "right": 7.75,
+        "sign": 7,
+        "screen": 6.75
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 0,
+      "prior": 1,
+      "value": 8,
+      "action": "right",
+      "values": {
+        "left": 7,
+        "right": 8,
+        "sign": 7,
+        "screen": 7
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 1,
+      "prior": 0,
+      "value": 8,
+      "action": "left",
+      "values": {
+        "left": 8,
+        "right": 6,
+        "sign": 7,
+        "screen": 7
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 1,
+      "prior": 0.25,
+      "value": 7.5,
+      "action": "left",
+      "values": {
+        "left": 7.5,
+        "right": 6.5,
+        "sign": 7,
+        "screen": 6.5
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 1,
+      "prior": 0.5,
+      "value": 7,
+      "action": "left",
+      "values": {
+        "left": 7,
+        "right": 7,
+        "sign": 7,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 1,
+      "prior": 0.75,
+      "value": 7.5,
+      "action": "right",
+      "values": {
+        "left": 6.5,
+        "right": 7.5,
+        "sign": 7,
+        "screen": 6.5
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 1,
+      "prior": 1,
+      "value": 8,
+      "action": "right",
+      "values": {
+        "left": 6,
+        "right": 8,
+        "sign": 7,
+        "screen": 7
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 2,
+      "prior": 0,
+      "value": 8,
+      "action": "left",
+      "values": {
+        "left": 8,
+        "right": 5,
+        "sign": 7,
+        "screen": 7
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 2,
+      "prior": 0.25,
+      "value": 7.25,
+      "action": "left",
+      "values": {
+        "left": 7.25,
+        "right": 5.75,
+        "sign": 7,
+        "screen": 6.25
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 2,
+      "prior": 0.5,
+      "value": 7,
+      "action": "sign",
+      "values": {
+        "left": 6.5,
+        "right": 6.5,
+        "sign": 7,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 2,
+      "prior": 0.75,
+      "value": 7.25,
+      "action": "right",
+      "values": {
+        "left": 5.75,
+        "right": 7.25,
+        "sign": 7,
+        "screen": 6.25
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 2,
+      "prior": 1,
+      "value": 8,
+      "action": "right",
+      "values": {
+        "left": 5,
+        "right": 8,
+        "sign": 7,
+        "screen": 7
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 3,
+      "prior": 0,
+      "value": 8,
+      "action": "left",
+      "values": {
+        "left": 8,
+        "right": 4,
+        "sign": 7,
+        "screen": 7
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 3,
+      "prior": 0.25,
+      "value": 7,
+      "action": "left",
+      "values": {
+        "left": 7,
+        "right": 5,
+        "sign": 7,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 3,
+      "prior": 0.5,
+      "value": 7,
+      "action": "sign",
+      "values": {
+        "left": 6,
+        "right": 6,
+        "sign": 7,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 3,
+      "prior": 0.75,
+      "value": 7,
+      "action": "right",
+      "values": {
+        "left": 5,
+        "right": 7,
+        "sign": 7,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 3,
+      "prior": 1,
+      "value": 8,
+      "action": "right",
+      "values": {
+        "left": 4,
+        "right": 8,
+        "sign": 7,
+        "screen": 7
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 4,
+      "prior": 0,
+      "value": 8,
+      "action": "left",
+      "values": {
+        "left": 8,
+        "right": 3,
+        "sign": 7,
+        "screen": 7
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 4,
+      "prior": 0.25,
+      "value": 7,
+      "action": "sign",
+      "values": {
+        "left": 6.75,
+        "right": 4.25,
+        "sign": 7,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 4,
+      "prior": 0.5,
+      "value": 7,
+      "action": "sign",
+      "values": {
+        "left": 5.5,
+        "right": 5.5,
+        "sign": 7,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 4,
+      "prior": 0.75,
+      "value": 7,
+      "action": "sign",
+      "values": {
+        "left": 4.25,
+        "right": 6.75,
+        "sign": 7,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 4,
+      "prior": 1,
+      "value": 8,
+      "action": "right",
+      "values": {
+        "left": 3,
+        "right": 8,
+        "sign": 7,
+        "screen": 7
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 5,
+      "prior": 0,
+      "value": 8,
+      "action": "left",
+      "values": {
+        "left": 8,
+        "right": 2,
+        "sign": 7,
+        "screen": 7
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 5,
+      "prior": 0.25,
+      "value": 7,
+      "action": "sign",
+      "values": {
+        "left": 6.5,
+        "right": 3.5,
+        "sign": 7,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 5,
+      "prior": 0.5,
+      "value": 7,
+      "action": "sign",
+      "values": {
+        "left": 5,
+        "right": 5,
+        "sign": 7,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 5,
+      "prior": 0.75,
+      "value": 7,
+      "action": "sign",
+      "values": {
+        "left": 3.5,
+        "right": 6.5,
+        "sign": 7,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 5,
+      "prior": 1,
+      "value": 8,
+      "action": "right",
+      "values": {
+        "left": 2,
+        "right": 8,
+        "sign": 7,
+        "screen": 7
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 6,
+      "prior": 0,
+      "value": 8,
+      "action": "left",
+      "values": {
+        "left": 8,
+        "right": 1,
+        "sign": 7,
+        "screen": 7
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 6,
+      "prior": 0.25,
+      "value": 7,
+      "action": "sign",
+      "values": {
+        "left": 6.25,
+        "right": 2.75,
+        "sign": 7,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 6,
+      "prior": 0.5,
+      "value": 7,
+      "action": "sign",
+      "values": {
+        "left": 4.5,
+        "right": 4.5,
+        "sign": 7,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 6,
+      "prior": 0.75,
+      "value": 7,
+      "action": "sign",
+      "values": {
+        "left": 2.75,
+        "right": 6.25,
+        "sign": 7,
+        "screen": 6
+      }
+    },
+    {
+      "horizon": 8,
+      "recovery": 6,
+      "prior": 1,
+      "value": 8,
+      "action": "right",
+      "values": {
+        "left": 1,
+        "right": 8,
+        "sign": 7,
+        "screen": 7
+      }
+    }
+  ]
+}

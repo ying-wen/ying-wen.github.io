@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1040" viewBox="0 0 1600 1040" role="img" aria-labelledby="title desc">
+  <title id="title">从持续更新到 Learning Scaling 的联合条件</title>
+  <desc id="desc">第一人称行动条件经验进入持久更新并影响未来行动。持续更新本身不足以构成 Learning Scaling，还要在固定未来运行条件下共同考察长期控制、旧能力保持、后期可塑性和新任务学习效率。当前任务的搜索计算是独立条件。</desc>
+  <rect width="1600" height="1040" fill="#ffffff"/>
+  <style>
+    .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+    .serif{font-family:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",serif}
+    .mono{font-family:"SFMono-Regular",Consolas,monospace}
+    .title{font-size:42px;font-weight:730;fill:#17211c}.lead{font-size:21px;fill:#56615b}
+    .h2{font-size:26px;font-weight:720;fill:#233129}.h3{font-size:21px;font-weight:700;fill:#2e3c34}
+    .body{font-size:18px;fill:#3d4a43}.small{font-size:16px;fill:#65716a}.tiny{font-size:14px;fill:#718078}
+    .green{fill:#2f704f}.orange{fill:#b84e1b}.blue{fill:#365f82}.red{fill:#985047}
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#65716a"/></marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#2f704f"/></marker>
+    <marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#b84e1b"/></marker>
+  </defs>
+
+  <text x="800" y="61" text-anchor="middle" class="sans title">更多经历不会自动形成 Learning Scaling</text>
+  <text x="800" y="99" text-anchor="middle" class="serif lead">持久更新、旧能力保持、后期可塑性与长期控制回答不同的问题</text>
+
+  <g transform="translate(72,146)">
+    <text x="0" y="0" class="sans h2 green">运行时的学习过程</text>
+    <path d="M18 86 H1400" fill="none" stroke="#94a19a" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <g transform="translate(0,32)">
+      <circle cx="90" cy="54" r="50" fill="#f7fbf8" stroke="#70a083" stroke-width="2"/>
+      <text x="90" y="46" text-anchor="middle" class="sans h3 green">经历</text>
+      <text x="90" y="72" text-anchor="middle" class="serif small">观测·行动·反馈</text>
+    </g>
+
+    <g transform="translate(330,32)">
+      <circle cx="90" cy="54" r="50" fill="#f7fbf8" stroke="#70a083" stroke-width="2"/>
+      <text x="90" y="46" text-anchor="middle" class="sans h3 green">更新</text>
+      <text x="90" y="72" text-anchor="middle" class="serif small">参数·记忆·结构</text>
+    </g>
+
+    <g transform="translate(660,32)">
+      <circle cx="90" cy="54" r="50" fill="#f7fbf8" stroke="#70a083" stroke-width="2"/>
+      <text x="90" y="46" text-anchor="middle" class="sans h3 green">学习状态</text>
+      <text x="90" y="72" text-anchor="middle" class="serif small">跨任务保留</text>
+    </g>
+
+    <g transform="translate(990,32)">
+      <circle cx="90" cy="54" r="50" fill="#f7fbf8" stroke="#70a083" stroke-width="2"/>
+      <text x="90" y="46" text-anchor="middle" class="sans h3 green">未来行动</text>
+      <text x="90" y="72" text-anchor="middle" class="serif small">改变后续经历</text>
+    </g>
+
+    <path d="M1080 140 C1080 200 750 198 750 140" fill="none" stroke="#2f704f" stroke-width="2.5" stroke-dasharray="8 7" marker-end="url(#arrow-green)"/>
+    <text x="915" y="190" text-anchor="middle" class="serif small green">策略改变以后获得的经验</text>
+  </g>
+
+  <line x1="72" y1="390" x2="1528" y2="390" stroke="#dfe4e1" stroke-width="2"/>
+  <text x="72" y="436" class="sans h2">在多个累计经历水平检查三类响应</text>
+  <text x="1528" y="436" text-anchor="end" class="serif small">未来任务时计算保持一致</text>
+
+  <g transform="translate(72,470)">
+    <path d="M0 0 H1456" stroke="#dfe4e1" stroke-width="1.5"/>
+
+    <g transform="translate(0,28)">
+      <text x="0" y="30" class="sans h3 blue">长期控制</text>
+      <text x="210" y="30" class="serif body">长期任务效用、变化后的恢复、适应期间的机会损失</text>
+      <path d="M1010 52 C1090 46 1140 28 1200 4 S1350 -8 1430 -34" fill="none" stroke="#365f82" stroke-width="4"/>
+      <line x1="1010" y1="62" x2="1430" y2="62" stroke="#b7c1bb" stroke-width="1"/>
+      <text x="1220" y="88" text-anchor="middle" class="serif small blue">主要任务响应</text>
+    </g>
+
+    <line x1="0" y1="142" x2="1456" y2="142" stroke="#e5e9e7"/>
+    <g transform="translate(0,164)">
+      <text x="0" y="30" class="sans h3 green">旧能力保持</text>
+      <text x="210" y="30" class="serif body">吸收新规律后，较早形成的预测与控制是否继续有效</text>
+      <path d="M1010 18 C1120 10 1260 15 1430 8" fill="none" stroke="#2f704f" stroke-width="4"/>
+      <path d="M1010 18 C1120 30 1260 48 1430 74" fill="none" stroke="#985047" stroke-width="3" stroke-dasharray="9 7"/>
+      <text x="1220" y="100" text-anchor="middle" class="serif small green">保持与遗忘分开报告</text>
+    </g>
+
+    <line x1="0" y1="278" x2="1456" y2="278" stroke="#e5e9e7"/>
+    <g transform="translate(0,300)">
+      <text x="0" y="30" class="sans h3 orange">后期可塑性</text>
+      <text x="210" y="30" class="serif body">长期运行之后，能否形成新特征并以更少经历学会新规律</text>
+      <path d="M1010 14 C1120 12 1270 14 1430 10" fill="none" stroke="#b84e1b" stroke-width="4"/>
+      <path d="M1010 14 C1120 28 1260 54 1430 86" fill="none" stroke="#985047" stroke-width="3" stroke-dasharray="9 7"/>
+      <text x="1220" y="112" text-anchor="middle" class="serif small orange">可塑性丧失不等同于遗忘</text>
+    </g>
+  </g>
+
+  <line x1="72" y1="910" x2="1528" y2="910" stroke="#dfe4e1" stroke-width="2"/>
+  <g transform="translate(72,950)">
+    <path d="M0 0 H590" stroke="#b84e1b" stroke-width="3" marker-end="url(#arrow-orange)"/>
+    <text x="0" y="-18" class="sans h3 orange">Search Scaling</text>
+    <text x="0" y="31" class="serif body">增加当前任务计算，可以改善当次行动而不改变学习过程</text>
+
+    <path d="M770 0 H1456" stroke="#2f704f" stroke-width="3" marker-end="url(#arrow-green)"/>
+    <text x="770" y="-18" class="sans h3 green">Learning Scaling</text>
+    <text x="770" y="31" class="serif body">长期控制改善，并同时维持保持与后期可塑性</text>
+    <text x="1456" y="70" text-anchor="end" class="serif tiny">关系示意，不表示已建立的普遍规律</text>
+  </g>
+</svg>
