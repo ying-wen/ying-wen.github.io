@@ -1,0 +1,662 @@
+{
+  "evidenceKind": "exact",
+  "sampledRuns": 0,
+  "randomGeneratorUsed": false,
+  "scalarTask": {
+    "goal": "hold position at zero",
+    "positionUnit": "cm",
+    "actionUnit": "cm per step",
+    "disturbanceUnit": "cm per step",
+    "stepSeconds": 0.1,
+    "update": "x[t+1]=x[t]+u[t]+d[t]",
+    "order": [
+      "observe",
+      "act",
+      "add disturbance"
+    ],
+    "initial": 0,
+    "previous": 0,
+    "disturbanceObservedBeforeAction": false
+  },
+  "cases": [
+    {
+      "id": "current",
+      "label": "即时 k=1.25",
+      "gain": 1.25,
+      "delay": 0,
+      "stepSeconds": 0.1,
+      "initial": 0,
+      "previous": 0,
+      "disturbances": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "poles": {
+        "gain": 1.25,
+        "delay": 0,
+        "roots": [
+          {
+            "real": -0.25,
+            "imaginary": 0,
+            "modulus": 0.25
+          }
+        ],
+        "spectralRadius": 0.25,
+        "asymptoticallyStable": true
+      },
+      "states": [
+        {
+          "step": 0,
+          "seconds": 0,
+          "position": 0
+        },
+        {
+          "step": 1,
+          "seconds": 0.1,
+          "position": 0
+        },
+        {
+          "step": 2,
+          "seconds": 0.2,
+          "position": 0
+        },
+        {
+          "step": 3,
+          "seconds": 0.30000000000000004,
+          "position": 1
+        },
+        {
+          "step": 4,
+          "seconds": 0.4,
+          "position": -0.25
+        },
+        {
+          "step": 5,
+          "seconds": 0.5,
+          "position": 0.0625
+        },
+        {
+          "step": 6,
+          "seconds": 0.6000000000000001,
+          "position": -0.015625
+        },
+        {
+          "step": 7,
+          "seconds": 0.7000000000000001,
+          "position": 0.00390625
+        },
+        {
+          "step": 8,
+          "seconds": 0.8,
+          "position": -0.0009765625
+        },
+        {
+          "step": 9,
+          "seconds": 0.9,
+          "position": 0.000244140625
+        }
+      ],
+      "rows": [
+        {
+          "step": 0,
+          "seconds": 0,
+          "positionBefore": 0,
+          "observed": 0,
+          "gain": 1.25,
+          "action": 0,
+          "disturbance": 0,
+          "positionAfter": 0
+        },
+        {
+          "step": 1,
+          "seconds": 0.1,
+          "positionBefore": 0,
+          "observed": 0,
+          "gain": 1.25,
+          "action": 0,
+          "disturbance": 0,
+          "positionAfter": 0
+        },
+        {
+          "step": 2,
+          "seconds": 0.2,
+          "positionBefore": 0,
+          "observed": 0,
+          "gain": 1.25,
+          "action": 0,
+          "disturbance": 1,
+          "positionAfter": 1
+        },
+        {
+          "step": 3,
+          "seconds": 0.30000000000000004,
+          "positionBefore": 1,
+          "observed": 1,
+          "gain": 1.25,
+          "action": -1.25,
+          "disturbance": 0,
+          "positionAfter": -0.25
+        },
+        {
+          "step": 4,
+          "seconds": 0.4,
+          "positionBefore": -0.25,
+          "observed": -0.25,
+          "gain": 1.25,
+          "action": 0.3125,
+          "disturbance": 0,
+          "positionAfter": 0.0625
+        },
+        {
+          "step": 5,
+          "seconds": 0.5,
+          "positionBefore": 0.0625,
+          "observed": 0.0625,
+          "gain": 1.25,
+          "action": -0.078125,
+          "disturbance": 0,
+          "positionAfter": -0.015625
+        },
+        {
+          "step": 6,
+          "seconds": 0.6000000000000001,
+          "positionBefore": -0.015625,
+          "observed": -0.015625,
+          "gain": 1.25,
+          "action": 0.01953125,
+          "disturbance": 0,
+          "positionAfter": 0.00390625
+        },
+        {
+          "step": 7,
+          "seconds": 0.7000000000000001,
+          "positionBefore": 0.00390625,
+          "observed": 0.00390625,
+          "gain": 1.25,
+          "action": -0.0048828125,
+          "disturbance": 0,
+          "positionAfter": -0.0009765625
+        },
+        {
+          "step": 8,
+          "seconds": 0.8,
+          "positionBefore": -0.0009765625,
+          "observed": -0.0009765625,
+          "gain": 1.25,
+          "action": 0.001220703125,
+          "disturbance": 0,
+          "positionAfter": 0.000244140625
+        }
+      ]
+    },
+    {
+      "id": "large",
+      "label": "过大 k=2.25",
+      "gain": 2.25,
+      "delay": 0,
+      "stepSeconds": 0.1,
+      "initial": 0,
+      "previous": 0,
+      "disturbances": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "poles": {
+        "gain": 2.25,
+        "delay": 0,
+        "roots": [
+          {
+            "real": -1.25,
+            "imaginary": 0,
+            "modulus": 1.25
+          }
+        ],
+        "spectralRadius": 1.25,
+        "asymptoticallyStable": false
+      },
+      "states": [
+        {
+          "step": 0,
+          "seconds": 0,
+          "position": 0
+        },
+        {
+          "step": 1,
+          "seconds": 0.1,
+          "position": 0
+        },
+        {
+          "step": 2,
+          "seconds": 0.2,
+          "position": 0
+        },
+        {
+          "step": 3,
+          "seconds": 0.30000000000000004,
+          "position": 1
+        },
+        {
+          "step": 4,
+          "seconds": 0.4,
+          "position": -1.25
+        },
+        {
+          "step": 5,
+          "seconds": 0.5,
+          "position": 1.5625
+        },
+        {
+          "step": 6,
+          "seconds": 0.6000000000000001,
+          "position": -1.953125
+        },
+        {
+          "step": 7,
+          "seconds": 0.7000000000000001,
+          "position": 2.44140625
+        },
+        {
+          "step": 8,
+          "seconds": 0.8,
+          "position": -3.0517578125
+        },
+        {
+          "step": 9,
+          "seconds": 0.9,
+          "position": 3.814697265625
+        }
+      ],
+      "rows": [
+        {
+          "step": 0,
+          "seconds": 0,
+          "positionBefore": 0,
+          "observed": 0,
+          "gain": 2.25,
+          "action": 0,
+          "disturbance": 0,
+          "positionAfter": 0
+        },
+        {
+          "step": 1,
+          "seconds": 0.1,
+          "positionBefore": 0,
+          "observed": 0,
+          "gain": 2.25,
+          "action": 0,
+          "disturbance": 0,
+          "positionAfter": 0
+        },
+        {
+          "step": 2,
+          "seconds": 0.2,
+          "positionBefore": 0,
+          "observed": 0,
+          "gain": 2.25,
+          "action": 0,
+          "disturbance": 1,
+          "positionAfter": 1
+        },
+        {
+          "step": 3,
+          "seconds": 0.30000000000000004,
+          "positionBefore": 1,
+          "observed": 1,
+          "gain": 2.25,
+          "action": -2.25,
+          "disturbance": 0,
+          "positionAfter": -1.25
+        },
+        {
+          "step": 4,
+          "seconds": 0.4,
+          "positionBefore": -1.25,
+          "observed": -1.25,
+          "gain": 2.25,
+          "action": 2.8125,
+          "disturbance": 0,
+          "positionAfter": 1.5625
+        },
+        {
+          "step": 5,
+          "seconds": 0.5,
+          "positionBefore": 1.5625,
+          "observed": 1.5625,
+          "gain": 2.25,
+          "action": -3.515625,
+          "disturbance": 0,
+          "positionAfter": -1.953125
+        },
+        {
+          "step": 6,
+          "seconds": 0.6000000000000001,
+          "positionBefore": -1.953125,
+          "observed": -1.953125,
+          "gain": 2.25,
+          "action": 4.39453125,
+          "disturbance": 0,
+          "positionAfter": 2.44140625
+        },
+        {
+          "step": 7,
+          "seconds": 0.7000000000000001,
+          "positionBefore": 2.44140625,
+          "observed": 2.44140625,
+          "gain": 2.25,
+          "action": -5.4931640625,
+          "disturbance": 0,
+          "positionAfter": -3.0517578125
+        },
+        {
+          "step": 8,
+          "seconds": 0.8,
+          "positionBefore": -3.0517578125,
+          "observed": -3.0517578125,
+          "gain": 2.25,
+          "action": 6.866455078125,
+          "disturbance": 0,
+          "positionAfter": 3.814697265625
+        }
+      ]
+    },
+    {
+      "id": "delayed",
+      "label": "旧 x，k=1.25",
+      "gain": 1.25,
+      "delay": 1,
+      "stepSeconds": 0.1,
+      "initial": 0,
+      "previous": 0,
+      "disturbances": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "poles": {
+        "gain": 1.25,
+        "delay": 1,
+        "roots": [
+          {
+            "real": 0.5,
+            "imaginary": 1,
+            "modulus": 1.118033988749895
+          },
+          {
+            "real": 0.5,
+            "imaginary": -1,
+            "modulus": 1.118033988749895
+          }
+        ],
+        "spectralRadius": 1.118033988749895,
+        "asymptoticallyStable": false
+      },
+      "states": [
+        {
+          "step": 0,
+          "seconds": 0,
+          "position": 0
+        },
+        {
+          "step": 1,
+          "seconds": 0.1,
+          "position": 0
+        },
+        {
+          "step": 2,
+          "seconds": 0.2,
+          "position": 0
+        },
+        {
+          "step": 3,
+          "seconds": 0.30000000000000004,
+          "position": 1
+        },
+        {
+          "step": 4,
+          "seconds": 0.4,
+          "position": 1
+        },
+        {
+          "step": 5,
+          "seconds": 0.5,
+          "position": -0.25
+        },
+        {
+          "step": 6,
+          "seconds": 0.6000000000000001,
+          "position": -1.5
+        },
+        {
+          "step": 7,
+          "seconds": 0.7000000000000001,
+          "position": -1.1875
+        },
+        {
+          "step": 8,
+          "seconds": 0.8,
+          "position": 0.6875
+        },
+        {
+          "step": 9,
+          "seconds": 0.9,
+          "position": 2.171875
+        }
+      ],
+      "rows": [
+        {
+          "step": 0,
+          "seconds": 0,
+          "positionBefore": 0,
+          "observed": 0,
+          "gain": 1.25,
+          "action": 0,
+          "disturbance": 0,
+          "positionAfter": 0
+        },
+        {
+          "step": 1,
+          "seconds": 0.1,
+          "positionBefore": 0,
+          "observed": 0,
+          "gain": 1.25,
+          "action": 0,
+          "disturbance": 0,
+          "positionAfter": 0
+        },
+        {
+          "step": 2,
+          "seconds": 0.2,
+          "positionBefore": 0,
+          "observed": 0,
+          "gain": 1.25,
+          "action": 0,
+          "disturbance": 1,
+          "positionAfter": 1
+        },
+        {
+          "step": 3,
+          "seconds": 0.30000000000000004,
+          "positionBefore": 1,
+          "observed": 0,
+          "gain": 1.25,
+          "action": 0,
+          "disturbance": 0,
+          "positionAfter": 1
+        },
+        {
+          "step": 4,
+          "seconds": 0.4,
+          "positionBefore": 1,
+          "observed": 1,
+          "gain": 1.25,
+          "action": -1.25,
+          "disturbance": 0,
+          "positionAfter": -0.25
+        },
+        {
+          "step": 5,
+          "seconds": 0.5,
+          "positionBefore": -0.25,
+          "observed": 1,
+          "gain": 1.25,
+          "action": -1.25,
+          "disturbance": 0,
+          "positionAfter": -1.5
+        },
+        {
+          "step": 6,
+          "seconds": 0.6000000000000001,
+          "positionBefore": -1.5,
+          "observed": -0.25,
+          "gain": 1.25,
+          "action": 0.3125,
+          "disturbance": 0,
+          "positionAfter": -1.1875
+        },
+        {
+          "step": 7,
+          "seconds": 0.7000000000000001,
+          "positionBefore": -1.1875,
+          "observed": -1.5,
+          "gain": 1.25,
+          "action": 1.875,
+          "disturbance": 0,
+          "positionAfter": 0.6875
+        },
+        {
+          "step": 8,
+          "seconds": 0.8,
+          "positionBefore": 0.6875,
+          "observed": -1.1875,
+          "gain": 1.25,
+          "action": 1.484375,
+          "disturbance": 0,
+          "positionAfter": 2.171875
+        }
+      ]
+    }
+  ],
+  "redundantTask": {
+    "goal": "x1+x2=1",
+    "unit": "dimensionless",
+    "dynamics": "xAfter=x+u",
+    "objective": "minimize u1^2+u2^2 subject to reaching the task line",
+    "parametersLearned": false
+  },
+  "perturbations": [
+    {
+      "id": "relevant",
+      "label": "任务相关扰动",
+      "initial": [
+        0.5,
+        0.5
+      ],
+      "disturbance": [
+        0.2,
+        0.2
+      ],
+      "disturbanceSquared": 0.08000000000000002,
+      "state": [
+        0.7,
+        0.7
+      ],
+      "target": 1,
+      "error": -0.3999999999999999,
+      "action": [
+        -0.19999999999999996,
+        -0.19999999999999996
+      ],
+      "after": [
+        0.5,
+        0.5
+      ],
+      "actionSquared": 0.07999999999999996,
+      "states": [
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.7,
+          0.7
+        ],
+        [
+          0.5,
+          0.5
+        ]
+      ],
+      "errors": [
+        0,
+        -0.3999999999999999,
+        0
+      ]
+    },
+    {
+      "id": "redundant",
+      "label": "冗余方向扰动",
+      "initial": [
+        0.5,
+        0.5
+      ],
+      "disturbance": [
+        0.2,
+        -0.2
+      ],
+      "disturbanceSquared": 0.08000000000000002,
+      "state": [
+        0.7,
+        0.3
+      ],
+      "target": 1,
+      "error": 0,
+      "action": [
+        0,
+        0
+      ],
+      "after": [
+        0.7,
+        0.3
+      ],
+      "actionSquared": 0,
+      "states": [
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.7,
+          0.3
+        ],
+        [
+          0.7,
+          0.3
+        ]
+      ],
+      "errors": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

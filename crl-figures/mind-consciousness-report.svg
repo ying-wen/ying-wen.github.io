@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" role="img" aria-labelledby="title desc">
+  <title id="title">报告要求与知觉转换：需要交叉的两个对照</title>
+  <desc id="desc">双眼竞争和物理重放分别在主动报告、被动观看条件中比较。眼震或瞳孔指标追踪转换；关键比较是两种任务中的竞争减重放，而不是仅比较按键与不按键。</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10" fill="#52647b"/></marker></defs>
+  <rect width="960" height="680" rx="18" fill="#f8fafc"/>
+  <g font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" fill="#172c45">
+    <text x="36" y="48" font-size="27" font-weight="700">报告要求与知觉转换：交叉两个对照</text>
+    <text x="36" y="80" font-size="18" fill="#52647b">Frässle 等（2014）· 实验流程示意，非原论文数据</text>
+    <text x="300" y="125" font-size="23" text-anchor="middle" font-weight="700">双眼竞争</text>
+    <text x="730" y="125" font-size="23" text-anchor="middle" font-weight="700">物理重放</text>
+    <rect x="136" y="148" width="324" height="153" rx="12" fill="#e5eef8"/>
+    <rect x="568" y="148" width="324" height="153" rx="12" fill="#e5eef8"/>
+    <rect x="136" y="333" width="324" height="153" rx="12" fill="#edf4ee"/>
+    <rect x="568" y="333" width="324" height="153" rx="12" fill="#edf4ee"/>
+    <text x="31" y="208" font-size="22" font-weight="700">主动</text><text x="31" y="238" font-size="22" font-weight="700">报告</text>
+    <text x="31" y="393" font-size="22" font-weight="700">被动</text><text x="31" y="423" font-size="22" font-weight="700">观看</text>
+    <g font-size="20" text-anchor="middle">
+      <text x="298" y="183">两眼持续接收冲突输入</text><text x="298" y="215">主导知觉自行交替</text>
+      <text x="298" y="268" fill="#234f82">眼部指标 + 按键报告</text>
+      <text x="730" y="183">外界图像按记录顺序切换</text><text x="730" y="215">模拟此前的转换时刻</text>
+      <text x="730" y="268" fill="#234f82">眼部指标 + 按键报告</text>
+      <text x="298" y="368">两眼持续接收冲突输入</text><text x="298" y="400">主导知觉由代理指标估计</text>
+      <text x="298" y="453" fill="#306341">眼部指标 · 无持续按键</text>
+      <text x="730" y="368">外界图像按记录顺序切换</text><text x="730" y="400">不要求持续报告</text>
+      <text x="730" y="453" fill="#306341">眼部指标 · 无持续按键</text>
+      <text x="514" y="236" font-size="37" fill="#52647b">−</text><text x="514" y="421" font-size="37" fill="#52647b">−</text>
+    </g>
+    <path d="M298 306V326M730 306V326" stroke="#52647b" stroke-width="2" stroke-dasharray="4 4"/>
+    <text x="480" y="526" text-anchor="middle" font-size="23" font-weight="700">比较两行“竞争 − 重放”的神经差异</text>
+    <path d="M480 541V568" stroke="#52647b" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="480" y="602" text-anchor="middle" font-size="21">哪些转换相关活动随报告要求改变？</text>
+    <text x="480" y="637" text-anchor="middle" font-size="18" fill="#7b4b24">边界：代理指标需校准；注意与任务投入仍可能不同。</text>
+  </g>
+</svg>

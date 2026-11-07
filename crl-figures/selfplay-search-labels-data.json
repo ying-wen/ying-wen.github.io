@@ -1,0 +1,443 @@
+{
+  "simulations": 32,
+  "payoffs": [
+    [
+      1,
+      -1
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "prior": [
+    0.8,
+    0.2
+  ],
+  "counts": [
+    6,
+    26
+  ],
+  "childCounts": [
+    [
+      1,
+      5
+    ],
+    [
+      24,
+      2
+    ]
+  ],
+  "actionValues": [
+    -0.6666666666666666,
+    0.07692307692307693
+  ],
+  "policy": [
+    0.1875,
+    0.8125
+  ],
+  "minimax": [
+    -1,
+    0
+  ],
+  "trace": [
+    {
+      "simulation": 1,
+      "actions": [
+        0,
+        0
+      ],
+      "rootOutcome": 1,
+      "rootVisits": [
+        1,
+        0
+      ]
+    },
+    {
+      "simulation": 2,
+      "actions": [
+        0,
+        1
+      ],
+      "rootOutcome": -1,
+      "rootVisits": [
+        2,
+        0
+      ]
+    },
+    {
+      "simulation": 3,
+      "actions": [
+        0,
+        1
+      ],
+      "rootOutcome": -1,
+      "rootVisits": [
+        3,
+        0
+      ]
+    },
+    {
+      "simulation": 4,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        3,
+        1
+      ]
+    },
+    {
+      "simulation": 5,
+      "actions": [
+        1,
+        1
+      ],
+      "rootOutcome": 1,
+      "rootVisits": [
+        3,
+        2
+      ]
+    },
+    {
+      "simulation": 6,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        3,
+        3
+      ]
+    },
+    {
+      "simulation": 7,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        3,
+        4
+      ]
+    },
+    {
+      "simulation": 8,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        3,
+        5
+      ]
+    },
+    {
+      "simulation": 9,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        3,
+        6
+      ]
+    },
+    {
+      "simulation": 10,
+      "actions": [
+        0,
+        1
+      ],
+      "rootOutcome": -1,
+      "rootVisits": [
+        4,
+        6
+      ]
+    },
+    {
+      "simulation": 11,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        4,
+        7
+      ]
+    },
+    {
+      "simulation": 12,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        4,
+        8
+      ]
+    },
+    {
+      "simulation": 13,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        4,
+        9
+      ]
+    },
+    {
+      "simulation": 14,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        4,
+        10
+      ]
+    },
+    {
+      "simulation": 15,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        4,
+        11
+      ]
+    },
+    {
+      "simulation": 16,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        4,
+        12
+      ]
+    },
+    {
+      "simulation": 17,
+      "actions": [
+        0,
+        1
+      ],
+      "rootOutcome": -1,
+      "rootVisits": [
+        5,
+        12
+      ]
+    },
+    {
+      "simulation": 18,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        5,
+        13
+      ]
+    },
+    {
+      "simulation": 19,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        5,
+        14
+      ]
+    },
+    {
+      "simulation": 20,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        5,
+        15
+      ]
+    },
+    {
+      "simulation": 21,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        5,
+        16
+      ]
+    },
+    {
+      "simulation": 22,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        5,
+        17
+      ]
+    },
+    {
+      "simulation": 23,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        5,
+        18
+      ]
+    },
+    {
+      "simulation": 24,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        5,
+        19
+      ]
+    },
+    {
+      "simulation": 25,
+      "actions": [
+        1,
+        1
+      ],
+      "rootOutcome": 1,
+      "rootVisits": [
+        5,
+        20
+      ]
+    },
+    {
+      "simulation": 26,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        5,
+        21
+      ]
+    },
+    {
+      "simulation": 27,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        5,
+        22
+      ]
+    },
+    {
+      "simulation": 28,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        5,
+        23
+      ]
+    },
+    {
+      "simulation": 29,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        5,
+        24
+      ]
+    },
+    {
+      "simulation": 30,
+      "actions": [
+        0,
+        1
+      ],
+      "rootOutcome": -1,
+      "rootVisits": [
+        6,
+        24
+      ]
+    },
+    {
+      "simulation": 31,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        6,
+        25
+      ]
+    },
+    {
+      "simulation": 32,
+      "actions": [
+        1,
+        0
+      ],
+      "rootOutcome": 0,
+      "rootVisits": [
+        6,
+        26
+      ]
+    }
+  ],
+  "exampleGame": {
+    "actions": [
+      0,
+      1
+    ],
+    "valueLabels": [
+      -1,
+      1
+    ]
+  },
+  "policyLogitGradient": [
+    0.6125,
+    -0.6125
+  ]
+}

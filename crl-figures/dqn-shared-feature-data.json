@@ -1,0 +1,116 @@
+{
+  "kind": "exact",
+  "scope": "One prescribed SGD update; no environment rollout or learned performance.",
+  "experience": {
+    "x": 1,
+    "action": 0,
+    "reward": 0,
+    "nextX": 2,
+    "terminated": false
+  },
+  "gamma": 0.5,
+  "alpha": 0.5,
+  "update": {
+    "prediction": 0.5,
+    "label": 1,
+    "error": -0.5,
+    "gradient": [
+      -0.5,
+      -0.25
+    ],
+    "theta": [
+      0.75,
+      1.125
+    ]
+  },
+  "phases": [
+    {
+      "phase": "before",
+      "online": [
+        0.5,
+        1
+      ],
+      "target": [
+        0.5,
+        1
+      ],
+      "current": [
+        0.5,
+        2.5
+      ],
+      "successor": [
+        1,
+        2
+      ],
+      "targetSuccessor": [
+        1,
+        2
+      ],
+      "selected": 1,
+      "dqn": 1,
+      "double": 1
+    },
+    {
+      "phase": "updated",
+      "online": [
+        0.75,
+        1.125
+      ],
+      "target": [
+        0.5,
+        1
+      ],
+      "current": [
+        0.84375,
+        2.15625
+      ],
+      "successor": [
+        1.6875,
+        1.3125
+      ],
+      "targetSuccessor": [
+        1,
+        2
+      ],
+      "selected": 0,
+      "dqn": 1,
+      "double": 0.5
+    },
+    {
+      "phase": "copied",
+      "online": [
+        0.75,
+        1.125
+      ],
+      "target": [
+        0.75,
+        1.125
+      ],
+      "current": [
+        0.84375,
+        2.15625
+      ],
+      "successor": [
+        1.6875,
+        1.3125
+      ],
+      "targetSuccessor": [
+        1.6875,
+        1.3125
+      ],
+      "selected": 0,
+      "dqn": 0.84375,
+      "double": 0.84375
+    }
+  ],
+  "gradientPaths": {
+    "semiGradient": [
+      -0.5,
+      -0.25
+    ],
+    "sharedParameterResidual": [
+      -1,
+      -0.5
+    ]
+  }
+}

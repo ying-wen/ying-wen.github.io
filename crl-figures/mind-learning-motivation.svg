@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="720" viewBox="0 0 1080 720" role="img" aria-labelledby="title desc">
+  <title id="title">当前需要能改变意义，摄入线索能提前调节</title>
+  <desc id="desc">上半部为盐线索重估的顺序：先学声音盐水关联，改变钠状态，先只测声音，再品尝盐水。下半部比较快速口腔摄入信息和较慢血液变化对口渴相关活动的影响。原创机制示意，无实测数据。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#637b84"/></marker></defs>
+  <rect width="1080" height="720" rx="24" fill="#f7f5ef"/>
+  <g font-family="PingFang SC,Microsoft YaHei,sans-serif" fill="#193c4b">
+    <text x="44" y="51" font-size="29" font-weight="700">身体状态怎样进入决策？两个不同的实验切口</text>
+    <text x="44" y="82" font-size="18" fill="#677781">原创实验逻辑示意 · 无实测数据 · 箭头表示顺序或信息关系</text>
+    <rect x="32" y="111" width="1016" height="246" rx="18" fill="#fff" stroke="#d9e0df"/>
+    <text x="56" y="148" font-size="23" font-weight="700">A　需求重估：新状态下，先测线索，再给结果</text>
+    <g font-size="20" text-anchor="middle">
+      <rect x="59" y="180" width="204" height="86" rx="13" fill="#e5eff2"/><text x="161" y="211">声音 → 高浓度盐水</text><text x="161" y="244" fill="#677781">正常钠状态下学习</text>
+      <rect x="297" y="180" width="188" height="86" rx="13" fill="#fff0dd"/><text x="391" y="211">诱导钠缺乏</text><text x="391" y="244" fill="#a85c25">改变内部需要</text>
+      <rect x="520" y="180" width="241" height="86" rx="13" fill="#e0f1ec"/><text x="640" y="211">只呈现声音</text><text x="640" y="244" fill="#147d78">此时尚未重新尝盐水</text>
+      <rect x="796" y="180" width="224" height="86" rx="13" fill="#e5eff2"/><text x="908" y="211">随后给味觉结果</text><text x="908" y="244" fill="#677781">核验结果意义变化</text>
+    </g>
+    <g stroke="#637b84" stroke-width="2" marker-end="url(#arrow)"><path d="M265 222H289"/><path d="M487 222H513"/><path d="M763 222H789"/></g>
+    <text x="59" y="304" font-size="20">关键比较：盐线索的变化，是否有别于蔗糖与无结果线索？</text>
+    <text x="59" y="333" font-size="18" fill="#677781">Tindell 等（2009）· 即时重估约束机制，但不指定唯一规划算法。</text>
+    <rect x="32" y="376" width="1016" height="268" rx="18" fill="#edf4f4" stroke="#d9e0df"/>
+    <text x="56" y="413" font-size="23" font-weight="700">B　预期调节：正在摄入的信息，先于体液恢复</text>
+    <path d="M168 510H388" stroke="#138b87" stroke-width="4" marker-end="url(#arrow)"/>
+    <text x="194" y="491" font-size="20" fill="#147d78">快速摄入线索</text>
+    <path d="M168 549V599H911V545" fill="none" stroke="#c47736" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+    <text x="381" y="626" font-size="19" fill="#a85c25">吞咽、吸收后，较慢的体液变化再提供证据</text>
+    <rect x="61" y="501" width="107" height="58" rx="12" fill="#fff" stroke="#bdd4d6"/><text x="114" y="538" text-anchor="middle" font-size="21">饮水</text>
+    <rect x="400" y="474" width="301" height="83" rx="14" fill="#fff" stroke="#bdd4d6"/>
+    <text x="551" y="507" text-anchor="middle" font-size="21">SFO 口渴相关活动</text><text x="551" y="536" text-anchor="middle" font-size="19" fill="#677781">整合当前需要与摄入信号</text>
+    <rect x="800" y="481" width="220" height="64" rx="12" fill="#fff0dd"/><text x="910" y="521" text-anchor="middle" font-size="21">血液状态信息</text>
+    <path d="M798 516H712" stroke="#637b84" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="44" y="683" font-size="19" fill="#677781">Zimmerman 等（2016）· 提前响应支持前馈调节，不单独证明一个学习到的显式模型。</text>
+  </g>
+</svg>

@@ -1,0 +1,52 @@
+{
+  "kind": "exact-teaching-examples",
+  "rows": [
+    {
+      "alpha": 0.2,
+      "evaluationTarget": 1,
+      "updated": 0.2,
+      "loss": 0.32000000000000006,
+      "sensitivity": 1,
+      "gradient": -0.8,
+      "logStepGradient": -0.16000000000000003
+    },
+    {
+      "alpha": 0.2,
+      "evaluationTarget": 0,
+      "updated": 0.2,
+      "loss": 0.020000000000000004,
+      "sensitivity": 1,
+      "gradient": 0.2,
+      "logStepGradient": 0.04000000000000001
+    }
+  ],
+  "comparison": [
+    {
+      "alpha": 0.4,
+      "evaluationTarget": 1,
+      "updated": 0.4,
+      "loss": 0.18,
+      "sensitivity": 1,
+      "gradient": -0.6,
+      "logStepGradient": -0.24
+    },
+    {
+      "alpha": 0.4,
+      "evaluationTarget": 0,
+      "updated": 0.4,
+      "loss": 0.08000000000000002,
+      "sensitivity": 1,
+      "gradient": 0.4,
+      "logStepGradient": 0.16000000000000003
+    }
+  ],
+  "planning": {
+    "p": 0.5,
+    "w": [
+      0.1,
+      0.1
+    ],
+    "loss": 0.039999999999999994,
+    "gradient": -0.02
+  }
+}

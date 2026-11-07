@@ -1,0 +1,4232 @@
+{
+  "provenance": "Original exact teaching calculations; deterministic known model, no sampled performance curves.",
+  "execution": {
+    "start": "0,0",
+    "end": "3,1",
+    "duration": 4,
+    "reward": -3.439,
+    "kernel": 0.6561,
+    "terminal": false,
+    "rows": [
+      {
+        "t": 0,
+        "state": "0,0",
+        "action": "down",
+        "next": "0,1",
+        "reward": -1,
+        "beta": 0,
+        "terminal": false,
+        "stop": false
+      },
+      {
+        "t": 1,
+        "state": "0,1",
+        "action": "right",
+        "next": "1,1",
+        "reward": -1,
+        "beta": 0,
+        "terminal": false,
+        "stop": false
+      },
+      {
+        "t": 2,
+        "state": "1,1",
+        "action": "right",
+        "next": "2,1",
+        "reward": -1,
+        "beta": 0,
+        "terminal": false,
+        "stop": false
+      },
+      {
+        "t": 3,
+        "state": "2,1",
+        "action": "right",
+        "next": "3,1",
+        "reward": -1,
+        "beta": 1,
+        "terminal": false,
+        "stop": true
+      }
+    ],
+    "costReward": -3.439,
+    "continuation": 10,
+    "target": 3.122,
+    "policy": {
+      "0,0": 2,
+      "1,0": 2,
+      "2,0": 2,
+      "0,1": 1,
+      "1,1": 1,
+      "2,1": 1,
+      "0,2": 0,
+      "1,2": 0,
+      "2,2": 0,
+      "1,3": 0
+    },
+    "initiation": [
+      "0,0",
+      "1,0",
+      "2,0",
+      "0,1",
+      "1,1",
+      "2,1",
+      "0,2",
+      "1,2",
+      "2,2",
+      "1,3"
+    ]
+  },
+  "planning": {
+    "gamma": 0.9,
+    "sweeps": 5,
+    "states": [
+      "0,0",
+      "1,0",
+      "2,0",
+      "4,0",
+      "5,0",
+      "6,0",
+      "0,1",
+      "1,1",
+      "2,1",
+      "3,1",
+      "4,1",
+      "5,1",
+      "6,1",
+      "0,2",
+      "1,2",
+      "2,2",
+      "4,2",
+      "5,2",
+      "6,2",
+      "1,3",
+      "5,3",
+      "0,4",
+      "1,4",
+      "2,4",
+      "4,4",
+      "5,4",
+      "6,4",
+      "0,5",
+      "1,5",
+      "2,5",
+      "3,5",
+      "4,5",
+      "5,5",
+      "6,5",
+      "0,6",
+      "1,6",
+      "2,6",
+      "4,6",
+      "5,6",
+      "6,6"
+    ],
+    "goal": "6,0",
+    "start": "0,0",
+    "doors": [
+      "3,1",
+      "5,3",
+      "3,5",
+      "1,3"
+    ],
+    "models": {
+      "0,0": [
+        {
+          "option": "NW:3,1",
+          "start": "0,0",
+          "end": "3,1",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "0,0",
+              "action": "down",
+              "next": "0,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "0,1",
+              "action": "right",
+              "next": "1,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "1,1",
+              "action": "right",
+              "next": "2,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "2,1",
+              "action": "right",
+              "next": "3,1",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "NW:1,3",
+          "start": "0,0",
+          "end": "1,3",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "0,0",
+              "action": "down",
+              "next": "0,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "0,1",
+              "action": "down",
+              "next": "0,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "0,2",
+              "action": "right",
+              "next": "1,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "1,2",
+              "action": "down",
+              "next": "1,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "1,0": [
+        {
+          "option": "NW:3,1",
+          "start": "1,0",
+          "end": "3,1",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "1,0",
+              "action": "down",
+              "next": "1,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "1,1",
+              "action": "right",
+              "next": "2,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "2,1",
+              "action": "right",
+              "next": "3,1",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "NW:1,3",
+          "start": "1,0",
+          "end": "1,3",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "1,0",
+              "action": "down",
+              "next": "1,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "1,1",
+              "action": "down",
+              "next": "1,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "1,2",
+              "action": "down",
+              "next": "1,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "2,0": [
+        {
+          "option": "NW:3,1",
+          "start": "2,0",
+          "end": "3,1",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "2,0",
+              "action": "down",
+              "next": "2,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "2,1",
+              "action": "right",
+              "next": "3,1",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "NW:1,3",
+          "start": "2,0",
+          "end": "1,3",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "2,0",
+              "action": "down",
+              "next": "2,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "2,1",
+              "action": "down",
+              "next": "2,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "2,2",
+              "action": "left",
+              "next": "1,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "1,2",
+              "action": "down",
+              "next": "1,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "4,0": [
+        {
+          "option": "NE:3,1",
+          "start": "4,0",
+          "end": "3,1",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "4,0",
+              "action": "down",
+              "next": "4,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "4,1",
+              "action": "left",
+              "next": "3,1",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "NE:5,3",
+          "start": "4,0",
+          "end": "5,3",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "4,0",
+              "action": "down",
+              "next": "4,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "4,1",
+              "action": "down",
+              "next": "4,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "4,2",
+              "action": "right",
+              "next": "5,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "5,2",
+              "action": "down",
+              "next": "5,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "5,0": [
+        {
+          "option": "NE:3,1",
+          "start": "5,0",
+          "end": "3,1",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "5,0",
+              "action": "down",
+              "next": "5,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "5,1",
+              "action": "left",
+              "next": "4,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "4,1",
+              "action": "left",
+              "next": "3,1",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "NE:5,3",
+          "start": "5,0",
+          "end": "5,3",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "5,0",
+              "action": "down",
+              "next": "5,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "5,1",
+              "action": "down",
+              "next": "5,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "5,2",
+              "action": "down",
+              "next": "5,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "0,1": [
+        {
+          "option": "NW:3,1",
+          "start": "0,1",
+          "end": "3,1",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "0,1",
+              "action": "right",
+              "next": "1,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "1,1",
+              "action": "right",
+              "next": "2,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "2,1",
+              "action": "right",
+              "next": "3,1",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "NW:1,3",
+          "start": "0,1",
+          "end": "1,3",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "0,1",
+              "action": "down",
+              "next": "0,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "0,2",
+              "action": "right",
+              "next": "1,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "1,2",
+              "action": "down",
+              "next": "1,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "1,1": [
+        {
+          "option": "NW:3,1",
+          "start": "1,1",
+          "end": "3,1",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "1,1",
+              "action": "right",
+              "next": "2,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "2,1",
+              "action": "right",
+              "next": "3,1",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "NW:1,3",
+          "start": "1,1",
+          "end": "1,3",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "1,1",
+              "action": "down",
+              "next": "1,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "1,2",
+              "action": "down",
+              "next": "1,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "2,1": [
+        {
+          "option": "NW:3,1",
+          "start": "2,1",
+          "end": "3,1",
+          "duration": 1,
+          "reward": 0,
+          "kernel": 0.9,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "2,1",
+              "action": "right",
+              "next": "3,1",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "NW:1,3",
+          "start": "2,1",
+          "end": "1,3",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "2,1",
+              "action": "down",
+              "next": "2,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "2,2",
+              "action": "left",
+              "next": "1,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "1,2",
+              "action": "down",
+              "next": "1,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "3,1": [
+        {
+          "option": "NW:1,3",
+          "start": "3,1",
+          "end": "1,3",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "3,1",
+              "action": "left",
+              "next": "2,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "2,1",
+              "action": "down",
+              "next": "2,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "2,2",
+              "action": "left",
+              "next": "1,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "1,2",
+              "action": "down",
+              "next": "1,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "NE:5,3",
+          "start": "3,1",
+          "end": "5,3",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "3,1",
+              "action": "right",
+              "next": "4,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "4,1",
+              "action": "down",
+              "next": "4,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "4,2",
+              "action": "right",
+              "next": "5,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "5,2",
+              "action": "down",
+              "next": "5,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "4,1": [
+        {
+          "option": "NE:3,1",
+          "start": "4,1",
+          "end": "3,1",
+          "duration": 1,
+          "reward": 0,
+          "kernel": 0.9,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "4,1",
+              "action": "left",
+              "next": "3,1",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "NE:5,3",
+          "start": "4,1",
+          "end": "5,3",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "4,1",
+              "action": "down",
+              "next": "4,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "4,2",
+              "action": "right",
+              "next": "5,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "5,2",
+              "action": "down",
+              "next": "5,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "5,1": [
+        {
+          "option": "NE:3,1",
+          "start": "5,1",
+          "end": "3,1",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "5,1",
+              "action": "left",
+              "next": "4,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "4,1",
+              "action": "left",
+              "next": "3,1",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "NE:5,3",
+          "start": "5,1",
+          "end": "5,3",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "5,1",
+              "action": "down",
+              "next": "5,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "5,2",
+              "action": "down",
+              "next": "5,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "6,1": [
+        {
+          "option": "NE:3,1",
+          "start": "6,1",
+          "end": "3,1",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "6,1",
+              "action": "left",
+              "next": "5,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "5,1",
+              "action": "left",
+              "next": "4,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "4,1",
+              "action": "left",
+              "next": "3,1",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "NE:5,3",
+          "start": "6,1",
+          "end": "5,3",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "6,1",
+              "action": "down",
+              "next": "6,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "6,2",
+              "action": "left",
+              "next": "5,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "5,2",
+              "action": "down",
+              "next": "5,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "0,2": [
+        {
+          "option": "NW:3,1",
+          "start": "0,2",
+          "end": "3,1",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "0,2",
+              "action": "up",
+              "next": "0,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "0,1",
+              "action": "right",
+              "next": "1,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "1,1",
+              "action": "right",
+              "next": "2,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "2,1",
+              "action": "right",
+              "next": "3,1",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "NW:1,3",
+          "start": "0,2",
+          "end": "1,3",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "0,2",
+              "action": "right",
+              "next": "1,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "1,2",
+              "action": "down",
+              "next": "1,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "1,2": [
+        {
+          "option": "NW:3,1",
+          "start": "1,2",
+          "end": "3,1",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "1,2",
+              "action": "up",
+              "next": "1,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "1,1",
+              "action": "right",
+              "next": "2,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "2,1",
+              "action": "right",
+              "next": "3,1",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "NW:1,3",
+          "start": "1,2",
+          "end": "1,3",
+          "duration": 1,
+          "reward": 0,
+          "kernel": 0.9,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "1,2",
+              "action": "down",
+              "next": "1,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "2,2": [
+        {
+          "option": "NW:3,1",
+          "start": "2,2",
+          "end": "3,1",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "2,2",
+              "action": "up",
+              "next": "2,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "2,1",
+              "action": "right",
+              "next": "3,1",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "NW:1,3",
+          "start": "2,2",
+          "end": "1,3",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "2,2",
+              "action": "left",
+              "next": "1,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "1,2",
+              "action": "down",
+              "next": "1,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "4,2": [
+        {
+          "option": "NE:3,1",
+          "start": "4,2",
+          "end": "3,1",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "4,2",
+              "action": "up",
+              "next": "4,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "4,1",
+              "action": "left",
+              "next": "3,1",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "NE:5,3",
+          "start": "4,2",
+          "end": "5,3",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "4,2",
+              "action": "right",
+              "next": "5,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "5,2",
+              "action": "down",
+              "next": "5,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "5,2": [
+        {
+          "option": "NE:3,1",
+          "start": "5,2",
+          "end": "3,1",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "5,2",
+              "action": "up",
+              "next": "5,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "5,1",
+              "action": "left",
+              "next": "4,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "4,1",
+              "action": "left",
+              "next": "3,1",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "NE:5,3",
+          "start": "5,2",
+          "end": "5,3",
+          "duration": 1,
+          "reward": 0,
+          "kernel": 0.9,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "5,2",
+              "action": "down",
+              "next": "5,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "6,2": [
+        {
+          "option": "NE:3,1",
+          "start": "6,2",
+          "end": "3,1",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "6,2",
+              "action": "up",
+              "next": "6,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "6,1",
+              "action": "left",
+              "next": "5,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "5,1",
+              "action": "left",
+              "next": "4,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "4,1",
+              "action": "left",
+              "next": "3,1",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "NE:5,3",
+          "start": "6,2",
+          "end": "5,3",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "6,2",
+              "action": "left",
+              "next": "5,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "5,2",
+              "action": "down",
+              "next": "5,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "1,3": [
+        {
+          "option": "NW:3,1",
+          "start": "1,3",
+          "end": "3,1",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "1,3",
+              "action": "up",
+              "next": "1,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "1,2",
+              "action": "up",
+              "next": "1,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "1,1",
+              "action": "right",
+              "next": "2,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "2,1",
+              "action": "right",
+              "next": "3,1",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SW:3,5",
+          "start": "1,3",
+          "end": "3,5",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "1,3",
+              "action": "down",
+              "next": "1,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "1,4",
+              "action": "down",
+              "next": "1,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "1,5",
+              "action": "right",
+              "next": "2,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "2,5",
+              "action": "right",
+              "next": "3,5",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "5,3": [
+        {
+          "option": "NE:3,1",
+          "start": "5,3",
+          "end": "3,1",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "5,3",
+              "action": "up",
+              "next": "5,2",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "5,2",
+              "action": "up",
+              "next": "5,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "5,1",
+              "action": "left",
+              "next": "4,1",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "4,1",
+              "action": "left",
+              "next": "3,1",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SE:3,5",
+          "start": "5,3",
+          "end": "3,5",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "5,3",
+              "action": "down",
+              "next": "5,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "5,4",
+              "action": "down",
+              "next": "5,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "5,5",
+              "action": "left",
+              "next": "4,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "4,5",
+              "action": "left",
+              "next": "3,5",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "0,4": [
+        {
+          "option": "SW:1,3",
+          "start": "0,4",
+          "end": "1,3",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "0,4",
+              "action": "right",
+              "next": "1,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "1,4",
+              "action": "up",
+              "next": "1,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SW:3,5",
+          "start": "0,4",
+          "end": "3,5",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "0,4",
+              "action": "down",
+              "next": "0,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "0,5",
+              "action": "right",
+              "next": "1,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "1,5",
+              "action": "right",
+              "next": "2,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "2,5",
+              "action": "right",
+              "next": "3,5",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "1,4": [
+        {
+          "option": "SW:1,3",
+          "start": "1,4",
+          "end": "1,3",
+          "duration": 1,
+          "reward": 0,
+          "kernel": 0.9,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "1,4",
+              "action": "up",
+              "next": "1,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SW:3,5",
+          "start": "1,4",
+          "end": "3,5",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "1,4",
+              "action": "down",
+              "next": "1,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "1,5",
+              "action": "right",
+              "next": "2,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "2,5",
+              "action": "right",
+              "next": "3,5",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "2,4": [
+        {
+          "option": "SW:1,3",
+          "start": "2,4",
+          "end": "1,3",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "2,4",
+              "action": "left",
+              "next": "1,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "1,4",
+              "action": "up",
+              "next": "1,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SW:3,5",
+          "start": "2,4",
+          "end": "3,5",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "2,4",
+              "action": "down",
+              "next": "2,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "2,5",
+              "action": "right",
+              "next": "3,5",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "4,4": [
+        {
+          "option": "SE:5,3",
+          "start": "4,4",
+          "end": "5,3",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "4,4",
+              "action": "right",
+              "next": "5,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "5,4",
+              "action": "up",
+              "next": "5,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SE:3,5",
+          "start": "4,4",
+          "end": "3,5",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "4,4",
+              "action": "down",
+              "next": "4,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "4,5",
+              "action": "left",
+              "next": "3,5",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "5,4": [
+        {
+          "option": "SE:5,3",
+          "start": "5,4",
+          "end": "5,3",
+          "duration": 1,
+          "reward": 0,
+          "kernel": 0.9,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "5,4",
+              "action": "up",
+              "next": "5,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SE:3,5",
+          "start": "5,4",
+          "end": "3,5",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "5,4",
+              "action": "down",
+              "next": "5,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "5,5",
+              "action": "left",
+              "next": "4,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "4,5",
+              "action": "left",
+              "next": "3,5",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "6,4": [
+        {
+          "option": "SE:5,3",
+          "start": "6,4",
+          "end": "5,3",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "6,4",
+              "action": "left",
+              "next": "5,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "5,4",
+              "action": "up",
+              "next": "5,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SE:3,5",
+          "start": "6,4",
+          "end": "3,5",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "6,4",
+              "action": "down",
+              "next": "6,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "6,5",
+              "action": "left",
+              "next": "5,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "5,5",
+              "action": "left",
+              "next": "4,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "4,5",
+              "action": "left",
+              "next": "3,5",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "0,5": [
+        {
+          "option": "SW:1,3",
+          "start": "0,5",
+          "end": "1,3",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "0,5",
+              "action": "up",
+              "next": "0,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "0,4",
+              "action": "right",
+              "next": "1,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "1,4",
+              "action": "up",
+              "next": "1,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SW:3,5",
+          "start": "0,5",
+          "end": "3,5",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "0,5",
+              "action": "right",
+              "next": "1,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "1,5",
+              "action": "right",
+              "next": "2,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "2,5",
+              "action": "right",
+              "next": "3,5",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "1,5": [
+        {
+          "option": "SW:1,3",
+          "start": "1,5",
+          "end": "1,3",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "1,5",
+              "action": "up",
+              "next": "1,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "1,4",
+              "action": "up",
+              "next": "1,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SW:3,5",
+          "start": "1,5",
+          "end": "3,5",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "1,5",
+              "action": "right",
+              "next": "2,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "2,5",
+              "action": "right",
+              "next": "3,5",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "2,5": [
+        {
+          "option": "SW:1,3",
+          "start": "2,5",
+          "end": "1,3",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "2,5",
+              "action": "up",
+              "next": "2,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "2,4",
+              "action": "left",
+              "next": "1,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "1,4",
+              "action": "up",
+              "next": "1,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SW:3,5",
+          "start": "2,5",
+          "end": "3,5",
+          "duration": 1,
+          "reward": 0,
+          "kernel": 0.9,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "2,5",
+              "action": "right",
+              "next": "3,5",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "3,5": [
+        {
+          "option": "SW:1,3",
+          "start": "3,5",
+          "end": "1,3",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "3,5",
+              "action": "left",
+              "next": "2,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "2,5",
+              "action": "up",
+              "next": "2,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "2,4",
+              "action": "left",
+              "next": "1,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "1,4",
+              "action": "up",
+              "next": "1,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SE:5,3",
+          "start": "3,5",
+          "end": "5,3",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "3,5",
+              "action": "right",
+              "next": "4,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "4,5",
+              "action": "up",
+              "next": "4,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "4,4",
+              "action": "right",
+              "next": "5,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "5,4",
+              "action": "up",
+              "next": "5,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "4,5": [
+        {
+          "option": "SE:5,3",
+          "start": "4,5",
+          "end": "5,3",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "4,5",
+              "action": "up",
+              "next": "4,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "4,4",
+              "action": "right",
+              "next": "5,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "5,4",
+              "action": "up",
+              "next": "5,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SE:3,5",
+          "start": "4,5",
+          "end": "3,5",
+          "duration": 1,
+          "reward": 0,
+          "kernel": 0.9,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "4,5",
+              "action": "left",
+              "next": "3,5",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "5,5": [
+        {
+          "option": "SE:5,3",
+          "start": "5,5",
+          "end": "5,3",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "5,5",
+              "action": "up",
+              "next": "5,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "5,4",
+              "action": "up",
+              "next": "5,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SE:3,5",
+          "start": "5,5",
+          "end": "3,5",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "5,5",
+              "action": "left",
+              "next": "4,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "4,5",
+              "action": "left",
+              "next": "3,5",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "6,5": [
+        {
+          "option": "SE:5,3",
+          "start": "6,5",
+          "end": "5,3",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "6,5",
+              "action": "up",
+              "next": "6,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "6,4",
+              "action": "left",
+              "next": "5,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "5,4",
+              "action": "up",
+              "next": "5,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SE:3,5",
+          "start": "6,5",
+          "end": "3,5",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "6,5",
+              "action": "left",
+              "next": "5,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "5,5",
+              "action": "left",
+              "next": "4,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "4,5",
+              "action": "left",
+              "next": "3,5",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "0,6": [
+        {
+          "option": "SW:1,3",
+          "start": "0,6",
+          "end": "1,3",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "0,6",
+              "action": "up",
+              "next": "0,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "0,5",
+              "action": "up",
+              "next": "0,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "0,4",
+              "action": "right",
+              "next": "1,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "1,4",
+              "action": "up",
+              "next": "1,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SW:3,5",
+          "start": "0,6",
+          "end": "3,5",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "0,6",
+              "action": "up",
+              "next": "0,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "0,5",
+              "action": "right",
+              "next": "1,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "1,5",
+              "action": "right",
+              "next": "2,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "2,5",
+              "action": "right",
+              "next": "3,5",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "1,6": [
+        {
+          "option": "SW:1,3",
+          "start": "1,6",
+          "end": "1,3",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "1,6",
+              "action": "up",
+              "next": "1,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "1,5",
+              "action": "up",
+              "next": "1,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "1,4",
+              "action": "up",
+              "next": "1,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SW:3,5",
+          "start": "1,6",
+          "end": "3,5",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "1,6",
+              "action": "up",
+              "next": "1,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "1,5",
+              "action": "right",
+              "next": "2,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "2,5",
+              "action": "right",
+              "next": "3,5",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "2,6": [
+        {
+          "option": "SW:1,3",
+          "start": "2,6",
+          "end": "1,3",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "2,6",
+              "action": "up",
+              "next": "2,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "2,5",
+              "action": "up",
+              "next": "2,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "2,4",
+              "action": "left",
+              "next": "1,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "1,4",
+              "action": "up",
+              "next": "1,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SW:3,5",
+          "start": "2,6",
+          "end": "3,5",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "2,6",
+              "action": "up",
+              "next": "2,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "2,5",
+              "action": "right",
+              "next": "3,5",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "4,6": [
+        {
+          "option": "SE:5,3",
+          "start": "4,6",
+          "end": "5,3",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "4,6",
+              "action": "up",
+              "next": "4,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "4,5",
+              "action": "up",
+              "next": "4,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "4,4",
+              "action": "right",
+              "next": "5,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "5,4",
+              "action": "up",
+              "next": "5,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SE:3,5",
+          "start": "4,6",
+          "end": "3,5",
+          "duration": 2,
+          "reward": 0,
+          "kernel": 0.81,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "4,6",
+              "action": "up",
+              "next": "4,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "4,5",
+              "action": "left",
+              "next": "3,5",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "5,6": [
+        {
+          "option": "SE:5,3",
+          "start": "5,6",
+          "end": "5,3",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "5,6",
+              "action": "up",
+              "next": "5,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "5,5",
+              "action": "up",
+              "next": "5,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "5,4",
+              "action": "up",
+              "next": "5,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SE:3,5",
+          "start": "5,6",
+          "end": "3,5",
+          "duration": 3,
+          "reward": 0,
+          "kernel": 0.7290000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "5,6",
+              "action": "up",
+              "next": "5,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "5,5",
+              "action": "left",
+              "next": "4,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "4,5",
+              "action": "left",
+              "next": "3,5",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ],
+      "6,6": [
+        {
+          "option": "SE:5,3",
+          "start": "6,6",
+          "end": "5,3",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "6,6",
+              "action": "up",
+              "next": "6,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "6,5",
+              "action": "up",
+              "next": "6,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "6,4",
+              "action": "left",
+              "next": "5,4",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "5,4",
+              "action": "up",
+              "next": "5,3",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        },
+        {
+          "option": "SE:3,5",
+          "start": "6,6",
+          "end": "3,5",
+          "duration": 4,
+          "reward": 0,
+          "kernel": 0.6561000000000001,
+          "terminal": false,
+          "rows": [
+            {
+              "t": 0,
+              "state": "6,6",
+              "action": "up",
+              "next": "6,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 1,
+              "state": "6,5",
+              "action": "left",
+              "next": "5,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 2,
+              "state": "5,5",
+              "action": "left",
+              "next": "4,5",
+              "reward": 0,
+              "beta": 0,
+              "terminal": false,
+              "stop": false
+            },
+            {
+              "t": 3,
+              "state": "4,5",
+              "action": "left",
+              "next": "3,5",
+              "reward": 0,
+              "beta": 1,
+              "terminal": false,
+              "stop": true
+            }
+          ]
+        }
+      ]
+    },
+    "primitive": {
+      "values": {
+        "0,0": 0,
+        "1,0": 0,
+        "2,0": 0,
+        "4,0": 0.9,
+        "5,0": 1,
+        "6,0": 0,
+        "0,1": 0,
+        "1,1": 0,
+        "2,1": 0.6561000000000001,
+        "3,1": 0.7290000000000001,
+        "4,1": 0.81,
+        "5,1": 0.9,
+        "6,1": 1,
+        "0,2": 0,
+        "1,2": 0,
+        "2,2": 0,
+        "4,2": 0.7290000000000001,
+        "5,2": 0.81,
+        "6,2": 0.9,
+        "1,3": 0,
+        "5,3": 0.7290000000000001,
+        "0,4": 0,
+        "1,4": 0,
+        "2,4": 0,
+        "4,4": 0,
+        "5,4": 0.6561000000000001,
+        "6,4": 0,
+        "0,5": 0,
+        "1,5": 0,
+        "2,5": 0,
+        "3,5": 0,
+        "4,5": 0,
+        "5,5": 0,
+        "6,5": 0,
+        "0,6": 0,
+        "1,6": 0,
+        "2,6": 0,
+        "4,6": 0,
+        "5,6": 0,
+        "6,6": 0
+      },
+      "history": [
+        {
+          "0,0": 0,
+          "1,0": 0,
+          "2,0": 0,
+          "4,0": 0,
+          "5,0": 0,
+          "6,0": 0,
+          "0,1": 0,
+          "1,1": 0,
+          "2,1": 0,
+          "3,1": 0,
+          "4,1": 0,
+          "5,1": 0,
+          "6,1": 0,
+          "0,2": 0,
+          "1,2": 0,
+          "2,2": 0,
+          "4,2": 0,
+          "5,2": 0,
+          "6,2": 0,
+          "1,3": 0,
+          "5,3": 0,
+          "0,4": 0,
+          "1,4": 0,
+          "2,4": 0,
+          "4,4": 0,
+          "5,4": 0,
+          "6,4": 0,
+          "0,5": 0,
+          "1,5": 0,
+          "2,5": 0,
+          "3,5": 0,
+          "4,5": 0,
+          "5,5": 0,
+          "6,5": 0,
+          "0,6": 0,
+          "1,6": 0,
+          "2,6": 0,
+          "4,6": 0,
+          "5,6": 0,
+          "6,6": 0
+        },
+        {
+          "0,0": 0,
+          "1,0": 0,
+          "2,0": 0,
+          "4,0": 0,
+          "5,0": 1,
+          "6,0": 0,
+          "0,1": 0,
+          "1,1": 0,
+          "2,1": 0,
+          "3,1": 0,
+          "4,1": 0,
+          "5,1": 0,
+          "6,1": 1,
+          "0,2": 0,
+          "1,2": 0,
+          "2,2": 0,
+          "4,2": 0,
+          "5,2": 0,
+          "6,2": 0,
+          "1,3": 0,
+          "5,3": 0,
+          "0,4": 0,
+          "1,4": 0,
+          "2,4": 0,
+          "4,4": 0,
+          "5,4": 0,
+          "6,4": 0,
+          "0,5": 0,
+          "1,5": 0,
+          "2,5": 0,
+          "3,5": 0,
+          "4,5": 0,
+          "5,5": 0,
+          "6,5": 0,
+          "0,6": 0,
+          "1,6": 0,
+          "2,6": 0,
+          "4,6": 0,
+          "5,6": 0,
+          "6,6": 0
+        },
+        {
+          "0,0": 0,
+          "1,0": 0,
+          "2,0": 0,
+          "4,0": 0.9,
+          "5,0": 1,
+          "6,0": 0,
+          "0,1": 0,
+          "1,1": 0,
+          "2,1": 0,
+          "3,1": 0,
+          "4,1": 0,
+          "5,1": 0.9,
+          "6,1": 1,
+          "0,2": 0,
+          "1,2": 0,
+          "2,2": 0,
+          "4,2": 0,
+          "5,2": 0,
+          "6,2": 0.9,
+          "1,3": 0,
+          "5,3": 0,
+          "0,4": 0,
+          "1,4": 0,
+          "2,4": 0,
+          "4,4": 0,
+          "5,4": 0,
+          "6,4": 0,
+          "0,5": 0,
+          "1,5": 0,
+          "2,5": 0,
+          "3,5": 0,
+          "4,5": 0,
+          "5,5": 0,
+          "6,5": 0,
+          "0,6": 0,
+          "1,6": 0,
+          "2,6": 0,
+          "4,6": 0,
+          "5,6": 0,
+          "6,6": 0
+        },
+        {
+          "0,0": 0,
+          "1,0": 0,
+          "2,0": 0,
+          "4,0": 0.9,
+          "5,0": 1,
+          "6,0": 0,
+          "0,1": 0,
+          "1,1": 0,
+          "2,1": 0,
+          "3,1": 0,
+          "4,1": 0.81,
+          "5,1": 0.9,
+          "6,1": 1,
+          "0,2": 0,
+          "1,2": 0,
+          "2,2": 0,
+          "4,2": 0,
+          "5,2": 0.81,
+          "6,2": 0.9,
+          "1,3": 0,
+          "5,3": 0,
+          "0,4": 0,
+          "1,4": 0,
+          "2,4": 0,
+          "4,4": 0,
+          "5,4": 0,
+          "6,4": 0,
+          "0,5": 0,
+          "1,5": 0,
+          "2,5": 0,
+          "3,5": 0,
+          "4,5": 0,
+          "5,5": 0,
+          "6,5": 0,
+          "0,6": 0,
+          "1,6": 0,
+          "2,6": 0,
+          "4,6": 0,
+          "5,6": 0,
+          "6,6": 0
+        },
+        {
+          "0,0": 0,
+          "1,0": 0,
+          "2,0": 0,
+          "4,0": 0.9,
+          "5,0": 1,
+          "6,0": 0,
+          "0,1": 0,
+          "1,1": 0,
+          "2,1": 0,
+          "3,1": 0.7290000000000001,
+          "4,1": 0.81,
+          "5,1": 0.9,
+          "6,1": 1,
+          "0,2": 0,
+          "1,2": 0,
+          "2,2": 0,
+          "4,2": 0.7290000000000001,
+          "5,2": 0.81,
+          "6,2": 0.9,
+          "1,3": 0,
+          "5,3": 0.7290000000000001,
+          "0,4": 0,
+          "1,4": 0,
+          "2,4": 0,
+          "4,4": 0,
+          "5,4": 0,
+          "6,4": 0,
+          "0,5": 0,
+          "1,5": 0,
+          "2,5": 0,
+          "3,5": 0,
+          "4,5": 0,
+          "5,5": 0,
+          "6,5": 0,
+          "0,6": 0,
+          "1,6": 0,
+          "2,6": 0,
+          "4,6": 0,
+          "5,6": 0,
+          "6,6": 0
+        },
+        {
+          "0,0": 0,
+          "1,0": 0,
+          "2,0": 0,
+          "4,0": 0.9,
+          "5,0": 1,
+          "6,0": 0,
+          "0,1": 0,
+          "1,1": 0,
+          "2,1": 0.6561000000000001,
+          "3,1": 0.7290000000000001,
+          "4,1": 0.81,
+          "5,1": 0.9,
+          "6,1": 1,
+          "0,2": 0,
+          "1,2": 0,
+          "2,2": 0,
+          "4,2": 0.7290000000000001,
+          "5,2": 0.81,
+          "6,2": 0.9,
+          "1,3": 0,
+          "5,3": 0.7290000000000001,
+          "0,4": 0,
+          "1,4": 0,
+          "2,4": 0,
+          "4,4": 0,
+          "5,4": 0.6561000000000001,
+          "6,4": 0,
+          "0,5": 0,
+          "1,5": 0,
+          "2,5": 0,
+          "3,5": 0,
+          "4,5": 0,
+          "5,5": 0,
+          "6,5": 0,
+          "0,6": 0,
+          "1,6": 0,
+          "2,6": 0,
+          "4,6": 0,
+          "5,6": 0,
+          "6,6": 0
+        }
+      ],
+      "backups": 780
+    },
+    "augmented": {
+      "values": {
+        "0,0": 0.47829690000000014,
+        "1,0": 0.5314410000000002,
+        "2,0": 0.5904900000000001,
+        "4,0": 0.9,
+        "5,0": 1,
+        "6,0": 0,
+        "0,1": 0.5314410000000002,
+        "1,1": 0.5904900000000001,
+        "2,1": 0.6561000000000001,
+        "3,1": 0.7290000000000001,
+        "4,1": 0.81,
+        "5,1": 0.9,
+        "6,1": 1,
+        "0,2": 0.47829690000000014,
+        "1,2": 0.5314410000000002,
+        "2,2": 0.5904900000000001,
+        "4,2": 0.7290000000000001,
+        "5,2": 0.81,
+        "6,2": 0.9,
+        "1,3": 0.47829690000000014,
+        "5,3": 0.7290000000000001,
+        "0,4": 0,
+        "1,4": 0,
+        "2,4": 0,
+        "4,4": 0.5904900000000001,
+        "5,4": 0.6561000000000001,
+        "6,4": 0.5904900000000001,
+        "0,5": 0,
+        "1,5": 0,
+        "2,5": 0,
+        "3,5": 0.47829690000000014,
+        "4,5": 0.5314410000000002,
+        "5,5": 0.5904900000000001,
+        "6,5": 0.5314410000000002,
+        "0,6": 0,
+        "1,6": 0,
+        "2,6": 0,
+        "4,6": 0.47829690000000014,
+        "5,6": 0.5314410000000002,
+        "6,6": 0.47829690000000014
+      },
+      "history": [
+        {
+          "0,0": 0,
+          "1,0": 0,
+          "2,0": 0,
+          "4,0": 0,
+          "5,0": 0,
+          "6,0": 0,
+          "0,1": 0,
+          "1,1": 0,
+          "2,1": 0,
+          "3,1": 0,
+          "4,1": 0,
+          "5,1": 0,
+          "6,1": 0,
+          "0,2": 0,
+          "1,2": 0,
+          "2,2": 0,
+          "4,2": 0,
+          "5,2": 0,
+          "6,2": 0,
+          "1,3": 0,
+          "5,3": 0,
+          "0,4": 0,
+          "1,4": 0,
+          "2,4": 0,
+          "4,4": 0,
+          "5,4": 0,
+          "6,4": 0,
+          "0,5": 0,
+          "1,5": 0,
+          "2,5": 0,
+          "3,5": 0,
+          "4,5": 0,
+          "5,5": 0,
+          "6,5": 0,
+          "0,6": 0,
+          "1,6": 0,
+          "2,6": 0,
+          "4,6": 0,
+          "5,6": 0,
+          "6,6": 0
+        },
+        {
+          "0,0": 0,
+          "1,0": 0,
+          "2,0": 0,
+          "4,0": 0,
+          "5,0": 1,
+          "6,0": 0,
+          "0,1": 0,
+          "1,1": 0,
+          "2,1": 0,
+          "3,1": 0,
+          "4,1": 0,
+          "5,1": 0,
+          "6,1": 1,
+          "0,2": 0,
+          "1,2": 0,
+          "2,2": 0,
+          "4,2": 0,
+          "5,2": 0,
+          "6,2": 0,
+          "1,3": 0,
+          "5,3": 0,
+          "0,4": 0,
+          "1,4": 0,
+          "2,4": 0,
+          "4,4": 0,
+          "5,4": 0,
+          "6,4": 0,
+          "0,5": 0,
+          "1,5": 0,
+          "2,5": 0,
+          "3,5": 0,
+          "4,5": 0,
+          "5,5": 0,
+          "6,5": 0,
+          "0,6": 0,
+          "1,6": 0,
+          "2,6": 0,
+          "4,6": 0,
+          "5,6": 0,
+          "6,6": 0
+        },
+        {
+          "0,0": 0,
+          "1,0": 0,
+          "2,0": 0,
+          "4,0": 0.9,
+          "5,0": 1,
+          "6,0": 0,
+          "0,1": 0,
+          "1,1": 0,
+          "2,1": 0,
+          "3,1": 0,
+          "4,1": 0,
+          "5,1": 0.9,
+          "6,1": 1,
+          "0,2": 0,
+          "1,2": 0,
+          "2,2": 0,
+          "4,2": 0,
+          "5,2": 0,
+          "6,2": 0.9,
+          "1,3": 0,
+          "5,3": 0,
+          "0,4": 0,
+          "1,4": 0,
+          "2,4": 0,
+          "4,4": 0,
+          "5,4": 0,
+          "6,4": 0,
+          "0,5": 0,
+          "1,5": 0,
+          "2,5": 0,
+          "3,5": 0,
+          "4,5": 0,
+          "5,5": 0,
+          "6,5": 0,
+          "0,6": 0,
+          "1,6": 0,
+          "2,6": 0,
+          "4,6": 0,
+          "5,6": 0,
+          "6,6": 0
+        },
+        {
+          "0,0": 0,
+          "1,0": 0,
+          "2,0": 0,
+          "4,0": 0.9,
+          "5,0": 1,
+          "6,0": 0,
+          "0,1": 0,
+          "1,1": 0,
+          "2,1": 0,
+          "3,1": 0,
+          "4,1": 0.81,
+          "5,1": 0.9,
+          "6,1": 1,
+          "0,2": 0,
+          "1,2": 0,
+          "2,2": 0,
+          "4,2": 0,
+          "5,2": 0.81,
+          "6,2": 0.9,
+          "1,3": 0,
+          "5,3": 0,
+          "0,4": 0,
+          "1,4": 0,
+          "2,4": 0,
+          "4,4": 0,
+          "5,4": 0,
+          "6,4": 0,
+          "0,5": 0,
+          "1,5": 0,
+          "2,5": 0,
+          "3,5": 0,
+          "4,5": 0,
+          "5,5": 0,
+          "6,5": 0,
+          "0,6": 0,
+          "1,6": 0,
+          "2,6": 0,
+          "4,6": 0,
+          "5,6": 0,
+          "6,6": 0
+        },
+        {
+          "0,0": 0,
+          "1,0": 0,
+          "2,0": 0,
+          "4,0": 0.9,
+          "5,0": 1,
+          "6,0": 0,
+          "0,1": 0,
+          "1,1": 0,
+          "2,1": 0,
+          "3,1": 0.7290000000000001,
+          "4,1": 0.81,
+          "5,1": 0.9,
+          "6,1": 1,
+          "0,2": 0,
+          "1,2": 0,
+          "2,2": 0,
+          "4,2": 0.7290000000000001,
+          "5,2": 0.81,
+          "6,2": 0.9,
+          "1,3": 0,
+          "5,3": 0.7290000000000001,
+          "0,4": 0,
+          "1,4": 0,
+          "2,4": 0,
+          "4,4": 0,
+          "5,4": 0,
+          "6,4": 0,
+          "0,5": 0,
+          "1,5": 0,
+          "2,5": 0,
+          "3,5": 0,
+          "4,5": 0,
+          "5,5": 0,
+          "6,5": 0,
+          "0,6": 0,
+          "1,6": 0,
+          "2,6": 0,
+          "4,6": 0,
+          "5,6": 0,
+          "6,6": 0
+        },
+        {
+          "0,0": 0.47829690000000014,
+          "1,0": 0.5314410000000002,
+          "2,0": 0.5904900000000001,
+          "4,0": 0.9,
+          "5,0": 1,
+          "6,0": 0,
+          "0,1": 0.5314410000000002,
+          "1,1": 0.5904900000000001,
+          "2,1": 0.6561000000000001,
+          "3,1": 0.7290000000000001,
+          "4,1": 0.81,
+          "5,1": 0.9,
+          "6,1": 1,
+          "0,2": 0.47829690000000014,
+          "1,2": 0.5314410000000002,
+          "2,2": 0.5904900000000001,
+          "4,2": 0.7290000000000001,
+          "5,2": 0.81,
+          "6,2": 0.9,
+          "1,3": 0.47829690000000014,
+          "5,3": 0.7290000000000001,
+          "0,4": 0,
+          "1,4": 0,
+          "2,4": 0,
+          "4,4": 0.5904900000000001,
+          "5,4": 0.6561000000000001,
+          "6,4": 0.5904900000000001,
+          "0,5": 0,
+          "1,5": 0,
+          "2,5": 0,
+          "3,5": 0.47829690000000014,
+          "4,5": 0.5314410000000002,
+          "5,5": 0.5904900000000001,
+          "6,5": 0.5314410000000002,
+          "0,6": 0,
+          "1,6": 0,
+          "2,6": 0,
+          "4,6": 0.47829690000000014,
+          "5,6": 0.5314410000000002,
+          "6,6": 0.47829690000000014
+        }
+      ],
+      "backups": 1170
+    }
+  },
+  "credit": {
+    "gamma": 0.9,
+    "lambda": 0.8,
+    "alpha": 0.1,
+    "decay": 0.7200000000000001,
+    "states": [
+      "A",
+      "B",
+      "A",
+      "B",
+      "C"
+    ],
+    "rewards": [
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "rows": [
+      {
+        "t": 0,
+        "state": "A",
+        "reward": 0,
+        "delta": 0,
+        "trace": [
+          1,
+          0,
+          0
+        ],
+        "increment": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "t": 1,
+        "state": "B",
+        "reward": 0,
+        "delta": 0,
+        "trace": [
+          0.7200000000000001,
+          1,
+          0
+        ],
+        "increment": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "t": 2,
+        "state": "A",
+        "reward": 0,
+        "delta": 0,
+        "trace": [
+          1.5184000000000002,
+          0.7200000000000001,
+          0
+        ],
+        "increment": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "t": 3,
+        "state": "B",
+        "reward": 0,
+        "delta": 0,
+        "trace": [
+          1.0932480000000002,
+          1.5184000000000002,
+          0
+        ],
+        "increment": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "t": 4,
+        "state": "C",
+        "reward": 1,
+        "delta": 1,
+        "trace": [
+          0.7871385600000003,
+          1.0932480000000002,
+          1
+        ],
+        "increment": [
+          0.07871385600000003,
+          0.10932480000000003,
+          0.1
+        ]
+      }
+    ],
+    "values": [
+      0.07871385600000003,
+      0.10932480000000003,
+      0.1
+    ],
+    "forward": [
+      {
+        "t": 0,
+        "state": "A",
+        "components": [
+          {
+            "length": 1,
+            "weight": 0.19999999999999996,
+            "target": 0,
+            "contribution": 0
+          },
+          {
+            "length": 2,
+            "weight": 0.15999999999999998,
+            "target": 0,
+            "contribution": 0
+          },
+          {
+            "length": 3,
+            "weight": 0.128,
+            "target": 0,
+            "contribution": 0
+          },
+          {
+            "length": 4,
+            "weight": 0.1024,
+            "target": 0,
+            "contribution": 0
+          },
+          {
+            "length": 5,
+            "weight": 0.4096000000000001,
+            "target": 0.6561,
+            "contribution": 0.26873856000000007
+          }
+        ],
+        "target": 0.26873856000000007
+      },
+      {
+        "t": 1,
+        "state": "B",
+        "components": [
+          {
+            "length": 1,
+            "weight": 0.19999999999999996,
+            "target": 0,
+            "contribution": 0
+          },
+          {
+            "length": 2,
+            "weight": 0.15999999999999998,
+            "target": 0,
+            "contribution": 0
+          },
+          {
+            "length": 3,
+            "weight": 0.128,
+            "target": 0,
+            "contribution": 0
+          },
+          {
+            "length": 4,
+            "weight": 0.5120000000000001,
+            "target": 0.7290000000000001,
+            "contribution": 0.37324800000000014
+          }
+        ],
+        "target": 0.37324800000000014
+      },
+      {
+        "t": 2,
+        "state": "A",
+        "components": [
+          {
+            "length": 1,
+            "weight": 0.19999999999999996,
+            "target": 0,
+            "contribution": 0
+          },
+          {
+            "length": 2,
+            "weight": 0.15999999999999998,
+            "target": 0,
+            "contribution": 0
+          },
+          {
+            "length": 3,
+            "weight": 0.6400000000000001,
+            "target": 0.81,
+            "contribution": 0.5184000000000001
+          }
+        ],
+        "target": 0.5184000000000001
+      },
+      {
+        "t": 3,
+        "state": "B",
+        "components": [
+          {
+            "length": 1,
+            "weight": 0.19999999999999996,
+            "target": 0,
+            "contribution": 0
+          },
+          {
+            "length": 2,
+            "weight": 0.8,
+            "target": 0.9,
+            "contribution": 0.7200000000000001
+          }
+        ],
+        "target": 0.7200000000000001
+      },
+      {
+        "t": 4,
+        "state": "C",
+        "components": [
+          {
+            "length": 1,
+            "weight": 1,
+            "target": 1,
+            "contribution": 1
+          }
+        ],
+        "target": 1
+      }
+    ],
+    "sharedFeatures": {
+      "A": [
+        1,
+        0
+      ],
+      "B": [
+        1,
+        1
+      ],
+      "C": [
+        0,
+        1
+      ],
+      "D": [
+        1,
+        0
+      ]
+    },
+    "sharedTrace": [
+      1.8803865600000007,
+      2.093248
+    ],
+    "sharedWeights": [
+      0.18803865600000008,
+      0.2093248
+    ],
+    "sharedValues": {
+      "A": 0.18803865600000008,
+      "B": 0.3973634560000001,
+      "C": 0.2093248,
+      "D": 0.18803865600000008
+    },
+    "nonlinear": [
+      {
+        "t": 0,
+        "state": "A",
+        "theta": [
+          1,
+          1
+        ],
+        "g": [
+          0.7615941559557649,
+          0.41997434161402614
+        ],
+        "currentGradient": [
+          0.46211715726000974,
+          1.5728954659318548
+        ],
+        "historical": [
+          0.7615941559557649,
+          0.41997434161402614
+        ],
+        "recomputed": [
+          0.46211715726000974,
+          1.5728954659318548
+        ]
+      },
+      {
+        "t": 1,
+        "state": "B",
+        "theta": [
+          1,
+          1
+        ],
+        "g": [
+          0.9640275800758169,
+          0.14130164970632886
+        ],
+        "currentGradient": [
+          0.7615941559557649,
+          1.6798973664561045
+        ],
+        "historical": [
+          1.5123753723639677,
+          0.4436831756684277
+        ],
+        "recomputed": [
+          1.094318509182972,
+          2.81238210192704
+        ]
+      },
+      {
+        "t": 2,
+        "state": "A",
+        "theta": [
+          2,
+          0.5
+        ],
+        "g": [
+          0.46211715726000974,
+          1.5728954659318548
+        ],
+        "currentGradient": [
+          0.46211715726000974,
+          1.5728954659318548
+        ],
+        "historical": [
+          1.5510274253620666,
+          1.8923473524131227
+        ],
+        "recomputed": [
+          1.2500264838717496,
+          3.597810579319324
+        ]
+      },
+      {
+        "t": 3,
+        "state": "B",
+        "theta": [
+          2,
+          0.5
+        ],
+        "g": [
+          0.7615941559557649,
+          1.6798973664561045
+        ],
+        "currentGradient": [
+          0.7615941559557649,
+          1.6798973664561045
+        ],
+        "historical": [
+          1.878333902216453,
+          3.042387460193553
+        ],
+        "recomputed": [
+          1.6616132243434247,
+          4.270320983566018
+        ]
+      },
+      {
+        "t": 4,
+        "state": "C",
+        "theta": [
+          2,
+          0.5
+        ],
+        "g": [
+          0.9051482536448664,
+          1.0842398335418915
+        ],
+        "currentGradient": [
+          0.9051482536448664,
+          1.0842398335418915
+        ],
+        "historical": [
+          2.2575486632407125,
+          3.27475880488125
+        ],
+        "recomputed": [
+          2.1015097751721323,
+          4.1588709417094245
+        ]
+      }
+    ],
+    "old": [
+      1,
+      1
+    ],
+    "current": [
+      2,
+      0.5
+    ],
+    "input": {
+      "A": 1,
+      "B": 2,
+      "C": 3,
+      "D": 1
+    }
+  }
+}

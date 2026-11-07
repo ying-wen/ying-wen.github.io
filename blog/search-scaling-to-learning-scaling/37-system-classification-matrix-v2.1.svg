@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1040" viewBox="0 0 1600 1040" role="img" aria-labelledby="title desc">
+  <title id="title">近期系统的更新过程与可估计横轴</title>
+  <desc id="desc">比较 DeepSeek-R1、MetaEvolve、DGM、SIA 与 Continual Harness 的更新内容、跨边界保留状态、主要实验横轴，以及 Self-evolving、AI4AI、Learning Scaling 和 RSI 的分析边界。</desc>
+  <defs>
+    <style>
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; }
+      .title { font-size: 36px; font-weight: 700; fill: #17211c; }
+      .subtitle { font-size: 19px; fill: #65716a; }
+      .head { font-size: 20px; font-weight: 700; fill: #ffffff; }
+      .name { font-size: 24px; font-weight: 700; fill: #17211c; }
+      .subname { font-size: 16px; fill: #65716a; }
+      .body { font-size: 19px; fill: #29352f; }
+      .small { font-size: 17px; fill: #4f5d55; }
+      .pill { font-size: 16px; font-weight: 700; }
+      .footer { font-size: 19px; font-weight: 600; fill: #20372b; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1040" fill="#ffffff"/>
+
+  <text x="60" y="58" class="sans title">近期系统的更新过程与可估计横轴</text>
+  <text x="60" y="92" class="sans subtitle">按实际运行过程比较：更新内容 · 重置边界 · 实验横轴 · 正交问题</text>
+
+  <g transform="translate(958,55)">
+    <rect x="0" y="0" width="104" height="30" rx="15" fill="#e9f1f7" stroke="#3e6f92"/>
+    <text x="52" y="21" text-anchor="middle" class="sans pill" fill="#315f80">Training</text>
+    <rect x="114" y="0" width="92" height="30" rx="15" fill="#fff1e8" stroke="#b84e1b"/>
+    <text x="160" y="21" text-anchor="middle" class="sans pill" fill="#9c4017">Search</text>
+    <rect x="216" y="0" width="210" height="30" rx="15" fill="#ffffff" stroke="#2f704f" stroke-width="2"/>
+    <text x="321" y="21" text-anchor="middle" class="sans pill" fill="#2f704f">Learning Scaling 候选机制</text>
+    <rect x="436" y="0" width="136" height="30" rx="15" fill="#f4eff7" stroke="#6b527c"/>
+    <text x="504" y="21" text-anchor="middle" class="sans pill" fill="#60466f">正交问题</text>
+  </g>
+
+  <rect x="60" y="122" width="1480" height="60" rx="4" fill="#17211c"/>
+  <text x="78" y="160" class="sans head">系统</text>
+  <text x="310" y="160" class="sans head">公开运行过程</text>
+  <text x="674" y="160" class="sans head">跨边界保留的状态</text>
+  <text x="1003" y="160" class="sans head">主要过程 / 可估计横轴</text>
+  <text x="1233" y="160" class="sans head">正交问题与待测项</text>
+
+  <rect x="60" y="182" width="1480" height="145" fill="#ffffff"/>
+  <rect x="60" y="327" width="1480" height="145" fill="#f7f9f8"/>
+  <rect x="60" y="472" width="1480" height="145" fill="#ffffff"/>
+  <rect x="60" y="617" width="1480" height="145" fill="#f7f9f8"/>
+  <rect x="60" y="762" width="1480" height="145" fill="#ffffff"/>
+
+  <g stroke="#dfe4e1" stroke-width="1">
+    <line x1="60" y1="327" x2="1540" y2="327"/>
+    <line x1="60" y1="472" x2="1540" y2="472"/>
+    <line x1="60" y1="617" x2="1540" y2="617"/>
+    <line x1="60" y1="762" x2="1540" y2="762"/>
+    <line x1="60" y1="907" x2="1540" y2="907"/>
+    <line x1="290" y1="122" x2="290" y2="907"/>
+    <line x1="654" y1="122" x2="654" y2="907"/>
+    <line x1="983" y1="122" x2="983" y2="907"/>
+    <line x1="1213" y1="122" x2="1213" y2="907"/>
+  </g>
+
+  <!-- DeepSeek-R1 -->
+  <rect x="60" y="182" width="6" height="72.5" fill="#3e6f92"/>
+  <rect x="60" y="254.5" width="6" height="72.5" fill="#b84e1b"/>
+  <text x="78" y="226" class="sans name">DeepSeek-R1</text>
+  <text x="78" y="254" class="sans subname">reasoning RL</text>
+  <text x="310" y="218" class="sans body">训练期 RL 更新参数</text>
+  <text x="310" y="248" class="sans body">部署时展开推理轨迹</text>
+  <text x="674" y="218" class="sans body">训练所得参数跨任务保留</text>
+  <text x="674" y="248" class="sans body">任务轨迹按题重置</text>
+  <g transform="translate(1003,203)">
+    <rect width="94" height="30" rx="15" fill="#e9f1f7" stroke="#3e6f92"/>
+    <text x="47" y="21" text-anchor="middle" class="sans pill" fill="#315f80">Training</text>
+    <rect x="102" width="84" height="30" rx="15" fill="#fff1e8" stroke="#b84e1b"/>
+    <text x="144" y="21" text-anchor="middle" class="sans pill" fill="#9c4017">Search</text>
+    <text x="0" y="62" class="sans small">训练计算 / 任务时计算</text>
+  </g>
+  <text x="1233" y="215" class="sans small">运行时持续 Learning Scaling</text>
+  <text x="1233" y="242" class="sans small">RSI 跨轮速率另行评估</text>
+
+  <!-- MetaEvolve -->
+  <rect x="60" y="327" width="6" height="72.5" fill="#3e6f92"/>
+  <rect x="60" y="399.5" width="6" height="72.5" fill="#b84e1b"/>
+  <text x="78" y="371" class="sans name">MetaEvolve</text>
+  <text x="78" y="399" class="sans subname">meta-control RL + search</text>
+  <text x="310" y="363" class="sans body">RL 训练反思与 meta-control</text>
+  <text x="310" y="393" class="sans body">推断期 evolutionary search</text>
+  <text x="674" y="363" class="sans body">训练所得参数</text>
+  <text x="674" y="393" class="sans body">当前问题的搜索历史</text>
+  <g transform="translate(1003,348)">
+    <rect width="94" height="30" rx="15" fill="#e9f1f7" stroke="#3e6f92"/>
+    <text x="47" y="21" text-anchor="middle" class="sans pill" fill="#315f80">Training</text>
+    <rect x="102" width="84" height="30" rx="15" fill="#fff1e8" stroke="#b84e1b"/>
+    <text x="144" y="21" text-anchor="middle" class="sans pill" fill="#9c4017">Search</text>
+    <text x="0" y="62" class="sans small">训练迭代 / 任务搜索</text>
+  </g>
+  <text x="1233" y="360" class="sans small">运行时持续 Learning Scaling</text>
+  <text x="1233" y="387" class="sans small">RSI 跨轮速率另行评估</text>
+
+  <!-- DGM -->
+  <rect x="60" y="472" width="6" height="145" fill="#b84e1b"/>
+  <text x="78" y="516" class="sans name">DGM</text>
+  <text x="78" y="544" class="sans subname">AI design search</text>
+  <text x="310" y="508" class="sans body">系统间修改编码智能体代码</text>
+  <text x="310" y="538" class="sans body">编码基准评价新系统</text>
+  <text x="674" y="508" class="sans body">候选档案与入选代码</text>
+  <text x="674" y="538" class="sans body">进入后续设计轮次</text>
+  <g transform="translate(1003,493)">
+    <rect width="84" height="30" rx="15" fill="#fff1e8" stroke="#b84e1b"/>
+    <text x="42" y="21" text-anchor="middle" class="sans pill" fill="#9c4017">Search</text>
+    <text x="0" y="62" class="sans small">设计迭代</text>
+  </g>
+  <g transform="translate(1233,490)">
+    <rect width="128" height="30" rx="15" fill="#f4eff7" stroke="#6b527c"/>
+    <text x="64" y="21" text-anchor="middle" class="sans pill" fill="#60466f">Self-evolving</text>
+    <rect x="138" width="78" height="30" rx="15" fill="#f4eff7" stroke="#6b527c"/>
+    <text x="177" y="21" text-anchor="middle" class="sans pill" fill="#60466f">AI4AI</text>
+    <text x="0" y="64" class="sans small">运行时 Learning Scaling 与</text>
+    <text x="0" y="91" class="sans small">RSI 跨轮速率另行评估</text>
+  </g>
+
+  <!-- SIA -->
+  <rect x="60" y="617" width="6" height="72.5" fill="#b84e1b"/>
+  <rect x="60" y="689.5" width="6" height="72.5" fill="#3e6f92"/>
+  <text x="78" y="661" class="sans name">SIA</text>
+  <text x="78" y="689" class="sans subname">harness + weights</text>
+  <text x="310" y="653" class="sans body">Feedback-Agent 更新 harness</text>
+  <text x="310" y="683" class="sans body">并执行权重训练</text>
+  <text x="674" y="653" class="sans body">入选 harness 与参数</text>
+  <text x="674" y="683" class="sans body">进入后续迭代</text>
+  <g transform="translate(1003,638)">
+    <rect width="84" height="30" rx="15" fill="#fff1e8" stroke="#b84e1b"/>
+    <text x="42" y="21" text-anchor="middle" class="sans pill" fill="#9c4017">Search</text>
+    <rect x="92" width="94" height="30" rx="15" fill="#e9f1f7" stroke="#3e6f92"/>
+    <text x="139" y="21" text-anchor="middle" class="sans pill" fill="#315f80">Training</text>
+    <text x="0" y="62" class="sans small">设计迭代 / 权重训练</text>
+  </g>
+  <g transform="translate(1233,635)">
+    <rect width="128" height="30" rx="15" fill="#f4eff7" stroke="#6b527c"/>
+    <text x="64" y="21" text-anchor="middle" class="sans pill" fill="#60466f">Self-evolving</text>
+    <rect x="138" width="78" height="30" rx="15" fill="#f4eff7" stroke="#6b527c"/>
+    <text x="177" y="21" text-anchor="middle" class="sans pill" fill="#60466f">AI4AI</text>
+    <text x="0" y="64" class="sans small">Learning Scaling 曲线与 RSI 速率另测</text>
+  </g>
+
+  <!-- Continual Harness -->
+  <rect x="60" y="762" width="6" height="145" fill="#2f704f" opacity="0.7"/>
+  <text x="78" y="806" class="sans name">Continual</text>
+  <text x="78" y="834" class="sans name">Harness</text>
+  <text x="78" y="862" class="sans subname">online adaptation</text>
+  <text x="310" y="795" class="sans body">单次持续运行中在线更新</text>
+  <text x="310" y="825" class="sans body">prompt、子智能体、工具程序、memory</text>
+  <text x="310" y="855" class="sans body">后续循环还可更新权重</text>
+  <text x="674" y="795" class="sans body">持续身份、环境进程</text>
+  <text x="674" y="825" class="sans body">harness，后续还包括参数</text>
+  <g transform="translate(1003,783)">
+    <rect width="198" height="30" rx="15" fill="#ffffff" stroke="#2f704f" stroke-width="2"/>
+    <text x="99" y="21" text-anchor="middle" class="sans pill" fill="#2f704f">Learning Scaling 候选</text>
+    <text x="0" y="62" class="sans small">累计经历 / 更新轮次</text>
+  </g>
+  <g transform="translate(1233,780)">
+    <rect width="128" height="30" rx="15" fill="#f4eff7" stroke="#6b527c"/>
+    <text x="64" y="21" text-anchor="middle" class="sans pill" fill="#60466f">Self-evolving</text>
+    <text x="0" y="64" class="sans small">AI4AI 取决于优化目标是否指向 AI 研发</text>
+    <text x="0" y="91" class="sans small">固定未来条件与 RSI 速率另测</text>
+  </g>
+
+  <rect x="60" y="935" width="1480" height="70" rx="6" fill="#f2f8f4" stroke="#b9d1c2"/>
+  <text x="800" y="978" text-anchor="middle" class="sans footer">运行过程、横轴与重置边界确定能力形成机制；其余三项按正交判据单独判断。</text>
+</svg>

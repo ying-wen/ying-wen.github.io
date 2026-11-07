@@ -1,0 +1,501 @@
+{
+  "kind": "exact-mechanism",
+  "config": {
+    "gamma": 0.9,
+    "lam": 0.8,
+    "alpha": 0.1,
+    "beta": 0.9,
+    "eps": 0.1,
+    "retention": 0.5
+  },
+  "stream": [
+    {
+      "next_observation": 0,
+      "reward": 2,
+      "terminal": false
+    },
+    {
+      "next_observation": 0,
+      "reward": 0,
+      "terminal": false
+    },
+    {
+      "next_observation": 0,
+      "reward": 1,
+      "terminal": true
+    }
+  ],
+  "first": {
+    "t": 0,
+    "k": 1,
+    "h": 1,
+    "next_h": 0.5,
+    "old_w": 0,
+    "reward": 2,
+    "delta": 2,
+    "trace_used": 1,
+    "increment": 2,
+    "max_v": 2,
+    "displacement": 0.09523809523809523,
+    "w": 0.09523809523809523,
+    "terminal": false,
+    "after": {
+      "w": 0.09523809523809523,
+      "h": 0.5,
+      "z": 1,
+      "max_v": 2,
+      "gamma_in": 0.9,
+      "k": 1,
+      "cursor": 1
+    }
+  },
+  "checkpoint": {
+    "w": 0.09523809523809523,
+    "h": 0.5,
+    "z": 1,
+    "max_v": 2,
+    "gamma_in": 0.9,
+    "k": 1,
+    "cursor": 1
+  },
+  "branches": {
+    "full": {
+      "rows": [
+        {
+          "t": 1,
+          "k": 2,
+          "h": 0.5,
+          "next_h": 0.25,
+          "old_w": 0.09523809523809523,
+          "reward": 0,
+          "delta": -0.026190476190476188,
+          "trace_used": 1.2200000000000002,
+          "increment": -0.031952380952380954,
+          "max_v": 1.8,
+          "displacement": -0.0016817042606516292,
+          "w": 0.0935563909774436,
+          "terminal": false,
+          "after": {
+            "w": 0.0935563909774436,
+            "h": 0.25,
+            "z": 1.2200000000000002,
+            "max_v": 1.8,
+            "gamma_in": 0.9,
+            "k": 2,
+            "cursor": 2
+          }
+        },
+        {
+          "t": 2,
+          "k": 3,
+          "h": 0.25,
+          "next_h": 0,
+          "old_w": 0.0935563909774436,
+          "reward": 1,
+          "delta": 0.9766109022556391,
+          "trace_used": 1.1284000000000003,
+          "increment": 1.1020077421052634,
+          "max_v": 1.62,
+          "displacement": 0.0640702175642595,
+          "w": 0.1576266085417031,
+          "terminal": true,
+          "after": {
+            "w": 0.1576266085417031,
+            "h": 0,
+            "z": 0,
+            "max_v": 1.62,
+            "gamma_in": 0,
+            "k": 3,
+            "cursor": 3
+          }
+        }
+      ],
+      "final": {
+        "w": 0.1576266085417031,
+        "h": 0,
+        "z": 0,
+        "max_v": 1.62,
+        "gamma_in": 0,
+        "k": 3,
+        "cursor": 3
+      }
+    },
+    "clear_trace": {
+      "rows": [
+        {
+          "t": 1,
+          "k": 2,
+          "h": 0.5,
+          "next_h": 0.25,
+          "old_w": 0.09523809523809523,
+          "reward": 0,
+          "delta": -0.026190476190476188,
+          "trace_used": 0.5,
+          "increment": -0.013095238095238094,
+          "max_v": 1.8,
+          "displacement": -0.0006892230576441102,
+          "w": 0.09454887218045112,
+          "terminal": false,
+          "after": {
+            "w": 0.09454887218045112,
+            "h": 0.25,
+            "z": 0.5,
+            "max_v": 1.8,
+            "gamma_in": 0.9,
+            "k": 2,
+            "cursor": 2
+          }
+        },
+        {
+          "t": 2,
+          "k": 3,
+          "h": 0.25,
+          "next_h": 0,
+          "old_w": 0.09454887218045112,
+          "reward": 1,
+          "delta": 0.9763627819548872,
+          "trace_used": 0.6100000000000001,
+          "increment": 0.5955812969924813,
+          "max_v": 1.62,
+          "displacement": 0.03462681959258612,
+          "w": 0.12917569177303723,
+          "terminal": true,
+          "after": {
+            "w": 0.12917569177303723,
+            "h": 0,
+            "z": 0,
+            "max_v": 1.62,
+            "gamma_in": 0,
+            "k": 3,
+            "cursor": 3
+          }
+        }
+      ],
+      "final": {
+        "w": 0.12917569177303723,
+        "h": 0,
+        "z": 0,
+        "max_v": 1.62,
+        "gamma_in": 0,
+        "k": 3,
+        "cursor": 3
+      }
+    },
+    "clear_scale": {
+      "rows": [
+        {
+          "t": 1,
+          "k": 2,
+          "h": 0.5,
+          "next_h": 0.25,
+          "old_w": 0.09523809523809523,
+          "reward": 0,
+          "delta": -0.026190476190476188,
+          "trace_used": 1.2200000000000002,
+          "increment": -0.031952380952380954,
+          "max_v": 0.031952380952380954,
+          "displacement": -0.024215084806928907,
+          "w": 0.07102301043116632,
+          "terminal": false,
+          "after": {
+            "w": 0.07102301043116632,
+            "h": 0.25,
+            "z": 1.2200000000000002,
+            "max_v": 0.031952380952380954,
+            "gamma_in": 0.9,
+            "k": 2,
+            "cursor": 2
+          }
+        },
+        {
+          "t": 2,
+          "k": 3,
+          "h": 0.25,
+          "next_h": 0,
+          "old_w": 0.07102301043116632,
+          "reward": 1,
+          "delta": 0.9822442473922084,
+          "trace_used": 1.1284000000000003,
+          "increment": 1.1083644087573683,
+          "max_v": 1.1083644087573683,
+          "displacement": 0.09172435076080768,
+          "w": 0.162747361191974,
+          "terminal": true,
+          "after": {
+            "w": 0.162747361191974,
+            "h": 0,
+            "z": 0,
+            "max_v": 1.1083644087573683,
+            "gamma_in": 0,
+            "k": 3,
+            "cursor": 3
+          }
+        }
+      ],
+      "final": {
+        "w": 0.162747361191974,
+        "h": 0,
+        "z": 0,
+        "max_v": 1.1083644087573683,
+        "gamma_in": 0,
+        "k": 3,
+        "cursor": 3
+      }
+    },
+    "clear_activity": {
+      "rows": [
+        {
+          "t": 1,
+          "k": 2,
+          "h": 0,
+          "next_h": 0,
+          "old_w": 0.09523809523809523,
+          "reward": 0,
+          "delta": 0,
+          "trace_used": 0.7200000000000001,
+          "increment": 0,
+          "max_v": 1.8,
+          "displacement": 0,
+          "w": 0.09523809523809523,
+          "terminal": false,
+          "after": {
+            "w": 0.09523809523809523,
+            "h": 0,
+            "z": 0.7200000000000001,
+            "max_v": 1.8,
+            "gamma_in": 0.9,
+            "k": 2,
+            "cursor": 2
+          }
+        },
+        {
+          "t": 2,
+          "k": 3,
+          "h": 0,
+          "next_h": 0,
+          "old_w": 0.09523809523809523,
+          "reward": 1,
+          "delta": 1,
+          "trace_used": 0.5184000000000001,
+          "increment": 0.5184000000000001,
+          "max_v": 1.62,
+          "displacement": 0.030139534883720932,
+          "w": 0.12537763012181616,
+          "terminal": true,
+          "after": {
+            "w": 0.12537763012181616,
+            "h": 0,
+            "z": 0,
+            "max_v": 1.62,
+            "gamma_in": 0,
+            "k": 3,
+            "cursor": 3
+          }
+        }
+      ],
+      "final": {
+        "w": 0.12537763012181616,
+        "h": 0,
+        "z": 0,
+        "max_v": 1.62,
+        "gamma_in": 0,
+        "k": 3,
+        "cursor": 3
+      }
+    },
+    "clear_weight": {
+      "rows": [
+        {
+          "t": 1,
+          "k": 2,
+          "h": 0.5,
+          "next_h": 0.25,
+          "old_w": 0,
+          "reward": 0,
+          "delta": 0,
+          "trace_used": 1.2200000000000002,
+          "increment": 0,
+          "max_v": 1.8,
+          "displacement": 0,
+          "w": 0,
+          "terminal": false,
+          "after": {
+            "w": 0,
+            "h": 0.25,
+            "z": 1.2200000000000002,
+            "max_v": 1.8,
+            "gamma_in": 0.9,
+            "k": 2,
+            "cursor": 2
+          }
+        },
+        {
+          "t": 2,
+          "k": 3,
+          "h": 0.25,
+          "next_h": 0,
+          "old_w": 0,
+          "reward": 1,
+          "delta": 1,
+          "trace_used": 1.1284000000000003,
+          "increment": 1.1284000000000003,
+          "max_v": 1.62,
+          "displacement": 0.06560465116279071,
+          "w": 0.06560465116279071,
+          "terminal": true,
+          "after": {
+            "w": 0.06560465116279071,
+            "h": 0,
+            "z": 0,
+            "max_v": 1.62,
+            "gamma_in": 0,
+            "k": 3,
+            "cursor": 3
+          }
+        }
+      ],
+      "final": {
+        "w": 0.06560465116279071,
+        "h": 0,
+        "z": 0,
+        "max_v": 1.62,
+        "gamma_in": 0,
+        "k": 3,
+        "cursor": 3
+      }
+    },
+    "weights_only": {
+      "rows": [
+        {
+          "t": 1,
+          "k": 2,
+          "h": 0,
+          "next_h": 0,
+          "old_w": 0.09523809523809523,
+          "reward": 0,
+          "delta": 0,
+          "trace_used": 0,
+          "increment": 0,
+          "max_v": 0,
+          "displacement": 0,
+          "w": 0.09523809523809523,
+          "terminal": false,
+          "after": {
+            "w": 0.09523809523809523,
+            "h": 0,
+            "z": 0,
+            "max_v": 0,
+            "gamma_in": 0.9,
+            "k": 2,
+            "cursor": 2
+          }
+        },
+        {
+          "t": 2,
+          "k": 3,
+          "h": 0,
+          "next_h": 0,
+          "old_w": 0.09523809523809523,
+          "reward": 1,
+          "delta": 1,
+          "trace_used": 0,
+          "increment": 0,
+          "max_v": 0,
+          "displacement": 0,
+          "w": 0.09523809523809523,
+          "terminal": true,
+          "after": {
+            "w": 0.09523809523809523,
+            "h": 0,
+            "z": 0,
+            "max_v": 0,
+            "gamma_in": 0,
+            "k": 3,
+            "cursor": 3
+          }
+        }
+      ],
+      "final": {
+        "w": 0.09523809523809523,
+        "h": 0,
+        "z": 0,
+        "max_v": 0,
+        "gamma_in": 0,
+        "k": 3,
+        "cursor": 3
+      }
+    }
+  },
+  "wrong_terminal_reset": {
+    "rows": [
+      {
+        "t": 1,
+        "k": 2,
+        "h": 0.5,
+        "next_h": 0.25,
+        "old_w": 0.09523809523809523,
+        "reward": 0,
+        "delta": -0.026190476190476188,
+        "trace_used": 1.2200000000000002,
+        "increment": -0.031952380952380954,
+        "max_v": 1.8,
+        "displacement": -0.0016817042606516292,
+        "w": 0.0935563909774436,
+        "terminal": false,
+        "after": {
+          "w": 0.0935563909774436,
+          "h": 0.25,
+          "z": 1.2200000000000002,
+          "max_v": 1.8,
+          "gamma_in": 0.9,
+          "k": 2,
+          "cursor": 2
+        }
+      },
+      {
+        "t": 2,
+        "k": 3,
+        "h": 0.25,
+        "next_h": 0,
+        "old_w": 0.0935563909774436,
+        "reward": 1,
+        "delta": 0.9766109022556391,
+        "trace_used": 0.25,
+        "increment": 0.24415272556390977,
+        "max_v": 1.62,
+        "displacement": 0.014194925904878473,
+        "w": 0.10775131688232208,
+        "terminal": true,
+        "after": {
+          "w": 0.10775131688232208,
+          "h": 0,
+          "z": 0,
+          "max_v": 1.62,
+          "gamma_in": 0,
+          "k": 3,
+          "cursor": 3
+        }
+      }
+    ],
+    "final": {
+      "w": 0.10775131688232208,
+      "h": 0,
+      "z": 0,
+      "max_v": 1.62,
+      "gamma_in": 0,
+      "k": 3,
+      "cursor": 3
+    }
+  },
+  "permissions": {
+    "strict_w": 0.22101718750000002,
+    "replay_delta": 1.878440546875,
+    "replay_w": 0.40886124218750003,
+    "environment_transitions": 3,
+    "strict_updates": 3,
+    "replay_updates": 4,
+    "strict_retained_transitions": 0,
+    "replay_retained_transitions": 3
+  },
+  "random_rollouts": 0
+}

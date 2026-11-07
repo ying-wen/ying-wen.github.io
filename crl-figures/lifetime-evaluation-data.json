@@ -1,0 +1,479 @@
+{
+  "kind": "exact-expectation",
+  "sampled_runs": 0,
+  "training_steps": 48,
+  "diagnostic_steps": 16,
+  "good_reward_probability": 0.9,
+  "rows": [
+    {
+      "circle": 1,
+      "phase": "A",
+      "left_before": 1,
+      "expected_reward": 0.9,
+      "left_after": 0.9,
+      "cumulative": 0.9,
+      "fixed_left_cumulative": 0.9
+    },
+    {
+      "circle": 2,
+      "phase": "A",
+      "left_before": 0.9,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.9,
+      "cumulative": 1.7200000000000002,
+      "fixed_left_cumulative": 1.8
+    },
+    {
+      "circle": 3,
+      "phase": "A",
+      "left_before": 0.9,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.9,
+      "cumulative": 2.54,
+      "fixed_left_cumulative": 2.7
+    },
+    {
+      "circle": 4,
+      "phase": "A",
+      "left_before": 0.9,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.9,
+      "cumulative": 3.3600000000000003,
+      "fixed_left_cumulative": 3.6
+    },
+    {
+      "circle": 5,
+      "phase": "A",
+      "left_before": 0.9,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.9,
+      "cumulative": 4.180000000000001,
+      "fixed_left_cumulative": 4.5
+    },
+    {
+      "circle": 6,
+      "phase": "A",
+      "left_before": 0.9,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.9,
+      "cumulative": 5.000000000000001,
+      "fixed_left_cumulative": 5.4
+    },
+    {
+      "circle": 7,
+      "phase": "A",
+      "left_before": 0.9,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.9,
+      "cumulative": 5.820000000000001,
+      "fixed_left_cumulative": 6.300000000000001
+    },
+    {
+      "circle": 8,
+      "phase": "A",
+      "left_before": 0.9,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.9,
+      "cumulative": 6.6400000000000015,
+      "fixed_left_cumulative": 7.200000000000001
+    },
+    {
+      "circle": 9,
+      "phase": "B",
+      "left_before": 0.9,
+      "expected_reward": 0.17999999999999997,
+      "left_after": 0.09999999999999998,
+      "cumulative": 6.820000000000001,
+      "fixed_left_cumulative": 7.300000000000001
+    },
+    {
+      "circle": 10,
+      "phase": "B",
+      "left_before": 0.09999999999999998,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.09999999999999998,
+      "cumulative": 7.6400000000000015,
+      "fixed_left_cumulative": 7.4
+    },
+    {
+      "circle": 11,
+      "phase": "B",
+      "left_before": 0.09999999999999998,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.09999999999999998,
+      "cumulative": 8.46,
+      "fixed_left_cumulative": 7.5
+    },
+    {
+      "circle": 12,
+      "phase": "B",
+      "left_before": 0.09999999999999998,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.09999999999999998,
+      "cumulative": 9.280000000000001,
+      "fixed_left_cumulative": 7.6
+    },
+    {
+      "circle": 13,
+      "phase": "B",
+      "left_before": 0.09999999999999998,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.09999999999999998,
+      "cumulative": 10.100000000000001,
+      "fixed_left_cumulative": 7.699999999999999
+    },
+    {
+      "circle": 14,
+      "phase": "B",
+      "left_before": 0.09999999999999998,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.09999999999999998,
+      "cumulative": 10.920000000000002,
+      "fixed_left_cumulative": 7.799999999999999
+    },
+    {
+      "circle": 15,
+      "phase": "B",
+      "left_before": 0.09999999999999998,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.09999999999999998,
+      "cumulative": 11.740000000000002,
+      "fixed_left_cumulative": 7.899999999999999
+    },
+    {
+      "circle": 16,
+      "phase": "B",
+      "left_before": 0.09999999999999998,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.09999999999999998,
+      "cumulative": 12.560000000000002,
+      "fixed_left_cumulative": 7.999999999999998
+    },
+    {
+      "circle": 17,
+      "phase": "A",
+      "left_before": 0.09999999999999998,
+      "expected_reward": 0.17999999999999997,
+      "left_after": 0.9,
+      "cumulative": 12.740000000000002,
+      "fixed_left_cumulative": 8.899999999999999
+    },
+    {
+      "circle": 18,
+      "phase": "A",
+      "left_before": 0.9,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.9,
+      "cumulative": 13.560000000000002,
+      "fixed_left_cumulative": 9.799999999999999
+    },
+    {
+      "circle": 19,
+      "phase": "A",
+      "left_before": 0.9,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.9,
+      "cumulative": 14.380000000000003,
+      "fixed_left_cumulative": 10.7
+    },
+    {
+      "circle": 20,
+      "phase": "A",
+      "left_before": 0.9,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.9,
+      "cumulative": 15.200000000000003,
+      "fixed_left_cumulative": 11.6
+    },
+    {
+      "circle": 21,
+      "phase": "A",
+      "left_before": 0.9,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.9,
+      "cumulative": 16.020000000000003,
+      "fixed_left_cumulative": 12.5
+    },
+    {
+      "circle": 22,
+      "phase": "A",
+      "left_before": 0.9,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.9,
+      "cumulative": 16.840000000000003,
+      "fixed_left_cumulative": 13.4
+    },
+    {
+      "circle": 23,
+      "phase": "A",
+      "left_before": 0.9,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.9,
+      "cumulative": 17.660000000000004,
+      "fixed_left_cumulative": 14.3
+    },
+    {
+      "circle": 24,
+      "phase": "A",
+      "left_before": 0.9,
+      "expected_reward": 0.8200000000000001,
+      "left_after": 0.9,
+      "cumulative": 18.480000000000004,
+      "fixed_left_cumulative": 15.200000000000001
+    }
+  ],
+  "curves": [
+    {
+      "step": 0,
+      "learner": 0,
+      "fixed_left": 0
+    },
+    {
+      "step": 1,
+      "learner": 0.9,
+      "fixed_left": 0.9
+    },
+    {
+      "step": 2,
+      "learner": 0.9,
+      "fixed_left": 0.9
+    },
+    {
+      "step": 3,
+      "learner": 1.7200000000000002,
+      "fixed_left": 1.8
+    },
+    {
+      "step": 4,
+      "learner": 1.7200000000000002,
+      "fixed_left": 1.8
+    },
+    {
+      "step": 5,
+      "learner": 2.54,
+      "fixed_left": 2.7
+    },
+    {
+      "step": 6,
+      "learner": 2.54,
+      "fixed_left": 2.7
+    },
+    {
+      "step": 7,
+      "learner": 3.3600000000000003,
+      "fixed_left": 3.6
+    },
+    {
+      "step": 8,
+      "learner": 3.3600000000000003,
+      "fixed_left": 3.6
+    },
+    {
+      "step": 9,
+      "learner": 4.180000000000001,
+      "fixed_left": 4.5
+    },
+    {
+      "step": 10,
+      "learner": 4.180000000000001,
+      "fixed_left": 4.5
+    },
+    {
+      "step": 11,
+      "learner": 5.000000000000001,
+      "fixed_left": 5.4
+    },
+    {
+      "step": 12,
+      "learner": 5.000000000000001,
+      "fixed_left": 5.4
+    },
+    {
+      "step": 13,
+      "learner": 5.820000000000001,
+      "fixed_left": 6.300000000000001
+    },
+    {
+      "step": 14,
+      "learner": 5.820000000000001,
+      "fixed_left": 6.300000000000001
+    },
+    {
+      "step": 15,
+      "learner": 6.6400000000000015,
+      "fixed_left": 7.200000000000001
+    },
+    {
+      "step": 16,
+      "learner": 6.6400000000000015,
+      "fixed_left": 7.200000000000001
+    },
+    {
+      "step": 17,
+      "learner": 6.820000000000001,
+      "fixed_left": 7.300000000000001
+    },
+    {
+      "step": 18,
+      "learner": 6.820000000000001,
+      "fixed_left": 7.300000000000001
+    },
+    {
+      "step": 19,
+      "learner": 7.6400000000000015,
+      "fixed_left": 7.4
+    },
+    {
+      "step": 20,
+      "learner": 7.6400000000000015,
+      "fixed_left": 7.4
+    },
+    {
+      "step": 21,
+      "learner": 8.46,
+      "fixed_left": 7.5
+    },
+    {
+      "step": 22,
+      "learner": 8.46,
+      "fixed_left": 7.5
+    },
+    {
+      "step": 23,
+      "learner": 9.280000000000001,
+      "fixed_left": 7.6
+    },
+    {
+      "step": 24,
+      "learner": 9.280000000000001,
+      "fixed_left": 7.6
+    },
+    {
+      "step": 25,
+      "learner": 10.100000000000001,
+      "fixed_left": 7.699999999999999
+    },
+    {
+      "step": 26,
+      "learner": 10.100000000000001,
+      "fixed_left": 7.699999999999999
+    },
+    {
+      "step": 27,
+      "learner": 10.920000000000002,
+      "fixed_left": 7.799999999999999
+    },
+    {
+      "step": 28,
+      "learner": 10.920000000000002,
+      "fixed_left": 7.799999999999999
+    },
+    {
+      "step": 29,
+      "learner": 11.740000000000002,
+      "fixed_left": 7.899999999999999
+    },
+    {
+      "step": 30,
+      "learner": 11.740000000000002,
+      "fixed_left": 7.899999999999999
+    },
+    {
+      "step": 31,
+      "learner": 12.560000000000002,
+      "fixed_left": 7.999999999999998
+    },
+    {
+      "step": 32,
+      "learner": 12.560000000000002,
+      "fixed_left": 7.999999999999998
+    },
+    {
+      "step": 33,
+      "learner": 12.740000000000002,
+      "fixed_left": 8.899999999999999
+    },
+    {
+      "step": 34,
+      "learner": 12.740000000000002,
+      "fixed_left": 8.899999999999999
+    },
+    {
+      "step": 35,
+      "learner": 13.560000000000002,
+      "fixed_left": 9.799999999999999
+    },
+    {
+      "step": 36,
+      "learner": 13.560000000000002,
+      "fixed_left": 9.799999999999999
+    },
+    {
+      "step": 37,
+      "learner": 14.380000000000003,
+      "fixed_left": 10.7
+    },
+    {
+      "step": 38,
+      "learner": 14.380000000000003,
+      "fixed_left": 10.7
+    },
+    {
+      "step": 39,
+      "learner": 15.200000000000003,
+      "fixed_left": 11.6
+    },
+    {
+      "step": 40,
+      "learner": 15.200000000000003,
+      "fixed_left": 11.6
+    },
+    {
+      "step": 41,
+      "learner": 16.020000000000003,
+      "fixed_left": 12.5
+    },
+    {
+      "step": 42,
+      "learner": 16.020000000000003,
+      "fixed_left": 12.5
+    },
+    {
+      "step": 43,
+      "learner": 16.840000000000003,
+      "fixed_left": 13.4
+    },
+    {
+      "step": 44,
+      "learner": 16.840000000000003,
+      "fixed_left": 13.4
+    },
+    {
+      "step": 45,
+      "learner": 17.660000000000004,
+      "fixed_left": 14.3
+    },
+    {
+      "step": 46,
+      "learner": 17.660000000000004,
+      "fixed_left": 14.3
+    },
+    {
+      "step": 47,
+      "learner": 18.480000000000004,
+      "fixed_left": 15.200000000000001
+    },
+    {
+      "step": 48,
+      "learner": 18.480000000000004,
+      "fixed_left": 15.200000000000001
+    }
+  ],
+  "lifetime_learner": 18.480000000000004,
+  "lifetime_fixed_left": 15.200000000000001,
+  "checkpoint_left_probability": 0.9,
+  "diagnostic_learner_per_circle": 0.8200000000000001,
+  "diagnostic_fixed_left_per_circle": 0.9,
+  "diagnostic_learner_total": 6.5600000000000005,
+  "diagnostic_fixed_left_total": 7.2
+}

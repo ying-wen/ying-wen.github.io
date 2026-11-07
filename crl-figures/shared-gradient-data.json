@@ -1,0 +1,253 @@
+{
+  "provenance": {
+    "kind": "exact",
+    "task": "A --(+2)--> B --(-1)--> terminal",
+    "gamma": 1,
+    "alpha": 0.5,
+    "lam": 0.5,
+    "features": [
+      [
+        1,
+        0
+      ],
+      [
+        0.8,
+        0.6
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "rewards": [
+      2,
+      -1
+    ],
+    "returns": [
+      1,
+      -1
+    ],
+    "no_training": true
+  },
+  "gram": [
+    [
+      1,
+      0.8
+    ],
+    [
+      0.8,
+      1
+    ]
+  ],
+  "mc": [
+    {
+      "before": [
+        0,
+        0
+      ],
+      "target": 1,
+      "error": 1,
+      "after": [
+        0.5,
+        0
+      ],
+      "predictions": [
+        0.5,
+        0.4
+      ],
+      "objective": 0.5525
+    },
+    {
+      "before": [
+        0.5,
+        0
+      ],
+      "target": -1,
+      "error": -1.4,
+      "after": [
+        -0.05999999999999994,
+        -0.42
+      ],
+      "predictions": [
+        -0.05999999999999994,
+        -0.29999999999999993
+      ],
+      "objective": 0.4034000000000001
+    }
+  ],
+  "initial_objective": 0.5,
+  "accumulating": [
+    {
+      "t": 0,
+      "before": [
+        0,
+        0
+      ],
+      "value": 0,
+      "next_value": 0,
+      "saved_old_value": 0,
+      "delta": 2,
+      "faded": [
+        0,
+        0
+      ],
+      "coefficient": 1,
+      "trace": [
+        1,
+        0
+      ],
+      "td_increment": [
+        1,
+        0
+      ],
+      "correction": [
+        0,
+        0
+      ],
+      "after": [
+        1,
+        0
+      ]
+    },
+    {
+      "t": 1,
+      "before": [
+        1,
+        0
+      ],
+      "value": 0.8,
+      "next_value": 0,
+      "saved_old_value": 0,
+      "delta": -1.8,
+      "faded": [
+        0.5,
+        0
+      ],
+      "coefficient": 1,
+      "trace": [
+        1.3,
+        0.6
+      ],
+      "td_increment": [
+        -1.1700000000000002,
+        -0.54
+      ],
+      "correction": [
+        0,
+        0
+      ],
+      "after": [
+        -0.17000000000000015,
+        -0.54
+      ]
+    }
+  ],
+  "true_online": [
+    {
+      "t": 0,
+      "before": [
+        0,
+        0
+      ],
+      "value": 0,
+      "next_value": 0,
+      "saved_old_value": 0,
+      "delta": 2,
+      "faded": [
+        0,
+        0
+      ],
+      "coefficient": 1,
+      "trace": [
+        1,
+        0
+      ],
+      "td_increment": [
+        1,
+        0
+      ],
+      "correction": [
+        0,
+        0
+      ],
+      "after": [
+        1,
+        0
+      ]
+    },
+    {
+      "t": 1,
+      "before": [
+        1,
+        0
+      ],
+      "value": 0.8,
+      "next_value": 0,
+      "saved_old_value": 0,
+      "delta": -1.8,
+      "faded": [
+        0.5,
+        0
+      ],
+      "coefficient": 0.8,
+      "trace": [
+        1.1400000000000001,
+        0.48
+      ],
+      "td_increment": [
+        -1.0260000000000002,
+        -0.432
+      ],
+      "correction": [
+        0.13600000000000004,
+        -0.048
+      ],
+      "after": [
+        0.10999999999999979,
+        -0.48
+      ]
+    }
+  ],
+  "forward": [
+    {
+      "horizon": 1,
+      "targets": [
+        2
+      ],
+      "after": [
+        1,
+        0
+      ]
+    },
+    {
+      "horizon": 2,
+      "targets": [
+        1.5,
+        -1
+      ],
+      "after": [
+        0.10999999999999988,
+        -0.48
+      ]
+    }
+  ],
+  "credit_to_predictions": [
+    1.3,
+    1.4
+  ],
+  "control": {
+    "exit_value": 0,
+    "continue_before": 0.5,
+    "continue_after": -0.05999999999999994,
+    "true_continue_value": 1
+  },
+  "nonlinear": {
+    "theta_before": 0.5,
+    "theta_after": 1.625,
+    "delta": 2.25,
+    "old_gradient_A": 1,
+    "current_gradient_A": 3.25,
+    "remembered_trace": 1.5,
+    "recomputed_trace": 2.625
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "figures": {
+    "russek-maze-tasks": {
+      "id": "russek-maze-tasks",
+      "title": "潜伏学习与绕路：分别改变奖励和通道",
+      "src": "/crl-figures/russek-2017-figure-2.png",
+      "width": 4040,
+      "height": 1834,
+      "alt": "Russek 等论文图 2：左侧迷宫标出起点 S 和后来出现奖励的位置 R；右侧有上下两条通路，中间短路的 B 处将被封堵。",
+      "authors": "Evan M. Russek、Ida Momennejad、Matthew M. Botvinick、Samuel J. Gershman、Nathaniel D. Daw",
+      "paper": "Predictive representations can link model-based reinforcement learning to model-free mechanisms",
+      "figureLabel": "Figure 2",
+      "version": "PLOS Computational Biology 正式版（2017）",
+      "sourceUrl": "https://doi.org/10.1371/journal.pcbi.1005768",
+      "figureUrl": "https://doi.org/10.1371/journal.pcbi.1005768.g002",
+      "originalImageUrl": "https://journals.plos.org/ploscompbiol/article/figure/image?download&size=large&id=10.1371/journal.pcbi.1005768.g002",
+      "license": {
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidenceUrl": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005768",
+        "notice": "© 2017 Russek et al. 原论文按 Creative Commons Attribution 4.0 许可发布。"
+      },
+      "reproduction": "直接保存期刊提供的高清 PNG；未裁剪或修改。",
+      "reading": "先看奖励出现后是否能从远处起点找到它，再看短路封堵后是否会改走另一条路。这两种操作分别改变奖励知识与转移知识。",
+      "limits": "图是计算研究使用的网格任务；图中的鼠与食物是示意符号，结果属于论文的算法模拟。",
+      "provenance": {
+        "retrieved": "2026-10-07",
+        "sha256": "e79799572e4f651225b9d8792af11d1d4cc21cc94c4fc6b221c1a07888155d29"
+      }
+    },
+    "russek-sr-values": {
+      "id": "russek-sr-values",
+      "title": "预测地图学到了什么：价值与策略的原始结果图",
+      "src": "/crl-figures/russek-2017-figure-4.png",
+      "width": 3735,
+      "height": 3357,
+      "alt": "Russek 等图 4：灰度表示中位数价值，箭头表示隐含策略。a 与 b 比较局部奖励学习后表格 TD 与 SR-TD 的价值；c 展示后继链；d 展示 SR-TD 在封路后的旧方向。",
+      "authors": "Evan M. Russek、Ida Momennejad、Matthew M. Botvinick、Samuel J. Gershman、Nathaniel D. Daw",
+      "paper": "Predictive representations can link model-based reinforcement learning to model-free mechanisms",
+      "figureLabel": "Figure 4",
+      "version": "PLOS Computational Biology 正式版（2017）",
+      "sourceUrl": "https://doi.org/10.1371/journal.pcbi.1005768",
+      "figureUrl": "https://doi.org/10.1371/journal.pcbi.1005768.g004",
+      "originalImageUrl": "https://journals.plos.org/ploscompbiol/article/figure/image?download&size=large&id=10.1371/journal.pcbi.1005768.g004",
+      "license": {
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidenceUrl": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005768",
+        "notice": "© 2017 Russek et al. 原论文按 Creative Commons Attribution 4.0 许可发布。"
+      },
+      "reproduction": "直接保存期刊提供的高清 PNG；保留四个面板、灰度和箭头，未重算或修改数据。",
+      "reading": "比较 a、b 的非局部价值变化，再看 d 中仍指向封堵通道的箭头。论文两种方法均允许一步前瞻；灰度是跨模拟的中位数价值。",
+      "limits": "结果针对论文给定的局部再训练与首次测试协议。带重放或重新计算后继表示的方法应另作比较。",
+      "provenance": {
+        "retrieved": "2026-10-07",
+        "sha256": "397663bc7e921cadbf4837d4c4dfc45fdf9099596c2f877b455a4a0cbde32efc"
+      }
+    },
+    "forager-world": {
+      "id": "forager-world",
+      "title": "Forager：全局世界与智能体能看到的局部",
+      "src": "/crl-figures/forager-v1-figure-2.png",
+      "width": 1980,
+      "height": 1980,
+      "alt": "Forager 论文图 2：大幅网格布满两类有色物品，右下角放大局部网格；蓝色方块表示智能体，淡蓝色区域标出它的有限视野。",
+      "authors": "Steven Tang、Xinze Xiong、Anna Hakhverdyan、Andrew Patterson、Jacob Adkins、Jiamin He、Esraa Elelimy、Parham Mohammad Panahi、Martha White、Adam White",
+      "paper": "Forager: a lightweight testbed for continual learning with partial observability in RL",
+      "figureLabel": "Figure 2",
+      "version": "arXiv:2605.01131v1（2026）",
+      "sourceUrl": "https://arxiv.org/abs/2605.01131v1",
+      "figureUrl": "https://arxiv.org/html/2605.01131v1#S4.F2",
+      "originalImageUrl": "https://arxiv.org/html/2605.01131v1/ForagerExtraLargeEnv-v3.png",
+      "license": {
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidenceUrl": "https://arxiv.org/abs/2605.01131v1",
+        "notice": "原图版权属于 Tang 等作者，按论文所附 CC BY 4.0 许可使用。"
+      },
+      "reproduction": "直接保存 arXiv HTML 提供的原始 PNG；未裁剪、重绘或更改图中文字。网页仅按比例显示。",
+      "reading": "先看整张地图，再看右下角放大的局部。世界中存在的物品，不等于此刻观察中存在的信息。蓝色方块周围的有限视野使过去经过哪里、资源何时再生，可能影响下一步决策。",
+      "limits": "这是环境设置示意，不是算法结果。有限环面可不断绕行，但不是无限地图；局部观察也不单独证明必须永远更新参数。奖励关系与再生规则须由具体配置说明。",
+      "provenance": {
+        "retrieved": "2026-10-04",
+        "sha256": "028a764bc1151daef49004a2d511f5d0035df68393ef9d95e90a1ce4af747ef0"
+      }
+    },
+    "agarcl-dynamics": {
+      "id": "agarcl-dynamics",
+      "title": "AgarCL：行动改变身体，也改变后续行动条件",
+      "src": "/crl-figures/agarcl-v3-figure-2.png",
+      "width": 704,
+      "height": 217,
+      "alt": "AgarCL 论文图 2 的六组前后对照：吞食、主动分裂、合并、碰撞病毒后碎裂、吸收病毒，以及喷出质量影响其他实体。",
+      "authors": "Mohamed A. Mohamed、Kateryna Nekhomiazh、Vedant Vyas、Marcos M. Jose、Andrew Patterson、Marlos C. Machado",
+      "paper": "The Cell Must Go On: Agar.io for Continual Reinforcement Learning",
+      "figureLabel": "Figure 2",
+      "version": "arXiv:2505.18347v3（2026 修订）",
+      "sourceUrl": "https://arxiv.org/abs/2505.18347v3",
+      "figureUrl": "https://arxiv.org/html/2505.18347v3#S3.F2",
+      "originalImageUrl": "https://arxiv.org/html/2505.18347v3/figure_3.png",
+      "license": {
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidenceUrl": "https://arxiv.org/abs/2505.18347v3",
+        "notice": "原论文图版权属于 Mohamed 等作者，按论文所附 CC BY 4.0 许可使用；不据此重新许可 Agar.io 游戏或其他资产。"
+      },
+      "reproduction": "直接保存 arXiv HTML 提供的原始 PNG；保留六个面板和原始顺序，未作裁剪或重绘。",
+      "reading": "按编号比较每组动作前后。吞食增加质量；主动分裂可换取追击机会，也使较小身体暴露于危险。相同碰撞的后果还取决于自身质量。要学习的不只是“选哪个按钮”，还包括自身状态如何改变未来可行的行为。",
+      "limits": "图展示机制，不给出学习效果。状态依赖的速度与碰撞后果，可以来自固定转移规则，不能据此断言世界规律本身非平稳。主世界保留后果，但个体仍能再生；论文中的其他个体采用手工策略。",
+      "provenance": {
+        "retrieved": "2026-10-04",
+        "sha256": "e35a1688fd8c76e1cffdfb41dec963bb6177288e4cfef633ace501f4fc405194"
+      }
+    },
+    "craftax-throughput": {
+      "id": "craftax-throughput",
+      "title": "Craftax：并行经验吞吐量不等于样本效率",
+      "src": "/crl-figures/craftax-v2-figure-2.svg",
+      "width": 461,
+      "height": 346,
+      "alt": "Craftax 论文图 2：横轴是并行环境数，纵轴是每秒环境步数，均用对数刻度。不同颜色比较 Craftax、Craftax-Classic、Procgen、NetHack、Crafter 与 MineRL。",
+      "authors": "Michael Matthews、Michael Beukman、Benjamin Ellis、Mikayel Samvelyan、Matthew Jackson、Samuel Coward、Jakob Foerster",
+      "paper": "Craftax: A Lightning-Fast Benchmark for Open-Ended Reinforcement Learning",
+      "figureLabel": "Figure 2",
+      "version": "arXiv:2402.16801v2（2024）",
+      "sourceUrl": "https://arxiv.org/abs/2402.16801v2",
+      "figureUrl": "https://arxiv.org/html/2402.16801v2#S1.F2",
+      "originalImageUrl": "https://arxiv.org/html/2402.16801v2/speed_comparison.svg",
+      "license": {
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidenceUrl": "https://arxiv.org/abs/2402.16801v2",
+        "notice": "原图版权属于 Matthews 等作者，按论文所附 CC BY 4.0 许可使用。"
+      },
+      "reproduction": "直接保存 arXiv HTML 的矢量原图；没有重新计算数据或改变坐标轴、图例。",
+      "reading": "先沿一条曲线看增加并行环境后的吞吐变化，再在相同横轴位置比较。附录 B 的测试计入整段 RL 学习过程，使用同一台 RTX 4090 与 i9-13900K 机器；不是仅运行随机动作的模拟器速度。",
+      "limits": "纵轴不是达到同一能力所需的样本数，也不是单个身体实际交互的时间。不同环境的规则、观察、后端与训练开销不同；曲线不能用于判断哪种算法学得更有效，更不能当作今天所有硬件上的速度排名。",
+      "provenance": {
+        "retrieved": "2026-10-04",
+        "sha256": "4c4065467b233dbefcdd1a68b75ac045f1cdf4dec4b2c48091760b5d0be562d9"
+      }
+    },
+    "plasticity-correlates": {
+      "id": "plasticity-correlates",
+      "title": "可塑性诊断：学习变慢时，网络内部发生了什么？",
+      "src": "/crl-figures/plasticity-v3-figure-3.svg",
+      "width": 1237,
+      "height": 386,
+      "alt": "Dohare 等预印本图 3：随着 Online Permuted MNIST 任务推进，三种步长下的不活跃单元比例与权重幅度上升，表示的有效秩下降；三幅图分别对应这三个指标。",
+      "authors": "Shibhansh Dohare、J. Fernando Hernandez-Garcia、Parash Rahman、A. Rupam Mahmood、Richard S. Sutton",
+      "paper": "Maintaining Plasticity in Deep Continual Learning",
+      "figureLabel": "Figure 3",
+      "version": "arXiv:2306.13812v3（2024 预印本；不是 Nature 版本的图号）",
+      "sourceUrl": "https://arxiv.org/abs/2306.13812v3",
+      "figureUrl": "https://arxiv.org/html/2306.13812v3#S4.F3",
+      "originalImageUrl": "https://arxiv.org/html/2306.13812v3/backprop_summaries.svg",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "evidenceUrl": "https://arxiv.org/abs/2306.13812v3",
+        "notice": "原图版权属于 Dohare 等作者；本图单独保留 CC BY-SA 4.0，不适用本站原创教程的 CC BY 4.0 许可。"
+      },
+      "reproduction": "直接保存作者预印本在 arXiv HTML 中提供的矢量图；未修改。中文读图说明与原图分开呈现。",
+      "reading": "横轴是任务序号，不是回报。三幅面板分别看不活跃单元、权重幅度与有效秩，颜色表示不同步长。论文报告三十次运行的均值与正负一个标准误；这些量与新任务学习能力一起分析，才构成可塑性诊断。",
+      "limits": "该图来自监督学习的 Online Permuted MNIST，不是 RL 成绩。共变趋势并不单独识别因果机制；低秩或单元不活跃也不总意味着学习失败。要判断一个 RL 系统是否失去可塑性，仍需新经验上的受控适应测试。",
+      "provenance": {
+        "retrieved": "2026-10-04",
+        "sha256": "cf7065c0ffcfb2e37d4c198199a67d1f7906adfbb505c80a2e427aae404a085a"
+      }
+    }
+  },
+  "placements": {
+    "supplement-context": {
+      "context-transfer-boundaries": [
+        "russek-maze-tasks",
+        "russek-sr-values"
+      ]
+    },
+    "worlds": {
+      "worlds-information": [
+        "forager-world"
+      ],
+      "worlds-experience-efficiency": [
+        "craftax-throughput"
+      ],
+      "worlds-continual-open": [
+        "agarcl-dynamics"
+      ]
+    },
+    "learning-dynamics": {
+      "nonlinear-interference": [
+        "plasticity-correlates"
+      ]
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "evidence": "schematic experiment reconstruction",
+  "measuredData": null,
+  "efficacy": {
+    "source": "https://www.nature.com/articles/s41467-021-21315-z",
+    "locations": [
+      "Figure 2",
+      "Methods: Study 1 and Study 2",
+      "Results: Performance improves with increasing expected reward and efficacy"
+    ],
+    "study": 2,
+    "analyzedParticipants": 44,
+    "task": "keypress for font color",
+    "rewardsUSD": [
+      0.1,
+      1
+    ],
+    "efficacy": [
+      "random payment",
+      "fast and accurate performance"
+    ],
+    "lowEfficacyRewardRateWindow": 10,
+    "timingMs": {
+      "fixation": [
+        1000,
+        1500
+      ],
+      "cue": 1500,
+      "cueTargetGap": 0,
+      "responseCriterion": 750,
+      "responseRecordedUntil": 1000,
+      "postResponseBlank": 800,
+      "feedback": 750
+    },
+    "targetExample": {
+      "word": "BLUE",
+      "ink": "green",
+      "correctResponse": "green"
+    },
+    "measurements": [
+      "accuracy",
+      "correct-trial RT",
+      "cue-locked P3b",
+      "cue-locked CNV"
+    ]
+  },
+  "transfer": {
+    "source": "https://link.springer.com/article/10.3758/s13415-020-00845-x",
+    "locations": [
+      "Tables 1–3",
+      "Figure 1",
+      "Methods: Task design and Between-participants manipulation",
+      "Results: BOTH and WR CONTROL"
+    ],
+    "participants": 30,
+    "participantsPerGroup": 10,
+    "congruentTrials": 0,
+    "mappingExamples": [
+      {
+        "word": "PINK",
+        "ink": "blue",
+        "rewardedTask": "CN"
+      },
+      {
+        "word": "RED",
+        "ink": "pink",
+        "rewardedTask": "CN"
+      }
+    ],
+    "bothExample": {
+      "word": "RED",
+      "ink": "blue",
+      "rewardedTask": "WR"
+    },
+    "wrControlExample": {
+      "word": "WHITE",
+      "ink": "pink",
+      "rewardedTask": "WR"
+    },
+    "eitherTrialFractions": [
+      0,
+      0.2,
+      0.5
+    ],
+    "totalCNRewardedFraction": 0.5,
+    "mappingPoints": 5,
+    "transferPoints": 10,
+    "timingMs": {
+      "responseDeadline": 3000,
+      "feedback": 1000,
+      "blank": 100
+    },
+    "feedback": {
+      "rewarded": {
+        "text": "+10",
+        "weight": 700
+      },
+      "unrewarded": {
+        "text": "10",
+        "weight": 400
+      },
+      "unrewardedPointsChange": 0
+    },
+    "choiceMeasure": "task inferred from color or word keypress; not direct neural control intensity"
+  }
+}

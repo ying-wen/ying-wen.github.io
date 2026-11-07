@@ -1,0 +1,289 @@
+{
+  "parameters": {
+    "theta": 0.7,
+    "gamma": 0.5,
+    "p": 0.6681877721681662,
+    "behavior": 0.25,
+    "J": 0.11085643664655452,
+    "analytic": -0.037289394220170906,
+    "episodes": 20000,
+    "seed": 2026
+  },
+  "support": {
+    "valid": true,
+    "targetSupport": [
+      "00",
+      "01",
+      "10",
+      "11"
+    ],
+    "behaviorSupport": [
+      "00",
+      "01",
+      "10",
+      "11"
+    ],
+    "missingTargetTrajectories": []
+  },
+  "trajectories": [
+    {
+      "id": "00",
+      "actions": [
+        0,
+        0
+      ],
+      "state1": "s1(0)",
+      "targetProbability": 0.11009935453872484,
+      "behaviorProbability": 0.5625,
+      "reward": 0,
+      "returns": [
+        0,
+        0
+      ],
+      "scores": [
+        -0.6681877721681662,
+        -0.6681877721681662
+      ],
+      "actionRatios": [
+        0.4424163037757785,
+        0.4424163037757785
+      ],
+      "fullRatio": 0.19573218584662194,
+      "onPolicyGradient": 0,
+      "fullISGradient": 0,
+      "singleActionRatioGradient": 0
+    },
+    {
+      "id": "01",
+      "actions": [
+        0,
+        1
+      ],
+      "state1": "s1(0)",
+      "targetProbability": 0.22171287329310904,
+      "behaviorProbability": 0.1875,
+      "reward": 0,
+      "returns": [
+        0,
+        0
+      ],
+      "scores": [
+        -0.6681877721681662,
+        0.3318122278318339
+      ],
+      "actionRatios": [
+        0.4424163037757785,
+        2.6727510886726646
+      ],
+      "fullRatio": 1.1824686575632484,
+      "onPolicyGradient": 0,
+      "fullISGradient": 0,
+      "singleActionRatioGradient": 0
+    },
+    {
+      "id": "10",
+      "actions": [
+        1,
+        0
+      ],
+      "state1": "s1(1)",
+      "targetProbability": 0.22171287329310904,
+      "behaviorProbability": 0.1875,
+      "reward": 1,
+      "returns": [
+        0.5,
+        1
+      ],
+      "scores": [
+        0.3318122278318339,
+        -0.6681877721681662
+      ],
+      "actionRatios": [
+        2.6727510886726646,
+        0.4424163037757785
+      ],
+      "fullRatio": 1.1824686575632484,
+      "onPolicyGradient": -0.1681877721681661,
+      "fullISGradient": -0.19887676917424482,
+      "singleActionRatioGradient": 0.2956171643908121
+    },
+    {
+      "id": "11",
+      "actions": [
+        1,
+        1
+      ],
+      "state1": "s1(1)",
+      "targetProbability": 0.44647489887505704,
+      "behaviorProbability": 0.0625,
+      "reward": 0,
+      "returns": [
+        0,
+        0
+      ],
+      "scores": [
+        0.3318122278318339,
+        0.3318122278318339
+      ],
+      "actionRatios": [
+        2.6727510886726646,
+        2.6727510886726646
+      ],
+      "fullRatio": 7.143598382000913,
+      "onPolicyGradient": 0,
+      "fullISGradient": 0,
+      "singleActionRatioGradient": 0
+    }
+  ],
+  "exact": {
+    "analytic": -0.037289394220170906,
+    "finiteDifference": -0.03728939422016059,
+    "finiteDifferenceStep": 0.000001,
+    "finiteDifferenceError": 1.0320178435130262e-14,
+    "onPolicy": {
+      "mean": -0.037289394220170906,
+      "variance": 0.004881121218083719,
+      "bias": 0
+    },
+    "fullIS": {
+      "mean": -0.037289394220170906,
+      "variance": 0.006025495325665033,
+      "bias": 1e-51
+    },
+    "singleActionRatio": {
+      "mean": 0.05542821832327726,
+      "variance": 0.013313245341469188,
+      "bias": 0.09271761254344817
+    },
+    "singleActionMeanFormula": 0.05542821832327726,
+    "singleActionBiasFormula": 0.09271761254344817
+  },
+  "sampling": {
+    "onPolicy": {
+      "mean": -0.03745541686185094,
+      "errorFromAnalytic": -0.00016602264168003728,
+      "sampleVariance": 0.004896879709315105,
+      "standardError": 0.0004948171232543951
+    },
+    "fullIS": {
+      "mean": -0.03673253926648298,
+      "errorFromAnalytic": 0.0005568549536879228,
+      "sampleVariance": 0.005956267105275787,
+      "standardError": 0.000545722782430594
+    },
+    "singleActionRatio": {
+      "mean": 0.054600490262983234,
+      "errorFromAnalytic": 0.09188988448315413,
+      "sampleVariance": 0.01316028658326216,
+      "standardError": 0.000811180823961654
+    },
+    "counts": {
+      "onPolicy": {
+        "10": 4454,
+        "11": 8978,
+        "00": 2064,
+        "01": 4504
+      },
+      "behavior": {
+        "10": 3694,
+        "11": 1258,
+        "00": 11103,
+        "01": 3945
+      }
+    },
+    "checkpoints": [
+      {
+        "episodes": 1,
+        "onPolicyMean": 0,
+        "fullISMean": -0.19887676917424488,
+        "singleActionRatioMean": 0.2956171643908121
+      },
+      {
+        "episodes": 2,
+        "onPolicyMean": -0.08409388608408308,
+        "fullISMean": -0.19887676917424488,
+        "singleActionRatioMean": 0.2956171643908121
+      },
+      {
+        "episodes": 5,
+        "onPolicyMean": -0.033637554433633234,
+        "fullISMean": -0.07955070766969793,
+        "singleActionRatioMean": 0.11824686575632484
+      },
+      {
+        "episodes": 10,
+        "onPolicyMean": -0.05045633165044985,
+        "fullISMean": -0.039775353834848974,
+        "singleActionRatioMean": 0.059123432878162414
+      },
+      {
+        "episodes": 20,
+        "onPolicyMean": -0.025228165825224927,
+        "fullISMean": -0.029831515376136736,
+        "singleActionRatioMean": 0.04434257465862181
+      },
+      {
+        "episodes": 50,
+        "onPolicyMean": -0.03027379899026991,
+        "fullISMean": -0.02784274768439428,
+        "singleActionRatioMean": 0.04138640301471368
+      },
+      {
+        "episodes": 100,
+        "onPolicyMean": -0.03868318759867821,
+        "fullISMean": -0.021876444609166937,
+        "singleActionRatioMean": 0.03251788808298933
+      },
+      {
+        "episodes": 200,
+        "onPolicyMean": -0.03616037101615575,
+        "fullISMean": -0.020882060763295712,
+        "singleActionRatioMean": 0.031039802261035268
+      },
+      {
+        "episodes": 500,
+        "onPolicyMean": -0.03161930116761526,
+        "fullISMean": -0.028638254761091258,
+        "singleActionRatioMean": 0.04256887167227697
+      },
+      {
+        "episodes": 1000,
+        "onPolicyMean": -0.035992183243987536,
+        "fullISMean": -0.03261579014457614,
+        "singleActionRatioMean": 0.048481214960093215
+      },
+      {
+        "episodes": 2000,
+        "onPolicyMean": -0.03557171381356715,
+        "fullISMean": -0.03211859822164061,
+        "singleActionRatioMean": 0.04774217204911618
+      },
+      {
+        "episodes": 5000,
+        "onPolicyMean": -0.03720313520359839,
+        "fullISMean": -0.0348034346054929,
+        "singleActionRatioMean": 0.05173300376839221
+      },
+      {
+        "episodes": 10000,
+        "onPolicyMean": -0.037859067515054405,
+        "fullISMean": -0.03619557198971264,
+        "singleActionRatioMean": 0.05380232391912782
+      },
+      {
+        "episodes": 20000,
+        "onPolicyMean": -0.03745541686185094,
+        "fullISMean": -0.03673253926648298,
+        "singleActionRatioMean": 0.054600490262983234
+      }
+    ],
+    "onPolicySeed": 2026,
+    "behaviorSeed": 2027
+  },
+  "evidence": {
+    "kind": "frozen-policy-gradient-estimation",
+    "policyFrozen": true,
+    "updatesPerformed": 0,
+    "trainingRun": false
+  }
+}

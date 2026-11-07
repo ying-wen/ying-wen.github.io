@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900" role="img" aria-labelledby="title desc">
+  <title id="title">两项响应关系与三项高阶判别需要单独考察</title>
+  <desc id="desc">search 与 learning 是能力形成过程，Search Scaling 与 Learning Scaling 是相应的条件响应关系；Self-evolving、AI4AI 与 RSI 是三个相互独立的判别维度。</desc>
+  <rect width="1500" height="900" fill="#ffffff"/>
+  <style>
+    text { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; fill: #17211c; }
+    .serif { font-family: Georgia, "Noto Serif SC", "Songti SC", serif; }
+    .title { font-size: 42px; font-weight: 750; letter-spacing: -0.5px; }
+    .subtitle { font-size: 20px; fill: #66726b; }
+    .eyebrow { font-size: 16px; font-weight: 700; letter-spacing: 1.4px; }
+    .card-title { font-size: 28px; font-weight: 750; }
+    .body { font-size: 19px; fill: #46524b; }
+    .small { font-size: 16px; fill: #66726b; }
+  </style>
+
+  <text x="750" y="68" text-anchor="middle" class="title">响应关系与高阶判别需要单独考察</text>
+  <text x="750" y="108" text-anchor="middle" class="subtitle">search / learning 是能力形成过程；两项 scaling 关系规定相应实验横轴</text>
+
+  <rect x="70" y="150" width="1360" height="310" rx="26" fill="#fbfcfb" stroke="#cdd5d1" stroke-width="2"/>
+  <text x="110" y="194" class="eyebrow" fill="#46524b">两项条件响应关系</text>
+
+  <rect x="110" y="224" width="545" height="190" rx="20" fill="#fff8f3" stroke="#c95c25" stroke-width="2.2"/>
+  <circle cx="154" cy="267" r="18" fill="#c95c25"/>
+  <text x="154" y="274" text-anchor="middle" font-size="18" font-weight="750" fill="#ffffff">S</text>
+  <text x="190" y="276" class="card-title" fill="#a84719">Search Scaling</text>
+  <text x="150" y="322" class="body">固定持久状态，调整当前任务或设计轮次的搜索计算</text>
+  <text x="150" y="359" class="small serif">候选生成 · 展开 · 评价 · 选择 / 提交</text>
+  <text x="150" y="390" class="small">横轴：任务时或设计轮次计算 c</text>
+
+  <rect x="845" y="224" width="545" height="190" rx="20" fill="#f3faf6" stroke="#39815d" stroke-width="2.2"/>
+  <circle cx="889" cy="267" r="18" fill="#39815d"/>
+  <text x="889" y="274" text-anchor="middle" font-size="18" font-weight="750" fill="#ffffff">L</text>
+  <text x="925" y="276" class="card-title" fill="#2d6d4d">Learning Scaling</text>
+  <text x="885" y="322" class="body">固定未来运行条件，调整累计经历与跨任务持久更新</text>
+  <text x="885" y="359" class="small serif">经历 · 更新 · 迁移 · 保持 · 后期可塑性</text>
+  <text x="885" y="390" class="small">横轴：累计经历 n</text>
+
+  <line x1="678" y1="319" x2="822" y2="319" stroke="#86918b" stroke-width="2"/>
+  <circle cx="704" cy="319" r="5" fill="#c95c25"/>
+  <circle cx="796" cy="319" r="5" fill="#39815d"/>
+  <text x="750" y="305" text-anchor="middle" class="small">可协同</text>
+  <text x="750" y="344" text-anchor="middle" class="small">不可互代</text>
+
+  <text x="70" y="520" class="eyebrow" fill="#46524b">三个判别维度</text>
+  <line x1="70" y1="540" x2="1430" y2="540" stroke="#d7ddda" stroke-width="2"/>
+
+  <rect x="70" y="574" width="420" height="210" rx="20" fill="#fffaf1" stroke="#c79135" stroke-width="2"/>
+  <text x="105" y="620" class="eyebrow" fill="#8b611d">更新自主程度</text>
+  <text x="105" y="660" class="card-title">Self-evolving</text>
+  <text x="105" y="705" class="body">提出、评价与提交更新的环节，</text>
+  <text x="105" y="736" class="body">由系统自主完成的程度</text>
+  <text x="105" y="766" class="small">search、learning 或二者组合均可实现</text>
+
+  <rect x="540" y="574" width="420" height="210" rx="20" fill="#f4f8fc" stroke="#5b7fa4" stroke-width="2"/>
+  <text x="575" y="620" class="eyebrow" fill="#3f648a">改进对象</text>
+  <text x="575" y="660" class="card-title">AI4AI</text>
+  <text x="575" y="705" class="body">改进活动是否面向模型、算法、</text>
+  <text x="575" y="736" class="body">训练流程、评价器与研发设施</text>
+  <text x="575" y="766" class="small">不规定更新是否自主，也不规定改进机制</text>
+
+  <rect x="1010" y="574" width="420" height="210" rx="20" fill="#f8f4fb" stroke="#7c58a4" stroke-width="2"/>
+  <text x="1045" y="620" class="eyebrow" fill="#69458f">跨轮动力学</text>
+  <text x="1045" y="660" class="card-title">RSI</text>
+  <text x="1045" y="705" class="body">当前能力提高后，后续能力改进速率</text>
+  <text x="1045" y="736" class="body">可比外部投入下的跨轮速率变化</text>
+  <text x="1045" y="766" class="small">可经由 AI 研发搜索或运行时持续学习形成</text>
+
+  <rect x="200" y="826" width="1100" height="46" rx="23" fill="#f4f6f5"/>
+  <text x="750" y="856" text-anchor="middle" class="small">上述五个概念可以组合出现；名称相近并不构成阶段顺序或包含关系</text>
+</svg>
