@@ -1,0 +1,147 @@
+{
+  "protocol": {
+    "source": "Adams & Dickinson (1981), Experiment I",
+    "kind": "schematic",
+    "levers": 1,
+    "outcomes": [
+      "instrumental O1",
+      "noncontingent O2"
+    ],
+    "training": "different days; outcome identities counterbalanced",
+    "aversion": {
+      "cycles": 3,
+      "daysPerCycle": 2,
+      "treatmentsByDay": [
+        "LiCl",
+        "saline"
+      ],
+      "leverAvailable": false,
+      "target": {
+        "LiCl": "O1",
+        "saline": "O2"
+      },
+      "control": {
+        "LiCl": "O2",
+        "saline": "O1"
+      }
+    },
+    "test": {
+      "hoursAfterLastAversionSession": 24,
+      "minutes": 20,
+      "binMinutes": 5,
+      "leverAvailable": true,
+      "outcomesDelivered": false
+    },
+    "measuredResponseRates": null
+  },
+  "calculation": {
+    "kind": "exact",
+    "gamma": 1,
+    "starts": [
+      "A",
+      "B"
+    ],
+    "terminalRewardConvention": "reward on arrival, zero tail",
+    "oldRows": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "conditions": [
+      {
+        "id": "initial",
+        "label": "原路线",
+        "next": {
+          "A": "C",
+          "B": "D",
+          "C": "E",
+          "D": "F"
+        },
+        "rewards": {
+          "E": 4,
+          "F": 1
+        },
+        "values": {
+          "cached": [
+            4,
+            1
+          ],
+          "occupancy": [
+            4,
+            1
+          ],
+          "model": [
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "id": "reward",
+        "label": "只交换终点奖励",
+        "next": {
+          "A": "C",
+          "B": "D",
+          "C": "E",
+          "D": "F"
+        },
+        "rewards": {
+          "E": 1,
+          "F": 4
+        },
+        "values": {
+          "cached": [
+            4,
+            1
+          ],
+          "occupancy": [
+            1,
+            4
+          ],
+          "model": [
+            1,
+            4
+          ]
+        }
+      },
+      {
+        "id": "transition",
+        "label": "只交换中段出口",
+        "next": {
+          "A": "C",
+          "B": "D",
+          "C": "F",
+          "D": "E"
+        },
+        "rewards": {
+          "E": 4,
+          "F": 1
+        },
+        "values": {
+          "cached": [
+            4,
+            1
+          ],
+          "occupancy": [
+            4,
+            1
+          ],
+          "model": [
+            1,
+            4
+          ]
+        }
+      }
+    ],
+    "permissions": {
+      "cached": "no upstream update",
+      "occupancy": "fixed start rows; new rewards",
+      "model": "updated one-step transitions; full recomputation"
+    }
+  }
+}

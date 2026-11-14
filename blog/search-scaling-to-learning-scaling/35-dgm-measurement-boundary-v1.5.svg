@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900" role="img" aria-labelledby="title desc">
+  <title id="title">DGM 的公开评估与概念边界</title>
+  <desc id="desc">左侧重绘 DGM 论文报告的 SWE-bench 与 Polyglot 初始和最佳编码智能体完成率，右侧说明该实验评估设计搜索与多轮父代选择，而未评估运行时持续学习的 Learning Scaling 或 RSI 跨轮速率。</desc>
+  <rect width="1500" height="900" fill="#ffffff"/>
+  <style>
+    text { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; fill: #17211c; }
+    .serif { font-family: Georgia, "Noto Serif SC", "Songti SC", serif; }
+    .title { font-size: 40px; font-weight: 760; letter-spacing: -0.4px; }
+    .subtitle { font-size: 18px; fill: #66726b; }
+    .eyebrow { font-size: 15px; font-weight: 750; letter-spacing: 1.2px; }
+    .section { font-size: 25px; font-weight: 750; }
+    .body { font-size: 18px; fill: #46524b; }
+    .small { font-size: 15px; fill: #66726b; }
+    .value { font-size: 23px; font-weight: 760; }
+  </style>
+
+  <text x="750" y="65" text-anchor="middle" class="title">DGM：编码表现随设计迭代上升，横轴并非累计部署经历</text>
+  <text x="750" y="102" text-anchor="middle" class="subtitle">Zhang et al., ICLR 2026｜80 次设计迭代｜预训练基础模型保持冻结</text>
+
+  <rect x="60" y="145" width="690" height="670" rx="26" fill="#fffaf6" stroke="#d46935" stroke-width="2"/>
+  <text x="102" y="190" class="eyebrow" fill="#a84719">论文报告的端点</text>
+  <text x="102" y="231" class="section">初始智能体与搜索所得最佳智能体</text>
+
+  <line x1="176" y1="665" x2="690" y2="665" stroke="#627069" stroke-width="2"/>
+  <line x1="176" y1="303" x2="176" y2="665" stroke="#627069" stroke-width="2"/>
+
+  <g class="small">
+    <line x1="176" y1="665" x2="176" y2="674" stroke="#627069"/>
+    <text x="176" y="701" text-anchor="middle">0</text>
+    <line x1="347" y1="665" x2="347" y2="674" stroke="#627069"/>
+    <text x="347" y="701" text-anchor="middle">20</text>
+    <line x1="519" y1="665" x2="519" y2="674" stroke="#627069"/>
+    <text x="519" y="701" text-anchor="middle">40</text>
+    <line x1="690" y1="665" x2="690" y2="674" stroke="#627069"/>
+    <text x="690" y="701" text-anchor="middle">60%</text>
+  </g>
+
+  <line x1="347" y1="303" x2="347" y2="665" stroke="#eaded7" stroke-width="1.5" stroke-dasharray="5 8"/>
+  <line x1="519" y1="303" x2="519" y2="665" stroke="#eaded7" stroke-width="1.5" stroke-dasharray="5 8"/>
+  <line x1="690" y1="303" x2="690" y2="665" stroke="#eaded7" stroke-width="1.5" stroke-dasharray="5 8"/>
+
+  <text x="88" y="365" class="small" font-weight="700" fill="#46524b">SWE-bench</text>
+  <rect x="176" y="330" width="171" height="38" rx="8" fill="#f2c7ae"/>
+  <text x="358" y="357" class="value" fill="#8d421f">20.0%</text>
+  <rect x="176" y="388" width="429" height="38" rx="8" fill="#c95c25"/>
+  <text x="616" y="415" class="value" fill="#a84719">50.0%</text>
+  <text x="102" y="347" class="small">初始</text>
+  <text x="102" y="405" class="small">最佳</text>
+
+  <text x="88" y="530" class="small" font-weight="700" fill="#46524b">Polyglot</text>
+  <rect x="176" y="495" width="122" height="38" rx="8" fill="#f2c7ae"/>
+  <text x="309" y="522" class="value" fill="#8d421f">14.2%</text>
+  <rect x="176" y="553" width="263" height="38" rx="8" fill="#c95c25"/>
+  <text x="450" y="580" class="value" fill="#a84719">30.7%</text>
+  <text x="102" y="512" class="small">初始</text>
+  <text x="102" y="570" class="small">最佳</text>
+
+  <rect x="102" y="736" width="606" height="50" rx="14" fill="#ffffff" stroke="#eaded7"/>
+  <text x="405" y="766" text-anchor="middle" class="small">两个 benchmark 的数值不可横向比较；条形仅重绘各自初始—最佳端点</text>
+
+  <rect x="790" y="145" width="650" height="670" rx="26" fill="#f8faf9" stroke="#cbd4cf" stroke-width="2"/>
+  <text x="832" y="190" class="eyebrow" fill="#46524b">推论边界</text>
+
+  <rect x="832" y="221" width="566" height="142" rx="18" fill="#fff8f3" stroke="#d46935" stroke-width="1.8"/>
+  <text x="865" y="258" class="section" fill="#a84719">实验中调整的变量</text>
+  <text x="865" y="299" class="body">每轮从候选档案选择父代，由编码智能体修改自身代码，</text>
+  <text x="865" y="329" class="body">随后用 coding benchmark 评价并把新系统写入档案。</text>
+
+  <rect x="832" y="388" width="566" height="160" rx="18" fill="#f3faf6" stroke="#4c8b68" stroke-width="1.8"/>
+  <text x="865" y="425" class="section" fill="#2d6d4d">评估支持的有限判断</text>
+  <text x="865" y="466" class="body">开放式候选档案与迭代设计搜索，在论文设置内找到了</text>
+  <text x="865" y="496" class="body">benchmark 完成率更高的编码智能体代码。</text>
+  <text x="865" y="526" class="small">机制定位：design-level Search Scaling / recursive optimization</text>
+
+  <rect x="832" y="573" width="566" height="198" rx="18" fill="#f8f4fb" stroke="#8d6bb0" stroke-width="1.8"/>
+  <text x="865" y="610" class="section" fill="#69458f">实验未覆盖的推论</text>
+  <text x="865" y="651" class="body">• 同一部署智能体按时间吸收经历后的迁移、保持与可塑性</text>
+  <text x="865" y="684" class="body">• 固定未来运行条件下，新任务学习效率是否随长期运行提高</text>
+  <text x="865" y="717" class="body">• 可比外部投入下，当前能力是否提高后续改进速率</text>
+  <text x="865" y="750" class="small">因此不能仅由系统端点推出 Learning Scaling 或 RSI</text>
+
+  <text x="750" y="863" text-anchor="middle" class="small serif">Source: Zhang et al., “Darwin Gödel Machine,” ICLR 2026, arXiv:2505.22954 v3.</text>
+</svg>

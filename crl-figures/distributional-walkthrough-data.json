@@ -1,0 +1,269 @@
+{
+  "kind": "constructed-exact-settlement",
+  "random_rollouts": 0,
+  "neural_training_steps": 0,
+  "exact_logit_steps": 1,
+  "task": {
+    "gamma": 0.5,
+    "support": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "advance": 0.5,
+    "fixed_final_reward": 2,
+    "floating_final_rewards": [
+      0,
+      4
+    ],
+    "floating_final_masses": [
+      0.5,
+      0.5
+    ],
+    "terminal_future_return": 0
+  },
+  "nominal": {
+    "fixed": {
+      "atoms": [
+        1.5
+      ],
+      "masses": [
+        1
+      ]
+    },
+    "floating": {
+      "atoms": [
+        0.5,
+        2.5
+      ],
+      "masses": [
+        0.5,
+        0.5
+      ]
+    }
+  },
+  "bonus": {
+    "fixed": {
+      "atoms": [
+        1.5
+      ],
+      "masses": [
+        1
+      ]
+    },
+    "floating": {
+      "atoms": [
+        0.6,
+        2.6
+      ],
+      "masses": [
+        0.5,
+        0.5
+      ]
+    }
+  },
+  "projections": {
+    "fixed": {
+      "raw": [
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5
+      ],
+      "clipped": [
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5
+      ],
+      "next_masses": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "projected": [
+        0,
+        0.5,
+        0.5,
+        0,
+        0
+      ],
+      "raw_mean": 1.5,
+      "projected_mean": 1.5,
+      "clipped_mass": 0
+    },
+    "floating": {
+      "raw": [
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5
+      ],
+      "clipped": [
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5
+      ],
+      "next_masses": [
+        0.5,
+        0,
+        0,
+        0,
+        0.5
+      ],
+      "projected": [
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0
+      ],
+      "raw_mean": 1.5,
+      "projected_mean": 1.5,
+      "clipped_mass": 0
+    },
+    "overflow": {
+      "raw": [
+        3,
+        3.5,
+        4,
+        4.5,
+        5
+      ],
+      "clipped": [
+        3,
+        3.5,
+        4,
+        4,
+        4
+      ],
+      "next_masses": [
+        0.5,
+        0,
+        0,
+        0,
+        0.5
+      ],
+      "projected": [
+        0,
+        0,
+        0,
+        0.5,
+        0.5
+      ],
+      "raw_mean": 4,
+      "projected_mean": 3.5,
+      "clipped_mass": 0.5
+    }
+  },
+  "sample_update": {
+    "rate": 1,
+    "before_logits": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "target": [
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0
+    ],
+    "before": [
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2
+    ],
+    "gradient": [
+      -0.04999999999999999,
+      -0.04999999999999999,
+      -0.04999999999999999,
+      -0.04999999999999999,
+      0.2
+    ],
+    "after_logits": [
+      0.04999999999999999,
+      0.04999999999999999,
+      0.04999999999999999,
+      0.04999999999999999,
+      -0.2
+    ],
+    "after": [
+      0.20925751990801456,
+      0.20925751990801456,
+      0.20925751990801456,
+      0.20925751990801456,
+      0.16296992036794183
+    ],
+    "before_loss": 1.6094379124341003,
+    "after_loss": 1.564189632824525
+  },
+  "choices": {
+    "nominal_mean": {
+      "criterion": "mean",
+      "scores": {
+        "fixed": 1.5,
+        "floating": 1.5
+      },
+      "action": "fixed"
+    },
+    "bonus_mean": {
+      "criterion": "mean",
+      "scores": {
+        "fixed": 1.5,
+        "floating": 1.6
+      },
+      "action": "floating"
+    },
+    "bonus_risk": {
+      "criterion": "lower_cvar",
+      "scores": {
+        "fixed": 1.5,
+        "floating": 0.6
+      },
+      "action": "fixed"
+    }
+  },
+  "risk": {
+    "true_fixed": 1.5,
+    "projected_fixed": 1,
+    "true_floating": 0.5,
+    "projected_floating": 0.5
+  },
+  "uncertainty": [
+    {
+      "alpha": 1,
+      "beta": 1,
+      "success_probability": 0.5,
+      "variance_of_parameter": 0.08333333333333333,
+      "predictive_mean": 1.5,
+      "expected_conditional_return_variance": 0.6666666666666667,
+      "variance_of_conditional_mean": 0.3333333333333333,
+      "predictive_return_variance": 1
+    },
+    {
+      "alpha": 50,
+      "beta": 50,
+      "success_probability": 0.5,
+      "variance_of_parameter": 0.0024752475247524753,
+      "predictive_mean": 1.5,
+      "expected_conditional_return_variance": 0.9900990099009901,
+      "variance_of_conditional_mean": 0.009900990099009901,
+      "predictive_return_variance": 1
+    }
+  ]
+}

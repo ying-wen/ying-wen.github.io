@@ -1,0 +1,427 @@
+{
+  "evidence": "exact-deterministic-mechanism",
+  "sampledRuns": 0,
+  "gamma": 0.9,
+  "alpha": 1,
+  "actions": {
+    "S": [
+      "go",
+      "exit"
+    ],
+    "A": [
+      "cross"
+    ],
+    "G": [],
+    "B": [],
+    "D": []
+  },
+  "oldHistory": [
+    {
+      "s": "S",
+      "a": "go",
+      "reward": 0,
+      "next": "A",
+      "done": false
+    },
+    {
+      "s": "A",
+      "a": "cross",
+      "reward": 1,
+      "next": "G",
+      "done": true
+    },
+    {
+      "s": "S",
+      "a": "exit",
+      "reward": 0.6,
+      "next": "B",
+      "done": true
+    }
+  ],
+  "changeHistory": [
+    {
+      "s": "S",
+      "a": "go",
+      "reward": 0,
+      "next": "A",
+      "done": false
+    },
+    {
+      "s": "A",
+      "a": "cross",
+      "reward": 0,
+      "next": "D",
+      "done": true
+    }
+  ],
+  "oldQ": {
+    "S:go": 0.9,
+    "S:exit": 0.6,
+    "A:cross": 1
+  },
+  "afterDirectQ": {
+    "S:go": 0.9,
+    "S:exit": 0.6,
+    "A:cross": 0
+  },
+  "oldModel": {
+    "S:go": {
+      "s": "S",
+      "a": "go",
+      "reward": 0,
+      "next": "A",
+      "done": false
+    },
+    "A:cross": {
+      "s": "A",
+      "a": "cross",
+      "reward": 1,
+      "next": "G",
+      "done": true
+    },
+    "S:exit": {
+      "s": "S",
+      "a": "exit",
+      "reward": 0.6,
+      "next": "B",
+      "done": true
+    }
+  },
+  "newModel": {
+    "S:go": {
+      "s": "S",
+      "a": "go",
+      "reward": 0,
+      "next": "A",
+      "done": false
+    },
+    "A:cross": {
+      "s": "A",
+      "a": "cross",
+      "reward": 0,
+      "next": "D",
+      "done": true
+    },
+    "S:exit": {
+      "s": "S",
+      "a": "exit",
+      "reward": 0.6,
+      "next": "B",
+      "done": true
+    }
+  },
+  "oldPredecessors": {
+    "S": [],
+    "A": [
+      "S:go"
+    ],
+    "G": [
+      "A:cross"
+    ],
+    "B": [
+      "S:exit"
+    ],
+    "D": []
+  },
+  "newPredecessors": {
+    "S": [],
+    "A": [
+      "S:go"
+    ],
+    "G": [],
+    "B": [
+      "S:exit"
+    ],
+    "D": [
+      "A:cross"
+    ]
+  },
+  "warmupCounts": {
+    "environmentSteps": 3,
+    "resets": 1,
+    "directBackups": 3,
+    "modelWrites": 3,
+    "modelCalls": 1,
+    "planningBackups": 1,
+    "priorityReads": 0,
+    "queuePops": 0
+  },
+  "scenarios": {
+    "none": {
+      "q": {
+        "S:go": 0.9,
+        "S:exit": 0.6,
+        "A:cross": 0
+      },
+      "choice": "go",
+      "counts": {
+        "environmentSteps": 2,
+        "resets": 1,
+        "directBackups": 2,
+        "modelWrites": 2,
+        "modelCalls": 0,
+        "planningBackups": 0,
+        "priorityReads": 0,
+        "queuePops": 0
+      },
+      "snapshots": [
+        {
+          "k": 0,
+          "q": {
+            "S:go": 0.9,
+            "S:exit": 0.6,
+            "A:cross": 0
+          },
+          "choice": "go",
+          "modelCalls": 0
+        }
+      ],
+      "nextExperience": {
+        "firstAction": "go",
+        "route": [
+          "S",
+          "A",
+          "D"
+        ],
+        "rewards": [
+          0,
+          0
+        ],
+        "return": 0,
+        "steps": 2
+      },
+      "countsAfterNext": {
+        "environmentSteps": 4,
+        "resets": 2,
+        "directBackups": 4,
+        "modelWrites": 4,
+        "modelCalls": 0,
+        "planningBackups": 0,
+        "priorityReads": 0,
+        "queuePops": 0
+      },
+      "finalQ": {
+        "S:go": 0,
+        "S:exit": 0.6,
+        "A:cross": 0
+      }
+    },
+    "scheduled": {
+      "q": {
+        "S:go": 0,
+        "S:exit": 0.6,
+        "A:cross": 0
+      },
+      "choice": "exit",
+      "counts": {
+        "environmentSteps": 2,
+        "resets": 1,
+        "directBackups": 2,
+        "modelWrites": 2,
+        "modelCalls": 3,
+        "planningBackups": 3,
+        "priorityReads": 0,
+        "queuePops": 0
+      },
+      "snapshots": [
+        {
+          "k": 0,
+          "q": {
+            "S:go": 0.9,
+            "S:exit": 0.6,
+            "A:cross": 0
+          },
+          "choice": "go",
+          "modelCalls": 0
+        },
+        {
+          "k": 1,
+          "q": {
+            "S:go": 0.9,
+            "S:exit": 0.6,
+            "A:cross": 0
+          },
+          "choice": "go",
+          "modelCalls": 1
+        },
+        {
+          "k": 2,
+          "q": {
+            "S:go": 0.9,
+            "S:exit": 0.6,
+            "A:cross": 0
+          },
+          "choice": "go",
+          "modelCalls": 2
+        },
+        {
+          "k": 3,
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0
+          },
+          "choice": "exit",
+          "modelCalls": 3
+        }
+      ],
+      "nextExperience": {
+        "firstAction": "exit",
+        "route": [
+          "S",
+          "B"
+        ],
+        "rewards": [
+          0.6
+        ],
+        "return": 0.6,
+        "steps": 1
+      },
+      "countsAfterNext": {
+        "environmentSteps": 3,
+        "resets": 2,
+        "directBackups": 3,
+        "modelWrites": 3,
+        "modelCalls": 3,
+        "planningBackups": 3,
+        "priorityReads": 0,
+        "queuePops": 0
+      },
+      "finalQ": {
+        "S:go": 0,
+        "S:exit": 0.6,
+        "A:cross": 0
+      }
+    },
+    "hybridQueue": {
+      "S:go": 0.9
+    },
+    "hybrid": {
+      "q": {
+        "S:go": 0,
+        "S:exit": 0.6,
+        "A:cross": 0
+      },
+      "choice": "exit",
+      "counts": {
+        "environmentSteps": 2,
+        "resets": 1,
+        "directBackups": 2,
+        "modelWrites": 2,
+        "modelCalls": 2,
+        "planningBackups": 1,
+        "priorityReads": 1,
+        "queuePops": 1
+      },
+      "snapshots": [
+        {
+          "k": 0,
+          "q": {
+            "S:go": 0.9,
+            "S:exit": 0.6,
+            "A:cross": 0
+          },
+          "choice": "go",
+          "modelCalls": 0
+        },
+        {
+          "k": 1,
+          "q": {
+            "S:go": 0,
+            "S:exit": 0.6,
+            "A:cross": 0
+          },
+          "choice": "exit",
+          "modelCalls": 2
+        }
+      ],
+      "nextExperience": {
+        "firstAction": "exit",
+        "route": [
+          "S",
+          "B"
+        ],
+        "rewards": [
+          0.6
+        ],
+        "return": 0.6,
+        "steps": 1
+      },
+      "countsAfterNext": {
+        "environmentSteps": 3,
+        "resets": 2,
+        "directBackups": 3,
+        "modelWrites": 3,
+        "modelCalls": 2,
+        "planningBackups": 1,
+        "priorityReads": 1,
+        "queuePops": 1
+      },
+      "finalQ": {
+        "S:go": 0,
+        "S:exit": 0.6,
+        "A:cross": 0
+      }
+    },
+    "textbookPriority": {
+      "q": {
+        "S:go": 0,
+        "S:exit": 0.6,
+        "A:cross": 0
+      },
+      "choice": "exit",
+      "queues": [
+        {
+          "A:cross": 1
+        },
+        {
+          "S:go": 0.9
+        },
+        {}
+      ],
+      "pops": [
+        {
+          "pair": "A:cross",
+          "skipped": false
+        },
+        {
+          "pair": "S:go",
+          "skipped": false
+        }
+      ],
+      "counts": {
+        "environmentSteps": 2,
+        "resets": 1,
+        "directBackups": 0,
+        "modelWrites": 2,
+        "modelCalls": 3,
+        "planningBackups": 2,
+        "priorityReads": 1,
+        "queuePops": 2
+      }
+    }
+  },
+  "stochasticCheck": {
+    "outcomes": [
+      {
+        "probability": 0.75,
+        "target": 1
+      },
+      {
+        "probability": 0.25,
+        "target": 0
+      }
+    ],
+    "expectation": 0.75,
+    "variance": 0.1875
+  },
+  "protocol": {
+    "tieBreak": "exit",
+    "warmup": "Three real rows in two episodes; one reset and one modeled S:go backup.",
+    "changed": "S→A→D: two real steps; reset is an episode operation, never a modeled transition.",
+    "modelCall": "Every outcome row read, including predecessor priority evaluation; direct observed targets are not model calls.",
+    "priorityPopBudget": 2,
+    "budget": "Comparisons stop after the same two change-discovery transitions; next episodes have different real lengths.",
+    "information": "Learner knows state/action labels and receives real rows; changed truth is used only to generate the next actual episode."
+  }
+}

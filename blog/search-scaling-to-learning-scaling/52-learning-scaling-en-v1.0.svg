@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Learning Scaling requires more than persistent updates</title><desc id="desc">Experience changes persistent learning state, which must improve continuing control while retaining transfer and plasticity.</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3z" fill="#334155"/></marker><style>.t{font:700 36px Inter,Arial;fill:#0f172a}.h{font:700 23px Inter,Arial;fill:#0f172a}.b{font:18px Inter,Arial;fill:#334155}.s{font:15px Inter,Arial;fill:#475569}.arr{stroke:#334155;stroke-width:2.5;fill:none;marker-end:url(#a)}</style></defs>
+  <rect width="1600" height="900" fill="#fff"/><text x="80" y="70" class="t">Persistent change is a mechanism; continuing control is the objective</text>
+  <rect x="70" y="170" width="350" height="255" rx="20" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/><text x="100" y="215" class="h">First-person experience</text><text x="100" y="265" class="b">Observation → action → consequence</text><text x="100" y="302" class="b">Policy shapes what is observed next</text><text x="100" y="339" class="b">History is not an i.i.d. dataset</text>
+  <rect x="625" y="170" width="350" height="255" rx="20" fill="#f5f3ff" stroke="#a78bfa" stroke-width="2"/><text x="655" y="215" class="h">Persistent learning state</text><text x="655" y="265" class="b">Predictive representation</text><text x="655" y="302" class="b">Policy · value · memory · harness</text><text x="655" y="339" class="b">Update rules and plasticity</text>
+  <rect x="1180" y="170" width="350" height="255" rx="20" fill="#ecfdf5" stroke="#34d399" stroke-width="2"/><text x="1210" y="215" class="h">Later control</text><text x="1210" y="265" class="b">Long-run return</text><text x="1210" y="302" class="b">Recovery after change</text><text x="1210" y="339" class="b">Lower future opportunity loss</text>
+  <path d="M420 295 H615" class="arr"/><path d="M975 295 H1170" class="arr"/><path d="M1355 425 C1355 520 250 520 250 435" stroke="#059669" stroke-width="3" fill="none" stroke-dasharray="9 7" marker-end="url(#a)"/>
+  <rect x="635" y="535" width="330" height="42" rx="10" fill="#fff"/>
+  <text x="678" y="562" class="s">Actions change future experience</text>
+  <text x="80" y="620" class="h">Diagnostics of sustained learnability</text>
+  <rect x="70" y="665" width="270" height="120" rx="16" fill="#fff" stroke="#cbd5e1" stroke-width="2"/><text x="110" y="715" class="h">Transfer</text><text x="110" y="750" class="s">new conditions</text>
+  <rect x="370" y="665" width="270" height="120" rx="16" fill="#fff" stroke="#cbd5e1" stroke-width="2"/><text x="410" y="715" class="h">Retention</text><text x="410" y="750" class="s">old capabilities</text>
+  <rect x="670" y="665" width="270" height="120" rx="16" fill="#fff" stroke="#cbd5e1" stroke-width="2"/><text x="710" y="715" class="h">Plasticity</text><text x="710" y="750" class="s">late-stage change</text>
+  <rect x="970" y="665" width="270" height="120" rx="16" fill="#fff" stroke="#cbd5e1" stroke-width="2"/><text x="1010" y="715" class="h">Efficiency</text><text x="1010" y="750" class="s">experience to learn</text>
+  <rect x="1270" y="665" width="260" height="120" rx="16" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/><text x="1310" y="715" class="h">Not enough</text><text x="1310" y="750" class="s">“state changed”</text>
+</svg>

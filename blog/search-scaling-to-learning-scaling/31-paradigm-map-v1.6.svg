@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="980" viewBox="0 0 1500 980" role="img" aria-labelledby="title desc">
+  <title id="title">AI 能力形成与更新发生在四种时间段</title>
+  <desc id="desc">预训练与强化学习后训练、任务时推理和智能体搜索、跨任务持续学习、AI 研发设计循环分别位于不同时间段；Self-evolving、AI4AI 和 RSI 是相互独立的判别维度。</desc>
+  <rect width="1500" height="980" fill="#ffffff"/>
+  <style>
+    .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+    .serif{font-family:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",serif}
+    .h1{font-size:34px;font-weight:700;fill:#17211c}.h2{font-size:22px;font-weight:700;fill:#243029}
+    .body{font-size:17px;fill:#39463f}.small{font-size:15px;fill:#626d67}.tiny{font-size:14px;fill:#68736d}
+    .tag{font-size:15px;font-weight:700}.orange{fill:#b84e1b}.green{fill:#2f704f}.blue{fill:#365f82}.purple{fill:#6f5683}
+  </style>
+
+  <text x="750" y="56" text-anchor="middle" class="sans h1">四种时间段，两种能力形成机制，三个判别维度</text>
+  <text x="750" y="89" text-anchor="middle" class="serif body">这些机制不构成历史阶梯；其位置取决于更新时点、持久状态与评价时点</text>
+
+  <g transform="translate(62,126)">
+    <rect width="326" height="612" rx="16" fill="#fafafa" stroke="#cdd2cf"/>
+    <rect x="350" width="326" height="612" rx="16" fill="#fff9f5" stroke="#d78a60"/>
+    <rect x="700" width="326" height="612" rx="16" fill="#f7fbf8" stroke="#6f9f83"/>
+    <rect x="1050" width="326" height="612" rx="16" fill="#f8fafc" stroke="#7892a9"/>
+
+    <text x="163" y="44" text-anchor="middle" class="sans h2">模型构建期</text>
+    <text x="513" y="44" text-anchor="middle" class="sans h2 orange">当前任务期</text>
+    <text x="863" y="44" text-anchor="middle" class="sans h2 green">持续运行期</text>
+    <text x="1213" y="44" text-anchor="middle" class="sans h2 blue">AI 研发轮次</text>
+
+    <text x="163" y="73" text-anchor="middle" class="serif small">数据与训练程序形成发布状态</text>
+    <text x="513" y="73" text-anchor="middle" class="serif small">固定持久状态，展开候选</text>
+    <text x="863" y="73" text-anchor="middle" class="serif small">经历跨任务进入持久状态</text>
+    <text x="1213" y="73" text-anchor="middle" class="serif small">提出、评价并提交后继设计</text>
+
+    <line x1="24" y1="96" x2="302" y2="96" stroke="#d9dddb"/>
+    <line x1="374" y1="96" x2="652" y2="96" stroke="#edd7ca"/>
+    <line x1="724" y1="96" x2="1002" y2="96" stroke="#d2e4d9"/>
+    <line x1="1074" y1="96" x2="1352" y2="96" stroke="#d8e1e8"/>
+
+    <g transform="translate(24,120)">
+      <rect width="278" height="94" rx="10" fill="#fff" stroke="#d7dcda"/>
+      <text x="18" y="29" class="sans tag">PRETRAINING</text>
+      <text x="18" y="56" class="serif small">训练期 learning</text>
+      <text x="18" y="79" class="serif tiny">自变量：数据、参数、训练计算</text>
+    </g>
+    <g transform="translate(24,232)">
+      <rect width="278" height="120" rx="10" fill="#fff" stroke="#d7dcda"/>
+      <text x="18" y="29" class="sans tag">RL POST-TRAINING</text>
+      <text x="18" y="56" class="serif small">reasoning / agentic / meta</text>
+      <text x="18" y="80" class="serif tiny">训练搜索策略、行动策略</text>
+      <text x="18" y="102" class="serif tiny">或适应程序</text>
+    </g>
+    <g transform="translate(24,372)">
+      <rect width="278" height="112" rx="10" fill="#f3f5f4" stroke="#d7dcda"/>
+      <text x="18" y="29" class="sans tag">TRAINING SCALING</text>
+      <text x="18" y="57" class="serif small">评估训练资源与发布状态</text>
+      <text x="18" y="83" class="serif tiny">不等同于运行时的</text>
+      <text x="18" y="104" class="serif tiny">Learning Scaling</text>
+    </g>
+
+    <g transform="translate(374,120)">
+      <rect width="278" height="120" rx="10" fill="#fff" stroke="#e4b294"/>
+      <text x="18" y="29" class="sans tag orange">TEST-TIME SCALING</text>
+      <text x="18" y="57" class="serif small">并行采样、顺序修订</text>
+      <text x="18" y="82" class="serif small">工具调用、递归委派</text>
+      <text x="18" y="104" class="serif tiny">主要评估 Search Scaling</text>
+    </g>
+    <g transform="translate(374,258)">
+      <rect width="278" height="120" rx="10" fill="#fff" stroke="#e4b294"/>
+      <text x="18" y="29" class="sans tag orange">REASONING / PLANNING</text>
+      <text x="18" y="57" class="serif small">搜索认知轨迹或行动序列</text>
+      <text x="18" y="82" class="serif small">评价并选择当前提交项</text>
+      <text x="18" y="104" class="serif tiny">任务重置后未必留下更新</text>
+    </g>
+    <g transform="translate(374,396)">
+      <rect width="278" height="126" rx="10" fill="#fff" stroke="#e4b294"/>
+      <text x="18" y="29" class="sans tag orange">TEST-TIME TRAINING</text>
+      <text x="18" y="57" class="serif small">可以更新隐藏状态或参数</text>
+      <text x="18" y="82" class="serif tiny">仅服务当前任务：任务内适应</text>
+      <text x="18" y="105" class="serif tiny">跨任务保留：进入持续运行期</text>
+    </g>
+
+    <g transform="translate(724,120)">
+      <rect width="278" height="132" rx="10" fill="#fff" stroke="#9fc0ab"/>
+      <text x="18" y="29" class="sans tag green">CONTINUAL LEARNING / RL</text>
+      <text x="18" y="57" class="serif small">观测—行动—反馈形成经历</text>
+      <text x="18" y="82" class="serif small">更新跨任务保留</text>
+      <text x="18" y="106" class="serif tiny">须评估迁移、保持与可塑性</text>
+    </g>
+    <g transform="translate(724,270)">
+      <rect width="278" height="138" rx="10" fill="#fff" stroke="#79a78c"/>
+      <text x="18" y="29" class="sans tag green">LEARNING SCALING</text>
+      <text x="18" y="57" class="serif small">固定未来运行条件</text>
+      <text x="18" y="82" class="serif small">调整累计经历 n</text>
+      <text x="18" y="107" class="serif tiny">比较未来能力与新任务</text>
+      <text x="18" y="128" class="serif tiny">学习效率</text>
+    </g>
+    <g transform="translate(724,426)">
+      <rect width="278" height="98" rx="10" fill="#edf6f0" stroke="#79a78c"/>
+      <text x="18" y="29" class="sans tag green">RECURSIVE LEARNING</text>
+      <text x="18" y="56" class="serif small">后期新任务需要更少经历</text>
+      <text x="18" y="80" class="serif tiny">仍不能单独推出 RSI</text>
+    </g>
+
+    <g transform="translate(1074,120)">
+      <rect width="278" height="132" rx="10" fill="#fff" stroke="#9eb1c2"/>
+      <text x="18" y="29" class="sans tag blue">HARNESS / DESIGN SEARCH</text>
+      <text x="18" y="57" class="serif small">候选为 prompt、工具程序、代码</text>
+      <text x="18" y="82" class="serif small">训练程序或完整 AI 设计</text>
+      <text x="18" y="106" class="serif tiny">提交形成后继系统</text>
+    </g>
+    <g transform="translate(1074,270)">
+      <rect width="278" height="112" rx="10" fill="#fff" stroke="#9eb1c2"/>
+      <text x="18" y="29" class="sans tag blue">AI4AI</text>
+      <text x="18" y="57" class="serif small">改进对象：AI 研发</text>
+      <text x="18" y="82" class="serif tiny">可采用 search、learning</text>
+      <text x="18" y="103" class="serif tiny">或二者组合</text>
+    </g>
+    <g transform="translate(1074,400)">
+      <rect width="278" height="122" rx="10" fill="#f2f6f9" stroke="#7892a9"/>
+      <text x="18" y="29" class="sans tag blue">DESIGN-LEVEL SEARCH</text>
+      <text x="18" y="57" class="serif small">固定 proposal、评价与提交规则</text>
+      <text x="18" y="82" class="serif tiny">调整候选数或轮数时</text>
+      <text x="18" y="105" class="serif tiny">评估 Search Scaling</text>
+    </g>
+
+    <text x="688" y="588" text-anchor="middle" class="serif small">← 时间段由实验程序规定；同一系统可以跨越多列 →</text>
+  </g>
+
+  <g transform="translate(62,774)">
+    <rect width="1376" height="154" rx="16" fill="#fcfcfc" stroke="#cfd5d2"/>
+    <text x="24" y="35" class="sans h2">三个判别维度不位于上述时间轴上</text>
+
+    <rect x="24" y="55" width="410" height="72" rx="10" fill="#fff9f0" stroke="#d7a75c"/>
+    <text x="44" y="82" class="sans tag" fill="#8a5a13">SELF-EVOLVING</text>
+    <text x="44" y="108" class="serif small">更新算子由系统自主执行的程度</text>
+
+    <rect x="458" y="55" width="410" height="72" rx="10" fill="#f5f8fb" stroke="#8ea6ba"/>
+    <text x="478" y="82" class="sans tag blue">AI4AI</text>
+    <text x="478" y="108" class="serif small">优化对象：AI 系统与研发流程</text>
+
+    <rect x="892" y="55" width="460" height="72" rx="10" fill="#f8f4fa" stroke="#a18bae"/>
+    <text x="912" y="82" class="sans tag purple">RSI</text>
+    <text x="912" y="108" class="serif small">当前能力对后续改进速率的影响</text>
+  </g>
+</svg>

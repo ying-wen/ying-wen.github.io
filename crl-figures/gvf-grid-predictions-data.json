@@ -1,0 +1,92 @@
+{
+  "kind": "exact-finite-model",
+  "prior": 0.5,
+  "accuracy": 0.8,
+  "condition": "left cue observed; later position observations add no mode evidence",
+  "belief": 0.8,
+  "predictions": [
+    {
+      "id": "vf",
+      "name": "任务 VF：折扣成功",
+      "policy": "left",
+      "signal": "success indicator",
+      "continuation": 0.9,
+      "unit": "discounted success",
+      "values": {
+        "L": 0,
+        "R": 0,
+        "J": 0.8,
+        "M": 0.7200000000000001,
+        "C": 0.6480000000000001
+      },
+      "domain": [
+        0,
+        1
+      ],
+      "displayUnit": "奖励单位"
+    },
+    {
+      "id": "left",
+      "name": "GVF：向左能否成功",
+      "policy": "left",
+      "signal": "success indicator",
+      "continuation": 1,
+      "unit": "probability",
+      "values": {
+        "L": 0,
+        "R": 0,
+        "J": 0.8,
+        "M": 0.8,
+        "C": 0.8
+      },
+      "domain": [
+        0,
+        1
+      ],
+      "displayUnit": "概率"
+    },
+    {
+      "id": "right",
+      "name": "GVF：向右能否成功",
+      "policy": "right",
+      "signal": "success indicator",
+      "continuation": 1,
+      "unit": "probability",
+      "values": {
+        "L": 0,
+        "R": 0,
+        "J": 0.19999999999999996,
+        "M": 0.19999999999999996,
+        "C": 0.19999999999999996
+      },
+      "domain": [
+        0,
+        1
+      ],
+      "displayUnit": "概率"
+    },
+    {
+      "id": "steps",
+      "name": "GVF：还要走几步",
+      "policy": "left",
+      "signal": "one per transition",
+      "continuation": 1,
+      "unit": "steps",
+      "values": {
+        "L": 0,
+        "R": 0,
+        "J": 1,
+        "M": 2,
+        "C": 3
+      },
+      "domain": [
+        0,
+        3
+      ],
+      "displayUnit": "步"
+    }
+  ],
+  "terminalContinuation": 0,
+  "terminalFutureValue": 0,
+  "finalTransitionCounted": true
+}

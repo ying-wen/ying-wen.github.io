@@ -1,0 +1,608 @@
+{
+  "schema": "crl-knowledge-transport-v1",
+  "evidence_kind": "exact_finite_diagnostic",
+  "gamma": 0.9,
+  "rho": 0.2,
+  "states": [
+    "S",
+    "A",
+    "B",
+    "C",
+    "X",
+    "Y"
+  ],
+  "units": {
+    "reward": "external reward units",
+    "discounted_backup": "external reward units",
+    "continuation_readout": "external reward units",
+    "duration": "primitive transitions per option call",
+    "endpoint_probability": "probability per option call",
+    "discounted_endpoint_kernel": "dimensionless discounted probability",
+    "rho": "external reward units per primitive transition",
+    "fixed_rate_backup": "external reward units"
+  },
+  "fixed_rate_scope": "One r-rho*tau+P*h backup with given rho=1/5 and h=READOUT, including h(X)=h(Y)=0 at this episodic boundary; no gain is solved.",
+  "assumptions": [
+    "Known finite physical dynamics; specified option policies, no learning.",
+    "Same physical world and external reward in every case.",
+    "Option stops at A/C; physical episodes stop only at X/Y.",
+    "Choice is compared only between two given options with fixed continuation.",
+    "A lossy projected backup is a prediction, not a new executed policy return.",
+    "The reference option completes the fixed continuation with P(upper|S)=1/2."
+  ],
+  "reference": {
+    "start": "S",
+    "external_discounted_reward": 1.26,
+    "external_total_reward": 1.5,
+    "expected_duration": 2.5,
+    "endpoint_probability": {
+      "X": 0.5,
+      "Y": 0.5
+    },
+    "discounted_endpoint_kernel": {},
+    "continuation_readout": {
+      "S": 0,
+      "A": 1,
+      "B": 0,
+      "C": 2,
+      "X": 0,
+      "Y": 0
+    },
+    "discounted_backup": 1.26,
+    "fixed_rate_backup": 1,
+    "exact": {
+      "discounted_backup": "63/50",
+      "fixed_rate_backup": "1",
+      "expected_duration": "5/2"
+    }
+  },
+  "scenarios": {
+    "bijective_recoding": {
+      "changed_object": "coordinate labels only; physical policy unchanged",
+      "mapping": {
+        "S": "B",
+        "A": "C",
+        "B": "S",
+        "C": "A",
+        "X": "Y",
+        "Y": "X"
+      },
+      "physical_true": {
+        "start": "S",
+        "external_discounted_reward": 0,
+        "external_total_reward": 0,
+        "expected_duration": 1.25,
+        "endpoint_probability": {
+          "A": 0.75,
+          "C": 0.25
+        },
+        "discounted_endpoint_kernel": {
+          "A": 0.675,
+          "C": 0.2025
+        },
+        "continuation_readout": {
+          "S": 0,
+          "A": 1,
+          "B": 0,
+          "C": 2,
+          "X": 0,
+          "Y": 0
+        },
+        "discounted_backup": 1.08,
+        "fixed_rate_backup": 1,
+        "exact": {
+          "discounted_backup": "27/25",
+          "fixed_rate_backup": "1",
+          "expected_duration": "5/4"
+        }
+      },
+      "old": {
+        "start": "S",
+        "external_discounted_reward": 0,
+        "external_total_reward": 0,
+        "expected_duration": 1.25,
+        "endpoint_probability": {
+          "A": 0.75,
+          "C": 0.25
+        },
+        "discounted_endpoint_kernel": {
+          "A": 0.675,
+          "C": 0.2025
+        },
+        "continuation_readout": {
+          "S": 0,
+          "A": 1,
+          "B": 0,
+          "C": 2,
+          "X": 0,
+          "Y": 0
+        },
+        "discounted_backup": 1.08,
+        "fixed_rate_backup": 1,
+        "exact": {
+          "discounted_backup": "27/25",
+          "fixed_rate_backup": "1",
+          "expected_duration": "5/4"
+        }
+      },
+      "transported": {
+        "start": "B",
+        "external_discounted_reward": 0,
+        "external_total_reward": 0,
+        "expected_duration": 1.25,
+        "endpoint_probability": {
+          "C": 0.75,
+          "A": 0.25
+        },
+        "discounted_endpoint_kernel": {
+          "C": 0.675,
+          "A": 0.2025
+        },
+        "continuation_readout": {
+          "B": 0,
+          "C": 1,
+          "S": 0,
+          "A": 2,
+          "Y": 0,
+          "X": 0
+        },
+        "discounted_backup": 1.08,
+        "fixed_rate_backup": 1,
+        "exact": {
+          "discounted_backup": "27/25",
+          "fixed_rate_backup": "1",
+          "expected_duration": "5/4"
+        }
+      },
+      "stale_readout_backup": 1.5525
+    },
+    "policy_change": {
+      "changed_object": "P(upper|S): 3/4 to 1/4; coordinates unchanged",
+      "mapping": {
+        "S": "S",
+        "A": "A",
+        "B": "B",
+        "C": "C",
+        "X": "X",
+        "Y": "Y"
+      },
+      "physical_true": {
+        "start": "S",
+        "external_discounted_reward": 0,
+        "external_total_reward": 0,
+        "expected_duration": 1.75,
+        "endpoint_probability": {
+          "A": 0.25,
+          "C": 0.75
+        },
+        "discounted_endpoint_kernel": {
+          "A": 0.225,
+          "C": 0.6075
+        },
+        "continuation_readout": {
+          "S": 0,
+          "A": 1,
+          "B": 0,
+          "C": 2,
+          "X": 0,
+          "Y": 0
+        },
+        "discounted_backup": 1.44,
+        "fixed_rate_backup": 1.4,
+        "exact": {
+          "discounted_backup": "36/25",
+          "fixed_rate_backup": "7/5",
+          "expected_duration": "7/4"
+        }
+      },
+      "old": {
+        "start": "S",
+        "external_discounted_reward": 0,
+        "external_total_reward": 0,
+        "expected_duration": 1.25,
+        "endpoint_probability": {
+          "A": 0.75,
+          "C": 0.25
+        },
+        "discounted_endpoint_kernel": {
+          "A": 0.675,
+          "C": 0.2025
+        },
+        "continuation_readout": {
+          "S": 0,
+          "A": 1,
+          "B": 0,
+          "C": 2,
+          "X": 0,
+          "Y": 0
+        },
+        "discounted_backup": 1.08,
+        "fixed_rate_backup": 1,
+        "exact": {
+          "discounted_backup": "27/25",
+          "fixed_rate_backup": "1",
+          "expected_duration": "5/4"
+        }
+      },
+      "transported": {
+        "start": "S",
+        "external_discounted_reward": 0,
+        "external_total_reward": 0,
+        "expected_duration": 1.25,
+        "endpoint_probability": {
+          "A": 0.75,
+          "C": 0.25
+        },
+        "discounted_endpoint_kernel": {
+          "A": 0.675,
+          "C": 0.2025
+        },
+        "continuation_readout": {
+          "S": 0,
+          "A": 1,
+          "B": 0,
+          "C": 2,
+          "X": 0,
+          "Y": 0
+        },
+        "discounted_backup": 1.08,
+        "fixed_rate_backup": 1,
+        "exact": {
+          "discounted_backup": "27/25",
+          "fixed_rate_backup": "1",
+          "expected_duration": "5/4"
+        }
+      },
+      "endpoint_total_variation": 0.5,
+      "backup_error": 0.36,
+      "old_decision": {
+        "route": 1.08,
+        "reference": 1.26,
+        "greedy": "reference",
+        "gap": 0.18
+      },
+      "current_decision": {
+        "route": 1.44,
+        "reference": 1.26,
+        "greedy": "route",
+        "gap": 0.18
+      }
+    },
+    "lossy_merge": {
+      "changed_object": "A and C have the same coordinate; physical policy unchanged",
+      "mapping": {
+        "S": "S",
+        "A": "Z",
+        "B": "B",
+        "C": "Z",
+        "X": "X",
+        "Y": "Y"
+      },
+      "physical_true": {
+        "start": "S",
+        "external_discounted_reward": 0,
+        "external_total_reward": 0,
+        "expected_duration": 1.25,
+        "endpoint_probability": {
+          "A": 0.75,
+          "C": 0.25
+        },
+        "discounted_endpoint_kernel": {
+          "A": 0.675,
+          "C": 0.2025
+        },
+        "continuation_readout": {
+          "S": 0,
+          "A": 1,
+          "B": 0,
+          "C": 2,
+          "X": 0,
+          "Y": 0
+        },
+        "discounted_backup": 1.08,
+        "fixed_rate_backup": 1,
+        "exact": {
+          "discounted_backup": "27/25",
+          "fixed_rate_backup": "1",
+          "expected_duration": "5/4"
+        }
+      },
+      "old": {
+        "start": "S",
+        "external_discounted_reward": 0,
+        "external_total_reward": 0,
+        "expected_duration": 1.25,
+        "endpoint_probability": {
+          "A": 0.75,
+          "C": 0.25
+        },
+        "discounted_endpoint_kernel": {
+          "A": 0.675,
+          "C": 0.2025
+        },
+        "continuation_readout": {
+          "S": 0,
+          "A": 1,
+          "B": 0,
+          "C": 2,
+          "X": 0,
+          "Y": 0
+        },
+        "discounted_backup": 1.08,
+        "fixed_rate_backup": 1,
+        "exact": {
+          "discounted_backup": "27/25",
+          "fixed_rate_backup": "1",
+          "expected_duration": "5/4"
+        }
+      },
+      "transported": {
+        "status": "lossy projection; no exact inverse transport",
+        "start": "S",
+        "external_discounted_reward": 0,
+        "external_total_reward": 0,
+        "expected_duration": 1.25,
+        "endpoint_probability": {
+          "Z": 1
+        },
+        "discounted_endpoint_kernel": {
+          "Z": 0.8775
+        },
+        "continuation_readout": {
+          "S": 0,
+          "B": 0,
+          "X": 0,
+          "Y": 0,
+          "Z": 1.5
+        },
+        "discounted_backup": 1.31625,
+        "fixed_rate_backup": 1.25,
+        "exact": {
+          "discounted_backup": "1053/800",
+          "fixed_rate_backup": "5/4",
+          "expected_duration": "5/4"
+        }
+      },
+      "merged_states": [
+        "A",
+        "C"
+      ],
+      "physical_readouts": {
+        "A": 1,
+        "C": 2
+      },
+      "minimax_readout": 1.5,
+      "unavoidable_max_readout_error": 0.5,
+      "probe_external_rewards": {
+        "A": 0,
+        "C": 2
+      },
+      "unavoidable_max_probe_reward_error": 1,
+      "one_query_fitted_readout": 1.2307692307692308,
+      "one_query_fitted_backup": 1.08,
+      "note": "Matching one S backup does not reconstruct the two state-conditional answers."
+    },
+    "error_without_decision_change": {
+      "changed_object": "P(upper|S): 3/4 to 2/3; coordinates unchanged",
+      "physical_true": {
+        "start": "S",
+        "external_discounted_reward": 0,
+        "external_total_reward": 0,
+        "expected_duration": 1.3333333333333333,
+        "endpoint_probability": {
+          "A": 0.6666666666666666,
+          "C": 0.3333333333333333
+        },
+        "discounted_endpoint_kernel": {
+          "A": 0.6,
+          "C": 0.27
+        },
+        "continuation_readout": {
+          "S": 0,
+          "A": 1,
+          "B": 0,
+          "C": 2,
+          "X": 0,
+          "Y": 0
+        },
+        "discounted_backup": 1.14,
+        "fixed_rate_backup": 1.0666666666666667,
+        "exact": {
+          "discounted_backup": "57/50",
+          "fixed_rate_backup": "16/15",
+          "expected_duration": "4/3"
+        }
+      },
+      "old": {
+        "start": "S",
+        "external_discounted_reward": 0,
+        "external_total_reward": 0,
+        "expected_duration": 1.25,
+        "endpoint_probability": {
+          "A": 0.75,
+          "C": 0.25
+        },
+        "discounted_endpoint_kernel": {
+          "A": 0.675,
+          "C": 0.2025
+        },
+        "continuation_readout": {
+          "S": 0,
+          "A": 1,
+          "B": 0,
+          "C": 2,
+          "X": 0,
+          "Y": 0
+        },
+        "discounted_backup": 1.08,
+        "fixed_rate_backup": 1,
+        "exact": {
+          "discounted_backup": "27/25",
+          "fixed_rate_backup": "1",
+          "expected_duration": "5/4"
+        }
+      },
+      "transported": {
+        "start": "S",
+        "external_discounted_reward": 0,
+        "external_total_reward": 0,
+        "expected_duration": 1.25,
+        "endpoint_probability": {
+          "A": 0.75,
+          "C": 0.25
+        },
+        "discounted_endpoint_kernel": {
+          "A": 0.675,
+          "C": 0.2025
+        },
+        "continuation_readout": {
+          "S": 0,
+          "A": 1,
+          "B": 0,
+          "C": 2,
+          "X": 0,
+          "Y": 0
+        },
+        "discounted_backup": 1.08,
+        "fixed_rate_backup": 1,
+        "exact": {
+          "discounted_backup": "27/25",
+          "fixed_rate_backup": "1",
+          "expected_duration": "5/4"
+        }
+      },
+      "endpoint_total_variation": 0.08333333333333333,
+      "backup_error": 0.06,
+      "old_decision": {
+        "route": 1.08,
+        "reference": 1.26,
+        "greedy": "reference",
+        "gap": 0.18
+      },
+      "current_decision": {
+        "route": 1.14,
+        "reference": 1.26,
+        "greedy": "reference",
+        "gap": 0.12
+      }
+    }
+  },
+  "paths": {
+    "old": [
+      {
+        "probability": 0.75,
+        "states": [
+          "S",
+          "A"
+        ],
+        "rewards": [
+          0
+        ],
+        "duration": 1,
+        "physical_terminal": false
+      },
+      {
+        "probability": 0.25,
+        "states": [
+          "S",
+          "B",
+          "C"
+        ],
+        "rewards": [
+          0,
+          0
+        ],
+        "duration": 2,
+        "physical_terminal": false
+      }
+    ],
+    "current": [
+      {
+        "probability": 0.25,
+        "states": [
+          "S",
+          "A"
+        ],
+        "rewards": [
+          0
+        ],
+        "duration": 1,
+        "physical_terminal": false
+      },
+      {
+        "probability": 0.75,
+        "states": [
+          "S",
+          "B",
+          "C"
+        ],
+        "rewards": [
+          0,
+          0
+        ],
+        "duration": 2,
+        "physical_terminal": false
+      }
+    ],
+    "mild": [
+      {
+        "probability": 0.6666666666666666,
+        "states": [
+          "S",
+          "A"
+        ],
+        "rewards": [
+          0
+        ],
+        "duration": 1,
+        "physical_terminal": false
+      },
+      {
+        "probability": 0.3333333333333333,
+        "states": [
+          "S",
+          "B",
+          "C"
+        ],
+        "rewards": [
+          0,
+          0
+        ],
+        "duration": 2,
+        "physical_terminal": false
+      }
+    ],
+    "reference": [
+      {
+        "probability": 0.5,
+        "states": [
+          "S",
+          "A",
+          "X"
+        ],
+        "rewards": [
+          0,
+          1
+        ],
+        "duration": 2,
+        "physical_terminal": true
+      },
+      {
+        "probability": 0.5,
+        "states": [
+          "S",
+          "B",
+          "C",
+          "Y"
+        ],
+        "rewards": [
+          0,
+          0,
+          2
+        ],
+        "duration": 3,
+        "physical_terminal": true
+      }
+    ]
+  }
+}
