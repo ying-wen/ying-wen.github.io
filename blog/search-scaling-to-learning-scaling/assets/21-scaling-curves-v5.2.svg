@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">任务级 Search、Experience 与新任务学习效率的三组曲线</title>
+  <desc id="desc">依次估计单任务计算、累计经历与新任务学习效率；递归 Learning Scaling 要求后期智能体以更少新经历达到相同相对性能阈值。</desc>
+  <defs>
+    <style>
+      .bg{fill:#fff}.ink{fill:#20262b}.muted{fill:#68727a}.axis{stroke:#535d63;stroke-width:3}.grid{stroke:#d9dee1;stroke-width:2;stroke-dasharray:7 7}.amber{fill:none;stroke:#b96b17;stroke-width:6}.blue{fill:none;stroke:#456f9f;stroke-width:6}.green{fill:none;stroke:#267763;stroke-width:6}.grey{fill:none;stroke:#8b9499;stroke-width:5;stroke-dasharray:10 8}.guide{stroke:#267763;stroke-width:2;stroke-dasharray:6 6}.card{fill:#fff;stroke:#ccd3d7;stroke-width:2}.t{font:700 42px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.h{font:700 26px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.b{font:400 20px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.s{font:500 17px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.eq{font:500 22px Georgia,"Times New Roman",serif}
+    </style>
+  </defs>
+  <rect class="bg" width="1600" height="900"/>
+  <text x="80" y="75" class="t ink">三组响应不能由一条曲线代替</text>
+  <text x="80" y="117" class="b muted">曲线为定义示意；A、B 采用不同横轴，C 在匹配的新任务上比较学习速度。</text>
+
+  <rect x="60" y="175" width="470" height="610" rx="24" class="card"/>
+  <text x="95" y="225" class="h ink">A｜任务级 Search Scaling</text>
+  <text x="95" y="260" class="s muted">持久状态固定</text>
+  <line x1="130" y1="650" x2="475" y2="650" class="axis"/><line x1="130" y1="650" x2="130" y2="330" class="axis"/>
+  <line x1="130" y1="490" x2="475" y2="490" class="grid"/>
+  <path d="M145 610 C220 540 285 450 455 370" class="amber"/>
+  <text x="302" y="710" text-anchor="middle" class="s ink">单任务计算量 c</text>
+  <text x="85" y="495" transform="rotate(-90 85 495)" text-anchor="middle" class="s ink">任务表现 Jtask</text>
+  <text x="95" y="755" class="eq ink">∂J<tspan baseline-shift="sub" font-size="15">task</tspan> / ∂c</text>
+
+  <rect x="565" y="175" width="470" height="610" rx="24" class="card"/>
+  <text x="600" y="225" class="h ink">B｜Experience Scaling</text>
+  <text x="600" y="260" class="s muted">未来任务运行条件固定</text>
+  <line x1="635" y1="650" x2="980" y2="650" class="axis"/><line x1="635" y1="650" x2="635" y2="330" class="axis"/>
+  <line x1="635" y1="490" x2="980" y2="490" class="grid"/>
+  <path d="M650 615 C740 570 805 475 960 400" class="blue"/>
+  <text x="807" y="710" text-anchor="middle" class="s ink">累计经历数 n</text>
+  <text x="590" y="495" transform="rotate(-90 590 495)" text-anchor="middle" class="s ink">未来新任务表现 Jfuture</text>
+  <text x="600" y="755" class="eq ink">∂J<tspan baseline-shift="sub" font-size="15">future</tspan> / ∂n</text>
+
+  <rect x="1070" y="175" width="470" height="610" rx="24" class="card"/>
+  <text x="1105" y="225" class="h ink">C｜Recursive Learning Scaling</text>
+  <text x="1105" y="260" class="s muted">后期阶段以更少新经历达到相同阈值</text>
+  <line x1="1140" y1="650" x2="1485" y2="650" class="axis"/><line x1="1140" y1="650" x2="1140" y2="330" class="axis"/>
+  <line x1="1140" y1="455" x2="1485" y2="455" class="grid"/>
+  <text x="1478" y="444" text-anchor="end" class="s muted">相对性能阈值 ρ</text>
+  <path d="M1155 620 C1215 595 1290 540 1355 455 C1400 398 1440 372 1470 360" class="grey"/>
+  <path d="M1155 620 C1200 560 1240 490 1275 455 C1340 390 1415 360 1470 350" class="green"/>
+  <line x1="1275" y1="455" x2="1275" y2="650" class="guide"/>
+  <line x1="1355" y1="455" x2="1355" y2="650" class="guide"/>
+  <text x="1275" y="680" text-anchor="middle" class="s ink">nρ,t+1</text>
+  <text x="1355" y="680" text-anchor="middle" class="s muted">nρ,t</text>
+  <text x="1312" y="710" text-anchor="middle" class="s ink">新任务内经历数 m</text>
+  <text x="1095" y="495" transform="rotate(-90 1095 495)" text-anchor="middle" class="s ink">归一化学习进度</text>
+  <text x="1165" y="350" class="s" fill="#267763">后期阶段 t+1</text>
+  <text x="1350" y="385" class="s muted">阶段 t</text>
+  <text x="1105" y="755" class="eq ink">η<tspan baseline-shift="sub" font-size="15">t</tspan>(ρ) = E[1 / (1 + n<tspan baseline-shift="sub" font-size="15">ρ,t</tspan>)]</text>
+
+  <rect x="270" y="825" width="1060" height="46" rx="15" fill="#f4f6f7"/>
+  <text x="800" y="855" text-anchor="middle" class="s ink">B 评估经历是否改善未来起点；C 评估后期智能体学习一种新规律是否需要更少经历。</text>
+</svg>

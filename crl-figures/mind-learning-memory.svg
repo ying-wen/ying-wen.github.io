@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="740" viewBox="0 0 1080 740" role="img" aria-labelledby="title desc">
+  <title id="title">结构支持新记忆，事件时机约束离线作用</title>
+  <desc id="desc">上半部以关联图示意稳定旧结构与持续更换配对的比较；下半部示意训练后检测涟漪，立即刺激与延迟刺激的对照。波形仅表示事件窗口，没有真实数据或幅值。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#637b84"/></marker></defs>
+  <rect width="1080" height="740" rx="24" fill="#f7f5ef"/>
+  <g font-family="PingFang SC,Microsoft YaHei,sans-serif" fill="#193c4b">
+    <text x="44" y="52" font-size="29" font-weight="700">“保存了”不是一个单独的可观察事件</text>
+    <text x="44" y="82" font-size="18" fill="#677781">原创机制示意 · 非原论文数据 · 图式与涟漪研究回答不同问题</text>
+    <rect x="32" y="112" width="1016" height="250" rx="18" fill="#fff" stroke="#d9e0df"/>
+    <text x="56" y="148" font-size="23" font-weight="700">A　已有关系是否稳定，会改变新经验的整合条件</text>
+    <g font-size="20" text-anchor="middle">
+      <text x="182" y="188">稳定的旧配对</text><text x="487" y="188">熟悉但配对变化</text>
+      <g fill="#e2f0ed" stroke="#a9c9c4"><circle cx="115" cy="226" r="23"/><circle cx="248" cy="226" r="23"/><circle cx="115" cy="285" r="23"/><circle cx="248" cy="285" r="23"/></g>
+      <path d="M139 226H224M139 285H224" stroke="#138b87" stroke-width="3"/>
+      <text x="115" y="233">味</text><text x="248" y="233">地</text><text x="115" y="292">味</text><text x="248" y="292">地</text>
+      <g fill="#fff0dd" stroke="#dcb68b"><circle cx="421" cy="226" r="23"/><circle cx="554" cy="226" r="23"/><circle cx="421" cy="285" r="23"/><circle cx="554" cy="285" r="23"/></g>
+      <path d="M445 226H530M445 285H530M445 229L530 281M445 281L530 229" stroke="#c47736" stroke-width="2" stroke-dasharray="5 4"/>
+      <text x="421" y="233">味</text><text x="554" y="233">地</text><text x="421" y="292">味</text><text x="554" y="292">地</text>
+    </g>
+    <path d="M614 248H669" stroke="#637b84" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="682" y="182" width="330" height="123" rx="14" fill="#edf4f4"/>
+    <text x="705" y="218" font-size="21">同样的新关联学习机会</text><text x="705" y="251" font-size="21">随后测试保持与海马依赖</text><text x="705" y="282" font-size="18" fill="#677781">新经验不是落在同一知识背景里</text>
+    <text x="56" y="339" font-size="18" fill="#677781">Tse 等（2007）· 单次学习、延迟损伤和情境对照，共同约束“图式”的解释。</text>
+    <rect x="32" y="382" width="1016" height="268" rx="18" fill="#edf4f4" stroke="#d9e0df"/>
+    <text x="56" y="419" font-size="23" font-weight="700">B　刺激本身，与在关键活动窗口刺激，要分开比较</text>
+    <rect x="452" y="447" width="197" height="153" rx="10" fill="#dbe9e8"/>
+    <text x="487" y="470" font-size="18" fill="#58747c">涟漪事件窗口</text>
+    <text x="58" y="514" font-size="21">检测后立即刺激</text><text x="58" y="580" font-size="21">延迟 80—120 ms</text>
+    <path d="M300 514H453L465 499L477 529L489 499L501 529L513 514H978" fill="none" stroke="#47748a" stroke-width="3"/>
+    <path d="M300 580H453L465 565L477 595L489 565L501 595L513 565L525 595L537 565L549 595L561 565L573 595L585 565L597 595L609 580H978" fill="none" stroke="#47748a" stroke-width="3"/>
+    <path d="M510 481V538" stroke="#be6638" stroke-width="4"/><path d="M815 548V605" stroke="#be6638" stroke-width="4"/>
+    <text x="674" y="502" font-size="18" fill="#a85c25">中断事件及相关活动</text><text x="850" y="566" font-size="18" fill="#a85c25">同类刺激</text>
+    <text x="57" y="631" font-size="18" fill="#677781">示意波形无幅值单位；时间线不按比例。比较随后记忆表现，而非照刺激时的动作。</text>
+    <text x="44" y="691" font-size="21" font-weight="700">中断事件 ≠ 选择性删除某一条被解码的经验。</text>
+    <text x="44" y="721" font-size="18" fill="#677781">Girardeau 等（2009）的因果约束，不能直接推出任意经验回放算法都会有效。</text>
+  </g>
+</svg>

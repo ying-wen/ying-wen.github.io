@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="490" viewBox="0 0 920 490" role="img" aria-labelledby="title desc">
+ <title id="title">经验改变了什么：状态、记忆和参数的对照</title>
+ <desc id="desc">同一经验输入三类存储。快速状态累积近期证据，外部记忆保存可检索事件，参数更新改变今后的信息处理。分别移除与恢复它们，可以检验各自作用。</desc>
+ <defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#70899b"/></marker></defs>
+ <rect width="920" height="490" fill="#fbfcfd"/>
+ <g font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" fill="#243f53">
+  <text x="28" y="38" font-size="23">一次适应，不只有一种存储位置</text>
+  <text x="28" y="69" font-size="17">活动可以改变行为；学习还要问经验改变了什么，以及以后是否仍有用。</text>
+  <rect x="330" y="92" width="260" height="48" rx="8" fill="#e4edf5" stroke="#a8bdce"/>
+  <text x="363" y="123" font-size="20">动作 → 新观察与奖励</text>
+  <g stroke="#70899b" stroke-width="2" fill="none" marker-end="url(#a)"><path d="M460 140V163H165V190"/><path d="M460 140V190"/><path d="M460 140V163H755V190"/></g>
+  <rect x="28" y="195" width="275" height="163" rx="10" fill="#edf6f2" stroke="#9fc1b6"/>
+  <rect x="323" y="195" width="275" height="163" rx="10" fill="#eef3f8" stroke="#abc1d5"/>
+  <rect x="618" y="195" width="275" height="163" rx="10" fill="#faf0e8" stroke="#d3b69c"/>
+  <g font-size="20"><text x="48" y="228">活动状态 h</text><text x="343" y="228">可检索的记忆 M</text><text x="638" y="228">参数 θ</text></g>
+  <g font-size="17"><text x="48" y="261">例如：最近几次失败的证据</text><text x="48" y="292">干预：清零，再提供相同历史</text><text x="48" y="333">检验短时信息能否恢复</text><text x="343" y="261">例如：之前任务的经验记录</text><text x="343" y="292">干预：隐藏，再恢复检索</text><text x="343" y="333">检验存储和访问的作用</text><text x="638" y="261">例如：特征、价值与更新规律</text><text x="638" y="292">干预：回滚，再重放学习经验</text><text x="638" y="333">检验长期改变的作用</text></g>
+  <text x="28" y="402" font-size="19">共同检验：同一起点、相同测试预算，比较保持、迁移与恢复。</text>
+  <text x="28" y="439" font-size="17">这是可执行的机制对照思路，不是三类独立脑区，也不预设固定的快慢时间尺度。</text>
+  <text x="28" y="468" font-size="15" fill="#526779">概念示意 · 干预可能影响接口；恢复对照用于排查“只是被干坏了”的解释。</text>
+ </g>
+</svg>

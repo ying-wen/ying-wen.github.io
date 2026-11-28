@@ -1,0 +1,2518 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "kind": "deterministic original teaching calculation",
+    "generator": "scripts/generate-crl-setting.mjs",
+    "copiedSourceImages": false,
+    "seed": null,
+    "seedReason": "no random numbers; a fixed schedule and deterministic learner"
+  },
+  "world": {
+    "cells": {
+      "L": [
+        0,
+        1
+      ],
+      "J": [
+        1,
+        1
+      ],
+      "R": [
+        2,
+        1
+      ]
+    },
+    "start": "J",
+    "reward": "J to chosen side: 1 iff side matches mode; forced return to J: 0",
+    "actions": {
+      "J": [
+        "L",
+        "R"
+      ],
+      "L": [
+        "return"
+      ],
+      "R": [
+        "return"
+      ]
+    },
+    "schedule": "A eight circles, B eight, A eight; repeat the 24-circle period",
+    "budget": {
+      "circles": 24,
+      "primitiveSteps": 48
+    },
+    "visible": "position and obtained reward; no mode or switch marker",
+    "externalReset": false,
+    "fullState": "position plus hidden circle index modulo 24; index advances on return to J"
+  },
+  "learner": {
+    "name": "win-stay / lose-switch",
+    "initialSide": "L",
+    "state": "one persistent side bit; at a side cell reward 0 flips it, reward 1 retains it",
+    "data": "only the reward of the chosen side; no replay, oracle query, gradient, optimizer or learned model",
+    "knownStructure": "binary deterministic rewards and exactly one good side",
+    "limit": "noise or more than two routes changes the usefulness of this rule"
+  },
+  "adaptive": {
+    "circles": [
+      {
+        "cycle": 1,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 2,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 3,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 4,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 5,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 6,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 7,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 8,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 9,
+        "mode": "B",
+        "action": "L",
+        "reward": 0,
+        "sideBefore": "L",
+        "sideAfter": "R"
+      },
+      {
+        "cycle": 10,
+        "mode": "B",
+        "action": "R",
+        "reward": 1,
+        "sideBefore": "R",
+        "sideAfter": "R"
+      },
+      {
+        "cycle": 11,
+        "mode": "B",
+        "action": "R",
+        "reward": 1,
+        "sideBefore": "R",
+        "sideAfter": "R"
+      },
+      {
+        "cycle": 12,
+        "mode": "B",
+        "action": "R",
+        "reward": 1,
+        "sideBefore": "R",
+        "sideAfter": "R"
+      },
+      {
+        "cycle": 13,
+        "mode": "B",
+        "action": "R",
+        "reward": 1,
+        "sideBefore": "R",
+        "sideAfter": "R"
+      },
+      {
+        "cycle": 14,
+        "mode": "B",
+        "action": "R",
+        "reward": 1,
+        "sideBefore": "R",
+        "sideAfter": "R"
+      },
+      {
+        "cycle": 15,
+        "mode": "B",
+        "action": "R",
+        "reward": 1,
+        "sideBefore": "R",
+        "sideAfter": "R"
+      },
+      {
+        "cycle": 16,
+        "mode": "B",
+        "action": "R",
+        "reward": 1,
+        "sideBefore": "R",
+        "sideAfter": "R"
+      },
+      {
+        "cycle": 17,
+        "mode": "A",
+        "action": "R",
+        "reward": 0,
+        "sideBefore": "R",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 18,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 19,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 20,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 21,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 22,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 23,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 24,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      }
+    ],
+    "steps": [
+      {
+        "step": 0,
+        "cumulative": 0
+      },
+      {
+        "step": 1,
+        "reward": 1,
+        "cumulative": 1,
+        "position": "L"
+      },
+      {
+        "step": 2,
+        "reward": 0,
+        "cumulative": 1,
+        "position": "J"
+      },
+      {
+        "step": 3,
+        "reward": 1,
+        "cumulative": 2,
+        "position": "L"
+      },
+      {
+        "step": 4,
+        "reward": 0,
+        "cumulative": 2,
+        "position": "J"
+      },
+      {
+        "step": 5,
+        "reward": 1,
+        "cumulative": 3,
+        "position": "L"
+      },
+      {
+        "step": 6,
+        "reward": 0,
+        "cumulative": 3,
+        "position": "J"
+      },
+      {
+        "step": 7,
+        "reward": 1,
+        "cumulative": 4,
+        "position": "L"
+      },
+      {
+        "step": 8,
+        "reward": 0,
+        "cumulative": 4,
+        "position": "J"
+      },
+      {
+        "step": 9,
+        "reward": 1,
+        "cumulative": 5,
+        "position": "L"
+      },
+      {
+        "step": 10,
+        "reward": 0,
+        "cumulative": 5,
+        "position": "J"
+      },
+      {
+        "step": 11,
+        "reward": 1,
+        "cumulative": 6,
+        "position": "L"
+      },
+      {
+        "step": 12,
+        "reward": 0,
+        "cumulative": 6,
+        "position": "J"
+      },
+      {
+        "step": 13,
+        "reward": 1,
+        "cumulative": 7,
+        "position": "L"
+      },
+      {
+        "step": 14,
+        "reward": 0,
+        "cumulative": 7,
+        "position": "J"
+      },
+      {
+        "step": 15,
+        "reward": 1,
+        "cumulative": 8,
+        "position": "L"
+      },
+      {
+        "step": 16,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "J"
+      },
+      {
+        "step": 17,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "L"
+      },
+      {
+        "step": 18,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "J"
+      },
+      {
+        "step": 19,
+        "reward": 1,
+        "cumulative": 9,
+        "position": "R"
+      },
+      {
+        "step": 20,
+        "reward": 0,
+        "cumulative": 9,
+        "position": "J"
+      },
+      {
+        "step": 21,
+        "reward": 1,
+        "cumulative": 10,
+        "position": "R"
+      },
+      {
+        "step": 22,
+        "reward": 0,
+        "cumulative": 10,
+        "position": "J"
+      },
+      {
+        "step": 23,
+        "reward": 1,
+        "cumulative": 11,
+        "position": "R"
+      },
+      {
+        "step": 24,
+        "reward": 0,
+        "cumulative": 11,
+        "position": "J"
+      },
+      {
+        "step": 25,
+        "reward": 1,
+        "cumulative": 12,
+        "position": "R"
+      },
+      {
+        "step": 26,
+        "reward": 0,
+        "cumulative": 12,
+        "position": "J"
+      },
+      {
+        "step": 27,
+        "reward": 1,
+        "cumulative": 13,
+        "position": "R"
+      },
+      {
+        "step": 28,
+        "reward": 0,
+        "cumulative": 13,
+        "position": "J"
+      },
+      {
+        "step": 29,
+        "reward": 1,
+        "cumulative": 14,
+        "position": "R"
+      },
+      {
+        "step": 30,
+        "reward": 0,
+        "cumulative": 14,
+        "position": "J"
+      },
+      {
+        "step": 31,
+        "reward": 1,
+        "cumulative": 15,
+        "position": "R"
+      },
+      {
+        "step": 32,
+        "reward": 0,
+        "cumulative": 15,
+        "position": "J"
+      },
+      {
+        "step": 33,
+        "reward": 0,
+        "cumulative": 15,
+        "position": "R"
+      },
+      {
+        "step": 34,
+        "reward": 0,
+        "cumulative": 15,
+        "position": "J"
+      },
+      {
+        "step": 35,
+        "reward": 1,
+        "cumulative": 16,
+        "position": "L"
+      },
+      {
+        "step": 36,
+        "reward": 0,
+        "cumulative": 16,
+        "position": "J"
+      },
+      {
+        "step": 37,
+        "reward": 1,
+        "cumulative": 17,
+        "position": "L"
+      },
+      {
+        "step": 38,
+        "reward": 0,
+        "cumulative": 17,
+        "position": "J"
+      },
+      {
+        "step": 39,
+        "reward": 1,
+        "cumulative": 18,
+        "position": "L"
+      },
+      {
+        "step": 40,
+        "reward": 0,
+        "cumulative": 18,
+        "position": "J"
+      },
+      {
+        "step": 41,
+        "reward": 1,
+        "cumulative": 19,
+        "position": "L"
+      },
+      {
+        "step": 42,
+        "reward": 0,
+        "cumulative": 19,
+        "position": "J"
+      },
+      {
+        "step": 43,
+        "reward": 1,
+        "cumulative": 20,
+        "position": "L"
+      },
+      {
+        "step": 44,
+        "reward": 0,
+        "cumulative": 20,
+        "position": "J"
+      },
+      {
+        "step": 45,
+        "reward": 1,
+        "cumulative": 21,
+        "position": "L"
+      },
+      {
+        "step": 46,
+        "reward": 0,
+        "cumulative": 21,
+        "position": "J"
+      },
+      {
+        "step": 47,
+        "reward": 1,
+        "cumulative": 22,
+        "position": "L"
+      },
+      {
+        "step": 48,
+        "reward": 0,
+        "cumulative": 22,
+        "position": "J"
+      }
+    ],
+    "snapshots": [
+      {
+        "cycle": 0,
+        "side": "L"
+      },
+      {
+        "cycle": 1,
+        "side": "L"
+      },
+      {
+        "cycle": 2,
+        "side": "L"
+      },
+      {
+        "cycle": 3,
+        "side": "L"
+      },
+      {
+        "cycle": 4,
+        "side": "L"
+      },
+      {
+        "cycle": 5,
+        "side": "L"
+      },
+      {
+        "cycle": 6,
+        "side": "L"
+      },
+      {
+        "cycle": 7,
+        "side": "L"
+      },
+      {
+        "cycle": 8,
+        "side": "L"
+      },
+      {
+        "cycle": 9,
+        "side": "R"
+      },
+      {
+        "cycle": 10,
+        "side": "R"
+      },
+      {
+        "cycle": 11,
+        "side": "R"
+      },
+      {
+        "cycle": 12,
+        "side": "R"
+      },
+      {
+        "cycle": 13,
+        "side": "R"
+      },
+      {
+        "cycle": 14,
+        "side": "R"
+      },
+      {
+        "cycle": 15,
+        "side": "R"
+      },
+      {
+        "cycle": 16,
+        "side": "R"
+      },
+      {
+        "cycle": 17,
+        "side": "L"
+      },
+      {
+        "cycle": 18,
+        "side": "L"
+      },
+      {
+        "cycle": 19,
+        "side": "L"
+      },
+      {
+        "cycle": 20,
+        "side": "L"
+      },
+      {
+        "cycle": 21,
+        "side": "L"
+      },
+      {
+        "cycle": 22,
+        "side": "L"
+      },
+      {
+        "cycle": 23,
+        "side": "L"
+      },
+      {
+        "cycle": 24,
+        "side": "L"
+      }
+    ],
+    "total": 22,
+    "perPrimitiveStep": 0.4583333333333333,
+    "finalSide": "L"
+  },
+  "frozen": {
+    "circles": [
+      {
+        "cycle": 1,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 2,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 3,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 4,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 5,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 6,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 7,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 8,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 9,
+        "mode": "B",
+        "action": "L",
+        "reward": 0,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 10,
+        "mode": "B",
+        "action": "L",
+        "reward": 0,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 11,
+        "mode": "B",
+        "action": "L",
+        "reward": 0,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 12,
+        "mode": "B",
+        "action": "L",
+        "reward": 0,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 13,
+        "mode": "B",
+        "action": "L",
+        "reward": 0,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 14,
+        "mode": "B",
+        "action": "L",
+        "reward": 0,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 15,
+        "mode": "B",
+        "action": "L",
+        "reward": 0,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 16,
+        "mode": "B",
+        "action": "L",
+        "reward": 0,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 17,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 18,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 19,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 20,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 21,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 22,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 23,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 24,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      }
+    ],
+    "steps": [
+      {
+        "step": 0,
+        "cumulative": 0
+      },
+      {
+        "step": 1,
+        "reward": 1,
+        "cumulative": 1,
+        "position": "L"
+      },
+      {
+        "step": 2,
+        "reward": 0,
+        "cumulative": 1,
+        "position": "J"
+      },
+      {
+        "step": 3,
+        "reward": 1,
+        "cumulative": 2,
+        "position": "L"
+      },
+      {
+        "step": 4,
+        "reward": 0,
+        "cumulative": 2,
+        "position": "J"
+      },
+      {
+        "step": 5,
+        "reward": 1,
+        "cumulative": 3,
+        "position": "L"
+      },
+      {
+        "step": 6,
+        "reward": 0,
+        "cumulative": 3,
+        "position": "J"
+      },
+      {
+        "step": 7,
+        "reward": 1,
+        "cumulative": 4,
+        "position": "L"
+      },
+      {
+        "step": 8,
+        "reward": 0,
+        "cumulative": 4,
+        "position": "J"
+      },
+      {
+        "step": 9,
+        "reward": 1,
+        "cumulative": 5,
+        "position": "L"
+      },
+      {
+        "step": 10,
+        "reward": 0,
+        "cumulative": 5,
+        "position": "J"
+      },
+      {
+        "step": 11,
+        "reward": 1,
+        "cumulative": 6,
+        "position": "L"
+      },
+      {
+        "step": 12,
+        "reward": 0,
+        "cumulative": 6,
+        "position": "J"
+      },
+      {
+        "step": 13,
+        "reward": 1,
+        "cumulative": 7,
+        "position": "L"
+      },
+      {
+        "step": 14,
+        "reward": 0,
+        "cumulative": 7,
+        "position": "J"
+      },
+      {
+        "step": 15,
+        "reward": 1,
+        "cumulative": 8,
+        "position": "L"
+      },
+      {
+        "step": 16,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "J"
+      },
+      {
+        "step": 17,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "L"
+      },
+      {
+        "step": 18,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "J"
+      },
+      {
+        "step": 19,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "L"
+      },
+      {
+        "step": 20,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "J"
+      },
+      {
+        "step": 21,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "L"
+      },
+      {
+        "step": 22,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "J"
+      },
+      {
+        "step": 23,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "L"
+      },
+      {
+        "step": 24,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "J"
+      },
+      {
+        "step": 25,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "L"
+      },
+      {
+        "step": 26,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "J"
+      },
+      {
+        "step": 27,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "L"
+      },
+      {
+        "step": 28,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "J"
+      },
+      {
+        "step": 29,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "L"
+      },
+      {
+        "step": 30,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "J"
+      },
+      {
+        "step": 31,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "L"
+      },
+      {
+        "step": 32,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "J"
+      },
+      {
+        "step": 33,
+        "reward": 1,
+        "cumulative": 9,
+        "position": "L"
+      },
+      {
+        "step": 34,
+        "reward": 0,
+        "cumulative": 9,
+        "position": "J"
+      },
+      {
+        "step": 35,
+        "reward": 1,
+        "cumulative": 10,
+        "position": "L"
+      },
+      {
+        "step": 36,
+        "reward": 0,
+        "cumulative": 10,
+        "position": "J"
+      },
+      {
+        "step": 37,
+        "reward": 1,
+        "cumulative": 11,
+        "position": "L"
+      },
+      {
+        "step": 38,
+        "reward": 0,
+        "cumulative": 11,
+        "position": "J"
+      },
+      {
+        "step": 39,
+        "reward": 1,
+        "cumulative": 12,
+        "position": "L"
+      },
+      {
+        "step": 40,
+        "reward": 0,
+        "cumulative": 12,
+        "position": "J"
+      },
+      {
+        "step": 41,
+        "reward": 1,
+        "cumulative": 13,
+        "position": "L"
+      },
+      {
+        "step": 42,
+        "reward": 0,
+        "cumulative": 13,
+        "position": "J"
+      },
+      {
+        "step": 43,
+        "reward": 1,
+        "cumulative": 14,
+        "position": "L"
+      },
+      {
+        "step": 44,
+        "reward": 0,
+        "cumulative": 14,
+        "position": "J"
+      },
+      {
+        "step": 45,
+        "reward": 1,
+        "cumulative": 15,
+        "position": "L"
+      },
+      {
+        "step": 46,
+        "reward": 0,
+        "cumulative": 15,
+        "position": "J"
+      },
+      {
+        "step": 47,
+        "reward": 1,
+        "cumulative": 16,
+        "position": "L"
+      },
+      {
+        "step": 48,
+        "reward": 0,
+        "cumulative": 16,
+        "position": "J"
+      }
+    ],
+    "snapshots": [
+      {
+        "cycle": 0,
+        "side": "L"
+      },
+      {
+        "cycle": 1,
+        "side": "L"
+      },
+      {
+        "cycle": 2,
+        "side": "L"
+      },
+      {
+        "cycle": 3,
+        "side": "L"
+      },
+      {
+        "cycle": 4,
+        "side": "L"
+      },
+      {
+        "cycle": 5,
+        "side": "L"
+      },
+      {
+        "cycle": 6,
+        "side": "L"
+      },
+      {
+        "cycle": 7,
+        "side": "L"
+      },
+      {
+        "cycle": 8,
+        "side": "L"
+      },
+      {
+        "cycle": 9,
+        "side": "L"
+      },
+      {
+        "cycle": 10,
+        "side": "L"
+      },
+      {
+        "cycle": 11,
+        "side": "L"
+      },
+      {
+        "cycle": 12,
+        "side": "L"
+      },
+      {
+        "cycle": 13,
+        "side": "L"
+      },
+      {
+        "cycle": 14,
+        "side": "L"
+      },
+      {
+        "cycle": 15,
+        "side": "L"
+      },
+      {
+        "cycle": 16,
+        "side": "L"
+      },
+      {
+        "cycle": 17,
+        "side": "L"
+      },
+      {
+        "cycle": 18,
+        "side": "L"
+      },
+      {
+        "cycle": 19,
+        "side": "L"
+      },
+      {
+        "cycle": 20,
+        "side": "L"
+      },
+      {
+        "cycle": 21,
+        "side": "L"
+      },
+      {
+        "cycle": 22,
+        "side": "L"
+      },
+      {
+        "cycle": 23,
+        "side": "L"
+      },
+      {
+        "cycle": 24,
+        "side": "L"
+      }
+    ],
+    "total": 16,
+    "perPrimitiveStep": 0.3333333333333333,
+    "finalSide": "L"
+  },
+  "oracle": {
+    "circles": [
+      {
+        "cycle": 1,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 2,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 3,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 4,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 5,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 6,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 7,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 8,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 9,
+        "mode": "B",
+        "action": "R",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 10,
+        "mode": "B",
+        "action": "R",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 11,
+        "mode": "B",
+        "action": "R",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 12,
+        "mode": "B",
+        "action": "R",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 13,
+        "mode": "B",
+        "action": "R",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 14,
+        "mode": "B",
+        "action": "R",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 15,
+        "mode": "B",
+        "action": "R",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 16,
+        "mode": "B",
+        "action": "R",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 17,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 18,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 19,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 20,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 21,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 22,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 23,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      },
+      {
+        "cycle": 24,
+        "mode": "A",
+        "action": "L",
+        "reward": 1,
+        "sideBefore": "L",
+        "sideAfter": "L"
+      }
+    ],
+    "steps": [
+      {
+        "step": 0,
+        "cumulative": 0
+      },
+      {
+        "step": 1,
+        "reward": 1,
+        "cumulative": 1,
+        "position": "L"
+      },
+      {
+        "step": 2,
+        "reward": 0,
+        "cumulative": 1,
+        "position": "J"
+      },
+      {
+        "step": 3,
+        "reward": 1,
+        "cumulative": 2,
+        "position": "L"
+      },
+      {
+        "step": 4,
+        "reward": 0,
+        "cumulative": 2,
+        "position": "J"
+      },
+      {
+        "step": 5,
+        "reward": 1,
+        "cumulative": 3,
+        "position": "L"
+      },
+      {
+        "step": 6,
+        "reward": 0,
+        "cumulative": 3,
+        "position": "J"
+      },
+      {
+        "step": 7,
+        "reward": 1,
+        "cumulative": 4,
+        "position": "L"
+      },
+      {
+        "step": 8,
+        "reward": 0,
+        "cumulative": 4,
+        "position": "J"
+      },
+      {
+        "step": 9,
+        "reward": 1,
+        "cumulative": 5,
+        "position": "L"
+      },
+      {
+        "step": 10,
+        "reward": 0,
+        "cumulative": 5,
+        "position": "J"
+      },
+      {
+        "step": 11,
+        "reward": 1,
+        "cumulative": 6,
+        "position": "L"
+      },
+      {
+        "step": 12,
+        "reward": 0,
+        "cumulative": 6,
+        "position": "J"
+      },
+      {
+        "step": 13,
+        "reward": 1,
+        "cumulative": 7,
+        "position": "L"
+      },
+      {
+        "step": 14,
+        "reward": 0,
+        "cumulative": 7,
+        "position": "J"
+      },
+      {
+        "step": 15,
+        "reward": 1,
+        "cumulative": 8,
+        "position": "L"
+      },
+      {
+        "step": 16,
+        "reward": 0,
+        "cumulative": 8,
+        "position": "J"
+      },
+      {
+        "step": 17,
+        "reward": 1,
+        "cumulative": 9,
+        "position": "R"
+      },
+      {
+        "step": 18,
+        "reward": 0,
+        "cumulative": 9,
+        "position": "J"
+      },
+      {
+        "step": 19,
+        "reward": 1,
+        "cumulative": 10,
+        "position": "R"
+      },
+      {
+        "step": 20,
+        "reward": 0,
+        "cumulative": 10,
+        "position": "J"
+      },
+      {
+        "step": 21,
+        "reward": 1,
+        "cumulative": 11,
+        "position": "R"
+      },
+      {
+        "step": 22,
+        "reward": 0,
+        "cumulative": 11,
+        "position": "J"
+      },
+      {
+        "step": 23,
+        "reward": 1,
+        "cumulative": 12,
+        "position": "R"
+      },
+      {
+        "step": 24,
+        "reward": 0,
+        "cumulative": 12,
+        "position": "J"
+      },
+      {
+        "step": 25,
+        "reward": 1,
+        "cumulative": 13,
+        "position": "R"
+      },
+      {
+        "step": 26,
+        "reward": 0,
+        "cumulative": 13,
+        "position": "J"
+      },
+      {
+        "step": 27,
+        "reward": 1,
+        "cumulative": 14,
+        "position": "R"
+      },
+      {
+        "step": 28,
+        "reward": 0,
+        "cumulative": 14,
+        "position": "J"
+      },
+      {
+        "step": 29,
+        "reward": 1,
+        "cumulative": 15,
+        "position": "R"
+      },
+      {
+        "step": 30,
+        "reward": 0,
+        "cumulative": 15,
+        "position": "J"
+      },
+      {
+        "step": 31,
+        "reward": 1,
+        "cumulative": 16,
+        "position": "R"
+      },
+      {
+        "step": 32,
+        "reward": 0,
+        "cumulative": 16,
+        "position": "J"
+      },
+      {
+        "step": 33,
+        "reward": 1,
+        "cumulative": 17,
+        "position": "L"
+      },
+      {
+        "step": 34,
+        "reward": 0,
+        "cumulative": 17,
+        "position": "J"
+      },
+      {
+        "step": 35,
+        "reward": 1,
+        "cumulative": 18,
+        "position": "L"
+      },
+      {
+        "step": 36,
+        "reward": 0,
+        "cumulative": 18,
+        "position": "J"
+      },
+      {
+        "step": 37,
+        "reward": 1,
+        "cumulative": 19,
+        "position": "L"
+      },
+      {
+        "step": 38,
+        "reward": 0,
+        "cumulative": 19,
+        "position": "J"
+      },
+      {
+        "step": 39,
+        "reward": 1,
+        "cumulative": 20,
+        "position": "L"
+      },
+      {
+        "step": 40,
+        "reward": 0,
+        "cumulative": 20,
+        "position": "J"
+      },
+      {
+        "step": 41,
+        "reward": 1,
+        "cumulative": 21,
+        "position": "L"
+      },
+      {
+        "step": 42,
+        "reward": 0,
+        "cumulative": 21,
+        "position": "J"
+      },
+      {
+        "step": 43,
+        "reward": 1,
+        "cumulative": 22,
+        "position": "L"
+      },
+      {
+        "step": 44,
+        "reward": 0,
+        "cumulative": 22,
+        "position": "J"
+      },
+      {
+        "step": 45,
+        "reward": 1,
+        "cumulative": 23,
+        "position": "L"
+      },
+      {
+        "step": 46,
+        "reward": 0,
+        "cumulative": 23,
+        "position": "J"
+      },
+      {
+        "step": 47,
+        "reward": 1,
+        "cumulative": 24,
+        "position": "L"
+      },
+      {
+        "step": 48,
+        "reward": 0,
+        "cumulative": 24,
+        "position": "J"
+      }
+    ],
+    "snapshots": [
+      {
+        "cycle": 0,
+        "side": "L"
+      },
+      {
+        "cycle": 1,
+        "side": "L"
+      },
+      {
+        "cycle": 2,
+        "side": "L"
+      },
+      {
+        "cycle": 3,
+        "side": "L"
+      },
+      {
+        "cycle": 4,
+        "side": "L"
+      },
+      {
+        "cycle": 5,
+        "side": "L"
+      },
+      {
+        "cycle": 6,
+        "side": "L"
+      },
+      {
+        "cycle": 7,
+        "side": "L"
+      },
+      {
+        "cycle": 8,
+        "side": "L"
+      },
+      {
+        "cycle": 9,
+        "side": "L"
+      },
+      {
+        "cycle": 10,
+        "side": "L"
+      },
+      {
+        "cycle": 11,
+        "side": "L"
+      },
+      {
+        "cycle": 12,
+        "side": "L"
+      },
+      {
+        "cycle": 13,
+        "side": "L"
+      },
+      {
+        "cycle": 14,
+        "side": "L"
+      },
+      {
+        "cycle": 15,
+        "side": "L"
+      },
+      {
+        "cycle": 16,
+        "side": "L"
+      },
+      {
+        "cycle": 17,
+        "side": "L"
+      },
+      {
+        "cycle": 18,
+        "side": "L"
+      },
+      {
+        "cycle": 19,
+        "side": "L"
+      },
+      {
+        "cycle": 20,
+        "side": "L"
+      },
+      {
+        "cycle": 21,
+        "side": "L"
+      },
+      {
+        "cycle": 22,
+        "side": "L"
+      },
+      {
+        "cycle": 23,
+        "side": "L"
+      },
+      {
+        "cycle": 24,
+        "side": "L"
+      }
+    ],
+    "total": 24,
+    "perPrimitiveStep": 0.5,
+    "finalSide": "L"
+  },
+  "diagnostics": {
+    "checkpointCycle": 8,
+    "at8": "L",
+    "at16": "R",
+    "continuedB": {
+      "circles": [
+        {
+          "cycle": 1,
+          "mode": "B",
+          "action": "L",
+          "reward": 0,
+          "sideBefore": "L",
+          "sideAfter": "R"
+        },
+        {
+          "cycle": 2,
+          "mode": "B",
+          "action": "R",
+          "reward": 1,
+          "sideBefore": "R",
+          "sideAfter": "R"
+        },
+        {
+          "cycle": 3,
+          "mode": "B",
+          "action": "R",
+          "reward": 1,
+          "sideBefore": "R",
+          "sideAfter": "R"
+        },
+        {
+          "cycle": 4,
+          "mode": "B",
+          "action": "R",
+          "reward": 1,
+          "sideBefore": "R",
+          "sideAfter": "R"
+        },
+        {
+          "cycle": 5,
+          "mode": "B",
+          "action": "R",
+          "reward": 1,
+          "sideBefore": "R",
+          "sideAfter": "R"
+        },
+        {
+          "cycle": 6,
+          "mode": "B",
+          "action": "R",
+          "reward": 1,
+          "sideBefore": "R",
+          "sideAfter": "R"
+        },
+        {
+          "cycle": 7,
+          "mode": "B",
+          "action": "R",
+          "reward": 1,
+          "sideBefore": "R",
+          "sideAfter": "R"
+        },
+        {
+          "cycle": 8,
+          "mode": "B",
+          "action": "R",
+          "reward": 1,
+          "sideBefore": "R",
+          "sideAfter": "R"
+        }
+      ],
+      "steps": [
+        {
+          "step": 0,
+          "cumulative": 0
+        },
+        {
+          "step": 1,
+          "reward": 0,
+          "cumulative": 0,
+          "position": "L"
+        },
+        {
+          "step": 2,
+          "reward": 0,
+          "cumulative": 0,
+          "position": "J"
+        },
+        {
+          "step": 3,
+          "reward": 1,
+          "cumulative": 1,
+          "position": "R"
+        },
+        {
+          "step": 4,
+          "reward": 0,
+          "cumulative": 1,
+          "position": "J"
+        },
+        {
+          "step": 5,
+          "reward": 1,
+          "cumulative": 2,
+          "position": "R"
+        },
+        {
+          "step": 6,
+          "reward": 0,
+          "cumulative": 2,
+          "position": "J"
+        },
+        {
+          "step": 7,
+          "reward": 1,
+          "cumulative": 3,
+          "position": "R"
+        },
+        {
+          "step": 8,
+          "reward": 0,
+          "cumulative": 3,
+          "position": "J"
+        },
+        {
+          "step": 9,
+          "reward": 1,
+          "cumulative": 4,
+          "position": "R"
+        },
+        {
+          "step": 10,
+          "reward": 0,
+          "cumulative": 4,
+          "position": "J"
+        },
+        {
+          "step": 11,
+          "reward": 1,
+          "cumulative": 5,
+          "position": "R"
+        },
+        {
+          "step": 12,
+          "reward": 0,
+          "cumulative": 5,
+          "position": "J"
+        },
+        {
+          "step": 13,
+          "reward": 1,
+          "cumulative": 6,
+          "position": "R"
+        },
+        {
+          "step": 14,
+          "reward": 0,
+          "cumulative": 6,
+          "position": "J"
+        },
+        {
+          "step": 15,
+          "reward": 1,
+          "cumulative": 7,
+          "position": "R"
+        },
+        {
+          "step": 16,
+          "reward": 0,
+          "cumulative": 7,
+          "position": "J"
+        }
+      ],
+      "snapshots": [
+        {
+          "cycle": 0,
+          "side": "L"
+        },
+        {
+          "cycle": 1,
+          "side": "R"
+        },
+        {
+          "cycle": 2,
+          "side": "R"
+        },
+        {
+          "cycle": 3,
+          "side": "R"
+        },
+        {
+          "cycle": 4,
+          "side": "R"
+        },
+        {
+          "cycle": 5,
+          "side": "R"
+        },
+        {
+          "cycle": 6,
+          "side": "R"
+        },
+        {
+          "cycle": 7,
+          "side": "R"
+        },
+        {
+          "cycle": 8,
+          "side": "R"
+        }
+      ],
+      "total": 7,
+      "perPrimitiveStep": 0.4375,
+      "finalSide": "R"
+    },
+    "frozenB": {
+      "circles": [
+        {
+          "cycle": 1,
+          "mode": "B",
+          "action": "L",
+          "reward": 0,
+          "sideBefore": "L",
+          "sideAfter": "L"
+        },
+        {
+          "cycle": 2,
+          "mode": "B",
+          "action": "L",
+          "reward": 0,
+          "sideBefore": "L",
+          "sideAfter": "L"
+        },
+        {
+          "cycle": 3,
+          "mode": "B",
+          "action": "L",
+          "reward": 0,
+          "sideBefore": "L",
+          "sideAfter": "L"
+        },
+        {
+          "cycle": 4,
+          "mode": "B",
+          "action": "L",
+          "reward": 0,
+          "sideBefore": "L",
+          "sideAfter": "L"
+        },
+        {
+          "cycle": 5,
+          "mode": "B",
+          "action": "L",
+          "reward": 0,
+          "sideBefore": "L",
+          "sideAfter": "L"
+        },
+        {
+          "cycle": 6,
+          "mode": "B",
+          "action": "L",
+          "reward": 0,
+          "sideBefore": "L",
+          "sideAfter": "L"
+        },
+        {
+          "cycle": 7,
+          "mode": "B",
+          "action": "L",
+          "reward": 0,
+          "sideBefore": "L",
+          "sideAfter": "L"
+        },
+        {
+          "cycle": 8,
+          "mode": "B",
+          "action": "L",
+          "reward": 0,
+          "sideBefore": "L",
+          "sideAfter": "L"
+        }
+      ],
+      "steps": [
+        {
+          "step": 0,
+          "cumulative": 0
+        },
+        {
+          "step": 1,
+          "reward": 0,
+          "cumulative": 0,
+          "position": "L"
+        },
+        {
+          "step": 2,
+          "reward": 0,
+          "cumulative": 0,
+          "position": "J"
+        },
+        {
+          "step": 3,
+          "reward": 0,
+          "cumulative": 0,
+          "position": "L"
+        },
+        {
+          "step": 4,
+          "reward": 0,
+          "cumulative": 0,
+          "position": "J"
+        },
+        {
+          "step": 5,
+          "reward": 0,
+          "cumulative": 0,
+          "position": "L"
+        },
+        {
+          "step": 6,
+          "reward": 0,
+          "cumulative": 0,
+          "position": "J"
+        },
+        {
+          "step": 7,
+          "reward": 0,
+          "cumulative": 0,
+          "position": "L"
+        },
+        {
+          "step": 8,
+          "reward": 0,
+          "cumulative": 0,
+          "position": "J"
+        },
+        {
+          "step": 9,
+          "reward": 0,
+          "cumulative": 0,
+          "position": "L"
+        },
+        {
+          "step": 10,
+          "reward": 0,
+          "cumulative": 0,
+          "position": "J"
+        },
+        {
+          "step": 11,
+          "reward": 0,
+          "cumulative": 0,
+          "position": "L"
+        },
+        {
+          "step": 12,
+          "reward": 0,
+          "cumulative": 0,
+          "position": "J"
+        },
+        {
+          "step": 13,
+          "reward": 0,
+          "cumulative": 0,
+          "position": "L"
+        },
+        {
+          "step": 14,
+          "reward": 0,
+          "cumulative": 0,
+          "position": "J"
+        },
+        {
+          "step": 15,
+          "reward": 0,
+          "cumulative": 0,
+          "position": "L"
+        },
+        {
+          "step": 16,
+          "reward": 0,
+          "cumulative": 0,
+          "position": "J"
+        }
+      ],
+      "snapshots": [
+        {
+          "cycle": 0,
+          "side": "L"
+        },
+        {
+          "cycle": 1,
+          "side": "L"
+        },
+        {
+          "cycle": 2,
+          "side": "L"
+        },
+        {
+          "cycle": 3,
+          "side": "L"
+        },
+        {
+          "cycle": 4,
+          "side": "L"
+        },
+        {
+          "cycle": 5,
+          "side": "L"
+        },
+        {
+          "cycle": 6,
+          "side": "L"
+        },
+        {
+          "cycle": 7,
+          "side": "L"
+        },
+        {
+          "cycle": 8,
+          "side": "L"
+        }
+      ],
+      "total": 0,
+      "perPrimitiveStep": 0,
+      "finalSide": "L"
+    },
+    "freshB": {
+      "circles": [
+        {
+          "cycle": 1,
+          "mode": "B",
+          "action": "L",
+          "reward": 0,
+          "sideBefore": "L",
+          "sideAfter": "R"
+        },
+        {
+          "cycle": 2,
+          "mode": "B",
+          "action": "R",
+          "reward": 1,
+          "sideBefore": "R",
+          "sideAfter": "R"
+        },
+        {
+          "cycle": 3,
+          "mode": "B",
+          "action": "R",
+          "reward": 1,
+          "sideBefore": "R",
+          "sideAfter": "R"
+        },
+        {
+          "cycle": 4,
+          "mode": "B",
+          "action": "R",
+          "reward": 1,
+          "sideBefore": "R",
+          "sideAfter": "R"
+        },
+        {
+          "cycle": 5,
+          "mode": "B",
+          "action": "R",
+          "reward": 1,
+          "sideBefore": "R",
+          "sideAfter": "R"
+        },
+        {
+          "cycle": 6,
+          "mode": "B",
+          "action": "R",
+          "reward": 1,
+          "sideBefore": "R",
+          "sideAfter": "R"
+        },
+        {
+          "cycle": 7,
+          "mode": "B",
+          "action": "R",
+          "reward": 1,
+          "sideBefore": "R",
+          "sideAfter": "R"
+        },
+        {
+          "cycle": 8,
+          "mode": "B",
+          "action": "R",
+          "reward": 1,
+          "sideBefore": "R",
+          "sideAfter": "R"
+        }
+      ],
+      "steps": [
+        {
+          "step": 0,
+          "cumulative": 0
+        },
+        {
+          "step": 1,
+          "reward": 0,
+          "cumulative": 0,
+          "position": "L"
+        },
+        {
+          "step": 2,
+          "reward": 0,
+          "cumulative": 0,
+          "position": "J"
+        },
+        {
+          "step": 3,
+          "reward": 1,
+          "cumulative": 1,
+          "position": "R"
+        },
+        {
+          "step": 4,
+          "reward": 0,
+          "cumulative": 1,
+          "position": "J"
+        },
+        {
+          "step": 5,
+          "reward": 1,
+          "cumulative": 2,
+          "position": "R"
+        },
+        {
+          "step": 6,
+          "reward": 0,
+          "cumulative": 2,
+          "position": "J"
+        },
+        {
+          "step": 7,
+          "reward": 1,
+          "cumulative": 3,
+          "position": "R"
+        },
+        {
+          "step": 8,
+          "reward": 0,
+          "cumulative": 3,
+          "position": "J"
+        },
+        {
+          "step": 9,
+          "reward": 1,
+          "cumulative": 4,
+          "position": "R"
+        },
+        {
+          "step": 10,
+          "reward": 0,
+          "cumulative": 4,
+          "position": "J"
+        },
+        {
+          "step": 11,
+          "reward": 1,
+          "cumulative": 5,
+          "position": "R"
+        },
+        {
+          "step": 12,
+          "reward": 0,
+          "cumulative": 5,
+          "position": "J"
+        },
+        {
+          "step": 13,
+          "reward": 1,
+          "cumulative": 6,
+          "position": "R"
+        },
+        {
+          "step": 14,
+          "reward": 0,
+          "cumulative": 6,
+          "position": "J"
+        },
+        {
+          "step": 15,
+          "reward": 1,
+          "cumulative": 7,
+          "position": "R"
+        },
+        {
+          "step": 16,
+          "reward": 0,
+          "cumulative": 7,
+          "position": "J"
+        }
+      ],
+      "snapshots": [
+        {
+          "cycle": 0,
+          "side": "L"
+        },
+        {
+          "cycle": 1,
+          "side": "R"
+        },
+        {
+          "cycle": 2,
+          "side": "R"
+        },
+        {
+          "cycle": 3,
+          "side": "R"
+        },
+        {
+          "cycle": 4,
+          "side": "R"
+        },
+        {
+          "cycle": 5,
+          "side": "R"
+        },
+        {
+          "cycle": 6,
+          "side": "R"
+        },
+        {
+          "cycle": 7,
+          "side": "R"
+        },
+        {
+          "cycle": 8,
+          "side": "R"
+        }
+      ],
+      "total": 7,
+      "perPrimitiveStep": 0.4375,
+      "finalSide": "R"
+    },
+    "retention": {
+      "beforeB": 1,
+      "afterB": 0,
+      "loss": 1
+    },
+    "forwardTransfer": {
+      "definition": "eight B-circle online reward, aged minus fresh under same update rule and budget",
+      "aged": 7,
+      "fresh": 7,
+      "difference": 0
+    },
+    "finalFrozenA": {
+      "adaptive": 1,
+      "frozen": 1
+    },
+    "adaptation": {
+      "B": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "returnA": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "lostRewardPerSwitch": 1
+    },
+    "permissions": "diagnostic copies may be placed in fixed A/B and must not write their data back to the training learner"
+  }
+}

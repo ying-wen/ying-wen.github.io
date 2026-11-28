@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="602" viewBox="0 0 900 602" role="img" aria-labelledby="title description">
+<title id="title">有限轨迹不等于解析固定点</title><desc id="description">固定平稳 MRP、在策略、线性不充分特征的教学诊断；不复现原课件实验，不证明深度或非平稳 TD 稳定性。 λ；第20000步的价值 RMSE。原始数值见同目录 results.json。</desc>
+<rect width="100%" height="100%" fill="#fff"/>
+<g font-family="system-ui, -apple-system, Noto Sans CJK SC, sans-serif" fill="#233748">
+<text x="96" y="36" font-size="23" font-weight="650">有限轨迹不等于解析固定点</text>
+<text x="96" y="68" font-size="16">第20000步的价值 RMSE</text>
+<path d="M96 98h32" fill="none" stroke="#285d82" stroke-width="2.6" stroke-dasharray=""/><text x="139" y="104" font-size="18">固定 α=0.01</text>
+<path d="M295 98h32" fill="none" stroke="#ad5733" stroke-width="2.6" stroke-dasharray="9 5"/><text x="338" y="104" font-size="18">α=0.01(1−γλ)</text>
+<path d="M531 98h32" fill="none" stroke="#4d5660" stroke-width="2.6" stroke-dasharray="7 5"/><text x="574" y="104" font-size="18">解析 TD 固定点</text>
+<path d="M96 128h32" fill="none" stroke="#4d5660" stroke-width="2.6" stroke-dasharray="2 4"/><text x="139" y="134" font-size="18">表示误差下限</text>
+<text x="96" y="161" font-size="16" fill="#586574">范围带：16 次运行的最小值至最大值，不是置信区间。</text>
+<path d="M96 512H864" stroke="#a4b2c0" fill="none"/><text x="84" y="518" text-anchor="end" font-size="17">0</text>
+<path d="M96 448H864" stroke="#e2e7eb" fill="none"/><text x="84" y="454" text-anchor="end" font-size="17">0.5</text>
+<path d="M96 384H864" stroke="#e2e7eb" fill="none"/><text x="84" y="390" text-anchor="end" font-size="17">1</text>
+<path d="M96 320H864" stroke="#e2e7eb" fill="none"/><text x="84" y="326" text-anchor="end" font-size="17">1.5</text>
+<path d="M96 256H864" stroke="#e2e7eb" fill="none"/><text x="84" y="262" text-anchor="end" font-size="17">2</text>
+<path d="M96 192H864" stroke="#e2e7eb" fill="none"/><text x="84" y="198" text-anchor="end" font-size="17">2.5</text>
+<path d="M96 512v6" stroke="#677789"/><text x="96" y="542" text-anchor="middle" font-size="17">0</text>
+<path d="M249.60000000000002 512v6" stroke="#677789"/><text x="249.60000000000002" y="542" text-anchor="middle" font-size="17">0.2</text>
+<path d="M403.20000000000005 512v6" stroke="#677789"/><text x="403.20000000000005" y="542" text-anchor="middle" font-size="17">0.4</text>
+<path d="M556.8000000000001 512v6" stroke="#677789"/><text x="556.8000000000001" y="542" text-anchor="middle" font-size="17">0.6</text>
+<path d="M710.4000000000001 512v6" stroke="#677789"/><text x="710.4000000000001" y="542" text-anchor="middle" font-size="17">0.8</text>
+<path d="M864 512v6" stroke="#677789"/><text x="864" y="542" text-anchor="middle" font-size="17">1</text>
+<path d="M96 192V512H864" fill="none" stroke="#677789" stroke-width="1.2"/>
+<polygon points="96,321.78978832859264 480,317.9943546645157 787.2,281.433414144858 864,250.8880564904457 864,338.233705359356 787.2,339.5440719242973 480,339.3679569637253 96,336.1300553403685" fill="#285d82" fill-opacity="0.10" stroke="none"/>
+<polygon points="96,321.78978832859264 480,325.93659442016565 787.2,325.69624927874924 864,324.9156494983119 864,339.61805800239324 787.2,339.8099101660727 480,339.0361107531327 96,336.1300553403685" fill="#ad5733" fill-opacity="0.10" stroke="none"/>
+<path d="M96.000 330.208 L480.000 332.081 L787.200 328.252 L864.000 320.057" fill="none" stroke="#285d82" stroke-width="2.6" stroke-linejoin="round" stroke-dasharray=""/>
+<circle cx="96" cy="330.2077134453746" r="3.5" fill="#285d82"/>
+<circle cx="480" cy="332.080556843712" r="3.5" fill="#285d82"/>
+<circle cx="787.2" cy="328.25185728406063" r="3.5" fill="#285d82"/>
+<circle cx="864" cy="320.057102108372" r="3.5" fill="#285d82"/>
+<path d="M96.000 330.208 L480.000 334.081 L787.200 336.523 L864.000 337.008" fill="none" stroke="#ad5733" stroke-width="2.6" stroke-linejoin="round" stroke-dasharray="9 5"/>
+<rect x="92.5" y="326.7077134453746" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<rect x="476.5" y="330.581167757098" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<rect x="783.7" y="333.0226874466025" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<rect x="860.5" y="333.5083789913358" width="7" height="7" fill="#fff" stroke="#ad5733" stroke-width="1.7"/>
+<path d="M96.000 332.890 L103.680 332.986 L111.360 333.082 L119.040 333.178 L126.720 333.274 L134.400 333.369 L142.080 333.465 L149.760 333.561 L157.440 333.656 L165.120 333.752 L172.800 333.847 L180.480 333.942 L188.160 334.037 L195.840 334.131 L203.520 334.226 L211.200 334.321 L218.880 334.415 L226.560 334.509 L234.240 334.603 L241.920 334.696 L249.600 334.790 L257.280 334.883 L264.960 334.976 L272.640 335.068 L280.320 335.161 L288.000 335.253 L295.680 335.345 L303.360 335.436 L311.040 335.527 L318.720 335.618 L326.400 335.709 L334.080 335.799 L341.760 335.889 L349.440 335.978 L357.120 336.067 L364.800 336.155 L372.480 336.243 L380.160 336.331 L387.840 336.418 L395.520 336.505 L403.200 336.591 L410.880 336.677 L418.560 336.762 L426.240 336.846 L433.920 336.930 L441.600 337.014 L449.280 337.096 L456.960 337.178 L464.640 337.260 L472.320 337.341 L480.000 337.421 L487.680 337.500 L495.360 337.578 L503.040 337.656 L510.720 337.733 L518.400 337.809 L526.080 337.885 L533.760 337.959 L541.440 338.033 L549.120 338.105 L556.800 338.177 L564.480 338.248 L572.160 338.317 L579.840 338.386 L587.520 338.453 L595.200 338.520 L602.880 338.585 L610.560 338.649 L618.240 338.712 L625.920 338.774 L633.600 338.834 L641.280 338.894 L648.960 338.951 L656.640 339.008 L664.320 339.063 L672.000 339.116 L679.680 339.168 L687.360 339.219 L695.040 339.268 L702.720 339.315 L710.400 339.361 L718.080 339.405 L725.760 339.447 L733.440 339.487 L741.120 339.526 L748.800 339.563 L756.480 339.597 L764.160 339.630 L771.840 339.661 L779.520 339.689 L787.200 339.716 L794.880 339.740 L802.560 339.762 L810.240 339.781 L817.920 339.798 L825.600 339.813 L833.280 339.825 L840.960 339.835 L848.640 339.842 L856.320 339.846 L864.000 339.847" fill="none" stroke="#4d5660" stroke-width="2.6" stroke-linejoin="round" stroke-dasharray="7 5"/>
+<path d="M96.000 339.847 L864.000 339.847" fill="none" stroke="#4d5660" stroke-width="2.6" stroke-linejoin="round" stroke-dasharray="2 4"/>
+<rect x="92.5" y="336.3473859729231" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<rect x="860.5" y="336.3473859729231" width="7" height="7" fill="#fff" stroke="#4d5660" stroke-width="1.7"/>
+<text x="480" y="577" text-anchor="middle" font-size="18">λ</text></g></svg>

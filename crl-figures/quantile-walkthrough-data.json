@@ -1,0 +1,455 @@
+{
+  "kind": "constructed-exact-settlement-quantiles",
+  "random_rollouts": 0,
+  "neural_training_steps": 0,
+  "exact_expected_updates": 32,
+  "task": {
+    "gamma": 0.5,
+    "advance": 0.5,
+    "fixed_final_reward": 2,
+    "floating_final_rewards": [
+      0,
+      4
+    ],
+    "floating_final_masses": [
+      0.5,
+      0.5
+    ],
+    "terminal_future_return": 0
+  },
+  "taus": [
+    0.125,
+    0.375,
+    0.625,
+    0.875
+  ],
+  "true_laws": {
+    "fixed": {
+      "atoms": [
+        1.5
+      ],
+      "masses": [
+        1
+      ]
+    },
+    "floating": {
+      "atoms": [
+        0.5,
+        2.5
+      ],
+      "masses": [
+        0.5,
+        0.5
+      ]
+    }
+  },
+  "true_midpoints": {
+    "fixed": [
+      1.5,
+      1.5,
+      1.5,
+      1.5
+    ],
+    "floating": [
+      0.5,
+      0.5,
+      2.5,
+      2.5
+    ]
+  },
+  "transition": {
+    "state": "s",
+    "action": "floating",
+    "reward": 0.5,
+    "next_state": "v",
+    "terminal": false,
+    "frozen_successor": [
+      0,
+      0,
+      4,
+      4
+    ],
+    "target": [
+      0.5,
+      0.5,
+      2.5,
+      2.5
+    ]
+  },
+  "sample_step": {
+    "kind": "pinball",
+    "kappa": null,
+    "loss": 0.375,
+    "residuals": [
+      [
+        -0.5,
+        -0.5,
+        1.5,
+        1.5
+      ],
+      [
+        -0.5,
+        -0.5,
+        1.5,
+        1.5
+      ],
+      [
+        -1.5,
+        -1.5,
+        0.5,
+        0.5
+      ],
+      [
+        -1.5,
+        -1.5,
+        0.5,
+        0.5
+      ]
+    ],
+    "head_gradient": [
+      0.375,
+      0.125,
+      -0.125,
+      -0.375
+    ],
+    "gradient": [
+      0.09375,
+      0.03125,
+      -0.03125,
+      -0.09375
+    ],
+    "rate": 4,
+    "before": [
+      1,
+      1,
+      2,
+      2
+    ],
+    "target": [
+      0.5,
+      0.5,
+      2.5,
+      2.5
+    ],
+    "after": [
+      0.625,
+      0.875,
+      2.125,
+      2.375
+    ],
+    "after_loss": 0.296875
+  },
+  "single_low_sample": {
+    "kind": "pinball",
+    "kappa": null,
+    "loss": 0.375,
+    "residuals": [
+      [
+        -0.5
+      ],
+      [
+        -0.5
+      ],
+      [
+        -1.5
+      ],
+      [
+        -1.5
+      ]
+    ],
+    "head_gradient": [
+      0.875,
+      0.625,
+      0.375,
+      0.125
+    ],
+    "gradient": [
+      0.21875,
+      0.15625,
+      0.09375,
+      0.03125
+    ],
+    "rate": 4,
+    "before": [
+      1,
+      1,
+      2,
+      2
+    ],
+    "target": [
+      0.5
+    ],
+    "after": [
+      0.125,
+      0.375,
+      1.625,
+      1.875
+    ],
+    "after_loss": 0.171875
+  },
+  "snapshots": [
+    {
+      "updates": 0,
+      "atoms": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "mean": 1.5,
+      "lower_cvar": 1,
+      "w1": 0.5,
+      "loss": 0.375
+    },
+    {
+      "updates": 1,
+      "atoms": [
+        0.625,
+        0.875,
+        2.125,
+        2.375
+      ],
+      "mean": 1.5,
+      "lower_cvar": 0.75,
+      "w1": 0.25,
+      "loss": 0.296875
+    },
+    {
+      "updates": 4,
+      "atoms": [
+        0.4945037407037479,
+        0.6519428687029782,
+        2.3480571312970215,
+        2.505496259296252
+      ],
+      "mean": 1.5,
+      "lower_cvar": 0.573223304703363,
+      "w1": 0.07871956399961519,
+      "loss": 0.2598399454999519
+    },
+    {
+      "updates": 32,
+      "atoms": [
+        0.4794703330828099,
+        0.49598714934280336,
+        2.5040128506571957,
+        2.5205296669171915
+      ],
+      "mean": 1.5,
+      "lower_cvar": 0.4877287412128066,
+      "w1": 0.012271258787193484,
+      "loss": 0.25203551368054866
+    }
+  ],
+  "huber": {
+    "kappa": 1,
+    "step": {
+      "kind": "huber",
+      "kappa": 1,
+      "loss": 0.171875,
+      "residuals": [
+        [
+          -0.5,
+          -0.5,
+          1.5,
+          1.5
+        ],
+        [
+          -0.5,
+          -0.5,
+          1.5,
+          1.5
+        ],
+        [
+          -1.5,
+          -1.5,
+          0.5,
+          0.5
+        ],
+        [
+          -1.5,
+          -1.5,
+          0.5,
+          0.5
+        ]
+      ],
+      "head_gradient": [
+        0.15625,
+        -0.03125,
+        0.03125,
+        -0.15625
+      ],
+      "gradient": [
+        0.0390625,
+        -0.0078125,
+        0.0078125,
+        -0.0390625
+      ],
+      "rate": 4,
+      "before": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "target": [
+        0.5,
+        0.5,
+        2.5,
+        2.5
+      ],
+      "after": [
+        0.84375,
+        1.03125,
+        1.96875,
+        2.15625
+      ],
+      "after_loss": 0.16192626953125
+    },
+    "stationary_points": [
+      0.6428571428571428,
+      1.1,
+      1.9,
+      2.357142857142857
+    ],
+    "stationary_readout": {
+      "mean": 1.5,
+      "lower_cvar": 0.8714285714285714
+    },
+    "at_true": {
+      "kind": "huber",
+      "kappa": 1,
+      "loss": 0.1875,
+      "residuals": [
+        [
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          -2,
+          -2,
+          0,
+          0
+        ],
+        [
+          -2,
+          -2,
+          0,
+          0
+        ]
+      ],
+      "head_gradient": [
+        -0.0625,
+        -0.1875,
+        0.1875,
+        0.0625
+      ],
+      "gradient": [
+        -0.015625,
+        -0.046875,
+        0.046875,
+        0.015625
+      ]
+    }
+  },
+  "atom_conditions": {
+    "at_low": [
+      -0.125,
+      0.375
+    ],
+    "median_interval": [
+      0.5,
+      2.5
+    ],
+    "canonical_median": 0.5
+  },
+  "finite_resolution": {
+    "law": {
+      "atoms": [
+        0.5,
+        2.5
+      ],
+      "masses": [
+        0.2,
+        0.8
+      ]
+    },
+    "midpoints": [
+      0.5,
+      2.5,
+      2.5,
+      2.5
+    ],
+    "true_readout": {
+      "mean": 2.1,
+      "lower_cvar": 1.7
+    },
+    "approximate_readout": {
+      "mean": 2,
+      "lower_cvar": 1.5
+    }
+  },
+  "bonus": {
+    "advance": 0.6,
+    "atoms": {
+      "fixed": [
+        1.5,
+        1.5,
+        1.5,
+        1.5
+      ],
+      "floating": [
+        0.6,
+        0.6,
+        2.6,
+        2.6
+      ]
+    },
+    "mean_choice": {
+      "scores": {
+        "fixed": 1.5,
+        "floating": 1.6
+      },
+      "action": "floating"
+    },
+    "risk_scores": {
+      "fixed": 1.5,
+      "floating": 0.6
+    },
+    "risk_action": "fixed"
+  },
+  "iqn_specified_levels": {
+    "current": [
+      0.15,
+      0.7
+    ],
+    "target": [
+      0.2,
+      0.4,
+      0.9
+    ],
+    "decision": [
+      0.1,
+      0.3,
+      0.6,
+      0.8
+    ],
+    "true_target_samples": [
+      0.5,
+      0.5,
+      2.5
+    ],
+    "current_true_values": [
+      0.5,
+      2.5
+    ]
+  }
+}

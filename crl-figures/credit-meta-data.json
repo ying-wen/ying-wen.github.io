@@ -1,0 +1,588 @@
+{
+  "kind": "exact",
+  "sampled_runs": 0,
+  "fixture": {
+    "features": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "rewards": [
+      1,
+      0,
+      2
+    ],
+    "initial": [
+      0,
+      0
+    ],
+    "gamma": 1,
+    "lambda": 0.5,
+    "alpha": 0.5
+  },
+  "traditional": {
+    "history": [
+      [
+        0,
+        0
+      ],
+      [
+        0.5,
+        0
+      ],
+      [
+        0.5,
+        0
+      ],
+      [
+        1.8125,
+        0.375
+      ]
+    ],
+    "rows": [
+      {
+        "t": 0,
+        "delta": 1,
+        "trace": [
+          1,
+          0
+        ],
+        "prediction": 0,
+        "nextPrediction": 0,
+        "oldPrediction": 0,
+        "versionGap": 0,
+        "increment": [
+          0.5,
+          0
+        ],
+        "weight": [
+          0.5,
+          0
+        ]
+      },
+      {
+        "t": 1,
+        "delta": 0,
+        "trace": [
+          1.5,
+          1
+        ],
+        "prediction": 0.5,
+        "nextPrediction": 0.5,
+        "oldPrediction": 0,
+        "versionGap": 0.5,
+        "increment": [
+          0,
+          0
+        ],
+        "weight": [
+          0.5,
+          0
+        ]
+      },
+      {
+        "t": 2,
+        "delta": 1.5,
+        "trace": [
+          1.75,
+          0.5
+        ],
+        "prediction": 0.5,
+        "nextPrediction": 0,
+        "oldPrediction": 0.5,
+        "versionGap": 0,
+        "increment": [
+          1.3125,
+          0.375
+        ],
+        "weight": [
+          1.8125,
+          0.375
+        ]
+      }
+    ]
+  },
+  "trueOnline": {
+    "history": [
+      [
+        0,
+        0
+      ],
+      [
+        0.5,
+        0
+      ],
+      [
+        0.5625,
+        -0.0625
+      ],
+      [
+        1.515625,
+        0.21875
+      ]
+    ],
+    "rows": [
+      {
+        "t": 0,
+        "delta": 1,
+        "trace": [
+          1,
+          0
+        ],
+        "prediction": 0,
+        "nextPrediction": 0,
+        "oldPrediction": 0,
+        "versionGap": 0,
+        "increment": [
+          0.5,
+          0
+        ],
+        "weight": [
+          0.5,
+          0
+        ]
+      },
+      {
+        "t": 1,
+        "delta": 0,
+        "trace": [
+          1.25,
+          0.75
+        ],
+        "prediction": 0.5,
+        "nextPrediction": 0.5,
+        "oldPrediction": 0,
+        "versionGap": 0.5,
+        "increment": [
+          0.0625,
+          -0.0625
+        ],
+        "weight": [
+          0.5625,
+          -0.0625
+        ]
+      },
+      {
+        "t": 2,
+        "delta": 1.4375,
+        "trace": [
+          1.3125,
+          0.375
+        ],
+        "prediction": 0.5625,
+        "nextPrediction": 0,
+        "oldPrediction": 0.5,
+        "versionGap": 0.0625,
+        "increment": [
+          0.953125,
+          0.28125
+        ],
+        "weight": [
+          1.515625,
+          0.21875
+        ]
+      }
+    ]
+  },
+  "forward": {
+    "history": [
+      [
+        0,
+        0
+      ],
+      [
+        0.5,
+        0
+      ],
+      [
+        0.5625,
+        -0.0625
+      ],
+      [
+        1.515625,
+        0.21875
+      ]
+    ],
+    "targets": [
+      [
+        1
+      ],
+      [
+        1.25,
+        0.5
+      ],
+      [
+        1.625,
+        1.25,
+        2
+      ]
+    ]
+  },
+  "meta": {
+    "evaluationFeature": [
+      1,
+      1
+    ],
+    "target": 2,
+    "prediction": 2.1875,
+    "residual": 0.1875,
+    "loss": 0.017578125,
+    "sensitivity": [
+      2.75,
+      0.5
+    ],
+    "full": 0.609375,
+    "direct": 0.6328125,
+    "stopBootstrap": 0.533203125,
+    "perStepPredictionDerivative": [
+      -0.125,
+      0,
+      3.375
+    ],
+    "perStepGradient": [
+      -0.0234375,
+      0,
+      0.6328125
+    ],
+    "reusedTrainLoss": 0.017578125,
+    "reusedTrainGradient": -0.515625
+  },
+  "sensitivityHistory": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      2.75,
+      0.5
+    ]
+  ],
+  "lossCurve": [
+    {
+      "alpha": 0.2,
+      "loss": 0.49005,
+      "reusedTrainLoss": 0.6844499999999999
+    },
+    {
+      "alpha": 0.21000000000000002,
+      "loss": 0.4457804253124999,
+      "reusedTrainLoss": 0.6409101153125
+    },
+    {
+      "alpha": 0.22,
+      "loss": 0.404010605,
+      "reusedTrainLoss": 0.599184045
+    },
+    {
+      "alpha": 0.23,
+      "loss": 0.36467935031250004,
+      "reusedTrainLoss": 0.5592324403125
+    },
+    {
+      "alpha": 0.24000000000000002,
+      "loss": 0.3277260799999999,
+      "reusedTrainLoss": 0.52101632
+    },
+    {
+      "alpha": 0.25,
+      "loss": 0.2930908203125,
+      "reusedTrainLoss": 0.4844970703125
+    },
+    {
+      "alpha": 0.26,
+      "loss": 0.260714205,
+      "reusedTrainLoss": 0.44963644499999994
+    },
+    {
+      "alpha": 0.27,
+      "loss": 0.2305374753125,
+      "reusedTrainLoss": 0.4163965653124999
+    },
+    {
+      "alpha": 0.28,
+      "loss": 0.20250248000000004,
+      "reusedTrainLoss": 0.38473991999999996
+    },
+    {
+      "alpha": 0.29000000000000004,
+      "loss": 0.17655167531249988,
+      "reusedTrainLoss": 0.3546293653124999
+    },
+    {
+      "alpha": 0.30000000000000004,
+      "loss": 0.15262812499999986,
+      "reusedTrainLoss": 0.3260281249999999
+    },
+    {
+      "alpha": 0.31,
+      "loss": 0.13067550031250003,
+      "reusedTrainLoss": 0.29889979031249997
+    },
+    {
+      "alpha": 0.32,
+      "loss": 0.11063808000000007,
+      "reusedTrainLoss": 0.27320832000000006
+    },
+    {
+      "alpha": 0.33,
+      "loss": 0.09246075031249995,
+      "reusedTrainLoss": 0.2489180403124999
+    },
+    {
+      "alpha": 0.34,
+      "loss": 0.07608900499999996,
+      "reusedTrainLoss": 0.22599364499999994
+    },
+    {
+      "alpha": 0.35,
+      "loss": 0.06146894531250014,
+      "reusedTrainLoss": 0.20440019531250017
+    },
+    {
+      "alpha": 0.36,
+      "loss": 0.048547279999999964,
+      "reusedTrainLoss": 0.18410311999999987
+    },
+    {
+      "alpha": 0.37,
+      "loss": 0.03727132531249996,
+      "reusedTrainLoss": 0.1650682153124999
+    },
+    {
+      "alpha": 0.38,
+      "loss": 0.027589004999999972,
+      "reusedTrainLoss": 0.14726164499999997
+    },
+    {
+      "alpha": 0.39,
+      "loss": 0.01944885031250004,
+      "reusedTrainLoss": 0.13064994031250007
+    },
+    {
+      "alpha": 0.4,
+      "loss": 0.012799999999999987,
+      "reusedTrainLoss": 0.1152
+    },
+    {
+      "alpha": 0.41000000000000003,
+      "loss": 0.00759220031249999,
+      "reusedTrainLoss": 0.10087909031249995
+    },
+    {
+      "alpha": 0.42000000000000004,
+      "loss": 0.003775804999999979,
+      "reusedTrainLoss": 0.08765484499999994
+    },
+    {
+      "alpha": 0.43000000000000005,
+      "loss": 0.0013017753124999936,
+      "reusedTrainLoss": 0.07549526531249996
+    },
+    {
+      "alpha": 0.44,
+      "loss": 0.00012168000000000091,
+      "reusedTrainLoss": 0.06436872
+    },
+    {
+      "alpha": 0.45,
+      "loss": 0.00018769531250000275,
+      "reusedTrainLoss": 0.05424394531249999
+    },
+    {
+      "alpha": 0.46,
+      "loss": 0.001452605000000003,
+      "reusedTrainLoss": 0.045090045
+    },
+    {
+      "alpha": 0.47000000000000003,
+      "loss": 0.003869800312500012,
+      "reusedTrainLoss": 0.036876490312499975
+    },
+    {
+      "alpha": 0.48000000000000004,
+      "loss": 0.007393279999999992,
+      "reusedTrainLoss": 0.029573119999999967
+    },
+    {
+      "alpha": 0.49,
+      "loss": 0.011977650312499982,
+      "reusedTrainLoss": 0.023150140312500025
+    },
+    {
+      "alpha": 0.5,
+      "loss": 0.017578125,
+      "reusedTrainLoss": 0.017578125
+    },
+    {
+      "alpha": 0.51,
+      "loss": 0.02415052531250006,
+      "reusedTrainLoss": 0.012828015312499993
+    },
+    {
+      "alpha": 0.52,
+      "loss": 0.031651279999999955,
+      "reusedTrainLoss": 0.008871119999999998
+    },
+    {
+      "alpha": 0.53,
+      "loss": 0.04003742531249999,
+      "reusedTrainLoss": 0.005679115312499985
+    },
+    {
+      "alpha": 0.54,
+      "loss": 0.04926660499999995,
+      "reusedTrainLoss": 0.003224045000000003
+    },
+    {
+      "alpha": 0.55,
+      "loss": 0.05929707031249996,
+      "reusedTrainLoss": 0.0014783203125000033
+    },
+    {
+      "alpha": 0.56,
+      "loss": 0.07008768000000003,
+      "reusedTrainLoss": 0.0004147199999999982
+    },
+    {
+      "alpha": 0.5700000000000001,
+      "loss": 0.08159790031249999,
+      "reusedTrainLoss": 0.000006390312499999585
+    },
+    {
+      "alpha": 0.5800000000000001,
+      "loss": 0.09378780500000002,
+      "reusedTrainLoss": 0.00022684500000000205
+    },
+    {
+      "alpha": 0.5900000000000001,
+      "loss": 0.10661807531250013,
+      "reusedTrainLoss": 0.0010499653125000104
+    },
+    {
+      "alpha": 0.6000000000000001,
+      "loss": 0.1200500000000001,
+      "reusedTrainLoss": 0.00245000000000002
+    },
+    {
+      "alpha": 0.6100000000000001,
+      "loss": 0.13404547531250016,
+      "reusedTrainLoss": 0.0044015653125000255
+    },
+    {
+      "alpha": 0.62,
+      "loss": 0.14856700499999984,
+      "reusedTrainLoss": 0.006879644999999969
+    },
+    {
+      "alpha": 0.63,
+      "loss": 0.16357770031250007,
+      "reusedTrainLoss": 0.009859590312500003
+    },
+    {
+      "alpha": 0.64,
+      "loss": 0.17904127999999989,
+      "reusedTrainLoss": 0.013317119999999965
+    },
+    {
+      "alpha": 0.65,
+      "loss": 0.19492207031250008,
+      "reusedTrainLoss": 0.017228320312499986
+    },
+    {
+      "alpha": 0.66,
+      "loss": 0.2111850050000001,
+      "reusedTrainLoss": 0.021569645
+    },
+    {
+      "alpha": 0.67,
+      "loss": 0.22779562531250022,
+      "reusedTrainLoss": 0.0263179153125001
+    },
+    {
+      "alpha": 0.6799999999999999,
+      "loss": 0.24472007999999984,
+      "reusedTrainLoss": 0.031450319999999976
+    },
+    {
+      "alpha": 0.69,
+      "loss": 0.2619251253124999,
+      "reusedTrainLoss": 0.03694441531249994
+    },
+    {
+      "alpha": 0.7,
+      "loss": 0.2793781249999997,
+      "reusedTrainLoss": 0.04277812499999987
+    },
+    {
+      "alpha": 0.71,
+      "loss": 0.2970470503125,
+      "reusedTrainLoss": 0.04892974031250004
+    },
+    {
+      "alpha": 0.72,
+      "loss": 0.3149004799999997,
+      "reusedTrainLoss": 0.05537791999999992
+    },
+    {
+      "alpha": 0.73,
+      "loss": 0.3329076003125003,
+      "reusedTrainLoss": 0.062101690312500075
+    },
+    {
+      "alpha": 0.74,
+      "loss": 0.3510382049999999,
+      "reusedTrainLoss": 0.0690804449999999
+    },
+    {
+      "alpha": 0.75,
+      "loss": 0.3692626953125,
+      "reusedTrainLoss": 0.0762939453125
+    },
+    {
+      "alpha": 0.76,
+      "loss": 0.38755208000000024,
+      "reusedTrainLoss": 0.0837223200000001
+    },
+    {
+      "alpha": 0.77,
+      "loss": 0.40587797531250025,
+      "reusedTrainLoss": 0.09134606531250017
+    },
+    {
+      "alpha": 0.78,
+      "loss": 0.424212605,
+      "reusedTrainLoss": 0.09914604500000002
+    },
+    {
+      "alpha": 0.79,
+      "loss": 0.4425288003124999,
+      "reusedTrainLoss": 0.10710349031250002
+    },
+    {
+      "alpha": 0.8,
+      "loss": 0.4608,
+      "reusedTrainLoss": 0.1152
+    }
+  ]
+}

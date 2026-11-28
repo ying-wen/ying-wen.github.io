@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Search Scaling 与 Learning Scaling 的两项条件响应研究</title>
+  <desc id="desc">左侧固定持久状态并增加当前任务搜索计算；右侧先声明长期控制目标，在可比未来运行条件下增加行动条件经验，并同时考察持续控制与持续可学性。</desc>
+  <rect width="1440" height="900" fill="#ffffff"/>
+  <style>
+    .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+    .serif{font-family:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",serif}
+    .h1{font-size:34px;font-weight:700;fill:#17211c}
+    .h2{font-size:27px;font-weight:700}
+    .label{font-size:18px;font-weight:650;fill:#27332d}
+    .body{font-size:17px;fill:#3c4942}
+    .small{font-size:15px;fill:#66716b}
+    .math{font-family:"STIX Two Math","Times New Roman",serif;font-size:19px;fill:#26332c}
+    .orange{fill:#b94d18}.green{fill:#2e6f4e}
+  </style>
+
+  <text x="720" y="58" text-anchor="middle" class="sans h1">同一能力评估，两项不同的响应关系</text>
+  <text x="720" y="91" text-anchor="middle" class="serif body">二者可以协同；建立曲线时必须分别操控自变量</text>
+
+  <rect x="55" y="125" width="642" height="708" rx="18" fill="#fffaf6" stroke="#d36a32" stroke-width="2"/>
+  <rect x="743" y="125" width="642" height="708" rx="18" fill="#f8fcf9" stroke="#3f8060" stroke-width="2"/>
+
+  <text x="376" y="176" text-anchor="middle" class="sans h2 orange">SEARCH SCALING</text>
+  <text x="1064" y="176" text-anchor="middle" class="sans h2 green">LEARNING SCALING</text>
+  <text x="376" y="207" text-anchor="middle" class="serif body">同一持久状态上的任务时搜索</text>
+  <text x="1064" y="207" text-anchor="middle" class="serif body">长期控制与持续可学性</text>
+
+  <line x1="85" y1="232" x2="667" y2="232" stroke="#ead8cc"/>
+  <line x1="773" y1="232" x2="1355" y2="232" stroke="#d6e7dc"/>
+
+  <text x="100" y="274" class="sans label">操控量</text>
+  <text x="100" y="305" class="serif body">当前任务计算 c</text>
+  <g transform="translate(100,330)">
+    <rect width="125" height="48" rx="9" fill="#fff" stroke="#e2a27c"/>
+    <rect x="161" width="125" height="48" rx="9" fill="#fff" stroke="#d97f4a"/>
+    <rect x="322" width="125" height="48" rx="9" fill="#fff" stroke="#bf5420"/>
+    <text x="62" y="31" text-anchor="middle" class="sans body">4 个候选</text>
+    <text x="223" y="31" text-anchor="middle" class="sans body">16 个候选</text>
+    <text x="384" y="31" text-anchor="middle" class="sans body">64 个候选</text>
+    <path d="M128 24h29M289 24h29" stroke="#b94d18" stroke-width="2" marker-end="url(#ao)"/>
+  </g>
+
+  <text x="788" y="274" class="sans label">操控量</text>
+  <text x="788" y="305" class="serif body">行动所诱导的累计经验 n</text>
+  <g transform="translate(788,330)">
+    <circle cx="61" cy="24" r="23" fill="#fff" stroke="#8db49d"/>
+    <circle cx="222" cy="24" r="23" fill="#fff" stroke="#5d9474"/>
+    <circle cx="383" cy="24" r="23" fill="#fff" stroke="#347453"/>
+    <text x="61" y="30" text-anchor="middle" class="sans body">10</text>
+    <text x="222" y="30" text-anchor="middle" class="sans body">100</text>
+    <text x="383" y="30" text-anchor="middle" class="sans body">1000</text>
+    <path d="M88 24h107M249 24h107" stroke="#2e6f4e" stroke-width="2" marker-end="url(#ag)"/>
+    <text x="464" y="30" class="serif small">经验单位</text>
+  </g>
+
+  <text x="100" y="432" class="sans label">保持不变</text>
+  <text x="100" y="464" class="serif body">参数、长期记忆、策略结构与 harness</text>
+  <text x="100" y="493" class="serif body">任务结束后恢复到同一持久状态 z</text>
+
+  <text x="788" y="432" class="sans label">先声明并保持可比</text>
+  <text x="788" y="464" class="serif body">长期控制目标、环境变化过程与反馈定义</text>
+  <text x="788" y="493" class="serif body">未来运行资源；各策略形成自身历史</text>
+
+  <text x="100" y="550" class="sans label">评价函数</text>
+  <rect x="100" y="570" width="497" height="58" rx="10" fill="#fff" stroke="#e2c8b9"/>
+  <text x="348" y="607" text-anchor="middle" class="math">J_task(c | z)</text>
+
+  <text x="788" y="550" class="sans label">主要输出与诊断量</text>
+  <rect x="788" y="570" width="497" height="58" rx="10" fill="#fff" stroke="#c5ddce"/>
+  <text x="1036" y="607" text-anchor="middle" class="math">𝓛(n) = (J<tspan baseline-shift="sub" font-size="14">run</tspan>, T<tspan baseline-shift="sub" font-size="14">recover</tspan>, P<tspan baseline-shift="sub" font-size="14">late</tspan>, η)<tspan baseline-shift="sub" font-size="14">n</tspan></text>
+
+  <g transform="translate(100,662)">
+    <path d="M0 104H497M0 104V0" stroke="#929b96"/>
+    <path d="M11 92C102 78 174 60 244 42C331 21 404 15 486 11" fill="none" stroke="#b94d18" stroke-width="4"/>
+    <text x="248" y="137" text-anchor="middle" class="sans small">任务时计算 log c</text>
+    <text x="13" y="-10" class="sans small">任务表现</text>
+  </g>
+  <g transform="translate(788,662)">
+    <path d="M0 104H497M0 104V0" stroke="#929b96"/>
+    <path d="M11 92C92 88 162 72 233 53C315 31 400 19 486 13" fill="none" stroke="#2e6f4e" stroke-width="4"/>
+    <path d="M11 68C92 54 160 61 235 45C322 54 404 30 486 37" fill="none" stroke="#5c8b9a" stroke-width="3" stroke-dasharray="8 7"/>
+    <text x="248" y="137" text-anchor="middle" class="sans small">累计经验 log n</text>
+    <text x="13" y="-10" class="sans small">控制 / 可学性</text>
+    <text x="431" y="14" class="sans small" fill="#2e6f4e">控制</text>
+    <text x="418" y="48" class="sans small" fill="#477985">可塑性</text>
+  </g>
+
+  <rect x="342" y="842" width="756" height="40" rx="20" fill="#f4f6f5"/>
+  <text x="720" y="868" text-anchor="middle" class="serif body">识别标准：当天多搜索，还是长期经验改善了控制并维持了可学性？</text>
+
+  <defs>
+    <marker id="ao" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#b94d18"/></marker>
+    <marker id="ag" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#2e6f4e"/></marker>
+  </defs>
+</svg>

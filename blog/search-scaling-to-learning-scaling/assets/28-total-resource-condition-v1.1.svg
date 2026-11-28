@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">重复搜索与持久更新的总成本条件</title>
+  <desc id="desc">比较逐项任务重新搜索与一次持久更新加后续任务执行的总成本，并给出持久更新在给定未来任务集上成本更低的条件。</desc>
+  <defs>
+    <style>
+      .bg{fill:#ffffff}.ink{fill:#20262b}.muted{fill:#68727a}.panelA{fill:#fffaf3;stroke:#b86b18;stroke-width:3}.panelB{fill:#f3faf7;stroke:#277865;stroke-width:3}.boxA{fill:#ffffff;stroke:#b86b18;stroke-width:2.5}.boxB{fill:#ffffff;stroke:#277865;stroke-width:2.5}.total{fill:#f5f7f8;stroke:#9aa4aa;stroke-width:2}.callout{fill:#f5f7f8}.rule{stroke:#d9dee1;stroke-width:2}
+      .t{font:700 40px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.h{font:700 25px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.b{font:400 22px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.s{font:500 18px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif}.m{font:600 25px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="900"/>
+  <text x="60" y="66" class="t ink">重复搜索与持久更新的总成本条件</text>
+  <text x="60" y="105" class="b muted">概念比较；框宽不表示数值，一次比较只采用一种计量单位。</text>
+
+  <rect x="60" y="150" width="1080" height="230" rx="22" class="panelA"/>
+  <text x="90" y="195" class="h" fill="#a85e12">路径 A｜逐项任务重新搜索</text>
+  <text x="1110" y="195" text-anchor="end" class="s muted">持久状态冻结</text>
+  <rect x="90" y="230" width="180" height="100" rx="14" class="boxA"/>
+  <text x="180" y="268" text-anchor="middle" class="b ink">任务 x₁</text>
+  <text x="180" y="307" text-anchor="middle" class="m" fill="#a85e12">C₁⁻</text>
+  <text x="300" y="291" text-anchor="middle" class="h ink">＋</text>
+  <rect x="330" y="230" width="180" height="100" rx="14" class="boxA"/>
+  <text x="420" y="268" text-anchor="middle" class="b ink">任务 x₂</text>
+  <text x="420" y="307" text-anchor="middle" class="m" fill="#a85e12">C₂⁻</text>
+  <text x="555" y="291" text-anchor="middle" class="h ink">＋ ⋯ ＋</text>
+  <rect x="625" y="230" width="180" height="100" rx="14" class="boxA"/>
+  <text x="715" y="268" text-anchor="middle" class="b ink">任务 x_H</text>
+  <text x="715" y="307" text-anchor="middle" class="m" fill="#a85e12">Cₕ⁻</text>
+  <text x="840" y="291" text-anchor="middle" class="h ink">＝</text>
+  <rect x="875" y="230" width="235" height="100" rx="14" class="total"/>
+  <text x="992" y="268" text-anchor="middle" class="b ink">逐项搜索总成本</text>
+  <text x="992" y="307" text-anchor="middle" class="m ink">Σ Cᵢ⁻</text>
+
+  <rect x="60" y="420" width="1080" height="230" rx="22" class="panelB"/>
+  <text x="90" y="465" class="h" fill="#267763">路径 B｜提交持久更新后执行未来任务</text>
+  <text x="1110" y="465" text-anchor="end" class="s muted">未来任务运行条件逐项匹配</text>
+  <rect x="90" y="500" width="200" height="100" rx="14" class="boxB"/>
+  <text x="190" y="538" text-anchor="middle" class="b ink">更新与评估</text>
+  <text x="190" y="577" text-anchor="middle" class="m" fill="#267763">Cᵤ</text>
+  <text x="320" y="561" text-anchor="middle" class="h ink">＋</text>
+  <rect x="350" y="500" width="160" height="100" rx="14" class="boxB"/>
+  <text x="430" y="538" text-anchor="middle" class="b ink">任务 x₁</text>
+  <text x="430" y="577" text-anchor="middle" class="m" fill="#267763">C₁⁺</text>
+  <text x="550" y="561" text-anchor="middle" class="h ink">＋ ⋯ ＋</text>
+  <rect x="620" y="500" width="160" height="100" rx="14" class="boxB"/>
+  <text x="700" y="538" text-anchor="middle" class="b ink">任务 x_H</text>
+  <text x="700" y="577" text-anchor="middle" class="m" fill="#267763">Cₕ⁺</text>
+  <text x="815" y="561" text-anchor="middle" class="h ink">＝</text>
+  <rect x="850" y="500" width="260" height="100" rx="14" class="total"/>
+  <text x="980" y="538" text-anchor="middle" class="b ink">更新路径总成本</text>
+  <text x="980" y="577" text-anchor="middle" class="m ink">Cᵤ + Σ Cᵢ⁺</text>
+
+  <line x1="60" y1="685" x2="1140" y2="685" class="rule"/>
+  <rect x="60" y="720" width="1080" height="120" rx="18" class="callout"/>
+  <text x="600" y="763" text-anchor="middle" class="h ink">在所声明的 H 项未来任务内成本更低</text>
+  <text x="600" y="811" text-anchor="middle" class="m ink">Cᵤ + Σ Cᵢ⁺ &lt; Σ Cᵢ⁻　⇔　Σ (Cᵢ⁻ − Cᵢ⁺) &gt; Cᵤ</text>
+
+  <text x="600" y="878" text-anchor="middle" class="s muted">该不等式只比较给定任务集的成本；Learning Scaling 仍须报告迁移、保持与后期可塑性。</text>
+</svg>

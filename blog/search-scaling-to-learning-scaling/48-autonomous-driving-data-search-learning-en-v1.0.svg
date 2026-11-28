@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="920" viewBox="0 0 1600 920" role="img" aria-labelledby="title desc">
+  <title id="title">Autonomous driving from data and training to search and continual learning</title>
+  <desc id="desc">Real and synthetic data shape a deployment prior. A harness guides task-time search. Real action consequences can produce persistent runtime learning.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker>
+    <style>
+      .t{font:700 34px Inter,Arial,sans-serif;fill:#0f172a}.h{font:700 22px Inter,Arial,sans-serif;fill:#0f172a}.b{font:18px Inter,Arial,sans-serif;fill:#334155}.s{font:15px Inter,Arial,sans-serif;fill:#475569}.cap{font:700 15px Inter,Arial,sans-serif;letter-spacing:1.2px}.box{fill:#fff;stroke:#cbd5e1;stroke-width:2}.arr{stroke:#334155;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1600" height="920" fill="#fff"/>
+  <text x="80" y="70" class="t">Autonomous driving exposes the missing learning axis</text>
+  <text x="80" y="106" class="b">Simulation can expand training conditions; only real consequences can correct what the simulator and prior jointly miss.</text>
+
+  <rect x="70" y="165" width="300" height="220" rx="18" class="box"/>
+  <text x="95" y="205" class="cap" fill="#2563eb">TRAINING INPUTS</text>
+  <text x="95" y="250" class="h">Real records</text>
+  <text x="95" y="282" class="s">Observed roads, drivers, sensors</text>
+  <text x="95" y="325" class="h">Synthetic experience</text>
+  <text x="95" y="357" class="s">Simulation, rare events, variation</text>
+
+  <rect x="465" y="165" width="310" height="220" rx="18" class="box"/>
+  <text x="490" y="205" class="cap" fill="#7c3aed">MODEL CONSTRUCTION</text>
+  <text x="490" y="250" class="h">Pretraining + RL</text>
+  <text x="490" y="284" class="s">Representation and consequence prior</text>
+  <text x="490" y="315" class="s">Candidate policy and value estimate</text>
+  <text x="490" y="346" class="s">A strong but incomplete starting point</text>
+
+  <rect x="870" y="165" width="315" height="220" rx="18" class="box"/>
+  <text x="895" y="205" class="cap" fill="#0891b2">TASK-TIME SEARCH</text>
+  <text x="895" y="250" class="h">Harness-guided rollouts</text>
+  <text x="895" y="284" class="s">Sensors · actions · safety constraints</text>
+  <text x="895" y="315" class="s">More trajectories at fixed prior</text>
+  <text x="895" y="346" class="s">Search Scaling</text>
+
+  <rect x="1280" y="165" width="250" height="220" rx="18" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+  <text x="1305" y="205" class="cap" fill="#c2410c">RESIDUAL GAP</text>
+  <text x="1305" y="250" class="h">Unexpected reality</text>
+  <text x="1305" y="284" class="s">Missing state</text>
+  <text x="1305" y="315" class="s">Unreachable action</text>
+  <text x="1305" y="346" class="s">Evaluator mismatch</text>
+
+  <path d="M370 275 H455" class="arr"/><path d="M775 275 H860" class="arr"/><path d="M1185 275 H1270" class="arr"/>
+
+  <rect x="70" y="490" width="665" height="250" rx="18" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="100" y="535" class="cap" fill="#475569">OFFLINE ITERATION</text>
+  <text x="100" y="582" class="h">Engineers revise simulation and training</text>
+  <text x="100" y="620" class="b">Aggregates common fleet structure and enables centralized review</text>
+  <text x="100" y="655" class="b">Adaptation remains separated by release intervals</text>
+  <text x="100" y="690" class="b">Local and policy-induced experience may not enter the next model</text>
+
+  <rect x="865" y="490" width="665" height="250" rx="18" fill="#ecfdf5" stroke="#34d399" stroke-width="2.5"/>
+  <text x="895" y="535" class="cap" fill="#047857">RUNTIME CONTINUAL LEARNING</text>
+  <text x="895" y="582" class="h">Action → consequence → persistent correction</text>
+  <text x="895" y="620" class="b">Later decisions improve under equal future search computation</text>
+  <text x="895" y="655" class="b">Long-run control · recovery · retention · plasticity</text>
+  <text x="895" y="690" class="b">Learning Scaling</text>
+
+  <path d="M1405 395 C1405 435 1200 440 1200 480" class="arr"/>
+  <path d="M1280 395 C1180 440 530 430 410 480" class="arr"/>
+  <path d="M1195 740 C1050 830 680 830 620 395" fill="none" stroke="#059669" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#arrow)"/>
+  <text x="80" y="850" class="b">Search uses the current approximation. Learning can change the approximation used by future search.</text>
+</svg>

@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img" aria-labelledby="title desc">
+  <title id="title">更多搜索计算何时逼近最优解</title>
+  <desc id="desc">UCT 的一致性依赖有限时域 MDP、可调用的环境生成模型、有界奖励与持续探索。固定大模型搜索包含支持与表示差距、有限搜索差距和评价选择差距；增加任务时计算主要缩小有限搜索差距。Harness 可以扩展可执行支持、排除无效分支并接入反馈，也可能因过度限制或 proxy 评价失配引入系统偏差。运行时持续学习通过经验更新 proposal、表示、评价和持久状态，从而移动固定搜索的渐近边界。</desc>
+  <defs>
+    <style>
+      .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;fill:#18231e}
+      .serif{font-family:"Source Han Serif SC","Songti SC","Noto Serif CJK SC",serif;fill:#3c4943}
+      .math{font-family:"STIX Two Math","Cambria Math","Times New Roman",serif;fill:#26342e}
+      .title{font-size:48px;font-weight:750;letter-spacing:.5px}
+      .subtitle{font-size:24px;fill:#617068}
+      .h2{font-size:29px;font-weight:700}
+      .h3{font-size:23px;font-weight:700}
+      .body{font-size:20px}
+      .small{font-size:17px;fill:#65716b}
+      .formula{font-size:23px}
+      .card{fill:#fff;stroke:#cbd3ce;stroke-width:1.5}
+      .blue{fill:#f5f8fc;stroke:#8ca7c3;stroke-width:2}
+      .green{fill:#f4faf6;stroke:#6ba181;stroke-width:2}
+      .orange{fill:#fff8f2;stroke:#d98a57;stroke-width:2}
+      .red{fill:#fff7f6;stroke:#ce7d75;stroke-width:2}
+      .line{stroke:#65746c;stroke-width:3;fill:none}
+      .dash{stroke:#9aa69f;stroke-width:2;stroke-dasharray:9 8;fill:none}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L9,5 L0,10 Z" fill="#65746c"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="1120" fill="#ffffff"/>
+  <text x="800" y="58" text-anchor="middle" class="sans title">更多搜索计算何时逼近最优解</text>
+  <text x="800" y="96" text-anchor="middle" class="serif subtitle">MCTS 的一致性来自明确条件；固定大模型搜索通常缺少其中一部分</text>
+
+  <rect x="55" y="138" width="710" height="292" rx="18" class="blue"/>
+  <text x="410" y="184" text-anchor="middle" class="sans h2" fill="#335f87">UCT / MCTS：条件性收敛</text>
+  <rect x="82" y="215" width="296" height="68" rx="10" class="card"/>
+  <text x="230" y="244" text-anchor="middle" class="serif body">有限时域或折扣 MDP</text>
+  <text x="230" y="268" text-anchor="middle" class="serif small">固定动作集合与树深</text>
+  <rect x="442" y="215" width="296" height="68" rx="10" class="card"/>
+  <text x="590" y="244" text-anchor="middle" class="serif body">可调用环境生成模型</text>
+  <text x="590" y="268" text-anchor="middle" class="serif small">转移与奖励来自目标 MDP</text>
+  <rect x="82" y="298" width="296" height="68" rx="10" class="card"/>
+  <text x="230" y="327" text-anchor="middle" class="serif body">奖励有界</text>
+  <text x="230" y="351" text-anchor="middle" class="serif small">回报估计可集中</text>
+  <rect x="442" y="298" width="296" height="68" rx="10" class="card"/>
+  <text x="590" y="327" text-anchor="middle" class="serif body">各动作持续获得访问</text>
+  <text x="590" y="351" text-anchor="middle" class="serif small">UCB 分配访问次数</text>
+  <text x="410" y="408" text-anchor="middle" class="math formula">N → ∞  ⇒  P(û<tspan baseline-shift="sub" font-size="16">N</tspan> ≠ u*) → 0</text>
+
+  <rect x="835" y="138" width="710" height="292" rx="18" class="orange"/>
+  <text x="1190" y="184" text-anchor="middle" class="sans h2" fill="#a85325">固定大模型 guided search</text>
+  <rect x="868" y="222" width="178" height="92" rx="10" class="card"/>
+  <text x="957" y="255" text-anchor="middle" class="serif h3">proposal</text>
+  <text x="957" y="285" text-anchor="middle" class="math body">q<tspan baseline-shift="sub" font-size="14">θ,h</tspan>(u|x)</text>
+  <path d="M1053 268 H1112" class="line" marker-end="url(#arrow)"/>
+  <rect x="1120" y="222" width="178" height="92" rx="10" class="card"/>
+  <text x="1209" y="255" text-anchor="middle" class="serif h3">候选集合</text>
+  <text x="1209" y="285" text-anchor="middle" class="math body">T<tspan baseline-shift="sub" font-size="14">N</tspan>={u₁…u<tspan baseline-shift="sub" font-size="14">N</tspan>}</text>
+  <path d="M1305 268 H1364" class="line" marker-end="url(#arrow)"/>
+  <rect x="1372" y="222" width="142" height="92" rx="10" class="card"/>
+  <text x="1443" y="255" text-anchor="middle" class="serif h3">选择</text>
+  <text x="1443" y="285" text-anchor="middle" class="math body">arg max Ĵ</text>
+  <text x="1190" y="352" text-anchor="middle" class="serif body">训练分布塑造 proposal、表示与部分评价能力</text>
+  <text x="1190" y="382" text-anchor="middle" class="serif body">现实任务中的支持、转移与效用未必与训练目标一致</text>
+  <text x="1190" y="411" text-anchor="middle" class="serif small">更多采样首先逼近固定系统定义的搜索极限</text>
+
+  <text x="800" y="480" text-anchor="middle" class="sans h2">真实最优值与最终提交值之间的三项差距</text>
+  <rect x="55" y="515" width="470" height="230" rx="16" class="red"/>
+  <text x="290" y="557" text-anchor="middle" class="sans h3" fill="#a34d45">① 支持与表示差距</text>
+  <text x="290" y="603" text-anchor="middle" class="math formula">J*(Ω) − J*(𝒰<tspan baseline-shift="sub" font-size="16">h</tspan>)</text>
+  <text x="88" y="646" class="serif body">• 关键行动不可执行或未被表示</text>
+  <text x="88" y="680" class="serif body">• 即使 N → ∞ 也不会自动消失</text>
+  <text x="88" y="716" class="serif small">工具可扩展支持；错误限制也会排除优解</text>
+
+  <rect x="565" y="515" width="470" height="230" rx="16" class="blue"/>
+  <text x="800" y="557" text-anchor="middle" class="sans h3" fill="#335f87">② 有限搜索差距</text>
+  <text x="800" y="603" text-anchor="middle" class="math formula">J*(𝒰<tspan baseline-shift="sub" font-size="16">h</tspan>) − 𝔼J(u<tspan baseline-shift="sub" font-size="16">N</tspan>*)</text>
+  <text x="598" y="646" class="serif body">• proposal 集中、候选相关、访问不足</text>
+  <text x="598" y="680" class="serif body">• 覆盖与探索条件成立时可随 N 下降</text>
+  <text x="598" y="716" class="serif small">Harness 主要通过 guidance 提高有限计算效率</text>
+
+  <rect x="1075" y="515" width="470" height="230" rx="16" class="orange"/>
+  <text x="1310" y="557" text-anchor="middle" class="sans h3" fill="#a85325">③ 评价与选择差距</text>
+  <text x="1310" y="603" text-anchor="middle" class="math formula">𝔼[J(u<tspan baseline-shift="sub" font-size="16">N</tspan>*) − J(û<tspan baseline-shift="sub" font-size="16">N</tspan>)]</text>
+  <text x="1108" y="646" class="serif body">• Ĵ 与真实任务效用不一致</text>
+  <text x="1108" y="680" class="serif body">• 更强优化可能更充分利用 proxy 偏差</text>
+  <text x="1108" y="716" class="serif small">外部反馈可缓解失配，但不提供普遍保证</text>
+
+  <path d="M290 760 V790 H1310 V760" class="dash"/>
+  <text x="800" y="821" text-anchor="middle" class="serif body">增加任务时计算主要作用于第 ② 项；第 ① 与第 ③ 项决定渐近边界</text>
+
+  <rect x="55" y="854" width="710" height="218" rx="18" class="green"/>
+  <text x="410" y="897" text-anchor="middle" class="sans h2" fill="#317552">Harness 的双重作用</text>
+  <text x="86" y="936" class="serif body">• 工具与接口扩展可执行支持，可能缩小第 ① 项</text>
+  <text x="86" y="972" class="serif body">• 状态表示、权限与剪枝排除无效分支，缩小第 ② 项</text>
+  <text x="86" y="1008" class="serif body">• 外部反馈改善选择；过度限制与 proxy 失配也会引入偏差</text>
+  <text x="410" y="1048" text-anchor="middle" class="serif small">提高搜索效率与降低有限运行的波动，不等于渐近无偏</text>
+
+  <rect x="835" y="854" width="710" height="218" rx="18" class="blue"/>
+  <text x="1190" y="897" text-anchor="middle" class="sans h2" fill="#335f87">运行时的持续学习</text>
+  <text x="1190" y="941" text-anchor="middle" class="math formula">(q<tspan baseline-shift="sub" font-size="16">θ</tspan>, φ<tspan baseline-shift="sub" font-size="16">h</tspan>, v<tspan baseline-shift="sub" font-size="16">h</tspan>, z)<tspan baseline-shift="sub" font-size="16">t+1</tspan> = U((q<tspan baseline-shift="sub" font-size="16">θ</tspan>, φ<tspan baseline-shift="sub" font-size="16">h</tspan>, v<tspan baseline-shift="sub" font-size="16">h</tspan>, z)<tspan baseline-shift="sub" font-size="16">t</tspan>, e<tspan baseline-shift="sub" font-size="16">t</tspan>)</text>
+  <text x="866" y="986" class="serif body">• 由实际经验更新 proposal、表示、评价与未来搜索起点</text>
+  <text x="866" y="1022" class="serif body">• 作用于渐近边界，而不只是沿固定曲线搜索得更深</text>
+  <text x="1190" y="1056" text-anchor="middle" class="serif small">仍需迁移、保持、后期可塑性、更新门控与回滚检验</text>
+</svg>

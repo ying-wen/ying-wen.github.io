@@ -1,0 +1,435 @@
+{
+  "protocol": {
+    "transitions": [
+      {
+        "x": [
+          1,
+          0
+        ],
+        "next": [
+          0,
+          1
+        ],
+        "reward": 0
+      },
+      {
+        "x": [
+          0,
+          1
+        ],
+        "next": [
+          0,
+          0
+        ],
+        "reward": 1,
+        "gammaNext": 0
+      }
+    ],
+    "traces": {
+      "rows": [
+        {
+          "delta": 0,
+          "trace": [
+            1,
+            0
+          ],
+          "increment": [
+            0,
+            0
+          ],
+          "weights": [
+            0,
+            0
+          ]
+        },
+        {
+          "delta": 1,
+          "trace": [
+            0.7200000000000001,
+            1
+          ],
+          "increment": [
+            0.07200000000000001,
+            0.1
+          ],
+          "weights": [
+            0.07200000000000001,
+            0.1
+          ]
+        }
+      ],
+      "weights": [
+        0.07200000000000001,
+        0.1
+      ],
+      "afterResetTrace": [
+        0,
+        0
+      ],
+      "updates": 2,
+      "retainedTransitions": 0
+    },
+    "td0": {
+      "rows": [
+        {
+          "delta": 0,
+          "trace": [
+            1,
+            0
+          ],
+          "increment": [
+            0,
+            0
+          ],
+          "weights": [
+            0,
+            0
+          ]
+        },
+        {
+          "delta": 1,
+          "trace": [
+            0,
+            1
+          ],
+          "increment": [
+            0,
+            0.1
+          ],
+          "weights": [
+            0,
+            0.1
+          ]
+        }
+      ],
+      "weights": [
+        0,
+        0.1
+      ],
+      "afterResetTrace": [
+        0,
+        0
+      ],
+      "updates": 2,
+      "retainedTransitions": 0
+    },
+    "replay": {
+      "delta": 0.09000000000000001,
+      "trace": [
+        1,
+        0
+      ],
+      "increment": [
+        0.009000000000000001,
+        0
+      ],
+      "weights": [
+        0.009000000000000001,
+        0.1
+      ],
+      "updates": 3,
+      "retainedTransitions": 2
+    },
+    "batch": {
+      "weights": [
+        0,
+        0.05
+      ],
+      "updates": 1,
+      "peakRetainedTransitions": 2
+    }
+  },
+  "shared": {
+    "transitions": [
+      {
+        "x": [
+          1,
+          0
+        ],
+        "next": [
+          1,
+          1
+        ],
+        "reward": 0
+      },
+      {
+        "x": [
+          1,
+          1
+        ],
+        "next": [
+          0,
+          0
+        ],
+        "reward": 1,
+        "gammaNext": 0
+      }
+    ],
+    "traces": {
+      "rows": [
+        {
+          "delta": 0,
+          "trace": [
+            1,
+            0
+          ],
+          "increment": [
+            0,
+            0
+          ],
+          "weights": [
+            0,
+            0
+          ]
+        },
+        {
+          "delta": 1,
+          "trace": [
+            1.7200000000000002,
+            1
+          ],
+          "increment": [
+            0.17200000000000004,
+            0.1
+          ],
+          "weights": [
+            0.17200000000000004,
+            0.1
+          ]
+        }
+      ],
+      "weights": [
+        0.17200000000000004,
+        0.1
+      ],
+      "afterResetTrace": [
+        0,
+        0
+      ],
+      "updates": 2,
+      "retainedTransitions": 0
+    },
+    "td0": {
+      "rows": [
+        {
+          "delta": 0,
+          "trace": [
+            1,
+            0
+          ],
+          "increment": [
+            0,
+            0
+          ],
+          "weights": [
+            0,
+            0
+          ]
+        },
+        {
+          "delta": 1,
+          "trace": [
+            1,
+            1
+          ],
+          "increment": [
+            0.1,
+            0.1
+          ],
+          "weights": [
+            0.1,
+            0.1
+          ]
+        }
+      ],
+      "weights": [
+        0.1,
+        0.1
+      ],
+      "afterResetTrace": [
+        0,
+        0
+      ],
+      "updates": 2,
+      "retainedTransitions": 0
+    },
+    "replay": {
+      "delta": 0.08000000000000002,
+      "trace": [
+        1,
+        0
+      ],
+      "increment": [
+        0.008000000000000002,
+        0
+      ],
+      "weights": [
+        0.10800000000000001,
+        0.1
+      ],
+      "updates": 3,
+      "retainedTransitions": 2
+    },
+    "batch": {
+      "weights": [
+        0.05,
+        0.05
+      ],
+      "updates": 1,
+      "peakRetainedTransitions": 2
+    }
+  },
+  "clocks": {
+    "strict": [
+      {
+        "t": 0,
+        "arrival": 20,
+        "deadline": 40,
+        "start": 20,
+        "end": 32,
+        "miss": false,
+        "updates": [
+          {
+            "k": 1,
+            "start": 20,
+            "end": 32
+          }
+        ]
+      },
+      {
+        "t": 1,
+        "arrival": 40,
+        "deadline": 60,
+        "start": 40,
+        "end": 52,
+        "miss": false,
+        "updates": [
+          {
+            "k": 2,
+            "start": 40,
+            "end": 52
+          }
+        ]
+      },
+      {
+        "t": 2,
+        "arrival": 60,
+        "deadline": 80,
+        "start": 60,
+        "end": 72,
+        "miss": false,
+        "updates": [
+          {
+            "k": 3,
+            "start": 60,
+            "end": 72
+          }
+        ]
+      },
+      {
+        "t": 3,
+        "arrival": 80,
+        "deadline": 100,
+        "start": 80,
+        "end": 92,
+        "miss": false,
+        "updates": [
+          {
+            "k": 4,
+            "start": 80,
+            "end": 92
+          }
+        ]
+      }
+    ],
+    "repeat": [
+      {
+        "t": 0,
+        "arrival": 20,
+        "deadline": 40,
+        "start": 20,
+        "end": 44,
+        "miss": true,
+        "updates": [
+          {
+            "k": 1,
+            "start": 20,
+            "end": 32
+          },
+          {
+            "k": 2,
+            "start": 32,
+            "end": 44
+          }
+        ]
+      },
+      {
+        "t": 1,
+        "arrival": 40,
+        "deadline": 60,
+        "start": 44,
+        "end": 68,
+        "miss": true,
+        "updates": [
+          {
+            "k": 3,
+            "start": 44,
+            "end": 56
+          },
+          {
+            "k": 4,
+            "start": 56,
+            "end": 68
+          }
+        ]
+      },
+      {
+        "t": 2,
+        "arrival": 60,
+        "deadline": 80,
+        "start": 68,
+        "end": 92,
+        "miss": true,
+        "updates": [
+          {
+            "k": 5,
+            "start": 68,
+            "end": 80
+          },
+          {
+            "k": 6,
+            "start": 80,
+            "end": 92
+          }
+        ]
+      },
+      {
+        "t": 3,
+        "arrival": 80,
+        "deadline": 100,
+        "start": 92,
+        "end": 116,
+        "miss": true,
+        "updates": [
+          {
+            "k": 7,
+            "start": 92,
+            "end": 104
+          },
+          {
+            "k": 8,
+            "start": 104,
+            "end": 116
+          }
+        ]
+      }
+    ],
+    "batch": {
+      "arrival": 60,
+      "start": 60,
+      "end": 72,
+      "updates": 1,
+      "samples": 3
+    }
+  }
+}

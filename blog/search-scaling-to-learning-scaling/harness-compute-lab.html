@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:,">
+  <meta name="description" content="交互展示 harness 如何构造 guided search，以及任务分布与内层运行计算如何使 harness 排序发生变化。">
+  <title>Harness × Compute Lab｜搜索程序与运行计算的条件响应</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --ink: #17211c;
+      --body: #2d3932;
+      --muted: #66726b;
+      --line: #dfe5e1;
+      --line-strong: #c7d0ca;
+      --soft: #f6f8f7;
+      --blue: #285f86;
+      --blue-soft: #f2f7fb;
+      --orange: #d5652f;
+      --orange-soft: #fff6f0;
+      --green: #438665;
+      --green-soft: #f2f8f4;
+      --gray: #97a49d;
+      --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      --serif: ui-serif, "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", STSong, Georgia, serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); color: var(--ink); }
+    body { margin: 0; background: var(--bg); color: var(--body); font: 16px/1.72 var(--serif); text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+    a { color: var(--blue); text-underline-offset: .18em; }
+    button, input { font: inherit; }
+    button:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid rgba(40, 95, 134, .22); outline-offset: 3px; }
+    .topbar { border-bottom: 1px solid var(--line); background: rgba(255,255,255,.98); }
+    .topbar-inner { max-width: 1240px; min-height: 46px; margin: 0 auto; padding: 8px 24px; display: flex; align-items: center; justify-content: space-between; gap: 18px; color: var(--muted); font: 12px/1.45 var(--sans); }
+    .topbar a { color: inherit; text-decoration: none; }
+    .edition { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); letter-spacing: .04em; }
+    .edition::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--orange); }
+    .page { max-width: 1240px; margin: 0 auto; padding: 54px 24px 88px; }
+    header { max-width: 980px; margin-bottom: 34px; }
+    .eyebrow { margin: 0 0 13px; color: var(--orange); font: 700 12px/1.35 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    h1 { margin: 0; color: var(--ink); font: 700 clamp(38px, 5.7vw, 68px)/1.08 var(--serif); letter-spacing: -.035em; }
+    .lede { max-width: 880px; margin: 20px 0 0; color: #435149; font: 20px/1.7 var(--serif); }
+    .scope { max-width: 880px; margin: 14px 0 0; color: var(--muted); font: 14px/1.65 var(--sans); }
+    .thesis { margin: 26px 0 0; padding: 17px 20px; border-left: 4px solid var(--green); background: var(--green-soft); color: #20372b; font-size: 18px; }
+    nav { display: flex; flex-wrap: wrap; gap: 9px; margin: 25px 0 0; }
+    nav a { padding: 8px 11px; border: 1px solid var(--line-strong); border-radius: 4px; background: #fff; color: var(--ink); font: 13px/1.3 var(--sans); text-decoration: none; }
+    nav a:hover { border-color: var(--blue); color: var(--blue); }
+    main { display: grid; width: 100%; min-width: 0; gap: 28px; }
+    section { width: 100%; min-width: 0; border-top: 1px solid var(--line-strong); padding-top: 28px; scroll-margin-top: 24px; }
+    h2 { margin: 0 0 16px; color: var(--ink); font: 700 30px/1.35 var(--serif); letter-spacing: -.015em; }
+    h3 { margin: 0 0 8px; color: var(--ink); font: 700 16px/1.45 var(--sans); }
+    p { margin: .85em 0; }
+    .lab-grid { display: grid; grid-template-columns: 310px minmax(0, 1fr); gap: 24px; align-items: start; }
+    .lab-grid > *, .controls, .visuals, .chart-card, .summary-grid, .definition-grid { min-width: 0; }
+    .controls { position: sticky; top: 18px; display: grid; gap: 16px; padding: 20px; border: 1px solid var(--line); background: var(--soft); }
+    .control { display: grid; gap: 7px; }
+    .control-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; font: 13px/1.4 var(--sans); }
+    .control-head strong { color: var(--ink); }
+    output { color: var(--ink); font: 700 13px/1.2 var(--mono); }
+    input[type="range"] { width: 100%; accent-color: var(--green); cursor: pointer; }
+    .compute-control input[type="range"] { accent-color: var(--orange); }
+    .hint { color: var(--muted); font: 12px/1.5 var(--sans); }
+    .buttons { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 3px; }
+    button { border: 1px solid var(--line-strong); border-radius: 4px; padding: 8px 11px; background: #fff; color: var(--ink); cursor: pointer; font: 650 13px/1.25 var(--sans); }
+    button:hover { border-color: var(--blue); color: var(--blue); }
+    .copy-status { min-height: 18px; color: var(--green); font: 12px/1.4 var(--mono); }
+    .visuals { display: grid; gap: 16px; }
+    .chart-card { border: 1px solid var(--line); background: #fff; padding: 18px; }
+    .chart-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 12px; }
+    .chart-header p { max-width: 680px; margin: 0; color: var(--muted); font: 13px/1.6 var(--sans); }
+    .legend { display: flex; flex-wrap: wrap; gap: 12px; color: var(--muted); font: 12px/1.3 var(--sans); }
+    .legend span { display: inline-flex; align-items: center; gap: 6px; }
+    .legend i { width: 19px; height: 3px; display: inline-block; background: currentColor; }
+    .legend .h1 { color: var(--orange); }
+    .legend .h2 { color: var(--green); }
+    .legend .h3 { color: var(--gray); }
+    svg { display: block; width: 100%; height: auto; margin-top: 8px; overflow: visible; }
+    .axis { stroke: #94a099; stroke-width: 1.2; }
+    .gridline { stroke: #e7ebe8; stroke-width: 1; }
+    .h1-path, .h2-path, .h3-path { fill: none; stroke-width: 3.2; }
+    .h1-path { stroke: var(--orange); }
+    .h2-path { stroke: var(--green); }
+    .h3-path { stroke: var(--gray); stroke-dasharray: 7 6; }
+    .h1-dot, .h2-dot, .h3-dot { fill: #fff; stroke-width: 3.5; }
+    .h1-dot { stroke: var(--orange); }
+    .h2-dot { stroke: var(--green); }
+    .h3-dot { stroke: var(--gray); }
+    .compute-line { stroke: var(--blue); stroke-width: 1.5; stroke-dasharray: 5 5; }
+    .cross-line { stroke: #9aa8a0; stroke-width: 1; stroke-dasharray: 3 5; }
+    .axis-label, .tick-label, .annotation { fill: var(--muted); font-family: var(--sans); }
+    .axis-label { font-size: 13px; font-weight: 650; }
+    .tick-label { font-size: 11px; }
+    .annotation { font-size: 11px; }
+    .current-label { fill: var(--blue); font: 700 11px var(--mono); }
+    .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .summary-card { border: 1px solid var(--line); background: #fff; padding: 16px; }
+    .summary-card.fixed { border-top: 4px solid var(--blue); }
+    .summary-card.distribution { border-top: 4px solid var(--green); }
+    .summary-card p { margin: 0; color: var(--muted); font: 13px/1.55 var(--sans); }
+    .rank-list { display: grid; gap: 7px; margin-top: 12px; }
+    .rank-row { display: grid; grid-template-columns: 27px minmax(0,1fr) auto; gap: 9px; align-items: center; padding: 8px 9px; background: var(--soft); font: 13px/1.35 var(--sans); }
+    .rank-row .rank { color: var(--muted); font-family: var(--mono); }
+    .rank-row strong { color: var(--ink); }
+    .rank-row output { color: var(--ink); }
+    .interpretation { padding: 14px 16px; border-left: 3px solid var(--blue); background: var(--blue-soft); font-size: 15px; }
+    .equation { margin-top: 16px; padding: 13px 15px; overflow-x: auto; border: 1px solid var(--line); background: #fcfdfc; color: var(--ink); font: 14px/1.65 var(--mono); white-space: nowrap; }
+    .table-wrap { width: 100%; max-width: 100%; overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font: 14px/1.55 var(--sans); }
+    th, td { min-width: 150px; padding: 11px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--ink); background: var(--soft); font-weight: 700; }
+    tr:last-child td { border-bottom: 0; }
+    .definition-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; }
+    .definition-card { border: 1px solid var(--line); padding: 17px; background: #fff; }
+    .definition-card p { margin: 0; font: 14px/1.65 var(--sans); }
+    .definition-card .symbol { margin-bottom: 9px; color: var(--blue); font: 700 15px/1.35 var(--mono); }
+    .boundary { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .note { border: 1px solid var(--line); padding: 18px; }
+    .note ul { margin: 8px 0 0; padding-left: 1.25em; }
+    .note li { margin: .5em 0; }
+    .note.model { background: var(--green-soft); border-color: #cfe0d5; }
+    .note.limit { background: var(--orange-soft); border-color: #eed6c8; }
+    footer { margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font: 13px/1.65 var(--sans); }
+    @media (max-width: 920px) { .page { padding-top: 42px; } .lab-grid { grid-template-columns: 1fr; } .controls { position: static; grid-template-columns: 1fr 1fr; } .buttons, .copy-status { grid-column: 1 / -1; } .definition-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 720px) { .topbar-inner { padding-inline: 18px; } .page { padding: 38px 18px 64px; } .lede { font-size: 18px; } .summary-grid, .boundary { grid-template-columns: 1fr; } }
+    @media (max-width: 500px) { h1 { font-size: 38px; } h2 { font-size: 26px; } .controls { grid-template-columns: 1fr; } .buttons, .copy-status { grid-column: auto; } .topbar-inner { align-items: flex-start; flex-direction: column; gap: 3px; } th, td { min-width: 132px; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media print { .topbar, nav, .controls, .buttons, .copy-status { display: none !important; } .page { max-width: none; padding: 0; } .lab-grid { display: block; } .chart-card, .summary-grid, .definition-grid, .boundary { break-inside: avoid; } }
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="topbar-inner"><span class="edition">Interactive Companion · 2026-08-23</span><a href="/zh/blog/search-scaling-to-learning-scaling/">返回《从 Search Scaling 到 Learning Scaling》</a></div></div>
+  <div class="page">
+    <header>
+      <p class="eyebrow">Harness × Compute Lab</p>
+      <h1>“更好的 harness”取决于在哪里运行</h1>
+      <p class="lede">Harness 通过状态表示、可行动作、proposal、评价与计算分配构造 guided search。强限制可以让有限计算迅速集中于少数候选，也可能排除高价值分支；较宽的候选支持需要更多计算，却可能达到更高表现。</p>
+      <p class="scope">下列函数只服务于概念解释，不取自公开基准，也不假定经验曲线具有相同函数形式。调节任务构成与内层运行计算，考察三种搜索程序的排序何时翻转。</p>
+      <div class="thesis">固定 harness 后增加计算，是沿一条条件曲线移动；替换 harness，是切换条件曲线。曲线可以交叉，因此设计目标必须声明任务分布与内层运行计算。</div>
+      <nav aria-label="实验目录"><a href="#experiment">交互实验</a><a href="#formalization">形式定义</a><a href="#boundaries">解释界限</a></nav>
+    </header>
+    <main>
+      <section id="experiment">
+        <h2>任务分布与计算条件共同决定排序</h2>
+        <div class="lab-grid">
+          <aside class="controls" aria-label="实验参数">
+            <div class="control"><div class="control-head"><strong>开放组合任务占比</strong><output id="task-output" for="task-mix">55%</output></div><input id="task-mix" type="range" min="0" max="100" step="5" value="55"><span class="hint">0% 偏向结构稳定、候选规律明确的任务；100% 偏向需要非常规组合的任务。</span></div>
+            <div class="control compute-control"><div class="control-head"><strong>固定内层计算 c₀</strong><output id="compute-output" for="fixed-compute">24</output></div><input id="fixed-compute" type="range" min="4" max="80" step="2" value="24"><span class="hint">候选展开、搜索节点或工具调用的示意单位。</span></div>
+            <div class="control compute-control"><div class="control-head"><strong>低计算任务占比</strong><output id="low-share-output" for="low-share">80%</output></div><input id="low-share" type="range" min="0" max="100" step="5" value="80"><span class="hint">P<sub>C</sub> 在 c=8 与 c=64 之间的两点混合；滑块表示 c=8 的概率。</span></div>
+            <div class="control"><div class="control-head"><strong>评价可靠性 q</strong><output id="reliability-output" for="reliability">90%</output></div><input id="reliability" type="range" min="45" max="100" step="5" value="90"><span class="hint">访问高质量候选后，评价程序识别并提交它的共同概率因子。</span></div>
+            <div class="buttons"><button type="button" id="reset">恢复默认值</button><button type="button" id="copy">复制当前设置</button></div>
+            <div class="copy-status" id="copy-status" role="status" aria-live="polite"></div>
+          </aside>
+          <div class="visuals">
+            <article class="chart-card">
+              <div class="chart-header"><div><h3>同一任务分布 D 上的三条条件响应</h3><p>h₁ 以强限制换取较快的早期访问；h₂ 保留较宽候选支持，初期较慢；h₃ 的 guidance 与任务结构失配。</p></div><div class="legend" aria-label="曲线图例"><span class="h1"><i></i>h₁ 强限制</span><span class="h2"><i></i>h₂ 较宽支持</span><span class="h3"><i></i>h₃ 引导失配</span></div></div>
+              <svg id="chart" viewBox="0 0 820 420" role="img" aria-labelledby="chart-title chart-desc">
+                <title id="chart-title">三种 harness 随内层运行计算变化的条件响应</title><desc id="chart-desc">横轴为内层任务计算，纵轴为任务表现。强限制曲线在低计算条件下上升更快，较宽支持曲线在高计算条件下可能超过它。</desc>
+                <line class="gridline" x1="64" y1="72" x2="786" y2="72"></line><line class="gridline" x1="64" y1="152" x2="786" y2="152"></line><line class="gridline" x1="64" y1="232" x2="786" y2="232"></line><line class="gridline" x1="64" y1="312" x2="786" y2="312"></line>
+                <line class="axis" x1="64" y1="352" x2="786" y2="352"></line><line class="axis" x1="64" y1="32" x2="64" y2="352"></line>
+                <text class="tick-label" x="54" y="356" text-anchor="end">10</text><text class="tick-label" x="54" y="316" text-anchor="end">20</text><text class="tick-label" x="54" y="236" text-anchor="end">40</text><text class="tick-label" x="54" y="156" text-anchor="end">60</text><text class="tick-label" x="54" y="76" text-anchor="end">80</text>
+                <text class="tick-label" x="64" y="371" text-anchor="middle">0</text><text class="tick-label" x="244.5" y="371" text-anchor="middle">20</text><text class="tick-label" x="425" y="371" text-anchor="middle">40</text><text class="tick-label" x="605.5" y="371" text-anchor="middle">60</text><text class="tick-label" x="786" y="371" text-anchor="middle">80</text>
+                <text class="axis-label" x="425" y="404" text-anchor="middle">内层任务计算 c</text><text class="axis-label" x="18" y="192" text-anchor="middle" transform="rotate(-90 18 192)">当前任务表现 J</text>
+                <line id="compute-line" class="compute-line" x1="0" y1="32" x2="0" y2="352"></line><text id="compute-label" class="current-label" x="0" y="47" text-anchor="middle"></text>
+                <line id="cross-line" class="cross-line" x1="0" y1="32" x2="0" y2="352"></line><text id="cross-label" class="annotation" x="0" y="337" text-anchor="middle"></text>
+                <path id="h1-path" class="h1-path"></path><path id="h2-path" class="h2-path"></path><path id="h3-path" class="h3-path"></path>
+                <circle id="h1-dot" class="h1-dot" r="6"></circle><circle id="h2-dot" class="h2-dot" r="6"></circle><circle id="h3-dot" class="h3-dot" r="6"></circle>
+              </svg>
+            </article>
+            <div class="summary-grid">
+              <article class="summary-card fixed"><h3>固定计算 c₀ 下的排序</h3><p id="fixed-description"></p><div id="fixed-ranking" class="rank-list"></div></article>
+              <article class="summary-card distribution"><h3>实际计算分布 P<sub>C</sub> 下的排序</h3><p id="distribution-description"></p><div id="distribution-ranking" class="rank-list"></div></article>
+            </div>
+            <div class="interpretation" id="interpretation"></div>
+          </div>
+        </div>
+      </section>
+      <section id="formalization">
+        <h2>从曲线移动到设计选择</h2>
+        <p>固定搜索程序 h 后，增加 c 只调整有限运行中的访问深度、宽度与核验次数。替换 h 则会重构状态表示、可行动作、候选支持、proposal、评价与计算分配，因此进入另一条条件曲线。</p>
+        <div class="equation">Γ<sub>h</sub> = { (c, J<sub>task</sub>(c | h,z,D)) : c &gt; 0 }</div>
+        <div class="equation">h*(c₀;z,D) = arg max<sub>h∈H</sub> J<sub>task</sub>(c₀ | h,z,D)</div>
+        <div class="equation">h*(P<sub>C</sub>;z,D) = arg max<sub>h∈H</sub> E<sub>x∼D,c∼P<sub>C</sub>(·|x)</sub>[J(Search<sub>h</sub>(x,z;c),x)]</div>
+        <div class="definition-grid">
+          <article class="definition-card"><div class="symbol">D</div><p>部署任务的概率分布。任务构成不同，同一内部表示与候选限制利用的结构先验也不同。</p></article>
+          <article class="definition-card"><div class="symbol">c 与 P<sub>C</sub>(c|x)</div><p>候选 harness 在内层任务中实际获得的计算。固定延迟对应 c₀；按难度动态分配计算对应条件分布 P<sub>C</sub>。</p></article>
+          <article class="definition-card"><div class="symbol">外层设计搜索</div><p>产生、执行并比较候选 h 的另一个搜索过程。增加外层候选数可以找到不同 h，但不会把任一 h 的内层 c 自动提高。</p></article>
+        </div>
+        <h3 style="margin-top:22px">当前参数下的离散读数</h3>
+        <div class="table-wrap"><table><thead><tr><th>Harness</th><th>c=8</th><th>c=24</th><th>c=64</th><th>主要结构</th></tr></thead><tbody id="score-table"></tbody></table></div>
+      </section>
+      <section id="boundaries">
+        <h2>这项交互实验支持怎样的理解</h2>
+        <div class="boundary">
+          <article class="note model"><h3>模型中明确表达的关系</h3><ul><li>较强限制提高早期访问效率，同时降低部分任务上的可达上限。</li><li>较宽支持需要更多计算，因而可能在曲线交叉后占优。</li><li>固定 c₀ 与实际 P<sub>C</sub> 可以提交不同 harness。</li><li>评价可靠性影响候选机会转化为最终提交的程度。</li></ul></article>
+          <article class="note limit"><h3>模型没有预设的经验结论</h3><ul><li>三条函数不是对任何公开系统或基准的拟合。</li><li>h₁、h₂、h₃ 不对应具体产品，也不表示固定能力等级。</li><li>真实 harness 还会带来不同的计算成本、错误相关性、评价偏差与任务到达过程。</li><li>外层搜索计算与内层任务计算必须在实验记录中使用不同变量。</li></ul></article>
+        </div>
+      </section>
+    </main>
+    <footer><p><strong>函数说明：</strong>每条曲线以饱和响应表示“早期访问效率 × 可达表现上限”，再按任务构成加权并乘以共同评价可靠性。参数只用于形成可解释的曲线交叉。</p><p><a href="/zh/blog/search-scaling-to-learning-scaling/">返回完整 Blog</a> · <a href="./search-learning-lab.html">打开 Search × Learning 两因素实验</a></p></footer>
+  </div>
+  <script>
+    (function () {
+      "use strict";
+      var defaults = { taskMix: 55, fixedCompute: 24, lowShare: 80, reliability: 90 };
+      var controls = { taskMix: document.getElementById("task-mix"), fixedCompute: document.getElementById("fixed-compute"), lowShare: document.getElementById("low-share"), reliability: document.getElementById("reliability") };
+      var outputs = { taskMix: document.getElementById("task-output"), fixedCompute: document.getElementById("compute-output"), lowShare: document.getElementById("low-share-output"), reliability: document.getElementById("reliability-output") };
+      var base = 20, lowCompute = 8, highCompute = 64;
+      var specs = {
+        h1: { label: "h₁ 强限制", routine: { max: 55, rate: .12 }, open: { max: 25, rate: .105 }, note: "早期集中，候选支持较窄" },
+        h2: { label: "h₂ 较宽支持", routine: { max: 53, rate: .045 }, open: { max: 72, rate: .036 }, note: "早期较慢，高计算上限较高" },
+        h3: { label: "h₃ 引导失配", routine: { max: 32, rate: .075 }, open: { max: 28, rate: .06 }, note: "访问方向与任务结构失配" }
+      };
+      function readState() { return { taskMix: Number(controls.taskMix.value) / 100, fixedCompute: Number(controls.fixedCompute.value), lowShare: Number(controls.lowShare.value) / 100, reliability: Number(controls.reliability.value) / 100 }; }
+      function component(part, c) { return part.max * (1 - Math.exp(-part.rate * c)); }
+      function score(key, c, state) { var spec = specs[key]; var raw = (1 - state.taskMix) * component(spec.routine, c) + state.taskMix * component(spec.open, c); return base + state.reliability * raw; }
+      function distributionScore(key, state) { return state.lowShare * score(key, lowCompute, state) + (1 - state.lowShare) * score(key, highCompute, state); }
+      function xMap(c) { return 64 + (c / 80) * 722; }
+      function yMap(value) { return 352 - ((value - 10) / 80) * 320; }
+      function pathFor(key, state) { var points = []; for (var i = 0; i <= 160; i += 1) { var c = i / 2; points.push((i === 0 ? "M" : "L") + xMap(c).toFixed(2) + "," + yMap(score(key, c, state)).toFixed(2)); } return points.join(" "); }
+      function findCross(state) { var previous = score("h1", 0, state) - score("h2", 0, state); for (var i = 1; i <= 320; i += 1) { var c = i / 4; var current = score("h1", c, state) - score("h2", c, state); if (previous * current < 0) return c; previous = current; } return null; }
+      function ranking(values) { return Object.keys(values).map(function (key) { return { key: key, value: values[key] }; }).sort(function (a, b) { return b.value - a.value; }); }
+      function rankMarkup(items) { return items.map(function (item, index) { return '<div class="rank-row"><span class="rank">' + (index + 1) + '</span><strong>' + specs[item.key].label + '</strong><output>' + item.value.toFixed(1) + '</output></div>'; }).join(""); }
+      function setDot(key, c, state) { var dot = document.getElementById(key + "-dot"); dot.setAttribute("cx", xMap(c).toFixed(2)); dot.setAttribute("cy", yMap(score(key, c, state)).toFixed(2)); }
+      function renderTable(state) { document.getElementById("score-table").innerHTML = ["h1", "h2", "h3"].map(function (key) { return "<tr><td><strong>" + specs[key].label + "</strong></td><td>" + score(key, 8, state).toFixed(1) + "</td><td>" + score(key, 24, state).toFixed(1) + "</td><td>" + score(key, 64, state).toFixed(1) + "</td><td>" + specs[key].note + "</td></tr>"; }).join(""); }
+      function render() {
+        var state = readState();
+        outputs.taskMix.value = Math.round(state.taskMix * 100) + "%"; outputs.fixedCompute.value = String(state.fixedCompute); outputs.lowShare.value = Math.round(state.lowShare * 100) + "%"; outputs.reliability.value = Math.round(state.reliability * 100) + "%";
+        ["h1", "h2", "h3"].forEach(function (key) { document.getElementById(key + "-path").setAttribute("d", pathFor(key, state)); setDot(key, state.fixedCompute, state); });
+        var computeX = xMap(state.fixedCompute), computeLine = document.getElementById("compute-line"), computeLabel = document.getElementById("compute-label"); computeLine.setAttribute("x1", computeX.toFixed(2)); computeLine.setAttribute("x2", computeX.toFixed(2)); computeLabel.setAttribute("x", computeX.toFixed(2)); computeLabel.textContent = "c₀=" + state.fixedCompute;
+        var cross = findCross(state), crossLine = document.getElementById("cross-line"), crossLabel = document.getElementById("cross-label");
+        if (cross === null || cross < .5) { crossLine.style.display = "none"; crossLabel.style.display = "none"; } else { var crossX = xMap(cross); crossLine.style.display = "block"; crossLabel.style.display = "block"; crossLine.setAttribute("x1", crossX.toFixed(2)); crossLine.setAttribute("x2", crossX.toFixed(2)); crossLabel.setAttribute("x", crossX.toFixed(2)); crossLabel.textContent = "h₁ / h₂ 约在 c=" + cross.toFixed(1) + " 交叉"; }
+        var fixedValues = {}, distributionValues = {};
+        ["h1", "h2", "h3"].forEach(function (key) { fixedValues[key] = score(key, state.fixedCompute, state); distributionValues[key] = distributionScore(key, state); });
+        var fixedRank = ranking(fixedValues), distributionRank = ranking(distributionValues);
+        document.getElementById("fixed-ranking").innerHTML = rankMarkup(fixedRank); document.getElementById("distribution-ranking").innerHTML = rankMarkup(distributionRank);
+        document.getElementById("fixed-description").textContent = "每项任务使用 c₀=" + state.fixedCompute + "，直接比较三条曲线在该计算水平上的任务表现。";
+        document.getElementById("distribution-description").textContent = "P_C(c=8)=" + Math.round(state.lowShare * 100) + "%；P_C(c=64)=" + Math.round((1-state.lowShare) * 100) + "%；按实际运行频率求期望。";
+        document.getElementById("interpretation").textContent = fixedRank[0].key === distributionRank[0].key ? "当前设置下，两种提交条件都选择 " + specs[fixedRank[0].key].label + "。移动 c₀ 或低计算任务占比，排序仍可能在曲线交叉附近翻转。" : "当前设置下，固定 c₀ 选择 " + specs[fixedRank[0].key].label + "，实际计算分布则选择 " + specs[distributionRank[0].key].label + "。同一组 harness 没有脱离运行条件的统一排序。";
+        renderTable(state);
+      }
+      function reset() { Object.keys(defaults).forEach(function (key) { controls[key].value = String(defaults[key]); }); document.getElementById("copy-status").textContent = ""; render(); }
+      function scenarioMarkdown() {
+        var state = readState(), fixedValues = {}, distributionValues = {};
+        ["h1", "h2", "h3"].forEach(function (key) { fixedValues[key] = score(key, state.fixedCompute, state); distributionValues[key] = distributionScore(key, state); });
+        var fixedRank = ranking(fixedValues), distributionRank = ranking(distributionValues);
+        return ["### Harness × Compute Lab 当前设置", "", "- 开放组合任务占比: " + Math.round(state.taskMix * 100) + "%", "- 固定内层计算 c₀: " + state.fixedCompute, "- P_C(c=8): " + Math.round(state.lowShare * 100) + "%", "- P_C(c=64): " + Math.round((1-state.lowShare) * 100) + "%", "- 评价可靠性 q: " + Math.round(state.reliability * 100) + "%", "- 固定 c₀ 的首选: " + specs[fixedRank[0].key].label + " (" + fixedRank[0].value.toFixed(1) + ")", "- P_C 下的首选: " + specs[distributionRank[0].key].label + " (" + distributionRank[0].value.toFixed(1) + ")", "", "教学函数，不对应公开基准。"].join("\n");
+      }
+      Object.keys(controls).forEach(function (key) { controls[key].addEventListener("input", render); });
+      document.getElementById("reset").addEventListener("click", reset);
+      document.getElementById("copy").addEventListener("click", function () { var status = document.getElementById("copy-status"); if (!navigator.clipboard) { status.textContent = "当前浏览器不支持剪贴板写入。"; return; } navigator.clipboard.writeText(scenarioMarkdown()).then(function () { status.textContent = "已复制为 Markdown。"; }, function () { status.textContent = "复制失败，请手动记录当前设置。"; }); });
+      render();
+    }());
+  </script>
+</body>
+</html>

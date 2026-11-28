@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050" role="img" aria-labelledby="title desc">
+  <title id="title">自动驾驶中的真实数据、合成数据、搜索与持续学习</title>
+  <desc id="desc">真实数据和合成数据经预训练与强化学习后训练形成部署先验。Harness 在当前道路条件下组织轨迹搜索。更多搜索计算只能更充分地利用固定近似。真实道路中的行动后果经持久更新影响以后驾驶，才进入运行时持续学习与 Learning Scaling。</desc>
+  <rect width="1600" height="1050" fill="#ffffff"/>
+  <style>
+    .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+    .serif{font-family:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",serif}
+    .title{font-size:42px;font-weight:730;fill:#18221d}.lead{font-size:21px;fill:#58645e}
+    .h2{font-size:26px;font-weight:720;fill:#26332c}.h3{font-size:21px;font-weight:700}
+    .body{font-size:18px;fill:#3e4b44}.small{font-size:16px;fill:#65716a}.tiny{font-size:14px;fill:#718078}
+    .green{fill:#2f704f}.blue{fill:#365f82}.orange{fill:#b84e1b}.red{fill:#985047}.dark{fill:#26332c}
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#6d7972"/></marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#2f704f"/></marker>
+    <marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#b84e1b"/></marker>
+  </defs>
+
+  <text x="800" y="62" text-anchor="middle" class="sans title">资料扩大先验，搜索利用先验，经历修正先验</text>
+  <text x="800" y="101" text-anchor="middle" class="serif lead">自动驾驶说明三者为何互补，也说明为什么最后仍需要 Learning Scaling</text>
+
+  <text x="72" y="158" class="sans h2 dark">模型构建期：形成可以部署的初始近似</text>
+
+  <g transform="translate(72,190)">
+    <rect x="0" y="0" width="350" height="196" rx="6" fill="#f5faf7" stroke="#77a58a" stroke-width="2"/>
+    <text x="24" y="42" class="sans h3 green">真实数据</text>
+    <text x="24" y="78" class="serif body">道路记录、人工驾驶、传感器与后果</text>
+    <line x1="24" y1="98" x2="326" y2="98" stroke="#cbd9d1"/>
+    <text x="24" y="128" class="serif small">提供现实锚点与自然行为分布</text>
+    <text x="24" y="158" class="serif small">但只记录已经发生的历史与旧策略</text>
+  </g>
+
+  <g transform="translate(452,190)">
+    <rect x="0" y="0" width="350" height="196" rx="6" fill="#f5f8fb" stroke="#7898b2" stroke-width="2"/>
+    <text x="24" y="42" class="sans h3 blue">合成数据与模拟</text>
+    <text x="24" y="78" class="serif body">稀有路况、可控变化、低成本标注</text>
+    <line x1="24" y1="98" x2="326" y2="98" stroke="#ccd7e0"/>
+    <text x="24" y="128" class="serif small">扩展设计者已经表达的条件</text>
+    <text x="24" y="158" class="serif small">同时继承生成程序与模拟器的遗漏</text>
+  </g>
+
+  <path d="M422 288 H438" stroke="#6d7972" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M802 288 H832" stroke="#6d7972" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <g transform="translate(846,190)">
+    <rect x="0" y="0" width="682" height="196" rx="6" fill="#f8f8f6" stroke="#9ba59f" stroke-width="2"/>
+    <text x="24" y="42" class="sans h3 dark">预训练与 RL 后训练</text>
+    <text x="24" y="78" class="serif body">把外部资料和训练轨迹写入共享参数状态</text>
+    <line x1="24" y1="98" x2="658" y2="98" stroke="#d8ddda"/>
+    <text x="24" y="128" class="serif small">形成道路状态表征、后果预测、行动候选与近似评价</text>
+    <text x="24" y="158" class="serif small">提高部署起点；训练目标与真实道路仍可能存在系统性失配</text>
+  </g>
+
+  <line x1="72" y1="432" x2="1528" y2="432" stroke="#dfe4e1" stroke-width="2"/>
+  <text x="72" y="480" class="sans h2 dark">当前驾驶：Harness 把固定先验组织为 guided search</text>
+
+  <g transform="translate(72,512)">
+    <text x="0" y="34" class="sans h3 orange">道路观测</text>
+    <text x="0" y="68" class="serif small">施工、行人、车流、路面</text>
+    <path d="M210 48 H330" stroke="#6d7972" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+    <rect x="346" y="0" width="468" height="126" rx="6" fill="#fff8f3" stroke="#cf815d" stroke-width="2"/>
+    <text x="370" y="39" class="sans h3 orange">Harness</text>
+    <text x="370" y="72" class="serif body">状态组织、合法行动、安全约束、评价与提交</text>
+    <text x="370" y="101" class="serif small">限制并引导内部搜索图</text>
+
+    <path d="M814 63 H908" stroke="#6d7972" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <g transform="translate(930,0)">
+      <path d="M0 16 C92 16 102 8 176 8" fill="none" stroke="#b84e1b" stroke-width="3"/>
+      <path d="M0 58 C92 58 112 48 218 48" fill="none" stroke="#b84e1b" stroke-width="3" opacity=".75"/>
+      <path d="M0 100 C104 100 146 96 270 96" fill="none" stroke="#b84e1b" stroke-width="3" opacity=".5"/>
+      <text x="292" y="61" class="sans h3 orange">轨迹选择</text>
+      <text x="292" y="93" class="serif small">转向、制动、等待、绕行</text>
+    </g>
+  </g>
+
+  <g transform="translate(72,674)">
+    <path d="M0 0 H660" stroke="#b84e1b" stroke-width="3" marker-end="url(#arrow-orange)"/>
+    <text x="0" y="-16" class="sans h3 orange">Search Scaling</text>
+    <text x="0" y="33" class="serif body">固定模型与 harness，增加当前时刻的候选轨迹、展开深度与评价计算</text>
+    <text x="0" y="66" class="serif small">主要减少已可达轨迹尚未被访问的有限搜索误差</text>
+
+    <text x="800" y="-16" class="sans h3 red">仍未自动消失</text>
+    <text x="800" y="18" class="serif body">未被表达的道路状态、错误的转移预测、评价偏差与环境变化</text>
+    <text x="800" y="51" class="serif small">更多搜索可以更充分地求解当前近似，却不能保证近似与现实一致</text>
+  </g>
+
+  <line x1="72" y1="780" x2="1528" y2="780" stroke="#dfe4e1" stroke-width="2"/>
+  <text x="72" y="828" class="sans h2 green">真实部署：行动后果进入以后驾驶</text>
+
+  <g transform="translate(72,858)">
+    <circle cx="72" cy="52" r="50" fill="#f7fbf8" stroke="#70a083" stroke-width="2"/>
+    <text x="72" y="44" text-anchor="middle" class="sans h3 green">行动</text>
+    <text x="72" y="72" text-anchor="middle" class="serif small">真实执行</text>
+    <path d="M124 52 H272" stroke="#2f704f" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+
+    <circle cx="340" cy="52" r="50" fill="#f7fbf8" stroke="#70a083" stroke-width="2"/>
+    <text x="340" y="44" text-anchor="middle" class="sans h3 green">后果</text>
+    <text x="340" y="72" text-anchor="middle" class="serif small">现实反馈</text>
+    <path d="M392 52 H540" stroke="#2f704f" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+
+    <circle cx="610" cy="52" r="50" fill="#f7fbf8" stroke="#70a083" stroke-width="2"/>
+    <text x="610" y="44" text-anchor="middle" class="sans h3 green">更新</text>
+    <text x="610" y="72" text-anchor="middle" class="serif small">跨任务保留</text>
+    <path d="M662 52 H810" stroke="#2f704f" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+
+    <circle cx="880" cy="52" r="50" fill="#f7fbf8" stroke="#70a083" stroke-width="2"/>
+    <text x="880" y="44" text-anchor="middle" class="sans h3 green">以后驾驶</text>
+    <text x="880" y="72" text-anchor="middle" class="serif small">相同任务时计算</text>
+
+    <path d="M930 52 H1456" stroke="#2f704f" stroke-width="3" marker-end="url(#arrow-green)"/>
+    <text x="1190" y="28" text-anchor="middle" class="sans h3 green">Learning Scaling</text>
+    <text x="1190" y="64" text-anchor="middle" class="serif body">累计第一人称经历改善长期控制</text>
+    <text x="1190" y="94" text-anchor="middle" class="serif small">同时维持旧能力保持与后期可塑性</text>
+  </g>
+
+  <text x="1528" y="1022" text-anchor="end" class="serif tiny">关系示意；不主张在安全关键系统中实施无约束在线更新</text>
+</svg>

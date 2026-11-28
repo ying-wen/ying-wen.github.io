@@ -1,0 +1,470 @@
+{
+  "source": "/crl-code/tutorials/learned_subgoal_cycle.py",
+  "gamma": 0.9,
+  "scope": "Finite deterministic teaching executions; different practice budgets, not a matched-budget performance estimate.",
+  "updates": [
+    {
+      "t": 20,
+      "phase": "practice",
+      "goal": "C",
+      "skill_version": null,
+      "state": "S",
+      "action": "lower",
+      "reward": 0,
+      "successor": "B",
+      "next_actions": [
+        "forward"
+      ],
+      "physical_terminal": false,
+      "td": {
+        "goal": "C",
+        "signal": 0,
+        "task_stopped": false,
+        "old": 0,
+        "next_value": 0,
+        "target": 0,
+        "delta": 0,
+        "new": 0,
+        "start_values": {
+          "upper": 0,
+          "lower": 0
+        },
+        "updates": 3
+      }
+    },
+    {
+      "t": 21,
+      "phase": "practice",
+      "goal": "C",
+      "skill_version": null,
+      "state": "B",
+      "action": "forward",
+      "reward": 0,
+      "successor": "C",
+      "next_actions": [
+        "exit",
+        "probe"
+      ],
+      "physical_terminal": false,
+      "td": {
+        "goal": "C",
+        "signal": 1,
+        "task_stopped": true,
+        "old": 0,
+        "next_value": 0,
+        "target": 1,
+        "delta": 1,
+        "new": 1,
+        "start_values": {
+          "upper": 0,
+          "lower": 0
+        },
+        "updates": 4
+      }
+    },
+    {
+      "t": 24,
+      "phase": "practice",
+      "goal": "C",
+      "skill_version": null,
+      "state": "S",
+      "action": "lower",
+      "reward": 0,
+      "successor": "B",
+      "next_actions": [
+        "forward"
+      ],
+      "physical_terminal": false,
+      "td": {
+        "goal": "C",
+        "signal": 0,
+        "task_stopped": false,
+        "old": 0,
+        "next_value": 1,
+        "target": 0.9,
+        "delta": 0.9,
+        "new": 0.9,
+        "start_values": {
+          "upper": 0,
+          "lower": 0.9
+        },
+        "updates": 7
+      }
+    }
+  ],
+  "branches": [
+    {
+      "practiceEpisodes": 3,
+      "skill": {
+        "goal": "C",
+        "version": 1,
+        "initiation": [
+          "S"
+        ],
+        "policy": {
+          "S": "upper",
+          "A": "exit",
+          "B": "forward"
+        },
+        "stop_on_goal_or_physical_terminal": true,
+        "q": {
+          "S": {
+            "upper": 0,
+            "lower": 0
+          },
+          "A": {
+            "exit": 0,
+            "probe": 0
+          },
+          "X": {},
+          "B": {
+            "forward": 1
+          },
+          "C": {
+            "exit": 0
+          },
+          "Y": {}
+        },
+        "real_td_updates": 6
+      },
+      "execution": {
+        "phase": "model_collection",
+        "goal": "C",
+        "skill_version": 1,
+        "path": [
+          "S",
+          "A",
+          "X"
+        ],
+        "records": [
+          {
+            "t": 21,
+            "phase": "model_collection",
+            "goal": "C",
+            "skill_version": 1,
+            "state": "S",
+            "action": "upper",
+            "reward": 0,
+            "successor": "A",
+            "next_actions": [
+              "exit",
+              "probe"
+            ],
+            "physical_terminal": false
+          },
+          {
+            "t": 22,
+            "phase": "model_collection",
+            "goal": "C",
+            "skill_version": 1,
+            "state": "A",
+            "action": "exit",
+            "reward": 1,
+            "successor": "X",
+            "next_actions": [],
+            "physical_terminal": true
+          }
+        ],
+        "external_return": 0.9,
+        "completed": true,
+        "physical_terminal": true,
+        "goal_success": false,
+        "stop_reason": "physical_terminal"
+      },
+      "model": {
+        "goal": "C",
+        "version": 1,
+        "start": "S",
+        "reward": 0.9,
+        "duration": 2,
+        "endpoint": "X",
+        "endpoint_weight": 0.81,
+        "physical_terminal": true,
+        "goal_success": false,
+        "samples": 1,
+        "evidence_steps": [
+          21,
+          22
+        ]
+      },
+      "probe": null,
+      "chosen": "A",
+      "scores": {
+        "A": 0.9,
+        "C": 0.9
+      },
+      "deployment": {
+        "skill_episode": {
+          "phase": "deployment",
+          "goal": "A",
+          "skill_version": 1,
+          "path": [
+            "S",
+            "A"
+          ],
+          "records": [
+            {
+              "t": 23,
+              "phase": "deployment",
+              "goal": "A",
+              "skill_version": 1,
+              "state": "S",
+              "action": "upper",
+              "reward": 0,
+              "successor": "A",
+              "next_actions": [
+                "exit",
+                "probe"
+              ],
+              "physical_terminal": false
+            }
+          ],
+          "external_return": 0,
+          "completed": true,
+          "physical_terminal": false,
+          "goal_success": true,
+          "stop_reason": "goal"
+        },
+        "tail": [
+          {
+            "t": 24,
+            "phase": "deployment_tail",
+            "goal": null,
+            "skill_version": null,
+            "state": "A",
+            "action": "exit",
+            "reward": 1,
+            "successor": "X",
+            "next_actions": [],
+            "physical_terminal": true
+          }
+        ],
+        "path": [
+          "S",
+          "A",
+          "X"
+        ],
+        "external_return": 0.9
+      },
+      "budgets": {
+        "real_steps": 24,
+        "phase_steps": {
+          "seed": 5,
+          "baseline": 2,
+          "practice": 11,
+          "model_collection": 3,
+          "probe": 1,
+          "deployment": 2
+        },
+        "resets": 11,
+        "episodes_started": 12,
+        "unique_observed_rows": 6,
+        "actual_goal_td_updates": 11,
+        "primitive_planning_backups": 33,
+        "option_model_queries": 2,
+        "model_complete_samples": 2
+      }
+    },
+    {
+      "practiceEpisodes": 4,
+      "skill": {
+        "goal": "C",
+        "version": 1,
+        "initiation": [
+          "S"
+        ],
+        "policy": {
+          "S": "lower",
+          "A": "exit",
+          "B": "forward"
+        },
+        "stop_on_goal_or_physical_terminal": true,
+        "q": {
+          "S": {
+            "upper": 0,
+            "lower": 0.9
+          },
+          "A": {
+            "exit": 0,
+            "probe": 0
+          },
+          "X": {},
+          "B": {
+            "forward": 1
+          },
+          "C": {
+            "exit": 0
+          },
+          "Y": {}
+        },
+        "real_td_updates": 8
+      },
+      "execution": {
+        "phase": "model_collection",
+        "goal": "C",
+        "skill_version": 1,
+        "path": [
+          "S",
+          "B",
+          "C"
+        ],
+        "records": [
+          {
+            "t": 26,
+            "phase": "model_collection",
+            "goal": "C",
+            "skill_version": 1,
+            "state": "S",
+            "action": "lower",
+            "reward": 0,
+            "successor": "B",
+            "next_actions": [
+              "forward"
+            ],
+            "physical_terminal": false
+          },
+          {
+            "t": 27,
+            "phase": "model_collection",
+            "goal": "C",
+            "skill_version": 1,
+            "state": "B",
+            "action": "forward",
+            "reward": 0,
+            "successor": "C",
+            "next_actions": [
+              "exit",
+              "probe"
+            ],
+            "physical_terminal": false
+          }
+        ],
+        "external_return": 0,
+        "completed": true,
+        "physical_terminal": false,
+        "goal_success": true,
+        "stop_reason": "goal"
+      },
+      "model": {
+        "goal": "C",
+        "version": 1,
+        "start": "S",
+        "reward": 0,
+        "duration": 2,
+        "endpoint": "C",
+        "endpoint_weight": 0.81,
+        "physical_terminal": false,
+        "goal_success": true,
+        "samples": 1,
+        "evidence_steps": [
+          26,
+          27
+        ]
+      },
+      "probe": {
+        "t": 28,
+        "phase": "probe",
+        "goal": "C",
+        "skill_version": null,
+        "state": "C",
+        "action": "probe",
+        "reward": 2,
+        "successor": "Y",
+        "next_actions": [],
+        "physical_terminal": true
+      },
+      "chosen": "C",
+      "scores": {
+        "A": 0.9,
+        "C": 1.62
+      },
+      "deployment": {
+        "skill_episode": {
+          "phase": "deployment",
+          "goal": "C",
+          "skill_version": 1,
+          "path": [
+            "S",
+            "B",
+            "C"
+          ],
+          "records": [
+            {
+              "t": 29,
+              "phase": "deployment",
+              "goal": "C",
+              "skill_version": 1,
+              "state": "S",
+              "action": "lower",
+              "reward": 0,
+              "successor": "B",
+              "next_actions": [
+                "forward"
+              ],
+              "physical_terminal": false
+            },
+            {
+              "t": 30,
+              "phase": "deployment",
+              "goal": "C",
+              "skill_version": 1,
+              "state": "B",
+              "action": "forward",
+              "reward": 0,
+              "successor": "C",
+              "next_actions": [
+                "exit",
+                "probe"
+              ],
+              "physical_terminal": false
+            }
+          ],
+          "external_return": 0,
+          "completed": true,
+          "physical_terminal": false,
+          "goal_success": true,
+          "stop_reason": "goal"
+        },
+        "tail": [
+          {
+            "t": 31,
+            "phase": "deployment_tail",
+            "goal": null,
+            "skill_version": null,
+            "state": "C",
+            "action": "probe",
+            "reward": 2,
+            "successor": "Y",
+            "next_actions": [],
+            "physical_terminal": true
+          }
+        ],
+        "path": [
+          "S",
+          "B",
+          "C",
+          "Y"
+        ],
+        "external_return": 1.62
+      },
+      "budgets": {
+        "real_steps": 31,
+        "phase_steps": {
+          "seed": 5,
+          "baseline": 2,
+          "practice": 16,
+          "model_collection": 3,
+          "probe": 2,
+          "deployment": 3
+        },
+        "resets": 13,
+        "episodes_started": 14,
+        "unique_observed_rows": 7,
+        "actual_goal_td_updates": 16,
+        "primitive_planning_backups": 43,
+        "option_model_queries": 2,
+        "model_complete_samples": 2
+      }
+    }
+  ]
+}

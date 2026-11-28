@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="676" viewBox="0 0 360 676" role="img" aria-labelledby="overview-reward-mobile-title overview-reward-mobile-desc" data-crl-visual="v1" data-evidence-kind="exact">
+  <title id="overview-reward-mobile-title">同一出发点，奖励来得早或晚</title>
+  <desc id="overview-reward-mobile-desc">原创手算图，时间从上往下，从时刻 0 的 A 出发。选择 a，在时刻 1 收到奖励 1 并终止；选择 b，在时刻 1 收到奖励 0 到 B，再经唯一动作于时刻 2 收到奖励 2 并终止。双圈表示终止，每枚筹码代表奖励 1。回报为 G(a)=1 与 G(b)=0+γ×2。γ=1 时回报是 1 与 2；γ=0.4 时是 1 与 0.8。第二奖只乘一次 γ；终止转移保留当步奖励，终止后无后续奖励或价值。</desc>
+  <rect width="360" height="676" fill="#fff"/>
+  <defs><marker id="reward-mobile-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#19354e"/></marker></defs>
+  <g font-family="system-ui,-apple-system,'PingFang SC','Noto Sans CJK SC',sans-serif" fill="#19354e">
+    <text x="20" y="35" font-size="20">同一出发点，奖励来得早或晚</text>
+    <g stroke="#dce5ec" stroke-dasharray="4 6"><path d="M58 98H336"/><path d="M58 246H336"/><path d="M58 402H336"/></g>
+    <g font-size="16" fill="#52687b"><text x="12" y="104">t=0</text><text x="12" y="252">t=1</text><text x="12" y="408">t=2</text></g>
+    <g fill="none" stroke="#19354e" stroke-width="2.5" marker-end="url(#reward-mobile-arrow)"><path d="M104 124V215"/><path d="M270 124V215"/><path d="M270 274V371"/></g>
+    <g fill="#f5f8fb" stroke="#146ca1" stroke-width="2"><circle cx="104" cy="98" r="25"/><circle cx="270" cy="98" r="25"/><circle cx="270" cy="246" r="25"/></g>
+    <g fill="#fff" stroke="#19354e" stroke-width="2"><circle cx="104" cy="246" r="25"/><circle cx="104" cy="246" r="19"/><circle cx="270" cy="402" r="25"/><circle cx="270" cy="402" r="19"/></g>
+    <g font-size="21" text-anchor="middle"><text x="104" y="105">A</text><text x="270" y="105">A</text><text x="270" y="253">B</text><text x="104" y="253">终</text><text x="270" y="409">终</text></g>
+    <g font-size="19"><text x="77" y="163">a</text><text x="242" y="163">b</text></g>
+    <g fill="#fff1e7" stroke="#b65a28" stroke-width="1.8"><circle cx="137" cy="175" r="13"/><circle cx="296" cy="339" r="13"/><circle cx="320" cy="339" r="13"/></g>
+    <g fill="#b65a28" font-size="16" text-anchor="middle"><text x="137" y="181">1</text><text x="296" y="345">1</text><text x="320" y="345">1</text></g>
+    <g font-size="17"><text x="117" y="207">R₁=1</text><text x="283" y="188">R₁=0</text><text x="282" y="368">R₂=2</text><text x="282" y="300">唯一</text><text x="282" y="321">动作</text></g>
+    <g font-size="17" fill="#52687b" text-anchor="middle"><text x="104" y="294">终止后</text><text x="104" y="319">不再累加</text></g>
+    <path d="M20 451H340" stroke="#c8d6e0"/>
+    <text x="20" y="487" font-size="20">G(a) = 1</text><text x="164" y="487" font-size="20">G(b) = 0 + γ × 2</text>
+    <g font-size="18" text-anchor="middle"><text x="103" y="534" fill="#52687b">γ = 1</text><text x="260" y="534" fill="#52687b">γ = 0.4</text><text x="65" y="570">a：1</text><text x="141" y="570" fill="#258375">b：2</text><text x="217" y="570" fill="#258375">a：1</text><text x="302" y="570">b：0.8</text></g>
+    <path d="M181 513V588" stroke="#dce5ec"/>
+    <text x="180" y="630" font-size="18" text-anchor="middle" fill="#52687b">第二步的奖励，只乘一次 γ</text>
+  </g>
+</svg>

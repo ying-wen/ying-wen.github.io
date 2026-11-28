@@ -1,0 +1,326 @@
+{
+  "metadata": {
+    "kind": "exact",
+    "sampled_runs": 0,
+    "purpose": "fixed-data targets, boundary and update-order diagnostics",
+    "source": "Sutton & Barto (2020), §§6.4–6.7,7.1–7.6; De Asis et al. (2018), Eqs.13–14"
+  },
+  "config": {
+    "gamma": 0.9,
+    "alpha": 0.25,
+    "epsilon": 0.5
+  },
+  "task": {
+    "A": [
+      {
+        "action": "go",
+        "next": "B",
+        "reward": 1
+      },
+      {
+        "action": "exit",
+        "next": "T",
+        "reward": 0
+      }
+    ],
+    "B": [
+      {
+        "action": "fast",
+        "next": "C",
+        "reward": 2
+      },
+      {
+        "action": "detour",
+        "next": "T",
+        "reward": 4
+      }
+    ],
+    "C": [
+      {
+        "action": "finish",
+        "next": "T",
+        "reward": 3
+      },
+      {
+        "action": "quit",
+        "next": "T",
+        "reward": -1
+      }
+    ]
+  },
+  "trace": {
+    "states": [
+      "A",
+      "B",
+      "C",
+      "T"
+    ],
+    "actions": [
+      0,
+      0,
+      0
+    ],
+    "rewards": [
+      1,
+      2,
+      3
+    ]
+  },
+  "old_q": {
+    "A": [
+      2,
+      0
+    ],
+    "B": [
+      1,
+      5
+    ],
+    "C": [
+      4,
+      0
+    ]
+  },
+  "second_q": {
+    "A": [
+      2,
+      0
+    ],
+    "B": [
+      4,
+      2
+    ],
+    "C": [
+      2,
+      3
+    ]
+  },
+  "policy": {
+    "A": [
+      0.75,
+      0.25
+    ],
+    "B": [
+      0.25,
+      0.75
+    ],
+    "C": [
+      0.75,
+      0.25
+    ]
+  },
+  "one_step": {
+    "targets": {
+      "sarsa": 1.9,
+      "expected": 4.6,
+      "q_learning": 5.5,
+      "double_q1": 2.8,
+      "double_q2": 1.9,
+      "double_coin_mean": 2.3499999999999996
+    },
+    "updates": {
+      "sarsa": 1.975,
+      "expected": 2.65,
+      "q_learning": 2.875,
+      "double_q1": 2.2,
+      "double_q2": 1.975
+    },
+    "double_role_expectations": {
+      "mean_target": 2.3499999999999996,
+      "selected_table_after": 2.0875,
+      "two_table_average_after": 2.04375
+    },
+    "update_scope": "double_q1/double_q2 denote the selected table; double_role_expectations separately tracks the two-table average",
+    "sarsa_conditional_mean": 4.6,
+    "double_bias": {
+      "true_q": [
+        0,
+        1
+      ],
+      "single_max_mean": 1.25,
+      "double_mean": 0.75,
+      "selected_truth_mean": 0.75,
+      "true_max": 1
+    }
+  },
+  "multistep": {
+    "two_step": {
+      "sarsa": 6.04,
+      "endpoint_expected": 5.23,
+      "tree_backup": 5.4325,
+      "paper_sigma_half": 5.5843750000000005,
+      "book_cv_sigma_half": 6.68125
+    },
+    "three_step": {
+      "sarsa": 5.23,
+      "tree_backup": 5.280625
+    },
+    "q_true_under_frozen_behavior": {
+      "C": [
+        3,
+        -1
+      ],
+      "B": [
+        3.8,
+        4
+      ],
+      "A": [
+        4.555,
+        0
+      ]
+    },
+    "q_optimal": {
+      "C": [
+        3,
+        -1
+      ],
+      "B": [
+        4.7,
+        4
+      ],
+      "A": [
+        5.23,
+        0
+      ]
+    }
+  },
+  "timing": {
+    "n2": {
+      "events": [
+        {
+          "clock": 1,
+          "observed_transition": 1,
+          "waiting": true,
+          "read_version": 0
+        },
+        {
+          "clock": 2,
+          "observed_transition": 2,
+          "waiting": false,
+          "state": "A",
+          "action": 0,
+          "horizon": 2,
+          "bootstrap": true,
+          "read_version": 0,
+          "target": 6.04,
+          "before": 2,
+          "after": 3.01
+        },
+        {
+          "clock": 3,
+          "observed_transition": 3,
+          "waiting": false,
+          "state": "B",
+          "action": 0,
+          "horizon": 3,
+          "bootstrap": false,
+          "read_version": 1,
+          "target": 4.7,
+          "before": 1,
+          "after": 1.925
+        },
+        {
+          "clock": 4,
+          "observed_transition": null,
+          "waiting": false,
+          "state": "C",
+          "action": 0,
+          "horizon": 3,
+          "bootstrap": false,
+          "read_version": 2,
+          "target": 3,
+          "before": 4,
+          "after": 3.75
+        }
+      ],
+      "final_q": {
+        "A": [
+          3.01,
+          0
+        ],
+        "B": [
+          1.925,
+          5
+        ],
+        "C": [
+          3.75,
+          0
+        ]
+      }
+    },
+    "n3": {
+      "events": [
+        {
+          "clock": 1,
+          "observed_transition": 1,
+          "waiting": true,
+          "read_version": 0
+        },
+        {
+          "clock": 2,
+          "observed_transition": 2,
+          "waiting": true,
+          "read_version": 0
+        },
+        {
+          "clock": 3,
+          "observed_transition": 3,
+          "waiting": false,
+          "state": "A",
+          "action": 0,
+          "horizon": 3,
+          "bootstrap": false,
+          "read_version": 0,
+          "target": 5.23,
+          "before": 2,
+          "after": 2.8075
+        },
+        {
+          "clock": 4,
+          "observed_transition": null,
+          "waiting": false,
+          "state": "B",
+          "action": 0,
+          "horizon": 3,
+          "bootstrap": false,
+          "read_version": 1,
+          "target": 4.7,
+          "before": 1,
+          "after": 1.925
+        },
+        {
+          "clock": 5,
+          "observed_transition": null,
+          "waiting": false,
+          "state": "C",
+          "action": 0,
+          "horizon": 3,
+          "bootstrap": false,
+          "read_version": 2,
+          "target": 3,
+          "before": 4,
+          "after": 3.75
+        }
+      ],
+      "final_q": {
+        "A": [
+          2.8075,
+          0
+        ],
+        "B": [
+          1.925,
+          5
+        ],
+        "C": [
+          3.75,
+          0
+        ]
+      }
+    },
+    "truncated_prefix_target": 6.04,
+    "wrong_terminal_prefix_target": 2.8,
+    "terminal_full_return": 5.23,
+    "wrong_late_boundary_target": 5.8375,
+    "boundary_q_before": 4,
+    "boundary_q_after": 3.75
+  }
+}

@@ -1,0 +1,1265 @@
+{
+  "metadata": {
+    "kind": "exact",
+    "purpose": "finite on-policy control and representation/scale diagnostics",
+    "sampled_runs": 0,
+    "source": "Sutton & Barto (2020), §§9.3,9.5.3–4,10.1; original course tilecoding.py"
+  },
+  "config": {
+    "gamma": 1,
+    "alpha": 0.6,
+    "epsilon": 0,
+    "episodes": 2,
+    "dimension": 3,
+    "tie": "continue"
+  },
+  "coordinates": {
+    "A": 0.3,
+    "B": 0.6
+  },
+  "task": {
+    "A": [
+      {
+        "action": "continue",
+        "next": "B",
+        "reward": 2
+      },
+      {
+        "action": "exit",
+        "next": "T",
+        "reward": 0
+      }
+    ],
+    "B": [
+      {
+        "action": "continue",
+        "next": "T",
+        "reward": -1
+      }
+    ]
+  },
+  "analysis_truth": {
+    "A": [
+      1,
+      0
+    ],
+    "B": [
+      -1
+    ]
+  },
+  "raw_tile_keys": {
+    "A": [
+      "0:0",
+      "1:1"
+    ],
+    "B": [
+      "0:1",
+      "1:1"
+    ]
+  },
+  "representations": {
+    "separate": {
+      "name": "separate",
+      "scale": 1,
+      "alpha": 0.6,
+      "features": {
+        "A": [
+          1,
+          0,
+          0
+        ],
+        "B": [
+          0,
+          1,
+          0
+        ]
+      },
+      "gram": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "events": [
+        {
+          "episode": 1,
+          "state": "A",
+          "action": 0,
+          "action_name": "continue",
+          "reward": 2,
+          "next": "B",
+          "terminated": false,
+          "next_action": 0,
+          "before": {
+            "A": [
+              0,
+              0
+            ],
+            "B": [
+              0
+            ]
+          },
+          "old_q": 0,
+          "bootstrap": 0,
+          "target": 2,
+          "delta": 2,
+          "after": {
+            "A": [
+              1.2,
+              0
+            ],
+            "B": [
+              0
+            ]
+          }
+        },
+        {
+          "episode": 1,
+          "state": "B",
+          "action": 0,
+          "action_name": "continue",
+          "reward": -1,
+          "next": "T",
+          "terminated": true,
+          "next_action": null,
+          "before": {
+            "A": [
+              1.2,
+              0
+            ],
+            "B": [
+              0
+            ]
+          },
+          "old_q": 0,
+          "bootstrap": 0,
+          "target": -1,
+          "delta": -1,
+          "after": {
+            "A": [
+              1.2,
+              0
+            ],
+            "B": [
+              -0.6
+            ]
+          }
+        },
+        {
+          "episode": 2,
+          "state": "A",
+          "action": 0,
+          "action_name": "continue",
+          "reward": 2,
+          "next": "B",
+          "terminated": false,
+          "next_action": 0,
+          "before": {
+            "A": [
+              1.2,
+              0
+            ],
+            "B": [
+              -0.6
+            ]
+          },
+          "old_q": 1.2,
+          "bootstrap": -0.6,
+          "target": 1.4,
+          "delta": 0.19999999999999996,
+          "after": {
+            "A": [
+              1.3199999999999998,
+              0
+            ],
+            "B": [
+              -0.6
+            ]
+          }
+        },
+        {
+          "episode": 2,
+          "state": "B",
+          "action": 0,
+          "action_name": "continue",
+          "reward": -1,
+          "next": "T",
+          "terminated": true,
+          "next_action": null,
+          "before": {
+            "A": [
+              1.3199999999999998,
+              0
+            ],
+            "B": [
+              -0.6
+            ]
+          },
+          "old_q": -0.6,
+          "bootstrap": 0,
+          "target": -1,
+          "delta": -0.4,
+          "after": {
+            "A": [
+              1.3199999999999998,
+              0
+            ],
+            "B": [
+              -0.84
+            ]
+          }
+        }
+      ],
+      "after_first_episode": {
+        "A": [
+          1.2,
+          0
+        ],
+        "B": [
+          -0.6
+        ]
+      },
+      "next_real_transition": {
+        "episode": 2,
+        "state": "A",
+        "action": 0,
+        "action_name": "continue",
+        "reward": 2,
+        "next": "B",
+        "terminated": false,
+        "next_action": 0,
+        "before": {
+          "A": [
+            1.2,
+            0
+          ],
+          "B": [
+            -0.6
+          ]
+        },
+        "old_q": 1.2,
+        "bootstrap": -0.6,
+        "target": 1.4,
+        "delta": 0.19999999999999996,
+        "after": {
+          "A": [
+            1.3199999999999998,
+            0
+          ],
+          "B": [
+            -0.6
+          ]
+        }
+      },
+      "final": {
+        "A": [
+          1.3199999999999998,
+          0
+        ],
+        "B": [
+          -0.84
+        ]
+      }
+    },
+    "tiles": {
+      "name": "tiles",
+      "scale": 1,
+      "alpha": 0.6,
+      "features": {
+        "A": [
+          0.7071067811865475,
+          0,
+          0.7071067811865475
+        ],
+        "B": [
+          0,
+          0.7071067811865475,
+          0.7071067811865475
+        ]
+      },
+      "gram": [
+        [
+          0.9999999999999998,
+          0.4999999999999999
+        ],
+        [
+          0.4999999999999999,
+          0.9999999999999998
+        ]
+      ],
+      "events": [
+        {
+          "episode": 1,
+          "state": "A",
+          "action": 0,
+          "action_name": "continue",
+          "reward": 2,
+          "next": "B",
+          "terminated": false,
+          "next_action": 0,
+          "before": {
+            "A": [
+              0,
+              0
+            ],
+            "B": [
+              0
+            ]
+          },
+          "old_q": 0,
+          "bootstrap": 0,
+          "target": 2,
+          "delta": 2,
+          "after": {
+            "A": [
+              1.1999999999999997,
+              0
+            ],
+            "B": [
+              0.5999999999999999
+            ]
+          }
+        },
+        {
+          "episode": 1,
+          "state": "B",
+          "action": 0,
+          "action_name": "continue",
+          "reward": -1,
+          "next": "T",
+          "terminated": true,
+          "next_action": null,
+          "before": {
+            "A": [
+              1.1999999999999997,
+              0
+            ],
+            "B": [
+              0.5999999999999999
+            ]
+          },
+          "old_q": 0.5999999999999999,
+          "bootstrap": 0,
+          "target": -1,
+          "delta": -1.5999999999999999,
+          "after": {
+            "A": [
+              0.7199999999999999,
+              0
+            ],
+            "B": [
+              -0.35999999999999976
+            ]
+          }
+        },
+        {
+          "episode": 2,
+          "state": "A",
+          "action": 0,
+          "action_name": "continue",
+          "reward": 2,
+          "next": "B",
+          "terminated": false,
+          "next_action": 0,
+          "before": {
+            "A": [
+              0.7199999999999999,
+              0
+            ],
+            "B": [
+              -0.35999999999999976
+            ]
+          },
+          "old_q": 0.7199999999999999,
+          "bootstrap": -0.35999999999999976,
+          "target": 1.6400000000000001,
+          "delta": 0.9200000000000003,
+          "after": {
+            "A": [
+              1.2719999999999998,
+              0
+            ],
+            "B": [
+              -0.08399999999999974
+            ]
+          }
+        },
+        {
+          "episode": 2,
+          "state": "B",
+          "action": 0,
+          "action_name": "continue",
+          "reward": -1,
+          "next": "T",
+          "terminated": true,
+          "next_action": null,
+          "before": {
+            "A": [
+              1.2719999999999998,
+              0
+            ],
+            "B": [
+              -0.08399999999999974
+            ]
+          },
+          "old_q": -0.08399999999999974,
+          "bootstrap": 0,
+          "target": -1,
+          "delta": -0.9160000000000003,
+          "after": {
+            "A": [
+              0.9971999999999999,
+              0
+            ],
+            "B": [
+              -0.6335999999999997
+            ]
+          }
+        }
+      ],
+      "after_first_episode": {
+        "A": [
+          0.7199999999999999,
+          0
+        ],
+        "B": [
+          -0.35999999999999976
+        ]
+      },
+      "next_real_transition": {
+        "episode": 2,
+        "state": "A",
+        "action": 0,
+        "action_name": "continue",
+        "reward": 2,
+        "next": "B",
+        "terminated": false,
+        "next_action": 0,
+        "before": {
+          "A": [
+            0.7199999999999999,
+            0
+          ],
+          "B": [
+            -0.35999999999999976
+          ]
+        },
+        "old_q": 0.7199999999999999,
+        "bootstrap": -0.35999999999999976,
+        "target": 1.6400000000000001,
+        "delta": 0.9200000000000003,
+        "after": {
+          "A": [
+            1.2719999999999998,
+            0
+          ],
+          "B": [
+            -0.08399999999999974
+          ]
+        }
+      },
+      "final": {
+        "A": [
+          0.9971999999999999,
+          0
+        ],
+        "B": [
+          -0.6335999999999997
+        ]
+      }
+    },
+    "aggregate": {
+      "name": "aggregate",
+      "scale": 1,
+      "alpha": 0.6,
+      "features": {
+        "A": [
+          1,
+          0,
+          0
+        ],
+        "B": [
+          1,
+          0,
+          0
+        ]
+      },
+      "gram": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "events": [
+        {
+          "episode": 1,
+          "state": "A",
+          "action": 0,
+          "action_name": "continue",
+          "reward": 2,
+          "next": "B",
+          "terminated": false,
+          "next_action": 0,
+          "before": {
+            "A": [
+              0,
+              0
+            ],
+            "B": [
+              0
+            ]
+          },
+          "old_q": 0,
+          "bootstrap": 0,
+          "target": 2,
+          "delta": 2,
+          "after": {
+            "A": [
+              1.2,
+              0
+            ],
+            "B": [
+              1.2
+            ]
+          }
+        },
+        {
+          "episode": 1,
+          "state": "B",
+          "action": 0,
+          "action_name": "continue",
+          "reward": -1,
+          "next": "T",
+          "terminated": true,
+          "next_action": null,
+          "before": {
+            "A": [
+              1.2,
+              0
+            ],
+            "B": [
+              1.2
+            ]
+          },
+          "old_q": 1.2,
+          "bootstrap": 0,
+          "target": -1,
+          "delta": -2.2,
+          "after": {
+            "A": [
+              -0.1200000000000001,
+              0
+            ],
+            "B": [
+              -0.1200000000000001
+            ]
+          }
+        },
+        {
+          "episode": 2,
+          "state": "A",
+          "action": 1,
+          "action_name": "exit",
+          "reward": 0,
+          "next": "T",
+          "terminated": true,
+          "next_action": null,
+          "before": {
+            "A": [
+              -0.1200000000000001,
+              0
+            ],
+            "B": [
+              -0.1200000000000001
+            ]
+          },
+          "old_q": 0,
+          "bootstrap": 0,
+          "target": 0,
+          "delta": 0,
+          "after": {
+            "A": [
+              -0.1200000000000001,
+              0
+            ],
+            "B": [
+              -0.1200000000000001
+            ]
+          }
+        }
+      ],
+      "after_first_episode": {
+        "A": [
+          -0.1200000000000001,
+          0
+        ],
+        "B": [
+          -0.1200000000000001
+        ]
+      },
+      "next_real_transition": {
+        "episode": 2,
+        "state": "A",
+        "action": 1,
+        "action_name": "exit",
+        "reward": 0,
+        "next": "T",
+        "terminated": true,
+        "next_action": null,
+        "before": {
+          "A": [
+            -0.1200000000000001,
+            0
+          ],
+          "B": [
+            -0.1200000000000001
+          ]
+        },
+        "old_q": 0,
+        "bootstrap": 0,
+        "target": 0,
+        "delta": 0,
+        "after": {
+          "A": [
+            -0.1200000000000001,
+            0
+          ],
+          "B": [
+            -0.1200000000000001
+          ]
+        }
+      },
+      "final": {
+        "A": [
+          -0.1200000000000001,
+          0
+        ],
+        "B": [
+          -0.1200000000000001
+        ]
+      }
+    }
+  },
+  "scales": {
+    "base": {
+      "name": "tiles",
+      "scale": 1,
+      "alpha": 0.6,
+      "features": {
+        "A": [
+          0.7071067811865475,
+          0,
+          0.7071067811865475
+        ],
+        "B": [
+          0,
+          0.7071067811865475,
+          0.7071067811865475
+        ]
+      },
+      "gram": [
+        [
+          0.9999999999999998,
+          0.4999999999999999
+        ],
+        [
+          0.4999999999999999,
+          0.9999999999999998
+        ]
+      ],
+      "events": [
+        {
+          "episode": 1,
+          "state": "A",
+          "action": 0,
+          "action_name": "continue",
+          "reward": 2,
+          "next": "B",
+          "terminated": false,
+          "next_action": 0,
+          "before": {
+            "A": [
+              0,
+              0
+            ],
+            "B": [
+              0
+            ]
+          },
+          "old_q": 0,
+          "bootstrap": 0,
+          "target": 2,
+          "delta": 2,
+          "after": {
+            "A": [
+              1.1999999999999997,
+              0
+            ],
+            "B": [
+              0.5999999999999999
+            ]
+          }
+        },
+        {
+          "episode": 1,
+          "state": "B",
+          "action": 0,
+          "action_name": "continue",
+          "reward": -1,
+          "next": "T",
+          "terminated": true,
+          "next_action": null,
+          "before": {
+            "A": [
+              1.1999999999999997,
+              0
+            ],
+            "B": [
+              0.5999999999999999
+            ]
+          },
+          "old_q": 0.5999999999999999,
+          "bootstrap": 0,
+          "target": -1,
+          "delta": -1.5999999999999999,
+          "after": {
+            "A": [
+              0.7199999999999999,
+              0
+            ],
+            "B": [
+              -0.35999999999999976
+            ]
+          }
+        },
+        {
+          "episode": 2,
+          "state": "A",
+          "action": 0,
+          "action_name": "continue",
+          "reward": 2,
+          "next": "B",
+          "terminated": false,
+          "next_action": 0,
+          "before": {
+            "A": [
+              0.7199999999999999,
+              0
+            ],
+            "B": [
+              -0.35999999999999976
+            ]
+          },
+          "old_q": 0.7199999999999999,
+          "bootstrap": -0.35999999999999976,
+          "target": 1.6400000000000001,
+          "delta": 0.9200000000000003,
+          "after": {
+            "A": [
+              1.2719999999999998,
+              0
+            ],
+            "B": [
+              -0.08399999999999974
+            ]
+          }
+        },
+        {
+          "episode": 2,
+          "state": "B",
+          "action": 0,
+          "action_name": "continue",
+          "reward": -1,
+          "next": "T",
+          "terminated": true,
+          "next_action": null,
+          "before": {
+            "A": [
+              1.2719999999999998,
+              0
+            ],
+            "B": [
+              -0.08399999999999974
+            ]
+          },
+          "old_q": -0.08399999999999974,
+          "bootstrap": 0,
+          "target": -1,
+          "delta": -0.9160000000000003,
+          "after": {
+            "A": [
+              0.9971999999999999,
+              0
+            ],
+            "B": [
+              -0.6335999999999997
+            ]
+          }
+        }
+      ],
+      "after_first_episode": {
+        "A": [
+          0.7199999999999999,
+          0
+        ],
+        "B": [
+          -0.35999999999999976
+        ]
+      },
+      "next_real_transition": {
+        "episode": 2,
+        "state": "A",
+        "action": 0,
+        "action_name": "continue",
+        "reward": 2,
+        "next": "B",
+        "terminated": false,
+        "next_action": 0,
+        "before": {
+          "A": [
+            0.7199999999999999,
+            0
+          ],
+          "B": [
+            -0.35999999999999976
+          ]
+        },
+        "old_q": 0.7199999999999999,
+        "bootstrap": -0.35999999999999976,
+        "target": 1.6400000000000001,
+        "delta": 0.9200000000000003,
+        "after": {
+          "A": [
+            1.2719999999999998,
+            0
+          ],
+          "B": [
+            -0.08399999999999974
+          ]
+        }
+      },
+      "final": {
+        "A": [
+          0.9971999999999999,
+          0
+        ],
+        "B": [
+          -0.6335999999999997
+        ]
+      }
+    },
+    "uncompensated": {
+      "name": "tiles",
+      "scale": 10,
+      "alpha": 0.6,
+      "features": {
+        "A": [
+          7.071067811865475,
+          0,
+          7.071067811865475
+        ],
+        "B": [
+          0,
+          7.071067811865475,
+          7.071067811865475
+        ]
+      },
+      "gram": [
+        [
+          99.99999999999999,
+          49.99999999999999
+        ],
+        [
+          49.99999999999999,
+          99.99999999999999
+        ]
+      ],
+      "events": [
+        {
+          "episode": 1,
+          "state": "A",
+          "action": 0,
+          "action_name": "continue",
+          "reward": 2,
+          "next": "B",
+          "terminated": false,
+          "next_action": 0,
+          "before": {
+            "A": [
+              0,
+              0
+            ],
+            "B": [
+              0
+            ]
+          },
+          "old_q": 0,
+          "bootstrap": 0,
+          "target": 2,
+          "delta": 2,
+          "after": {
+            "A": [
+              119.99999999999999,
+              0
+            ],
+            "B": [
+              59.99999999999999
+            ]
+          }
+        },
+        {
+          "episode": 1,
+          "state": "B",
+          "action": 0,
+          "action_name": "continue",
+          "reward": -1,
+          "next": "T",
+          "terminated": true,
+          "next_action": null,
+          "before": {
+            "A": [
+              119.99999999999999,
+              0
+            ],
+            "B": [
+              59.99999999999999
+            ]
+          },
+          "old_q": 59.99999999999999,
+          "bootstrap": 0,
+          "target": -1,
+          "delta": -60.99999999999999,
+          "after": {
+            "A": [
+              -1709.9999999999993,
+              0
+            ],
+            "B": [
+              -3599.9999999999986
+            ]
+          }
+        },
+        {
+          "episode": 2,
+          "state": "A",
+          "action": 1,
+          "action_name": "exit",
+          "reward": 0,
+          "next": "T",
+          "terminated": true,
+          "next_action": null,
+          "before": {
+            "A": [
+              -1709.9999999999993,
+              0
+            ],
+            "B": [
+              -3599.9999999999986
+            ]
+          },
+          "old_q": 0,
+          "bootstrap": 0,
+          "target": 0,
+          "delta": 0,
+          "after": {
+            "A": [
+              -1709.9999999999993,
+              0
+            ],
+            "B": [
+              -3599.9999999999986
+            ]
+          }
+        }
+      ],
+      "after_first_episode": {
+        "A": [
+          -1709.9999999999993,
+          0
+        ],
+        "B": [
+          -3599.9999999999986
+        ]
+      },
+      "next_real_transition": {
+        "episode": 2,
+        "state": "A",
+        "action": 1,
+        "action_name": "exit",
+        "reward": 0,
+        "next": "T",
+        "terminated": true,
+        "next_action": null,
+        "before": {
+          "A": [
+            -1709.9999999999993,
+            0
+          ],
+          "B": [
+            -3599.9999999999986
+          ]
+        },
+        "old_q": 0,
+        "bootstrap": 0,
+        "target": 0,
+        "delta": 0,
+        "after": {
+          "A": [
+            -1709.9999999999993,
+            0
+          ],
+          "B": [
+            -3599.9999999999986
+          ]
+        }
+      },
+      "final": {
+        "A": [
+          -1709.9999999999993,
+          0
+        ],
+        "B": [
+          -3599.9999999999986
+        ]
+      }
+    },
+    "compensated": {
+      "name": "tiles",
+      "scale": 10,
+      "alpha": 0.006,
+      "features": {
+        "A": [
+          7.071067811865475,
+          0,
+          7.071067811865475
+        ],
+        "B": [
+          0,
+          7.071067811865475,
+          7.071067811865475
+        ]
+      },
+      "gram": [
+        [
+          99.99999999999999,
+          49.99999999999999
+        ],
+        [
+          49.99999999999999,
+          99.99999999999999
+        ]
+      ],
+      "events": [
+        {
+          "episode": 1,
+          "state": "A",
+          "action": 0,
+          "action_name": "continue",
+          "reward": 2,
+          "next": "B",
+          "terminated": false,
+          "next_action": 0,
+          "before": {
+            "A": [
+              0,
+              0
+            ],
+            "B": [
+              0
+            ]
+          },
+          "old_q": 0,
+          "bootstrap": 0,
+          "target": 2,
+          "delta": 2,
+          "after": {
+            "A": [
+              1.1999999999999997,
+              0
+            ],
+            "B": [
+              0.5999999999999999
+            ]
+          }
+        },
+        {
+          "episode": 1,
+          "state": "B",
+          "action": 0,
+          "action_name": "continue",
+          "reward": -1,
+          "next": "T",
+          "terminated": true,
+          "next_action": null,
+          "before": {
+            "A": [
+              1.1999999999999997,
+              0
+            ],
+            "B": [
+              0.5999999999999999
+            ]
+          },
+          "old_q": 0.5999999999999999,
+          "bootstrap": 0,
+          "target": -1,
+          "delta": -1.5999999999999999,
+          "after": {
+            "A": [
+              0.72,
+              0
+            ],
+            "B": [
+              -0.35999999999999976
+            ]
+          }
+        },
+        {
+          "episode": 2,
+          "state": "A",
+          "action": 0,
+          "action_name": "continue",
+          "reward": 2,
+          "next": "B",
+          "terminated": false,
+          "next_action": 0,
+          "before": {
+            "A": [
+              0.72,
+              0
+            ],
+            "B": [
+              -0.35999999999999976
+            ]
+          },
+          "old_q": 0.72,
+          "bootstrap": -0.35999999999999976,
+          "target": 1.6400000000000001,
+          "delta": 0.9200000000000002,
+          "after": {
+            "A": [
+              1.2719999999999998,
+              0
+            ],
+            "B": [
+              -0.0839999999999998
+            ]
+          }
+        },
+        {
+          "episode": 2,
+          "state": "B",
+          "action": 0,
+          "action_name": "continue",
+          "reward": -1,
+          "next": "T",
+          "terminated": true,
+          "next_action": null,
+          "before": {
+            "A": [
+              1.2719999999999998,
+              0
+            ],
+            "B": [
+              -0.0839999999999998
+            ]
+          },
+          "old_q": -0.0839999999999998,
+          "bootstrap": 0,
+          "target": -1,
+          "delta": -0.9160000000000001,
+          "after": {
+            "A": [
+              0.9971999999999999,
+              0
+            ],
+            "B": [
+              -0.6335999999999998
+            ]
+          }
+        }
+      ],
+      "after_first_episode": {
+        "A": [
+          0.72,
+          0
+        ],
+        "B": [
+          -0.35999999999999976
+        ]
+      },
+      "next_real_transition": {
+        "episode": 2,
+        "state": "A",
+        "action": 0,
+        "action_name": "continue",
+        "reward": 2,
+        "next": "B",
+        "terminated": false,
+        "next_action": 0,
+        "before": {
+          "A": [
+            0.72,
+            0
+          ],
+          "B": [
+            -0.35999999999999976
+          ]
+        },
+        "old_q": 0.72,
+        "bootstrap": -0.35999999999999976,
+        "target": 1.6400000000000001,
+        "delta": 0.9200000000000002,
+        "after": {
+          "A": [
+            1.2719999999999998,
+            0
+          ],
+          "B": [
+            -0.0839999999999998
+          ]
+        }
+      },
+      "final": {
+        "A": [
+          0.9971999999999999,
+          0
+        ],
+        "B": [
+          -0.6335999999999998
+        ]
+      }
+    }
+  },
+  "epsilon_point_two": {
+    "separate": {
+      "probabilities": [
+        0.9,
+        0.1
+      ],
+      "expected_first_reward": 1.8
+    },
+    "tiles": {
+      "probabilities": [
+        0.9,
+        0.1
+      ],
+      "expected_first_reward": 1.8
+    },
+    "aggregate": {
+      "probabilities": [
+        0.1,
+        0.9
+      ],
+      "expected_first_reward": 0.2
+    }
+  }
+}
